@@ -17,11 +17,11 @@ For more information, please visit [http://www.infopluscommerce.com](http://www.
 #### git
 #
 If the library is hosted at a git repository, e.g.
-https://github.com/YOUR_USERNAME/YOUR_GIT_REPO_ID
+https://github.com/infopluscommerce/javascript-client
 then install it via:
 
 ```shell
-npm install YOUR_USERNAME/YOUR_GIT_REPO_ID --save
+npm install infopluscommerce/javascript-client --save
 ```
 
 ### For browser
