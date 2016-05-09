@@ -1,0 +1,228 @@
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['../ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.infoplus) {
+      root.infoplus = {};
+    }
+    root.infoplus.LocationAddressScheme = factory(root.infoplus.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * The LocationAddressScheme model module.
+   * @module model/LocationAddressScheme
+   * @version 1.0
+   */
+
+  /**
+   * Constructs a new <code>LocationAddressScheme</code>.
+   * @alias module:model/LocationAddressScheme
+   * @class
+   * @param clientId
+   * @param name
+   * @param formatString
+   * @param locationNamingScheme
+   * @param locationNumberZeroPadded
+   * @param levelNamingScheme
+   * @param levelNumberZeroPadded
+   * @param aisleNamingScheme
+   * @param aisleNumberZeroPadded
+   */
+  var exports = function(clientId, name, formatString, locationNamingScheme, locationNumberZeroPadded, levelNamingScheme, levelNumberZeroPadded, aisleNamingScheme, aisleNumberZeroPadded) {
+
+
+    this['clientId'] = clientId;
+    this['name'] = name;
+    this['formatString'] = formatString;
+    this['locationNamingScheme'] = locationNamingScheme;
+    this['locationNumberZeroPadded'] = locationNumberZeroPadded;
+
+    this['levelNamingScheme'] = levelNamingScheme;
+    this['levelNumberZeroPadded'] = levelNumberZeroPadded;
+
+    this['aisleNamingScheme'] = aisleNamingScheme;
+    this['aisleNumberZeroPadded'] = aisleNumberZeroPadded;
+
+
+
+
+
+
+  };
+
+  /**
+   * Constructs a <code>LocationAddressScheme</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/LocationAddressScheme} obj Optional instance to populate.
+   * @return {module:model/LocationAddressScheme} The populated <code>LocationAddressScheme</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) { 
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+      }
+      if (data.hasOwnProperty('clientId')) {
+        obj['clientId'] = ApiClient.convertToType(data['clientId'], 'Integer');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('formatString')) {
+        obj['formatString'] = ApiClient.convertToType(data['formatString'], 'String');
+      }
+      if (data.hasOwnProperty('locationNamingScheme')) {
+        obj['locationNamingScheme'] = ApiClient.convertToType(data['locationNamingScheme'], 'String');
+      }
+      if (data.hasOwnProperty('locationNumberZeroPadded')) {
+        obj['locationNumberZeroPadded'] = ApiClient.convertToType(data['locationNumberZeroPadded'], 'Boolean');
+      }
+      if (data.hasOwnProperty('locationNumberMinimumNumberOfDigits')) {
+        obj['locationNumberMinimumNumberOfDigits'] = ApiClient.convertToType(data['locationNumberMinimumNumberOfDigits'], 'Integer');
+      }
+      if (data.hasOwnProperty('levelNamingScheme')) {
+        obj['levelNamingScheme'] = ApiClient.convertToType(data['levelNamingScheme'], 'String');
+      }
+      if (data.hasOwnProperty('levelNumberZeroPadded')) {
+        obj['levelNumberZeroPadded'] = ApiClient.convertToType(data['levelNumberZeroPadded'], 'Boolean');
+      }
+      if (data.hasOwnProperty('levelNumberMinimumNumberOfDigits')) {
+        obj['levelNumberMinimumNumberOfDigits'] = ApiClient.convertToType(data['levelNumberMinimumNumberOfDigits'], 'Integer');
+      }
+      if (data.hasOwnProperty('aisleNamingScheme')) {
+        obj['aisleNamingScheme'] = ApiClient.convertToType(data['aisleNamingScheme'], 'String');
+      }
+      if (data.hasOwnProperty('aisleNumberZeroPadded')) {
+        obj['aisleNumberZeroPadded'] = ApiClient.convertToType(data['aisleNumberZeroPadded'], 'Boolean');
+      }
+      if (data.hasOwnProperty('aisleNumberMinimumNumberOfDigits')) {
+        obj['aisleNumberMinimumNumberOfDigits'] = ApiClient.convertToType(data['aisleNumberMinimumNumberOfDigits'], 'Integer');
+      }
+      if (data.hasOwnProperty('bayNamingScheme')) {
+        obj['bayNamingScheme'] = ApiClient.convertToType(data['bayNamingScheme'], 'String');
+      }
+      if (data.hasOwnProperty('bayNumberZeroPadded')) {
+        obj['bayNumberZeroPadded'] = ApiClient.convertToType(data['bayNumberZeroPadded'], 'Boolean');
+      }
+      if (data.hasOwnProperty('bayNumberMinimumNumberOfDigits')) {
+        obj['bayNumberMinimumNumberOfDigits'] = ApiClient.convertToType(data['bayNumberMinimumNumberOfDigits'], 'Integer');
+      }
+      if (data.hasOwnProperty('createDate')) {
+        obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
+      }
+      if (data.hasOwnProperty('modifyDate')) {
+        obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+    }
+    return obj;
+  }
+
+
+  /**
+   * @member {Integer} id
+   */
+  exports.prototype['id'] = undefined;
+
+  /**
+   * @member {Integer} clientId
+   */
+  exports.prototype['clientId'] = undefined;
+
+  /**
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+
+  /**
+   * @member {String} formatString
+   */
+  exports.prototype['formatString'] = undefined;
+
+  /**
+   * @member {String} locationNamingScheme
+   */
+  exports.prototype['locationNamingScheme'] = undefined;
+
+  /**
+   * @member {Boolean} locationNumberZeroPadded
+   * @default false
+   */
+  exports.prototype['locationNumberZeroPadded'] = false;
+
+  /**
+   * @member {Integer} locationNumberMinimumNumberOfDigits
+   */
+  exports.prototype['locationNumberMinimumNumberOfDigits'] = undefined;
+
+  /**
+   * @member {String} levelNamingScheme
+   */
+  exports.prototype['levelNamingScheme'] = undefined;
+
+  /**
+   * @member {Boolean} levelNumberZeroPadded
+   * @default false
+   */
+  exports.prototype['levelNumberZeroPadded'] = false;
+
+  /**
+   * @member {Integer} levelNumberMinimumNumberOfDigits
+   */
+  exports.prototype['levelNumberMinimumNumberOfDigits'] = undefined;
+
+  /**
+   * @member {String} aisleNamingScheme
+   */
+  exports.prototype['aisleNamingScheme'] = undefined;
+
+  /**
+   * @member {Boolean} aisleNumberZeroPadded
+   * @default false
+   */
+  exports.prototype['aisleNumberZeroPadded'] = false;
+
+  /**
+   * @member {Integer} aisleNumberMinimumNumberOfDigits
+   */
+  exports.prototype['aisleNumberMinimumNumberOfDigits'] = undefined;
+
+  /**
+   * @member {String} bayNamingScheme
+   */
+  exports.prototype['bayNamingScheme'] = undefined;
+
+  /**
+   * @member {Boolean} bayNumberZeroPadded
+   * @default false
+   */
+  exports.prototype['bayNumberZeroPadded'] = false;
+
+  /**
+   * @member {Integer} bayNumberMinimumNumberOfDigits
+   */
+  exports.prototype['bayNumberMinimumNumberOfDigits'] = undefined;
+
+  /**
+   * @member {Date} createDate
+   */
+  exports.prototype['createDate'] = undefined;
+
+  /**
+   * @member {Date} modifyDate
+   */
+  exports.prototype['modifyDate'] = undefined;
+
+
+
+
+  return exports;
+}));
