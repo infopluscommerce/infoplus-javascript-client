@@ -1,6 +1,6 @@
 # infoplus.IntegrationPartnerApi
 
-All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api/v1.0*
+All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Returns the integrationPartner identified by the specified id.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -71,7 +71,7 @@ Returns the list of integrationPartners that match the given searchText.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key

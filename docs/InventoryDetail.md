@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **unitsPerWrap** | **Integer** |  | [optional] 
 **revisionDate** | **String** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
+**oldestReceiptDate** | **Date** |  | [optional] 
 **lobId** | **Integer** |  | [optional] 
 **poNo** | **String** |  | [optional] 
 **sku** | **String** |  | [optional] 

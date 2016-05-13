@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **userId** | **Integer** |  | 
 **lobId** | **Integer** |  | [optional] 
 **warehouseId** | **Integer** |  | 
-**loggedTimeType** | **String** |  | 
+**loggedTimeTypeId** | **Integer** |  | 
 **appId** | **Integer** |  | 
 
 

@@ -1,14 +1,14 @@
 # infoplus.CustomerApi
 
-All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api/v1.0*
+All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCustomer**](CustomerApi.md#addCustomer) | **POST** /v1.0/customer | Create a customer
 [**deleteCustomer**](CustomerApi.md#deleteCustomer) | **DELETE** /v1.0/customer/{customerId} | Delete a customer
+[**getByCustomerNo**](CustomerApi.md#getByCustomerNo) | **GET** /v1.0/customer/getByCustomerNo | Get a customer by Customer No
 [**getCustomerByFilter**](CustomerApi.md#getCustomerByFilter) | **GET** /v1.0/customer/search | Search customers by filter
 [**getCustomerById**](CustomerApi.md#getCustomerById) | **GET** /v1.0/customer/{customerId} | Get a customer by id
-[**getCustomerBygetByCustomerNo**](CustomerApi.md#getCustomerBygetByCustomerNo) | **GET** /v1.0/customer/getByCustomerNo | Get a customer by Customer No
 [**updateCustomer**](CustomerApi.md#updateCustomer) | **PUT** /v1.0/customer | Update a customer
 
 
@@ -22,7 +22,7 @@ Inserts a new customer using the specified data.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -75,7 +75,7 @@ Deletes the customer identified by the specified id.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -118,6 +118,62 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getByCustomerNo"></a>
+# **getByCustomerNo**
+> Customer getByCustomerNo(lobId, customerNo)
+
+Get a customer by Customer No
+
+Returns the customer identified by the specified parameters.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var lobId = 56; // {Integer} lobId of the customer to be returned.
+
+var customerNo = "customerNo_example"; // {String} customerNo of the customer to be returned.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getByCustomerNo(lobId, customerNo, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lobId** | **Integer**| lobId of the customer to be returned. | 
+ **customerNo** | **String**| customerNo of the customer to be returned. | 
+
+### Return type
+
+[**Customer**](Customer.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="getCustomerByFilter"></a>
 # **getCustomerByFilter**
 > [Customer] getCustomerByFilter(opts)
@@ -128,7 +184,7 @@ Returns the list of customers that match the given filter.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -188,7 +244,7 @@ Returns the customer identified by the specified id.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -231,62 +287,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getCustomerBygetByCustomerNo"></a>
-# **getCustomerBygetByCustomerNo**
-> Customer getCustomerBygetByCustomerNo(lobId, customerNo)
-
-Get a customer by Customer No
-
-Returns the customer identified by the specified parameters.
-
-### Example
-```javascript
-var infoplus = require('infoplus-js-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.CustomerApi()
-
-var lobId = 56; // {Integer} lobId of the customer to be returned.
-
-var customerNo = "customerNo_example"; // {String} customerNo of the customer to be returned.
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.getCustomerBygetByCustomerNo(lobId, customerNo, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lobId** | **Integer**| lobId of the customer to be returned. | 
- **customerNo** | **String**| customerNo of the customer to be returned. | 
-
-### Return type
-
-[**Customer**](Customer.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="updateCustomer"></a>
 # **updateCustomer**
 > updateCustomer(body)
@@ -297,7 +297,7 @@ Updates an existing customer using the specified data.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key

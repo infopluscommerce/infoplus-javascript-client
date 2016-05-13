@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/LocationAddressScheme', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/LocationAddressScheme'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/LocationAddressScheme'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/LocationAddressScheme'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.LocationAddressSchemeApi = factory(root.infoplus.ApiClient, root.infoplus.LocationAddressScheme, root.infoplus.ApiResponse);
+    root.infoplus.LocationAddressSchemeApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.LocationAddressScheme);
   }
-}(this, function(ApiClient, LocationAddressScheme, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, LocationAddressScheme) {
   'use strict';
 
   /**

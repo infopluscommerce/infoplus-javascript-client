@@ -1,6 +1,6 @@
 # infoplus.OrderSourceApi
 
-All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api/v1.0*
+All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Inserts a new orderSource using the specified data.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -74,7 +74,7 @@ Deletes the orderSource identified by the specified id.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -127,7 +127,7 @@ Returns the list of orderSources that match the given filter.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -187,7 +187,7 @@ Returns the orderSource identified by the specified id.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key
@@ -240,7 +240,7 @@ Updates an existing orderSource using the specified data.
 
 ### Example
 ```javascript
-var infoplus = require('infoplus-js-client');
+var infoplus = require('infoplus-javascript-client');
 var defaultClient = infoplus.ApiClient.default;
 
 // Configure API key authorization: api_key

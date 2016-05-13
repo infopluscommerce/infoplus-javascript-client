@@ -28,13 +28,13 @@
    * @param orderNo
    * @param lobId
    * @param sku
-   * @param accountCode
-   * @param lowStockContact
-   * @param majorGroup
-   * @param subGroup
-   * @param summaryCode
+   * @param itemAccountCodeId
+   * @param itemLegacyLowStockContactId
+   * @param itemMajorGroupId
+   * @param itemSubGroupId
+   * @param itemSummaryCodeId
    */
-  var exports = function(orderNo, lobId, sku, accountCode, lowStockContact, majorGroup, subGroup, summaryCode) {
+  var exports = function(orderNo, lobId, sku, itemAccountCodeId, itemLegacyLowStockContactId, itemMajorGroupId, itemSubGroupId, itemSummaryCodeId) {
 
 
     this['orderNo'] = orderNo;
@@ -59,12 +59,12 @@
 
 
 
-    this['accountCode'] = accountCode;
-    this['lowStockContact'] = lowStockContact;
-    this['majorGroup'] = majorGroup;
-    this['subGroup'] = subGroup;
+    this['itemAccountCodeId'] = itemAccountCodeId;
+    this['itemLegacyLowStockContactId'] = itemLegacyLowStockContactId;
+    this['itemMajorGroupId'] = itemMajorGroupId;
+    this['itemSubGroupId'] = itemSubGroupId;
 
-    this['summaryCode'] = summaryCode;
+    this['itemSummaryCodeId'] = itemSummaryCodeId;
   };
 
   /**
@@ -147,23 +147,23 @@
       if (data.hasOwnProperty('sector')) {
         obj['sector'] = ApiClient.convertToType(data['sector'], 'String');
       }
-      if (data.hasOwnProperty('accountCode')) {
-        obj['accountCode'] = ApiClient.convertToType(data['accountCode'], 'String');
+      if (data.hasOwnProperty('itemAccountCodeId')) {
+        obj['itemAccountCodeId'] = ApiClient.convertToType(data['itemAccountCodeId'], 'Integer');
       }
-      if (data.hasOwnProperty('lowStockContact')) {
-        obj['lowStockContact'] = ApiClient.convertToType(data['lowStockContact'], 'String');
+      if (data.hasOwnProperty('itemLegacyLowStockContactId')) {
+        obj['itemLegacyLowStockContactId'] = ApiClient.convertToType(data['itemLegacyLowStockContactId'], 'Integer');
       }
-      if (data.hasOwnProperty('majorGroup')) {
-        obj['majorGroup'] = ApiClient.convertToType(data['majorGroup'], 'String');
+      if (data.hasOwnProperty('itemMajorGroupId')) {
+        obj['itemMajorGroupId'] = ApiClient.convertToType(data['itemMajorGroupId'], 'Integer');
       }
-      if (data.hasOwnProperty('subGroup')) {
-        obj['subGroup'] = ApiClient.convertToType(data['subGroup'], 'String');
+      if (data.hasOwnProperty('itemSubGroupId')) {
+        obj['itemSubGroupId'] = ApiClient.convertToType(data['itemSubGroupId'], 'Integer');
       }
-      if (data.hasOwnProperty('productionCode')) {
-        obj['productionCode'] = ApiClient.convertToType(data['productionCode'], 'String');
+      if (data.hasOwnProperty('itemProductCodeId')) {
+        obj['itemProductCodeId'] = ApiClient.convertToType(data['itemProductCodeId'], 'Integer');
       }
-      if (data.hasOwnProperty('summaryCode')) {
-        obj['summaryCode'] = ApiClient.convertToType(data['summaryCode'], 'String');
+      if (data.hasOwnProperty('itemSummaryCodeId')) {
+        obj['itemSummaryCodeId'] = ApiClient.convertToType(data['itemSummaryCodeId'], 'Integer');
       }
     }
     return obj;
@@ -286,34 +286,34 @@
   exports.prototype['sector'] = undefined;
 
   /**
-   * @member {String} accountCode
+   * @member {Integer} itemAccountCodeId
    */
-  exports.prototype['accountCode'] = undefined;
+  exports.prototype['itemAccountCodeId'] = undefined;
 
   /**
-   * @member {String} lowStockContact
+   * @member {Integer} itemLegacyLowStockContactId
    */
-  exports.prototype['lowStockContact'] = undefined;
+  exports.prototype['itemLegacyLowStockContactId'] = undefined;
 
   /**
-   * @member {String} majorGroup
+   * @member {Integer} itemMajorGroupId
    */
-  exports.prototype['majorGroup'] = undefined;
+  exports.prototype['itemMajorGroupId'] = undefined;
 
   /**
-   * @member {String} subGroup
+   * @member {Integer} itemSubGroupId
    */
-  exports.prototype['subGroup'] = undefined;
+  exports.prototype['itemSubGroupId'] = undefined;
 
   /**
-   * @member {String} productionCode
+   * @member {Integer} itemProductCodeId
    */
-  exports.prototype['productionCode'] = undefined;
+  exports.prototype['itemProductCodeId'] = undefined;
 
   /**
-   * @member {String} summaryCode
+   * @member {Integer} itemSummaryCodeId
    */
-  exports.prototype['summaryCode'] = undefined;
+  exports.prototype['itemSummaryCodeId'] = undefined;
 
 
 

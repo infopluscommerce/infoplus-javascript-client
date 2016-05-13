@@ -123,6 +123,59 @@
     }
 
     /**
+     * Callback function to receive the result of the getByCustomerNo operation.
+     * @callback module:api/CustomerApi~getByCustomerNoCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Customer} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a customer by Customer No
+     * Returns the customer identified by the specified parameters.
+     * @param {Integer} lobId lobId of the customer to be returned.
+     * @param {String} customerNo customerNo of the customer to be returned.
+     * @param {module:api/CustomerApi~getByCustomerNoCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Customer}
+     */
+    this.getByCustomerNo = function(lobId, customerNo, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'lobId' is set
+      if (lobId == undefined || lobId == null) {
+        throw "Missing the required parameter 'lobId' when calling getByCustomerNo";
+      }
+
+      // verify the required parameter 'customerNo' is set
+      if (customerNo == undefined || customerNo == null) {
+        throw "Missing the required parameter 'customerNo' when calling getByCustomerNo";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'lobId': lobId,
+        'customerNo': customerNo
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Customer;
+
+      return this.apiClient.callApi(
+        '/v1.0/customer/getByCustomerNo', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getCustomerByFilter operation.
      * @callback module:api/CustomerApi~getCustomerByFilterCallback
      * @param {String} error Error message, if any.
@@ -212,59 +265,6 @@
 
       return this.apiClient.callApi(
         '/v1.0/customer/{customerId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getCustomerBygetByCustomerNo operation.
-     * @callback module:api/CustomerApi~getCustomerBygetByCustomerNoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Customer} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get a customer by Customer No
-     * Returns the customer identified by the specified parameters.
-     * @param {Integer} lobId lobId of the customer to be returned.
-     * @param {String} customerNo customerNo of the customer to be returned.
-     * @param {module:api/CustomerApi~getCustomerBygetByCustomerNoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/Customer}
-     */
-    this.getCustomerBygetByCustomerNo = function(lobId, customerNo, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'lobId' is set
-      if (lobId == undefined || lobId == null) {
-        throw "Missing the required parameter 'lobId' when calling getCustomerBygetByCustomerNo";
-      }
-
-      // verify the required parameter 'customerNo' is set
-      if (customerNo == undefined || customerNo == null) {
-        throw "Missing the required parameter 'customerNo' when calling getCustomerBygetByCustomerNo";
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'lobId': lobId,
-        'customerNo': customerNo
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Customer;
-
-      return this.apiClient.callApi(
-        '/v1.0/customer/getByCustomerNo', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

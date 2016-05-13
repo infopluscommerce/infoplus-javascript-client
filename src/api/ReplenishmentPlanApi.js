@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ReplenishmentPlan', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/ReplenishmentPlan'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ReplenishmentPlan'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ReplenishmentPlan'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ReplenishmentPlanApi = factory(root.infoplus.ApiClient, root.infoplus.ReplenishmentPlan, root.infoplus.ApiResponse);
+    root.infoplus.ReplenishmentPlanApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ReplenishmentPlan);
   }
-}(this, function(ApiClient, ReplenishmentPlan, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, ReplenishmentPlan) {
   'use strict';
 
   /**

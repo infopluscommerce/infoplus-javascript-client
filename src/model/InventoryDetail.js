@@ -40,6 +40,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       }
       if (data.hasOwnProperty('productionLot')) {
         obj['productionLot'] = ApiClient.convertToType(data['productionLot'], 'String');
+      }
+      if (data.hasOwnProperty('oldestReceiptDate')) {
+        obj['oldestReceiptDate'] = ApiClient.convertToType(data['oldestReceiptDate'], 'Date');
       }
       if (data.hasOwnProperty('lobId')) {
         obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
@@ -130,6 +134,11 @@
    * @member {String} productionLot
    */
   exports.prototype['productionLot'] = undefined;
+
+  /**
+   * @member {Date} oldestReceiptDate
+   */
+  exports.prototype['oldestReceiptDate'] = undefined;
 
   /**
    * @member {Integer} lobId

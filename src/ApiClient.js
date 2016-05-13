@@ -31,9 +31,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api/v1.0
+     * @default https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api
      */
-    this.basePath = 'https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api/v1.0'.replace(/\/+$/, '');
+    this.basePath = 'https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

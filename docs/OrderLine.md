@@ -26,11 +26,11 @@ Name | Type | Description | Notes
 **itemWeight** | **Number** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
 **sector** | **String** |  | [optional] 
-**accountCode** | **String** |  | 
-**lowStockContact** | **String** |  | 
-**majorGroup** | **String** |  | 
-**subGroup** | **String** |  | 
-**productionCode** | **String** |  | [optional] 
-**summaryCode** | **String** |  | 
+**itemAccountCodeId** | **Integer** |  | 
+**itemLegacyLowStockContactId** | **Integer** |  | 
+**itemMajorGroupId** | **Integer** |  | 
+**itemSubGroupId** | **Integer** |  | 
+**itemProductCodeId** | **Integer** |  | [optional] 
+**itemSummaryCodeId** | **Integer** |  | 
 
 

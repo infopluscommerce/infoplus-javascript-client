@@ -4,15 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
-**accountCode** | **String** |  | [optional] 
+**accountCodeId** | **Integer** |  | [optional] 
 **lowStockContactId** | **Integer** |  | [optional] 
-**legacyLowStockContact** | **String** |  | [optional] 
-**lowStockCode** | **String** |  | [optional] 
-**majorGroup** | **String** |  | 
-**subGroup** | **String** |  | 
-**productionCode** | **String** |  | [optional] 
-**summaryCode** | **String** |  | [optional] 
-**buyer** | **String** |  | [optional] 
+**legacyLowLevelContactId** | **Integer** |  | [optional] 
+**lowStockCodeId** | **Integer** |  | [optional] 
+**majorGroupId** | **Integer** |  | 
+**subGroupId** | **Integer** |  | 
+**productCodeId** | **Integer** |  | [optional] 
+**summaryCodeId** | **Integer** |  | [optional] 
+**buyerId** | **Integer** |  | [optional] 
 **lobId** | **Integer** |  | 
 **sku** | **String** |  | 
 **vendorSKU** | **String** |  | [optional] 

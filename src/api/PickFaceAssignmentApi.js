@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/PickFaceAssignment', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/PickFaceAssignment'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PickFaceAssignment'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/PickFaceAssignment'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.PickFaceAssignmentApi = factory(root.infoplus.ApiClient, root.infoplus.PickFaceAssignment, root.infoplus.ApiResponse);
+    root.infoplus.PickFaceAssignmentApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.PickFaceAssignment);
   }
-}(this, function(ApiClient, PickFaceAssignment, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, PickFaceAssignment) {
   'use strict';
 
   /**

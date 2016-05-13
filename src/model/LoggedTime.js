@@ -29,10 +29,10 @@
    * @param client
    * @param userId
    * @param warehouseId
-   * @param loggedTimeType
+   * @param loggedTimeTypeId
    * @param appId
    */
-  var exports = function(duration, client, userId, warehouseId, loggedTimeType, appId) {
+  var exports = function(duration, client, userId, warehouseId, loggedTimeTypeId, appId) {
 
 
 
@@ -45,7 +45,7 @@
     this['userId'] = userId;
 
     this['warehouseId'] = warehouseId;
-    this['loggedTimeType'] = loggedTimeType;
+    this['loggedTimeTypeId'] = loggedTimeTypeId;
     this['appId'] = appId;
   };
 
@@ -93,8 +93,8 @@
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Integer');
       }
-      if (data.hasOwnProperty('loggedTimeType')) {
-        obj['loggedTimeType'] = ApiClient.convertToType(data['loggedTimeType'], 'String');
+      if (data.hasOwnProperty('loggedTimeTypeId')) {
+        obj['loggedTimeTypeId'] = ApiClient.convertToType(data['loggedTimeTypeId'], 'Integer');
       }
       if (data.hasOwnProperty('appId')) {
         obj['appId'] = ApiClient.convertToType(data['appId'], 'Integer');
@@ -160,9 +160,9 @@
   exports.prototype['warehouseId'] = undefined;
 
   /**
-   * @member {String} loggedTimeType
+   * @member {Integer} loggedTimeTypeId
    */
-  exports.prototype['loggedTimeType'] = undefined;
+  exports.prototype['loggedTimeTypeId'] = undefined;
 
   /**
    * @member {Integer} appId

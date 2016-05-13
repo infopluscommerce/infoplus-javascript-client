@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/OrderSourceReservation', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/OrderSourceReservation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/OrderSourceReservation'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/OrderSourceReservation'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderSourceReservationApi = factory(root.infoplus.ApiClient, root.infoplus.OrderSourceReservation, root.infoplus.ApiResponse);
+    root.infoplus.OrderSourceReservationApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.OrderSourceReservation);
   }
-}(this, function(ApiClient, OrderSourceReservation, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, OrderSourceReservation) {
   'use strict';
 
   /**

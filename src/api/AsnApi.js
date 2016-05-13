@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Asn', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/Asn'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Asn'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/Asn'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.AsnApi = factory(root.infoplus.ApiClient, root.infoplus.Asn, root.infoplus.ApiResponse);
+    root.infoplus.AsnApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.Asn);
   }
-}(this, function(ApiClient, Asn, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, Asn) {
   'use strict';
 
   /**

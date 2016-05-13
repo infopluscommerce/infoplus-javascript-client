@@ -28,19 +28,18 @@
    * @param lobId
    * @param warehouseId
    * @param orderDate
-   * @param customerNo
    * @param mediaCode
    * @param legacyRestrictionType
    * @param lineItems
    */
-  var exports = function(lobId, warehouseId, orderDate, customerNo, mediaCode, legacyRestrictionType, lineItems) {
+  var exports = function(lobId, warehouseId, orderDate, mediaCode, legacyRestrictionType, lineItems) {
 
 
 
     this['lobId'] = lobId;
     this['warehouseId'] = warehouseId;
     this['orderDate'] = orderDate;
-    this['customerNo'] = customerNo;
+
 
 
 

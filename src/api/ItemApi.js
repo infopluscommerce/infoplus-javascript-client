@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Item', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/Item'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Item'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/Item'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ItemApi = factory(root.infoplus.ApiClient, root.infoplus.Item, root.infoplus.ApiResponse);
+    root.infoplus.ItemApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.Item);
   }
-}(this, function(ApiClient, Item, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, Item) {
   'use strict';
 
   /**
@@ -123,6 +123,59 @@
     }
 
     /**
+     * Callback function to receive the result of the getBySKU operation.
+     * @callback module:api/ItemApi~getBySKUCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Item} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get an item by SKU
+     * Returns the item identified by the specified parameters.
+     * @param {Integer} lobId lobId of the item to be returned.
+     * @param {String} sku sku of the item to be returned.
+     * @param {module:api/ItemApi~getBySKUCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Item}
+     */
+    this.getBySKU = function(lobId, sku, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'lobId' is set
+      if (lobId == undefined || lobId == null) {
+        throw "Missing the required parameter 'lobId' when calling getBySKU";
+      }
+
+      // verify the required parameter 'sku' is set
+      if (sku == undefined || sku == null) {
+        throw "Missing the required parameter 'sku' when calling getBySKU";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'lobId': lobId,
+        'sku': sku
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Item;
+
+      return this.apiClient.callApi(
+        '/v1.0/item/getBySKU', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getItemByFilter operation.
      * @callback module:api/ItemApi~getItemByFilterCallback
      * @param {String} error Error message, if any.
@@ -212,59 +265,6 @@
 
       return this.apiClient.callApi(
         '/v1.0/item/{itemId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemBygetBySKU operation.
-     * @callback module:api/ItemApi~getItemBygetBySKUCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Item} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get an item by SKU
-     * Returns the item identified by the specified parameters.
-     * @param {Integer} lobId lobId of the item to be returned.
-     * @param {String} sku sku of the item to be returned.
-     * @param {module:api/ItemApi~getItemBygetBySKUCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:model/Item}
-     */
-    this.getItemBygetBySKU = function(lobId, sku, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'lobId' is set
-      if (lobId == undefined || lobId == null) {
-        throw "Missing the required parameter 'lobId' when calling getItemBygetBySKU";
-      }
-
-      // verify the required parameter 'sku' is set
-      if (sku == undefined || sku == null) {
-        throw "Missing the required parameter 'sku' when calling getItemBygetBySKU";
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'lobId': lobId,
-        'sku': sku
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Item;
-
-      return this.apiClient.callApi(
-        '/v1.0/item/getBySKU', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

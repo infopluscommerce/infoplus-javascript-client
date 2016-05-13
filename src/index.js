@@ -1,12 +1,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['./ApiClient', './model/Aisle', './model/Alert', './model/ApiResponse', './model/Asn', './model/BillOfLading', './model/BillOfLadingCarrierInfoLine', './model/BillOfLadingOrderInfoLine', './model/BillingCode', './model/BillingCodeType', './model/Building', './model/BusinessTransaction', './model/Carrier', './model/CarrierService', './model/Carton', './model/CartonContent', './model/CartonType', './model/Customer', './model/EmailTemplate', './model/ExternalShipment', './model/FulfillmentPlan', './model/FulfillmentProcess', './model/IntegrationPartner', './model/InventoryAdjustment', './model/InventoryDetail', './model/Item', './model/ItemReceipt', './model/JobTime', './model/JobType', './model/LineOfBusiness', './model/Location', './model/LocationAddressScheme', './model/LocationBillingType', './model/LocationFootprint', './model/LoggedTime', './model/LowStock', './model/Order', './model/OrderLine', './model/OrderLoadProgram', './model/OrderSource', './model/OrderSourceReservation', './model/OverrideReturnAddress', './model/ParcelAccount', './model/ParcelShipment', './model/PickFaceAssignment', './model/ProductType', './model/ProductionLot', './model/QuickAdjustment', './model/QuickReceipt', './model/ReceivingProcess', './model/ReceivingWorksheet', './model/ReceivingWorksheetLineItem', './model/ReceivingWorksheetPutAwayPlan', './model/Replenishment', './model/ReplenishmentPlan', './model/ReplenishmentProcess', './model/ServiceType', './model/ShoppingCartConnection', './model/ThirdPartyParcelAccount', './model/User', './model/Vendor', './model/VendorComplianceSurvey', './model/Warehouse', './model/WarehouseDocument', './model/WarehouseDocumentType', './model/Work', './model/WorkBatch', './model/Zone', './api/AisleApi', './api/AlertApi', './api/AsnApi', './api/BillOfLadingApi', './api/BillingCodeApi', './api/BillingCodeTypeApi', './api/BuildingApi', './api/BusinessTransactionApi', './api/CarrierApi', './api/CarrierServiceApi', './api/CartonApi', './api/CartonContentApi', './api/CartonTypeApi', './api/CustomerApi', './api/EmailTemplateApi', './api/ExternalShipmentApi', './api/FulfillmentPlanApi', './api/FulfillmentProcessApi', './api/IntegrationPartnerApi', './api/InventoryAdjustmentApi', './api/InventoryDetailApi', './api/ItemApi', './api/ItemReceiptApi', './api/JobTimeApi', './api/JobTypeApi', './api/LineOfBusinessApi', './api/LocationApi', './api/LocationAddressSchemeApi', './api/LocationBillingTypeApi', './api/LocationFootprintApi', './api/LoggedTimeApi', './api/LowStockApi', './api/OrderApi', './api/OrderLineApi', './api/OrderLoadProgramApi', './api/OrderSourceApi', './api/OrderSourceReservationApi', './api/OverrideReturnAddressApi', './api/ParcelAccountApi', './api/ParcelShipmentApi', './api/PickFaceAssignmentApi', './api/ProductTypeApi', './api/ProductionLotApi', './api/QuickAdjustmentApi', './api/QuickReceiptApi', './api/ReceivingProcessApi', './api/ReceivingWorksheetApi', './api/ReplenishmentApi', './api/ReplenishmentPlanApi', './api/ReplenishmentProcessApi', './api/ServiceTypeApi', './api/ShoppingCartConnectionApi', './api/ThirdPartyParcelAccountApi', './api/UserApi', './api/VendorApi', './api/VendorComplianceSurveyApi', './api/WarehouseApi', './api/WarehouseDocumentApi', './api/WarehouseDocumentTypeApi', './api/WorkApi', './api/WorkBatchApi', './api/ZoneApi'], factory);
+    define(['./ApiClient', './model/Aisle', './model/Alert', './model/ApiResponse', './model/Asn', './model/BillOfLading', './model/BillOfLadingCarrierInfoLine', './model/BillOfLadingOrderInfoLine', './model/BillingCode', './model/BillingCodeType', './model/Building', './model/BusinessTransaction', './model/Carrier', './model/CarrierService', './model/Carton', './model/CartonContent', './model/CartonType', './model/Customer', './model/EmailTemplate', './model/ExternalShipment', './model/FulfillmentPlan', './model/FulfillmentProcess', './model/IntegrationPartner', './model/InventoryAdjustment', './model/InventoryDetail', './model/Item', './model/ItemAccountCode', './model/ItemBuyer', './model/ItemLegacyLowStockContact', './model/ItemLowStockCode', './model/ItemMajorGroup', './model/ItemProductCode', './model/ItemReceipt', './model/ItemSubGroup', './model/ItemSummaryCode', './model/JobTime', './model/JobType', './model/LineOfBusiness', './model/Location', './model/LocationAddressScheme', './model/LocationBillingType', './model/LocationFootprint', './model/LoggedTime', './model/LoggedTimeType', './model/LowStock', './model/Order', './model/OrderLine', './model/OrderLoadProgram', './model/OrderSource', './model/OrderSourceReservation', './model/OverrideReturnAddress', './model/ParcelAccount', './model/ParcelShipment', './model/PickFaceAssignment', './model/ProductType', './model/ProductionLot', './model/QuickAdjustment', './model/QuickReceipt', './model/ReceivingProcess', './model/ReceivingWorksheet', './model/ReceivingWorksheetLineItem', './model/ReceivingWorksheetPutAwayPlan', './model/Replenishment', './model/ReplenishmentPlan', './model/ReplenishmentProcess', './model/ServiceType', './model/ShoppingCartConnection', './model/ThirdPartyParcelAccount', './model/User', './model/Vendor', './model/VendorComplianceSurvey', './model/Warehouse', './model/WarehouseDocument', './model/WarehouseDocumentType', './model/Work', './model/WorkBatch', './model/Zone', './api/AisleApi', './api/AlertApi', './api/AsnApi', './api/BillOfLadingApi', './api/BillingCodeApi', './api/BillingCodeTypeApi', './api/BuildingApi', './api/BusinessTransactionApi', './api/CarrierApi', './api/CarrierServiceApi', './api/CartonApi', './api/CartonContentApi', './api/CartonTypeApi', './api/CustomerApi', './api/EmailTemplateApi', './api/ExternalShipmentApi', './api/FulfillmentPlanApi', './api/FulfillmentProcessApi', './api/IntegrationPartnerApi', './api/InventoryAdjustmentApi', './api/InventoryDetailApi', './api/ItemApi', './api/ItemAccountCodeApi', './api/ItemBuyerApi', './api/ItemLegacyLowStockContactApi', './api/ItemLowStockCodeApi', './api/ItemMajorGroupApi', './api/ItemProductCodeApi', './api/ItemReceiptApi', './api/ItemSubGroupApi', './api/ItemSummaryCodeApi', './api/JobTimeApi', './api/JobTypeApi', './api/LineOfBusinessApi', './api/LocationApi', './api/LocationAddressSchemeApi', './api/LocationBillingTypeApi', './api/LocationFootprintApi', './api/LoggedTimeApi', './api/LoggedTimeTypeApi', './api/LowStockApi', './api/OrderApi', './api/OrderLineApi', './api/OrderLoadProgramApi', './api/OrderSourceApi', './api/OrderSourceReservationApi', './api/OverrideReturnAddressApi', './api/ParcelAccountApi', './api/ParcelShipmentApi', './api/PickFaceAssignmentApi', './api/ProductTypeApi', './api/ProductionLotApi', './api/QuickAdjustmentApi', './api/QuickReceiptApi', './api/ReceivingProcessApi', './api/ReceivingWorksheetApi', './api/ReplenishmentApi', './api/ReplenishmentPlanApi', './api/ReplenishmentProcessApi', './api/ServiceTypeApi', './api/ShoppingCartConnectionApi', './api/ThirdPartyParcelAccountApi', './api/UserApi', './api/VendorApi', './api/VendorComplianceSurveyApi', './api/WarehouseApi', './api/WarehouseDocumentApi', './api/WarehouseDocumentTypeApi', './api/WorkApi', './api/WorkBatchApi', './api/ZoneApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Aisle'), require('./model/Alert'), require('./model/ApiResponse'), require('./model/Asn'), require('./model/BillOfLading'), require('./model/BillOfLadingCarrierInfoLine'), require('./model/BillOfLadingOrderInfoLine'), require('./model/BillingCode'), require('./model/BillingCodeType'), require('./model/Building'), require('./model/BusinessTransaction'), require('./model/Carrier'), require('./model/CarrierService'), require('./model/Carton'), require('./model/CartonContent'), require('./model/CartonType'), require('./model/Customer'), require('./model/EmailTemplate'), require('./model/ExternalShipment'), require('./model/FulfillmentPlan'), require('./model/FulfillmentProcess'), require('./model/IntegrationPartner'), require('./model/InventoryAdjustment'), require('./model/InventoryDetail'), require('./model/Item'), require('./model/ItemReceipt'), require('./model/JobTime'), require('./model/JobType'), require('./model/LineOfBusiness'), require('./model/Location'), require('./model/LocationAddressScheme'), require('./model/LocationBillingType'), require('./model/LocationFootprint'), require('./model/LoggedTime'), require('./model/LowStock'), require('./model/Order'), require('./model/OrderLine'), require('./model/OrderLoadProgram'), require('./model/OrderSource'), require('./model/OrderSourceReservation'), require('./model/OverrideReturnAddress'), require('./model/ParcelAccount'), require('./model/ParcelShipment'), require('./model/PickFaceAssignment'), require('./model/ProductType'), require('./model/ProductionLot'), require('./model/QuickAdjustment'), require('./model/QuickReceipt'), require('./model/ReceivingProcess'), require('./model/ReceivingWorksheet'), require('./model/ReceivingWorksheetLineItem'), require('./model/ReceivingWorksheetPutAwayPlan'), require('./model/Replenishment'), require('./model/ReplenishmentPlan'), require('./model/ReplenishmentProcess'), require('./model/ServiceType'), require('./model/ShoppingCartConnection'), require('./model/ThirdPartyParcelAccount'), require('./model/User'), require('./model/Vendor'), require('./model/VendorComplianceSurvey'), require('./model/Warehouse'), require('./model/WarehouseDocument'), require('./model/WarehouseDocumentType'), require('./model/Work'), require('./model/WorkBatch'), require('./model/Zone'), require('./api/AisleApi'), require('./api/AlertApi'), require('./api/AsnApi'), require('./api/BillOfLadingApi'), require('./api/BillingCodeApi'), require('./api/BillingCodeTypeApi'), require('./api/BuildingApi'), require('./api/BusinessTransactionApi'), require('./api/CarrierApi'), require('./api/CarrierServiceApi'), require('./api/CartonApi'), require('./api/CartonContentApi'), require('./api/CartonTypeApi'), require('./api/CustomerApi'), require('./api/EmailTemplateApi'), require('./api/ExternalShipmentApi'), require('./api/FulfillmentPlanApi'), require('./api/FulfillmentProcessApi'), require('./api/IntegrationPartnerApi'), require('./api/InventoryAdjustmentApi'), require('./api/InventoryDetailApi'), require('./api/ItemApi'), require('./api/ItemReceiptApi'), require('./api/JobTimeApi'), require('./api/JobTypeApi'), require('./api/LineOfBusinessApi'), require('./api/LocationApi'), require('./api/LocationAddressSchemeApi'), require('./api/LocationBillingTypeApi'), require('./api/LocationFootprintApi'), require('./api/LoggedTimeApi'), require('./api/LowStockApi'), require('./api/OrderApi'), require('./api/OrderLineApi'), require('./api/OrderLoadProgramApi'), require('./api/OrderSourceApi'), require('./api/OrderSourceReservationApi'), require('./api/OverrideReturnAddressApi'), require('./api/ParcelAccountApi'), require('./api/ParcelShipmentApi'), require('./api/PickFaceAssignmentApi'), require('./api/ProductTypeApi'), require('./api/ProductionLotApi'), require('./api/QuickAdjustmentApi'), require('./api/QuickReceiptApi'), require('./api/ReceivingProcessApi'), require('./api/ReceivingWorksheetApi'), require('./api/ReplenishmentApi'), require('./api/ReplenishmentPlanApi'), require('./api/ReplenishmentProcessApi'), require('./api/ServiceTypeApi'), require('./api/ShoppingCartConnectionApi'), require('./api/ThirdPartyParcelAccountApi'), require('./api/UserApi'), require('./api/VendorApi'), require('./api/VendorComplianceSurveyApi'), require('./api/WarehouseApi'), require('./api/WarehouseDocumentApi'), require('./api/WarehouseDocumentTypeApi'), require('./api/WorkApi'), require('./api/WorkBatchApi'), require('./api/ZoneApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Aisle'), require('./model/Alert'), require('./model/ApiResponse'), require('./model/Asn'), require('./model/BillOfLading'), require('./model/BillOfLadingCarrierInfoLine'), require('./model/BillOfLadingOrderInfoLine'), require('./model/BillingCode'), require('./model/BillingCodeType'), require('./model/Building'), require('./model/BusinessTransaction'), require('./model/Carrier'), require('./model/CarrierService'), require('./model/Carton'), require('./model/CartonContent'), require('./model/CartonType'), require('./model/Customer'), require('./model/EmailTemplate'), require('./model/ExternalShipment'), require('./model/FulfillmentPlan'), require('./model/FulfillmentProcess'), require('./model/IntegrationPartner'), require('./model/InventoryAdjustment'), require('./model/InventoryDetail'), require('./model/Item'), require('./model/ItemAccountCode'), require('./model/ItemBuyer'), require('./model/ItemLegacyLowStockContact'), require('./model/ItemLowStockCode'), require('./model/ItemMajorGroup'), require('./model/ItemProductCode'), require('./model/ItemReceipt'), require('./model/ItemSubGroup'), require('./model/ItemSummaryCode'), require('./model/JobTime'), require('./model/JobType'), require('./model/LineOfBusiness'), require('./model/Location'), require('./model/LocationAddressScheme'), require('./model/LocationBillingType'), require('./model/LocationFootprint'), require('./model/LoggedTime'), require('./model/LoggedTimeType'), require('./model/LowStock'), require('./model/Order'), require('./model/OrderLine'), require('./model/OrderLoadProgram'), require('./model/OrderSource'), require('./model/OrderSourceReservation'), require('./model/OverrideReturnAddress'), require('./model/ParcelAccount'), require('./model/ParcelShipment'), require('./model/PickFaceAssignment'), require('./model/ProductType'), require('./model/ProductionLot'), require('./model/QuickAdjustment'), require('./model/QuickReceipt'), require('./model/ReceivingProcess'), require('./model/ReceivingWorksheet'), require('./model/ReceivingWorksheetLineItem'), require('./model/ReceivingWorksheetPutAwayPlan'), require('./model/Replenishment'), require('./model/ReplenishmentPlan'), require('./model/ReplenishmentProcess'), require('./model/ServiceType'), require('./model/ShoppingCartConnection'), require('./model/ThirdPartyParcelAccount'), require('./model/User'), require('./model/Vendor'), require('./model/VendorComplianceSurvey'), require('./model/Warehouse'), require('./model/WarehouseDocument'), require('./model/WarehouseDocumentType'), require('./model/Work'), require('./model/WorkBatch'), require('./model/Zone'), require('./api/AisleApi'), require('./api/AlertApi'), require('./api/AsnApi'), require('./api/BillOfLadingApi'), require('./api/BillingCodeApi'), require('./api/BillingCodeTypeApi'), require('./api/BuildingApi'), require('./api/BusinessTransactionApi'), require('./api/CarrierApi'), require('./api/CarrierServiceApi'), require('./api/CartonApi'), require('./api/CartonContentApi'), require('./api/CartonTypeApi'), require('./api/CustomerApi'), require('./api/EmailTemplateApi'), require('./api/ExternalShipmentApi'), require('./api/FulfillmentPlanApi'), require('./api/FulfillmentProcessApi'), require('./api/IntegrationPartnerApi'), require('./api/InventoryAdjustmentApi'), require('./api/InventoryDetailApi'), require('./api/ItemApi'), require('./api/ItemAccountCodeApi'), require('./api/ItemBuyerApi'), require('./api/ItemLegacyLowStockContactApi'), require('./api/ItemLowStockCodeApi'), require('./api/ItemMajorGroupApi'), require('./api/ItemProductCodeApi'), require('./api/ItemReceiptApi'), require('./api/ItemSubGroupApi'), require('./api/ItemSummaryCodeApi'), require('./api/JobTimeApi'), require('./api/JobTypeApi'), require('./api/LineOfBusinessApi'), require('./api/LocationApi'), require('./api/LocationAddressSchemeApi'), require('./api/LocationBillingTypeApi'), require('./api/LocationFootprintApi'), require('./api/LoggedTimeApi'), require('./api/LoggedTimeTypeApi'), require('./api/LowStockApi'), require('./api/OrderApi'), require('./api/OrderLineApi'), require('./api/OrderLoadProgramApi'), require('./api/OrderSourceApi'), require('./api/OrderSourceReservationApi'), require('./api/OverrideReturnAddressApi'), require('./api/ParcelAccountApi'), require('./api/ParcelShipmentApi'), require('./api/PickFaceAssignmentApi'), require('./api/ProductTypeApi'), require('./api/ProductionLotApi'), require('./api/QuickAdjustmentApi'), require('./api/QuickReceiptApi'), require('./api/ReceivingProcessApi'), require('./api/ReceivingWorksheetApi'), require('./api/ReplenishmentApi'), require('./api/ReplenishmentPlanApi'), require('./api/ReplenishmentProcessApi'), require('./api/ServiceTypeApi'), require('./api/ShoppingCartConnectionApi'), require('./api/ThirdPartyParcelAccountApi'), require('./api/UserApi'), require('./api/VendorApi'), require('./api/VendorComplianceSurveyApi'), require('./api/WarehouseApi'), require('./api/WarehouseDocumentApi'), require('./api/WarehouseDocumentTypeApi'), require('./api/WorkApi'), require('./api/WorkBatchApi'), require('./api/ZoneApi'));
   }
-}(function(ApiClient, Aisle, Alert, ApiResponse, Asn, BillOfLading, BillOfLadingCarrierInfoLine, BillOfLadingOrderInfoLine, BillingCode, BillingCodeType, Building, BusinessTransaction, Carrier, CarrierService, Carton, CartonContent, CartonType, Customer, EmailTemplate, ExternalShipment, FulfillmentPlan, FulfillmentProcess, IntegrationPartner, InventoryAdjustment, InventoryDetail, Item, ItemReceipt, JobTime, JobType, LineOfBusiness, Location, LocationAddressScheme, LocationBillingType, LocationFootprint, LoggedTime, LowStock, Order, OrderLine, OrderLoadProgram, OrderSource, OrderSourceReservation, OverrideReturnAddress, ParcelAccount, ParcelShipment, PickFaceAssignment, ProductType, ProductionLot, QuickAdjustment, QuickReceipt, ReceivingProcess, ReceivingWorksheet, ReceivingWorksheetLineItem, ReceivingWorksheetPutAwayPlan, Replenishment, ReplenishmentPlan, ReplenishmentProcess, ServiceType, ShoppingCartConnection, ThirdPartyParcelAccount, User, Vendor, VendorComplianceSurvey, Warehouse, WarehouseDocument, WarehouseDocumentType, Work, WorkBatch, Zone, AisleApi, AlertApi, AsnApi, BillOfLadingApi, BillingCodeApi, BillingCodeTypeApi, BuildingApi, BusinessTransactionApi, CarrierApi, CarrierServiceApi, CartonApi, CartonContentApi, CartonTypeApi, CustomerApi, EmailTemplateApi, ExternalShipmentApi, FulfillmentPlanApi, FulfillmentProcessApi, IntegrationPartnerApi, InventoryAdjustmentApi, InventoryDetailApi, ItemApi, ItemReceiptApi, JobTimeApi, JobTypeApi, LineOfBusinessApi, LocationApi, LocationAddressSchemeApi, LocationBillingTypeApi, LocationFootprintApi, LoggedTimeApi, LowStockApi, OrderApi, OrderLineApi, OrderLoadProgramApi, OrderSourceApi, OrderSourceReservationApi, OverrideReturnAddressApi, ParcelAccountApi, ParcelShipmentApi, PickFaceAssignmentApi, ProductTypeApi, ProductionLotApi, QuickAdjustmentApi, QuickReceiptApi, ReceivingProcessApi, ReceivingWorksheetApi, ReplenishmentApi, ReplenishmentPlanApi, ReplenishmentProcessApi, ServiceTypeApi, ShoppingCartConnectionApi, ThirdPartyParcelAccountApi, UserApi, VendorApi, VendorComplianceSurveyApi, WarehouseApi, WarehouseDocumentApi, WarehouseDocumentTypeApi, WorkApi, WorkBatchApi, ZoneApi) {
+}(function(ApiClient, Aisle, Alert, ApiResponse, Asn, BillOfLading, BillOfLadingCarrierInfoLine, BillOfLadingOrderInfoLine, BillingCode, BillingCodeType, Building, BusinessTransaction, Carrier, CarrierService, Carton, CartonContent, CartonType, Customer, EmailTemplate, ExternalShipment, FulfillmentPlan, FulfillmentProcess, IntegrationPartner, InventoryAdjustment, InventoryDetail, Item, ItemAccountCode, ItemBuyer, ItemLegacyLowStockContact, ItemLowStockCode, ItemMajorGroup, ItemProductCode, ItemReceipt, ItemSubGroup, ItemSummaryCode, JobTime, JobType, LineOfBusiness, Location, LocationAddressScheme, LocationBillingType, LocationFootprint, LoggedTime, LoggedTimeType, LowStock, Order, OrderLine, OrderLoadProgram, OrderSource, OrderSourceReservation, OverrideReturnAddress, ParcelAccount, ParcelShipment, PickFaceAssignment, ProductType, ProductionLot, QuickAdjustment, QuickReceipt, ReceivingProcess, ReceivingWorksheet, ReceivingWorksheetLineItem, ReceivingWorksheetPutAwayPlan, Replenishment, ReplenishmentPlan, ReplenishmentProcess, ServiceType, ShoppingCartConnection, ThirdPartyParcelAccount, User, Vendor, VendorComplianceSurvey, Warehouse, WarehouseDocument, WarehouseDocumentType, Work, WorkBatch, Zone, AisleApi, AlertApi, AsnApi, BillOfLadingApi, BillingCodeApi, BillingCodeTypeApi, BuildingApi, BusinessTransactionApi, CarrierApi, CarrierServiceApi, CartonApi, CartonContentApi, CartonTypeApi, CustomerApi, EmailTemplateApi, ExternalShipmentApi, FulfillmentPlanApi, FulfillmentProcessApi, IntegrationPartnerApi, InventoryAdjustmentApi, InventoryDetailApi, ItemApi, ItemAccountCodeApi, ItemBuyerApi, ItemLegacyLowStockContactApi, ItemLowStockCodeApi, ItemMajorGroupApi, ItemProductCodeApi, ItemReceiptApi, ItemSubGroupApi, ItemSummaryCodeApi, JobTimeApi, JobTypeApi, LineOfBusinessApi, LocationApi, LocationAddressSchemeApi, LocationBillingTypeApi, LocationFootprintApi, LoggedTimeApi, LoggedTimeTypeApi, LowStockApi, OrderApi, OrderLineApi, OrderLoadProgramApi, OrderSourceApi, OrderSourceReservationApi, OverrideReturnAddressApi, ParcelAccountApi, ParcelShipmentApi, PickFaceAssignmentApi, ProductTypeApi, ProductionLotApi, QuickAdjustmentApi, QuickReceiptApi, ReceivingProcessApi, ReceivingWorksheetApi, ReplenishmentApi, ReplenishmentPlanApi, ReplenishmentProcessApi, ServiceTypeApi, ShoppingCartConnectionApi, ThirdPartyParcelAccountApi, UserApi, VendorApi, VendorComplianceSurveyApi, WarehouseApi, WarehouseDocumentApi, WarehouseDocumentTypeApi, WorkApi, WorkBatchApi, ZoneApi) {
   'use strict';
 
   /**
@@ -172,10 +172,50 @@
      */
     Item: Item,
     /**
+     * The ItemAccountCode model constructor.
+     * @property {module:model/ItemAccountCode}
+     */
+    ItemAccountCode: ItemAccountCode,
+    /**
+     * The ItemBuyer model constructor.
+     * @property {module:model/ItemBuyer}
+     */
+    ItemBuyer: ItemBuyer,
+    /**
+     * The ItemLegacyLowStockContact model constructor.
+     * @property {module:model/ItemLegacyLowStockContact}
+     */
+    ItemLegacyLowStockContact: ItemLegacyLowStockContact,
+    /**
+     * The ItemLowStockCode model constructor.
+     * @property {module:model/ItemLowStockCode}
+     */
+    ItemLowStockCode: ItemLowStockCode,
+    /**
+     * The ItemMajorGroup model constructor.
+     * @property {module:model/ItemMajorGroup}
+     */
+    ItemMajorGroup: ItemMajorGroup,
+    /**
+     * The ItemProductCode model constructor.
+     * @property {module:model/ItemProductCode}
+     */
+    ItemProductCode: ItemProductCode,
+    /**
      * The ItemReceipt model constructor.
      * @property {module:model/ItemReceipt}
      */
     ItemReceipt: ItemReceipt,
+    /**
+     * The ItemSubGroup model constructor.
+     * @property {module:model/ItemSubGroup}
+     */
+    ItemSubGroup: ItemSubGroup,
+    /**
+     * The ItemSummaryCode model constructor.
+     * @property {module:model/ItemSummaryCode}
+     */
+    ItemSummaryCode: ItemSummaryCode,
     /**
      * The JobTime model constructor.
      * @property {module:model/JobTime}
@@ -216,6 +256,11 @@
      * @property {module:model/LoggedTime}
      */
     LoggedTime: LoggedTime,
+    /**
+     * The LoggedTimeType model constructor.
+     * @property {module:model/LoggedTimeType}
+     */
+    LoggedTimeType: LoggedTimeType,
     /**
      * The LowStock model constructor.
      * @property {module:model/LowStock}
@@ -492,10 +537,50 @@
      */
     ItemApi: ItemApi,
     /**
+     * The ItemAccountCodeApi service constructor.
+     * @property {module:api/ItemAccountCodeApi}
+     */
+    ItemAccountCodeApi: ItemAccountCodeApi,
+    /**
+     * The ItemBuyerApi service constructor.
+     * @property {module:api/ItemBuyerApi}
+     */
+    ItemBuyerApi: ItemBuyerApi,
+    /**
+     * The ItemLegacyLowStockContactApi service constructor.
+     * @property {module:api/ItemLegacyLowStockContactApi}
+     */
+    ItemLegacyLowStockContactApi: ItemLegacyLowStockContactApi,
+    /**
+     * The ItemLowStockCodeApi service constructor.
+     * @property {module:api/ItemLowStockCodeApi}
+     */
+    ItemLowStockCodeApi: ItemLowStockCodeApi,
+    /**
+     * The ItemMajorGroupApi service constructor.
+     * @property {module:api/ItemMajorGroupApi}
+     */
+    ItemMajorGroupApi: ItemMajorGroupApi,
+    /**
+     * The ItemProductCodeApi service constructor.
+     * @property {module:api/ItemProductCodeApi}
+     */
+    ItemProductCodeApi: ItemProductCodeApi,
+    /**
      * The ItemReceiptApi service constructor.
      * @property {module:api/ItemReceiptApi}
      */
     ItemReceiptApi: ItemReceiptApi,
+    /**
+     * The ItemSubGroupApi service constructor.
+     * @property {module:api/ItemSubGroupApi}
+     */
+    ItemSubGroupApi: ItemSubGroupApi,
+    /**
+     * The ItemSummaryCodeApi service constructor.
+     * @property {module:api/ItemSummaryCodeApi}
+     */
+    ItemSummaryCodeApi: ItemSummaryCodeApi,
     /**
      * The JobTimeApi service constructor.
      * @property {module:api/JobTimeApi}
@@ -536,6 +621,11 @@
      * @property {module:api/LoggedTimeApi}
      */
     LoggedTimeApi: LoggedTimeApi,
+    /**
+     * The LoggedTimeTypeApi service constructor.
+     * @property {module:api/LoggedTimeTypeApi}
+     */
+    LoggedTimeTypeApi: LoggedTimeTypeApi,
     /**
      * The LowStockApi service constructor.
      * @property {module:api/LowStockApi}

@@ -52,6 +52,7 @@
     this['status'] = status;
     this['userId'] = userId;
 
+
   };
 
   /**
@@ -103,6 +104,9 @@
       }
       if (data.hasOwnProperty('userId')) {
         obj['userId'] = ApiClient.convertToType(data['userId'], 'Integer');
+      }
+      if (data.hasOwnProperty('lobId')) {
+        obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
       if (data.hasOwnProperty('workBatchId')) {
         obj['workBatchId'] = ApiClient.convertToType(data['workBatchId'], 'Integer');
@@ -176,6 +180,11 @@
    * @member {Integer} userId
    */
   exports.prototype['userId'] = undefined;
+
+  /**
+   * @member {Integer} lobId
+   */
+  exports.prototype['lobId'] = undefined;
 
   /**
    * @member {Integer} workBatchId

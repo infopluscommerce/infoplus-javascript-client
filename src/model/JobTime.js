@@ -28,9 +28,9 @@
    * @param secondDuration
    * @param userId
    * @param lobId
-   * @param jobType
+   * @param jobTypeId
    */
-  var exports = function(secondDuration, userId, lobId, jobType) {
+  var exports = function(secondDuration, userId, lobId, jobTypeId) {
 
 
 
@@ -39,7 +39,7 @@
 
     this['userId'] = userId;
     this['lobId'] = lobId;
-    this['jobType'] = jobType;
+    this['jobTypeId'] = jobTypeId;
 
   };
 
@@ -75,8 +75,8 @@
       if (data.hasOwnProperty('lobId')) {
         obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
-      if (data.hasOwnProperty('jobType')) {
-        obj['jobType'] = ApiClient.convertToType(data['jobType'], 'String');
+      if (data.hasOwnProperty('jobTypeId')) {
+        obj['jobTypeId'] = ApiClient.convertToType(data['jobTypeId'], 'Integer');
       }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
@@ -122,9 +122,9 @@
   exports.prototype['lobId'] = undefined;
 
   /**
-   * @member {String} jobType
+   * @member {Integer} jobTypeId
    */
-  exports.prototype['jobType'] = undefined;
+  exports.prototype['jobTypeId'] = undefined;
 
   /**
    * @member {String} note

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **priorityCode** | **Integer** |  | 
 **status** | **String** |  | 
 **userId** | **Integer** |  | 
+**lobId** | **Integer** |  | [optional] 
 **workBatchId** | **Integer** |  | [optional] 
 
 

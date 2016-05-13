@@ -1,5 +1,5 @@
 {
-  "name": "infoplus-js-client",
+  "name": "infoplus-javascript-client",
   "version": "1.0",
   "description": "Infoplus API.",
   "main": "src/index.js",

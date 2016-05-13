@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **_date** | **Date** |  | [optional] 
 **userId** | **Integer** |  | 
 **lobId** | **Integer** |  | 
-**billingCodeType** | **String** |  | 
+**billingCodeTypeId** | **Integer** |  | 
 **note** | **String** |  | [optional] 
 
 

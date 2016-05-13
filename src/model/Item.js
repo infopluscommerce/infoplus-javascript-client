@@ -25,8 +25,8 @@
    * Constructs a new <code>Item</code>.
    * @alias module:model/Item
    * @class
-   * @param majorGroup
-   * @param subGroup
+   * @param majorGroupId
+   * @param subGroupId
    * @param lobId
    * @param sku
    * @param itemDescription
@@ -49,15 +49,15 @@
    * @param allocationRule
    * @param hazmat
    */
-  var exports = function(majorGroup, subGroup, lobId, sku, itemDescription, backorder, chargeCode, criticalAmount, maxCycle, maxInterim, status, seasonalItem, secure, serialCode, unitCode, unitsPerWrap, wrapCode, forwardLotMixingRule, storageLotMixingRule, forwardItemMixingRule, storageItemMixingRule, allocationRule, hazmat) {
+  var exports = function(majorGroupId, subGroupId, lobId, sku, itemDescription, backorder, chargeCode, criticalAmount, maxCycle, maxInterim, status, seasonalItem, secure, serialCode, unitCode, unitsPerWrap, wrapCode, forwardLotMixingRule, storageLotMixingRule, forwardItemMixingRule, storageItemMixingRule, allocationRule, hazmat) {
 
 
 
 
 
 
-    this['majorGroup'] = majorGroup;
-    this['subGroup'] = subGroup;
+    this['majorGroupId'] = majorGroupId;
+    this['subGroupId'] = subGroupId;
 
 
 
@@ -128,32 +128,32 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('accountCode')) {
-        obj['accountCode'] = ApiClient.convertToType(data['accountCode'], 'String');
+      if (data.hasOwnProperty('accountCodeId')) {
+        obj['accountCodeId'] = ApiClient.convertToType(data['accountCodeId'], 'Integer');
       }
       if (data.hasOwnProperty('lowStockContactId')) {
         obj['lowStockContactId'] = ApiClient.convertToType(data['lowStockContactId'], 'Integer');
       }
-      if (data.hasOwnProperty('legacyLowStockContact')) {
-        obj['legacyLowStockContact'] = ApiClient.convertToType(data['legacyLowStockContact'], 'String');
+      if (data.hasOwnProperty('legacyLowLevelContactId')) {
+        obj['legacyLowLevelContactId'] = ApiClient.convertToType(data['legacyLowLevelContactId'], 'Integer');
       }
-      if (data.hasOwnProperty('lowStockCode')) {
-        obj['lowStockCode'] = ApiClient.convertToType(data['lowStockCode'], 'String');
+      if (data.hasOwnProperty('lowStockCodeId')) {
+        obj['lowStockCodeId'] = ApiClient.convertToType(data['lowStockCodeId'], 'Integer');
       }
-      if (data.hasOwnProperty('majorGroup')) {
-        obj['majorGroup'] = ApiClient.convertToType(data['majorGroup'], 'String');
+      if (data.hasOwnProperty('majorGroupId')) {
+        obj['majorGroupId'] = ApiClient.convertToType(data['majorGroupId'], 'Integer');
       }
-      if (data.hasOwnProperty('subGroup')) {
-        obj['subGroup'] = ApiClient.convertToType(data['subGroup'], 'String');
+      if (data.hasOwnProperty('subGroupId')) {
+        obj['subGroupId'] = ApiClient.convertToType(data['subGroupId'], 'Integer');
       }
-      if (data.hasOwnProperty('productionCode')) {
-        obj['productionCode'] = ApiClient.convertToType(data['productionCode'], 'String');
+      if (data.hasOwnProperty('productCodeId')) {
+        obj['productCodeId'] = ApiClient.convertToType(data['productCodeId'], 'Integer');
       }
-      if (data.hasOwnProperty('summaryCode')) {
-        obj['summaryCode'] = ApiClient.convertToType(data['summaryCode'], 'String');
+      if (data.hasOwnProperty('summaryCodeId')) {
+        obj['summaryCodeId'] = ApiClient.convertToType(data['summaryCodeId'], 'Integer');
       }
-      if (data.hasOwnProperty('buyer')) {
-        obj['buyer'] = ApiClient.convertToType(data['buyer'], 'String');
+      if (data.hasOwnProperty('buyerId')) {
+        obj['buyerId'] = ApiClient.convertToType(data['buyerId'], 'Integer');
       }
       if (data.hasOwnProperty('lobId')) {
         obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
@@ -319,9 +319,9 @@
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {String} accountCode
+   * @member {Integer} accountCodeId
    */
-  exports.prototype['accountCode'] = undefined;
+  exports.prototype['accountCodeId'] = undefined;
 
   /**
    * @member {Integer} lowStockContactId
@@ -329,39 +329,39 @@
   exports.prototype['lowStockContactId'] = undefined;
 
   /**
-   * @member {String} legacyLowStockContact
+   * @member {Integer} legacyLowLevelContactId
    */
-  exports.prototype['legacyLowStockContact'] = undefined;
+  exports.prototype['legacyLowLevelContactId'] = undefined;
 
   /**
-   * @member {String} lowStockCode
+   * @member {Integer} lowStockCodeId
    */
-  exports.prototype['lowStockCode'] = undefined;
+  exports.prototype['lowStockCodeId'] = undefined;
 
   /**
-   * @member {String} majorGroup
+   * @member {Integer} majorGroupId
    */
-  exports.prototype['majorGroup'] = undefined;
+  exports.prototype['majorGroupId'] = undefined;
 
   /**
-   * @member {String} subGroup
+   * @member {Integer} subGroupId
    */
-  exports.prototype['subGroup'] = undefined;
+  exports.prototype['subGroupId'] = undefined;
 
   /**
-   * @member {String} productionCode
+   * @member {Integer} productCodeId
    */
-  exports.prototype['productionCode'] = undefined;
+  exports.prototype['productCodeId'] = undefined;
 
   /**
-   * @member {String} summaryCode
+   * @member {Integer} summaryCodeId
    */
-  exports.prototype['summaryCode'] = undefined;
+  exports.prototype['summaryCodeId'] = undefined;
 
   /**
-   * @member {String} buyer
+   * @member {Integer} buyerId
    */
-  exports.prototype['buyer'] = undefined;
+  exports.prototype['buyerId'] = undefined;
 
   /**
    * @member {Integer} lobId

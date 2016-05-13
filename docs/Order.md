@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **lobId** | **Integer** |  | 
 **warehouseId** | **Integer** |  | 
 **orderDate** | **Date** |  | 
-**customerNo** | **String** |  | 
+**customerNo** | **String** |  | [optional] 
 **firstShipDate** | **Date** |  | [optional] 
 **lastShipDate** | **Date** |  | [optional] 
 **deliverOnDate** | **Date** |  | [optional] 
