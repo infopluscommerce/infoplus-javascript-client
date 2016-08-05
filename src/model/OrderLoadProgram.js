@@ -18,7 +18,7 @@
   /**
    * The OrderLoadProgram model module.
    * @module model/OrderLoadProgram
-   * @version 1.0
+   * @version beta
    */
 
   /**

@@ -18,7 +18,7 @@
   /**
    * User service.
    * @module api/UserApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = User;
 
       return this.apiClient.callApi(
-        '/v1.0/user/{userId}', 'GET',
+        '/beta/user/{userId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [User];
 
       return this.apiClient.callApi(
-        '/v1.0/user/search', 'GET',
+        '/beta/user/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

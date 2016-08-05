@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **packingSlipId** | **Integer** |  | [optional] 
 **orderConfirmationEmailId** | **Integer** |  | [optional] 
 **shipmentConfirmationEmailId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

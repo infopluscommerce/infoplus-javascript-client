@@ -18,7 +18,7 @@
   /**
    * LowStock service.
    * @module api/LowStockApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [LowStock];
 
       return this.apiClient.callApi(
-        '/v1.0/lowStock/search', 'GET',
+        '/beta/lowStock/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,7 @@
       var returnType = LowStock;
 
       return this.apiClient.callApi(
-        '/v1.0/lowStock/{lowStockId}', 'GET',
+        '/beta/lowStock/{lowStockId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **isRefrigerated** | **Boolean** |  | [optional] [default to false]
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

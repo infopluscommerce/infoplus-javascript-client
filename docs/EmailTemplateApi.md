@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addEmailTemplate**](EmailTemplateApi.md#addEmailTemplate) | **POST** /v1.0/emailTemplate | Create an emailTemplate
-[**deleteEmailTemplate**](EmailTemplateApi.md#deleteEmailTemplate) | **DELETE** /v1.0/emailTemplate/{emailTemplateId} | Delete an emailTemplate
-[**getEmailTemplateByFilter**](EmailTemplateApi.md#getEmailTemplateByFilter) | **GET** /v1.0/emailTemplate/search | Search emailTemplates by filter
-[**getEmailTemplateById**](EmailTemplateApi.md#getEmailTemplateById) | **GET** /v1.0/emailTemplate/{emailTemplateId} | Get an emailTemplate by id
-[**updateEmailTemplate**](EmailTemplateApi.md#updateEmailTemplate) | **PUT** /v1.0/emailTemplate | Update an emailTemplate
+[**addEmailTemplate**](EmailTemplateApi.md#addEmailTemplate) | **POST** /beta/emailTemplate | Create an emailTemplate
+[**deleteEmailTemplate**](EmailTemplateApi.md#deleteEmailTemplate) | **DELETE** /beta/emailTemplate/{emailTemplateId} | Delete an emailTemplate
+[**getEmailTemplateByFilter**](EmailTemplateApi.md#getEmailTemplateByFilter) | **GET** /beta/emailTemplate/search | Search emailTemplates by filter
+[**getEmailTemplateById**](EmailTemplateApi.md#getEmailTemplateById) | **GET** /beta/emailTemplate/{emailTemplateId} | Get an emailTemplate by id
+[**updateEmailTemplate**](EmailTemplateApi.md#updateEmailTemplate) | **PUT** /beta/emailTemplate | Update an emailTemplate
+[**updateEmailTemplateCustomFields**](EmailTemplateApi.md#updateEmailTemplateCustomFields) | **PUT** /beta/emailTemplate/customFields | Update an emailTemplate custom fields
 
 
 <a name="addEmailTemplate"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateEmailTemplate(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EmailTemplate**](EmailTemplate.md)| EmailTemplate to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateEmailTemplateCustomFields"></a>
+# **updateEmailTemplateCustomFields**
+> updateEmailTemplateCustomFields(body)
+
+Update an emailTemplate custom fields
+
+Updates an existing emailTemplate custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var body = new infoplus.EmailTemplate(); // {EmailTemplate} EmailTemplate to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateEmailTemplateCustomFields(body, callback);
 ```
 
 ### Parameters

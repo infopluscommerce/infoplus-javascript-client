@@ -18,7 +18,7 @@
   /**
    * ItemAccountCode service.
    * @module api/ItemAccountCodeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemAccountCode];
 
       return this.apiClient.callApi(
-        '/v1.0/itemAccountCode/search', 'GET',
+        '/beta/itemAccountCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemAccountCode;
 
       return this.apiClient.callApi(
-        '/v1.0/itemAccountCode/{itemAccountCodeId}', 'GET',
+        '/beta/itemAccountCode/{itemAccountCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

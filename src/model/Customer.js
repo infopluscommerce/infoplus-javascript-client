@@ -18,7 +18,7 @@
   /**
    * The Customer model module.
    * @module model/Customer
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -77,6 +77,7 @@
 
 
     this['residential'] = residential;
+
 
 
 
@@ -243,6 +244,9 @@
       }
       if (data.hasOwnProperty('omsCustomerId')) {
         obj['omsCustomerId'] = ApiClient.convertToType(data['omsCustomerId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -488,6 +492,11 @@
    * @member {Integer} omsCustomerId
    */
   exports.prototype['omsCustomerId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

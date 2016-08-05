@@ -18,7 +18,7 @@
   /**
    * InventoryDetail service.
    * @module api/InventoryDetailApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [InventoryDetail];
 
       return this.apiClient.callApi(
-        '/v1.0/inventoryDetail/search', 'GET',
+        '/beta/inventoryDetail/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,51 @@
       var returnType = InventoryDetail;
 
       return this.apiClient.callApi(
-        '/v1.0/inventoryDetail/{inventoryDetailId}', 'GET',
+        '/beta/inventoryDetail/{inventoryDetailId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateInventoryDetailCustomFields operation.
+     * @callback module:api/InventoryDetailApi~updateInventoryDetailCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an inventoryDetail custom fields
+     * Updates an existing inventoryDetail custom fields using the specified data.
+     * @param {module:model/InventoryDetail} body InventoryDetail to be updated.
+     * @param {module:api/InventoryDetailApi~updateInventoryDetailCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateInventoryDetailCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateInventoryDetailCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/inventoryDetail/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

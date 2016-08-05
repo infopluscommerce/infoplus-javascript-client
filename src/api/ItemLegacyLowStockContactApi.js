@@ -18,7 +18,7 @@
   /**
    * ItemLegacyLowStockContact service.
    * @module api/ItemLegacyLowStockContactApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemLegacyLowStockContact];
 
       return this.apiClient.callApi(
-        '/v1.0/itemLegacyLowStockContact/search', 'GET',
+        '/beta/itemLegacyLowStockContact/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemLegacyLowStockContact;
 
       return this.apiClient.callApi(
-        '/v1.0/itemLegacyLowStockContact/{itemLegacyLowStockContactId}', 'GET',
+        '/beta/itemLegacyLowStockContact/{itemLegacyLowStockContactId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/ReplenishmentPlan'], factory);
+    define(['../ApiClient', '../model/ReplenishmentPlan', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ReplenishmentPlan'));
+    module.exports = factory(require('../ApiClient'), require('../model/ReplenishmentPlan'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ReplenishmentPlanApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ReplenishmentPlan);
+    root.infoplus.ReplenishmentPlanApi = factory(root.infoplus.ApiClient, root.infoplus.ReplenishmentPlan, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, ReplenishmentPlan) {
+}(this, function(ApiClient, ReplenishmentPlan, ApiResponse) {
   'use strict';
 
   /**
    * ReplenishmentPlan service.
    * @module api/ReplenishmentPlanApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = ReplenishmentPlan;
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentPlan', 'POST',
+        '/beta/replenishmentPlan', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentPlan/{replenishmentPlanId}', 'DELETE',
+        '/beta/replenishmentPlan/{replenishmentPlanId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [ReplenishmentPlan];
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentPlan/search', 'GET',
+        '/beta/replenishmentPlan/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = ReplenishmentPlan;
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentPlan/{replenishmentPlanId}', 'GET',
+        '/beta/replenishmentPlan/{replenishmentPlanId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentPlan', 'PUT',
+        '/beta/replenishmentPlan', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateReplenishmentPlanCustomFields operation.
+     * @callback module:api/ReplenishmentPlanApi~updateReplenishmentPlanCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a replenishmentPlan custom fields
+     * Updates an existing replenishmentPlan custom fields using the specified data.
+     * @param {module:model/ReplenishmentPlan} body ReplenishmentPlan to be updated.
+     * @param {module:api/ReplenishmentPlanApi~updateReplenishmentPlanCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateReplenishmentPlanCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateReplenishmentPlanCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/replenishmentPlan/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

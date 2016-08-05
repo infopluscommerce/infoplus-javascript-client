@@ -18,7 +18,7 @@
   /**
    * The Work model module.
    * @module model/Work
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -51,6 +51,7 @@
     this['priorityCode'] = priorityCode;
     this['status'] = status;
     this['userId'] = userId;
+
 
 
   };
@@ -110,6 +111,9 @@
       }
       if (data.hasOwnProperty('workBatchId')) {
         obj['workBatchId'] = ApiClient.convertToType(data['workBatchId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -190,6 +194,11 @@
    * @member {Integer} workBatchId
    */
   exports.prototype['workBatchId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

@@ -18,7 +18,7 @@
   /**
    * The QuickReceipt model module.
    * @module model/QuickReceipt
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -51,6 +51,9 @@
     this['wrapCode'] = wrapCode;
     this['weightPerWrap'] = weightPerWrap;
     this['unitsPerWrap'] = unitsPerWrap;
+
+
+
 
 
 
@@ -157,6 +160,15 @@
       }
       if (data.hasOwnProperty('pricingPer')) {
         obj['pricingPer'] = ApiClient.convertToType(data['pricingPer'], 'String');
+      }
+      if (data.hasOwnProperty('generatedItemReceiptId')) {
+        obj['generatedItemReceiptId'] = ApiClient.convertToType(data['generatedItemReceiptId'], 'Integer');
+      }
+      if (data.hasOwnProperty('generatedASNId')) {
+        obj['generatedASNId'] = ApiClient.convertToType(data['generatedASNId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
@@ -300,6 +312,21 @@
    * @member {String} pricingPer
    */
   exports.prototype['pricingPer'] = undefined;
+
+  /**
+   * @member {Integer} generatedItemReceiptId
+   */
+  exports.prototype['generatedItemReceiptId'] = undefined;
+
+  /**
+   * @member {Integer} generatedASNId
+   */
+  exports.prototype['generatedASNId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
   /**
    * @member {String} sku

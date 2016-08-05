@@ -18,7 +18,7 @@
   /**
    * The JobType model module.
    * @module model/JobType
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -35,6 +35,7 @@
 
 
     this['name'] = name;
+
 
 
 
@@ -74,6 +75,9 @@
       }
       if (data.hasOwnProperty('isActive')) {
         obj['isActive'] = ApiClient.convertToType(data['isActive'], 'Boolean');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -120,6 +124,11 @@
    * @default false
    */
   exports.prototype['isActive'] = false;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

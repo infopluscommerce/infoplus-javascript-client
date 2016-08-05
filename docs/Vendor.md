@@ -45,5 +45,6 @@ Name | Type | Description | Notes
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **inactive** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

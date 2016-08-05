@@ -4,8 +4,9 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getInventoryDetailByFilter**](InventoryDetailApi.md#getInventoryDetailByFilter) | **GET** /v1.0/inventoryDetail/search | Search inventoryDetails by filter
-[**getInventoryDetailById**](InventoryDetailApi.md#getInventoryDetailById) | **GET** /v1.0/inventoryDetail/{inventoryDetailId} | Get an inventoryDetail by id
+[**getInventoryDetailByFilter**](InventoryDetailApi.md#getInventoryDetailByFilter) | **GET** /beta/inventoryDetail/search | Search inventoryDetails by filter
+[**getInventoryDetailById**](InventoryDetailApi.md#getInventoryDetailById) | **GET** /beta/inventoryDetail/{inventoryDetailId} | Get an inventoryDetail by id
+[**updateInventoryDetailCustomFields**](InventoryDetailApi.md#updateInventoryDetailCustomFields) | **PUT** /beta/inventoryDetail/customFields | Update an inventoryDetail custom fields
 
 
 <a name="getInventoryDetailByFilter"></a>
@@ -119,5 +120,58 @@ Name | Type | Description  | Notes
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateInventoryDetailCustomFields"></a>
+# **updateInventoryDetailCustomFields**
+> updateInventoryDetailCustomFields(body)
+
+Update an inventoryDetail custom fields
+
+Updates an existing inventoryDetail custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.InventoryDetailApi()
+
+var body = new infoplus.InventoryDetail(); // {InventoryDetail} InventoryDetail to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateInventoryDetailCustomFields(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**InventoryDetail**](InventoryDetail.md)| InventoryDetail to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

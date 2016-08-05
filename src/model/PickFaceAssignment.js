@@ -18,7 +18,7 @@
   /**
    * The PickFaceAssignment model module.
    * @module model/PickFaceAssignment
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -29,14 +29,17 @@
    * @param locationId
    * @param replenishmentPoint
    * @param maxQuantity
+   * @param active
    */
-  var exports = function(warehouseId, locationId, replenishmentPoint, maxQuantity) {
+  var exports = function(warehouseId, locationId, replenishmentPoint, maxQuantity, active) {
 
 
     this['warehouseId'] = warehouseId;
     this['locationId'] = locationId;
     this['replenishmentPoint'] = replenishmentPoint;
     this['maxQuantity'] = maxQuantity;
+    this['active'] = active;
+
 
 
 
@@ -68,11 +71,17 @@
       if (data.hasOwnProperty('maxQuantity')) {
         obj['maxQuantity'] = ApiClient.convertToType(data['maxQuantity'], 'Integer');
       }
+      if (data.hasOwnProperty('active')) {
+        obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
+      }
       if (data.hasOwnProperty('createDate')) {
         obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
@@ -108,6 +117,12 @@
   exports.prototype['maxQuantity'] = undefined;
 
   /**
+   * @member {Boolean} active
+   * @default false
+   */
+  exports.prototype['active'] = false;
+
+  /**
    * @member {Date} createDate
    */
   exports.prototype['createDate'] = undefined;
@@ -116,6 +131,11 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
   /**
    * @member {String} sku

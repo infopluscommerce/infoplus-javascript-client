@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/Vendor'], factory);
+    define(['../ApiClient', '../model/Vendor', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/Vendor'));
+    module.exports = factory(require('../ApiClient'), require('../model/Vendor'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.VendorApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.Vendor);
+    root.infoplus.VendorApi = factory(root.infoplus.ApiClient, root.infoplus.Vendor, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, Vendor) {
+}(this, function(ApiClient, Vendor, ApiResponse) {
   'use strict';
 
   /**
    * Vendor service.
    * @module api/VendorApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = Vendor;
 
       return this.apiClient.callApi(
-        '/v1.0/vendor', 'POST',
+        '/beta/vendor', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/vendor/{vendorId}', 'DELETE',
+        '/beta/vendor/{vendorId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [Vendor];
 
       return this.apiClient.callApi(
-        '/v1.0/vendor/search', 'GET',
+        '/beta/vendor/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = Vendor;
 
       return this.apiClient.callApi(
-        '/v1.0/vendor/{vendorId}', 'GET',
+        '/beta/vendor/{vendorId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/vendor', 'PUT',
+        '/beta/vendor', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateVendorCustomFields operation.
+     * @callback module:api/VendorApi~updateVendorCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a vendor custom fields
+     * Updates an existing vendor custom fields using the specified data.
+     * @param {module:model/Vendor} body Vendor to be updated.
+     * @param {module:api/VendorApi~updateVendorCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateVendorCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateVendorCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendor/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

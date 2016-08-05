@@ -4,8 +4,9 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getReplenishmentProcessByFilter**](ReplenishmentProcessApi.md#getReplenishmentProcessByFilter) | **GET** /v1.0/replenishmentProcess/search | Search replenishmentProcesses by filter
-[**getReplenishmentProcessById**](ReplenishmentProcessApi.md#getReplenishmentProcessById) | **GET** /v1.0/replenishmentProcess/{replenishmentProcessId} | Get a replenishmentProcess by id
+[**getReplenishmentProcessByFilter**](ReplenishmentProcessApi.md#getReplenishmentProcessByFilter) | **GET** /beta/replenishmentProcess/search | Search replenishmentProcesses by filter
+[**getReplenishmentProcessById**](ReplenishmentProcessApi.md#getReplenishmentProcessById) | **GET** /beta/replenishmentProcess/{replenishmentProcessId} | Get a replenishmentProcess by id
+[**updateReplenishmentProcessCustomFields**](ReplenishmentProcessApi.md#updateReplenishmentProcessCustomFields) | **PUT** /beta/replenishmentProcess/customFields | Update a replenishmentProcess custom fields
 
 
 <a name="getReplenishmentProcessByFilter"></a>
@@ -119,5 +120,58 @@ Name | Type | Description  | Notes
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateReplenishmentProcessCustomFields"></a>
+# **updateReplenishmentProcessCustomFields**
+> updateReplenishmentProcessCustomFields(body)
+
+Update a replenishmentProcess custom fields
+
+Updates an existing replenishmentProcess custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentProcessApi()
+
+var body = new infoplus.ReplenishmentProcess(); // {ReplenishmentProcess} ReplenishmentProcess to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateReplenishmentProcessCustomFields(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ReplenishmentProcess**](ReplenishmentProcess.md)| ReplenishmentProcess to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

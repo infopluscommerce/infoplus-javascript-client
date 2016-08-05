@@ -4,8 +4,9 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLoggedTimeByFilter**](LoggedTimeApi.md#getLoggedTimeByFilter) | **GET** /v1.0/loggedTime/search | Search loggedTimes by filter
-[**getLoggedTimeById**](LoggedTimeApi.md#getLoggedTimeById) | **GET** /v1.0/loggedTime/{loggedTimeId} | Get a loggedTime by id
+[**getLoggedTimeByFilter**](LoggedTimeApi.md#getLoggedTimeByFilter) | **GET** /beta/loggedTime/search | Search loggedTimes by filter
+[**getLoggedTimeById**](LoggedTimeApi.md#getLoggedTimeById) | **GET** /beta/loggedTime/{loggedTimeId} | Get a loggedTime by id
+[**updateLoggedTimeCustomFields**](LoggedTimeApi.md#updateLoggedTimeCustomFields) | **PUT** /beta/loggedTime/customFields | Update a loggedTime custom fields
 
 
 <a name="getLoggedTimeByFilter"></a>
@@ -119,5 +120,58 @@ Name | Type | Description  | Notes
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateLoggedTimeCustomFields"></a>
+# **updateLoggedTimeCustomFields**
+> updateLoggedTimeCustomFields(body)
+
+Update a loggedTime custom fields
+
+Updates an existing loggedTime custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LoggedTimeApi()
+
+var body = new infoplus.LoggedTime(); // {LoggedTime} LoggedTime to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateLoggedTimeCustomFields(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**LoggedTime**](LoggedTime.md)| LoggedTime to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

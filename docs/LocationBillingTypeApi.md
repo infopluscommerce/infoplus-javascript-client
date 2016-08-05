@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addLocationBillingType**](LocationBillingTypeApi.md#addLocationBillingType) | **POST** /v1.0/locationBillingType | Create a locationBillingType
-[**deleteLocationBillingType**](LocationBillingTypeApi.md#deleteLocationBillingType) | **DELETE** /v1.0/locationBillingType/{locationBillingTypeId} | Delete a locationBillingType
-[**getLocationBillingTypeByFilter**](LocationBillingTypeApi.md#getLocationBillingTypeByFilter) | **GET** /v1.0/locationBillingType/search | Search locationBillingTypes by filter
-[**getLocationBillingTypeById**](LocationBillingTypeApi.md#getLocationBillingTypeById) | **GET** /v1.0/locationBillingType/{locationBillingTypeId} | Get a locationBillingType by id
-[**updateLocationBillingType**](LocationBillingTypeApi.md#updateLocationBillingType) | **PUT** /v1.0/locationBillingType | Update a locationBillingType
+[**addLocationBillingType**](LocationBillingTypeApi.md#addLocationBillingType) | **POST** /beta/locationBillingType | Create a locationBillingType
+[**deleteLocationBillingType**](LocationBillingTypeApi.md#deleteLocationBillingType) | **DELETE** /beta/locationBillingType/{locationBillingTypeId} | Delete a locationBillingType
+[**getLocationBillingTypeByFilter**](LocationBillingTypeApi.md#getLocationBillingTypeByFilter) | **GET** /beta/locationBillingType/search | Search locationBillingTypes by filter
+[**getLocationBillingTypeById**](LocationBillingTypeApi.md#getLocationBillingTypeById) | **GET** /beta/locationBillingType/{locationBillingTypeId} | Get a locationBillingType by id
+[**updateLocationBillingType**](LocationBillingTypeApi.md#updateLocationBillingType) | **PUT** /beta/locationBillingType | Update a locationBillingType
+[**updateLocationBillingTypeCustomFields**](LocationBillingTypeApi.md#updateLocationBillingTypeCustomFields) | **PUT** /beta/locationBillingType/customFields | Update a locationBillingType custom fields
 
 
 <a name="addLocationBillingType"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateLocationBillingType(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**LocationBillingType**](LocationBillingType.md)| LocationBillingType to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateLocationBillingTypeCustomFields"></a>
+# **updateLocationBillingTypeCustomFields**
+> updateLocationBillingTypeCustomFields(body)
+
+Update a locationBillingType custom fields
+
+Updates an existing locationBillingType custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var body = new infoplus.LocationBillingType(); // {LocationBillingType} LocationBillingType to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateLocationBillingTypeCustomFields(body, callback);
 ```
 
 ### Parameters

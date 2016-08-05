@@ -18,7 +18,7 @@
   /**
    * The ItemSubGroup model module.
    * @module model/ItemSubGroup
-   * @version 1.0
+   * @version beta
    */
 
   /**

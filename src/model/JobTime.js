@@ -18,7 +18,7 @@
   /**
    * The JobTime model module.
    * @module model/JobTime
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -40,6 +40,7 @@
     this['userId'] = userId;
     this['lobId'] = lobId;
     this['jobTypeId'] = jobTypeId;
+
 
   };
 
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -130,6 +134,11 @@
    * @member {String} note
    */
   exports.prototype['note'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

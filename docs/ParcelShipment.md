@@ -32,5 +32,6 @@ Name | Type | Description | Notes
 **chargedFreightAmount** | **Number** |  | [optional] 
 **publishedFreightAmount** | **Number** |  | [optional] 
 **retailFreightAmount** | **Number** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

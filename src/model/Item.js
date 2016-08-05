@@ -18,7 +18,7 @@
   /**
    * The Item model module.
    * @module model/Item
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -111,7 +111,9 @@
     this['forwardItemMixingRule'] = forwardItemMixingRule;
     this['storageItemMixingRule'] = storageItemMixingRule;
     this['allocationRule'] = allocationRule;
+
     this['hazmat'] = hazmat;
+
   };
 
   /**
@@ -305,8 +307,14 @@
       if (data.hasOwnProperty('allocationRule')) {
         obj['allocationRule'] = ApiClient.convertToType(data['allocationRule'], 'String');
       }
+      if (data.hasOwnProperty('barcodeField')) {
+        obj['barcodeField'] = ApiClient.convertToType(data['barcodeField'], 'String');
+      }
       if (data.hasOwnProperty('hazmat')) {
         obj['hazmat'] = ApiClient.convertToType(data['hazmat'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -614,9 +622,19 @@
   exports.prototype['allocationRule'] = undefined;
 
   /**
+   * @member {String} barcodeField
+   */
+  exports.prototype['barcodeField'] = undefined;
+
+  /**
    * @member {String} hazmat
    */
   exports.prototype['hazmat'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

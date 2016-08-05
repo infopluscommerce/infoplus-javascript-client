@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/Order'], factory);
+    define(['../ApiClient', '../model/Order', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/Order'));
+    module.exports = factory(require('../ApiClient'), require('../model/Order'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.Order);
+    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.Order, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, Order) {
+}(this, function(ApiClient, Order, ApiResponse) {
   'use strict';
 
   /**
    * Order service.
    * @module api/OrderApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = Order;
 
       return this.apiClient.callApi(
-        '/v1.0/order', 'POST',
+        '/beta/order', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/order/{orderId}', 'DELETE',
+        '/beta/order/{orderId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [Order];
 
       return this.apiClient.callApi(
-        '/v1.0/order/search', 'GET',
+        '/beta/order/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = Order;
 
       return this.apiClient.callApi(
-        '/v1.0/order/{orderId}', 'GET',
+        '/beta/order/{orderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/order', 'PUT',
+        '/beta/order', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateOrderCustomFields operation.
+     * @callback module:api/OrderApi~updateOrderCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an order custom fields
+     * Updates an existing order custom fields using the specified data.
+     * @param {module:model/Order} body Order to be updated.
+     * @param {module:api/OrderApi~updateOrderCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateOrderCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateOrderCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/order/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -25,11 +25,13 @@ Name | Type | Description | Notes
 **pickSummaryFormat** | **String** |  | [optional] 
 **pickSummaryLayout** | **String** |  | [optional] 
 **pickSummarySort** | **String** |  | [optional] 
+**pickScanSchemeId** | **Integer** |  | 
 **cartonizeOrders** | **Boolean** |  | [default to false]
 **autoShipCasebreakCartons** | **Boolean** |  | [optional] [default to false]
 **preGenerateParcelLabels** | **Boolean** |  | [optional] [default to false]
 **overridePackingSlipTemplateId** | **Integer** |  | [optional] 
 **createPackingSlip** | **Boolean** |  | [default to false]
 **createOrderAssemblyGuide** | **Boolean** |  | [optional] [default to false]
+**customFields** | **{String: Object}** |  | [optional] 
 
 

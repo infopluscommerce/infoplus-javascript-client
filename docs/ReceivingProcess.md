@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **receivingWorksheetId** | **Integer** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

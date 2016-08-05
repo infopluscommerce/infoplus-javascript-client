@@ -18,7 +18,7 @@
   /**
    * ProductType service.
    * @module api/ProductTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = ProductType;
 
       return this.apiClient.callApi(
-        '/v1.0/productType/{productTypeId}', 'GET',
+        '/beta/productType/{productTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [ProductType];
 
       return this.apiClient.callApi(
-        '/v1.0/productType/search', 'GET',
+        '/beta/productType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

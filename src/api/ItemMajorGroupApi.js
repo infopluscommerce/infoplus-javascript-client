@@ -18,7 +18,7 @@
   /**
    * ItemMajorGroup service.
    * @module api/ItemMajorGroupApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemMajorGroup];
 
       return this.apiClient.callApi(
-        '/v1.0/itemMajorGroup/search', 'GET',
+        '/beta/itemMajorGroup/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemMajorGroup;
 
       return this.apiClient.callApi(
-        '/v1.0/itemMajorGroup/{itemMajorGroupId}', 'GET',
+        '/beta/itemMajorGroup/{itemMajorGroupId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

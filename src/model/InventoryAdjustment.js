@@ -18,7 +18,7 @@
   /**
    * The InventoryAdjustment model module.
    * @module model/InventoryAdjustment
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -27,6 +27,7 @@
    * @class
    */
   var exports = function() {
+
 
 
 
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('adjustmentCode')) {
         obj['adjustmentCode'] = ApiClient.convertToType(data['adjustmentCode'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -162,6 +166,11 @@
    * @member {String} adjustmentCode
    */
   exports.prototype['adjustmentCode'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

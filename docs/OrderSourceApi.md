@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addOrderSource**](OrderSourceApi.md#addOrderSource) | **POST** /v1.0/orderSource | Create an orderSource
-[**deleteOrderSource**](OrderSourceApi.md#deleteOrderSource) | **DELETE** /v1.0/orderSource/{orderSourceId} | Delete an orderSource
-[**getOrderSourceByFilter**](OrderSourceApi.md#getOrderSourceByFilter) | **GET** /v1.0/orderSource/search | Search orderSources by filter
-[**getOrderSourceById**](OrderSourceApi.md#getOrderSourceById) | **GET** /v1.0/orderSource/{orderSourceId} | Get an orderSource by id
-[**updateOrderSource**](OrderSourceApi.md#updateOrderSource) | **PUT** /v1.0/orderSource | Update an orderSource
+[**addOrderSource**](OrderSourceApi.md#addOrderSource) | **POST** /beta/orderSource | Create an orderSource
+[**deleteOrderSource**](OrderSourceApi.md#deleteOrderSource) | **DELETE** /beta/orderSource/{orderSourceId} | Delete an orderSource
+[**getOrderSourceByFilter**](OrderSourceApi.md#getOrderSourceByFilter) | **GET** /beta/orderSource/search | Search orderSources by filter
+[**getOrderSourceById**](OrderSourceApi.md#getOrderSourceById) | **GET** /beta/orderSource/{orderSourceId} | Get an orderSource by id
+[**updateOrderSource**](OrderSourceApi.md#updateOrderSource) | **PUT** /beta/orderSource | Update an orderSource
+[**updateOrderSourceCustomFields**](OrderSourceApi.md#updateOrderSourceCustomFields) | **PUT** /beta/orderSource/customFields | Update an orderSource custom fields
 
 
 <a name="addOrderSource"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateOrderSource(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderSource**](OrderSource.md)| OrderSource to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateOrderSourceCustomFields"></a>
+# **updateOrderSourceCustomFields**
+> updateOrderSourceCustomFields(body)
+
+Update an orderSource custom fields
+
+Updates an existing orderSource custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.OrderSourceApi()
+
+var body = new infoplus.OrderSource(); // {OrderSource} OrderSource to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateOrderSourceCustomFields(body, callback);
 ```
 
 ### Parameters

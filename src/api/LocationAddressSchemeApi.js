@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/LocationAddressScheme'], factory);
+    define(['../ApiClient', '../model/LocationAddressScheme', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/LocationAddressScheme'));
+    module.exports = factory(require('../ApiClient'), require('../model/LocationAddressScheme'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.LocationAddressSchemeApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.LocationAddressScheme);
+    root.infoplus.LocationAddressSchemeApi = factory(root.infoplus.ApiClient, root.infoplus.LocationAddressScheme, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, LocationAddressScheme) {
+}(this, function(ApiClient, LocationAddressScheme, ApiResponse) {
   'use strict';
 
   /**
    * LocationAddressScheme service.
    * @module api/LocationAddressSchemeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = LocationAddressScheme;
 
       return this.apiClient.callApi(
-        '/v1.0/locationAddressScheme', 'POST',
+        '/beta/locationAddressScheme', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/locationAddressScheme/{locationAddressSchemeId}', 'DELETE',
+        '/beta/locationAddressScheme/{locationAddressSchemeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [LocationAddressScheme];
 
       return this.apiClient.callApi(
-        '/v1.0/locationAddressScheme/search', 'GET',
+        '/beta/locationAddressScheme/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = LocationAddressScheme;
 
       return this.apiClient.callApi(
-        '/v1.0/locationAddressScheme/{locationAddressSchemeId}', 'GET',
+        '/beta/locationAddressScheme/{locationAddressSchemeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/locationAddressScheme', 'PUT',
+        '/beta/locationAddressScheme', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateLocationAddressSchemeCustomFields operation.
+     * @callback module:api/LocationAddressSchemeApi~updateLocationAddressSchemeCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a locationAddressScheme custom fields
+     * Updates an existing locationAddressScheme custom fields using the specified data.
+     * @param {module:model/LocationAddressScheme} body LocationAddressScheme to be updated.
+     * @param {module:api/LocationAddressSchemeApi~updateLocationAddressSchemeCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateLocationAddressSchemeCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateLocationAddressSchemeCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/locationAddressScheme/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

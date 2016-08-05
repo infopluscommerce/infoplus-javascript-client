@@ -18,7 +18,7 @@
   /**
    * ItemLowStockCode service.
    * @module api/ItemLowStockCodeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemLowStockCode];
 
       return this.apiClient.callApi(
-        '/v1.0/itemLowStockCode/search', 'GET',
+        '/beta/itemLowStockCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemLowStockCode;
 
       return this.apiClient.callApi(
-        '/v1.0/itemLowStockCode/{itemLowStockCodeId}', 'GET',
+        '/beta/itemLowStockCode/{itemLowStockCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

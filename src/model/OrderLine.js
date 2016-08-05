@@ -18,7 +18,7 @@
   /**
    * The OrderLine model module.
    * @module model/OrderLine
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -59,12 +59,14 @@
 
 
 
+
     this['itemAccountCodeId'] = itemAccountCodeId;
     this['itemLegacyLowStockContactId'] = itemLegacyLowStockContactId;
     this['itemMajorGroupId'] = itemMajorGroupId;
     this['itemSubGroupId'] = itemSubGroupId;
 
     this['itemSummaryCodeId'] = itemSummaryCodeId;
+
   };
 
   /**
@@ -141,6 +143,9 @@
       if (data.hasOwnProperty('itemWeight')) {
         obj['itemWeight'] = ApiClient.convertToType(data['itemWeight'], 'Number');
       }
+      if (data.hasOwnProperty('productionLot')) {
+        obj['productionLot'] = ApiClient.convertToType(data['productionLot'], 'String');
+      }
       if (data.hasOwnProperty('weightPerWrap')) {
         obj['weightPerWrap'] = ApiClient.convertToType(data['weightPerWrap'], 'Number');
       }
@@ -164,6 +169,9 @@
       }
       if (data.hasOwnProperty('itemSummaryCodeId')) {
         obj['itemSummaryCodeId'] = ApiClient.convertToType(data['itemSummaryCodeId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -276,6 +284,11 @@
   exports.prototype['itemWeight'] = undefined;
 
   /**
+   * @member {String} productionLot
+   */
+  exports.prototype['productionLot'] = undefined;
+
+  /**
    * @member {Number} weightPerWrap
    */
   exports.prototype['weightPerWrap'] = undefined;
@@ -314,6 +327,11 @@
    * @member {Integer} itemSummaryCodeId
    */
   exports.prototype['itemSummaryCodeId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

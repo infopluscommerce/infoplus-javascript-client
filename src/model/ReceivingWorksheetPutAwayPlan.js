@@ -18,7 +18,7 @@
   /**
    * The ReceivingWorksheetPutAwayPlan model module.
    * @module model/ReceivingWorksheetPutAwayPlan
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -27,6 +27,7 @@
    * @class
    */
   var exports = function() {
+
 
 
   };
@@ -45,6 +46,9 @@
       if (data.hasOwnProperty('quantity')) {
         obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Integer');
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -54,6 +58,11 @@
    * @member {Integer} quantity
    */
   exports.prototype['quantity'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

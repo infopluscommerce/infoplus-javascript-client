@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/BillOfLading'], factory);
+    define(['../ApiClient', '../model/BillOfLading', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/BillOfLading'));
+    module.exports = factory(require('../ApiClient'), require('../model/BillOfLading'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.BillOfLadingApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.BillOfLading);
+    root.infoplus.BillOfLadingApi = factory(root.infoplus.ApiClient, root.infoplus.BillOfLading, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, BillOfLading) {
+}(this, function(ApiClient, BillOfLading, ApiResponse) {
   'use strict';
 
   /**
    * BillOfLading service.
    * @module api/BillOfLadingApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = BillOfLading;
 
       return this.apiClient.callApi(
-        '/v1.0/billOfLading', 'POST',
+        '/beta/billOfLading', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/billOfLading/{billOfLadingId}', 'DELETE',
+        '/beta/billOfLading/{billOfLadingId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [BillOfLading];
 
       return this.apiClient.callApi(
-        '/v1.0/billOfLading/search', 'GET',
+        '/beta/billOfLading/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = BillOfLading;
 
       return this.apiClient.callApi(
-        '/v1.0/billOfLading/{billOfLadingId}', 'GET',
+        '/beta/billOfLading/{billOfLadingId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/billOfLading', 'PUT',
+        '/beta/billOfLading', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBillOfLadingCustomFields operation.
+     * @callback module:api/BillOfLadingApi~updateBillOfLadingCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a billOfLading custom fields
+     * Updates an existing billOfLading custom fields using the specified data.
+     * @param {module:model/BillOfLading} body BillOfLading to be updated.
+     * @param {module:api/BillOfLadingApi~updateBillOfLadingCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateBillOfLadingCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateBillOfLadingCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/billOfLading/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

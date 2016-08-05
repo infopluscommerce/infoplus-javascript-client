@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addAsn**](AsnApi.md#addAsn) | **POST** /v1.0/asn | Create an asn
-[**deleteAsn**](AsnApi.md#deleteAsn) | **DELETE** /v1.0/asn/{asnId} | Delete an asn
-[**getAsnByFilter**](AsnApi.md#getAsnByFilter) | **GET** /v1.0/asn/search | Search asns by filter
-[**getAsnById**](AsnApi.md#getAsnById) | **GET** /v1.0/asn/{asnId} | Get an asn by id
-[**updateAsn**](AsnApi.md#updateAsn) | **PUT** /v1.0/asn | Update an asn
+[**addAsn**](AsnApi.md#addAsn) | **POST** /beta/asn | Create an asn
+[**deleteAsn**](AsnApi.md#deleteAsn) | **DELETE** /beta/asn/{asnId} | Delete an asn
+[**getAsnByFilter**](AsnApi.md#getAsnByFilter) | **GET** /beta/asn/search | Search asns by filter
+[**getAsnById**](AsnApi.md#getAsnById) | **GET** /beta/asn/{asnId} | Get an asn by id
+[**updateAsn**](AsnApi.md#updateAsn) | **PUT** /beta/asn | Update an asn
+[**updateAsnCustomFields**](AsnApi.md#updateAsnCustomFields) | **PUT** /beta/asn/customFields | Update an asn custom fields
 
 
 <a name="addAsn"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateAsn(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Asn**](Asn.md)| Asn to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateAsnCustomFields"></a>
+# **updateAsnCustomFields**
+> updateAsnCustomFields(body)
+
+Update an asn custom fields
+
+Updates an existing asn custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.AsnApi()
+
+var body = new infoplus.Asn(); // {Asn} Asn to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateAsnCustomFields(body, callback);
 ```
 
 ### Parameters

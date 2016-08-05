@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **printed** | **String** |  | [optional] 
 **orderNo** | **Number** |  | [optional] 
 **adjustmentCode** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

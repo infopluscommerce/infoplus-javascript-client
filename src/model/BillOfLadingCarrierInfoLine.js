@@ -18,7 +18,7 @@
   /**
    * The BillOfLadingCarrierInfoLine model module.
    * @module model/BillOfLadingCarrierInfoLine
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -37,6 +37,7 @@
 
 
     this['commodityDescription'] = commodityDescription;
+
 
 
   };
@@ -81,6 +82,9 @@
       }
       if (data.hasOwnProperty('carrierClass')) {
         obj['carrierClass'] = ApiClient.convertToType(data['carrierClass'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -137,6 +141,11 @@
    * @member {String} carrierClass
    */
   exports.prototype['carrierClass'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

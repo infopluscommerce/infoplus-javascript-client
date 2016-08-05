@@ -4,12 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItem**](ItemApi.md#addItem) | **POST** /v1.0/item | Create an item
-[**deleteItem**](ItemApi.md#deleteItem) | **DELETE** /v1.0/item/{itemId} | Delete an item
-[**getBySKU**](ItemApi.md#getBySKU) | **GET** /v1.0/item/getBySKU | Get an item by SKU
-[**getItemByFilter**](ItemApi.md#getItemByFilter) | **GET** /v1.0/item/search | Search items by filter
-[**getItemById**](ItemApi.md#getItemById) | **GET** /v1.0/item/{itemId} | Get an item by id
-[**updateItem**](ItemApi.md#updateItem) | **PUT** /v1.0/item | Update an item
+[**addItem**](ItemApi.md#addItem) | **POST** /beta/item | Create an item
+[**deleteItem**](ItemApi.md#deleteItem) | **DELETE** /beta/item/{itemId} | Delete an item
+[**getBySKU**](ItemApi.md#getBySKU) | **GET** /beta/item/getBySKU | Get an item by SKU
+[**getItemByFilter**](ItemApi.md#getItemByFilter) | **GET** /beta/item/search | Search items by filter
+[**getItemById**](ItemApi.md#getItemById) | **GET** /beta/item/{itemId} | Get an item by id
+[**updateItem**](ItemApi.md#updateItem) | **PUT** /beta/item | Update an item
+[**updateItemCustomFields**](ItemApi.md#updateItemCustomFields) | **PUT** /beta/item/customFields | Update an item custom fields
 
 
 <a name="addItem"></a>
@@ -319,6 +320,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateItem(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Item**](Item.md)| Item to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateItemCustomFields"></a>
+# **updateItemCustomFields**
+> updateItemCustomFields(body)
+
+Update an item custom fields
+
+Updates an existing item custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemApi()
+
+var body = new infoplus.Item(); // {Item} Item to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateItemCustomFields(body, callback);
 ```
 
 ### Parameters

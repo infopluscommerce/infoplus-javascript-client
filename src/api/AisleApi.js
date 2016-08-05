@@ -18,7 +18,7 @@
   /**
    * Aisle service.
    * @module api/AisleApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = Aisle;
 
       return this.apiClient.callApi(
-        '/v1.0/aisle', 'POST',
+        '/beta/aisle', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/aisle/{aisleId}', 'DELETE',
+        '/beta/aisle/{aisleId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [Aisle];
 
       return this.apiClient.callApi(
-        '/v1.0/aisle/search', 'GET',
+        '/beta/aisle/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = Aisle;
 
       return this.apiClient.callApi(
-        '/v1.0/aisle/{aisleId}', 'GET',
+        '/beta/aisle/{aisleId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/aisle', 'PUT',
+        '/beta/aisle', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateAisleCustomFields operation.
+     * @callback module:api/AisleApi~updateAisleCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an aisle custom fields
+     * Updates an existing aisle custom fields using the specified data.
+     * @param {module:model/Aisle} body Aisle to be updated.
+     * @param {module:api/AisleApi~updateAisleCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateAisleCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateAisleCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/aisle/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

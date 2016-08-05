@@ -18,7 +18,7 @@
   /**
    * ItemProductCode service.
    * @module api/ItemProductCodeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemProductCode];
 
       return this.apiClient.callApi(
-        '/v1.0/itemProductCode/search', 'GET',
+        '/beta/itemProductCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemProductCode;
 
       return this.apiClient.callApi(
-        '/v1.0/itemProductCode/{itemProductCodeId}', 'GET',
+        '/beta/itemProductCode/{itemProductCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

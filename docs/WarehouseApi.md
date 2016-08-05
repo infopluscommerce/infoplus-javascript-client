@@ -4,9 +4,10 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getWarehouseByFilter**](WarehouseApi.md#getWarehouseByFilter) | **GET** /v1.0/warehouse/search | Search warehouses by filter
-[**getWarehouseById**](WarehouseApi.md#getWarehouseById) | **GET** /v1.0/warehouse/{warehouseId} | Get a warehouse by id
-[**updateWarehouse**](WarehouseApi.md#updateWarehouse) | **PUT** /v1.0/warehouse | Update a warehouse
+[**getWarehouseByFilter**](WarehouseApi.md#getWarehouseByFilter) | **GET** /beta/warehouse/search | Search warehouses by filter
+[**getWarehouseById**](WarehouseApi.md#getWarehouseById) | **GET** /beta/warehouse/{warehouseId} | Get a warehouse by id
+[**updateWarehouse**](WarehouseApi.md#updateWarehouse) | **PUT** /beta/warehouse | Update a warehouse
+[**updateWarehouseCustomFields**](WarehouseApi.md#updateWarehouseCustomFields) | **PUT** /beta/warehouse/customFields | Update a warehouse custom fields
 
 
 <a name="getWarehouseByFilter"></a>
@@ -154,6 +155,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateWarehouse(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Warehouse**](Warehouse.md)| Warehouse to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateWarehouseCustomFields"></a>
+# **updateWarehouseCustomFields**
+> updateWarehouseCustomFields(body)
+
+Update a warehouse custom fields
+
+Updates an existing warehouse custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseApi()
+
+var body = new infoplus.Warehouse(); // {Warehouse} Warehouse to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateWarehouseCustomFields(body, callback);
 ```
 
 ### Parameters

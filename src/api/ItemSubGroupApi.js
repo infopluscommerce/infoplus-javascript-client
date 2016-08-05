@@ -18,7 +18,7 @@
   /**
    * ItemSubGroup service.
    * @module api/ItemSubGroupApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemSubGroup];
 
       return this.apiClient.callApi(
-        '/v1.0/itemSubGroup/search', 'GET',
+        '/beta/itemSubGroup/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemSubGroup;
 
       return this.apiClient.callApi(
-        '/v1.0/itemSubGroup/{itemSubGroupId}', 'GET',
+        '/beta/itemSubGroup/{itemSubGroupId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

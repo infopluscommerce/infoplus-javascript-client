@@ -18,7 +18,7 @@
   /**
    * ReplenishmentProcess service.
    * @module api/ReplenishmentProcessApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [ReplenishmentProcess];
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentProcess/search', 'GET',
+        '/beta/replenishmentProcess/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,51 @@
       var returnType = ReplenishmentProcess;
 
       return this.apiClient.callApi(
-        '/v1.0/replenishmentProcess/{replenishmentProcessId}', 'GET',
+        '/beta/replenishmentProcess/{replenishmentProcessId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateReplenishmentProcessCustomFields operation.
+     * @callback module:api/ReplenishmentProcessApi~updateReplenishmentProcessCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a replenishmentProcess custom fields
+     * Updates an existing replenishmentProcess custom fields using the specified data.
+     * @param {module:model/ReplenishmentProcess} body ReplenishmentProcess to be updated.
+     * @param {module:api/ReplenishmentProcessApi~updateReplenishmentProcessCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateReplenishmentProcessCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateReplenishmentProcessCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/replenishmentProcess/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

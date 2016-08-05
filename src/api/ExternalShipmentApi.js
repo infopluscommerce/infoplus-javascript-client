@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/ExternalShipment'], factory);
+    define(['../ApiClient', '../model/ExternalShipment', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ExternalShipment'));
+    module.exports = factory(require('../ApiClient'), require('../model/ExternalShipment'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ExternalShipmentApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ExternalShipment);
+    root.infoplus.ExternalShipmentApi = factory(root.infoplus.ApiClient, root.infoplus.ExternalShipment, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, ExternalShipment) {
+}(this, function(ApiClient, ExternalShipment, ApiResponse) {
   'use strict';
 
   /**
    * ExternalShipment service.
    * @module api/ExternalShipmentApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = ExternalShipment;
 
       return this.apiClient.callApi(
-        '/v1.0/externalShipment', 'POST',
+        '/beta/externalShipment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/externalShipment/{externalShipmentId}', 'DELETE',
+        '/beta/externalShipment/{externalShipmentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [ExternalShipment];
 
       return this.apiClient.callApi(
-        '/v1.0/externalShipment/search', 'GET',
+        '/beta/externalShipment/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = ExternalShipment;
 
       return this.apiClient.callApi(
-        '/v1.0/externalShipment/{externalShipmentId}', 'GET',
+        '/beta/externalShipment/{externalShipmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/externalShipment', 'PUT',
+        '/beta/externalShipment', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateExternalShipmentCustomFields operation.
+     * @callback module:api/ExternalShipmentApi~updateExternalShipmentCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an externalShipment custom fields
+     * Updates an existing externalShipment custom fields using the specified data.
+     * @param {module:model/ExternalShipment} body ExternalShipment to be updated.
+     * @param {module:api/ExternalShipmentApi~updateExternalShipmentCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateExternalShipmentCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateExternalShipmentCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/externalShipment/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

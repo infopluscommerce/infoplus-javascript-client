@@ -4,8 +4,9 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getWorkBatchByFilter**](WorkBatchApi.md#getWorkBatchByFilter) | **GET** /v1.0/workBatch/search | Search workBatchs by filter
-[**getWorkBatchById**](WorkBatchApi.md#getWorkBatchById) | **GET** /v1.0/workBatch/{workBatchId} | Get a workBatch by id
+[**getWorkBatchByFilter**](WorkBatchApi.md#getWorkBatchByFilter) | **GET** /beta/workBatch/search | Search workBatchs by filter
+[**getWorkBatchById**](WorkBatchApi.md#getWorkBatchById) | **GET** /beta/workBatch/{workBatchId} | Get a workBatch by id
+[**updateWorkBatchCustomFields**](WorkBatchApi.md#updateWorkBatchCustomFields) | **PUT** /beta/workBatch/customFields | Update a workBatch custom fields
 
 
 <a name="getWorkBatchByFilter"></a>
@@ -119,5 +120,58 @@ Name | Type | Description  | Notes
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateWorkBatchCustomFields"></a>
+# **updateWorkBatchCustomFields**
+> updateWorkBatchCustomFields(body)
+
+Update a workBatch custom fields
+
+Updates an existing workBatch custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WorkBatchApi()
+
+var body = new infoplus.WorkBatch(); // {WorkBatch} WorkBatch to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateWorkBatchCustomFields(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WorkBatch**](WorkBatch.md)| WorkBatch to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

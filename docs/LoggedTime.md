@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **warehouseId** | **Integer** |  | 
 **loggedTimeTypeId** | **Integer** |  | 
 **appId** | **Integer** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

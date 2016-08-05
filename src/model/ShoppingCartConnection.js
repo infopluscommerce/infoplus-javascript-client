@@ -18,7 +18,7 @@
   /**
    * The ShoppingCartConnection model module.
    * @module model/ShoppingCartConnection
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -58,6 +58,7 @@
     this['syncOrders'] = syncOrders;
     this['syncInventory'] = syncInventory;
     this['syncTrackingData'] = syncTrackingData;
+
 
   };
 
@@ -131,6 +132,9 @@
       }
       if (data.hasOwnProperty('syncInventoryLevelsLastRunTime')) {
         obj['syncInventoryLevelsLastRunTime'] = ApiClient.convertToType(data['syncInventoryLevelsLastRunTime'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -239,6 +243,11 @@
    * @member {Date} syncInventoryLevelsLastRunTime
    */
   exports.prototype['syncInventoryLevelsLastRunTime'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

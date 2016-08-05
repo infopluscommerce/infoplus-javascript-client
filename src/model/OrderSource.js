@@ -18,7 +18,7 @@
   /**
    * The OrderSource model module.
    * @module model/OrderSource
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -33,6 +33,7 @@
 
     this['lobId'] = lobId;
     this['name'] = name;
+
 
 
 
@@ -90,6 +91,9 @@
       }
       if (data.hasOwnProperty('shipmentConfirmationEmailId')) {
         obj['shipmentConfirmationEmailId'] = ApiClient.convertToType(data['shipmentConfirmationEmailId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -157,6 +161,11 @@
    * @member {Integer} shipmentConfirmationEmailId
    */
   exports.prototype['shipmentConfirmationEmailId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

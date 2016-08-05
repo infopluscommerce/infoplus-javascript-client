@@ -18,7 +18,7 @@
   /**
    * The ReplenishmentProcess model module.
    * @module model/ReplenishmentProcess
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -37,6 +37,8 @@
     this['warehouseId'] = warehouseId;
     this['replenishmentPlanId'] = replenishmentPlanId;
     this['status'] = status;
+
+
 
   };
 
@@ -71,6 +73,12 @@
       }
       if (data.hasOwnProperty('estimatedWork')) {
         obj['estimatedWork'] = ApiClient.convertToType(data['estimatedWork'], 'Integer');
+      }
+      if (data.hasOwnProperty('workBatchId')) {
+        obj['workBatchId'] = ApiClient.convertToType(data['workBatchId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -111,6 +119,16 @@
    * @member {Integer} estimatedWork
    */
   exports.prototype['estimatedWork'] = undefined;
+
+  /**
+   * @member {Integer} workBatchId
+   */
+  exports.prototype['workBatchId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

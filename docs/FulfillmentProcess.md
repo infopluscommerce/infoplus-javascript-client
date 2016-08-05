@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **processNo** | **Integer** |  | [optional] 
 **workBatchId** | **Integer** |  | [optional] 
 **warehouseId** | **Integer** |  | 
-**allocationPlanId** | **Integer** |  | 
+**fulfillmentPlanId** | **Integer** |  | 
+**pickScanSchemeId** | **Integer** |  | 
 **status** | **String** |  | 
 **orderSmartFilterId** | **Integer** |  | [optional] 
 **locationSmartFilterId** | **Integer** |  | [optional] 
@@ -46,5 +47,6 @@ Name | Type | Description | Notes
 **createPackingSlip** | **Boolean** |  | [optional] [default to false]
 **overridePackingSlipTemplateId** | **Integer** |  | [optional] 
 **createOrderAssemblyGuide** | **Boolean** |  | [optional] [default to false]
+**customFields** | **{String: Object}** |  | [optional] 
 
 

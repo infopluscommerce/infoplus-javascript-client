@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addExternalShipment**](ExternalShipmentApi.md#addExternalShipment) | **POST** /v1.0/externalShipment | Create an externalShipment
-[**deleteExternalShipment**](ExternalShipmentApi.md#deleteExternalShipment) | **DELETE** /v1.0/externalShipment/{externalShipmentId} | Delete an externalShipment
-[**getExternalShipmentByFilter**](ExternalShipmentApi.md#getExternalShipmentByFilter) | **GET** /v1.0/externalShipment/search | Search externalShipments by filter
-[**getExternalShipmentById**](ExternalShipmentApi.md#getExternalShipmentById) | **GET** /v1.0/externalShipment/{externalShipmentId} | Get an externalShipment by id
-[**updateExternalShipment**](ExternalShipmentApi.md#updateExternalShipment) | **PUT** /v1.0/externalShipment | Update an externalShipment
+[**addExternalShipment**](ExternalShipmentApi.md#addExternalShipment) | **POST** /beta/externalShipment | Create an externalShipment
+[**deleteExternalShipment**](ExternalShipmentApi.md#deleteExternalShipment) | **DELETE** /beta/externalShipment/{externalShipmentId} | Delete an externalShipment
+[**getExternalShipmentByFilter**](ExternalShipmentApi.md#getExternalShipmentByFilter) | **GET** /beta/externalShipment/search | Search externalShipments by filter
+[**getExternalShipmentById**](ExternalShipmentApi.md#getExternalShipmentById) | **GET** /beta/externalShipment/{externalShipmentId} | Get an externalShipment by id
+[**updateExternalShipment**](ExternalShipmentApi.md#updateExternalShipment) | **PUT** /beta/externalShipment | Update an externalShipment
+[**updateExternalShipmentCustomFields**](ExternalShipmentApi.md#updateExternalShipmentCustomFields) | **PUT** /beta/externalShipment/customFields | Update an externalShipment custom fields
 
 
 <a name="addExternalShipment"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateExternalShipment(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ExternalShipment**](ExternalShipment.md)| ExternalShipment to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateExternalShipmentCustomFields"></a>
+# **updateExternalShipmentCustomFields**
+> updateExternalShipmentCustomFields(body)
+
+Update an externalShipment custom fields
+
+Updates an existing externalShipment custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ExternalShipmentApi()
+
+var body = new infoplus.ExternalShipment(); // {ExternalShipment} ExternalShipment to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateExternalShipmentCustomFields(body, callback);
 ```
 
 ### Parameters

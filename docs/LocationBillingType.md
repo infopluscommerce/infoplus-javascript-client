@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/Building'], factory);
+    define(['../ApiClient', '../model/Building', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/Building'));
+    module.exports = factory(require('../ApiClient'), require('../model/Building'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.BuildingApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.Building);
+    root.infoplus.BuildingApi = factory(root.infoplus.ApiClient, root.infoplus.Building, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, Building) {
+}(this, function(ApiClient, Building, ApiResponse) {
   'use strict';
 
   /**
    * Building service.
    * @module api/BuildingApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = Building;
 
       return this.apiClient.callApi(
-        '/v1.0/building', 'POST',
+        '/beta/building', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/building/{buildingId}', 'DELETE',
+        '/beta/building/{buildingId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [Building];
 
       return this.apiClient.callApi(
-        '/v1.0/building/search', 'GET',
+        '/beta/building/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = Building;
 
       return this.apiClient.callApi(
-        '/v1.0/building/{buildingId}', 'GET',
+        '/beta/building/{buildingId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/building', 'PUT',
+        '/beta/building', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBuildingCustomFields operation.
+     * @callback module:api/BuildingApi~updateBuildingCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a building custom fields
+     * Updates an existing building custom fields using the specified data.
+     * @param {module:model/Building} body Building to be updated.
+     * @param {module:api/BuildingApi~updateBuildingCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateBuildingCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateBuildingCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/building/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

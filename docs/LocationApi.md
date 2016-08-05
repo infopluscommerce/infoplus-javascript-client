@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addLocation**](LocationApi.md#addLocation) | **POST** /v1.0/location | Create a location
-[**deleteLocation**](LocationApi.md#deleteLocation) | **DELETE** /v1.0/location/{locationId} | Delete a location
-[**getLocationByFilter**](LocationApi.md#getLocationByFilter) | **GET** /v1.0/location/search | Search locations by filter
-[**getLocationById**](LocationApi.md#getLocationById) | **GET** /v1.0/location/{locationId} | Get a location by id
-[**updateLocation**](LocationApi.md#updateLocation) | **PUT** /v1.0/location | Update a location
+[**addLocation**](LocationApi.md#addLocation) | **POST** /beta/location | Create a location
+[**deleteLocation**](LocationApi.md#deleteLocation) | **DELETE** /beta/location/{locationId} | Delete a location
+[**getLocationByFilter**](LocationApi.md#getLocationByFilter) | **GET** /beta/location/search | Search locations by filter
+[**getLocationById**](LocationApi.md#getLocationById) | **GET** /beta/location/{locationId} | Get a location by id
+[**updateLocation**](LocationApi.md#updateLocation) | **PUT** /beta/location | Update a location
+[**updateLocationCustomFields**](LocationApi.md#updateLocationCustomFields) | **PUT** /beta/location/customFields | Update a location custom fields
 
 
 <a name="addLocation"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateLocation(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Location**](Location.md)| Location to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateLocationCustomFields"></a>
+# **updateLocationCustomFields**
+> updateLocationCustomFields(body)
+
+Update a location custom fields
+
+Updates an existing location custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationApi()
+
+var body = new infoplus.Location(); // {Location} Location to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateLocationCustomFields(body, callback);
 ```
 
 ### Parameters

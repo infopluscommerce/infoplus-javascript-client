@@ -18,7 +18,7 @@
   /**
    * JobType service.
    * @module api/JobTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = JobType;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType', 'POST',
+        '/beta/jobType', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType/{jobTypeId}', 'DELETE',
+        '/beta/jobType/{jobTypeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [JobType];
 
       return this.apiClient.callApi(
-        '/v1.0/jobType/search', 'GET',
+        '/beta/jobType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = JobType;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType/{jobTypeId}', 'GET',
+        '/beta/jobType/{jobTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType', 'PUT',
+        '/beta/jobType', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateJobTypeCustomFields operation.
+     * @callback module:api/JobTypeApi~updateJobTypeCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a jobType custom fields
+     * Updates an existing jobType custom fields using the specified data.
+     * @param {module:model/JobType} body JobType to be updated.
+     * @param {module:api/JobTypeApi~updateJobTypeCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateJobTypeCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateJobTypeCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

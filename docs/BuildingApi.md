@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBuilding**](BuildingApi.md#addBuilding) | **POST** /v1.0/building | Create a building
-[**deleteBuilding**](BuildingApi.md#deleteBuilding) | **DELETE** /v1.0/building/{buildingId} | Delete a building
-[**getBuildingByFilter**](BuildingApi.md#getBuildingByFilter) | **GET** /v1.0/building/search | Search buildings by filter
-[**getBuildingById**](BuildingApi.md#getBuildingById) | **GET** /v1.0/building/{buildingId} | Get a building by id
-[**updateBuilding**](BuildingApi.md#updateBuilding) | **PUT** /v1.0/building | Update a building
+[**addBuilding**](BuildingApi.md#addBuilding) | **POST** /beta/building | Create a building
+[**deleteBuilding**](BuildingApi.md#deleteBuilding) | **DELETE** /beta/building/{buildingId} | Delete a building
+[**getBuildingByFilter**](BuildingApi.md#getBuildingByFilter) | **GET** /beta/building/search | Search buildings by filter
+[**getBuildingById**](BuildingApi.md#getBuildingById) | **GET** /beta/building/{buildingId} | Get a building by id
+[**updateBuilding**](BuildingApi.md#updateBuilding) | **PUT** /beta/building | Update a building
+[**updateBuildingCustomFields**](BuildingApi.md#updateBuildingCustomFields) | **PUT** /beta/building/customFields | Update a building custom fields
 
 
 <a name="addBuilding"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateBuilding(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Building**](Building.md)| Building to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBuildingCustomFields"></a>
+# **updateBuildingCustomFields**
+> updateBuildingCustomFields(body)
+
+Update a building custom fields
+
+Updates an existing building custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var body = new infoplus.Building(); // {Building} Building to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateBuildingCustomFields(body, callback);
 ```
 
 ### Parameters

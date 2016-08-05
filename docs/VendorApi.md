@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addVendor**](VendorApi.md#addVendor) | **POST** /v1.0/vendor | Create a vendor
-[**deleteVendor**](VendorApi.md#deleteVendor) | **DELETE** /v1.0/vendor/{vendorId} | Delete a vendor
-[**getVendorByFilter**](VendorApi.md#getVendorByFilter) | **GET** /v1.0/vendor/search | Search vendors by filter
-[**getVendorById**](VendorApi.md#getVendorById) | **GET** /v1.0/vendor/{vendorId} | Get a vendor by id
-[**updateVendor**](VendorApi.md#updateVendor) | **PUT** /v1.0/vendor | Update a vendor
+[**addVendor**](VendorApi.md#addVendor) | **POST** /beta/vendor | Create a vendor
+[**deleteVendor**](VendorApi.md#deleteVendor) | **DELETE** /beta/vendor/{vendorId} | Delete a vendor
+[**getVendorByFilter**](VendorApi.md#getVendorByFilter) | **GET** /beta/vendor/search | Search vendors by filter
+[**getVendorById**](VendorApi.md#getVendorById) | **GET** /beta/vendor/{vendorId} | Get a vendor by id
+[**updateVendor**](VendorApi.md#updateVendor) | **PUT** /beta/vendor | Update a vendor
+[**updateVendorCustomFields**](VendorApi.md#updateVendorCustomFields) | **PUT** /beta/vendor/customFields | Update a vendor custom fields
 
 
 <a name="addVendor"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateVendor(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Vendor**](Vendor.md)| Vendor to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateVendorCustomFields"></a>
+# **updateVendorCustomFields**
+> updateVendorCustomFields(body)
+
+Update a vendor custom fields
+
+Updates an existing vendor custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.VendorApi()
+
+var body = new infoplus.Vendor(); // {Vendor} Vendor to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateVendorCustomFields(body, callback);
 ```
 
 ### Parameters

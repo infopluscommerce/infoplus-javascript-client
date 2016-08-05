@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addAisle**](AisleApi.md#addAisle) | **POST** /v1.0/aisle | Create an aisle
-[**deleteAisle**](AisleApi.md#deleteAisle) | **DELETE** /v1.0/aisle/{aisleId} | Delete an aisle
-[**getAisleByFilter**](AisleApi.md#getAisleByFilter) | **GET** /v1.0/aisle/search | Search aisles by filter
-[**getAisleById**](AisleApi.md#getAisleById) | **GET** /v1.0/aisle/{aisleId} | Get an aisle by id
-[**updateAisle**](AisleApi.md#updateAisle) | **PUT** /v1.0/aisle | Update an aisle
+[**addAisle**](AisleApi.md#addAisle) | **POST** /beta/aisle | Create an aisle
+[**deleteAisle**](AisleApi.md#deleteAisle) | **DELETE** /beta/aisle/{aisleId} | Delete an aisle
+[**getAisleByFilter**](AisleApi.md#getAisleByFilter) | **GET** /beta/aisle/search | Search aisles by filter
+[**getAisleById**](AisleApi.md#getAisleById) | **GET** /beta/aisle/{aisleId} | Get an aisle by id
+[**updateAisle**](AisleApi.md#updateAisle) | **PUT** /beta/aisle | Update an aisle
+[**updateAisleCustomFields**](AisleApi.md#updateAisleCustomFields) | **PUT** /beta/aisle/customFields | Update an aisle custom fields
 
 
 <a name="addAisle"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateAisle(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Aisle**](Aisle.md)| Aisle to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateAisleCustomFields"></a>
+# **updateAisleCustomFields**
+> updateAisleCustomFields(body)
+
+Update an aisle custom fields
+
+Updates an existing aisle custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.AisleApi()
+
+var body = new infoplus.Aisle(); // {Aisle} Aisle to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateAisleCustomFields(body, callback);
 ```
 
 ### Parameters

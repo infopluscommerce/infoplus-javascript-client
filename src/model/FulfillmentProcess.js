@@ -18,7 +18,7 @@
   /**
    * The FulfillmentProcess model module.
    * @module model/FulfillmentProcess
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -26,10 +26,11 @@
    * @alias module:model/FulfillmentProcess
    * @class
    * @param warehouseId
-   * @param allocationPlanId
+   * @param fulfillmentPlanId
+   * @param pickScanSchemeId
    * @param status
    */
-  var exports = function(warehouseId, allocationPlanId, status) {
+  var exports = function(warehouseId, fulfillmentPlanId, pickScanSchemeId, status) {
 
 
 
@@ -37,8 +38,10 @@
 
 
     this['warehouseId'] = warehouseId;
-    this['allocationPlanId'] = allocationPlanId;
+    this['fulfillmentPlanId'] = fulfillmentPlanId;
+    this['pickScanSchemeId'] = pickScanSchemeId;
     this['status'] = status;
+
 
 
 
@@ -105,8 +108,11 @@
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Integer');
       }
-      if (data.hasOwnProperty('allocationPlanId')) {
-        obj['allocationPlanId'] = ApiClient.convertToType(data['allocationPlanId'], 'Integer');
+      if (data.hasOwnProperty('fulfillmentPlanId')) {
+        obj['fulfillmentPlanId'] = ApiClient.convertToType(data['fulfillmentPlanId'], 'Integer');
+      }
+      if (data.hasOwnProperty('pickScanSchemeId')) {
+        obj['pickScanSchemeId'] = ApiClient.convertToType(data['pickScanSchemeId'], 'Integer');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -216,6 +222,9 @@
       if (data.hasOwnProperty('createOrderAssemblyGuide')) {
         obj['createOrderAssemblyGuide'] = ApiClient.convertToType(data['createOrderAssemblyGuide'], 'Boolean');
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -252,9 +261,14 @@
   exports.prototype['warehouseId'] = undefined;
 
   /**
-   * @member {Integer} allocationPlanId
+   * @member {Integer} fulfillmentPlanId
    */
-  exports.prototype['allocationPlanId'] = undefined;
+  exports.prototype['fulfillmentPlanId'] = undefined;
+
+  /**
+   * @member {Integer} pickScanSchemeId
+   */
+  exports.prototype['pickScanSchemeId'] = undefined;
 
   /**
    * @member {String} status
@@ -443,6 +457,11 @@
    * @default false
    */
   exports.prototype['createOrderAssemblyGuide'] = false;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

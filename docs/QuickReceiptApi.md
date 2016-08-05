@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addQuickReceipt**](QuickReceiptApi.md#addQuickReceipt) | **POST** /v1.0/quickReceipt | Create a quickReceipt
-[**deleteQuickReceipt**](QuickReceiptApi.md#deleteQuickReceipt) | **DELETE** /v1.0/quickReceipt/{quickReceiptId} | Delete a quickReceipt
-[**getQuickReceiptByFilter**](QuickReceiptApi.md#getQuickReceiptByFilter) | **GET** /v1.0/quickReceipt/search | Search quickReceipts by filter
-[**getQuickReceiptById**](QuickReceiptApi.md#getQuickReceiptById) | **GET** /v1.0/quickReceipt/{quickReceiptId} | Get a quickReceipt by id
-[**updateQuickReceipt**](QuickReceiptApi.md#updateQuickReceipt) | **PUT** /v1.0/quickReceipt | Update a quickReceipt
+[**addQuickReceipt**](QuickReceiptApi.md#addQuickReceipt) | **POST** /beta/quickReceipt | Create a quickReceipt
+[**deleteQuickReceipt**](QuickReceiptApi.md#deleteQuickReceipt) | **DELETE** /beta/quickReceipt/{quickReceiptId} | Delete a quickReceipt
+[**getQuickReceiptByFilter**](QuickReceiptApi.md#getQuickReceiptByFilter) | **GET** /beta/quickReceipt/search | Search quickReceipts by filter
+[**getQuickReceiptById**](QuickReceiptApi.md#getQuickReceiptById) | **GET** /beta/quickReceipt/{quickReceiptId} | Get a quickReceipt by id
+[**updateQuickReceipt**](QuickReceiptApi.md#updateQuickReceipt) | **PUT** /beta/quickReceipt | Update a quickReceipt
+[**updateQuickReceiptCustomFields**](QuickReceiptApi.md#updateQuickReceiptCustomFields) | **PUT** /beta/quickReceipt/customFields | Update a quickReceipt custom fields
 
 
 <a name="addQuickReceipt"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateQuickReceipt(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**QuickReceipt**](QuickReceipt.md)| QuickReceipt to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateQuickReceiptCustomFields"></a>
+# **updateQuickReceiptCustomFields**
+> updateQuickReceiptCustomFields(body)
+
+Update a quickReceipt custom fields
+
+Updates an existing quickReceipt custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.QuickReceiptApi()
+
+var body = new infoplus.QuickReceipt(); // {QuickReceipt} QuickReceipt to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateQuickReceiptCustomFields(body, callback);
 ```
 
 ### Parameters

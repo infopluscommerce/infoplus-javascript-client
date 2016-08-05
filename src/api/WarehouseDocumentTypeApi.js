@@ -18,7 +18,7 @@
   /**
    * WarehouseDocumentType service.
    * @module api/WarehouseDocumentTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [WarehouseDocumentType];
 
       return this.apiClient.callApi(
-        '/v1.0/warehouseDocumentType/search', 'GET',
+        '/beta/warehouseDocumentType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,7 @@
       var returnType = WarehouseDocumentType;
 
       return this.apiClient.callApi(
-        '/v1.0/warehouseDocumentType/{warehouseDocumentTypeId}', 'GET',
+        '/beta/warehouseDocumentType/{warehouseDocumentTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

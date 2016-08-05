@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **surveyQuestions** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **pickFaceAssignment** | **Integer** |  | [optional] 
 **locationId** | **Integer** |  | 
 **quantity** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 
 

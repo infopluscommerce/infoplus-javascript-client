@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBillOfLading**](BillOfLadingApi.md#addBillOfLading) | **POST** /v1.0/billOfLading | Create a billOfLading
-[**deleteBillOfLading**](BillOfLadingApi.md#deleteBillOfLading) | **DELETE** /v1.0/billOfLading/{billOfLadingId} | Delete a billOfLading
-[**getBillOfLadingByFilter**](BillOfLadingApi.md#getBillOfLadingByFilter) | **GET** /v1.0/billOfLading/search | Search billOfLadings by filter
-[**getBillOfLadingById**](BillOfLadingApi.md#getBillOfLadingById) | **GET** /v1.0/billOfLading/{billOfLadingId} | Get a billOfLading by id
-[**updateBillOfLading**](BillOfLadingApi.md#updateBillOfLading) | **PUT** /v1.0/billOfLading | Update a billOfLading
+[**addBillOfLading**](BillOfLadingApi.md#addBillOfLading) | **POST** /beta/billOfLading | Create a billOfLading
+[**deleteBillOfLading**](BillOfLadingApi.md#deleteBillOfLading) | **DELETE** /beta/billOfLading/{billOfLadingId} | Delete a billOfLading
+[**getBillOfLadingByFilter**](BillOfLadingApi.md#getBillOfLadingByFilter) | **GET** /beta/billOfLading/search | Search billOfLadings by filter
+[**getBillOfLadingById**](BillOfLadingApi.md#getBillOfLadingById) | **GET** /beta/billOfLading/{billOfLadingId} | Get a billOfLading by id
+[**updateBillOfLading**](BillOfLadingApi.md#updateBillOfLading) | **PUT** /beta/billOfLading | Update a billOfLading
+[**updateBillOfLadingCustomFields**](BillOfLadingApi.md#updateBillOfLadingCustomFields) | **PUT** /beta/billOfLading/customFields | Update a billOfLading custom fields
 
 
 <a name="addBillOfLading"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateBillOfLading(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BillOfLading**](BillOfLading.md)| BillOfLading to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBillOfLadingCustomFields"></a>
+# **updateBillOfLadingCustomFields**
+> updateBillOfLadingCustomFields(body)
+
+Update a billOfLading custom fields
+
+Updates an existing billOfLading custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var body = new infoplus.BillOfLading(); // {BillOfLading} BillOfLading to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateBillOfLadingCustomFields(body, callback);
 ```
 
 ### Parameters

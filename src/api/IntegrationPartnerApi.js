@@ -18,7 +18,7 @@
   /**
    * IntegrationPartner service.
    * @module api/IntegrationPartnerApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = IntegrationPartner;
 
       return this.apiClient.callApi(
-        '/v1.0/integrationPartner/{integrationPartnerId}', 'GET',
+        '/beta/integrationPartner/{integrationPartnerId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [IntegrationPartner];
 
       return this.apiClient.callApi(
-        '/v1.0/integrationPartner/search', 'GET',
+        '/beta/integrationPartner/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

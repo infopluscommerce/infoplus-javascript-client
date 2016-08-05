@@ -18,7 +18,7 @@
   /**
    * The VendorComplianceSurvey model module.
    * @module model/VendorComplianceSurvey
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -31,6 +31,7 @@
 
 
     this['worksheetId'] = worksheetId;
+
 
 
 
@@ -62,6 +63,9 @@
       if (data.hasOwnProperty('surveyQuestions')) {
         obj['surveyQuestions'] = ApiClient.convertToType(data['surveyQuestions'], 'String');
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} surveyQuestions
    */
   exports.prototype['surveyQuestions'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

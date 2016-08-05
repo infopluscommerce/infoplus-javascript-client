@@ -18,7 +18,7 @@
   /**
    * VendorComplianceSurvey service.
    * @module api/VendorComplianceSurveyApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = VendorComplianceSurvey;
 
       return this.apiClient.callApi(
-        '/v1.0/vendorComplianceSurvey', 'POST',
+        '/beta/vendorComplianceSurvey', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/vendorComplianceSurvey/{vendorComplianceSurveyId}', 'DELETE',
+        '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [VendorComplianceSurvey];
 
       return this.apiClient.callApi(
-        '/v1.0/vendorComplianceSurvey/search', 'GET',
+        '/beta/vendorComplianceSurvey/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = VendorComplianceSurvey;
 
       return this.apiClient.callApi(
-        '/v1.0/vendorComplianceSurvey/{vendorComplianceSurveyId}', 'GET',
+        '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/vendorComplianceSurvey', 'PUT',
+        '/beta/vendorComplianceSurvey', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateVendorComplianceSurveyCustomFields operation.
+     * @callback module:api/VendorComplianceSurveyApi~updateVendorComplianceSurveyCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a vendorComplianceSurvey custom fields
+     * Updates an existing vendorComplianceSurvey custom fields using the specified data.
+     * @param {module:model/VendorComplianceSurvey} body VendorComplianceSurvey to be updated.
+     * @param {module:api/VendorComplianceSurveyApi~updateVendorComplianceSurveyCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateVendorComplianceSurveyCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateVendorComplianceSurveyCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendorComplianceSurvey/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

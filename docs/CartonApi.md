@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCarton**](CartonApi.md#addCarton) | **POST** /v1.0/carton | Create a carton
-[**deleteCarton**](CartonApi.md#deleteCarton) | **DELETE** /v1.0/carton/{cartonId} | Delete a carton
-[**getCartonByFilter**](CartonApi.md#getCartonByFilter) | **GET** /v1.0/carton/search | Search cartons by filter
-[**getCartonById**](CartonApi.md#getCartonById) | **GET** /v1.0/carton/{cartonId} | Get a carton by id
-[**updateCarton**](CartonApi.md#updateCarton) | **PUT** /v1.0/carton | Update a carton
+[**addCarton**](CartonApi.md#addCarton) | **POST** /beta/carton | Create a carton
+[**deleteCarton**](CartonApi.md#deleteCarton) | **DELETE** /beta/carton/{cartonId} | Delete a carton
+[**getCartonByFilter**](CartonApi.md#getCartonByFilter) | **GET** /beta/carton/search | Search cartons by filter
+[**getCartonById**](CartonApi.md#getCartonById) | **GET** /beta/carton/{cartonId} | Get a carton by id
+[**updateCarton**](CartonApi.md#updateCarton) | **PUT** /beta/carton | Update a carton
+[**updateCartonCustomFields**](CartonApi.md#updateCartonCustomFields) | **PUT** /beta/carton/customFields | Update a carton custom fields
 
 
 <a name="addCarton"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateCarton(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Carton**](Carton.md)| Carton to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCartonCustomFields"></a>
+# **updateCartonCustomFields**
+> updateCartonCustomFields(body)
+
+Update a carton custom fields
+
+Updates an existing carton custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonApi()
+
+var body = new infoplus.Carton(); // {Carton} Carton to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateCartonCustomFields(body, callback);
 ```
 
 ### Parameters

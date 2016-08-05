@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **userId** | **Integer** |  | 
 **lobId** | **Integer** |  | [optional] 
 **workBatchId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -54,8 +54,8 @@ Name | Type | Description | Notes
 **integrationPartnerId** | **Integer** |  | [optional] 
 **numberOfLineItems** | **Integer** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**omsOrderId** | **Integer** |  | [optional] 
 **omsOrderNo** | **Integer** |  | [optional] 
+**omsCustomerId** | **Integer** |  | [optional] 
 **orderLoadProgramId** | **Integer** |  | [optional] 
 **orderMessage** | **String** |  | [optional] 
 **orderReason** | **Integer** |  | [optional] 
@@ -90,5 +90,6 @@ Name | Type | Description | Notes
 **totalQty** | **Integer** |  | [optional] 
 **weightLbs** | **Number** |  | [optional] 
 **lineItems** | [**[OrderLine]**](OrderLine.md) |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

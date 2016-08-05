@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/PickFaceAssignment'], factory);
+    define(['../ApiClient', '../model/PickFaceAssignment', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/PickFaceAssignment'));
+    module.exports = factory(require('../ApiClient'), require('../model/PickFaceAssignment'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.PickFaceAssignmentApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.PickFaceAssignment);
+    root.infoplus.PickFaceAssignmentApi = factory(root.infoplus.ApiClient, root.infoplus.PickFaceAssignment, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, PickFaceAssignment) {
+}(this, function(ApiClient, PickFaceAssignment, ApiResponse) {
   'use strict';
 
   /**
    * PickFaceAssignment service.
    * @module api/PickFaceAssignmentApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = PickFaceAssignment;
 
       return this.apiClient.callApi(
-        '/v1.0/pickFaceAssignment', 'POST',
+        '/beta/pickFaceAssignment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/pickFaceAssignment/{pickFaceAssignmentId}', 'DELETE',
+        '/beta/pickFaceAssignment/{pickFaceAssignmentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [PickFaceAssignment];
 
       return this.apiClient.callApi(
-        '/v1.0/pickFaceAssignment/search', 'GET',
+        '/beta/pickFaceAssignment/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = PickFaceAssignment;
 
       return this.apiClient.callApi(
-        '/v1.0/pickFaceAssignment/{pickFaceAssignmentId}', 'GET',
+        '/beta/pickFaceAssignment/{pickFaceAssignmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/pickFaceAssignment', 'PUT',
+        '/beta/pickFaceAssignment', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updatePickFaceAssignmentCustomFields operation.
+     * @callback module:api/PickFaceAssignmentApi~updatePickFaceAssignmentCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a pickFaceAssignment custom fields
+     * Updates an existing pickFaceAssignment custom fields using the specified data.
+     * @param {module:model/PickFaceAssignment} body PickFaceAssignment to be updated.
+     * @param {module:api/PickFaceAssignmentApi~updatePickFaceAssignmentCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updatePickFaceAssignmentCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updatePickFaceAssignmentCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/pickFaceAssignment/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

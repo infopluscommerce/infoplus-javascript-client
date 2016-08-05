@@ -20,5 +20,6 @@ Name | Type | Description | Notes
 **residential** | **Boolean** |  | [optional] [default to false]
 **zone** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **toteId** | **String** |  | [optional] 
 **pickerId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

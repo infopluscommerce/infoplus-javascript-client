@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/CartonType'], factory);
+    define(['../ApiClient', '../model/CartonType', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/CartonType'));
+    module.exports = factory(require('../ApiClient'), require('../model/CartonType'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.CartonTypeApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.CartonType);
+    root.infoplus.CartonTypeApi = factory(root.infoplus.ApiClient, root.infoplus.CartonType, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, CartonType) {
+}(this, function(ApiClient, CartonType, ApiResponse) {
   'use strict';
 
   /**
    * CartonType service.
    * @module api/CartonTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = CartonType;
 
       return this.apiClient.callApi(
-        '/v1.0/cartonType', 'POST',
+        '/beta/cartonType', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/cartonType/{cartonTypeId}', 'DELETE',
+        '/beta/cartonType/{cartonTypeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [CartonType];
 
       return this.apiClient.callApi(
-        '/v1.0/cartonType/search', 'GET',
+        '/beta/cartonType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = CartonType;
 
       return this.apiClient.callApi(
-        '/v1.0/cartonType/{cartonTypeId}', 'GET',
+        '/beta/cartonType/{cartonTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/cartonType', 'PUT',
+        '/beta/cartonType', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateCartonTypeCustomFields operation.
+     * @callback module:api/CartonTypeApi~updateCartonTypeCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a cartonType custom fields
+     * Updates an existing cartonType custom fields using the specified data.
+     * @param {module:model/CartonType} body CartonType to be updated.
+     * @param {module:api/CartonTypeApi~updateCartonTypeCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateCartonTypeCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateCartonTypeCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/cartonType/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

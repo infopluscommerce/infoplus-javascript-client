@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **lobId** | **Integer** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
 **quantity** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 
 

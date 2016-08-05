@@ -18,7 +18,7 @@
   /**
    * Alert service.
    * @module api/AlertApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [Alert];
 
       return this.apiClient.callApi(
-        '/v1.0/alert/search', 'GET',
+        '/beta/alert/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,51 @@
       var returnType = Alert;
 
       return this.apiClient.callApi(
-        '/v1.0/alert/{alertId}', 'GET',
+        '/beta/alert/{alertId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateAlertCustomFields operation.
+     * @callback module:api/AlertApi~updateAlertCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an alert custom fields
+     * Updates an existing alert custom fields using the specified data.
+     * @param {module:model/Alert} body Alert to be updated.
+     * @param {module:api/AlertApi~updateAlertCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateAlertCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateAlertCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/alert/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

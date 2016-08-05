@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBillingCode**](BillingCodeApi.md#addBillingCode) | **POST** /v1.0/billingCode | Create a billingCode
-[**deleteBillingCode**](BillingCodeApi.md#deleteBillingCode) | **DELETE** /v1.0/billingCode/{billingCodeId} | Delete a billingCode
-[**getBillingCodeByFilter**](BillingCodeApi.md#getBillingCodeByFilter) | **GET** /v1.0/billingCode/search | Search billingCodes by filter
-[**getBillingCodeById**](BillingCodeApi.md#getBillingCodeById) | **GET** /v1.0/billingCode/{billingCodeId} | Get a billingCode by id
-[**updateBillingCode**](BillingCodeApi.md#updateBillingCode) | **PUT** /v1.0/billingCode | Update a billingCode
+[**addBillingCode**](BillingCodeApi.md#addBillingCode) | **POST** /beta/billingCode | Create a billingCode
+[**deleteBillingCode**](BillingCodeApi.md#deleteBillingCode) | **DELETE** /beta/billingCode/{billingCodeId} | Delete a billingCode
+[**getBillingCodeByFilter**](BillingCodeApi.md#getBillingCodeByFilter) | **GET** /beta/billingCode/search | Search billingCodes by filter
+[**getBillingCodeById**](BillingCodeApi.md#getBillingCodeById) | **GET** /beta/billingCode/{billingCodeId} | Get a billingCode by id
+[**updateBillingCode**](BillingCodeApi.md#updateBillingCode) | **PUT** /beta/billingCode | Update a billingCode
+[**updateBillingCodeCustomFields**](BillingCodeApi.md#updateBillingCodeCustomFields) | **PUT** /beta/billingCode/customFields | Update a billingCode custom fields
 
 
 <a name="addBillingCode"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateBillingCode(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BillingCode**](BillingCode.md)| BillingCode to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBillingCodeCustomFields"></a>
+# **updateBillingCodeCustomFields**
+> updateBillingCodeCustomFields(body)
+
+Update a billingCode custom fields
+
+Updates an existing billingCode custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var body = new infoplus.BillingCode(); // {BillingCode} BillingCode to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateBillingCodeCustomFields(body, callback);
 ```
 
 ### Parameters

@@ -18,7 +18,7 @@
   /**
    * ItemSummaryCode service.
    * @module api/ItemSummaryCodeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemSummaryCode];
 
       return this.apiClient.callApi(
-        '/v1.0/itemSummaryCode/search', 'GET',
+        '/beta/itemSummaryCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemSummaryCode;
 
       return this.apiClient.callApi(
-        '/v1.0/itemSummaryCode/{itemSummaryCodeId}', 'GET',
+        '/beta/itemSummaryCode/{itemSummaryCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

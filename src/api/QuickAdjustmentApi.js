@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/QuickAdjustment'], factory);
+    define(['../ApiClient', '../model/QuickAdjustment', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/QuickAdjustment'));
+    module.exports = factory(require('../ApiClient'), require('../model/QuickAdjustment'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.QuickAdjustmentApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.QuickAdjustment);
+    root.infoplus.QuickAdjustmentApi = factory(root.infoplus.ApiClient, root.infoplus.QuickAdjustment, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, QuickAdjustment) {
+}(this, function(ApiClient, QuickAdjustment, ApiResponse) {
   'use strict';
 
   /**
    * QuickAdjustment service.
    * @module api/QuickAdjustmentApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = QuickAdjustment;
 
       return this.apiClient.callApi(
-        '/v1.0/quickAdjustment', 'POST',
+        '/beta/quickAdjustment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/quickAdjustment/{quickAdjustmentId}', 'DELETE',
+        '/beta/quickAdjustment/{quickAdjustmentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [QuickAdjustment];
 
       return this.apiClient.callApi(
-        '/v1.0/quickAdjustment/search', 'GET',
+        '/beta/quickAdjustment/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = QuickAdjustment;
 
       return this.apiClient.callApi(
-        '/v1.0/quickAdjustment/{quickAdjustmentId}', 'GET',
+        '/beta/quickAdjustment/{quickAdjustmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/quickAdjustment', 'PUT',
+        '/beta/quickAdjustment', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateQuickAdjustmentCustomFields operation.
+     * @callback module:api/QuickAdjustmentApi~updateQuickAdjustmentCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a quickAdjustment custom fields
+     * Updates an existing quickAdjustment custom fields using the specified data.
+     * @param {module:model/QuickAdjustment} body QuickAdjustment to be updated.
+     * @param {module:api/QuickAdjustmentApi~updateQuickAdjustmentCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateQuickAdjustmentCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateQuickAdjustmentCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/quickAdjustment/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

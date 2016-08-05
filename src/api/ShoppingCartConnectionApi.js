@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/ShoppingCartConnection'], factory);
+    define(['../ApiClient', '../model/ShoppingCartConnection', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ShoppingCartConnection'));
+    module.exports = factory(require('../ApiClient'), require('../model/ShoppingCartConnection'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ShoppingCartConnectionApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ShoppingCartConnection);
+    root.infoplus.ShoppingCartConnectionApi = factory(root.infoplus.ApiClient, root.infoplus.ShoppingCartConnection, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, ShoppingCartConnection) {
+}(this, function(ApiClient, ShoppingCartConnection, ApiResponse) {
   'use strict';
 
   /**
    * ShoppingCartConnection service.
    * @module api/ShoppingCartConnectionApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = ShoppingCartConnection;
 
       return this.apiClient.callApi(
-        '/v1.0/shoppingCartConnection', 'POST',
+        '/beta/shoppingCartConnection', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/shoppingCartConnection/{shoppingCartConnectionId}', 'DELETE',
+        '/beta/shoppingCartConnection/{shoppingCartConnectionId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [ShoppingCartConnection];
 
       return this.apiClient.callApi(
-        '/v1.0/shoppingCartConnection/search', 'GET',
+        '/beta/shoppingCartConnection/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = ShoppingCartConnection;
 
       return this.apiClient.callApi(
-        '/v1.0/shoppingCartConnection/{shoppingCartConnectionId}', 'GET',
+        '/beta/shoppingCartConnection/{shoppingCartConnectionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/shoppingCartConnection', 'PUT',
+        '/beta/shoppingCartConnection', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateShoppingCartConnectionCustomFields operation.
+     * @callback module:api/ShoppingCartConnectionApi~updateShoppingCartConnectionCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a shoppingCartConnection custom fields
+     * Updates an existing shoppingCartConnection custom fields using the specified data.
+     * @param {module:model/ShoppingCartConnection} body ShoppingCartConnection to be updated.
+     * @param {module:api/ShoppingCartConnectionApi~updateShoppingCartConnectionCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateShoppingCartConnectionCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateShoppingCartConnectionCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/shoppingCartConnection/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addOrder**](OrderApi.md#addOrder) | **POST** /v1.0/order | Create an order
-[**deleteOrder**](OrderApi.md#deleteOrder) | **DELETE** /v1.0/order/{orderId} | Delete an order
-[**getOrderByFilter**](OrderApi.md#getOrderByFilter) | **GET** /v1.0/order/search | Search orders by filter
-[**getOrderById**](OrderApi.md#getOrderById) | **GET** /v1.0/order/{orderId} | Get an order by id
-[**updateOrder**](OrderApi.md#updateOrder) | **PUT** /v1.0/order | Update an order
+[**addOrder**](OrderApi.md#addOrder) | **POST** /beta/order | Create an order
+[**deleteOrder**](OrderApi.md#deleteOrder) | **DELETE** /beta/order/{orderId} | Delete an order
+[**getOrderByFilter**](OrderApi.md#getOrderByFilter) | **GET** /beta/order/search | Search orders by filter
+[**getOrderById**](OrderApi.md#getOrderById) | **GET** /beta/order/{orderId} | Get an order by id
+[**updateOrder**](OrderApi.md#updateOrder) | **PUT** /beta/order | Update an order
+[**updateOrderCustomFields**](OrderApi.md#updateOrderCustomFields) | **PUT** /beta/order/customFields | Update an order custom fields
 
 
 <a name="addOrder"></a>
@@ -85,7 +86,7 @@ api_key.apiKey = "YOUR API KEY"
 
 var apiInstance = new infoplus.OrderApi()
 
-var orderId = 1.2; // {Number} Id of the order to be deleted.
+var orderId = 3.4; // {Number} Id of the order to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -102,7 +103,7 @@ api.deleteOrder(orderId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **Number**| Id of the order to be deleted. | 
+ **orderId** | [**Number**](.md)| Id of the order to be deleted. | 
 
 ### Return type
 
@@ -198,7 +199,7 @@ api_key.apiKey = "YOUR API KEY"
 
 var apiInstance = new infoplus.OrderApi()
 
-var orderId = 1.2; // {Number} Id of the order to be returned.
+var orderId = 3.4; // {Number} Id of the order to be returned.
 
 
 var callback = function(error, data, response) {
@@ -215,7 +216,7 @@ api.getOrderById(orderId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **Number**| Id of the order to be returned. | 
+ **orderId** | [**Number**](.md)| Id of the order to be returned. | 
 
 ### Return type
 
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateOrder(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Order**](Order.md)| Order to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateOrderCustomFields"></a>
+# **updateOrderCustomFields**
+> updateOrderCustomFields(body)
+
+Update an order custom fields
+
+Updates an existing order custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.OrderApi()
+
+var body = new infoplus.Order(); // {Order} Order to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateOrderCustomFields(body, callback);
 ```
 
 ### Parameters

@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **client** | **Integer** |  | [optional] 
 **name** | **String** |  | 
 **manifestPartnerId** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

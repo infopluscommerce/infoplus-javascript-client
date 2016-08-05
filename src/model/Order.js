@@ -18,7 +18,7 @@
   /**
    * The Order model module.
    * @module model/Order
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -121,6 +121,7 @@
 
 
     this['lineItems'] = lineItems;
+
   };
 
   /**
@@ -287,11 +288,11 @@
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
       }
-      if (data.hasOwnProperty('omsOrderId')) {
-        obj['omsOrderId'] = ApiClient.convertToType(data['omsOrderId'], 'Integer');
-      }
       if (data.hasOwnProperty('omsOrderNo')) {
         obj['omsOrderNo'] = ApiClient.convertToType(data['omsOrderNo'], 'Integer');
+      }
+      if (data.hasOwnProperty('omsCustomerId')) {
+        obj['omsCustomerId'] = ApiClient.convertToType(data['omsCustomerId'], 'Integer');
       }
       if (data.hasOwnProperty('orderLoadProgramId')) {
         obj['orderLoadProgramId'] = ApiClient.convertToType(data['orderLoadProgramId'], 'Integer');
@@ -394,6 +395,9 @@
       }
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [OrderLine]);
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -656,14 +660,14 @@
   exports.prototype['modifyDate'] = undefined;
 
   /**
-   * @member {Integer} omsOrderId
-   */
-  exports.prototype['omsOrderId'] = undefined;
-
-  /**
    * @member {Integer} omsOrderNo
    */
   exports.prototype['omsOrderNo'] = undefined;
+
+  /**
+   * @member {Integer} omsCustomerId
+   */
+  exports.prototype['omsCustomerId'] = undefined;
 
   /**
    * @member {Integer} orderLoadProgramId
@@ -834,6 +838,11 @@
    * @member {Array.<module:model/OrderLine>} lineItems
    */
   exports.prototype['lineItems'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

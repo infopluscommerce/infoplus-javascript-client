@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **zip** | **String** |  | 
 **country** | **String** |  | [optional] 
 **phone** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

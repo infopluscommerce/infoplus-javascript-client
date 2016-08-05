@@ -1,6 +1,6 @@
 {
   "name": "infoplus-javascript-client",
-  "version": "1.0",
+  "version": "beta",
   "description": "Infoplus API.",
   "main": "src/index.js",
   "scripts": {

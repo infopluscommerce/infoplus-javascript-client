@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/BillingCodeType'], factory);
+    define(['../ApiClient', '../model/BillingCodeType', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/BillingCodeType'));
+    module.exports = factory(require('../ApiClient'), require('../model/BillingCodeType'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.BillingCodeTypeApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.BillingCodeType);
+    root.infoplus.BillingCodeTypeApi = factory(root.infoplus.ApiClient, root.infoplus.BillingCodeType, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, BillingCodeType) {
+}(this, function(ApiClient, BillingCodeType, ApiResponse) {
   'use strict';
 
   /**
    * BillingCodeType service.
    * @module api/BillingCodeTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = BillingCodeType;
 
       return this.apiClient.callApi(
-        '/v1.0/billingCodeType', 'POST',
+        '/beta/billingCodeType', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/billingCodeType/{billingCodeTypeId}', 'DELETE',
+        '/beta/billingCodeType/{billingCodeTypeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [BillingCodeType];
 
       return this.apiClient.callApi(
-        '/v1.0/billingCodeType/search', 'GET',
+        '/beta/billingCodeType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = BillingCodeType;
 
       return this.apiClient.callApi(
-        '/v1.0/billingCodeType/{billingCodeTypeId}', 'GET',
+        '/beta/billingCodeType/{billingCodeTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/billingCodeType', 'PUT',
+        '/beta/billingCodeType', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBillingCodeTypeCustomFields operation.
+     * @callback module:api/BillingCodeTypeApi~updateBillingCodeTypeCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a billingCodeType custom fields
+     * Updates an existing billingCodeType custom fields using the specified data.
+     * @param {module:model/BillingCodeType} body BillingCodeType to be updated.
+     * @param {module:api/BillingCodeTypeApi~updateBillingCodeTypeCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateBillingCodeTypeCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateBillingCodeTypeCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/billingCodeType/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

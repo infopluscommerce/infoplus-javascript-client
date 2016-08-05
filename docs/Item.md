@@ -63,6 +63,8 @@ Name | Type | Description | Notes
 **forwardItemMixingRule** | **String** |  | 
 **storageItemMixingRule** | **String** |  | 
 **allocationRule** | **String** |  | 
+**barcodeField** | **String** |  | [optional] 
 **hazmat** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

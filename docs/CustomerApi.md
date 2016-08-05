@@ -4,12 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCustomer**](CustomerApi.md#addCustomer) | **POST** /v1.0/customer | Create a customer
-[**deleteCustomer**](CustomerApi.md#deleteCustomer) | **DELETE** /v1.0/customer/{customerId} | Delete a customer
-[**getByCustomerNo**](CustomerApi.md#getByCustomerNo) | **GET** /v1.0/customer/getByCustomerNo | Get a customer by Customer No
-[**getCustomerByFilter**](CustomerApi.md#getCustomerByFilter) | **GET** /v1.0/customer/search | Search customers by filter
-[**getCustomerById**](CustomerApi.md#getCustomerById) | **GET** /v1.0/customer/{customerId} | Get a customer by id
-[**updateCustomer**](CustomerApi.md#updateCustomer) | **PUT** /v1.0/customer | Update a customer
+[**addCustomer**](CustomerApi.md#addCustomer) | **POST** /beta/customer | Create a customer
+[**deleteCustomer**](CustomerApi.md#deleteCustomer) | **DELETE** /beta/customer/{customerId} | Delete a customer
+[**getByCustomerNo**](CustomerApi.md#getByCustomerNo) | **GET** /beta/customer/getByCustomerNo | Get a customer by Customer No
+[**getCustomerByFilter**](CustomerApi.md#getCustomerByFilter) | **GET** /beta/customer/search | Search customers by filter
+[**getCustomerById**](CustomerApi.md#getCustomerById) | **GET** /beta/customer/{customerId} | Get a customer by id
+[**updateCustomer**](CustomerApi.md#updateCustomer) | **PUT** /beta/customer | Update a customer
+[**updateCustomerCustomFields**](CustomerApi.md#updateCustomerCustomFields) | **PUT** /beta/customer/customFields | Update a customer custom fields
 
 
 <a name="addCustomer"></a>
@@ -319,6 +320,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateCustomer(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Customer**](Customer.md)| Customer to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCustomerCustomFields"></a>
+# **updateCustomerCustomFields**
+> updateCustomerCustomFields(body)
+
+Update a customer custom fields
+
+Updates an existing customer custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var body = new infoplus.Customer(); // {Customer} Customer to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateCustomerCustomFields(body, callback);
 ```
 
 ### Parameters

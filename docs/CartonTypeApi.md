@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCartonType**](CartonTypeApi.md#addCartonType) | **POST** /v1.0/cartonType | Create a cartonType
-[**deleteCartonType**](CartonTypeApi.md#deleteCartonType) | **DELETE** /v1.0/cartonType/{cartonTypeId} | Delete a cartonType
-[**getCartonTypeByFilter**](CartonTypeApi.md#getCartonTypeByFilter) | **GET** /v1.0/cartonType/search | Search cartonTypes by filter
-[**getCartonTypeById**](CartonTypeApi.md#getCartonTypeById) | **GET** /v1.0/cartonType/{cartonTypeId} | Get a cartonType by id
-[**updateCartonType**](CartonTypeApi.md#updateCartonType) | **PUT** /v1.0/cartonType | Update a cartonType
+[**addCartonType**](CartonTypeApi.md#addCartonType) | **POST** /beta/cartonType | Create a cartonType
+[**deleteCartonType**](CartonTypeApi.md#deleteCartonType) | **DELETE** /beta/cartonType/{cartonTypeId} | Delete a cartonType
+[**getCartonTypeByFilter**](CartonTypeApi.md#getCartonTypeByFilter) | **GET** /beta/cartonType/search | Search cartonTypes by filter
+[**getCartonTypeById**](CartonTypeApi.md#getCartonTypeById) | **GET** /beta/cartonType/{cartonTypeId} | Get a cartonType by id
+[**updateCartonType**](CartonTypeApi.md#updateCartonType) | **PUT** /beta/cartonType | Update a cartonType
+[**updateCartonTypeCustomFields**](CartonTypeApi.md#updateCartonTypeCustomFields) | **PUT** /beta/cartonType/customFields | Update a cartonType custom fields
 
 
 <a name="addCartonType"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateCartonType(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CartonType**](CartonType.md)| CartonType to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCartonTypeCustomFields"></a>
+# **updateCartonTypeCustomFields**
+> updateCartonTypeCustomFields(body)
+
+Update a cartonType custom fields
+
+Updates an existing cartonType custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var body = new infoplus.CartonType(); // {CartonType} CartonType to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateCartonTypeCustomFields(body, callback);
 ```
 
 ### Parameters

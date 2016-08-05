@@ -24,5 +24,6 @@ Name | Type | Description | Notes
 **cartonHeight** | **Number** |  | [optional] 
 **putAwayPlans** | [**[ReceivingWorksheetPutAwayPlan]**](ReceivingWorksheetPutAwayPlan.md) |  | [optional] 
 **quantity** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

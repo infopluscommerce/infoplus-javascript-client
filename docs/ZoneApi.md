@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addZone**](ZoneApi.md#addZone) | **POST** /v1.0/zone | Create a zone
-[**deleteZone**](ZoneApi.md#deleteZone) | **DELETE** /v1.0/zone/{zoneId} | Delete a zone
-[**getZoneByFilter**](ZoneApi.md#getZoneByFilter) | **GET** /v1.0/zone/search | Search zones by filter
-[**getZoneById**](ZoneApi.md#getZoneById) | **GET** /v1.0/zone/{zoneId} | Get a zone by id
-[**updateZone**](ZoneApi.md#updateZone) | **PUT** /v1.0/zone | Update a zone
+[**addZone**](ZoneApi.md#addZone) | **POST** /beta/zone | Create a zone
+[**deleteZone**](ZoneApi.md#deleteZone) | **DELETE** /beta/zone/{zoneId} | Delete a zone
+[**getZoneByFilter**](ZoneApi.md#getZoneByFilter) | **GET** /beta/zone/search | Search zones by filter
+[**getZoneById**](ZoneApi.md#getZoneById) | **GET** /beta/zone/{zoneId} | Get a zone by id
+[**updateZone**](ZoneApi.md#updateZone) | **PUT** /beta/zone | Update a zone
+[**updateZoneCustomFields**](ZoneApi.md#updateZoneCustomFields) | **PUT** /beta/zone/customFields | Update a zone custom fields
 
 
 <a name="addZone"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateZone(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Zone**](Zone.md)| Zone to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateZoneCustomFields"></a>
+# **updateZoneCustomFields**
+> updateZoneCustomFields(body)
+
+Update a zone custom fields
+
+Updates an existing zone custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ZoneApi()
+
+var body = new infoplus.Zone(); // {Zone} Zone to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateZoneCustomFields(body, callback);
 ```
 
 ### Parameters

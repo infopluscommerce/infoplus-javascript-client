@@ -4,11 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addJobTime**](JobTimeApi.md#addJobTime) | **POST** /v1.0/jobTime | Create a jobTime
-[**deleteJobTime**](JobTimeApi.md#deleteJobTime) | **DELETE** /v1.0/jobTime/{jobTimeId} | Delete a jobTime
-[**getJobTimeByFilter**](JobTimeApi.md#getJobTimeByFilter) | **GET** /v1.0/jobTime/search | Search jobTimes by filter
-[**getJobTimeById**](JobTimeApi.md#getJobTimeById) | **GET** /v1.0/jobTime/{jobTimeId} | Get a jobTime by id
-[**updateJobTime**](JobTimeApi.md#updateJobTime) | **PUT** /v1.0/jobTime | Update a jobTime
+[**addJobTime**](JobTimeApi.md#addJobTime) | **POST** /beta/jobTime | Create a jobTime
+[**deleteJobTime**](JobTimeApi.md#deleteJobTime) | **DELETE** /beta/jobTime/{jobTimeId} | Delete a jobTime
+[**getJobTimeByFilter**](JobTimeApi.md#getJobTimeByFilter) | **GET** /beta/jobTime/search | Search jobTimes by filter
+[**getJobTimeById**](JobTimeApi.md#getJobTimeById) | **GET** /beta/jobTime/{jobTimeId} | Get a jobTime by id
+[**updateJobTime**](JobTimeApi.md#updateJobTime) | **PUT** /beta/jobTime | Update a jobTime
+[**updateJobTimeCustomFields**](JobTimeApi.md#updateJobTimeCustomFields) | **PUT** /beta/jobTime/customFields | Update a jobTime custom fields
 
 
 <a name="addJobTime"></a>
@@ -262,6 +263,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateJobTime(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**JobTime**](JobTime.md)| JobTime to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateJobTimeCustomFields"></a>
+# **updateJobTimeCustomFields**
+> updateJobTimeCustomFields(body)
+
+Update a jobTime custom fields
+
+Updates an existing jobTime custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.JobTimeApi()
+
+var body = new infoplus.JobTime(); // {JobTime} JobTime to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateJobTimeCustomFields(body, callback);
 ```
 
 ### Parameters

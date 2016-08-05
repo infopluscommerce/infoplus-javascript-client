@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **address** | **String** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

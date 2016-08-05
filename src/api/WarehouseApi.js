@@ -18,7 +18,7 @@
   /**
    * Warehouse service.
    * @module api/WarehouseApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [Warehouse];
 
       return this.apiClient.callApi(
-        '/v1.0/warehouse/search', 'GET',
+        '/beta/warehouse/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,7 @@
       var returnType = Warehouse;
 
       return this.apiClient.callApi(
-        '/v1.0/warehouse/{warehouseId}', 'GET',
+        '/beta/warehouse/{warehouseId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/warehouse', 'PUT',
+        '/beta/warehouse', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateWarehouseCustomFields operation.
+     * @callback module:api/WarehouseApi~updateWarehouseCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a warehouse custom fields
+     * Updates an existing warehouse custom fields using the specified data.
+     * @param {module:model/Warehouse} body Warehouse to be updated.
+     * @param {module:api/WarehouseApi~updateWarehouseCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateWarehouseCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateWarehouseCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/warehouse/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

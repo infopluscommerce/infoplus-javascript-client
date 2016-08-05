@@ -18,7 +18,7 @@
   /**
    * The ItemMajorGroup model module.
    * @module model/ItemMajorGroup
-   * @version 1.0
+   * @version beta
    */
 
   /**

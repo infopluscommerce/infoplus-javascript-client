@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **jobCode** | **String** |  | [optional] 
 **isActive** | **Boolean** |  | [optional] [default to false]
+**customFields** | **{String: Object}** |  | [optional] 
 
 

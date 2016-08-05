@@ -18,7 +18,7 @@
   /**
    * BusinessTransaction service.
    * @module api/BusinessTransactionApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -75,7 +75,7 @@
       var returnType = [BusinessTransaction];
 
       return this.apiClient.callApi(
-        '/v1.0/businessTransaction/search', 'GET',
+        '/beta/businessTransaction/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +121,51 @@
       var returnType = BusinessTransaction;
 
       return this.apiClient.callApi(
-        '/v1.0/businessTransaction/{businessTransactionId}', 'GET',
+        '/beta/businessTransaction/{businessTransactionId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateBusinessTransactionCustomFields operation.
+     * @callback module:api/BusinessTransactionApi~updateBusinessTransactionCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a businessTransaction custom fields
+     * Updates an existing businessTransaction custom fields using the specified data.
+     * @param {module:model/BusinessTransaction} body BusinessTransaction to be updated.
+     * @param {module:api/BusinessTransactionApi~updateBusinessTransactionCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateBusinessTransactionCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateBusinessTransactionCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/businessTransaction/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

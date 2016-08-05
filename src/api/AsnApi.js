@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/Asn'], factory);
+    define(['../ApiClient', '../model/Asn', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/Asn'));
+    module.exports = factory(require('../ApiClient'), require('../model/Asn'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.AsnApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.Asn);
+    root.infoplus.AsnApi = factory(root.infoplus.ApiClient, root.infoplus.Asn, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, Asn) {
+}(this, function(ApiClient, Asn, ApiResponse) {
   'use strict';
 
   /**
    * Asn service.
    * @module api/AsnApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,7 @@
       var returnType = Asn;
 
       return this.apiClient.callApi(
-        '/v1.0/asn', 'POST',
+        '/beta/asn', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/asn/{asnId}', 'DELETE',
+        '/beta/asn/{asnId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +165,7 @@
       var returnType = [Asn];
 
       return this.apiClient.callApi(
-        '/v1.0/asn/search', 'GET',
+        '/beta/asn/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +211,7 @@
       var returnType = Asn;
 
       return this.apiClient.callApi(
-        '/v1.0/asn/{asnId}', 'GET',
+        '/beta/asn/{asnId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +255,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/asn', 'PUT',
+        '/beta/asn', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateAsnCustomFields operation.
+     * @callback module:api/AsnApi~updateAsnCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an asn custom fields
+     * Updates an existing asn custom fields using the specified data.
+     * @param {module:model/Asn} body Asn to be updated.
+     * @param {module:api/AsnApi~updateAsnCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateAsnCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateAsnCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/asn/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

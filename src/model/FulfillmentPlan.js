@@ -18,7 +18,7 @@
   /**
    * The FulfillmentPlan model module.
    * @module model/FulfillmentPlan
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -29,10 +29,11 @@
    * @param warehouseId
    * @param orderSmartFilterId
    * @param createPickWork
+   * @param pickScanSchemeId
    * @param cartonizeOrders
    * @param createPackingSlip
    */
-  var exports = function(name, warehouseId, orderSmartFilterId, createPickWork, cartonizeOrders, createPackingSlip) {
+  var exports = function(name, warehouseId, orderSmartFilterId, createPickWork, pickScanSchemeId, cartonizeOrders, createPackingSlip) {
 
 
 
@@ -56,11 +57,13 @@
 
 
 
+    this['pickScanSchemeId'] = pickScanSchemeId;
     this['cartonizeOrders'] = cartonizeOrders;
 
 
 
     this['createPackingSlip'] = createPackingSlip;
+
 
   };
 
@@ -141,6 +144,9 @@
       if (data.hasOwnProperty('pickSummarySort')) {
         obj['pickSummarySort'] = ApiClient.convertToType(data['pickSummarySort'], 'String');
       }
+      if (data.hasOwnProperty('pickScanSchemeId')) {
+        obj['pickScanSchemeId'] = ApiClient.convertToType(data['pickScanSchemeId'], 'Integer');
+      }
       if (data.hasOwnProperty('cartonizeOrders')) {
         obj['cartonizeOrders'] = ApiClient.convertToType(data['cartonizeOrders'], 'Boolean');
       }
@@ -158,6 +164,9 @@
       }
       if (data.hasOwnProperty('createOrderAssemblyGuide')) {
         obj['createOrderAssemblyGuide'] = ApiClient.convertToType(data['createOrderAssemblyGuide'], 'Boolean');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -278,6 +287,11 @@
   exports.prototype['pickSummarySort'] = undefined;
 
   /**
+   * @member {Integer} pickScanSchemeId
+   */
+  exports.prototype['pickScanSchemeId'] = undefined;
+
+  /**
    * @member {Boolean} cartonizeOrders
    * @default false
    */
@@ -311,6 +325,11 @@
    * @default false
    */
   exports.prototype['createOrderAssemblyGuide'] = false;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

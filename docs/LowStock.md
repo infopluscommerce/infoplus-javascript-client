@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **isDelayed** | **Boolean** |  | [optional] [default to false]
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 
 

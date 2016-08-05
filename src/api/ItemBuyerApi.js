@@ -18,7 +18,7 @@
   /**
    * ItemBuyer service.
    * @module api/ItemBuyerApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [ItemBuyer];
 
       return this.apiClient.callApi(
-        '/v1.0/itemBuyer/search', 'GET',
+        '/beta/itemBuyer/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = ItemBuyer;
 
       return this.apiClient.callApi(
-        '/v1.0/itemBuyer/{itemBuyerId}', 'GET',
+        '/beta/itemBuyer/{itemBuyerId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

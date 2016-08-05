@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **cartonTypeId** | **Integer** |  | 
 **cartonLPN** | **String** |  | [optional] 
 **weightLbs** | **Number** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

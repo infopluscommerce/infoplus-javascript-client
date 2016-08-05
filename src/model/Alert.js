@@ -18,7 +18,7 @@
   /**
    * The Alert model module.
    * @module model/Alert
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -27,6 +27,7 @@
    * @class
    */
   var exports = function() {
+
 
 
 
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('acknowledgeDate')) {
         obj['acknowledgeDate'] = ApiClient.convertToType(data['acknowledgeDate'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -135,6 +139,11 @@
    * @member {Date} acknowledgeDate
    */
   exports.prototype['acknowledgeDate'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

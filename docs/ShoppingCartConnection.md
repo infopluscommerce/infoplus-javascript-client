@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **syncInventory** | **Boolean** |  | [default to false]
 **syncTrackingData** | **Boolean** |  | [default to false]
 **syncInventoryLevelsLastRunTime** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -48,5 +48,6 @@ Name | Type | Description | Notes
 **usedBy** | **String** |  | [optional] 
 **lineItems** | [**[ItemReceipt]**](ItemReceipt.md) |  | [optional] 
 **status** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -18,7 +18,7 @@
   /**
    * The ReceivingWorksheet model module.
    * @module model/ReceivingWorksheet
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -40,10 +40,12 @@
 
     this['serviceLevel'] = serviceLevel;
 
+
     this['worksheetName'] = worksheetName;
 
 
     this['autoCommit'] = autoCommit;
+
 
 
 
@@ -83,6 +85,9 @@
       if (data.hasOwnProperty('serviceLevel')) {
         obj['serviceLevel'] = ApiClient.convertToType(data['serviceLevel'], 'String');
       }
+      if (data.hasOwnProperty('receivingProcessId')) {
+        obj['receivingProcessId'] = ApiClient.convertToType(data['receivingProcessId'], 'Integer');
+      }
       if (data.hasOwnProperty('createdBy')) {
         obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'Integer');
       }
@@ -112,6 +117,9 @@
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -152,6 +160,11 @@
    * @member {String} serviceLevel
    */
   exports.prototype['serviceLevel'] = undefined;
+
+  /**
+   * @member {Integer} receivingProcessId
+   */
+  exports.prototype['receivingProcessId'] = undefined;
 
   /**
    * @member {Integer} createdBy
@@ -204,6 +217,11 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

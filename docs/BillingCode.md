@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **lobId** | **Integer** |  | 
 **billingCodeTypeId** | **Integer** |  | 
 **note** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

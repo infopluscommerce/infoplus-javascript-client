@@ -21,5 +21,6 @@ Name | Type | Description | Notes
 **bayNumberMinimumNumberOfDigits** | **Integer** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

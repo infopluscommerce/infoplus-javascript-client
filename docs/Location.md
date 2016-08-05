@@ -22,5 +22,6 @@ Name | Type | Description | Notes
 **allowItemMixing** | **Boolean** |  | [default to false]
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

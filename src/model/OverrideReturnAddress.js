@@ -18,7 +18,7 @@
   /**
    * The OverrideReturnAddress model module.
    * @module model/OverrideReturnAddress
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -52,6 +52,7 @@
     this['zip'] = zip;
 
     this['phone'] = phone;
+
   };
 
   /**
@@ -109,6 +110,9 @@
       }
       if (data.hasOwnProperty('phone')) {
         obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -189,6 +193,11 @@
    * @member {String} phone
    */
   exports.prototype['phone'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 
