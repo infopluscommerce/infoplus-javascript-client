@@ -4,11 +4,17 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBillingCode**](BillingCodeApi.md#addBillingCode) | **POST** /v1.0/billingCode | Create a billingCode
-[**deleteBillingCode**](BillingCodeApi.md#deleteBillingCode) | **DELETE** /v1.0/billingCode/{billingCodeId} | Delete a billingCode
-[**getBillingCodeByFilter**](BillingCodeApi.md#getBillingCodeByFilter) | **GET** /v1.0/billingCode/search | Search billingCodes by filter
-[**getBillingCodeById**](BillingCodeApi.md#getBillingCodeById) | **GET** /v1.0/billingCode/{billingCodeId} | Get a billingCode by id
-[**updateBillingCode**](BillingCodeApi.md#updateBillingCode) | **PUT** /v1.0/billingCode | Update a billingCode
+[**addBillingCode**](BillingCodeApi.md#addBillingCode) | **POST** /beta/billingCode | Create a billingCode
+[**addBillingCodeAudit**](BillingCodeApi.md#addBillingCodeAudit) | **PUT** /beta/billingCode/{billingCodeId}/audit/{billingCodeAudit} | Add new audit for a billingCode
+[**addBillingCodeTag**](BillingCodeApi.md#addBillingCodeTag) | **PUT** /beta/billingCode/{billingCodeId}/tag/{billingCodeTag} | Add new tags for a billingCode.
+[**deleteBillingCode**](BillingCodeApi.md#deleteBillingCode) | **DELETE** /beta/billingCode/{billingCodeId} | Delete a billingCode
+[**deleteBillingCodeTag**](BillingCodeApi.md#deleteBillingCodeTag) | **DELETE** /beta/billingCode/{billingCodeId}/tag/{billingCodeTag} | Delete a tag for a billingCode.
+[**getBillingCodeByFilter**](BillingCodeApi.md#getBillingCodeByFilter) | **GET** /beta/billingCode/search | Search billingCodes by filter
+[**getBillingCodeById**](BillingCodeApi.md#getBillingCodeById) | **GET** /beta/billingCode/{billingCodeId} | Get a billingCode by id
+[**getBillingCodeTags**](BillingCodeApi.md#getBillingCodeTags) | **GET** /beta/billingCode/{billingCodeId}/tag | Get the tags for a billingCode.
+[**getDuplicateBillingCodeById**](BillingCodeApi.md#getDuplicateBillingCodeById) | **GET** /beta/billingCode/duplicate/{billingCodeId} | Get a duplicated a billingCode by id
+[**updateBillingCode**](BillingCodeApi.md#updateBillingCode) | **PUT** /beta/billingCode | Update a billingCode
+[**updateBillingCodeCustomFields**](BillingCodeApi.md#updateBillingCodeCustomFields) | **PUT** /beta/billingCode/customFields | Update a billingCode custom fields
 
 
 <a name="addBillingCode"></a>
@@ -64,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addBillingCodeAudit"></a>
+# **addBillingCodeAudit**
+> addBillingCodeAudit(billingCodeId, billingCodeAudit)
+
+Add new audit for a billingCode
+
+Adds an audit to an existing billingCode.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var billingCodeId = 56; // {Integer} Id of the billingCode to add an audit to
+
+var billingCodeAudit = "billingCodeAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addBillingCodeAudit(billingCodeId, billingCodeAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billingCodeId** | **Integer**| Id of the billingCode to add an audit to | 
+ **billingCodeAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addBillingCodeTag"></a>
+# **addBillingCodeTag**
+> addBillingCodeTag(billingCodeId, billingCodeTag)
+
+Add new tags for a billingCode.
+
+Adds a tag to an existing billingCode.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var billingCodeId = 56; // {Integer} Id of the billingCode to add a tag to
+
+var billingCodeTag = "billingCodeTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addBillingCodeTag(billingCodeId, billingCodeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billingCodeId** | **Integer**| Id of the billingCode to add a tag to | 
+ **billingCodeTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteBillingCode"></a>
 # **deleteBillingCode**
 > deleteBillingCode(billingCodeId)
@@ -103,6 +221,62 @@ api.deleteBillingCode(billingCodeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billingCodeId** | **Integer**| Id of the billingCode to be deleted. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteBillingCodeTag"></a>
+# **deleteBillingCodeTag**
+> deleteBillingCodeTag(billingCodeId, billingCodeTag)
+
+Delete a tag for a billingCode.
+
+Deletes an existing billingCode tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var billingCodeId = 56; // {Integer} Id of the billingCode to remove tag from
+
+var billingCodeTag = "billingCodeTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteBillingCodeTag(billingCodeId, billingCodeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billingCodeId** | **Integer**| Id of the billingCode to remove tag from | 
+ **billingCodeTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -230,6 +404,112 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getBillingCodeTags"></a>
+# **getBillingCodeTags**
+> getBillingCodeTags(billingCodeId)
+
+Get the tags for a billingCode.
+
+Get all existing billingCode tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var billingCodeId = 56; // {Integer} Id of the billingCode to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getBillingCodeTags(billingCodeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billingCodeId** | **Integer**| Id of the billingCode to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateBillingCodeById"></a>
+# **getDuplicateBillingCodeById**
+> BillingCode getDuplicateBillingCodeById(billingCodeId)
+
+Get a duplicated a billingCode by id
+
+Returns a duplicated billingCode identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var billingCodeId = 56; // {Integer} Id of the billingCode to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateBillingCodeById(billingCodeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billingCodeId** | **Integer**| Id of the billingCode to be duplicated. | 
+
+### Return type
+
+[**BillingCode**](BillingCode.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="updateBillingCode"></a>
 # **updateBillingCode**
 > updateBillingCode(body)
@@ -262,6 +542,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateBillingCode(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BillingCode**](BillingCode.md)| BillingCode to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBillingCodeCustomFields"></a>
+# **updateBillingCodeCustomFields**
+> updateBillingCodeCustomFields(body)
+
+Update a billingCode custom fields
+
+Updates an existing billingCode custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillingCodeApi()
+
+var body = new infoplus.BillingCode(); // {BillingCode} BillingCode to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateBillingCodeCustomFields(body, callback);
 ```
 
 ### Parameters

@@ -18,7 +18,7 @@
   /**
    * The ParcelAccount model module.
    * @module model/ParcelAccount
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -40,6 +40,7 @@
 
     this['name'] = name;
     this['manifestPartnerId'] = manifestPartnerId;
+
   };
 
   /**
@@ -76,6 +77,9 @@
       }
       if (data.hasOwnProperty('manifestPartnerId')) {
         obj['manifestPartnerId'] = ApiClient.convertToType(data['manifestPartnerId'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -121,6 +125,11 @@
    * @member {String} manifestPartnerId
    */
   exports.prototype['manifestPartnerId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

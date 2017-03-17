@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/OrderSourceReservation'], factory);
+    define(['../ApiClient', '../model/OrderSourceReservation', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/OrderSourceReservation'));
+    module.exports = factory(require('../ApiClient'), require('../model/OrderSourceReservation'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderSourceReservationApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.OrderSourceReservation);
+    root.infoplus.OrderSourceReservationApi = factory(root.infoplus.ApiClient, root.infoplus.OrderSourceReservation, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, OrderSourceReservation) {
+}(this, function(ApiClient, OrderSourceReservation, ApiResponse) {
   'use strict';
 
   /**
    * OrderSourceReservation service.
    * @module api/OrderSourceReservationApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,111 @@
       var returnType = OrderSourceReservation;
 
       return this.apiClient.callApi(
-        '/v1.0/orderSourceReservation', 'POST',
+        '/beta/orderSourceReservation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addOrderSourceReservationAudit operation.
+     * @callback module:api/OrderSourceReservationApi~addOrderSourceReservationAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for an orderSourceReservation
+     * Adds an audit to an existing orderSourceReservation.
+     * @param {Integer} orderSourceReservationId Id of the orderSourceReservation to add an audit to
+     * @param {String} orderSourceReservationAudit The audit to add
+     * @param {module:api/OrderSourceReservationApi~addOrderSourceReservationAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addOrderSourceReservationAudit = function(orderSourceReservationId, orderSourceReservationAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'orderSourceReservationId' is set
+      if (orderSourceReservationId == undefined || orderSourceReservationId == null) {
+        throw "Missing the required parameter 'orderSourceReservationId' when calling addOrderSourceReservationAudit";
+      }
+
+      // verify the required parameter 'orderSourceReservationAudit' is set
+      if (orderSourceReservationAudit == undefined || orderSourceReservationAudit == null) {
+        throw "Missing the required parameter 'orderSourceReservationAudit' when calling addOrderSourceReservationAudit";
+      }
+
+
+      var pathParams = {
+        'orderSourceReservationId': orderSourceReservationId,
+        'orderSourceReservationAudit': orderSourceReservationAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/orderSourceReservation/{orderSourceReservationId}/audit/{orderSourceReservationAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addOrderSourceReservationTag operation.
+     * @callback module:api/OrderSourceReservationApi~addOrderSourceReservationTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for an orderSourceReservation.
+     * Adds a tag to an existing orderSourceReservation.
+     * @param {Integer} orderSourceReservationId Id of the orderSourceReservation to add a tag to
+     * @param {String} orderSourceReservationTag The tag to add
+     * @param {module:api/OrderSourceReservationApi~addOrderSourceReservationTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addOrderSourceReservationTag = function(orderSourceReservationId, orderSourceReservationTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'orderSourceReservationId' is set
+      if (orderSourceReservationId == undefined || orderSourceReservationId == null) {
+        throw "Missing the required parameter 'orderSourceReservationId' when calling addOrderSourceReservationTag";
+      }
+
+      // verify the required parameter 'orderSourceReservationTag' is set
+      if (orderSourceReservationTag == undefined || orderSourceReservationTag == null) {
+        throw "Missing the required parameter 'orderSourceReservationTag' when calling addOrderSourceReservationTag";
+      }
+
+
+      var pathParams = {
+        'orderSourceReservationId': orderSourceReservationId,
+        'orderSourceReservationTag': orderSourceReservationTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/orderSourceReservation/{orderSourceReservationId}/tag/{orderSourceReservationTag}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +220,105 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/orderSourceReservation/{orderSourceReservationId}', 'DELETE',
+        '/beta/orderSourceReservation/{orderSourceReservationId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteOrderSourceReservationTag operation.
+     * @callback module:api/OrderSourceReservationApi~deleteOrderSourceReservationTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for an orderSourceReservation.
+     * Deletes an existing orderSourceReservation tag using the specified data.
+     * @param {Integer} orderSourceReservationId Id of the orderSourceReservation to remove tag from
+     * @param {String} orderSourceReservationTag The tag to delete
+     * @param {module:api/OrderSourceReservationApi~deleteOrderSourceReservationTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteOrderSourceReservationTag = function(orderSourceReservationId, orderSourceReservationTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'orderSourceReservationId' is set
+      if (orderSourceReservationId == undefined || orderSourceReservationId == null) {
+        throw "Missing the required parameter 'orderSourceReservationId' when calling deleteOrderSourceReservationTag";
+      }
+
+      // verify the required parameter 'orderSourceReservationTag' is set
+      if (orderSourceReservationTag == undefined || orderSourceReservationTag == null) {
+        throw "Missing the required parameter 'orderSourceReservationTag' when calling deleteOrderSourceReservationTag";
+      }
+
+
+      var pathParams = {
+        'orderSourceReservationId': orderSourceReservationId,
+        'orderSourceReservationTag': orderSourceReservationTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/orderSourceReservation/{orderSourceReservationId}/tag/{orderSourceReservationTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateOrderSourceReservationById operation.
+     * @callback module:api/OrderSourceReservationApi~getDuplicateOrderSourceReservationByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/OrderSourceReservation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated an orderSourceReservation by id
+     * Returns a duplicated orderSourceReservation identified by the specified id.
+     * @param {Integer} orderSourceReservationId Id of the orderSourceReservation to be duplicated.
+     * @param {module:api/OrderSourceReservationApi~getDuplicateOrderSourceReservationByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/OrderSourceReservation}
+     */
+    this.getDuplicateOrderSourceReservationById = function(orderSourceReservationId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'orderSourceReservationId' is set
+      if (orderSourceReservationId == undefined || orderSourceReservationId == null) {
+        throw "Missing the required parameter 'orderSourceReservationId' when calling getDuplicateOrderSourceReservationById";
+      }
+
+
+      var pathParams = {
+        'orderSourceReservationId': orderSourceReservationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = OrderSourceReservation;
+
+      return this.apiClient.callApi(
+        '/beta/orderSourceReservation/duplicate/{orderSourceReservationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +367,7 @@
       var returnType = [OrderSourceReservation];
 
       return this.apiClient.callApi(
-        '/v1.0/orderSourceReservation/search', 'GET',
+        '/beta/orderSourceReservation/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +413,52 @@
       var returnType = OrderSourceReservation;
 
       return this.apiClient.callApi(
-        '/v1.0/orderSourceReservation/{orderSourceReservationId}', 'GET',
+        '/beta/orderSourceReservation/{orderSourceReservationId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getOrderSourceReservationTags operation.
+     * @callback module:api/OrderSourceReservationApi~getOrderSourceReservationTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for an orderSourceReservation.
+     * Get all existing orderSourceReservation tags.
+     * @param {Integer} orderSourceReservationId Id of the orderSourceReservation to get tags for
+     * @param {module:api/OrderSourceReservationApi~getOrderSourceReservationTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getOrderSourceReservationTags = function(orderSourceReservationId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'orderSourceReservationId' is set
+      if (orderSourceReservationId == undefined || orderSourceReservationId == null) {
+        throw "Missing the required parameter 'orderSourceReservationId' when calling getOrderSourceReservationTags";
+      }
+
+
+      var pathParams = {
+        'orderSourceReservationId': orderSourceReservationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/orderSourceReservation/{orderSourceReservationId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +502,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/orderSourceReservation', 'PUT',
+        '/beta/orderSourceReservation', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateOrderSourceReservationCustomFields operation.
+     * @callback module:api/OrderSourceReservationApi~updateOrderSourceReservationCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an orderSourceReservation custom fields
+     * Updates an existing orderSourceReservation custom fields using the specified data.
+     * @param {module:model/OrderSourceReservation} body OrderSourceReservation to be updated.
+     * @param {module:api/OrderSourceReservationApi~updateOrderSourceReservationCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateOrderSourceReservationCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateOrderSourceReservationCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/orderSourceReservation/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ThirdPartyParcelAccount', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/ApiResponse', '../model/ThirdPartyParcelAccount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ThirdPartyParcelAccount'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ThirdPartyParcelAccount'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ThirdPartyParcelAccountApi = factory(root.infoplus.ApiClient, root.infoplus.ThirdPartyParcelAccount, root.infoplus.ApiResponse);
+    root.infoplus.ThirdPartyParcelAccountApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ThirdPartyParcelAccount);
   }
-}(this, function(ApiClient, ThirdPartyParcelAccount, ApiResponse) {
+}(this, function(ApiClient, ApiResponse, ThirdPartyParcelAccount) {
   'use strict';
 
   /**
    * ThirdPartyParcelAccount service.
    * @module api/ThirdPartyParcelAccountApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,111 @@
       var returnType = ThirdPartyParcelAccount;
 
       return this.apiClient.callApi(
-        '/v1.0/thirdPartyParcelAccount', 'POST',
+        '/beta/thirdPartyParcelAccount', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addThirdPartyParcelAccountAudit operation.
+     * @callback module:api/ThirdPartyParcelAccountApi~addThirdPartyParcelAccountAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a thirdPartyParcelAccount
+     * Adds an audit to an existing thirdPartyParcelAccount.
+     * @param {Integer} thirdPartyParcelAccountId Id of the thirdPartyParcelAccount to add an audit to
+     * @param {String} thirdPartyParcelAccountAudit The audit to add
+     * @param {module:api/ThirdPartyParcelAccountApi~addThirdPartyParcelAccountAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addThirdPartyParcelAccountAudit = function(thirdPartyParcelAccountId, thirdPartyParcelAccountAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'thirdPartyParcelAccountId' is set
+      if (thirdPartyParcelAccountId == undefined || thirdPartyParcelAccountId == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountId' when calling addThirdPartyParcelAccountAudit";
+      }
+
+      // verify the required parameter 'thirdPartyParcelAccountAudit' is set
+      if (thirdPartyParcelAccountAudit == undefined || thirdPartyParcelAccountAudit == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountAudit' when calling addThirdPartyParcelAccountAudit";
+      }
+
+
+      var pathParams = {
+        'thirdPartyParcelAccountId': thirdPartyParcelAccountId,
+        'thirdPartyParcelAccountAudit': thirdPartyParcelAccountAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/thirdPartyParcelAccount/{thirdPartyParcelAccountId}/audit/{thirdPartyParcelAccountAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addThirdPartyParcelAccountTag operation.
+     * @callback module:api/ThirdPartyParcelAccountApi~addThirdPartyParcelAccountTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a thirdPartyParcelAccount.
+     * Adds a tag to an existing thirdPartyParcelAccount.
+     * @param {Integer} thirdPartyParcelAccountId Id of the thirdPartyParcelAccount to add a tag to
+     * @param {String} thirdPartyParcelAccountTag The tag to add
+     * @param {module:api/ThirdPartyParcelAccountApi~addThirdPartyParcelAccountTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addThirdPartyParcelAccountTag = function(thirdPartyParcelAccountId, thirdPartyParcelAccountTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'thirdPartyParcelAccountId' is set
+      if (thirdPartyParcelAccountId == undefined || thirdPartyParcelAccountId == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountId' when calling addThirdPartyParcelAccountTag";
+      }
+
+      // verify the required parameter 'thirdPartyParcelAccountTag' is set
+      if (thirdPartyParcelAccountTag == undefined || thirdPartyParcelAccountTag == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountTag' when calling addThirdPartyParcelAccountTag";
+      }
+
+
+      var pathParams = {
+        'thirdPartyParcelAccountId': thirdPartyParcelAccountId,
+        'thirdPartyParcelAccountTag': thirdPartyParcelAccountTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/thirdPartyParcelAccount/{thirdPartyParcelAccountId}/tag/{thirdPartyParcelAccountTag}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +220,105 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/thirdPartyParcelAccount/{thirdPartyParcelAccountId}', 'DELETE',
+        '/beta/thirdPartyParcelAccount/{thirdPartyParcelAccountId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteThirdPartyParcelAccountTag operation.
+     * @callback module:api/ThirdPartyParcelAccountApi~deleteThirdPartyParcelAccountTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a thirdPartyParcelAccount.
+     * Deletes an existing thirdPartyParcelAccount tag using the specified data.
+     * @param {Integer} thirdPartyParcelAccountId Id of the thirdPartyParcelAccount to remove tag from
+     * @param {String} thirdPartyParcelAccountTag The tag to delete
+     * @param {module:api/ThirdPartyParcelAccountApi~deleteThirdPartyParcelAccountTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteThirdPartyParcelAccountTag = function(thirdPartyParcelAccountId, thirdPartyParcelAccountTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'thirdPartyParcelAccountId' is set
+      if (thirdPartyParcelAccountId == undefined || thirdPartyParcelAccountId == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountId' when calling deleteThirdPartyParcelAccountTag";
+      }
+
+      // verify the required parameter 'thirdPartyParcelAccountTag' is set
+      if (thirdPartyParcelAccountTag == undefined || thirdPartyParcelAccountTag == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountTag' when calling deleteThirdPartyParcelAccountTag";
+      }
+
+
+      var pathParams = {
+        'thirdPartyParcelAccountId': thirdPartyParcelAccountId,
+        'thirdPartyParcelAccountTag': thirdPartyParcelAccountTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/thirdPartyParcelAccount/{thirdPartyParcelAccountId}/tag/{thirdPartyParcelAccountTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateThirdPartyParcelAccountById operation.
+     * @callback module:api/ThirdPartyParcelAccountApi~getDuplicateThirdPartyParcelAccountByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ThirdPartyParcelAccount} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a thirdPartyParcelAccount by id
+     * Returns a duplicated thirdPartyParcelAccount identified by the specified id.
+     * @param {Integer} thirdPartyParcelAccountId Id of the thirdPartyParcelAccount to be duplicated.
+     * @param {module:api/ThirdPartyParcelAccountApi~getDuplicateThirdPartyParcelAccountByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/ThirdPartyParcelAccount}
+     */
+    this.getDuplicateThirdPartyParcelAccountById = function(thirdPartyParcelAccountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'thirdPartyParcelAccountId' is set
+      if (thirdPartyParcelAccountId == undefined || thirdPartyParcelAccountId == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountId' when calling getDuplicateThirdPartyParcelAccountById";
+      }
+
+
+      var pathParams = {
+        'thirdPartyParcelAccountId': thirdPartyParcelAccountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ThirdPartyParcelAccount;
+
+      return this.apiClient.callApi(
+        '/beta/thirdPartyParcelAccount/duplicate/{thirdPartyParcelAccountId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +367,7 @@
       var returnType = [ThirdPartyParcelAccount];
 
       return this.apiClient.callApi(
-        '/v1.0/thirdPartyParcelAccount/search', 'GET',
+        '/beta/thirdPartyParcelAccount/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +413,52 @@
       var returnType = ThirdPartyParcelAccount;
 
       return this.apiClient.callApi(
-        '/v1.0/thirdPartyParcelAccount/{thirdPartyParcelAccountId}', 'GET',
+        '/beta/thirdPartyParcelAccount/{thirdPartyParcelAccountId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getThirdPartyParcelAccountTags operation.
+     * @callback module:api/ThirdPartyParcelAccountApi~getThirdPartyParcelAccountTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a thirdPartyParcelAccount.
+     * Get all existing thirdPartyParcelAccount tags.
+     * @param {Integer} thirdPartyParcelAccountId Id of the thirdPartyParcelAccount to get tags for
+     * @param {module:api/ThirdPartyParcelAccountApi~getThirdPartyParcelAccountTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getThirdPartyParcelAccountTags = function(thirdPartyParcelAccountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'thirdPartyParcelAccountId' is set
+      if (thirdPartyParcelAccountId == undefined || thirdPartyParcelAccountId == null) {
+        throw "Missing the required parameter 'thirdPartyParcelAccountId' when calling getThirdPartyParcelAccountTags";
+      }
+
+
+      var pathParams = {
+        'thirdPartyParcelAccountId': thirdPartyParcelAccountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/thirdPartyParcelAccount/{thirdPartyParcelAccountId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +502,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/thirdPartyParcelAccount', 'PUT',
+        '/beta/thirdPartyParcelAccount', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateThirdPartyParcelAccountCustomFields operation.
+     * @callback module:api/ThirdPartyParcelAccountApi~updateThirdPartyParcelAccountCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a thirdPartyParcelAccount custom fields
+     * Updates an existing thirdPartyParcelAccount custom fields using the specified data.
+     * @param {module:model/ThirdPartyParcelAccount} body ThirdPartyParcelAccount to be updated.
+     * @param {module:api/ThirdPartyParcelAccountApi~updateThirdPartyParcelAccountCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateThirdPartyParcelAccountCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateThirdPartyParcelAccountCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/thirdPartyParcelAccount/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

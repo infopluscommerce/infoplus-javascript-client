@@ -18,7 +18,7 @@
   /**
    * The ReceivingWorksheetLineItem model module.
    * @module model/ReceivingWorksheetLineItem
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -37,6 +37,7 @@
 
 
 
+
     this['receivingQty'] = receivingQty;
     this['unitCode'] = unitCode;
     this['wrapCode'] = wrapCode;
@@ -44,6 +45,8 @@
 
 
     this['weightPerWrap'] = weightPerWrap;
+
+
 
 
 
@@ -68,6 +71,9 @@
 
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
+      }
+      if (data.hasOwnProperty('sku2')) {
+        obj['sku2'] = ApiClient.convertToType(data['sku2'], 'String');
       }
       if (data.hasOwnProperty('fullDescription')) {
         obj['fullDescription'] = ApiClient.convertToType(data['fullDescription'], 'String');
@@ -108,6 +114,9 @@
       if (data.hasOwnProperty('productionLot')) {
         obj['productionLot'] = ApiClient.convertToType(data['productionLot'], 'String');
       }
+      if (data.hasOwnProperty('productIdTag')) {
+        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
+      }
       if (data.hasOwnProperty('revisionDate')) {
         obj['revisionDate'] = ApiClient.convertToType(data['revisionDate'], 'String');
       }
@@ -129,6 +138,9 @@
       if (data.hasOwnProperty('quantity')) {
         obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Integer');
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -138,6 +150,11 @@
    * @member {String} sku
    */
   exports.prototype['sku'] = undefined;
+
+  /**
+   * @member {String} sku2
+   */
+  exports.prototype['sku2'] = undefined;
 
   /**
    * @member {String} fullDescription
@@ -205,6 +222,11 @@
   exports.prototype['productionLot'] = undefined;
 
   /**
+   * @member {String} productIdTag
+   */
+  exports.prototype['productIdTag'] = undefined;
+
+  /**
    * @member {String} revisionDate
    */
   exports.prototype['revisionDate'] = undefined;
@@ -238,6 +260,11 @@
    * @member {Integer} quantity
    */
   exports.prototype['quantity'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

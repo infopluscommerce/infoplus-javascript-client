@@ -18,7 +18,7 @@
   /**
    * The Carton model module.
    * @module model/Carton
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -34,6 +34,7 @@
     this['orderNo'] = orderNo;
 
     this['cartonTypeId'] = cartonTypeId;
+
 
 
   };
@@ -66,6 +67,9 @@
       }
       if (data.hasOwnProperty('weightLbs')) {
         obj['weightLbs'] = ApiClient.convertToType(data['weightLbs'], 'Number');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -101,6 +105,11 @@
    * @member {Number} weightLbs
    */
   exports.prototype['weightLbs'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

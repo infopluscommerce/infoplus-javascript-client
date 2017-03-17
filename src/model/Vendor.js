@@ -18,7 +18,7 @@
   /**
    * The Vendor model module.
    * @module model/Vendor
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -78,6 +78,7 @@
 
 
     this['inactive'] = inactive;
+
   };
 
   /**
@@ -216,6 +217,9 @@
       }
       if (data.hasOwnProperty('inactive')) {
         obj['inactive'] = ApiClient.convertToType(data['inactive'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -431,6 +435,11 @@
    * @member {String} inactive
    */
   exports.prototype['inactive'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

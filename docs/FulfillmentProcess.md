@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **processNo** | **Integer** |  | [optional] 
 **workBatchId** | **Integer** |  | [optional] 
 **warehouseId** | **Integer** |  | 
-**allocationPlanId** | **Integer** |  | 
+**fulfillmentPlanId** | **Integer** |  | 
+**pickScanSchemeId** | **Integer** |  | 
 **status** | **String** |  | 
 **orderSmartFilterId** | **Integer** |  | [optional] 
 **locationSmartFilterId** | **Integer** |  | [optional] 
@@ -43,8 +44,13 @@ Name | Type | Description | Notes
 **shipDate** | **Date** |  | [optional] 
 **autoShipCasebreakCartons** | **Boolean** |  | [optional] [default to false]
 **cartonizeOrders** | **Boolean** |  | [optional] [default to false]
-**createPackingSlip** | **Boolean** |  | [optional] [default to false]
+**createPackingSlip** | **String** |  | 
 **overridePackingSlipTemplateId** | **Integer** |  | [optional] 
 **createOrderAssemblyGuide** | **Boolean** |  | [optional] [default to false]
+**createOrderInvoice** | **String** |  | 
+**overrideOrderInvoiceTemplateId** | **Integer** |  | [optional] 
+**sendToExternalShippingSystem** | **Boolean** |  | [default to false]
+**externalShippingSystemId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

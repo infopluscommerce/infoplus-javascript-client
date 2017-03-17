@@ -18,7 +18,7 @@
   /**
    * Carrier service.
    * @module api/CarrierApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = Carrier;
 
       return this.apiClient.callApi(
-        '/v1.0/carrier/{carrierId}', 'GET',
+        '/beta/carrier/{carrierId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [Carrier];
 
       return this.apiClient.callApi(
-        '/v1.0/carrier/search', 'GET',
+        '/beta/carrier/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

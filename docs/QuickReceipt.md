@@ -30,6 +30,11 @@ Name | Type | Description | Notes
 **cost** | **Number** |  | [optional] 
 **sell** | **Number** |  | [optional] 
 **pricingPer** | **String** |  | [optional] 
+**generatedItemReceiptId** | **Integer** |  | [optional] 
+**generatedASNId** | **Integer** |  | [optional] 
+**dockDate** | **Date** |  | [optional] 
+**productIdTag** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 
 

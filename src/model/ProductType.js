@@ -18,7 +18,7 @@
   /**
    * The ProductType model module.
    * @module model/ProductType
-   * @version 1.0
+   * @version beta
    */
 
   /**

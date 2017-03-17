@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/LocationBillingType'], factory);
+    define(['../ApiClient', '../model/LocationBillingType', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/LocationBillingType'));
+    module.exports = factory(require('../ApiClient'), require('../model/LocationBillingType'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.LocationBillingTypeApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.LocationBillingType);
+    root.infoplus.LocationBillingTypeApi = factory(root.infoplus.ApiClient, root.infoplus.LocationBillingType, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, LocationBillingType) {
+}(this, function(ApiClient, LocationBillingType, ApiResponse) {
   'use strict';
 
   /**
    * LocationBillingType service.
    * @module api/LocationBillingTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,111 @@
       var returnType = LocationBillingType;
 
       return this.apiClient.callApi(
-        '/v1.0/locationBillingType', 'POST',
+        '/beta/locationBillingType', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addLocationBillingTypeAudit operation.
+     * @callback module:api/LocationBillingTypeApi~addLocationBillingTypeAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a locationBillingType
+     * Adds an audit to an existing locationBillingType.
+     * @param {Integer} locationBillingTypeId Id of the locationBillingType to add an audit to
+     * @param {String} locationBillingTypeAudit The audit to add
+     * @param {module:api/LocationBillingTypeApi~addLocationBillingTypeAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addLocationBillingTypeAudit = function(locationBillingTypeId, locationBillingTypeAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'locationBillingTypeId' is set
+      if (locationBillingTypeId == undefined || locationBillingTypeId == null) {
+        throw "Missing the required parameter 'locationBillingTypeId' when calling addLocationBillingTypeAudit";
+      }
+
+      // verify the required parameter 'locationBillingTypeAudit' is set
+      if (locationBillingTypeAudit == undefined || locationBillingTypeAudit == null) {
+        throw "Missing the required parameter 'locationBillingTypeAudit' when calling addLocationBillingTypeAudit";
+      }
+
+
+      var pathParams = {
+        'locationBillingTypeId': locationBillingTypeId,
+        'locationBillingTypeAudit': locationBillingTypeAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/locationBillingType/{locationBillingTypeId}/audit/{locationBillingTypeAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addLocationBillingTypeTag operation.
+     * @callback module:api/LocationBillingTypeApi~addLocationBillingTypeTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a locationBillingType.
+     * Adds a tag to an existing locationBillingType.
+     * @param {Integer} locationBillingTypeId Id of the locationBillingType to add a tag to
+     * @param {String} locationBillingTypeTag The tag to add
+     * @param {module:api/LocationBillingTypeApi~addLocationBillingTypeTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addLocationBillingTypeTag = function(locationBillingTypeId, locationBillingTypeTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'locationBillingTypeId' is set
+      if (locationBillingTypeId == undefined || locationBillingTypeId == null) {
+        throw "Missing the required parameter 'locationBillingTypeId' when calling addLocationBillingTypeTag";
+      }
+
+      // verify the required parameter 'locationBillingTypeTag' is set
+      if (locationBillingTypeTag == undefined || locationBillingTypeTag == null) {
+        throw "Missing the required parameter 'locationBillingTypeTag' when calling addLocationBillingTypeTag";
+      }
+
+
+      var pathParams = {
+        'locationBillingTypeId': locationBillingTypeId,
+        'locationBillingTypeTag': locationBillingTypeTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/locationBillingType/{locationBillingTypeId}/tag/{locationBillingTypeTag}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +220,105 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/locationBillingType/{locationBillingTypeId}', 'DELETE',
+        '/beta/locationBillingType/{locationBillingTypeId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteLocationBillingTypeTag operation.
+     * @callback module:api/LocationBillingTypeApi~deleteLocationBillingTypeTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a locationBillingType.
+     * Deletes an existing locationBillingType tag using the specified data.
+     * @param {Integer} locationBillingTypeId Id of the locationBillingType to remove tag from
+     * @param {String} locationBillingTypeTag The tag to delete
+     * @param {module:api/LocationBillingTypeApi~deleteLocationBillingTypeTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteLocationBillingTypeTag = function(locationBillingTypeId, locationBillingTypeTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'locationBillingTypeId' is set
+      if (locationBillingTypeId == undefined || locationBillingTypeId == null) {
+        throw "Missing the required parameter 'locationBillingTypeId' when calling deleteLocationBillingTypeTag";
+      }
+
+      // verify the required parameter 'locationBillingTypeTag' is set
+      if (locationBillingTypeTag == undefined || locationBillingTypeTag == null) {
+        throw "Missing the required parameter 'locationBillingTypeTag' when calling deleteLocationBillingTypeTag";
+      }
+
+
+      var pathParams = {
+        'locationBillingTypeId': locationBillingTypeId,
+        'locationBillingTypeTag': locationBillingTypeTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/locationBillingType/{locationBillingTypeId}/tag/{locationBillingTypeTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateLocationBillingTypeById operation.
+     * @callback module:api/LocationBillingTypeApi~getDuplicateLocationBillingTypeByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LocationBillingType} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a locationBillingType by id
+     * Returns a duplicated locationBillingType identified by the specified id.
+     * @param {Integer} locationBillingTypeId Id of the locationBillingType to be duplicated.
+     * @param {module:api/LocationBillingTypeApi~getDuplicateLocationBillingTypeByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/LocationBillingType}
+     */
+    this.getDuplicateLocationBillingTypeById = function(locationBillingTypeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'locationBillingTypeId' is set
+      if (locationBillingTypeId == undefined || locationBillingTypeId == null) {
+        throw "Missing the required parameter 'locationBillingTypeId' when calling getDuplicateLocationBillingTypeById";
+      }
+
+
+      var pathParams = {
+        'locationBillingTypeId': locationBillingTypeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LocationBillingType;
+
+      return this.apiClient.callApi(
+        '/beta/locationBillingType/duplicate/{locationBillingTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +367,7 @@
       var returnType = [LocationBillingType];
 
       return this.apiClient.callApi(
-        '/v1.0/locationBillingType/search', 'GET',
+        '/beta/locationBillingType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +413,52 @@
       var returnType = LocationBillingType;
 
       return this.apiClient.callApi(
-        '/v1.0/locationBillingType/{locationBillingTypeId}', 'GET',
+        '/beta/locationBillingType/{locationBillingTypeId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getLocationBillingTypeTags operation.
+     * @callback module:api/LocationBillingTypeApi~getLocationBillingTypeTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a locationBillingType.
+     * Get all existing locationBillingType tags.
+     * @param {Integer} locationBillingTypeId Id of the locationBillingType to get tags for
+     * @param {module:api/LocationBillingTypeApi~getLocationBillingTypeTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getLocationBillingTypeTags = function(locationBillingTypeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'locationBillingTypeId' is set
+      if (locationBillingTypeId == undefined || locationBillingTypeId == null) {
+        throw "Missing the required parameter 'locationBillingTypeId' when calling getLocationBillingTypeTags";
+      }
+
+
+      var pathParams = {
+        'locationBillingTypeId': locationBillingTypeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/locationBillingType/{locationBillingTypeId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +502,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/locationBillingType', 'PUT',
+        '/beta/locationBillingType', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateLocationBillingTypeCustomFields operation.
+     * @callback module:api/LocationBillingTypeApi~updateLocationBillingTypeCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a locationBillingType custom fields
+     * Updates an existing locationBillingType custom fields using the specified data.
+     * @param {module:model/LocationBillingType} body LocationBillingType to be updated.
+     * @param {module:api/LocationBillingTypeApi~updateLocationBillingTypeCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateLocationBillingTypeCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateLocationBillingTypeCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/locationBillingType/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

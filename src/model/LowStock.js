@@ -18,7 +18,7 @@
   /**
    * The LowStock model module.
    * @module model/LowStock
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -31,6 +31,7 @@
 
 
     this['warehouseId'] = warehouseId;
+
 
 
 
@@ -74,6 +75,9 @@
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
@@ -123,6 +127,11 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
   /**
    * @member {String} sku

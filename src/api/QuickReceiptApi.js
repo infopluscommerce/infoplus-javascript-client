@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/ApiResponse', '../model/QuickReceipt'], factory);
+    define(['../ApiClient', '../model/QuickReceipt', '../model/ApiResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/QuickReceipt'));
+    module.exports = factory(require('../ApiClient'), require('../model/QuickReceipt'), require('../model/ApiResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.QuickReceiptApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.QuickReceipt);
+    root.infoplus.QuickReceiptApi = factory(root.infoplus.ApiClient, root.infoplus.QuickReceipt, root.infoplus.ApiResponse);
   }
-}(this, function(ApiClient, ApiResponse, QuickReceipt) {
+}(this, function(ApiClient, QuickReceipt, ApiResponse) {
   'use strict';
 
   /**
    * QuickReceipt service.
    * @module api/QuickReceiptApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,111 @@
       var returnType = QuickReceipt;
 
       return this.apiClient.callApi(
-        '/v1.0/quickReceipt', 'POST',
+        '/beta/quickReceipt', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addQuickReceiptAudit operation.
+     * @callback module:api/QuickReceiptApi~addQuickReceiptAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a quickReceipt
+     * Adds an audit to an existing quickReceipt.
+     * @param {Integer} quickReceiptId Id of the quickReceipt to add an audit to
+     * @param {String} quickReceiptAudit The audit to add
+     * @param {module:api/QuickReceiptApi~addQuickReceiptAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addQuickReceiptAudit = function(quickReceiptId, quickReceiptAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'quickReceiptId' is set
+      if (quickReceiptId == undefined || quickReceiptId == null) {
+        throw "Missing the required parameter 'quickReceiptId' when calling addQuickReceiptAudit";
+      }
+
+      // verify the required parameter 'quickReceiptAudit' is set
+      if (quickReceiptAudit == undefined || quickReceiptAudit == null) {
+        throw "Missing the required parameter 'quickReceiptAudit' when calling addQuickReceiptAudit";
+      }
+
+
+      var pathParams = {
+        'quickReceiptId': quickReceiptId,
+        'quickReceiptAudit': quickReceiptAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/quickReceipt/{quickReceiptId}/audit/{quickReceiptAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addQuickReceiptTag operation.
+     * @callback module:api/QuickReceiptApi~addQuickReceiptTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a quickReceipt.
+     * Adds a tag to an existing quickReceipt.
+     * @param {Integer} quickReceiptId Id of the quickReceipt to add a tag to
+     * @param {String} quickReceiptTag The tag to add
+     * @param {module:api/QuickReceiptApi~addQuickReceiptTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addQuickReceiptTag = function(quickReceiptId, quickReceiptTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'quickReceiptId' is set
+      if (quickReceiptId == undefined || quickReceiptId == null) {
+        throw "Missing the required parameter 'quickReceiptId' when calling addQuickReceiptTag";
+      }
+
+      // verify the required parameter 'quickReceiptTag' is set
+      if (quickReceiptTag == undefined || quickReceiptTag == null) {
+        throw "Missing the required parameter 'quickReceiptTag' when calling addQuickReceiptTag";
+      }
+
+
+      var pathParams = {
+        'quickReceiptId': quickReceiptId,
+        'quickReceiptTag': quickReceiptTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/quickReceipt/{quickReceiptId}/tag/{quickReceiptTag}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +220,105 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/quickReceipt/{quickReceiptId}', 'DELETE',
+        '/beta/quickReceipt/{quickReceiptId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteQuickReceiptTag operation.
+     * @callback module:api/QuickReceiptApi~deleteQuickReceiptTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a quickReceipt.
+     * Deletes an existing quickReceipt tag using the specified data.
+     * @param {Integer} quickReceiptId Id of the quickReceipt to remove tag from
+     * @param {String} quickReceiptTag The tag to delete
+     * @param {module:api/QuickReceiptApi~deleteQuickReceiptTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteQuickReceiptTag = function(quickReceiptId, quickReceiptTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'quickReceiptId' is set
+      if (quickReceiptId == undefined || quickReceiptId == null) {
+        throw "Missing the required parameter 'quickReceiptId' when calling deleteQuickReceiptTag";
+      }
+
+      // verify the required parameter 'quickReceiptTag' is set
+      if (quickReceiptTag == undefined || quickReceiptTag == null) {
+        throw "Missing the required parameter 'quickReceiptTag' when calling deleteQuickReceiptTag";
+      }
+
+
+      var pathParams = {
+        'quickReceiptId': quickReceiptId,
+        'quickReceiptTag': quickReceiptTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/quickReceipt/{quickReceiptId}/tag/{quickReceiptTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateQuickReceiptById operation.
+     * @callback module:api/QuickReceiptApi~getDuplicateQuickReceiptByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/QuickReceipt} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a quickReceipt by id
+     * Returns a duplicated quickReceipt identified by the specified id.
+     * @param {Integer} quickReceiptId Id of the quickReceipt to be duplicated.
+     * @param {module:api/QuickReceiptApi~getDuplicateQuickReceiptByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/QuickReceipt}
+     */
+    this.getDuplicateQuickReceiptById = function(quickReceiptId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'quickReceiptId' is set
+      if (quickReceiptId == undefined || quickReceiptId == null) {
+        throw "Missing the required parameter 'quickReceiptId' when calling getDuplicateQuickReceiptById";
+      }
+
+
+      var pathParams = {
+        'quickReceiptId': quickReceiptId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = QuickReceipt;
+
+      return this.apiClient.callApi(
+        '/beta/quickReceipt/duplicate/{quickReceiptId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +367,7 @@
       var returnType = [QuickReceipt];
 
       return this.apiClient.callApi(
-        '/v1.0/quickReceipt/search', 'GET',
+        '/beta/quickReceipt/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +413,52 @@
       var returnType = QuickReceipt;
 
       return this.apiClient.callApi(
-        '/v1.0/quickReceipt/{quickReceiptId}', 'GET',
+        '/beta/quickReceipt/{quickReceiptId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getQuickReceiptTags operation.
+     * @callback module:api/QuickReceiptApi~getQuickReceiptTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a quickReceipt.
+     * Get all existing quickReceipt tags.
+     * @param {Integer} quickReceiptId Id of the quickReceipt to get tags for
+     * @param {module:api/QuickReceiptApi~getQuickReceiptTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getQuickReceiptTags = function(quickReceiptId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'quickReceiptId' is set
+      if (quickReceiptId == undefined || quickReceiptId == null) {
+        throw "Missing the required parameter 'quickReceiptId' when calling getQuickReceiptTags";
+      }
+
+
+      var pathParams = {
+        'quickReceiptId': quickReceiptId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/quickReceipt/{quickReceiptId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +502,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/quickReceipt', 'PUT',
+        '/beta/quickReceipt', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateQuickReceiptCustomFields operation.
+     * @callback module:api/QuickReceiptApi~updateQuickReceiptCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a quickReceipt custom fields
+     * Updates an existing quickReceipt custom fields using the specified data.
+     * @param {module:model/QuickReceipt} body QuickReceipt to be updated.
+     * @param {module:api/QuickReceiptApi~updateQuickReceiptCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateQuickReceiptCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateQuickReceiptCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/quickReceipt/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **oldestReceiptDate** | **Date** |  | [optional] 
 **lobId** | **Integer** |  | [optional] 
 **poNo** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 
 

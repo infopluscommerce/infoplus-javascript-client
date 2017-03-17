@@ -18,7 +18,7 @@
   /**
    * The LoggedTime model module.
    * @module model/LoggedTime
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -47,6 +47,7 @@
     this['warehouseId'] = warehouseId;
     this['loggedTimeTypeId'] = loggedTimeTypeId;
     this['appId'] = appId;
+
   };
 
   /**
@@ -98,6 +99,9 @@
       }
       if (data.hasOwnProperty('appId')) {
         obj['appId'] = ApiClient.convertToType(data['appId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -168,6 +172,11 @@
    * @member {Integer} appId
    */
   exports.prototype['appId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

@@ -18,7 +18,7 @@
   /**
    * The BusinessTransaction model module.
    * @module model/BusinessTransaction
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -27,6 +27,7 @@
    * @class
    */
   var exports = function() {
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -117,6 +121,11 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

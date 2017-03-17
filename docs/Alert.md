@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **modifyDate** | **Date** |  | [optional] 
 **expirationDate** | **Date** |  | [optional] 
 **acknowledgeDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

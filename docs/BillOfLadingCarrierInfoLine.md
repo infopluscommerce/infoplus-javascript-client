@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **commodityDescription** | **String** |  | 
 **nfmcNo** | **String** |  | [optional] 
 **carrierClass** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

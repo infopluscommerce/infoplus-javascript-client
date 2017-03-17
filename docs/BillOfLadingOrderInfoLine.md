@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **weight** | **Integer** |  | [optional] 
 **palletslip** | **Boolean** |  | [optional] [default to false]
 **additionalShipperInfo** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

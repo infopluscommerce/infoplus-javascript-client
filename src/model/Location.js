@@ -18,7 +18,7 @@
   /**
    * The Location model module.
    * @module model/Location
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -50,7 +50,9 @@
 
     this['online'] = online;
 
+
     this['allowItemMixing'] = allowItemMixing;
+
 
 
   };
@@ -114,6 +116,9 @@
       if (data.hasOwnProperty('priorityCode')) {
         obj['priorityCode'] = ApiClient.convertToType(data['priorityCode'], 'Integer');
       }
+      if (data.hasOwnProperty('cost')) {
+        obj['cost'] = ApiClient.convertToType(data['cost'], 'Integer');
+      }
       if (data.hasOwnProperty('allowItemMixing')) {
         obj['allowItemMixing'] = ApiClient.convertToType(data['allowItemMixing'], 'Boolean');
       }
@@ -122,6 +127,9 @@
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -210,6 +218,11 @@
   exports.prototype['priorityCode'] = undefined;
 
   /**
+   * @member {Integer} cost
+   */
+  exports.prototype['cost'] = undefined;
+
+  /**
    * @member {Boolean} allowItemMixing
    * @default false
    */
@@ -224,6 +237,11 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

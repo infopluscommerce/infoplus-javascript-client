@@ -19,8 +19,10 @@ Name | Type | Description | Notes
 **_number** | **Integer** |  | [optional] 
 **online** | **Boolean** |  | [default to false]
 **priorityCode** | **Integer** |  | [optional] 
+**cost** | **Integer** |  | [optional] 
 **allowItemMixing** | **Boolean** |  | [default to false]
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

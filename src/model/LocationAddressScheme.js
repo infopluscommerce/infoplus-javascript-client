@@ -18,7 +18,7 @@
   /**
    * The LocationAddressScheme model module.
    * @module model/LocationAddressScheme
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -49,6 +49,7 @@
 
     this['aisleNamingScheme'] = aisleNamingScheme;
     this['aisleNumberZeroPadded'] = aisleNumberZeroPadded;
+
 
 
 
@@ -121,6 +122,9 @@
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -220,6 +224,11 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

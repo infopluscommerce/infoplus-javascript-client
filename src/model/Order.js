@@ -1,24 +1,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './OrderLine'], factory);
+    define(['../ApiClient', './OrderExtraLineItemData', './OrderExtraOrderData', './OrderLine'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OrderLine'));
+    module.exports = factory(require('../ApiClient'), require('./OrderExtraLineItemData'), require('./OrderExtraOrderData'), require('./OrderLine'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.Order = factory(root.infoplus.ApiClient, root.infoplus.OrderLine);
+    root.infoplus.Order = factory(root.infoplus.ApiClient, root.infoplus.OrderExtraLineItemData, root.infoplus.OrderExtraOrderData, root.infoplus.OrderLine);
   }
-}(this, function(ApiClient, OrderLine) {
+}(this, function(ApiClient, OrderExtraLineItemData, OrderExtraOrderData, OrderLine) {
   'use strict';
 
   /**
    * The Order model module.
    * @module model/Order
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -39,6 +39,7 @@
     this['lobId'] = lobId;
     this['warehouseId'] = warehouseId;
     this['orderDate'] = orderDate;
+
 
 
 
@@ -120,7 +121,15 @@
 
 
 
+
+
+
+
     this['lineItems'] = lineItems;
+
+
+
+
   };
 
   /**
@@ -151,6 +160,9 @@
       }
       if (data.hasOwnProperty('customerNo')) {
         obj['customerNo'] = ApiClient.convertToType(data['customerNo'], 'String');
+      }
+      if (data.hasOwnProperty('useOrderNoRoot')) {
+        obj['useOrderNoRoot'] = ApiClient.convertToType(data['useOrderNoRoot'], 'Integer');
       }
       if (data.hasOwnProperty('firstShipDate')) {
         obj['firstShipDate'] = ApiClient.convertToType(data['firstShipDate'], 'Date');
@@ -242,6 +254,9 @@
       if (data.hasOwnProperty('parcelAccountId')) {
         obj['parcelAccountId'] = ApiClient.convertToType(data['parcelAccountId'], 'Integer');
       }
+      if (data.hasOwnProperty('thirdPartyParcelAccountId')) {
+        obj['thirdPartyParcelAccountId'] = ApiClient.convertToType(data['thirdPartyParcelAccountId'], 'Integer');
+      }
       if (data.hasOwnProperty('costCenter')) {
         obj['costCenter'] = ApiClient.convertToType(data['costCenter'], 'String');
       }
@@ -284,14 +299,17 @@
       if (data.hasOwnProperty('numberOfLineItems')) {
         obj['numberOfLineItems'] = ApiClient.convertToType(data['numberOfLineItems'], 'Integer');
       }
+      if (data.hasOwnProperty('estimatedNumberOfPicks')) {
+        obj['estimatedNumberOfPicks'] = ApiClient.convertToType(data['estimatedNumberOfPicks'], 'Integer');
+      }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
       }
-      if (data.hasOwnProperty('omsOrderId')) {
-        obj['omsOrderId'] = ApiClient.convertToType(data['omsOrderId'], 'Integer');
-      }
       if (data.hasOwnProperty('omsOrderNo')) {
         obj['omsOrderNo'] = ApiClient.convertToType(data['omsOrderNo'], 'Integer');
+      }
+      if (data.hasOwnProperty('omsCustomerId')) {
+        obj['omsCustomerId'] = ApiClient.convertToType(data['omsCustomerId'], 'Integer');
       }
       if (data.hasOwnProperty('orderLoadProgramId')) {
         obj['orderLoadProgramId'] = ApiClient.convertToType(data['orderLoadProgramId'], 'Integer');
@@ -308,6 +326,9 @@
       if (data.hasOwnProperty('packingSlipTemplateId')) {
         obj['packingSlipTemplateId'] = ApiClient.convertToType(data['packingSlipTemplateId'], 'Integer');
       }
+      if (data.hasOwnProperty('orderInvoiceTemplateId')) {
+        obj['orderInvoiceTemplateId'] = ApiClient.convertToType(data['orderInvoiceTemplateId'], 'Integer');
+      }
       if (data.hasOwnProperty('orderConfirmationEmailTemplateId')) {
         obj['orderConfirmationEmailTemplateId'] = ApiClient.convertToType(data['orderConfirmationEmailTemplateId'], 'Integer');
       }
@@ -316,6 +337,9 @@
       }
       if (data.hasOwnProperty('priceLevel')) {
         obj['priceLevel'] = ApiClient.convertToType(data['priceLevel'], 'String');
+      }
+      if (data.hasOwnProperty('priceMode')) {
+        obj['priceMode'] = ApiClient.convertToType(data['priceMode'], 'String');
       }
       if (data.hasOwnProperty('priorityCode')) {
         obj['priorityCode'] = ApiClient.convertToType(data['priorityCode'], 'Integer');
@@ -395,6 +419,18 @@
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [OrderLine]);
       }
+      if (data.hasOwnProperty('extraOrderData')) {
+        obj['extraOrderData'] = ApiClient.convertToType(data['extraOrderData'], [OrderExtraOrderData]);
+      }
+      if (data.hasOwnProperty('extraLineItemData')) {
+        obj['extraLineItemData'] = ApiClient.convertToType(data['extraLineItemData'], [OrderExtraLineItemData]);
+      }
+      if (data.hasOwnProperty('externalShippingSystemId')) {
+        obj['externalShippingSystemId'] = ApiClient.convertToType(data['externalShippingSystemId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -429,6 +465,11 @@
    * @member {String} customerNo
    */
   exports.prototype['customerNo'] = undefined;
+
+  /**
+   * @member {Integer} useOrderNoRoot
+   */
+  exports.prototype['useOrderNoRoot'] = undefined;
 
   /**
    * @member {Date} firstShipDate
@@ -581,6 +622,11 @@
   exports.prototype['parcelAccountId'] = undefined;
 
   /**
+   * @member {Integer} thirdPartyParcelAccountId
+   */
+  exports.prototype['thirdPartyParcelAccountId'] = undefined;
+
+  /**
    * @member {String} costCenter
    */
   exports.prototype['costCenter'] = undefined;
@@ -651,19 +697,24 @@
   exports.prototype['numberOfLineItems'] = undefined;
 
   /**
+   * @member {Integer} estimatedNumberOfPicks
+   */
+  exports.prototype['estimatedNumberOfPicks'] = undefined;
+
+  /**
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
 
   /**
-   * @member {Integer} omsOrderId
-   */
-  exports.prototype['omsOrderId'] = undefined;
-
-  /**
    * @member {Integer} omsOrderNo
    */
   exports.prototype['omsOrderNo'] = undefined;
+
+  /**
+   * @member {Integer} omsCustomerId
+   */
+  exports.prototype['omsCustomerId'] = undefined;
 
   /**
    * @member {Integer} orderLoadProgramId
@@ -691,6 +742,11 @@
   exports.prototype['packingSlipTemplateId'] = undefined;
 
   /**
+   * @member {Integer} orderInvoiceTemplateId
+   */
+  exports.prototype['orderInvoiceTemplateId'] = undefined;
+
+  /**
    * @member {Integer} orderConfirmationEmailTemplateId
    */
   exports.prototype['orderConfirmationEmailTemplateId'] = undefined;
@@ -704,6 +760,11 @@
    * @member {String} priceLevel
    */
   exports.prototype['priceLevel'] = undefined;
+
+  /**
+   * @member {String} priceMode
+   */
+  exports.prototype['priceMode'] = undefined;
 
   /**
    * @member {Integer} priorityCode
@@ -834,6 +895,26 @@
    * @member {Array.<module:model/OrderLine>} lineItems
    */
   exports.prototype['lineItems'] = undefined;
+
+  /**
+   * @member {Array.<module:model/OrderExtraOrderData>} extraOrderData
+   */
+  exports.prototype['extraOrderData'] = undefined;
+
+  /**
+   * @member {Array.<module:model/OrderExtraLineItemData>} extraLineItemData
+   */
+  exports.prototype['extraLineItemData'] = undefined;
+
+  /**
+   * @member {Integer} externalShippingSystemId
+   */
+  exports.prototype['externalShippingSystemId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

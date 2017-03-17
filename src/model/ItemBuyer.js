@@ -18,20 +18,24 @@
   /**
    * The ItemBuyer model module.
    * @module model/ItemBuyer
-   * @version 1.0
+   * @version beta
    */
 
   /**
    * Constructs a new <code>ItemBuyer</code>.
    * @alias module:model/ItemBuyer
    * @class
+   * @param lobId
    * @param id
-   * @param label
+   * @param name
    */
-  var exports = function(id, label) {
+  var exports = function(lobId, id, name) {
+
+    this['lobId'] = lobId;
 
     this['id'] = id;
-    this['label'] = label;
+    this['name'] = name;
+
   };
 
   /**
@@ -45,11 +49,20 @@
     if (data) { 
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+      if (data.hasOwnProperty('lobId')) {
+        obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
-      if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      if (data.hasOwnProperty('internalId')) {
+        obj['internalId'] = ApiClient.convertToType(data['internalId'], 'Integer');
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -57,14 +70,29 @@
 
 
   /**
-   * @member {Integer} id
+   * @member {Integer} lobId
+   */
+  exports.prototype['lobId'] = undefined;
+
+  /**
+   * @member {Integer} internalId
+   */
+  exports.prototype['internalId'] = undefined;
+
+  /**
+   * @member {String} id
    */
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {String} label
+   * @member {String} name
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype['name'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

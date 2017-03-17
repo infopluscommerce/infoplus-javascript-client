@@ -18,7 +18,7 @@
   /**
    * The InventoryAdjustment model module.
    * @module model/InventoryAdjustment
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -27,6 +27,7 @@
    * @class
    */
   var exports = function() {
+
 
 
 
@@ -57,8 +58,8 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('lob')) {
-        obj['lob'] = ApiClient.convertToType(data['lob'], 'Integer');
+      if (data.hasOwnProperty('lobId')) {
+        obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
       if (data.hasOwnProperty('skuId')) {
         obj['skuId'] = ApiClient.convertToType(data['skuId'], 'Integer');
@@ -93,6 +94,9 @@
       if (data.hasOwnProperty('adjustmentCode')) {
         obj['adjustmentCode'] = ApiClient.convertToType(data['adjustmentCode'], 'String');
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
+      }
     }
     return obj;
   }
@@ -104,9 +108,9 @@
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {Integer} lob
+   * @member {Integer} lobId
    */
-  exports.prototype['lob'] = undefined;
+  exports.prototype['lobId'] = undefined;
 
   /**
    * @member {Integer} skuId
@@ -162,6 +166,11 @@
    * @member {String} adjustmentCode
    */
   exports.prototype['adjustmentCode'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

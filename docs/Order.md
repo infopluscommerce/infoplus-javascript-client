@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **warehouseId** | **Integer** |  | 
 **orderDate** | **Date** |  | 
 **customerNo** | **String** |  | [optional] 
+**useOrderNoRoot** | **Integer** |  | [optional] 
 **firstShipDate** | **Date** |  | [optional] 
 **lastShipDate** | **Date** |  | [optional] 
 **deliverOnDate** | **Date** |  | [optional] 
@@ -39,6 +40,7 @@ Name | Type | Description | Notes
 **numberOfPallets** | **Integer** |  | [optional] 
 **completionStatus** | **String** |  | [optional] 
 **parcelAccountId** | **Integer** |  | [optional] 
+**thirdPartyParcelAccountId** | **Integer** |  | [optional] 
 **costCenter** | **String** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **customerPONo** | **String** |  | [optional] 
@@ -53,17 +55,20 @@ Name | Type | Description | Notes
 **holdCode** | **String** |  | [optional] 
 **integrationPartnerId** | **Integer** |  | [optional] 
 **numberOfLineItems** | **Integer** |  | [optional] 
+**estimatedNumberOfPicks** | **Integer** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**omsOrderId** | **Integer** |  | [optional] 
 **omsOrderNo** | **Integer** |  | [optional] 
+**omsCustomerId** | **Integer** |  | [optional] 
 **orderLoadProgramId** | **Integer** |  | [optional] 
 **orderMessage** | **String** |  | [optional] 
 **orderReason** | **Integer** |  | [optional] 
 **orderSourceId** | **Integer** |  | [optional] 
 **packingSlipTemplateId** | **Integer** |  | [optional] 
+**orderInvoiceTemplateId** | **Integer** |  | [optional] 
 **orderConfirmationEmailTemplateId** | **Integer** |  | [optional] 
 **shipmentConfirmationEmailTemplateId** | **Integer** |  | [optional] 
 **priceLevel** | **String** |  | [optional] 
+**priceMode** | **String** |  | [optional] 
 **priorityCode** | **Integer** |  | [optional] 
 **fulfillmentProcessId** | **Integer** |  | [optional] 
 **shipBy** | **Date** |  | [optional] 
@@ -90,5 +95,9 @@ Name | Type | Description | Notes
 **totalQty** | **Integer** |  | [optional] 
 **weightLbs** | **Number** |  | [optional] 
 **lineItems** | [**[OrderLine]**](OrderLine.md) |  | 
+**extraOrderData** | [**[OrderExtraOrderData]**](OrderExtraOrderData.md) |  | [optional] 
+**extraLineItemData** | [**[OrderExtraLineItemData]**](OrderExtraLineItemData.md) |  | [optional] 
+**externalShippingSystemId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

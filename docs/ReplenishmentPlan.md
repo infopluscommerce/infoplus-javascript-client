@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **warehouseId** | **Integer** |  | 
 **pickFaceAssignmentSmartFilterId** | **Integer** |  | 
 **name** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

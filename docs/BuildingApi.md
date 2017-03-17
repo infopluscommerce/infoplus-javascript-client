@@ -4,11 +4,17 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBuilding**](BuildingApi.md#addBuilding) | **POST** /v1.0/building | Create a building
-[**deleteBuilding**](BuildingApi.md#deleteBuilding) | **DELETE** /v1.0/building/{buildingId} | Delete a building
-[**getBuildingByFilter**](BuildingApi.md#getBuildingByFilter) | **GET** /v1.0/building/search | Search buildings by filter
-[**getBuildingById**](BuildingApi.md#getBuildingById) | **GET** /v1.0/building/{buildingId} | Get a building by id
-[**updateBuilding**](BuildingApi.md#updateBuilding) | **PUT** /v1.0/building | Update a building
+[**addBuilding**](BuildingApi.md#addBuilding) | **POST** /beta/building | Create a building
+[**addBuildingAudit**](BuildingApi.md#addBuildingAudit) | **PUT** /beta/building/{buildingId}/audit/{buildingAudit} | Add new audit for a building
+[**addBuildingTag**](BuildingApi.md#addBuildingTag) | **PUT** /beta/building/{buildingId}/tag/{buildingTag} | Add new tags for a building.
+[**deleteBuilding**](BuildingApi.md#deleteBuilding) | **DELETE** /beta/building/{buildingId} | Delete a building
+[**deleteBuildingTag**](BuildingApi.md#deleteBuildingTag) | **DELETE** /beta/building/{buildingId}/tag/{buildingTag} | Delete a tag for a building.
+[**getBuildingByFilter**](BuildingApi.md#getBuildingByFilter) | **GET** /beta/building/search | Search buildings by filter
+[**getBuildingById**](BuildingApi.md#getBuildingById) | **GET** /beta/building/{buildingId} | Get a building by id
+[**getBuildingTags**](BuildingApi.md#getBuildingTags) | **GET** /beta/building/{buildingId}/tag | Get the tags for a building.
+[**getDuplicateBuildingById**](BuildingApi.md#getDuplicateBuildingById) | **GET** /beta/building/duplicate/{buildingId} | Get a duplicated a building by id
+[**updateBuilding**](BuildingApi.md#updateBuilding) | **PUT** /beta/building | Update a building
+[**updateBuildingCustomFields**](BuildingApi.md#updateBuildingCustomFields) | **PUT** /beta/building/customFields | Update a building custom fields
 
 
 <a name="addBuilding"></a>
@@ -64,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addBuildingAudit"></a>
+# **addBuildingAudit**
+> addBuildingAudit(buildingId, buildingAudit)
+
+Add new audit for a building
+
+Adds an audit to an existing building.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var buildingId = 56; // {Integer} Id of the building to add an audit to
+
+var buildingAudit = "buildingAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addBuildingAudit(buildingId, buildingAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingId** | **Integer**| Id of the building to add an audit to | 
+ **buildingAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addBuildingTag"></a>
+# **addBuildingTag**
+> addBuildingTag(buildingId, buildingTag)
+
+Add new tags for a building.
+
+Adds a tag to an existing building.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var buildingId = 56; // {Integer} Id of the building to add a tag to
+
+var buildingTag = "buildingTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addBuildingTag(buildingId, buildingTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingId** | **Integer**| Id of the building to add a tag to | 
+ **buildingTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteBuilding"></a>
 # **deleteBuilding**
 > deleteBuilding(buildingId)
@@ -103,6 +221,62 @@ api.deleteBuilding(buildingId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **buildingId** | **Integer**| Id of the building to be deleted. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteBuildingTag"></a>
+# **deleteBuildingTag**
+> deleteBuildingTag(buildingId, buildingTag)
+
+Delete a tag for a building.
+
+Deletes an existing building tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var buildingId = 56; // {Integer} Id of the building to remove tag from
+
+var buildingTag = "buildingTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteBuildingTag(buildingId, buildingTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingId** | **Integer**| Id of the building to remove tag from | 
+ **buildingTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -230,6 +404,112 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getBuildingTags"></a>
+# **getBuildingTags**
+> getBuildingTags(buildingId)
+
+Get the tags for a building.
+
+Get all existing building tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var buildingId = 56; // {Integer} Id of the building to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getBuildingTags(buildingId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingId** | **Integer**| Id of the building to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateBuildingById"></a>
+# **getDuplicateBuildingById**
+> Building getDuplicateBuildingById(buildingId)
+
+Get a duplicated a building by id
+
+Returns a duplicated building identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var buildingId = 56; // {Integer} Id of the building to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateBuildingById(buildingId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **buildingId** | **Integer**| Id of the building to be duplicated. | 
+
+### Return type
+
+[**Building**](Building.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="updateBuilding"></a>
 # **updateBuilding**
 > updateBuilding(body)
@@ -262,6 +542,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateBuilding(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Building**](Building.md)| Building to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBuildingCustomFields"></a>
+# **updateBuildingCustomFields**
+> updateBuildingCustomFields(body)
+
+Update a building custom fields
+
+Updates an existing building custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BuildingApi()
+
+var body = new infoplus.Building(); // {Building} Building to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateBuildingCustomFields(body, callback);
 ```
 
 ### Parameters

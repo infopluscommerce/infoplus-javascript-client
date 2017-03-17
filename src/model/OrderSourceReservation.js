@@ -18,7 +18,7 @@
   /**
    * The OrderSourceReservation model module.
    * @module model/OrderSourceReservation
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -35,6 +35,7 @@
 
 
     this['reservedQuantity'] = reservedQuantity;
+
 
   };
 
@@ -63,6 +64,9 @@
       }
       if (data.hasOwnProperty('reservedQuantity')) {
         obj['reservedQuantity'] = ApiClient.convertToType(data['reservedQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
@@ -96,6 +100,11 @@
    * @member {Integer} reservedQuantity
    */
   exports.prototype['reservedQuantity'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
   /**
    * @member {String} sku

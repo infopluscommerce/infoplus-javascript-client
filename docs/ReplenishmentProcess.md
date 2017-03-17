@@ -10,5 +10,7 @@ Name | Type | Description | Notes
 **replenishmentPlanId** | **Integer** |  | 
 **status** | **String** |  | 
 **estimatedWork** | **Integer** |  | [optional] 
+**workBatchId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

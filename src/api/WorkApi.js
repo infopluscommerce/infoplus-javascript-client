@@ -18,7 +18,7 @@
   /**
    * Work service.
    * @module api/WorkApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -31,6 +31,208 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+    /**
+     * Callback function to receive the result of the addWorkAudit operation.
+     * @callback module:api/WorkApi~addWorkAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a work
+     * Adds an audit to an existing work.
+     * @param {Integer} workId Id of the work to add an audit to
+     * @param {String} workAudit The audit to add
+     * @param {module:api/WorkApi~addWorkAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addWorkAudit = function(workId, workAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workId' is set
+      if (workId == undefined || workId == null) {
+        throw "Missing the required parameter 'workId' when calling addWorkAudit";
+      }
+
+      // verify the required parameter 'workAudit' is set
+      if (workAudit == undefined || workAudit == null) {
+        throw "Missing the required parameter 'workAudit' when calling addWorkAudit";
+      }
+
+
+      var pathParams = {
+        'workId': workId,
+        'workAudit': workAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/work/{workId}/audit/{workAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addWorkTag operation.
+     * @callback module:api/WorkApi~addWorkTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a work.
+     * Adds a tag to an existing work.
+     * @param {Integer} workId Id of the work to add a tag to
+     * @param {String} workTag The tag to add
+     * @param {module:api/WorkApi~addWorkTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addWorkTag = function(workId, workTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workId' is set
+      if (workId == undefined || workId == null) {
+        throw "Missing the required parameter 'workId' when calling addWorkTag";
+      }
+
+      // verify the required parameter 'workTag' is set
+      if (workTag == undefined || workTag == null) {
+        throw "Missing the required parameter 'workTag' when calling addWorkTag";
+      }
+
+
+      var pathParams = {
+        'workId': workId,
+        'workTag': workTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/work/{workId}/tag/{workTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteWorkTag operation.
+     * @callback module:api/WorkApi~deleteWorkTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a work.
+     * Deletes an existing work tag using the specified data.
+     * @param {Integer} workId Id of the work to remove tag from
+     * @param {String} workTag The tag to delete
+     * @param {module:api/WorkApi~deleteWorkTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteWorkTag = function(workId, workTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workId' is set
+      if (workId == undefined || workId == null) {
+        throw "Missing the required parameter 'workId' when calling deleteWorkTag";
+      }
+
+      // verify the required parameter 'workTag' is set
+      if (workTag == undefined || workTag == null) {
+        throw "Missing the required parameter 'workTag' when calling deleteWorkTag";
+      }
+
+
+      var pathParams = {
+        'workId': workId,
+        'workTag': workTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/work/{workId}/tag/{workTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateWorkById operation.
+     * @callback module:api/WorkApi~getDuplicateWorkByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Work} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a work by id
+     * Returns a duplicated work identified by the specified id.
+     * @param {Integer} workId Id of the work to be duplicated.
+     * @param {module:api/WorkApi~getDuplicateWorkByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Work}
+     */
+    this.getDuplicateWorkById = function(workId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workId' is set
+      if (workId == undefined || workId == null) {
+        throw "Missing the required parameter 'workId' when calling getDuplicateWorkById";
+      }
+
+
+      var pathParams = {
+        'workId': workId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Work;
+
+      return this.apiClient.callApi(
+        '/beta/work/duplicate/{workId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the getWorkByFilter operation.
@@ -75,7 +277,7 @@
       var returnType = [Work];
 
       return this.apiClient.callApi(
-        '/v1.0/work/search', 'GET',
+        '/beta/work/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -121,7 +323,96 @@
       var returnType = Work;
 
       return this.apiClient.callApi(
-        '/v1.0/work/{workId}', 'GET',
+        '/beta/work/{workId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getWorkTags operation.
+     * @callback module:api/WorkApi~getWorkTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a work.
+     * Get all existing work tags.
+     * @param {Integer} workId Id of the work to get tags for
+     * @param {module:api/WorkApi~getWorkTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getWorkTags = function(workId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workId' is set
+      if (workId == undefined || workId == null) {
+        throw "Missing the required parameter 'workId' when calling getWorkTags";
+      }
+
+
+      var pathParams = {
+        'workId': workId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/work/{workId}/tag', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateWorkCustomFields operation.
+     * @callback module:api/WorkApi~updateWorkCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a work custom fields
+     * Updates an existing work custom fields using the specified data.
+     * @param {module:model/Work} body Work to be updated.
+     * @param {module:api/WorkApi~updateWorkCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateWorkCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateWorkCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/work/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

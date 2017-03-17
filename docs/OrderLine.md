@@ -20,10 +20,13 @@ Name | Type | Description | Notes
 **orderSourceSKU** | **String** |  | [optional] 
 **unitCost** | **Number** |  | [optional] 
 **unitSell** | **Number** |  | [optional] 
+**unitDiscount** | **Number** |  | [optional] 
 **extendedCost** | **Number** |  | [optional] 
 **extendedSell** | **Number** |  | [optional] 
+**extendedDiscount** | **Number** |  | [optional] 
 **ncExtendedSell** | **Number** |  | [optional] 
 **itemWeight** | **Number** |  | [optional] 
+**productionLot** | **String** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
 **sector** | **String** |  | [optional] 
 **itemAccountCodeId** | **Integer** |  | 
@@ -32,5 +35,6 @@ Name | Type | Description | Notes
 **itemSubGroupId** | **Integer** |  | 
 **itemProductCodeId** | **Integer** |  | [optional] 
 **itemSummaryCodeId** | **Integer** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

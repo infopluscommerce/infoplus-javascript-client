@@ -18,7 +18,7 @@
   /**
    * The ShoppingCartConnection model module.
    * @module model/ShoppingCartConnection
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -33,11 +33,17 @@
    * @param shoppingCartSKUFieldToMap
    * @param name
    * @param shoppingCartStoreURL
+   * @param accessCode
+   * @param accessToken
+   * @param username
+   * @param password
+   * @param orderShipmentLevel
    * @param syncOrders
    * @param syncInventory
    * @param syncTrackingData
+   * @param fulfillAllItems
    */
-  var exports = function(lobId, orderSourceId, integrationPartnerId, connectionType, infoplusSKUFieldToMap, shoppingCartSKUFieldToMap, name, shoppingCartStoreURL, syncOrders, syncInventory, syncTrackingData) {
+  var exports = function(lobId, orderSourceId, integrationPartnerId, connectionType, infoplusSKUFieldToMap, shoppingCartSKUFieldToMap, name, shoppingCartStoreURL, accessCode, accessToken, username, password, orderShipmentLevel, syncOrders, syncInventory, syncTrackingData, fulfillAllItems) {
 
 
 
@@ -53,11 +59,18 @@
     this['shoppingCartSKUFieldToMap'] = shoppingCartSKUFieldToMap;
     this['name'] = name;
     this['shoppingCartStoreURL'] = shoppingCartStoreURL;
+    this['accessCode'] = accessCode;
+    this['accessToken'] = accessToken;
+    this['username'] = username;
+    this['password'] = password;
 
-
+    this['orderShipmentLevel'] = orderShipmentLevel;
     this['syncOrders'] = syncOrders;
     this['syncInventory'] = syncInventory;
     this['syncTrackingData'] = syncTrackingData;
+    this['fulfillAllItems'] = fulfillAllItems;
+
+
 
   };
 
@@ -120,6 +133,18 @@
       if (data.hasOwnProperty('accessToken')) {
         obj['accessToken'] = ApiClient.convertToType(data['accessToken'], 'String');
       }
+      if (data.hasOwnProperty('username')) {
+        obj['username'] = ApiClient.convertToType(data['username'], 'String');
+      }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('defaultCarrierId')) {
+        obj['defaultCarrierId'] = ApiClient.convertToType(data['defaultCarrierId'], 'Integer');
+      }
+      if (data.hasOwnProperty('orderShipmentLevel')) {
+        obj['orderShipmentLevel'] = ApiClient.convertToType(data['orderShipmentLevel'], 'String');
+      }
       if (data.hasOwnProperty('syncOrders')) {
         obj['syncOrders'] = ApiClient.convertToType(data['syncOrders'], 'Boolean');
       }
@@ -129,8 +154,17 @@
       if (data.hasOwnProperty('syncTrackingData')) {
         obj['syncTrackingData'] = ApiClient.convertToType(data['syncTrackingData'], 'Boolean');
       }
+      if (data.hasOwnProperty('fulfillAllItems')) {
+        obj['fulfillAllItems'] = ApiClient.convertToType(data['fulfillAllItems'], 'Boolean');
+      }
       if (data.hasOwnProperty('syncInventoryLevelsLastRunTime')) {
         obj['syncInventoryLevelsLastRunTime'] = ApiClient.convertToType(data['syncInventoryLevelsLastRunTime'], 'Date');
+      }
+      if (data.hasOwnProperty('syncOrdersLastRunTime')) {
+        obj['syncOrdersLastRunTime'] = ApiClient.convertToType(data['syncOrdersLastRunTime'], 'Date');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -218,6 +252,26 @@
   exports.prototype['accessToken'] = undefined;
 
   /**
+   * @member {String} username
+   */
+  exports.prototype['username'] = undefined;
+
+  /**
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
+
+  /**
+   * @member {Integer} defaultCarrierId
+   */
+  exports.prototype['defaultCarrierId'] = undefined;
+
+  /**
+   * @member {String} orderShipmentLevel
+   */
+  exports.prototype['orderShipmentLevel'] = undefined;
+
+  /**
    * @member {Boolean} syncOrders
    * @default false
    */
@@ -236,9 +290,25 @@
   exports.prototype['syncTrackingData'] = false;
 
   /**
+   * @member {Boolean} fulfillAllItems
+   * @default false
+   */
+  exports.prototype['fulfillAllItems'] = false;
+
+  /**
    * @member {Date} syncInventoryLevelsLastRunTime
    */
   exports.prototype['syncInventoryLevelsLastRunTime'] = undefined;
+
+  /**
+   * @member {Date} syncOrdersLastRunTime
+   */
+  exports.prototype['syncOrdersLastRunTime'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

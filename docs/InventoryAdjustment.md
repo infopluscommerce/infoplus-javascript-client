@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
-**lob** | **Integer** |  | [optional] 
+**lobId** | **Integer** |  | [optional] 
 **skuId** | **Integer** |  | [optional] 
 **poNoId** | **Integer** |  | [optional] 
 **adjustmentDate** | **Date** |  | [optional] 
@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **printed** | **String** |  | [optional] 
 **orderNo** | **Number** |  | [optional] 
 **adjustmentCode** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

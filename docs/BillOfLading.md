@@ -51,5 +51,6 @@ Name | Type | Description | Notes
 **specialInstructions** | **String** |  | [optional] 
 **orderInfoLines** | [**[BillOfLadingOrderInfoLine]**](BillOfLadingOrderInfoLine.md) |  | [optional] 
 **carrierInfoLines** | [**[BillOfLadingCarrierInfoLine]**](BillOfLadingCarrierInfoLine.md) |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

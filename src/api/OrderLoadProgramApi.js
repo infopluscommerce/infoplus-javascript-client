@@ -18,7 +18,7 @@
   /**
    * OrderLoadProgram service.
    * @module api/OrderLoadProgramApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -73,7 +73,7 @@
       var returnType = [OrderLoadProgram];
 
       return this.apiClient.callApi(
-        '/v1.0/orderLoadProgram/search', 'GET',
+        '/beta/orderLoadProgram/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = OrderLoadProgram;
 
       return this.apiClient.callApi(
-        '/v1.0/orderLoadProgram/{orderLoadProgramId}', 'GET',
+        '/beta/orderLoadProgram/{orderLoadProgramId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

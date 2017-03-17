@@ -18,7 +18,7 @@
   /**
    * JobType service.
    * @module api/JobTypeApi
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -71,7 +71,111 @@
       var returnType = JobType;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType', 'POST',
+        '/beta/jobType', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addJobTypeAudit operation.
+     * @callback module:api/JobTypeApi~addJobTypeAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a jobType
+     * Adds an audit to an existing jobType.
+     * @param {Integer} jobTypeId Id of the jobType to add an audit to
+     * @param {String} jobTypeAudit The audit to add
+     * @param {module:api/JobTypeApi~addJobTypeAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addJobTypeAudit = function(jobTypeId, jobTypeAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'jobTypeId' is set
+      if (jobTypeId == undefined || jobTypeId == null) {
+        throw "Missing the required parameter 'jobTypeId' when calling addJobTypeAudit";
+      }
+
+      // verify the required parameter 'jobTypeAudit' is set
+      if (jobTypeAudit == undefined || jobTypeAudit == null) {
+        throw "Missing the required parameter 'jobTypeAudit' when calling addJobTypeAudit";
+      }
+
+
+      var pathParams = {
+        'jobTypeId': jobTypeId,
+        'jobTypeAudit': jobTypeAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/{jobTypeId}/audit/{jobTypeAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addJobTypeTag operation.
+     * @callback module:api/JobTypeApi~addJobTypeTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a jobType.
+     * Adds a tag to an existing jobType.
+     * @param {Integer} jobTypeId Id of the jobType to add a tag to
+     * @param {String} jobTypeTag The tag to add
+     * @param {module:api/JobTypeApi~addJobTypeTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addJobTypeTag = function(jobTypeId, jobTypeTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'jobTypeId' is set
+      if (jobTypeId == undefined || jobTypeId == null) {
+        throw "Missing the required parameter 'jobTypeId' when calling addJobTypeTag";
+      }
+
+      // verify the required parameter 'jobTypeTag' is set
+      if (jobTypeTag == undefined || jobTypeTag == null) {
+        throw "Missing the required parameter 'jobTypeTag' when calling addJobTypeTag";
+      }
+
+
+      var pathParams = {
+        'jobTypeId': jobTypeId,
+        'jobTypeTag': jobTypeTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/{jobTypeId}/tag/{jobTypeTag}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -116,7 +220,105 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType/{jobTypeId}', 'DELETE',
+        '/beta/jobType/{jobTypeId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteJobTypeTag operation.
+     * @callback module:api/JobTypeApi~deleteJobTypeTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a jobType.
+     * Deletes an existing jobType tag using the specified data.
+     * @param {Integer} jobTypeId Id of the jobType to remove tag from
+     * @param {String} jobTypeTag The tag to delete
+     * @param {module:api/JobTypeApi~deleteJobTypeTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteJobTypeTag = function(jobTypeId, jobTypeTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'jobTypeId' is set
+      if (jobTypeId == undefined || jobTypeId == null) {
+        throw "Missing the required parameter 'jobTypeId' when calling deleteJobTypeTag";
+      }
+
+      // verify the required parameter 'jobTypeTag' is set
+      if (jobTypeTag == undefined || jobTypeTag == null) {
+        throw "Missing the required parameter 'jobTypeTag' when calling deleteJobTypeTag";
+      }
+
+
+      var pathParams = {
+        'jobTypeId': jobTypeId,
+        'jobTypeTag': jobTypeTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/{jobTypeId}/tag/{jobTypeTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateJobTypeById operation.
+     * @callback module:api/JobTypeApi~getDuplicateJobTypeByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/JobType} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a jobType by id
+     * Returns a duplicated jobType identified by the specified id.
+     * @param {Integer} jobTypeId Id of the jobType to be duplicated.
+     * @param {module:api/JobTypeApi~getDuplicateJobTypeByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/JobType}
+     */
+    this.getDuplicateJobTypeById = function(jobTypeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'jobTypeId' is set
+      if (jobTypeId == undefined || jobTypeId == null) {
+        throw "Missing the required parameter 'jobTypeId' when calling getDuplicateJobTypeById";
+      }
+
+
+      var pathParams = {
+        'jobTypeId': jobTypeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = JobType;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/duplicate/{jobTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -165,7 +367,7 @@
       var returnType = [JobType];
 
       return this.apiClient.callApi(
-        '/v1.0/jobType/search', 'GET',
+        '/beta/jobType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -211,7 +413,52 @@
       var returnType = JobType;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType/{jobTypeId}', 'GET',
+        '/beta/jobType/{jobTypeId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getJobTypeTags operation.
+     * @callback module:api/JobTypeApi~getJobTypeTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a jobType.
+     * Get all existing jobType tags.
+     * @param {Integer} jobTypeId Id of the jobType to get tags for
+     * @param {module:api/JobTypeApi~getJobTypeTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getJobTypeTags = function(jobTypeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'jobTypeId' is set
+      if (jobTypeId == undefined || jobTypeId == null) {
+        throw "Missing the required parameter 'jobTypeId' when calling getJobTypeTags";
+      }
+
+
+      var pathParams = {
+        'jobTypeId': jobTypeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/{jobTypeId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -255,7 +502,51 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v1.0/jobType', 'PUT',
+        '/beta/jobType', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateJobTypeCustomFields operation.
+     * @callback module:api/JobTypeApi~updateJobTypeCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a jobType custom fields
+     * Updates an existing jobType custom fields using the specified data.
+     * @param {module:model/JobType} body JobType to be updated.
+     * @param {module:api/JobTypeApi~updateJobTypeCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateJobTypeCustomFields = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling updateJobTypeCustomFields";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/jobType/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

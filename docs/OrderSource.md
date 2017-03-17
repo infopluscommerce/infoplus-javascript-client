@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **requireGS1128Label** | **Boolean** |  | [optional] [default to false]
 **shippingNotes** | **String** |  | [optional] 
 **packingSlipId** | **Integer** |  | [optional] 
+**orderInvoiceId** | **Integer** |  | [optional] 
 **orderConfirmationEmailId** | **Integer** |  | [optional] 
 **shipmentConfirmationEmailId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

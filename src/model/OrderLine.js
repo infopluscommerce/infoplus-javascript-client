@@ -18,7 +18,7 @@
   /**
    * The OrderLine model module.
    * @module model/OrderLine
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -59,12 +59,16 @@
 
 
 
+
+
+
     this['itemAccountCodeId'] = itemAccountCodeId;
     this['itemLegacyLowStockContactId'] = itemLegacyLowStockContactId;
     this['itemMajorGroupId'] = itemMajorGroupId;
     this['itemSubGroupId'] = itemSubGroupId;
 
     this['itemSummaryCodeId'] = itemSummaryCodeId;
+
   };
 
   /**
@@ -129,17 +133,26 @@
       if (data.hasOwnProperty('unitSell')) {
         obj['unitSell'] = ApiClient.convertToType(data['unitSell'], 'Number');
       }
+      if (data.hasOwnProperty('unitDiscount')) {
+        obj['unitDiscount'] = ApiClient.convertToType(data['unitDiscount'], 'Number');
+      }
       if (data.hasOwnProperty('extendedCost')) {
         obj['extendedCost'] = ApiClient.convertToType(data['extendedCost'], 'Number');
       }
       if (data.hasOwnProperty('extendedSell')) {
         obj['extendedSell'] = ApiClient.convertToType(data['extendedSell'], 'Number');
       }
+      if (data.hasOwnProperty('extendedDiscount')) {
+        obj['extendedDiscount'] = ApiClient.convertToType(data['extendedDiscount'], 'Number');
+      }
       if (data.hasOwnProperty('ncExtendedSell')) {
         obj['ncExtendedSell'] = ApiClient.convertToType(data['ncExtendedSell'], 'Number');
       }
       if (data.hasOwnProperty('itemWeight')) {
         obj['itemWeight'] = ApiClient.convertToType(data['itemWeight'], 'Number');
+      }
+      if (data.hasOwnProperty('productionLot')) {
+        obj['productionLot'] = ApiClient.convertToType(data['productionLot'], 'String');
       }
       if (data.hasOwnProperty('weightPerWrap')) {
         obj['weightPerWrap'] = ApiClient.convertToType(data['weightPerWrap'], 'Number');
@@ -164,6 +177,9 @@
       }
       if (data.hasOwnProperty('itemSummaryCodeId')) {
         obj['itemSummaryCodeId'] = ApiClient.convertToType(data['itemSummaryCodeId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -256,6 +272,11 @@
   exports.prototype['unitSell'] = undefined;
 
   /**
+   * @member {Number} unitDiscount
+   */
+  exports.prototype['unitDiscount'] = undefined;
+
+  /**
    * @member {Number} extendedCost
    */
   exports.prototype['extendedCost'] = undefined;
@@ -266,6 +287,11 @@
   exports.prototype['extendedSell'] = undefined;
 
   /**
+   * @member {Number} extendedDiscount
+   */
+  exports.prototype['extendedDiscount'] = undefined;
+
+  /**
    * @member {Number} ncExtendedSell
    */
   exports.prototype['ncExtendedSell'] = undefined;
@@ -274,6 +300,11 @@
    * @member {Number} itemWeight
    */
   exports.prototype['itemWeight'] = undefined;
+
+  /**
+   * @member {String} productionLot
+   */
+  exports.prototype['productionLot'] = undefined;
 
   /**
    * @member {Number} weightPerWrap
@@ -314,6 +345,11 @@
    * @member {Integer} itemSummaryCodeId
    */
   exports.prototype['itemSummaryCodeId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

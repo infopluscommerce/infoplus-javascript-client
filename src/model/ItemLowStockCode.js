@@ -10,46 +10,57 @@
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ItemLowStockCode = factory(root.infoplus.ApiClient);
+    root.infoplus.ItemLowstockCode = factory(root.infoplus.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
   /**
-   * The ItemLowStockCode model module.
-   * @module model/ItemLowStockCode
-   * @version 1.0
+   * The ItemLowstockCode model module.
+   * @module model/ItemLowstockCode
+   * @version beta
    */
 
   /**
-   * Constructs a new <code>ItemLowStockCode</code>.
-   * @alias module:model/ItemLowStockCode
+   * Constructs a new <code>ItemLowstockCode</code>.
+   * @alias module:model/ItemLowstockCode
    * @class
-   * @param id
-   * @param label
+   * @param lobId
    */
-  var exports = function(id, label) {
+  var exports = function(lobId) {
 
-    this['id'] = id;
-    this['label'] = label;
+    this['lobId'] = lobId;
+
+
+
+
   };
 
   /**
-   * Constructs a <code>ItemLowStockCode</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ItemLowstockCode</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ItemLowStockCode} obj Optional instance to populate.
-   * @return {module:model/ItemLowStockCode} The populated <code>ItemLowStockCode</code> instance.
+   * @param {module:model/ItemLowstockCode} obj Optional instance to populate.
+   * @return {module:model/ItemLowstockCode} The populated <code>ItemLowstockCode</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) { 
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+      if (data.hasOwnProperty('lobId')) {
+        obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
-      if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      if (data.hasOwnProperty('internalId')) {
+        obj['internalId'] = ApiClient.convertToType(data['internalId'], 'Integer');
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -57,14 +68,29 @@
 
 
   /**
-   * @member {Integer} id
+   * @member {Integer} lobId
+   */
+  exports.prototype['lobId'] = undefined;
+
+  /**
+   * @member {Integer} internalId
+   */
+  exports.prototype['internalId'] = undefined;
+
+  /**
+   * @member {String} id
    */
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {String} label
+   * @member {String} name
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype['name'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

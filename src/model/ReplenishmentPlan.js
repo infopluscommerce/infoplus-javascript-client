@@ -18,7 +18,7 @@
   /**
    * The ReplenishmentPlan model module.
    * @module model/ReplenishmentPlan
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -37,6 +37,7 @@
     this['warehouseId'] = warehouseId;
     this['pickFaceAssignmentSmartFilterId'] = pickFaceAssignmentSmartFilterId;
     this['name'] = name;
+
   };
 
   /**
@@ -67,6 +68,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -102,6 +106,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
-**poNo** | **String** |  | [optional] 
+**poNoId** | **Integer** |  | [optional] 
 **lobId** | **Integer** |  | 
 **legacyPoNo** | **String** |  | [optional] 
 **warehouseId** | **Integer** |  | 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **maxOther** | **Number** |  | [optional] 
 **distDate** | **Date** |  | 
 **voidDate** | **Date** |  | [optional] 
-**freezeAction** | **String** |  | 
+**freezeAction** | **String** |  | [optional] 
 **revDate** | **String** |  | [optional] 
 **artBack** | **String** |  | [optional] 
 **origin** | **String** |  | [optional] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **sampleTo** | **String** |  | [optional] 
 **maxOvers** | **Integer** |  | 
 **maxUnders** | **Integer** |  | 
-**receivedSfp** | **Integer** |  | 
+**receivedSfp** | **Integer** |  | [optional] 
 **budgetCode** | **String** |  | [optional] 
 **accountingCode** | **String** |  | [optional] 
 **taxExempt** | **String** |  | [optional] 
@@ -63,14 +63,16 @@ Name | Type | Description | Notes
 **receivedBy** | **String** |  | [optional] 
 **lineNo** | **Integer** |  | [optional] 
 **prodLot** | **String** |  | [optional] 
+**productIdTag** | **String** |  | [optional] 
 **unitsPerCase** | **Integer** |  | [optional] 
 **caseWeight** | **Number** |  | [optional] 
 **height** | **Number** |  | [optional] 
 **width** | **Number** |  | [optional] 
 **length** | **Number** |  | [optional] 
-**dockTime** | **Date** |  | [optional] 
+**dockDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **impressions** | **Integer** |  | [optional] 
 **asnLine** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

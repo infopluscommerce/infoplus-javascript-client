@@ -18,7 +18,7 @@
   /**
    * The OrderSource model module.
    * @module model/OrderSource
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -33,6 +33,8 @@
 
     this['lobId'] = lobId;
     this['name'] = name;
+
+
 
 
 
@@ -85,11 +87,17 @@
       if (data.hasOwnProperty('packingSlipId')) {
         obj['packingSlipId'] = ApiClient.convertToType(data['packingSlipId'], 'Integer');
       }
+      if (data.hasOwnProperty('orderInvoiceId')) {
+        obj['orderInvoiceId'] = ApiClient.convertToType(data['orderInvoiceId'], 'Integer');
+      }
       if (data.hasOwnProperty('orderConfirmationEmailId')) {
         obj['orderConfirmationEmailId'] = ApiClient.convertToType(data['orderConfirmationEmailId'], 'Integer');
       }
       if (data.hasOwnProperty('shipmentConfirmationEmailId')) {
         obj['shipmentConfirmationEmailId'] = ApiClient.convertToType(data['shipmentConfirmationEmailId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -149,6 +157,11 @@
   exports.prototype['packingSlipId'] = undefined;
 
   /**
+   * @member {Integer} orderInvoiceId
+   */
+  exports.prototype['orderInvoiceId'] = undefined;
+
+  /**
    * @member {Integer} orderConfirmationEmailId
    */
   exports.prototype['orderConfirmationEmailId'] = undefined;
@@ -157,6 +170,11 @@
    * @member {Integer} shipmentConfirmationEmailId
    */
   exports.prototype['shipmentConfirmationEmailId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

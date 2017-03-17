@@ -18,7 +18,7 @@
   /**
    * The Item model module.
    * @module model/Item
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -111,7 +111,40 @@
     this['forwardItemMixingRule'] = forwardItemMixingRule;
     this['storageItemMixingRule'] = storageItemMixingRule;
     this['allocationRule'] = allocationRule;
+
+
+
     this['hazmat'] = hazmat;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -305,8 +338,107 @@
       if (data.hasOwnProperty('allocationRule')) {
         obj['allocationRule'] = ApiClient.convertToType(data['allocationRule'], 'String');
       }
+      if (data.hasOwnProperty('barcodeField')) {
+        obj['barcodeField'] = ApiClient.convertToType(data['barcodeField'], 'String');
+      }
+      if (data.hasOwnProperty('warehouseDisplayField')) {
+        obj['warehouseDisplayField'] = ApiClient.convertToType(data['warehouseDisplayField'], 'String');
+      }
+      if (data.hasOwnProperty('productIdTagSchemeId')) {
+        obj['productIdTagSchemeId'] = ApiClient.convertToType(data['productIdTagSchemeId'], 'Integer');
+      }
       if (data.hasOwnProperty('hazmat')) {
         obj['hazmat'] = ApiClient.convertToType(data['hazmat'], 'String');
+      }
+      if (data.hasOwnProperty('isAlcohol')) {
+        obj['isAlcohol'] = ApiClient.convertToType(data['isAlcohol'], 'Boolean');
+      }
+      if (data.hasOwnProperty('alcoholType')) {
+        obj['alcoholType'] = ApiClient.convertToType(data['alcoholType'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholContent')) {
+        obj['alcoholContent'] = ApiClient.convertToType(data['alcoholContent'], 'Number');
+      }
+      if (data.hasOwnProperty('alcoholContainer')) {
+        obj['alcoholContainer'] = ApiClient.convertToType(data['alcoholContainer'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholVintageYear')) {
+        obj['alcoholVintageYear'] = ApiClient.convertToType(data['alcoholVintageYear'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholCountry')) {
+        obj['alcoholCountry'] = ApiClient.convertToType(data['alcoholCountry'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholState')) {
+        obj['alcoholState'] = ApiClient.convertToType(data['alcoholState'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholRegion')) {
+        obj['alcoholRegion'] = ApiClient.convertToType(data['alcoholRegion'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholBrand')) {
+        obj['alcoholBrand'] = ApiClient.convertToType(data['alcoholBrand'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholUPCCode')) {
+        obj['alcoholUPCCode'] = ApiClient.convertToType(data['alcoholUPCCode'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholNAMBCACode')) {
+        obj['alcoholNAMBCACode'] = ApiClient.convertToType(data['alcoholNAMBCACode'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholUNIMERCCode')) {
+        obj['alcoholUNIMERCCode'] = ApiClient.convertToType(data['alcoholUNIMERCCode'], 'String');
+      }
+      if (data.hasOwnProperty('alcoholSCCCode')) {
+        obj['alcoholSCCCode'] = ApiClient.convertToType(data['alcoholSCCCode'], 'String');
+      }
+      if (data.hasOwnProperty('length')) {
+        obj['length'] = ApiClient.convertToType(data['length'], 'Number');
+      }
+      if (data.hasOwnProperty('width')) {
+        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
+      }
+      if (data.hasOwnProperty('height')) {
+        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
+      }
+      if (data.hasOwnProperty('topUp')) {
+        obj['topUp'] = ApiClient.convertToType(data['topUp'], 'Boolean');
+      }
+      if (data.hasOwnProperty('shipSolo')) {
+        obj['shipSolo'] = ApiClient.convertToType(data['shipSolo'], 'Boolean');
+      }
+      if (data.hasOwnProperty('availableQuantity')) {
+        obj['availableQuantity'] = ApiClient.convertToType(data['availableQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('damagedQuantity')) {
+        obj['damagedQuantity'] = ApiClient.convertToType(data['damagedQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('inFulfillmentProcessQuantity')) {
+        obj['inFulfillmentProcessQuantity'] = ApiClient.convertToType(data['inFulfillmentProcessQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('onHandQuantity')) {
+        obj['onHandQuantity'] = ApiClient.convertToType(data['onHandQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('openOrderQuantity')) {
+        obj['openOrderQuantity'] = ApiClient.convertToType(data['openOrderQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('openPOQuantity')) {
+        obj['openPOQuantity'] = ApiClient.convertToType(data['openPOQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('orderableQuantity')) {
+        obj['orderableQuantity'] = ApiClient.convertToType(data['orderableQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('unallocatableQuantity')) {
+        obj['unallocatableQuantity'] = ApiClient.convertToType(data['unallocatableQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('unavailableQuantity')) {
+        obj['unavailableQuantity'] = ApiClient.convertToType(data['unavailableQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('overallDaysOnHand')) {
+        obj['overallDaysOnHand'] = ApiClient.convertToType(data['overallDaysOnHand'], 'Integer');
+      }
+      if (data.hasOwnProperty('overallStockStatus')) {
+        obj['overallStockStatus'] = ApiClient.convertToType(data['overallStockStatus'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -614,9 +746,177 @@
   exports.prototype['allocationRule'] = undefined;
 
   /**
+   * @member {String} barcodeField
+   */
+  exports.prototype['barcodeField'] = undefined;
+
+  /**
+   * @member {String} warehouseDisplayField
+   */
+  exports.prototype['warehouseDisplayField'] = undefined;
+
+  /**
+   * @member {Integer} productIdTagSchemeId
+   */
+  exports.prototype['productIdTagSchemeId'] = undefined;
+
+  /**
    * @member {String} hazmat
    */
   exports.prototype['hazmat'] = undefined;
+
+  /**
+   * @member {Boolean} isAlcohol
+   * @default false
+   */
+  exports.prototype['isAlcohol'] = false;
+
+  /**
+   * @member {String} alcoholType
+   */
+  exports.prototype['alcoholType'] = undefined;
+
+  /**
+   * @member {Number} alcoholContent
+   */
+  exports.prototype['alcoholContent'] = undefined;
+
+  /**
+   * @member {String} alcoholContainer
+   */
+  exports.prototype['alcoholContainer'] = undefined;
+
+  /**
+   * @member {String} alcoholVintageYear
+   */
+  exports.prototype['alcoholVintageYear'] = undefined;
+
+  /**
+   * @member {String} alcoholCountry
+   */
+  exports.prototype['alcoholCountry'] = undefined;
+
+  /**
+   * @member {String} alcoholState
+   */
+  exports.prototype['alcoholState'] = undefined;
+
+  /**
+   * @member {String} alcoholRegion
+   */
+  exports.prototype['alcoholRegion'] = undefined;
+
+  /**
+   * @member {String} alcoholBrand
+   */
+  exports.prototype['alcoholBrand'] = undefined;
+
+  /**
+   * @member {String} alcoholUPCCode
+   */
+  exports.prototype['alcoholUPCCode'] = undefined;
+
+  /**
+   * @member {String} alcoholNAMBCACode
+   */
+  exports.prototype['alcoholNAMBCACode'] = undefined;
+
+  /**
+   * @member {String} alcoholUNIMERCCode
+   */
+  exports.prototype['alcoholUNIMERCCode'] = undefined;
+
+  /**
+   * @member {String} alcoholSCCCode
+   */
+  exports.prototype['alcoholSCCCode'] = undefined;
+
+  /**
+   * @member {Number} length
+   */
+  exports.prototype['length'] = undefined;
+
+  /**
+   * @member {Number} width
+   */
+  exports.prototype['width'] = undefined;
+
+  /**
+   * @member {Number} height
+   */
+  exports.prototype['height'] = undefined;
+
+  /**
+   * @member {Boolean} topUp
+   * @default false
+   */
+  exports.prototype['topUp'] = false;
+
+  /**
+   * @member {Boolean} shipSolo
+   * @default false
+   */
+  exports.prototype['shipSolo'] = false;
+
+  /**
+   * @member {Integer} availableQuantity
+   */
+  exports.prototype['availableQuantity'] = undefined;
+
+  /**
+   * @member {Integer} damagedQuantity
+   */
+  exports.prototype['damagedQuantity'] = undefined;
+
+  /**
+   * @member {Integer} inFulfillmentProcessQuantity
+   */
+  exports.prototype['inFulfillmentProcessQuantity'] = undefined;
+
+  /**
+   * @member {Integer} onHandQuantity
+   */
+  exports.prototype['onHandQuantity'] = undefined;
+
+  /**
+   * @member {Integer} openOrderQuantity
+   */
+  exports.prototype['openOrderQuantity'] = undefined;
+
+  /**
+   * @member {Integer} openPOQuantity
+   */
+  exports.prototype['openPOQuantity'] = undefined;
+
+  /**
+   * @member {Integer} orderableQuantity
+   */
+  exports.prototype['orderableQuantity'] = undefined;
+
+  /**
+   * @member {Integer} unallocatableQuantity
+   */
+  exports.prototype['unallocatableQuantity'] = undefined;
+
+  /**
+   * @member {Integer} unavailableQuantity
+   */
+  exports.prototype['unavailableQuantity'] = undefined;
+
+  /**
+   * @member {Integer} overallDaysOnHand
+   */
+  exports.prototype['overallDaysOnHand'] = undefined;
+
+  /**
+   * @member {String} overallStockStatus
+   */
+  exports.prototype['overallStockStatus'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

@@ -18,7 +18,7 @@
   /**
    * The FulfillmentPlan model module.
    * @module model/FulfillmentPlan
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -29,10 +29,13 @@
    * @param warehouseId
    * @param orderSmartFilterId
    * @param createPickWork
+   * @param pickScanSchemeId
    * @param cartonizeOrders
    * @param createPackingSlip
+   * @param createOrderInvoice
+   * @param sendToExternalShippingSystem
    */
-  var exports = function(name, warehouseId, orderSmartFilterId, createPickWork, cartonizeOrders, createPackingSlip) {
+  var exports = function(name, warehouseId, orderSmartFilterId, createPickWork, pickScanSchemeId, cartonizeOrders, createPackingSlip, createOrderInvoice, sendToExternalShippingSystem) {
 
 
 
@@ -40,6 +43,7 @@
     this['name'] = name;
 
     this['warehouseId'] = warehouseId;
+
     this['orderSmartFilterId'] = orderSmartFilterId;
 
 
@@ -56,11 +60,17 @@
 
 
 
+    this['pickScanSchemeId'] = pickScanSchemeId;
     this['cartonizeOrders'] = cartonizeOrders;
 
 
-
     this['createPackingSlip'] = createPackingSlip;
+
+
+    this['createOrderInvoice'] = createOrderInvoice;
+
+    this['sendToExternalShippingSystem'] = sendToExternalShippingSystem;
+
 
   };
 
@@ -92,6 +102,9 @@
       }
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Integer');
+      }
+      if (data.hasOwnProperty('lastRunTime')) {
+        obj['lastRunTime'] = ApiClient.convertToType(data['lastRunTime'], 'Date');
       }
       if (data.hasOwnProperty('orderSmartFilterId')) {
         obj['orderSmartFilterId'] = ApiClient.convertToType(data['orderSmartFilterId'], 'Integer');
@@ -141,6 +154,9 @@
       if (data.hasOwnProperty('pickSummarySort')) {
         obj['pickSummarySort'] = ApiClient.convertToType(data['pickSummarySort'], 'String');
       }
+      if (data.hasOwnProperty('pickScanSchemeId')) {
+        obj['pickScanSchemeId'] = ApiClient.convertToType(data['pickScanSchemeId'], 'Integer');
+      }
       if (data.hasOwnProperty('cartonizeOrders')) {
         obj['cartonizeOrders'] = ApiClient.convertToType(data['cartonizeOrders'], 'Boolean');
       }
@@ -150,14 +166,29 @@
       if (data.hasOwnProperty('preGenerateParcelLabels')) {
         obj['preGenerateParcelLabels'] = ApiClient.convertToType(data['preGenerateParcelLabels'], 'Boolean');
       }
+      if (data.hasOwnProperty('createPackingSlip')) {
+        obj['createPackingSlip'] = ApiClient.convertToType(data['createPackingSlip'], 'String');
+      }
       if (data.hasOwnProperty('overridePackingSlipTemplateId')) {
         obj['overridePackingSlipTemplateId'] = ApiClient.convertToType(data['overridePackingSlipTemplateId'], 'Integer');
       }
-      if (data.hasOwnProperty('createPackingSlip')) {
-        obj['createPackingSlip'] = ApiClient.convertToType(data['createPackingSlip'], 'Boolean');
-      }
       if (data.hasOwnProperty('createOrderAssemblyGuide')) {
         obj['createOrderAssemblyGuide'] = ApiClient.convertToType(data['createOrderAssemblyGuide'], 'Boolean');
+      }
+      if (data.hasOwnProperty('createOrderInvoice')) {
+        obj['createOrderInvoice'] = ApiClient.convertToType(data['createOrderInvoice'], 'String');
+      }
+      if (data.hasOwnProperty('overrideOrderInvoiceTemplateId')) {
+        obj['overrideOrderInvoiceTemplateId'] = ApiClient.convertToType(data['overrideOrderInvoiceTemplateId'], 'Integer');
+      }
+      if (data.hasOwnProperty('sendToExternalShippingSystem')) {
+        obj['sendToExternalShippingSystem'] = ApiClient.convertToType(data['sendToExternalShippingSystem'], 'Boolean');
+      }
+      if (data.hasOwnProperty('externalShippingSystemId')) {
+        obj['externalShippingSystemId'] = ApiClient.convertToType(data['externalShippingSystemId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -193,6 +224,11 @@
    * @member {Integer} warehouseId
    */
   exports.prototype['warehouseId'] = undefined;
+
+  /**
+   * @member {Date} lastRunTime
+   */
+  exports.prototype['lastRunTime'] = undefined;
 
   /**
    * @member {Integer} orderSmartFilterId
@@ -278,6 +314,11 @@
   exports.prototype['pickSummarySort'] = undefined;
 
   /**
+   * @member {Integer} pickScanSchemeId
+   */
+  exports.prototype['pickScanSchemeId'] = undefined;
+
+  /**
    * @member {Boolean} cartonizeOrders
    * @default false
    */
@@ -296,21 +337,46 @@
   exports.prototype['preGenerateParcelLabels'] = false;
 
   /**
+   * @member {String} createPackingSlip
+   */
+  exports.prototype['createPackingSlip'] = undefined;
+
+  /**
    * @member {Integer} overridePackingSlipTemplateId
    */
   exports.prototype['overridePackingSlipTemplateId'] = undefined;
-
-  /**
-   * @member {Boolean} createPackingSlip
-   * @default false
-   */
-  exports.prototype['createPackingSlip'] = false;
 
   /**
    * @member {Boolean} createOrderAssemblyGuide
    * @default false
    */
   exports.prototype['createOrderAssemblyGuide'] = false;
+
+  /**
+   * @member {String} createOrderInvoice
+   */
+  exports.prototype['createOrderInvoice'] = undefined;
+
+  /**
+   * @member {Integer} overrideOrderInvoiceTemplateId
+   */
+  exports.prototype['overrideOrderInvoiceTemplateId'] = undefined;
+
+  /**
+   * @member {Boolean} sendToExternalShippingSystem
+   * @default false
+   */
+  exports.prototype['sendToExternalShippingSystem'] = false;
+
+  /**
+   * @member {Integer} externalShippingSystemId
+   */
+  exports.prototype['externalShippingSystemId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

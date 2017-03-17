@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **warehouseId** | **Integer** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

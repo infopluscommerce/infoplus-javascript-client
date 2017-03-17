@@ -18,7 +18,7 @@
   /**
    * The QuickAdjustment model module.
    * @module model/QuickAdjustment
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -39,6 +39,8 @@
     this['locationId'] = locationId;
     this['adjustmentCode'] = adjustmentCode;
     this['totalQuantity'] = totalQuantity;
+
+
 
 
 
@@ -81,6 +83,12 @@
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('productIdTag')) {
+        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
@@ -134,6 +142,16 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+
+  /**
+   * @member {String} productIdTag
+   */
+  exports.prototype['productIdTag'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
   /**
    * @member {String} sku

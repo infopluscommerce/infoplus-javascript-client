@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **vendorId** | **Integer** |  | [optional] 
 **status** | **String** |  | [optional] 
 **serviceLevel** | **String** |  | 
+**receivingProcessId** | **Integer** |  | [optional] 
+**dockDate** | **Date** |  | [optional] 
 **createdBy** | **Integer** |  | [optional] 
 **worksheetName** | **String** |  | 
 **carrier** | **String** |  | [optional] 
@@ -20,5 +22,6 @@ Name | Type | Description | Notes
 **workBatchId** | **Integer** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

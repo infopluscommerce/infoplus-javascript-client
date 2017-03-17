@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

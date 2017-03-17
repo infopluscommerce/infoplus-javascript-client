@@ -4,11 +4,17 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addEmailTemplate**](EmailTemplateApi.md#addEmailTemplate) | **POST** /v1.0/emailTemplate | Create an emailTemplate
-[**deleteEmailTemplate**](EmailTemplateApi.md#deleteEmailTemplate) | **DELETE** /v1.0/emailTemplate/{emailTemplateId} | Delete an emailTemplate
-[**getEmailTemplateByFilter**](EmailTemplateApi.md#getEmailTemplateByFilter) | **GET** /v1.0/emailTemplate/search | Search emailTemplates by filter
-[**getEmailTemplateById**](EmailTemplateApi.md#getEmailTemplateById) | **GET** /v1.0/emailTemplate/{emailTemplateId} | Get an emailTemplate by id
-[**updateEmailTemplate**](EmailTemplateApi.md#updateEmailTemplate) | **PUT** /v1.0/emailTemplate | Update an emailTemplate
+[**addEmailTemplate**](EmailTemplateApi.md#addEmailTemplate) | **POST** /beta/emailTemplate | Create an emailTemplate
+[**addEmailTemplateAudit**](EmailTemplateApi.md#addEmailTemplateAudit) | **PUT** /beta/emailTemplate/{emailTemplateId}/audit/{emailTemplateAudit} | Add new audit for an emailTemplate
+[**addEmailTemplateTag**](EmailTemplateApi.md#addEmailTemplateTag) | **PUT** /beta/emailTemplate/{emailTemplateId}/tag/{emailTemplateTag} | Add new tags for an emailTemplate.
+[**deleteEmailTemplate**](EmailTemplateApi.md#deleteEmailTemplate) | **DELETE** /beta/emailTemplate/{emailTemplateId} | Delete an emailTemplate
+[**deleteEmailTemplateTag**](EmailTemplateApi.md#deleteEmailTemplateTag) | **DELETE** /beta/emailTemplate/{emailTemplateId}/tag/{emailTemplateTag} | Delete a tag for an emailTemplate.
+[**getDuplicateEmailTemplateById**](EmailTemplateApi.md#getDuplicateEmailTemplateById) | **GET** /beta/emailTemplate/duplicate/{emailTemplateId} | Get a duplicated an emailTemplate by id
+[**getEmailTemplateByFilter**](EmailTemplateApi.md#getEmailTemplateByFilter) | **GET** /beta/emailTemplate/search | Search emailTemplates by filter
+[**getEmailTemplateById**](EmailTemplateApi.md#getEmailTemplateById) | **GET** /beta/emailTemplate/{emailTemplateId} | Get an emailTemplate by id
+[**getEmailTemplateTags**](EmailTemplateApi.md#getEmailTemplateTags) | **GET** /beta/emailTemplate/{emailTemplateId}/tag | Get the tags for an emailTemplate.
+[**updateEmailTemplate**](EmailTemplateApi.md#updateEmailTemplate) | **PUT** /beta/emailTemplate | Update an emailTemplate
+[**updateEmailTemplateCustomFields**](EmailTemplateApi.md#updateEmailTemplateCustomFields) | **PUT** /beta/emailTemplate/customFields | Update an emailTemplate custom fields
 
 
 <a name="addEmailTemplate"></a>
@@ -64,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addEmailTemplateAudit"></a>
+# **addEmailTemplateAudit**
+> addEmailTemplateAudit(emailTemplateId, emailTemplateAudit)
+
+Add new audit for an emailTemplate
+
+Adds an audit to an existing emailTemplate.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var emailTemplateId = 56; // {Integer} Id of the emailTemplate to add an audit to
+
+var emailTemplateAudit = "emailTemplateAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addEmailTemplateAudit(emailTemplateId, emailTemplateAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **emailTemplateId** | **Integer**| Id of the emailTemplate to add an audit to | 
+ **emailTemplateAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addEmailTemplateTag"></a>
+# **addEmailTemplateTag**
+> addEmailTemplateTag(emailTemplateId, emailTemplateTag)
+
+Add new tags for an emailTemplate.
+
+Adds a tag to an existing emailTemplate.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var emailTemplateId = 56; // {Integer} Id of the emailTemplate to add a tag to
+
+var emailTemplateTag = "emailTemplateTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addEmailTemplateTag(emailTemplateId, emailTemplateTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **emailTemplateId** | **Integer**| Id of the emailTemplate to add a tag to | 
+ **emailTemplateTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteEmailTemplate"></a>
 # **deleteEmailTemplate**
 > deleteEmailTemplate(emailTemplateId)
@@ -107,6 +225,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteEmailTemplateTag"></a>
+# **deleteEmailTemplateTag**
+> deleteEmailTemplateTag(emailTemplateId, emailTemplateTag)
+
+Delete a tag for an emailTemplate.
+
+Deletes an existing emailTemplate tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var emailTemplateId = 56; // {Integer} Id of the emailTemplate to remove tag from
+
+var emailTemplateTag = "emailTemplateTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteEmailTemplateTag(emailTemplateId, emailTemplateTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **emailTemplateId** | **Integer**| Id of the emailTemplate to remove tag from | 
+ **emailTemplateTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateEmailTemplateById"></a>
+# **getDuplicateEmailTemplateById**
+> EmailTemplate getDuplicateEmailTemplateById(emailTemplateId)
+
+Get a duplicated an emailTemplate by id
+
+Returns a duplicated emailTemplate identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var emailTemplateId = 56; // {Integer} Id of the emailTemplate to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateEmailTemplateById(emailTemplateId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **emailTemplateId** | **Integer**| Id of the emailTemplate to be duplicated. | 
+
+### Return type
+
+[**EmailTemplate**](EmailTemplate.md)
 
 ### Authorization
 
@@ -230,6 +457,59 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getEmailTemplateTags"></a>
+# **getEmailTemplateTags**
+> getEmailTemplateTags(emailTemplateId)
+
+Get the tags for an emailTemplate.
+
+Get all existing emailTemplate tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var emailTemplateId = 56; // {Integer} Id of the emailTemplate to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getEmailTemplateTags(emailTemplateId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **emailTemplateId** | **Integer**| Id of the emailTemplate to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="updateEmailTemplate"></a>
 # **updateEmailTemplate**
 > updateEmailTemplate(body)
@@ -262,6 +542,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateEmailTemplate(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EmailTemplate**](EmailTemplate.md)| EmailTemplate to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateEmailTemplateCustomFields"></a>
+# **updateEmailTemplateCustomFields**
+> updateEmailTemplateCustomFields(body)
+
+Update an emailTemplate custom fields
+
+Updates an existing emailTemplate custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.EmailTemplateApi()
+
+var body = new infoplus.EmailTemplate(); // {EmailTemplate} EmailTemplate to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateEmailTemplateCustomFields(body, callback);
 ```
 
 ### Parameters

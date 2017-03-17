@@ -18,7 +18,7 @@
   /**
    * The ServiceType model module.
    * @module model/ServiceType
-   * @version 1.0
+   * @version beta
    */
 
   /**

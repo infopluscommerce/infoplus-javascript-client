@@ -4,11 +4,17 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addLocationBillingType**](LocationBillingTypeApi.md#addLocationBillingType) | **POST** /v1.0/locationBillingType | Create a locationBillingType
-[**deleteLocationBillingType**](LocationBillingTypeApi.md#deleteLocationBillingType) | **DELETE** /v1.0/locationBillingType/{locationBillingTypeId} | Delete a locationBillingType
-[**getLocationBillingTypeByFilter**](LocationBillingTypeApi.md#getLocationBillingTypeByFilter) | **GET** /v1.0/locationBillingType/search | Search locationBillingTypes by filter
-[**getLocationBillingTypeById**](LocationBillingTypeApi.md#getLocationBillingTypeById) | **GET** /v1.0/locationBillingType/{locationBillingTypeId} | Get a locationBillingType by id
-[**updateLocationBillingType**](LocationBillingTypeApi.md#updateLocationBillingType) | **PUT** /v1.0/locationBillingType | Update a locationBillingType
+[**addLocationBillingType**](LocationBillingTypeApi.md#addLocationBillingType) | **POST** /beta/locationBillingType | Create a locationBillingType
+[**addLocationBillingTypeAudit**](LocationBillingTypeApi.md#addLocationBillingTypeAudit) | **PUT** /beta/locationBillingType/{locationBillingTypeId}/audit/{locationBillingTypeAudit} | Add new audit for a locationBillingType
+[**addLocationBillingTypeTag**](LocationBillingTypeApi.md#addLocationBillingTypeTag) | **PUT** /beta/locationBillingType/{locationBillingTypeId}/tag/{locationBillingTypeTag} | Add new tags for a locationBillingType.
+[**deleteLocationBillingType**](LocationBillingTypeApi.md#deleteLocationBillingType) | **DELETE** /beta/locationBillingType/{locationBillingTypeId} | Delete a locationBillingType
+[**deleteLocationBillingTypeTag**](LocationBillingTypeApi.md#deleteLocationBillingTypeTag) | **DELETE** /beta/locationBillingType/{locationBillingTypeId}/tag/{locationBillingTypeTag} | Delete a tag for a locationBillingType.
+[**getDuplicateLocationBillingTypeById**](LocationBillingTypeApi.md#getDuplicateLocationBillingTypeById) | **GET** /beta/locationBillingType/duplicate/{locationBillingTypeId} | Get a duplicated a locationBillingType by id
+[**getLocationBillingTypeByFilter**](LocationBillingTypeApi.md#getLocationBillingTypeByFilter) | **GET** /beta/locationBillingType/search | Search locationBillingTypes by filter
+[**getLocationBillingTypeById**](LocationBillingTypeApi.md#getLocationBillingTypeById) | **GET** /beta/locationBillingType/{locationBillingTypeId} | Get a locationBillingType by id
+[**getLocationBillingTypeTags**](LocationBillingTypeApi.md#getLocationBillingTypeTags) | **GET** /beta/locationBillingType/{locationBillingTypeId}/tag | Get the tags for a locationBillingType.
+[**updateLocationBillingType**](LocationBillingTypeApi.md#updateLocationBillingType) | **PUT** /beta/locationBillingType | Update a locationBillingType
+[**updateLocationBillingTypeCustomFields**](LocationBillingTypeApi.md#updateLocationBillingTypeCustomFields) | **PUT** /beta/locationBillingType/customFields | Update a locationBillingType custom fields
 
 
 <a name="addLocationBillingType"></a>
@@ -64,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addLocationBillingTypeAudit"></a>
+# **addLocationBillingTypeAudit**
+> addLocationBillingTypeAudit(locationBillingTypeId, locationBillingTypeAudit)
+
+Add new audit for a locationBillingType
+
+Adds an audit to an existing locationBillingType.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var locationBillingTypeId = 56; // {Integer} Id of the locationBillingType to add an audit to
+
+var locationBillingTypeAudit = "locationBillingTypeAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addLocationBillingTypeAudit(locationBillingTypeId, locationBillingTypeAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationBillingTypeId** | **Integer**| Id of the locationBillingType to add an audit to | 
+ **locationBillingTypeAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addLocationBillingTypeTag"></a>
+# **addLocationBillingTypeTag**
+> addLocationBillingTypeTag(locationBillingTypeId, locationBillingTypeTag)
+
+Add new tags for a locationBillingType.
+
+Adds a tag to an existing locationBillingType.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var locationBillingTypeId = 56; // {Integer} Id of the locationBillingType to add a tag to
+
+var locationBillingTypeTag = "locationBillingTypeTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addLocationBillingTypeTag(locationBillingTypeId, locationBillingTypeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationBillingTypeId** | **Integer**| Id of the locationBillingType to add a tag to | 
+ **locationBillingTypeTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteLocationBillingType"></a>
 # **deleteLocationBillingType**
 > deleteLocationBillingType(locationBillingTypeId)
@@ -107,6 +225,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteLocationBillingTypeTag"></a>
+# **deleteLocationBillingTypeTag**
+> deleteLocationBillingTypeTag(locationBillingTypeId, locationBillingTypeTag)
+
+Delete a tag for a locationBillingType.
+
+Deletes an existing locationBillingType tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var locationBillingTypeId = 56; // {Integer} Id of the locationBillingType to remove tag from
+
+var locationBillingTypeTag = "locationBillingTypeTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteLocationBillingTypeTag(locationBillingTypeId, locationBillingTypeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationBillingTypeId** | **Integer**| Id of the locationBillingType to remove tag from | 
+ **locationBillingTypeTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateLocationBillingTypeById"></a>
+# **getDuplicateLocationBillingTypeById**
+> LocationBillingType getDuplicateLocationBillingTypeById(locationBillingTypeId)
+
+Get a duplicated a locationBillingType by id
+
+Returns a duplicated locationBillingType identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var locationBillingTypeId = 56; // {Integer} Id of the locationBillingType to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateLocationBillingTypeById(locationBillingTypeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationBillingTypeId** | **Integer**| Id of the locationBillingType to be duplicated. | 
+
+### Return type
+
+[**LocationBillingType**](LocationBillingType.md)
 
 ### Authorization
 
@@ -230,6 +457,59 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getLocationBillingTypeTags"></a>
+# **getLocationBillingTypeTags**
+> getLocationBillingTypeTags(locationBillingTypeId)
+
+Get the tags for a locationBillingType.
+
+Get all existing locationBillingType tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var locationBillingTypeId = 56; // {Integer} Id of the locationBillingType to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getLocationBillingTypeTags(locationBillingTypeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationBillingTypeId** | **Integer**| Id of the locationBillingType to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="updateLocationBillingType"></a>
 # **updateLocationBillingType**
 > updateLocationBillingType(body)
@@ -262,6 +542,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateLocationBillingType(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**LocationBillingType**](LocationBillingType.md)| LocationBillingType to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateLocationBillingTypeCustomFields"></a>
+# **updateLocationBillingTypeCustomFields**
+> updateLocationBillingTypeCustomFields(body)
+
+Update a locationBillingType custom fields
+
+Updates an existing locationBillingType custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationBillingTypeApi()
+
+var body = new infoplus.LocationBillingType(); // {LocationBillingType} LocationBillingType to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateLocationBillingTypeCustomFields(body, callback);
 ```
 
 ### Parameters

@@ -4,9 +4,236 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getWarehouseDocumentByFilter**](WarehouseDocumentApi.md#getWarehouseDocumentByFilter) | **GET** /v1.0/warehouseDocument/search | Search warehouseDocuments by filter
-[**getWarehouseDocumentById**](WarehouseDocumentApi.md#getWarehouseDocumentById) | **GET** /v1.0/warehouseDocument/{warehouseDocumentId} | Get a warehouseDocument by id
+[**addWarehouseDocumentAudit**](WarehouseDocumentApi.md#addWarehouseDocumentAudit) | **PUT** /beta/warehouseDocument/{warehouseDocumentId}/audit/{warehouseDocumentAudit} | Add new audit for a warehouseDocument
+[**addWarehouseDocumentTag**](WarehouseDocumentApi.md#addWarehouseDocumentTag) | **PUT** /beta/warehouseDocument/{warehouseDocumentId}/tag/{warehouseDocumentTag} | Add new tags for a warehouseDocument.
+[**deleteWarehouseDocumentTag**](WarehouseDocumentApi.md#deleteWarehouseDocumentTag) | **DELETE** /beta/warehouseDocument/{warehouseDocumentId}/tag/{warehouseDocumentTag} | Delete a tag for a warehouseDocument.
+[**getDuplicateWarehouseDocumentById**](WarehouseDocumentApi.md#getDuplicateWarehouseDocumentById) | **GET** /beta/warehouseDocument/duplicate/{warehouseDocumentId} | Get a duplicated a warehouseDocument by id
+[**getWarehouseDocumentByFilter**](WarehouseDocumentApi.md#getWarehouseDocumentByFilter) | **GET** /beta/warehouseDocument/search | Search warehouseDocuments by filter
+[**getWarehouseDocumentById**](WarehouseDocumentApi.md#getWarehouseDocumentById) | **GET** /beta/warehouseDocument/{warehouseDocumentId} | Get a warehouseDocument by id
+[**getWarehouseDocumentTags**](WarehouseDocumentApi.md#getWarehouseDocumentTags) | **GET** /beta/warehouseDocument/{warehouseDocumentId}/tag | Get the tags for a warehouseDocument.
+[**updateWarehouseDocumentCustomFields**](WarehouseDocumentApi.md#updateWarehouseDocumentCustomFields) | **PUT** /beta/warehouseDocument/customFields | Update a warehouseDocument custom fields
 
+
+<a name="addWarehouseDocumentAudit"></a>
+# **addWarehouseDocumentAudit**
+> addWarehouseDocumentAudit(warehouseDocumentId, warehouseDocumentAudit)
+
+Add new audit for a warehouseDocument
+
+Adds an audit to an existing warehouseDocument.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseDocumentApi()
+
+var warehouseDocumentId = 56; // {Integer} Id of the warehouseDocument to add an audit to
+
+var warehouseDocumentAudit = "warehouseDocumentAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addWarehouseDocumentAudit(warehouseDocumentId, warehouseDocumentAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **warehouseDocumentId** | **Integer**| Id of the warehouseDocument to add an audit to | 
+ **warehouseDocumentAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addWarehouseDocumentTag"></a>
+# **addWarehouseDocumentTag**
+> addWarehouseDocumentTag(warehouseDocumentId, warehouseDocumentTag)
+
+Add new tags for a warehouseDocument.
+
+Adds a tag to an existing warehouseDocument.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseDocumentApi()
+
+var warehouseDocumentId = 56; // {Integer} Id of the warehouseDocument to add a tag to
+
+var warehouseDocumentTag = "warehouseDocumentTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addWarehouseDocumentTag(warehouseDocumentId, warehouseDocumentTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **warehouseDocumentId** | **Integer**| Id of the warehouseDocument to add a tag to | 
+ **warehouseDocumentTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteWarehouseDocumentTag"></a>
+# **deleteWarehouseDocumentTag**
+> deleteWarehouseDocumentTag(warehouseDocumentId, warehouseDocumentTag)
+
+Delete a tag for a warehouseDocument.
+
+Deletes an existing warehouseDocument tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseDocumentApi()
+
+var warehouseDocumentId = 56; // {Integer} Id of the warehouseDocument to remove tag from
+
+var warehouseDocumentTag = "warehouseDocumentTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteWarehouseDocumentTag(warehouseDocumentId, warehouseDocumentTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **warehouseDocumentId** | **Integer**| Id of the warehouseDocument to remove tag from | 
+ **warehouseDocumentTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateWarehouseDocumentById"></a>
+# **getDuplicateWarehouseDocumentById**
+> WarehouseDocument getDuplicateWarehouseDocumentById(warehouseDocumentId)
+
+Get a duplicated a warehouseDocument by id
+
+Returns a duplicated warehouseDocument identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseDocumentApi()
+
+var warehouseDocumentId = 56; // {Integer} Id of the warehouseDocument to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateWarehouseDocumentById(warehouseDocumentId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **warehouseDocumentId** | **Integer**| Id of the warehouseDocument to be duplicated. | 
+
+### Return type
+
+[**WarehouseDocument**](WarehouseDocument.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getWarehouseDocumentByFilter"></a>
 # **getWarehouseDocumentByFilter**
@@ -119,5 +346,111 @@ Name | Type | Description  | Notes
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getWarehouseDocumentTags"></a>
+# **getWarehouseDocumentTags**
+> getWarehouseDocumentTags(warehouseDocumentId)
+
+Get the tags for a warehouseDocument.
+
+Get all existing warehouseDocument tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseDocumentApi()
+
+var warehouseDocumentId = 56; // {Integer} Id of the warehouseDocument to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getWarehouseDocumentTags(warehouseDocumentId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **warehouseDocumentId** | **Integer**| Id of the warehouseDocument to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateWarehouseDocumentCustomFields"></a>
+# **updateWarehouseDocumentCustomFields**
+> updateWarehouseDocumentCustomFields(body)
+
+Update a warehouseDocument custom fields
+
+Updates an existing warehouseDocument custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.WarehouseDocumentApi()
+
+var body = new infoplus.WarehouseDocument(); // {WarehouseDocument} WarehouseDocument to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateWarehouseDocumentCustomFields(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WarehouseDocument**](WarehouseDocument.md)| WarehouseDocument to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

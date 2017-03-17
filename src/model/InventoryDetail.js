@@ -18,7 +18,7 @@
   /**
    * The InventoryDetail model module.
    * @module model/InventoryDetail
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -31,6 +31,7 @@
 
 
     this['warehouseLocationId'] = warehouseLocationId;
+
 
 
 
@@ -86,6 +87,9 @@
       }
       if (data.hasOwnProperty('poNo')) {
         obj['poNo'] = ApiClient.convertToType(data['poNo'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
@@ -149,6 +153,11 @@
    * @member {String} poNo
    */
   exports.prototype['poNo'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
   /**
    * @member {String} sku

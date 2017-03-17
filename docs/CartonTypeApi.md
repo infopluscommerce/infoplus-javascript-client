@@ -4,11 +4,17 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCartonType**](CartonTypeApi.md#addCartonType) | **POST** /v1.0/cartonType | Create a cartonType
-[**deleteCartonType**](CartonTypeApi.md#deleteCartonType) | **DELETE** /v1.0/cartonType/{cartonTypeId} | Delete a cartonType
-[**getCartonTypeByFilter**](CartonTypeApi.md#getCartonTypeByFilter) | **GET** /v1.0/cartonType/search | Search cartonTypes by filter
-[**getCartonTypeById**](CartonTypeApi.md#getCartonTypeById) | **GET** /v1.0/cartonType/{cartonTypeId} | Get a cartonType by id
-[**updateCartonType**](CartonTypeApi.md#updateCartonType) | **PUT** /v1.0/cartonType | Update a cartonType
+[**addCartonType**](CartonTypeApi.md#addCartonType) | **POST** /beta/cartonType | Create a cartonType
+[**addCartonTypeAudit**](CartonTypeApi.md#addCartonTypeAudit) | **PUT** /beta/cartonType/{cartonTypeId}/audit/{cartonTypeAudit} | Add new audit for a cartonType
+[**addCartonTypeTag**](CartonTypeApi.md#addCartonTypeTag) | **PUT** /beta/cartonType/{cartonTypeId}/tag/{cartonTypeTag} | Add new tags for a cartonType.
+[**deleteCartonType**](CartonTypeApi.md#deleteCartonType) | **DELETE** /beta/cartonType/{cartonTypeId} | Delete a cartonType
+[**deleteCartonTypeTag**](CartonTypeApi.md#deleteCartonTypeTag) | **DELETE** /beta/cartonType/{cartonTypeId}/tag/{cartonTypeTag} | Delete a tag for a cartonType.
+[**getCartonTypeByFilter**](CartonTypeApi.md#getCartonTypeByFilter) | **GET** /beta/cartonType/search | Search cartonTypes by filter
+[**getCartonTypeById**](CartonTypeApi.md#getCartonTypeById) | **GET** /beta/cartonType/{cartonTypeId} | Get a cartonType by id
+[**getCartonTypeTags**](CartonTypeApi.md#getCartonTypeTags) | **GET** /beta/cartonType/{cartonTypeId}/tag | Get the tags for a cartonType.
+[**getDuplicateCartonTypeById**](CartonTypeApi.md#getDuplicateCartonTypeById) | **GET** /beta/cartonType/duplicate/{cartonTypeId} | Get a duplicated a cartonType by id
+[**updateCartonType**](CartonTypeApi.md#updateCartonType) | **PUT** /beta/cartonType | Update a cartonType
+[**updateCartonTypeCustomFields**](CartonTypeApi.md#updateCartonTypeCustomFields) | **PUT** /beta/cartonType/customFields | Update a cartonType custom fields
 
 
 <a name="addCartonType"></a>
@@ -64,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addCartonTypeAudit"></a>
+# **addCartonTypeAudit**
+> addCartonTypeAudit(cartonTypeId, cartonTypeAudit)
+
+Add new audit for a cartonType
+
+Adds an audit to an existing cartonType.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var cartonTypeId = 56; // {Integer} Id of the cartonType to add an audit to
+
+var cartonTypeAudit = "cartonTypeAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addCartonTypeAudit(cartonTypeId, cartonTypeAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartonTypeId** | **Integer**| Id of the cartonType to add an audit to | 
+ **cartonTypeAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addCartonTypeTag"></a>
+# **addCartonTypeTag**
+> addCartonTypeTag(cartonTypeId, cartonTypeTag)
+
+Add new tags for a cartonType.
+
+Adds a tag to an existing cartonType.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var cartonTypeId = 56; // {Integer} Id of the cartonType to add a tag to
+
+var cartonTypeTag = "cartonTypeTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addCartonTypeTag(cartonTypeId, cartonTypeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartonTypeId** | **Integer**| Id of the cartonType to add a tag to | 
+ **cartonTypeTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteCartonType"></a>
 # **deleteCartonType**
 > deleteCartonType(cartonTypeId)
@@ -103,6 +221,62 @@ api.deleteCartonType(cartonTypeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartonTypeId** | **Integer**| Id of the cartonType to be deleted. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteCartonTypeTag"></a>
+# **deleteCartonTypeTag**
+> deleteCartonTypeTag(cartonTypeId, cartonTypeTag)
+
+Delete a tag for a cartonType.
+
+Deletes an existing cartonType tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var cartonTypeId = 56; // {Integer} Id of the cartonType to remove tag from
+
+var cartonTypeTag = "cartonTypeTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteCartonTypeTag(cartonTypeId, cartonTypeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartonTypeId** | **Integer**| Id of the cartonType to remove tag from | 
+ **cartonTypeTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -230,6 +404,112 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getCartonTypeTags"></a>
+# **getCartonTypeTags**
+> getCartonTypeTags(cartonTypeId)
+
+Get the tags for a cartonType.
+
+Get all existing cartonType tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var cartonTypeId = 56; // {Integer} Id of the cartonType to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getCartonTypeTags(cartonTypeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartonTypeId** | **Integer**| Id of the cartonType to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateCartonTypeById"></a>
+# **getDuplicateCartonTypeById**
+> CartonType getDuplicateCartonTypeById(cartonTypeId)
+
+Get a duplicated a cartonType by id
+
+Returns a duplicated cartonType identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var cartonTypeId = 56; // {Integer} Id of the cartonType to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateCartonTypeById(cartonTypeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartonTypeId** | **Integer**| Id of the cartonType to be duplicated. | 
+
+### Return type
+
+[**CartonType**](CartonType.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="updateCartonType"></a>
 # **updateCartonType**
 > updateCartonType(body)
@@ -262,6 +542,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateCartonType(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CartonType**](CartonType.md)| CartonType to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateCartonTypeCustomFields"></a>
+# **updateCartonTypeCustomFields**
+> updateCartonTypeCustomFields(body)
+
+Update a cartonType custom fields
+
+Updates an existing cartonType custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CartonTypeApi()
+
+var body = new infoplus.CartonType(); // {CartonType} CartonType to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateCartonTypeCustomFields(body, callback);
 ```
 
 ### Parameters

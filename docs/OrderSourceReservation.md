@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **reservedQuantity** | **Integer** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 
 

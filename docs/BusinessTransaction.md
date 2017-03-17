@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **lobId** | **Integer** |  | [optional] 
 **messageBody** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

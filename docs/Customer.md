@@ -51,5 +51,6 @@ Name | Type | Description | Notes
 **extrinsicDecimal2** | **Number** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **omsCustomerId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -18,7 +18,7 @@
   /**
    * The BillOfLadingOrderInfoLine model module.
    * @module model/BillOfLadingOrderInfoLine
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -34,6 +34,7 @@
 
 
     this['additionalShipperInfo'] = additionalShipperInfo;
+
   };
 
   /**
@@ -61,6 +62,9 @@
       }
       if (data.hasOwnProperty('additionalShipperInfo')) {
         obj['additionalShipperInfo'] = ApiClient.convertToType(data['additionalShipperInfo'], 'String');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -92,6 +96,11 @@
    * @member {String} additionalShipperInfo
    */
   exports.prototype['additionalShipperInfo'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

@@ -18,7 +18,7 @@
   /**
    * The ItemReceipt model module.
    * @module model/ItemReceipt
-   * @version 1.0
+   * @version beta
    */
 
   /**
@@ -35,13 +35,11 @@
    * @param unitsPerWrap
    * @param chargeFreight
    * @param distDate
-   * @param freezeAction
    * @param maxOvers
    * @param maxUnders
-   * @param receivedSfp
    * @param vendorId
    */
-  var exports = function(lobId, warehouseId, sku, orderQuantity, requestedDeliveryDate, unitCode, wrapCode, unitsPerWrap, chargeFreight, distDate, freezeAction, maxOvers, maxUnders, receivedSfp, vendorId) {
+  var exports = function(lobId, warehouseId, sku, orderQuantity, requestedDeliveryDate, unitCode, wrapCode, unitsPerWrap, chargeFreight, distDate, maxOvers, maxUnders, vendorId) {
 
 
 
@@ -65,7 +63,7 @@
 
     this['distDate'] = distDate;
 
-    this['freezeAction'] = freezeAction;
+
 
 
 
@@ -73,7 +71,7 @@
 
     this['maxOvers'] = maxOvers;
     this['maxUnders'] = maxUnders;
-    this['receivedSfp'] = receivedSfp;
+
 
 
 
@@ -112,6 +110,8 @@
 
 
 
+
+
   };
 
   /**
@@ -128,8 +128,8 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('poNo')) {
-        obj['poNo'] = ApiClient.convertToType(data['poNo'], 'String');
+      if (data.hasOwnProperty('poNoId')) {
+        obj['poNoId'] = ApiClient.convertToType(data['poNoId'], 'Integer');
       }
       if (data.hasOwnProperty('lobId')) {
         obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
@@ -305,6 +305,9 @@
       if (data.hasOwnProperty('prodLot')) {
         obj['prodLot'] = ApiClient.convertToType(data['prodLot'], 'String');
       }
+      if (data.hasOwnProperty('productIdTag')) {
+        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
+      }
       if (data.hasOwnProperty('unitsPerCase')) {
         obj['unitsPerCase'] = ApiClient.convertToType(data['unitsPerCase'], 'Integer');
       }
@@ -320,8 +323,8 @@
       if (data.hasOwnProperty('length')) {
         obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
-      if (data.hasOwnProperty('dockTime')) {
-        obj['dockTime'] = ApiClient.convertToType(data['dockTime'], 'Date');
+      if (data.hasOwnProperty('dockDate')) {
+        obj['dockDate'] = ApiClient.convertToType(data['dockDate'], 'Date');
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
@@ -331,6 +334,9 @@
       }
       if (data.hasOwnProperty('asnLine')) {
         obj['asnLine'] = ApiClient.convertToType(data['asnLine'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -343,9 +349,9 @@
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {String} poNo
+   * @member {Integer} poNoId
    */
-  exports.prototype['poNo'] = undefined;
+  exports.prototype['poNoId'] = undefined;
 
   /**
    * @member {Integer} lobId
@@ -638,6 +644,11 @@
   exports.prototype['prodLot'] = undefined;
 
   /**
+   * @member {String} productIdTag
+   */
+  exports.prototype['productIdTag'] = undefined;
+
+  /**
    * @member {Integer} unitsPerCase
    */
   exports.prototype['unitsPerCase'] = undefined;
@@ -663,9 +674,9 @@
   exports.prototype['length'] = undefined;
 
   /**
-   * @member {Date} dockTime
+   * @member {Date} dockDate
    */
-  exports.prototype['dockTime'] = undefined;
+  exports.prototype['dockDate'] = undefined;
 
   /**
    * @member {Date} modifyDate
@@ -681,6 +692,11 @@
    * @member {Integer} asnLine
    */
   exports.prototype['asnLine'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

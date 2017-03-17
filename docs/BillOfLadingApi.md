@@ -4,11 +4,17 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addBillOfLading**](BillOfLadingApi.md#addBillOfLading) | **POST** /v1.0/billOfLading | Create a billOfLading
-[**deleteBillOfLading**](BillOfLadingApi.md#deleteBillOfLading) | **DELETE** /v1.0/billOfLading/{billOfLadingId} | Delete a billOfLading
-[**getBillOfLadingByFilter**](BillOfLadingApi.md#getBillOfLadingByFilter) | **GET** /v1.0/billOfLading/search | Search billOfLadings by filter
-[**getBillOfLadingById**](BillOfLadingApi.md#getBillOfLadingById) | **GET** /v1.0/billOfLading/{billOfLadingId} | Get a billOfLading by id
-[**updateBillOfLading**](BillOfLadingApi.md#updateBillOfLading) | **PUT** /v1.0/billOfLading | Update a billOfLading
+[**addBillOfLading**](BillOfLadingApi.md#addBillOfLading) | **POST** /beta/billOfLading | Create a billOfLading
+[**addBillOfLadingAudit**](BillOfLadingApi.md#addBillOfLadingAudit) | **PUT** /beta/billOfLading/{billOfLadingId}/audit/{billOfLadingAudit} | Add new audit for a billOfLading
+[**addBillOfLadingTag**](BillOfLadingApi.md#addBillOfLadingTag) | **PUT** /beta/billOfLading/{billOfLadingId}/tag/{billOfLadingTag} | Add new tags for a billOfLading.
+[**deleteBillOfLading**](BillOfLadingApi.md#deleteBillOfLading) | **DELETE** /beta/billOfLading/{billOfLadingId} | Delete a billOfLading
+[**deleteBillOfLadingTag**](BillOfLadingApi.md#deleteBillOfLadingTag) | **DELETE** /beta/billOfLading/{billOfLadingId}/tag/{billOfLadingTag} | Delete a tag for a billOfLading.
+[**getBillOfLadingByFilter**](BillOfLadingApi.md#getBillOfLadingByFilter) | **GET** /beta/billOfLading/search | Search billOfLadings by filter
+[**getBillOfLadingById**](BillOfLadingApi.md#getBillOfLadingById) | **GET** /beta/billOfLading/{billOfLadingId} | Get a billOfLading by id
+[**getBillOfLadingTags**](BillOfLadingApi.md#getBillOfLadingTags) | **GET** /beta/billOfLading/{billOfLadingId}/tag | Get the tags for a billOfLading.
+[**getDuplicateBillOfLadingById**](BillOfLadingApi.md#getDuplicateBillOfLadingById) | **GET** /beta/billOfLading/duplicate/{billOfLadingId} | Get a duplicated a billOfLading by id
+[**updateBillOfLading**](BillOfLadingApi.md#updateBillOfLading) | **PUT** /beta/billOfLading | Update a billOfLading
+[**updateBillOfLadingCustomFields**](BillOfLadingApi.md#updateBillOfLadingCustomFields) | **PUT** /beta/billOfLading/customFields | Update a billOfLading custom fields
 
 
 <a name="addBillOfLading"></a>
@@ -64,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addBillOfLadingAudit"></a>
+# **addBillOfLadingAudit**
+> addBillOfLadingAudit(billOfLadingId, billOfLadingAudit)
+
+Add new audit for a billOfLading
+
+Adds an audit to an existing billOfLading.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var billOfLadingId = 56; // {Integer} Id of the billOfLading to add an audit to
+
+var billOfLadingAudit = "billOfLadingAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addBillOfLadingAudit(billOfLadingId, billOfLadingAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billOfLadingId** | **Integer**| Id of the billOfLading to add an audit to | 
+ **billOfLadingAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addBillOfLadingTag"></a>
+# **addBillOfLadingTag**
+> addBillOfLadingTag(billOfLadingId, billOfLadingTag)
+
+Add new tags for a billOfLading.
+
+Adds a tag to an existing billOfLading.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var billOfLadingId = 56; // {Integer} Id of the billOfLading to add a tag to
+
+var billOfLadingTag = "billOfLadingTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addBillOfLadingTag(billOfLadingId, billOfLadingTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billOfLadingId** | **Integer**| Id of the billOfLading to add a tag to | 
+ **billOfLadingTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteBillOfLading"></a>
 # **deleteBillOfLading**
 > deleteBillOfLading(billOfLadingId)
@@ -103,6 +221,62 @@ api.deleteBillOfLading(billOfLadingId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billOfLadingId** | **Integer**| Id of the billOfLading to be deleted. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteBillOfLadingTag"></a>
+# **deleteBillOfLadingTag**
+> deleteBillOfLadingTag(billOfLadingId, billOfLadingTag)
+
+Delete a tag for a billOfLading.
+
+Deletes an existing billOfLading tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var billOfLadingId = 56; // {Integer} Id of the billOfLading to remove tag from
+
+var billOfLadingTag = "billOfLadingTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteBillOfLadingTag(billOfLadingId, billOfLadingTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billOfLadingId** | **Integer**| Id of the billOfLading to remove tag from | 
+ **billOfLadingTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -230,6 +404,112 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getBillOfLadingTags"></a>
+# **getBillOfLadingTags**
+> getBillOfLadingTags(billOfLadingId)
+
+Get the tags for a billOfLading.
+
+Get all existing billOfLading tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var billOfLadingId = 56; // {Integer} Id of the billOfLading to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getBillOfLadingTags(billOfLadingId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billOfLadingId** | **Integer**| Id of the billOfLading to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateBillOfLadingById"></a>
+# **getDuplicateBillOfLadingById**
+> BillOfLading getDuplicateBillOfLadingById(billOfLadingId)
+
+Get a duplicated a billOfLading by id
+
+Returns a duplicated billOfLading identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var billOfLadingId = 56; // {Integer} Id of the billOfLading to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateBillOfLadingById(billOfLadingId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **billOfLadingId** | **Integer**| Id of the billOfLading to be duplicated. | 
+
+### Return type
+
+[**BillOfLading**](BillOfLading.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="updateBillOfLading"></a>
 # **updateBillOfLading**
 > updateBillOfLading(body)
@@ -262,6 +542,59 @@ var callback = function(error, data, response) {
   }
 };
 api.updateBillOfLading(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BillOfLading**](BillOfLading.md)| BillOfLading to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBillOfLadingCustomFields"></a>
+# **updateBillOfLadingCustomFields**
+> updateBillOfLadingCustomFields(body)
+
+Update a billOfLading custom fields
+
+Updates an existing billOfLading custom fields using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.BillOfLadingApi()
+
+var body = new infoplus.BillOfLading(); // {BillOfLading} BillOfLading to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateBillOfLadingCustomFields(body, callback);
 ```
 
 ### Parameters
