@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **Integer** |  | [optional] 
 **groupOrderId** | **Number** |  | [optional] 
 **orderNo** | **Number** |  | 
-**cartonNoId** | **Integer** |  | 
+**cartonId** | **Integer** |  | 
 **lineItemId** | **Integer** |  | 
 **location** | **String** |  | [optional] 
 **quantity** | **Integer** |  | 

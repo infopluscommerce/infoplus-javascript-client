@@ -5,9 +5,14 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addLocationAddressScheme**](LocationAddressSchemeApi.md#addLocationAddressScheme) | **POST** /beta/locationAddressScheme | Create a locationAddressScheme
+[**addLocationAddressSchemeAudit**](LocationAddressSchemeApi.md#addLocationAddressSchemeAudit) | **PUT** /beta/locationAddressScheme/{locationAddressSchemeId}/audit/{locationAddressSchemeAudit} | Add new audit for a locationAddressScheme
+[**addLocationAddressSchemeTag**](LocationAddressSchemeApi.md#addLocationAddressSchemeTag) | **PUT** /beta/locationAddressScheme/{locationAddressSchemeId}/tag/{locationAddressSchemeTag} | Add new tags for a locationAddressScheme.
 [**deleteLocationAddressScheme**](LocationAddressSchemeApi.md#deleteLocationAddressScheme) | **DELETE** /beta/locationAddressScheme/{locationAddressSchemeId} | Delete a locationAddressScheme
+[**deleteLocationAddressSchemeTag**](LocationAddressSchemeApi.md#deleteLocationAddressSchemeTag) | **DELETE** /beta/locationAddressScheme/{locationAddressSchemeId}/tag/{locationAddressSchemeTag} | Delete a tag for a locationAddressScheme.
+[**getDuplicateLocationAddressSchemeById**](LocationAddressSchemeApi.md#getDuplicateLocationAddressSchemeById) | **GET** /beta/locationAddressScheme/duplicate/{locationAddressSchemeId} | Get a duplicated a locationAddressScheme by id
 [**getLocationAddressSchemeByFilter**](LocationAddressSchemeApi.md#getLocationAddressSchemeByFilter) | **GET** /beta/locationAddressScheme/search | Search locationAddressSchemes by filter
 [**getLocationAddressSchemeById**](LocationAddressSchemeApi.md#getLocationAddressSchemeById) | **GET** /beta/locationAddressScheme/{locationAddressSchemeId} | Get a locationAddressScheme by id
+[**getLocationAddressSchemeTags**](LocationAddressSchemeApi.md#getLocationAddressSchemeTags) | **GET** /beta/locationAddressScheme/{locationAddressSchemeId}/tag | Get the tags for a locationAddressScheme.
 [**updateLocationAddressScheme**](LocationAddressSchemeApi.md#updateLocationAddressScheme) | **PUT** /beta/locationAddressScheme | Update a locationAddressScheme
 [**updateLocationAddressSchemeCustomFields**](LocationAddressSchemeApi.md#updateLocationAddressSchemeCustomFields) | **PUT** /beta/locationAddressScheme/customFields | Update a locationAddressScheme custom fields
 
@@ -65,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addLocationAddressSchemeAudit"></a>
+# **addLocationAddressSchemeAudit**
+> addLocationAddressSchemeAudit(locationAddressSchemeId, locationAddressSchemeAudit)
+
+Add new audit for a locationAddressScheme
+
+Adds an audit to an existing locationAddressScheme.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationAddressSchemeApi()
+
+var locationAddressSchemeId = 56; // {Integer} Id of the locationAddressScheme to add an audit to
+
+var locationAddressSchemeAudit = "locationAddressSchemeAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addLocationAddressSchemeAudit(locationAddressSchemeId, locationAddressSchemeAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationAddressSchemeId** | **Integer**| Id of the locationAddressScheme to add an audit to | 
+ **locationAddressSchemeAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addLocationAddressSchemeTag"></a>
+# **addLocationAddressSchemeTag**
+> addLocationAddressSchemeTag(locationAddressSchemeId, locationAddressSchemeTag)
+
+Add new tags for a locationAddressScheme.
+
+Adds a tag to an existing locationAddressScheme.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationAddressSchemeApi()
+
+var locationAddressSchemeId = 56; // {Integer} Id of the locationAddressScheme to add a tag to
+
+var locationAddressSchemeTag = "locationAddressSchemeTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addLocationAddressSchemeTag(locationAddressSchemeId, locationAddressSchemeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationAddressSchemeId** | **Integer**| Id of the locationAddressScheme to add a tag to | 
+ **locationAddressSchemeTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteLocationAddressScheme"></a>
 # **deleteLocationAddressScheme**
 > deleteLocationAddressScheme(locationAddressSchemeId)
@@ -108,6 +225,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteLocationAddressSchemeTag"></a>
+# **deleteLocationAddressSchemeTag**
+> deleteLocationAddressSchemeTag(locationAddressSchemeId, locationAddressSchemeTag)
+
+Delete a tag for a locationAddressScheme.
+
+Deletes an existing locationAddressScheme tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationAddressSchemeApi()
+
+var locationAddressSchemeId = 56; // {Integer} Id of the locationAddressScheme to remove tag from
+
+var locationAddressSchemeTag = "locationAddressSchemeTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteLocationAddressSchemeTag(locationAddressSchemeId, locationAddressSchemeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationAddressSchemeId** | **Integer**| Id of the locationAddressScheme to remove tag from | 
+ **locationAddressSchemeTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateLocationAddressSchemeById"></a>
+# **getDuplicateLocationAddressSchemeById**
+> LocationAddressScheme getDuplicateLocationAddressSchemeById(locationAddressSchemeId)
+
+Get a duplicated a locationAddressScheme by id
+
+Returns a duplicated locationAddressScheme identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationAddressSchemeApi()
+
+var locationAddressSchemeId = 56; // {Integer} Id of the locationAddressScheme to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateLocationAddressSchemeById(locationAddressSchemeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationAddressSchemeId** | **Integer**| Id of the locationAddressScheme to be duplicated. | 
+
+### Return type
+
+[**LocationAddressScheme**](LocationAddressScheme.md)
 
 ### Authorization
 
@@ -221,6 +447,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LocationAddressScheme**](LocationAddressScheme.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getLocationAddressSchemeTags"></a>
+# **getLocationAddressSchemeTags**
+> getLocationAddressSchemeTags(locationAddressSchemeId)
+
+Get the tags for a locationAddressScheme.
+
+Get all existing locationAddressScheme tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.LocationAddressSchemeApi()
+
+var locationAddressSchemeId = 56; // {Integer} Id of the locationAddressScheme to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getLocationAddressSchemeTags(locationAddressSchemeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationAddressSchemeId** | **Integer**| Id of the locationAddressScheme to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

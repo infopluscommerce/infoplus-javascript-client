@@ -41,6 +41,7 @@
     this['serviceLevel'] = serviceLevel;
 
 
+
     this['worksheetName'] = worksheetName;
 
 
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('receivingProcessId')) {
         obj['receivingProcessId'] = ApiClient.convertToType(data['receivingProcessId'], 'Integer');
+      }
+      if (data.hasOwnProperty('dockDate')) {
+        obj['dockDate'] = ApiClient.convertToType(data['dockDate'], 'Date');
       }
       if (data.hasOwnProperty('createdBy')) {
         obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'Integer');
@@ -165,6 +169,11 @@
    * @member {Integer} receivingProcessId
    */
   exports.prototype['receivingProcessId'] = undefined;
+
+  /**
+   * @member {Date} dockDate
+   */
+  exports.prototype['dockDate'] = undefined;
 
   /**
    * @member {Integer} createdBy

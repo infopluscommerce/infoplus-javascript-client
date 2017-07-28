@@ -4,10 +4,236 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addReplenishmentAudit**](ReplenishmentApi.md#addReplenishmentAudit) | **PUT** /beta/replenishment/{replenishmentId}/audit/{replenishmentAudit} | Add new audit for a replenishment
+[**addReplenishmentTag**](ReplenishmentApi.md#addReplenishmentTag) | **PUT** /beta/replenishment/{replenishmentId}/tag/{replenishmentTag} | Add new tags for a replenishment.
+[**deleteReplenishmentTag**](ReplenishmentApi.md#deleteReplenishmentTag) | **DELETE** /beta/replenishment/{replenishmentId}/tag/{replenishmentTag} | Delete a tag for a replenishment.
+[**getDuplicateReplenishmentById**](ReplenishmentApi.md#getDuplicateReplenishmentById) | **GET** /beta/replenishment/duplicate/{replenishmentId} | Get a duplicated a replenishment by id
 [**getReplenishmentByFilter**](ReplenishmentApi.md#getReplenishmentByFilter) | **GET** /beta/replenishment/search | Search replenishments by filter
 [**getReplenishmentById**](ReplenishmentApi.md#getReplenishmentById) | **GET** /beta/replenishment/{replenishmentId} | Get a replenishment by id
+[**getReplenishmentTags**](ReplenishmentApi.md#getReplenishmentTags) | **GET** /beta/replenishment/{replenishmentId}/tag | Get the tags for a replenishment.
 [**updateReplenishmentCustomFields**](ReplenishmentApi.md#updateReplenishmentCustomFields) | **PUT** /beta/replenishment/customFields | Update a replenishment custom fields
 
+
+<a name="addReplenishmentAudit"></a>
+# **addReplenishmentAudit**
+> addReplenishmentAudit(replenishmentId, replenishmentAudit)
+
+Add new audit for a replenishment
+
+Adds an audit to an existing replenishment.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentApi()
+
+var replenishmentId = 56; // {Integer} Id of the replenishment to add an audit to
+
+var replenishmentAudit = "replenishmentAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addReplenishmentAudit(replenishmentId, replenishmentAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentId** | **Integer**| Id of the replenishment to add an audit to | 
+ **replenishmentAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addReplenishmentTag"></a>
+# **addReplenishmentTag**
+> addReplenishmentTag(replenishmentId, replenishmentTag)
+
+Add new tags for a replenishment.
+
+Adds a tag to an existing replenishment.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentApi()
+
+var replenishmentId = 56; // {Integer} Id of the replenishment to add a tag to
+
+var replenishmentTag = "replenishmentTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addReplenishmentTag(replenishmentId, replenishmentTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentId** | **Integer**| Id of the replenishment to add a tag to | 
+ **replenishmentTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteReplenishmentTag"></a>
+# **deleteReplenishmentTag**
+> deleteReplenishmentTag(replenishmentId, replenishmentTag)
+
+Delete a tag for a replenishment.
+
+Deletes an existing replenishment tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentApi()
+
+var replenishmentId = 56; // {Integer} Id of the replenishment to remove tag from
+
+var replenishmentTag = "replenishmentTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteReplenishmentTag(replenishmentId, replenishmentTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentId** | **Integer**| Id of the replenishment to remove tag from | 
+ **replenishmentTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateReplenishmentById"></a>
+# **getDuplicateReplenishmentById**
+> Replenishment getDuplicateReplenishmentById(replenishmentId)
+
+Get a duplicated a replenishment by id
+
+Returns a duplicated replenishment identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentApi()
+
+var replenishmentId = 56; // {Integer} Id of the replenishment to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateReplenishmentById(replenishmentId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentId** | **Integer**| Id of the replenishment to be duplicated. | 
+
+### Return type
+
+[**Replenishment**](Replenishment.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getReplenishmentByFilter"></a>
 # **getReplenishmentByFilter**
@@ -112,6 +338,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Replenishment**](Replenishment.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getReplenishmentTags"></a>
+# **getReplenishmentTags**
+> getReplenishmentTags(replenishmentId)
+
+Get the tags for a replenishment.
+
+Get all existing replenishment tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentApi()
+
+var replenishmentId = 56; // {Integer} Id of the replenishment to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getReplenishmentTags(replenishmentId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentId** | **Integer**| Id of the replenishment to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

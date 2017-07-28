@@ -32,6 +32,7 @@
 
     this['serviceType'] = serviceType;
     this['label'] = label;
+
   };
 
   /**
@@ -51,6 +52,9 @@
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
+      if (data.hasOwnProperty('fullEntityClassName')) {
+        obj['fullEntityClassName'] = ApiClient.convertToType(data['fullEntityClassName'], 'String');
+      }
     }
     return obj;
   }
@@ -65,6 +69,11 @@
    * @member {String} label
    */
   exports.prototype['label'] = undefined;
+
+  /**
+   * @member {String} fullEntityClassName
+   */
+  exports.prototype['fullEntityClassName'] = undefined;
 
 
 

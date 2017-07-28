@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addSupplementAudit operation.
+     * @callback module:api/SupplementApi~addSupplementAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a supplement
+     * Adds an audit to an existing supplement.
+     * @param {Integer} supplementId Id of the supplement to add an audit to
+     * @param {String} supplementAudit The audit to add
+     * @param {module:api/SupplementApi~addSupplementAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addSupplementAudit = function(supplementId, supplementAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'supplementId' is set
+      if (supplementId == undefined || supplementId == null) {
+        throw "Missing the required parameter 'supplementId' when calling addSupplementAudit";
+      }
+
+      // verify the required parameter 'supplementAudit' is set
+      if (supplementAudit == undefined || supplementAudit == null) {
+        throw "Missing the required parameter 'supplementAudit' when calling addSupplementAudit";
+      }
+
+
+      var pathParams = {
+        'supplementId': supplementId,
+        'supplementAudit': supplementAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/supplement/{supplementId}/audit/{supplementAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addSupplementTag operation.
+     * @callback module:api/SupplementApi~addSupplementTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a supplement.
+     * Adds a tag to an existing supplement.
+     * @param {Integer} supplementId Id of the supplement to add a tag to
+     * @param {String} supplementTag The tag to add
+     * @param {module:api/SupplementApi~addSupplementTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addSupplementTag = function(supplementId, supplementTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'supplementId' is set
+      if (supplementId == undefined || supplementId == null) {
+        throw "Missing the required parameter 'supplementId' when calling addSupplementTag";
+      }
+
+      // verify the required parameter 'supplementTag' is set
+      if (supplementTag == undefined || supplementTag == null) {
+        throw "Missing the required parameter 'supplementTag' when calling addSupplementTag";
+      }
+
+
+      var pathParams = {
+        'supplementId': supplementId,
+        'supplementTag': supplementTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/supplement/{supplementId}/tag/{supplementTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteSupplement operation.
      * @callback module:api/SupplementApi~deleteSupplementCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,104 @@
 
       return this.apiClient.callApi(
         '/beta/supplement/{supplementId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteSupplementTag operation.
+     * @callback module:api/SupplementApi~deleteSupplementTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a supplement.
+     * Deletes an existing supplement tag using the specified data.
+     * @param {Integer} supplementId Id of the supplement to remove tag from
+     * @param {String} supplementTag The tag to delete
+     * @param {module:api/SupplementApi~deleteSupplementTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteSupplementTag = function(supplementId, supplementTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'supplementId' is set
+      if (supplementId == undefined || supplementId == null) {
+        throw "Missing the required parameter 'supplementId' when calling deleteSupplementTag";
+      }
+
+      // verify the required parameter 'supplementTag' is set
+      if (supplementTag == undefined || supplementTag == null) {
+        throw "Missing the required parameter 'supplementTag' when calling deleteSupplementTag";
+      }
+
+
+      var pathParams = {
+        'supplementId': supplementId,
+        'supplementTag': supplementTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/supplement/{supplementId}/tag/{supplementTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateSupplementById operation.
+     * @callback module:api/SupplementApi~getDuplicateSupplementByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Supplement} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a supplement by id
+     * Returns a duplicated supplement identified by the specified id.
+     * @param {Integer} supplementId Id of the supplement to be duplicated.
+     * @param {module:api/SupplementApi~getDuplicateSupplementByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Supplement}
+     */
+    this.getDuplicateSupplementById = function(supplementId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'supplementId' is set
+      if (supplementId == undefined || supplementId == null) {
+        throw "Missing the required parameter 'supplementId' when calling getDuplicateSupplementById";
+      }
+
+
+      var pathParams = {
+        'supplementId': supplementId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Supplement;
+
+      return this.apiClient.callApi(
+        '/beta/supplement/duplicate/{supplementId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +414,51 @@
 
       return this.apiClient.callApi(
         '/beta/supplement/{supplementId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSupplementTags operation.
+     * @callback module:api/SupplementApi~getSupplementTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a supplement.
+     * Get all existing supplement tags.
+     * @param {Integer} supplementId Id of the supplement to get tags for
+     * @param {module:api/SupplementApi~getSupplementTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getSupplementTags = function(supplementId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'supplementId' is set
+      if (supplementId == undefined || supplementId == null) {
+        throw "Missing the required parameter 'supplementId' when calling getSupplementTags";
+      }
+
+
+      var pathParams = {
+        'supplementId': supplementId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/supplement/{supplementId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

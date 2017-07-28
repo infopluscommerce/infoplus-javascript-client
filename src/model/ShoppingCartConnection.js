@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['../ApiClient', './Warehouse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Warehouse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ShoppingCartConnection = factory(root.infoplus.ApiClient);
+    root.infoplus.ShoppingCartConnection = factory(root.infoplus.ApiClient, root.infoplus.Warehouse);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Warehouse) {
   'use strict';
 
   /**
@@ -33,11 +33,18 @@
    * @param shoppingCartSKUFieldToMap
    * @param name
    * @param shoppingCartStoreURL
+   * @param accessCode
+   * @param accessToken
+   * @param username
+   * @param password
+   * @param orderShipmentLevel
    * @param syncOrders
    * @param syncInventory
    * @param syncTrackingData
+   * @param fulfillAllItems
+   * @param inventoryLevelWarehouseControls
    */
-  var exports = function(lobId, orderSourceId, integrationPartnerId, connectionType, infoplusSKUFieldToMap, shoppingCartSKUFieldToMap, name, shoppingCartStoreURL, syncOrders, syncInventory, syncTrackingData) {
+  var exports = function(lobId, orderSourceId, integrationPartnerId, connectionType, infoplusSKUFieldToMap, shoppingCartSKUFieldToMap, name, shoppingCartStoreURL, accessCode, accessToken, username, password, orderShipmentLevel, syncOrders, syncInventory, syncTrackingData, fulfillAllItems, inventoryLevelWarehouseControls) {
 
 
 
@@ -53,11 +60,19 @@
     this['shoppingCartSKUFieldToMap'] = shoppingCartSKUFieldToMap;
     this['name'] = name;
     this['shoppingCartStoreURL'] = shoppingCartStoreURL;
+    this['accessCode'] = accessCode;
+    this['accessToken'] = accessToken;
+    this['username'] = username;
+    this['password'] = password;
 
-
+    this['orderShipmentLevel'] = orderShipmentLevel;
     this['syncOrders'] = syncOrders;
     this['syncInventory'] = syncInventory;
     this['syncTrackingData'] = syncTrackingData;
+    this['fulfillAllItems'] = fulfillAllItems;
+
+
+    this['inventoryLevelWarehouseControls'] = inventoryLevelWarehouseControls;
 
 
   };
@@ -121,6 +136,18 @@
       if (data.hasOwnProperty('accessToken')) {
         obj['accessToken'] = ApiClient.convertToType(data['accessToken'], 'String');
       }
+      if (data.hasOwnProperty('username')) {
+        obj['username'] = ApiClient.convertToType(data['username'], 'String');
+      }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('defaultCarrierId')) {
+        obj['defaultCarrierId'] = ApiClient.convertToType(data['defaultCarrierId'], 'Integer');
+      }
+      if (data.hasOwnProperty('orderShipmentLevel')) {
+        obj['orderShipmentLevel'] = ApiClient.convertToType(data['orderShipmentLevel'], 'String');
+      }
       if (data.hasOwnProperty('syncOrders')) {
         obj['syncOrders'] = ApiClient.convertToType(data['syncOrders'], 'Boolean');
       }
@@ -130,8 +157,20 @@
       if (data.hasOwnProperty('syncTrackingData')) {
         obj['syncTrackingData'] = ApiClient.convertToType(data['syncTrackingData'], 'Boolean');
       }
+      if (data.hasOwnProperty('fulfillAllItems')) {
+        obj['fulfillAllItems'] = ApiClient.convertToType(data['fulfillAllItems'], 'Boolean');
+      }
       if (data.hasOwnProperty('syncInventoryLevelsLastRunTime')) {
         obj['syncInventoryLevelsLastRunTime'] = ApiClient.convertToType(data['syncInventoryLevelsLastRunTime'], 'Date');
+      }
+      if (data.hasOwnProperty('syncOrdersLastRunTime')) {
+        obj['syncOrdersLastRunTime'] = ApiClient.convertToType(data['syncOrdersLastRunTime'], 'Date');
+      }
+      if (data.hasOwnProperty('inventoryLevelWarehouseControls')) {
+        obj['inventoryLevelWarehouseControls'] = ApiClient.convertToType(data['inventoryLevelWarehouseControls'], 'String');
+      }
+      if (data.hasOwnProperty('warehouseList')) {
+        obj['warehouseList'] = ApiClient.convertToType(data['warehouseList'], [Warehouse]);
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -222,6 +261,26 @@
   exports.prototype['accessToken'] = undefined;
 
   /**
+   * @member {String} username
+   */
+  exports.prototype['username'] = undefined;
+
+  /**
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
+
+  /**
+   * @member {Integer} defaultCarrierId
+   */
+  exports.prototype['defaultCarrierId'] = undefined;
+
+  /**
+   * @member {String} orderShipmentLevel
+   */
+  exports.prototype['orderShipmentLevel'] = undefined;
+
+  /**
    * @member {Boolean} syncOrders
    * @default false
    */
@@ -240,9 +299,30 @@
   exports.prototype['syncTrackingData'] = false;
 
   /**
+   * @member {Boolean} fulfillAllItems
+   * @default false
+   */
+  exports.prototype['fulfillAllItems'] = false;
+
+  /**
    * @member {Date} syncInventoryLevelsLastRunTime
    */
   exports.prototype['syncInventoryLevelsLastRunTime'] = undefined;
+
+  /**
+   * @member {Date} syncOrdersLastRunTime
+   */
+  exports.prototype['syncOrdersLastRunTime'] = undefined;
+
+  /**
+   * @member {String} inventoryLevelWarehouseControls
+   */
+  exports.prototype['inventoryLevelWarehouseControls'] = undefined;
+
+  /**
+   * @member {Array.<module:model/Warehouse>} warehouseList
+   */
+  exports.prototype['warehouseList'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

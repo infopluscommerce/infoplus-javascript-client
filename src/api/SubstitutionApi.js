@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addSubstitutionAudit operation.
+     * @callback module:api/SubstitutionApi~addSubstitutionAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a substitution
+     * Adds an audit to an existing substitution.
+     * @param {Integer} substitutionId Id of the substitution to add an audit to
+     * @param {String} substitutionAudit The audit to add
+     * @param {module:api/SubstitutionApi~addSubstitutionAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addSubstitutionAudit = function(substitutionId, substitutionAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'substitutionId' is set
+      if (substitutionId == undefined || substitutionId == null) {
+        throw "Missing the required parameter 'substitutionId' when calling addSubstitutionAudit";
+      }
+
+      // verify the required parameter 'substitutionAudit' is set
+      if (substitutionAudit == undefined || substitutionAudit == null) {
+        throw "Missing the required parameter 'substitutionAudit' when calling addSubstitutionAudit";
+      }
+
+
+      var pathParams = {
+        'substitutionId': substitutionId,
+        'substitutionAudit': substitutionAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/substitution/{substitutionId}/audit/{substitutionAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addSubstitutionTag operation.
+     * @callback module:api/SubstitutionApi~addSubstitutionTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a substitution.
+     * Adds a tag to an existing substitution.
+     * @param {Integer} substitutionId Id of the substitution to add a tag to
+     * @param {String} substitutionTag The tag to add
+     * @param {module:api/SubstitutionApi~addSubstitutionTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addSubstitutionTag = function(substitutionId, substitutionTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'substitutionId' is set
+      if (substitutionId == undefined || substitutionId == null) {
+        throw "Missing the required parameter 'substitutionId' when calling addSubstitutionTag";
+      }
+
+      // verify the required parameter 'substitutionTag' is set
+      if (substitutionTag == undefined || substitutionTag == null) {
+        throw "Missing the required parameter 'substitutionTag' when calling addSubstitutionTag";
+      }
+
+
+      var pathParams = {
+        'substitutionId': substitutionId,
+        'substitutionTag': substitutionTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/substitution/{substitutionId}/tag/{substitutionTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteSubstitution operation.
      * @callback module:api/SubstitutionApi~deleteSubstitutionCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,104 @@
 
       return this.apiClient.callApi(
         '/beta/substitution/{substitutionId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteSubstitutionTag operation.
+     * @callback module:api/SubstitutionApi~deleteSubstitutionTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a substitution.
+     * Deletes an existing substitution tag using the specified data.
+     * @param {Integer} substitutionId Id of the substitution to remove tag from
+     * @param {String} substitutionTag The tag to delete
+     * @param {module:api/SubstitutionApi~deleteSubstitutionTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteSubstitutionTag = function(substitutionId, substitutionTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'substitutionId' is set
+      if (substitutionId == undefined || substitutionId == null) {
+        throw "Missing the required parameter 'substitutionId' when calling deleteSubstitutionTag";
+      }
+
+      // verify the required parameter 'substitutionTag' is set
+      if (substitutionTag == undefined || substitutionTag == null) {
+        throw "Missing the required parameter 'substitutionTag' when calling deleteSubstitutionTag";
+      }
+
+
+      var pathParams = {
+        'substitutionId': substitutionId,
+        'substitutionTag': substitutionTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/substitution/{substitutionId}/tag/{substitutionTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateSubstitutionById operation.
+     * @callback module:api/SubstitutionApi~getDuplicateSubstitutionByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Substitution} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a substitution by id
+     * Returns a duplicated substitution identified by the specified id.
+     * @param {Integer} substitutionId Id of the substitution to be duplicated.
+     * @param {module:api/SubstitutionApi~getDuplicateSubstitutionByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Substitution}
+     */
+    this.getDuplicateSubstitutionById = function(substitutionId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'substitutionId' is set
+      if (substitutionId == undefined || substitutionId == null) {
+        throw "Missing the required parameter 'substitutionId' when calling getDuplicateSubstitutionById";
+      }
+
+
+      var pathParams = {
+        'substitutionId': substitutionId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Substitution;
+
+      return this.apiClient.callApi(
+        '/beta/substitution/duplicate/{substitutionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +414,51 @@
 
       return this.apiClient.callApi(
         '/beta/substitution/{substitutionId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getSubstitutionTags operation.
+     * @callback module:api/SubstitutionApi~getSubstitutionTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a substitution.
+     * Get all existing substitution tags.
+     * @param {Integer} substitutionId Id of the substitution to get tags for
+     * @param {module:api/SubstitutionApi~getSubstitutionTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getSubstitutionTags = function(substitutionId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'substitutionId' is set
+      if (substitutionId == undefined || substitutionId == null) {
+        throw "Missing the required parameter 'substitutionId' when calling getSubstitutionTags";
+      }
+
+
+      var pathParams = {
+        'substitutionId': substitutionId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/substitution/{substitutionId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -158,6 +159,9 @@
       }
       if (data.hasOwnProperty('retailFreightAmount')) {
         obj['retailFreightAmount'] = ApiClient.convertToType(data['retailFreightAmount'], 'Number');
+      }
+      if (data.hasOwnProperty('externalShippingSystemId')) {
+        obj['externalShippingSystemId'] = ApiClient.convertToType(data['externalShippingSystemId'], 'Integer');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -313,6 +317,11 @@
    * @member {Number} retailFreightAmount
    */
   exports.prototype['retailFreightAmount'] = undefined;
+
+  /**
+   * @member {Integer} externalShippingSystemId
+   */
+  exports.prototype['externalShippingSystemId'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

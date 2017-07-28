@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lobId** | **Integer** |  | 
 **id** | **Integer** |  | [optional] 
-**kitSKUId** | **Integer** |  | 
+**kitSKU** | **String** |  | 
 **packagingType** | **String** |  | [optional] 
 **other** | **String** |  | [optional] 
 **numberOfComponents** | **Integer** |  | [optional] 
@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **maxInvQty** | **Integer** |  | [optional] 
 **isKOD** | **String** |  | 
 **kodType** | **String** |  | 
+**kitComponentList** | [**[KitComponent]**](KitComponent.md) |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

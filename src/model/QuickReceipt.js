@@ -67,6 +67,8 @@
 
 
 
+
+
   };
 
   /**
@@ -166,6 +168,12 @@
       }
       if (data.hasOwnProperty('generatedASNId')) {
         obj['generatedASNId'] = ApiClient.convertToType(data['generatedASNId'], 'Integer');
+      }
+      if (data.hasOwnProperty('dockDate')) {
+        obj['dockDate'] = ApiClient.convertToType(data['dockDate'], 'Date');
+      }
+      if (data.hasOwnProperty('productIdTag')) {
+        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -322,6 +330,16 @@
    * @member {Integer} generatedASNId
    */
   exports.prototype['generatedASNId'] = undefined;
+
+  /**
+   * @member {Date} dockDate
+   */
+  exports.prototype['dockDate'] = undefined;
+
+  /**
+   * @member {String} productIdTag
+   */
+  exports.prototype['productIdTag'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addZoneAudit operation.
+     * @callback module:api/ZoneApi~addZoneAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a zone
+     * Adds an audit to an existing zone.
+     * @param {Integer} zoneId Id of the zone to add an audit to
+     * @param {String} zoneAudit The audit to add
+     * @param {module:api/ZoneApi~addZoneAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addZoneAudit = function(zoneId, zoneAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'zoneId' is set
+      if (zoneId == undefined || zoneId == null) {
+        throw "Missing the required parameter 'zoneId' when calling addZoneAudit";
+      }
+
+      // verify the required parameter 'zoneAudit' is set
+      if (zoneAudit == undefined || zoneAudit == null) {
+        throw "Missing the required parameter 'zoneAudit' when calling addZoneAudit";
+      }
+
+
+      var pathParams = {
+        'zoneId': zoneId,
+        'zoneAudit': zoneAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/zone/{zoneId}/audit/{zoneAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addZoneTag operation.
+     * @callback module:api/ZoneApi~addZoneTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a zone.
+     * Adds a tag to an existing zone.
+     * @param {Integer} zoneId Id of the zone to add a tag to
+     * @param {String} zoneTag The tag to add
+     * @param {module:api/ZoneApi~addZoneTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addZoneTag = function(zoneId, zoneTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'zoneId' is set
+      if (zoneId == undefined || zoneId == null) {
+        throw "Missing the required parameter 'zoneId' when calling addZoneTag";
+      }
+
+      // verify the required parameter 'zoneTag' is set
+      if (zoneTag == undefined || zoneTag == null) {
+        throw "Missing the required parameter 'zoneTag' when calling addZoneTag";
+      }
+
+
+      var pathParams = {
+        'zoneId': zoneId,
+        'zoneTag': zoneTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/zone/{zoneId}/tag/{zoneTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteZone operation.
      * @callback module:api/ZoneApi~deleteZoneCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,104 @@
 
       return this.apiClient.callApi(
         '/beta/zone/{zoneId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteZoneTag operation.
+     * @callback module:api/ZoneApi~deleteZoneTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a zone.
+     * Deletes an existing zone tag using the specified data.
+     * @param {Integer} zoneId Id of the zone to remove tag from
+     * @param {String} zoneTag The tag to delete
+     * @param {module:api/ZoneApi~deleteZoneTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteZoneTag = function(zoneId, zoneTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'zoneId' is set
+      if (zoneId == undefined || zoneId == null) {
+        throw "Missing the required parameter 'zoneId' when calling deleteZoneTag";
+      }
+
+      // verify the required parameter 'zoneTag' is set
+      if (zoneTag == undefined || zoneTag == null) {
+        throw "Missing the required parameter 'zoneTag' when calling deleteZoneTag";
+      }
+
+
+      var pathParams = {
+        'zoneId': zoneId,
+        'zoneTag': zoneTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/zone/{zoneId}/tag/{zoneTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateZoneById operation.
+     * @callback module:api/ZoneApi~getDuplicateZoneByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Zone} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a zone by id
+     * Returns a duplicated zone identified by the specified id.
+     * @param {Integer} zoneId Id of the zone to be duplicated.
+     * @param {module:api/ZoneApi~getDuplicateZoneByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Zone}
+     */
+    this.getDuplicateZoneById = function(zoneId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'zoneId' is set
+      if (zoneId == undefined || zoneId == null) {
+        throw "Missing the required parameter 'zoneId' when calling getDuplicateZoneById";
+      }
+
+
+      var pathParams = {
+        'zoneId': zoneId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Zone;
+
+      return this.apiClient.callApi(
+        '/beta/zone/duplicate/{zoneId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +414,51 @@
 
       return this.apiClient.callApi(
         '/beta/zone/{zoneId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getZoneTags operation.
+     * @callback module:api/ZoneApi~getZoneTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a zone.
+     * Get all existing zone tags.
+     * @param {Integer} zoneId Id of the zone to get tags for
+     * @param {module:api/ZoneApi~getZoneTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getZoneTags = function(zoneId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'zoneId' is set
+      if (zoneId == undefined || zoneId == null) {
+        throw "Missing the required parameter 'zoneId' when calling getZoneTags";
+      }
+
+
+      var pathParams = {
+        'zoneId': zoneId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/zone/{zoneId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

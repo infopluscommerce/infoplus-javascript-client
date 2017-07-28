@@ -33,6 +33,208 @@
 
 
     /**
+     * Callback function to receive the result of the addWorkBatchAudit operation.
+     * @callback module:api/WorkBatchApi~addWorkBatchAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a workBatch
+     * Adds an audit to an existing workBatch.
+     * @param {Integer} workBatchId Id of the workBatch to add an audit to
+     * @param {String} workBatchAudit The audit to add
+     * @param {module:api/WorkBatchApi~addWorkBatchAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addWorkBatchAudit = function(workBatchId, workBatchAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workBatchId' is set
+      if (workBatchId == undefined || workBatchId == null) {
+        throw "Missing the required parameter 'workBatchId' when calling addWorkBatchAudit";
+      }
+
+      // verify the required parameter 'workBatchAudit' is set
+      if (workBatchAudit == undefined || workBatchAudit == null) {
+        throw "Missing the required parameter 'workBatchAudit' when calling addWorkBatchAudit";
+      }
+
+
+      var pathParams = {
+        'workBatchId': workBatchId,
+        'workBatchAudit': workBatchAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/workBatch/{workBatchId}/audit/{workBatchAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addWorkBatchTag operation.
+     * @callback module:api/WorkBatchApi~addWorkBatchTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a workBatch.
+     * Adds a tag to an existing workBatch.
+     * @param {Integer} workBatchId Id of the workBatch to add a tag to
+     * @param {String} workBatchTag The tag to add
+     * @param {module:api/WorkBatchApi~addWorkBatchTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addWorkBatchTag = function(workBatchId, workBatchTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workBatchId' is set
+      if (workBatchId == undefined || workBatchId == null) {
+        throw "Missing the required parameter 'workBatchId' when calling addWorkBatchTag";
+      }
+
+      // verify the required parameter 'workBatchTag' is set
+      if (workBatchTag == undefined || workBatchTag == null) {
+        throw "Missing the required parameter 'workBatchTag' when calling addWorkBatchTag";
+      }
+
+
+      var pathParams = {
+        'workBatchId': workBatchId,
+        'workBatchTag': workBatchTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/workBatch/{workBatchId}/tag/{workBatchTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteWorkBatchTag operation.
+     * @callback module:api/WorkBatchApi~deleteWorkBatchTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a workBatch.
+     * Deletes an existing workBatch tag using the specified data.
+     * @param {Integer} workBatchId Id of the workBatch to remove tag from
+     * @param {String} workBatchTag The tag to delete
+     * @param {module:api/WorkBatchApi~deleteWorkBatchTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteWorkBatchTag = function(workBatchId, workBatchTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workBatchId' is set
+      if (workBatchId == undefined || workBatchId == null) {
+        throw "Missing the required parameter 'workBatchId' when calling deleteWorkBatchTag";
+      }
+
+      // verify the required parameter 'workBatchTag' is set
+      if (workBatchTag == undefined || workBatchTag == null) {
+        throw "Missing the required parameter 'workBatchTag' when calling deleteWorkBatchTag";
+      }
+
+
+      var pathParams = {
+        'workBatchId': workBatchId,
+        'workBatchTag': workBatchTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/workBatch/{workBatchId}/tag/{workBatchTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateWorkBatchById operation.
+     * @callback module:api/WorkBatchApi~getDuplicateWorkBatchByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkBatch} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a workBatch by id
+     * Returns a duplicated workBatch identified by the specified id.
+     * @param {Integer} workBatchId Id of the workBatch to be duplicated.
+     * @param {module:api/WorkBatchApi~getDuplicateWorkBatchByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/WorkBatch}
+     */
+    this.getDuplicateWorkBatchById = function(workBatchId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workBatchId' is set
+      if (workBatchId == undefined || workBatchId == null) {
+        throw "Missing the required parameter 'workBatchId' when calling getDuplicateWorkBatchById";
+      }
+
+
+      var pathParams = {
+        'workBatchId': workBatchId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkBatch;
+
+      return this.apiClient.callApi(
+        '/beta/workBatch/duplicate/{workBatchId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getWorkBatchByFilter operation.
      * @callback module:api/WorkBatchApi~getWorkBatchByFilterCallback
      * @param {String} error Error message, if any.
@@ -122,6 +324,51 @@
 
       return this.apiClient.callApi(
         '/beta/workBatch/{workBatchId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getWorkBatchTags operation.
+     * @callback module:api/WorkBatchApi~getWorkBatchTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a workBatch.
+     * Get all existing workBatch tags.
+     * @param {Integer} workBatchId Id of the workBatch to get tags for
+     * @param {module:api/WorkBatchApi~getWorkBatchTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getWorkBatchTags = function(workBatchId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'workBatchId' is set
+      if (workBatchId == undefined || workBatchId == null) {
+        throw "Missing the required parameter 'workBatchId' when calling getWorkBatchTags";
+      }
+
+
+      var pathParams = {
+        'workBatchId': workBatchId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/workBatch/{workBatchId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

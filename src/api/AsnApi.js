@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addAsnAudit operation.
+     * @callback module:api/AsnApi~addAsnAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for an asn
+     * Adds an audit to an existing asn.
+     * @param {Integer} asnId Id of the asn to add an audit to
+     * @param {String} asnAudit The audit to add
+     * @param {module:api/AsnApi~addAsnAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addAsnAudit = function(asnId, asnAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'asnId' is set
+      if (asnId == undefined || asnId == null) {
+        throw "Missing the required parameter 'asnId' when calling addAsnAudit";
+      }
+
+      // verify the required parameter 'asnAudit' is set
+      if (asnAudit == undefined || asnAudit == null) {
+        throw "Missing the required parameter 'asnAudit' when calling addAsnAudit";
+      }
+
+
+      var pathParams = {
+        'asnId': asnId,
+        'asnAudit': asnAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/asn/{asnId}/audit/{asnAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addAsnTag operation.
+     * @callback module:api/AsnApi~addAsnTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for an asn.
+     * Adds a tag to an existing asn.
+     * @param {Integer} asnId Id of the asn to add a tag to
+     * @param {String} asnTag The tag to add
+     * @param {module:api/AsnApi~addAsnTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addAsnTag = function(asnId, asnTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'asnId' is set
+      if (asnId == undefined || asnId == null) {
+        throw "Missing the required parameter 'asnId' when calling addAsnTag";
+      }
+
+      // verify the required parameter 'asnTag' is set
+      if (asnTag == undefined || asnTag == null) {
+        throw "Missing the required parameter 'asnTag' when calling addAsnTag";
+      }
+
+
+      var pathParams = {
+        'asnId': asnId,
+        'asnTag': asnTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/asn/{asnId}/tag/{asnTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteAsn operation.
      * @callback module:api/AsnApi~deleteAsnCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,58 @@
 
       return this.apiClient.callApi(
         '/beta/asn/{asnId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteAsnTag operation.
+     * @callback module:api/AsnApi~deleteAsnTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for an asn.
+     * Deletes an existing asn tag using the specified data.
+     * @param {Integer} asnId Id of the asn to remove tag from
+     * @param {String} asnTag The tag to delete
+     * @param {module:api/AsnApi~deleteAsnTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteAsnTag = function(asnId, asnTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'asnId' is set
+      if (asnId == undefined || asnId == null) {
+        throw "Missing the required parameter 'asnId' when calling deleteAsnTag";
+      }
+
+      // verify the required parameter 'asnTag' is set
+      if (asnTag == undefined || asnTag == null) {
+        throw "Missing the required parameter 'asnTag' when calling deleteAsnTag";
+      }
+
+
+      var pathParams = {
+        'asnId': asnId,
+        'asnTag': asnTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/asn/{asnId}/tag/{asnTag}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +368,97 @@
 
       return this.apiClient.callApi(
         '/beta/asn/{asnId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAsnTags operation.
+     * @callback module:api/AsnApi~getAsnTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for an asn.
+     * Get all existing asn tags.
+     * @param {Integer} asnId Id of the asn to get tags for
+     * @param {module:api/AsnApi~getAsnTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getAsnTags = function(asnId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'asnId' is set
+      if (asnId == undefined || asnId == null) {
+        throw "Missing the required parameter 'asnId' when calling getAsnTags";
+      }
+
+
+      var pathParams = {
+        'asnId': asnId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/asn/{asnId}/tag', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateAsnById operation.
+     * @callback module:api/AsnApi~getDuplicateAsnByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Asn} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated an asn by id
+     * Returns a duplicated asn identified by the specified id.
+     * @param {Integer} asnId Id of the asn to be duplicated.
+     * @param {module:api/AsnApi~getDuplicateAsnByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Asn}
+     */
+    this.getDuplicateAsnById = function(asnId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'asnId' is set
+      if (asnId == undefined || asnId == null) {
+        throw "Missing the required parameter 'asnId' when calling getDuplicateAsnById";
+      }
+
+
+      var pathParams = {
+        'asnId': asnId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Asn;
+
+      return this.apiClient.callApi(
+        '/beta/asn/duplicate/{asnId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

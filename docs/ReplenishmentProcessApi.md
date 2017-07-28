@@ -4,10 +4,236 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addReplenishmentProcessAudit**](ReplenishmentProcessApi.md#addReplenishmentProcessAudit) | **PUT** /beta/replenishmentProcess/{replenishmentProcessId}/audit/{replenishmentProcessAudit} | Add new audit for a replenishmentProcess
+[**addReplenishmentProcessTag**](ReplenishmentProcessApi.md#addReplenishmentProcessTag) | **PUT** /beta/replenishmentProcess/{replenishmentProcessId}/tag/{replenishmentProcessTag} | Add new tags for a replenishmentProcess.
+[**deleteReplenishmentProcessTag**](ReplenishmentProcessApi.md#deleteReplenishmentProcessTag) | **DELETE** /beta/replenishmentProcess/{replenishmentProcessId}/tag/{replenishmentProcessTag} | Delete a tag for a replenishmentProcess.
+[**getDuplicateReplenishmentProcessById**](ReplenishmentProcessApi.md#getDuplicateReplenishmentProcessById) | **GET** /beta/replenishmentProcess/duplicate/{replenishmentProcessId} | Get a duplicated a replenishmentProcess by id
 [**getReplenishmentProcessByFilter**](ReplenishmentProcessApi.md#getReplenishmentProcessByFilter) | **GET** /beta/replenishmentProcess/search | Search replenishmentProcesses by filter
 [**getReplenishmentProcessById**](ReplenishmentProcessApi.md#getReplenishmentProcessById) | **GET** /beta/replenishmentProcess/{replenishmentProcessId} | Get a replenishmentProcess by id
+[**getReplenishmentProcessTags**](ReplenishmentProcessApi.md#getReplenishmentProcessTags) | **GET** /beta/replenishmentProcess/{replenishmentProcessId}/tag | Get the tags for a replenishmentProcess.
 [**updateReplenishmentProcessCustomFields**](ReplenishmentProcessApi.md#updateReplenishmentProcessCustomFields) | **PUT** /beta/replenishmentProcess/customFields | Update a replenishmentProcess custom fields
 
+
+<a name="addReplenishmentProcessAudit"></a>
+# **addReplenishmentProcessAudit**
+> addReplenishmentProcessAudit(replenishmentProcessId, replenishmentProcessAudit)
+
+Add new audit for a replenishmentProcess
+
+Adds an audit to an existing replenishmentProcess.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentProcessApi()
+
+var replenishmentProcessId = 56; // {Integer} Id of the replenishmentProcess to add an audit to
+
+var replenishmentProcessAudit = "replenishmentProcessAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addReplenishmentProcessAudit(replenishmentProcessId, replenishmentProcessAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentProcessId** | **Integer**| Id of the replenishmentProcess to add an audit to | 
+ **replenishmentProcessAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addReplenishmentProcessTag"></a>
+# **addReplenishmentProcessTag**
+> addReplenishmentProcessTag(replenishmentProcessId, replenishmentProcessTag)
+
+Add new tags for a replenishmentProcess.
+
+Adds a tag to an existing replenishmentProcess.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentProcessApi()
+
+var replenishmentProcessId = 56; // {Integer} Id of the replenishmentProcess to add a tag to
+
+var replenishmentProcessTag = "replenishmentProcessTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addReplenishmentProcessTag(replenishmentProcessId, replenishmentProcessTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentProcessId** | **Integer**| Id of the replenishmentProcess to add a tag to | 
+ **replenishmentProcessTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteReplenishmentProcessTag"></a>
+# **deleteReplenishmentProcessTag**
+> deleteReplenishmentProcessTag(replenishmentProcessId, replenishmentProcessTag)
+
+Delete a tag for a replenishmentProcess.
+
+Deletes an existing replenishmentProcess tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentProcessApi()
+
+var replenishmentProcessId = 56; // {Integer} Id of the replenishmentProcess to remove tag from
+
+var replenishmentProcessTag = "replenishmentProcessTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteReplenishmentProcessTag(replenishmentProcessId, replenishmentProcessTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentProcessId** | **Integer**| Id of the replenishmentProcess to remove tag from | 
+ **replenishmentProcessTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateReplenishmentProcessById"></a>
+# **getDuplicateReplenishmentProcessById**
+> ReplenishmentProcess getDuplicateReplenishmentProcessById(replenishmentProcessId)
+
+Get a duplicated a replenishmentProcess by id
+
+Returns a duplicated replenishmentProcess identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentProcessApi()
+
+var replenishmentProcessId = 56; // {Integer} Id of the replenishmentProcess to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateReplenishmentProcessById(replenishmentProcessId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentProcessId** | **Integer**| Id of the replenishmentProcess to be duplicated. | 
+
+### Return type
+
+[**ReplenishmentProcess**](ReplenishmentProcess.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getReplenishmentProcessByFilter"></a>
 # **getReplenishmentProcessByFilter**
@@ -112,6 +338,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ReplenishmentProcess**](ReplenishmentProcess.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getReplenishmentProcessTags"></a>
+# **getReplenishmentProcessTags**
+> getReplenishmentProcessTags(replenishmentProcessId)
+
+Get the tags for a replenishmentProcess.
+
+Get all existing replenishmentProcess tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ReplenishmentProcessApi()
+
+var replenishmentProcessId = 56; // {Integer} Id of the replenishmentProcess to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getReplenishmentProcessTags(replenishmentProcessId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **replenishmentProcessId** | **Integer**| Id of the replenishmentProcess to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

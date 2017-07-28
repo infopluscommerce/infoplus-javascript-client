@@ -58,11 +58,11 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('lob')) {
-        obj['lob'] = ApiClient.convertToType(data['lob'], 'Integer');
+      if (data.hasOwnProperty('lobId')) {
+        obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
-      if (data.hasOwnProperty('skuId')) {
-        obj['skuId'] = ApiClient.convertToType(data['skuId'], 'Integer');
+      if (data.hasOwnProperty('sku')) {
+        obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
       }
       if (data.hasOwnProperty('poNoId')) {
         obj['poNoId'] = ApiClient.convertToType(data['poNoId'], 'Integer');
@@ -108,14 +108,14 @@
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {Integer} lob
+   * @member {Integer} lobId
    */
-  exports.prototype['lob'] = undefined;
+  exports.prototype['lobId'] = undefined;
 
   /**
-   * @member {Integer} skuId
+   * @member {String} sku
    */
-  exports.prototype['skuId'] = undefined;
+  exports.prototype['sku'] = undefined;
 
   /**
    * @member {Integer} poNoId

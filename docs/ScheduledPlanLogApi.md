@@ -4,9 +4,235 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addScheduledPlanLogAudit**](ScheduledPlanLogApi.md#addScheduledPlanLogAudit) | **PUT** /beta/scheduledPlanLog/{scheduledPlanLogId}/audit/{scheduledPlanLogAudit} | Add new audit for a scheduledPlanLog
+[**addScheduledPlanLogTag**](ScheduledPlanLogApi.md#addScheduledPlanLogTag) | **PUT** /beta/scheduledPlanLog/{scheduledPlanLogId}/tag/{scheduledPlanLogTag} | Add new tags for a scheduledPlanLog.
+[**deleteScheduledPlanLogTag**](ScheduledPlanLogApi.md#deleteScheduledPlanLogTag) | **DELETE** /beta/scheduledPlanLog/{scheduledPlanLogId}/tag/{scheduledPlanLogTag} | Delete a tag for a scheduledPlanLog.
+[**getDuplicateScheduledPlanLogById**](ScheduledPlanLogApi.md#getDuplicateScheduledPlanLogById) | **GET** /beta/scheduledPlanLog/duplicate/{scheduledPlanLogId} | Get a duplicated a scheduledPlanLog by id
 [**getScheduledPlanLogByFilter**](ScheduledPlanLogApi.md#getScheduledPlanLogByFilter) | **GET** /beta/scheduledPlanLog/search | Search scheduledPlanLogs by filter
 [**getScheduledPlanLogById**](ScheduledPlanLogApi.md#getScheduledPlanLogById) | **GET** /beta/scheduledPlanLog/{scheduledPlanLogId} | Get a scheduledPlanLog by id
+[**getScheduledPlanLogTags**](ScheduledPlanLogApi.md#getScheduledPlanLogTags) | **GET** /beta/scheduledPlanLog/{scheduledPlanLogId}/tag | Get the tags for a scheduledPlanLog.
 
+
+<a name="addScheduledPlanLogAudit"></a>
+# **addScheduledPlanLogAudit**
+> addScheduledPlanLogAudit(scheduledPlanLogId, scheduledPlanLogAudit)
+
+Add new audit for a scheduledPlanLog
+
+Adds an audit to an existing scheduledPlanLog.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ScheduledPlanLogApi()
+
+var scheduledPlanLogId = 56; // {Integer} Id of the scheduledPlanLog to add an audit to
+
+var scheduledPlanLogAudit = "scheduledPlanLogAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addScheduledPlanLogAudit(scheduledPlanLogId, scheduledPlanLogAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scheduledPlanLogId** | **Integer**| Id of the scheduledPlanLog to add an audit to | 
+ **scheduledPlanLogAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addScheduledPlanLogTag"></a>
+# **addScheduledPlanLogTag**
+> addScheduledPlanLogTag(scheduledPlanLogId, scheduledPlanLogTag)
+
+Add new tags for a scheduledPlanLog.
+
+Adds a tag to an existing scheduledPlanLog.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ScheduledPlanLogApi()
+
+var scheduledPlanLogId = 56; // {Integer} Id of the scheduledPlanLog to add a tag to
+
+var scheduledPlanLogTag = "scheduledPlanLogTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addScheduledPlanLogTag(scheduledPlanLogId, scheduledPlanLogTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scheduledPlanLogId** | **Integer**| Id of the scheduledPlanLog to add a tag to | 
+ **scheduledPlanLogTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteScheduledPlanLogTag"></a>
+# **deleteScheduledPlanLogTag**
+> deleteScheduledPlanLogTag(scheduledPlanLogId, scheduledPlanLogTag)
+
+Delete a tag for a scheduledPlanLog.
+
+Deletes an existing scheduledPlanLog tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ScheduledPlanLogApi()
+
+var scheduledPlanLogId = 56; // {Integer} Id of the scheduledPlanLog to remove tag from
+
+var scheduledPlanLogTag = "scheduledPlanLogTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteScheduledPlanLogTag(scheduledPlanLogId, scheduledPlanLogTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scheduledPlanLogId** | **Integer**| Id of the scheduledPlanLog to remove tag from | 
+ **scheduledPlanLogTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateScheduledPlanLogById"></a>
+# **getDuplicateScheduledPlanLogById**
+> ScheduledPlanLog getDuplicateScheduledPlanLogById(scheduledPlanLogId)
+
+Get a duplicated a scheduledPlanLog by id
+
+Returns a duplicated scheduledPlanLog identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ScheduledPlanLogApi()
+
+var scheduledPlanLogId = 56; // {Integer} Id of the scheduledPlanLog to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateScheduledPlanLogById(scheduledPlanLogId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scheduledPlanLogId** | **Integer**| Id of the scheduledPlanLog to be duplicated. | 
+
+### Return type
+
+[**ScheduledPlanLog**](ScheduledPlanLog.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getScheduledPlanLogByFilter"></a>
 # **getScheduledPlanLogByFilter**
@@ -111,6 +337,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScheduledPlanLog**](ScheduledPlanLog.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getScheduledPlanLogTags"></a>
+# **getScheduledPlanLogTags**
+> getScheduledPlanLogTags(scheduledPlanLogId)
+
+Get the tags for a scheduledPlanLog.
+
+Get all existing scheduledPlanLog tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ScheduledPlanLogApi()
+
+var scheduledPlanLogId = 56; // {Integer} Id of the scheduledPlanLog to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getScheduledPlanLogTags(scheduledPlanLogId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scheduledPlanLogId** | **Integer**| Id of the scheduledPlanLog to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

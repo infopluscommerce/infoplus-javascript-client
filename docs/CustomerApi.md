@@ -5,10 +5,15 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCustomer**](CustomerApi.md#addCustomer) | **POST** /beta/customer | Create a customer
+[**addCustomerAudit**](CustomerApi.md#addCustomerAudit) | **PUT** /beta/customer/{customerId}/audit/{customerAudit} | Add new audit for a customer
+[**addCustomerTag**](CustomerApi.md#addCustomerTag) | **PUT** /beta/customer/{customerId}/tag/{customerTag} | Add new tags for a customer.
 [**deleteCustomer**](CustomerApi.md#deleteCustomer) | **DELETE** /beta/customer/{customerId} | Delete a customer
+[**deleteCustomerTag**](CustomerApi.md#deleteCustomerTag) | **DELETE** /beta/customer/{customerId}/tag/{customerTag} | Delete a tag for a customer.
 [**getByCustomerNo**](CustomerApi.md#getByCustomerNo) | **GET** /beta/customer/getByCustomerNo | Get a customer by Customer No
 [**getCustomerByFilter**](CustomerApi.md#getCustomerByFilter) | **GET** /beta/customer/search | Search customers by filter
 [**getCustomerById**](CustomerApi.md#getCustomerById) | **GET** /beta/customer/{customerId} | Get a customer by id
+[**getCustomerTags**](CustomerApi.md#getCustomerTags) | **GET** /beta/customer/{customerId}/tag | Get the tags for a customer.
+[**getDuplicateCustomerById**](CustomerApi.md#getDuplicateCustomerById) | **GET** /beta/customer/duplicate/{customerId} | Get a duplicated a customer by id
 [**updateCustomer**](CustomerApi.md#updateCustomer) | **PUT** /beta/customer | Update a customer
 [**updateCustomerCustomFields**](CustomerApi.md#updateCustomerCustomFields) | **PUT** /beta/customer/customFields | Update a customer custom fields
 
@@ -66,6 +71,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addCustomerAudit"></a>
+# **addCustomerAudit**
+> addCustomerAudit(customerId, customerAudit)
+
+Add new audit for a customer
+
+Adds an audit to an existing customer.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var customerId = 56; // {Integer} Id of the customer to add an audit to
+
+var customerAudit = "customerAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addCustomerAudit(customerId, customerAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Id of the customer to add an audit to | 
+ **customerAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addCustomerTag"></a>
+# **addCustomerTag**
+> addCustomerTag(customerId, customerTag)
+
+Add new tags for a customer.
+
+Adds a tag to an existing customer.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var customerId = 56; // {Integer} Id of the customer to add a tag to
+
+var customerTag = "customerTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addCustomerTag(customerId, customerTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Id of the customer to add a tag to | 
+ **customerTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteCustomer"></a>
 # **deleteCustomer**
 > deleteCustomer(customerId)
@@ -105,6 +222,62 @@ api.deleteCustomer(customerId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Id of the customer to be deleted. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteCustomerTag"></a>
+# **deleteCustomerTag**
+> deleteCustomerTag(customerId, customerTag)
+
+Delete a tag for a customer.
+
+Deletes an existing customer tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var customerId = 56; // {Integer} Id of the customer to remove tag from
+
+var customerTag = "customerTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteCustomerTag(customerId, customerTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Id of the customer to remove tag from | 
+ **customerTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -274,6 +447,112 @@ api.getCustomerById(customerId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Id of the customer to be returned. | 
+
+### Return type
+
+[**Customer**](Customer.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getCustomerTags"></a>
+# **getCustomerTags**
+> getCustomerTags(customerId)
+
+Get the tags for a customer.
+
+Get all existing customer tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var customerId = 56; // {Integer} Id of the customer to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getCustomerTags(customerId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Id of the customer to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateCustomerById"></a>
+# **getDuplicateCustomerById**
+> Customer getDuplicateCustomerById(customerId)
+
+Get a duplicated a customer by id
+
+Returns a duplicated customer identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.CustomerApi()
+
+var customerId = 56; // {Integer} Id of the customer to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateCustomerById(customerId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Id of the customer to be duplicated. | 
 
 ### Return type
 

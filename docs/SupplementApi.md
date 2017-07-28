@@ -5,9 +5,14 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addSupplement**](SupplementApi.md#addSupplement) | **POST** /beta/supplement | Create a supplement
+[**addSupplementAudit**](SupplementApi.md#addSupplementAudit) | **PUT** /beta/supplement/{supplementId}/audit/{supplementAudit} | Add new audit for a supplement
+[**addSupplementTag**](SupplementApi.md#addSupplementTag) | **PUT** /beta/supplement/{supplementId}/tag/{supplementTag} | Add new tags for a supplement.
 [**deleteSupplement**](SupplementApi.md#deleteSupplement) | **DELETE** /beta/supplement/{supplementId} | Delete a supplement
+[**deleteSupplementTag**](SupplementApi.md#deleteSupplementTag) | **DELETE** /beta/supplement/{supplementId}/tag/{supplementTag} | Delete a tag for a supplement.
+[**getDuplicateSupplementById**](SupplementApi.md#getDuplicateSupplementById) | **GET** /beta/supplement/duplicate/{supplementId} | Get a duplicated a supplement by id
 [**getSupplementByFilter**](SupplementApi.md#getSupplementByFilter) | **GET** /beta/supplement/search | Search supplements by filter
 [**getSupplementById**](SupplementApi.md#getSupplementById) | **GET** /beta/supplement/{supplementId} | Get a supplement by id
+[**getSupplementTags**](SupplementApi.md#getSupplementTags) | **GET** /beta/supplement/{supplementId}/tag | Get the tags for a supplement.
 [**updateSupplement**](SupplementApi.md#updateSupplement) | **PUT** /beta/supplement | Update a supplement
 [**updateSupplementCustomFields**](SupplementApi.md#updateSupplementCustomFields) | **PUT** /beta/supplement/customFields | Update a supplement custom fields
 
@@ -65,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addSupplementAudit"></a>
+# **addSupplementAudit**
+> addSupplementAudit(supplementId, supplementAudit)
+
+Add new audit for a supplement
+
+Adds an audit to an existing supplement.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.SupplementApi()
+
+var supplementId = 56; // {Integer} Id of the supplement to add an audit to
+
+var supplementAudit = "supplementAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addSupplementAudit(supplementId, supplementAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplementId** | **Integer**| Id of the supplement to add an audit to | 
+ **supplementAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addSupplementTag"></a>
+# **addSupplementTag**
+> addSupplementTag(supplementId, supplementTag)
+
+Add new tags for a supplement.
+
+Adds a tag to an existing supplement.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.SupplementApi()
+
+var supplementId = 56; // {Integer} Id of the supplement to add a tag to
+
+var supplementTag = "supplementTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addSupplementTag(supplementId, supplementTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplementId** | **Integer**| Id of the supplement to add a tag to | 
+ **supplementTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteSupplement"></a>
 # **deleteSupplement**
 > deleteSupplement(supplementId)
@@ -108,6 +225,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteSupplementTag"></a>
+# **deleteSupplementTag**
+> deleteSupplementTag(supplementId, supplementTag)
+
+Delete a tag for a supplement.
+
+Deletes an existing supplement tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.SupplementApi()
+
+var supplementId = 56; // {Integer} Id of the supplement to remove tag from
+
+var supplementTag = "supplementTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteSupplementTag(supplementId, supplementTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplementId** | **Integer**| Id of the supplement to remove tag from | 
+ **supplementTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateSupplementById"></a>
+# **getDuplicateSupplementById**
+> Supplement getDuplicateSupplementById(supplementId)
+
+Get a duplicated a supplement by id
+
+Returns a duplicated supplement identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.SupplementApi()
+
+var supplementId = 56; // {Integer} Id of the supplement to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateSupplementById(supplementId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplementId** | **Integer**| Id of the supplement to be duplicated. | 
+
+### Return type
+
+[**Supplement**](Supplement.md)
 
 ### Authorization
 
@@ -221,6 +447,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Supplement**](Supplement.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getSupplementTags"></a>
+# **getSupplementTags**
+> getSupplementTags(supplementId)
+
+Get the tags for a supplement.
+
+Get all existing supplement tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.SupplementApi()
+
+var supplementId = 56; // {Integer} Id of the supplement to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getSupplementTags(supplementId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **supplementId** | **Integer**| Id of the supplement to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

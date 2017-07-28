@@ -33,6 +33,162 @@
 
 
     /**
+     * Callback function to receive the result of the addBusinessTransactionAudit operation.
+     * @callback module:api/BusinessTransactionApi~addBusinessTransactionAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a businessTransaction
+     * Adds an audit to an existing businessTransaction.
+     * @param {Integer} businessTransactionId Id of the businessTransaction to add an audit to
+     * @param {String} businessTransactionAudit The audit to add
+     * @param {module:api/BusinessTransactionApi~addBusinessTransactionAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addBusinessTransactionAudit = function(businessTransactionId, businessTransactionAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'businessTransactionId' is set
+      if (businessTransactionId == undefined || businessTransactionId == null) {
+        throw "Missing the required parameter 'businessTransactionId' when calling addBusinessTransactionAudit";
+      }
+
+      // verify the required parameter 'businessTransactionAudit' is set
+      if (businessTransactionAudit == undefined || businessTransactionAudit == null) {
+        throw "Missing the required parameter 'businessTransactionAudit' when calling addBusinessTransactionAudit";
+      }
+
+
+      var pathParams = {
+        'businessTransactionId': businessTransactionId,
+        'businessTransactionAudit': businessTransactionAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/businessTransaction/{businessTransactionId}/audit/{businessTransactionAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addBusinessTransactionTag operation.
+     * @callback module:api/BusinessTransactionApi~addBusinessTransactionTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a businessTransaction.
+     * Adds a tag to an existing businessTransaction.
+     * @param {Integer} businessTransactionId Id of the businessTransaction to add a tag to
+     * @param {String} businessTransactionTag The tag to add
+     * @param {module:api/BusinessTransactionApi~addBusinessTransactionTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addBusinessTransactionTag = function(businessTransactionId, businessTransactionTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'businessTransactionId' is set
+      if (businessTransactionId == undefined || businessTransactionId == null) {
+        throw "Missing the required parameter 'businessTransactionId' when calling addBusinessTransactionTag";
+      }
+
+      // verify the required parameter 'businessTransactionTag' is set
+      if (businessTransactionTag == undefined || businessTransactionTag == null) {
+        throw "Missing the required parameter 'businessTransactionTag' when calling addBusinessTransactionTag";
+      }
+
+
+      var pathParams = {
+        'businessTransactionId': businessTransactionId,
+        'businessTransactionTag': businessTransactionTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/businessTransaction/{businessTransactionId}/tag/{businessTransactionTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteBusinessTransactionTag operation.
+     * @callback module:api/BusinessTransactionApi~deleteBusinessTransactionTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a businessTransaction.
+     * Deletes an existing businessTransaction tag using the specified data.
+     * @param {Integer} businessTransactionId Id of the businessTransaction to remove tag from
+     * @param {String} businessTransactionTag The tag to delete
+     * @param {module:api/BusinessTransactionApi~deleteBusinessTransactionTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteBusinessTransactionTag = function(businessTransactionId, businessTransactionTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'businessTransactionId' is set
+      if (businessTransactionId == undefined || businessTransactionId == null) {
+        throw "Missing the required parameter 'businessTransactionId' when calling deleteBusinessTransactionTag";
+      }
+
+      // verify the required parameter 'businessTransactionTag' is set
+      if (businessTransactionTag == undefined || businessTransactionTag == null) {
+        throw "Missing the required parameter 'businessTransactionTag' when calling deleteBusinessTransactionTag";
+      }
+
+
+      var pathParams = {
+        'businessTransactionId': businessTransactionId,
+        'businessTransactionTag': businessTransactionTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/businessTransaction/{businessTransactionId}/tag/{businessTransactionTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getBusinessTransactionByFilter operation.
      * @callback module:api/BusinessTransactionApi~getBusinessTransactionByFilterCallback
      * @param {String} error Error message, if any.
@@ -122,6 +278,97 @@
 
       return this.apiClient.callApi(
         '/beta/businessTransaction/{businessTransactionId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getBusinessTransactionTags operation.
+     * @callback module:api/BusinessTransactionApi~getBusinessTransactionTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a businessTransaction.
+     * Get all existing businessTransaction tags.
+     * @param {Integer} businessTransactionId Id of the businessTransaction to get tags for
+     * @param {module:api/BusinessTransactionApi~getBusinessTransactionTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getBusinessTransactionTags = function(businessTransactionId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'businessTransactionId' is set
+      if (businessTransactionId == undefined || businessTransactionId == null) {
+        throw "Missing the required parameter 'businessTransactionId' when calling getBusinessTransactionTags";
+      }
+
+
+      var pathParams = {
+        'businessTransactionId': businessTransactionId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/businessTransaction/{businessTransactionId}/tag', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateBusinessTransactionById operation.
+     * @callback module:api/BusinessTransactionApi~getDuplicateBusinessTransactionByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BusinessTransaction} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a businessTransaction by id
+     * Returns a duplicated businessTransaction identified by the specified id.
+     * @param {Integer} businessTransactionId Id of the businessTransaction to be duplicated.
+     * @param {module:api/BusinessTransactionApi~getDuplicateBusinessTransactionByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/BusinessTransaction}
+     */
+    this.getDuplicateBusinessTransactionById = function(businessTransactionId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'businessTransactionId' is set
+      if (businessTransactionId == undefined || businessTransactionId == null) {
+        throw "Missing the required parameter 'businessTransactionId' when calling getDuplicateBusinessTransactionById";
+      }
+
+
+      var pathParams = {
+        'businessTransactionId': businessTransactionId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = BusinessTransaction;
+
+      return this.apiClient.callApi(
+        '/beta/businessTransaction/duplicate/{businessTransactionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

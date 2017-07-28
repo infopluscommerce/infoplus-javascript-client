@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sku** | **String** |  | [optional] 
+**sku2** | **String** |  | [optional] 
 **fullDescription** | **String** |  | [optional] 
 **orderedQty** | **Integer** |  | [optional] 
 **prevReceivedQty** | **Integer** |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **weightPerWrap** | **Number** |  | 
 **weightPerCase** | **Number** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
+**productIdTag** | **String** |  | [optional] 
 **revisionDate** | **String** |  | [optional] 
 **origin** | **String** |  | [optional] 
 **cartonLength** | **Number** |  | [optional] 

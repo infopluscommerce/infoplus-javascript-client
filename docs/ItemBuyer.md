@@ -3,7 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**label** | **String** |  | 
+**lobId** | **Integer** |  | 
+**internalId** | **Integer** |  | [optional] 
+**id** | **String** |  | 
+**name** | **String** |  | 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

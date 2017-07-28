@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addVendorComplianceSurveyAudit operation.
+     * @callback module:api/VendorComplianceSurveyApi~addVendorComplianceSurveyAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a vendorComplianceSurvey
+     * Adds an audit to an existing vendorComplianceSurvey.
+     * @param {Integer} vendorComplianceSurveyId Id of the vendorComplianceSurvey to add an audit to
+     * @param {String} vendorComplianceSurveyAudit The audit to add
+     * @param {module:api/VendorComplianceSurveyApi~addVendorComplianceSurveyAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addVendorComplianceSurveyAudit = function(vendorComplianceSurveyId, vendorComplianceSurveyAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorComplianceSurveyId' is set
+      if (vendorComplianceSurveyId == undefined || vendorComplianceSurveyId == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyId' when calling addVendorComplianceSurveyAudit";
+      }
+
+      // verify the required parameter 'vendorComplianceSurveyAudit' is set
+      if (vendorComplianceSurveyAudit == undefined || vendorComplianceSurveyAudit == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyAudit' when calling addVendorComplianceSurveyAudit";
+      }
+
+
+      var pathParams = {
+        'vendorComplianceSurveyId': vendorComplianceSurveyId,
+        'vendorComplianceSurveyAudit': vendorComplianceSurveyAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/audit/{vendorComplianceSurveyAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addVendorComplianceSurveyTag operation.
+     * @callback module:api/VendorComplianceSurveyApi~addVendorComplianceSurveyTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a vendorComplianceSurvey.
+     * Adds a tag to an existing vendorComplianceSurvey.
+     * @param {Integer} vendorComplianceSurveyId Id of the vendorComplianceSurvey to add a tag to
+     * @param {String} vendorComplianceSurveyTag The tag to add
+     * @param {module:api/VendorComplianceSurveyApi~addVendorComplianceSurveyTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addVendorComplianceSurveyTag = function(vendorComplianceSurveyId, vendorComplianceSurveyTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorComplianceSurveyId' is set
+      if (vendorComplianceSurveyId == undefined || vendorComplianceSurveyId == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyId' when calling addVendorComplianceSurveyTag";
+      }
+
+      // verify the required parameter 'vendorComplianceSurveyTag' is set
+      if (vendorComplianceSurveyTag == undefined || vendorComplianceSurveyTag == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyTag' when calling addVendorComplianceSurveyTag";
+      }
+
+
+      var pathParams = {
+        'vendorComplianceSurveyId': vendorComplianceSurveyId,
+        'vendorComplianceSurveyTag': vendorComplianceSurveyTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag/{vendorComplianceSurveyTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteVendorComplianceSurvey operation.
      * @callback module:api/VendorComplianceSurveyApi~deleteVendorComplianceSurveyCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,104 @@
 
       return this.apiClient.callApi(
         '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteVendorComplianceSurveyTag operation.
+     * @callback module:api/VendorComplianceSurveyApi~deleteVendorComplianceSurveyTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a vendorComplianceSurvey.
+     * Deletes an existing vendorComplianceSurvey tag using the specified data.
+     * @param {Integer} vendorComplianceSurveyId Id of the vendorComplianceSurvey to remove tag from
+     * @param {String} vendorComplianceSurveyTag The tag to delete
+     * @param {module:api/VendorComplianceSurveyApi~deleteVendorComplianceSurveyTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteVendorComplianceSurveyTag = function(vendorComplianceSurveyId, vendorComplianceSurveyTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorComplianceSurveyId' is set
+      if (vendorComplianceSurveyId == undefined || vendorComplianceSurveyId == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyId' when calling deleteVendorComplianceSurveyTag";
+      }
+
+      // verify the required parameter 'vendorComplianceSurveyTag' is set
+      if (vendorComplianceSurveyTag == undefined || vendorComplianceSurveyTag == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyTag' when calling deleteVendorComplianceSurveyTag";
+      }
+
+
+      var pathParams = {
+        'vendorComplianceSurveyId': vendorComplianceSurveyId,
+        'vendorComplianceSurveyTag': vendorComplianceSurveyTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag/{vendorComplianceSurveyTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateVendorComplianceSurveyById operation.
+     * @callback module:api/VendorComplianceSurveyApi~getDuplicateVendorComplianceSurveyByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/VendorComplianceSurvey} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a vendorComplianceSurvey by id
+     * Returns a duplicated vendorComplianceSurvey identified by the specified id.
+     * @param {Integer} vendorComplianceSurveyId Id of the vendorComplianceSurvey to be duplicated.
+     * @param {module:api/VendorComplianceSurveyApi~getDuplicateVendorComplianceSurveyByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/VendorComplianceSurvey}
+     */
+    this.getDuplicateVendorComplianceSurveyById = function(vendorComplianceSurveyId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorComplianceSurveyId' is set
+      if (vendorComplianceSurveyId == undefined || vendorComplianceSurveyId == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyId' when calling getDuplicateVendorComplianceSurveyById";
+      }
+
+
+      var pathParams = {
+        'vendorComplianceSurveyId': vendorComplianceSurveyId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = VendorComplianceSurvey;
+
+      return this.apiClient.callApi(
+        '/beta/vendorComplianceSurvey/duplicate/{vendorComplianceSurveyId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +414,51 @@
 
       return this.apiClient.callApi(
         '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getVendorComplianceSurveyTags operation.
+     * @callback module:api/VendorComplianceSurveyApi~getVendorComplianceSurveyTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a vendorComplianceSurvey.
+     * Get all existing vendorComplianceSurvey tags.
+     * @param {Integer} vendorComplianceSurveyId Id of the vendorComplianceSurvey to get tags for
+     * @param {module:api/VendorComplianceSurveyApi~getVendorComplianceSurveyTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getVendorComplianceSurveyTags = function(vendorComplianceSurveyId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorComplianceSurveyId' is set
+      if (vendorComplianceSurveyId == undefined || vendorComplianceSurveyId == null) {
+        throw "Missing the required parameter 'vendorComplianceSurveyId' when calling getVendorComplianceSurveyTags";
+      }
+
+
+      var pathParams = {
+        'vendorComplianceSurveyId': vendorComplianceSurveyId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

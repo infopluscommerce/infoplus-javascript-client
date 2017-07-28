@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['../ApiClient', './KitComponent'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./KitComponent'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.Kit = factory(root.infoplus.ApiClient);
+    root.infoplus.Kit = factory(root.infoplus.ApiClient, root.infoplus.KitComponent);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, KitComponent) {
   'use strict';
 
   /**
@@ -26,16 +26,17 @@
    * @alias module:model/Kit
    * @class
    * @param lobId
-   * @param kitSKUId
+   * @param kitSKU
    * @param touches
    * @param isKOD
    * @param kodType
+   * @param kitComponentList
    */
-  var exports = function(lobId, kitSKUId, touches, isKOD, kodType) {
+  var exports = function(lobId, kitSKU, touches, isKOD, kodType, kitComponentList) {
 
     this['lobId'] = lobId;
 
-    this['kitSKUId'] = kitSKUId;
+    this['kitSKU'] = kitSKU;
 
 
 
@@ -55,6 +56,7 @@
 
     this['isKOD'] = isKOD;
     this['kodType'] = kodType;
+    this['kitComponentList'] = kitComponentList;
 
   };
 
@@ -75,8 +77,8 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('kitSKUId')) {
-        obj['kitSKUId'] = ApiClient.convertToType(data['kitSKUId'], 'Integer');
+      if (data.hasOwnProperty('kitSKU')) {
+        obj['kitSKU'] = ApiClient.convertToType(data['kitSKU'], 'String');
       }
       if (data.hasOwnProperty('packagingType')) {
         obj['packagingType'] = ApiClient.convertToType(data['packagingType'], 'String');
@@ -135,6 +137,9 @@
       if (data.hasOwnProperty('kodType')) {
         obj['kodType'] = ApiClient.convertToType(data['kodType'], 'String');
       }
+      if (data.hasOwnProperty('kitComponentList')) {
+        obj['kitComponentList'] = ApiClient.convertToType(data['kitComponentList'], [KitComponent]);
+      }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
@@ -154,9 +159,9 @@
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {Integer} kitSKUId
+   * @member {String} kitSKU
    */
-  exports.prototype['kitSKUId'] = undefined;
+  exports.prototype['kitSKU'] = undefined;
 
   /**
    * @member {String} packagingType
@@ -252,6 +257,11 @@
    * @member {String} kodType
    */
   exports.prototype['kodType'] = undefined;
+
+  /**
+   * @member {Array.<module:model/KitComponent>} kitComponentList
+   */
+  exports.prototype['kitComponentList'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

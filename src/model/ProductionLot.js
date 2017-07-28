@@ -25,13 +25,15 @@
    * Constructs a new <code>ProductionLot</code>.
    * @alias module:model/ProductionLot
    * @class
+   * @param productionLot
+   * @param quantity
    */
-  var exports = function() {
+  var exports = function(productionLot, quantity) {
 
 
 
-
-
+    this['productionLot'] = productionLot;
+    this['quantity'] = quantity;
 
 
   };

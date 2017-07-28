@@ -60,6 +60,9 @@
 
 
 
+
+
+
     this['itemAccountCodeId'] = itemAccountCodeId;
     this['itemLegacyLowStockContactId'] = itemLegacyLowStockContactId;
     this['itemMajorGroupId'] = itemMajorGroupId;
@@ -131,11 +134,17 @@
       if (data.hasOwnProperty('unitSell')) {
         obj['unitSell'] = ApiClient.convertToType(data['unitSell'], 'Number');
       }
+      if (data.hasOwnProperty('unitDiscount')) {
+        obj['unitDiscount'] = ApiClient.convertToType(data['unitDiscount'], 'Number');
+      }
       if (data.hasOwnProperty('extendedCost')) {
         obj['extendedCost'] = ApiClient.convertToType(data['extendedCost'], 'Number');
       }
       if (data.hasOwnProperty('extendedSell')) {
         obj['extendedSell'] = ApiClient.convertToType(data['extendedSell'], 'Number');
+      }
+      if (data.hasOwnProperty('extendedDiscount')) {
+        obj['extendedDiscount'] = ApiClient.convertToType(data['extendedDiscount'], 'Number');
       }
       if (data.hasOwnProperty('ncExtendedSell')) {
         obj['ncExtendedSell'] = ApiClient.convertToType(data['ncExtendedSell'], 'Number');
@@ -151,6 +160,9 @@
       }
       if (data.hasOwnProperty('sector')) {
         obj['sector'] = ApiClient.convertToType(data['sector'], 'String');
+      }
+      if (data.hasOwnProperty('orderAssemblyInstructions')) {
+        obj['orderAssemblyInstructions'] = ApiClient.convertToType(data['orderAssemblyInstructions'], 'String');
       }
       if (data.hasOwnProperty('itemAccountCodeId')) {
         obj['itemAccountCodeId'] = ApiClient.convertToType(data['itemAccountCodeId'], 'Integer');
@@ -264,6 +276,11 @@
   exports.prototype['unitSell'] = undefined;
 
   /**
+   * @member {Number} unitDiscount
+   */
+  exports.prototype['unitDiscount'] = undefined;
+
+  /**
    * @member {Number} extendedCost
    */
   exports.prototype['extendedCost'] = undefined;
@@ -272,6 +289,11 @@
    * @member {Number} extendedSell
    */
   exports.prototype['extendedSell'] = undefined;
+
+  /**
+   * @member {Number} extendedDiscount
+   */
+  exports.prototype['extendedDiscount'] = undefined;
 
   /**
    * @member {Number} ncExtendedSell
@@ -297,6 +319,11 @@
    * @member {String} sector
    */
   exports.prototype['sector'] = undefined;
+
+  /**
+   * @member {String} orderAssemblyInstructions
+   */
+  exports.prototype['orderAssemblyInstructions'] = undefined;
 
   /**
    * @member {Integer} itemAccountCodeId

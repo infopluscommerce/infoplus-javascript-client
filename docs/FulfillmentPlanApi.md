@@ -5,9 +5,14 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addFulfillmentPlan**](FulfillmentPlanApi.md#addFulfillmentPlan) | **POST** /beta/fulfillmentPlan | Create a fulfillmentPlan
+[**addFulfillmentPlanAudit**](FulfillmentPlanApi.md#addFulfillmentPlanAudit) | **PUT** /beta/fulfillmentPlan/{fulfillmentPlanId}/audit/{fulfillmentPlanAudit} | Add new audit for a fulfillmentPlan
+[**addFulfillmentPlanTag**](FulfillmentPlanApi.md#addFulfillmentPlanTag) | **PUT** /beta/fulfillmentPlan/{fulfillmentPlanId}/tag/{fulfillmentPlanTag} | Add new tags for a fulfillmentPlan.
 [**deleteFulfillmentPlan**](FulfillmentPlanApi.md#deleteFulfillmentPlan) | **DELETE** /beta/fulfillmentPlan/{fulfillmentPlanId} | Delete a fulfillmentPlan
+[**deleteFulfillmentPlanTag**](FulfillmentPlanApi.md#deleteFulfillmentPlanTag) | **DELETE** /beta/fulfillmentPlan/{fulfillmentPlanId}/tag/{fulfillmentPlanTag} | Delete a tag for a fulfillmentPlan.
+[**getDuplicateFulfillmentPlanById**](FulfillmentPlanApi.md#getDuplicateFulfillmentPlanById) | **GET** /beta/fulfillmentPlan/duplicate/{fulfillmentPlanId} | Get a duplicated a fulfillmentPlan by id
 [**getFulfillmentPlanByFilter**](FulfillmentPlanApi.md#getFulfillmentPlanByFilter) | **GET** /beta/fulfillmentPlan/search | Search fulfillmentPlans by filter
 [**getFulfillmentPlanById**](FulfillmentPlanApi.md#getFulfillmentPlanById) | **GET** /beta/fulfillmentPlan/{fulfillmentPlanId} | Get a fulfillmentPlan by id
+[**getFulfillmentPlanTags**](FulfillmentPlanApi.md#getFulfillmentPlanTags) | **GET** /beta/fulfillmentPlan/{fulfillmentPlanId}/tag | Get the tags for a fulfillmentPlan.
 [**updateFulfillmentPlan**](FulfillmentPlanApi.md#updateFulfillmentPlan) | **PUT** /beta/fulfillmentPlan | Update a fulfillmentPlan
 [**updateFulfillmentPlanCustomFields**](FulfillmentPlanApi.md#updateFulfillmentPlanCustomFields) | **PUT** /beta/fulfillmentPlan/customFields | Update a fulfillmentPlan custom fields
 
@@ -65,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addFulfillmentPlanAudit"></a>
+# **addFulfillmentPlanAudit**
+> addFulfillmentPlanAudit(fulfillmentPlanId, fulfillmentPlanAudit)
+
+Add new audit for a fulfillmentPlan
+
+Adds an audit to an existing fulfillmentPlan.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.FulfillmentPlanApi()
+
+var fulfillmentPlanId = 56; // {Integer} Id of the fulfillmentPlan to add an audit to
+
+var fulfillmentPlanAudit = "fulfillmentPlanAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addFulfillmentPlanAudit(fulfillmentPlanId, fulfillmentPlanAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fulfillmentPlanId** | **Integer**| Id of the fulfillmentPlan to add an audit to | 
+ **fulfillmentPlanAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addFulfillmentPlanTag"></a>
+# **addFulfillmentPlanTag**
+> addFulfillmentPlanTag(fulfillmentPlanId, fulfillmentPlanTag)
+
+Add new tags for a fulfillmentPlan.
+
+Adds a tag to an existing fulfillmentPlan.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.FulfillmentPlanApi()
+
+var fulfillmentPlanId = 56; // {Integer} Id of the fulfillmentPlan to add a tag to
+
+var fulfillmentPlanTag = "fulfillmentPlanTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addFulfillmentPlanTag(fulfillmentPlanId, fulfillmentPlanTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fulfillmentPlanId** | **Integer**| Id of the fulfillmentPlan to add a tag to | 
+ **fulfillmentPlanTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteFulfillmentPlan"></a>
 # **deleteFulfillmentPlan**
 > deleteFulfillmentPlan(fulfillmentPlanId)
@@ -108,6 +225,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteFulfillmentPlanTag"></a>
+# **deleteFulfillmentPlanTag**
+> deleteFulfillmentPlanTag(fulfillmentPlanId, fulfillmentPlanTag)
+
+Delete a tag for a fulfillmentPlan.
+
+Deletes an existing fulfillmentPlan tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.FulfillmentPlanApi()
+
+var fulfillmentPlanId = 56; // {Integer} Id of the fulfillmentPlan to remove tag from
+
+var fulfillmentPlanTag = "fulfillmentPlanTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteFulfillmentPlanTag(fulfillmentPlanId, fulfillmentPlanTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fulfillmentPlanId** | **Integer**| Id of the fulfillmentPlan to remove tag from | 
+ **fulfillmentPlanTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateFulfillmentPlanById"></a>
+# **getDuplicateFulfillmentPlanById**
+> FulfillmentPlan getDuplicateFulfillmentPlanById(fulfillmentPlanId)
+
+Get a duplicated a fulfillmentPlan by id
+
+Returns a duplicated fulfillmentPlan identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.FulfillmentPlanApi()
+
+var fulfillmentPlanId = 56; // {Integer} Id of the fulfillmentPlan to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateFulfillmentPlanById(fulfillmentPlanId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fulfillmentPlanId** | **Integer**| Id of the fulfillmentPlan to be duplicated. | 
+
+### Return type
+
+[**FulfillmentPlan**](FulfillmentPlan.md)
 
 ### Authorization
 
@@ -221,6 +447,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FulfillmentPlan**](FulfillmentPlan.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getFulfillmentPlanTags"></a>
+# **getFulfillmentPlanTags**
+> getFulfillmentPlanTags(fulfillmentPlanId)
+
+Get the tags for a fulfillmentPlan.
+
+Get all existing fulfillmentPlan tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.FulfillmentPlanApi()
+
+var fulfillmentPlanId = 56; // {Integer} Id of the fulfillmentPlan to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getFulfillmentPlanTags(fulfillmentPlanId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fulfillmentPlanId** | **Integer**| Id of the fulfillmentPlan to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

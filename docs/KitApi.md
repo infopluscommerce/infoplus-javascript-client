@@ -5,9 +5,14 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addKit**](KitApi.md#addKit) | **POST** /beta/kit | Create a kit
+[**addKitAudit**](KitApi.md#addKitAudit) | **PUT** /beta/kit/{kitId}/audit/{kitAudit} | Add new audit for a kit
+[**addKitTag**](KitApi.md#addKitTag) | **PUT** /beta/kit/{kitId}/tag/{kitTag} | Add new tags for a kit.
 [**deleteKit**](KitApi.md#deleteKit) | **DELETE** /beta/kit/{kitId} | Delete a kit
+[**deleteKitTag**](KitApi.md#deleteKitTag) | **DELETE** /beta/kit/{kitId}/tag/{kitTag} | Delete a tag for a kit.
+[**getDuplicateKitById**](KitApi.md#getDuplicateKitById) | **GET** /beta/kit/duplicate/{kitId} | Get a duplicated a kit by id
 [**getKitByFilter**](KitApi.md#getKitByFilter) | **GET** /beta/kit/search | Search kits by filter
 [**getKitById**](KitApi.md#getKitById) | **GET** /beta/kit/{kitId} | Get a kit by id
+[**getKitTags**](KitApi.md#getKitTags) | **GET** /beta/kit/{kitId}/tag | Get the tags for a kit.
 [**updateKit**](KitApi.md#updateKit) | **PUT** /beta/kit | Update a kit
 [**updateKitCustomFields**](KitApi.md#updateKitCustomFields) | **PUT** /beta/kit/customFields | Update a kit custom fields
 
@@ -65,6 +70,118 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="addKitAudit"></a>
+# **addKitAudit**
+> addKitAudit(kitId, kitAudit)
+
+Add new audit for a kit
+
+Adds an audit to an existing kit.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.KitApi()
+
+var kitId = 56; // {Integer} Id of the kit to add an audit to
+
+var kitAudit = "kitAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addKitAudit(kitId, kitAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kitId** | **Integer**| Id of the kit to add an audit to | 
+ **kitAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addKitTag"></a>
+# **addKitTag**
+> addKitTag(kitId, kitTag)
+
+Add new tags for a kit.
+
+Adds a tag to an existing kit.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.KitApi()
+
+var kitId = 56; // {Integer} Id of the kit to add a tag to
+
+var kitTag = "kitTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addKitTag(kitId, kitTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kitId** | **Integer**| Id of the kit to add a tag to | 
+ **kitTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteKit"></a>
 # **deleteKit**
 > deleteKit(kitId)
@@ -108,6 +225,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteKitTag"></a>
+# **deleteKitTag**
+> deleteKitTag(kitId, kitTag)
+
+Delete a tag for a kit.
+
+Deletes an existing kit tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.KitApi()
+
+var kitId = 56; // {Integer} Id of the kit to remove tag from
+
+var kitTag = "kitTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteKitTag(kitId, kitTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kitId** | **Integer**| Id of the kit to remove tag from | 
+ **kitTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateKitById"></a>
+# **getDuplicateKitById**
+> Kit getDuplicateKitById(kitId)
+
+Get a duplicated a kit by id
+
+Returns a duplicated kit identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.KitApi()
+
+var kitId = 56; // {Integer} Id of the kit to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateKitById(kitId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kitId** | **Integer**| Id of the kit to be duplicated. | 
+
+### Return type
+
+[**Kit**](Kit.md)
 
 ### Authorization
 
@@ -221,6 +447,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Kit**](Kit.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getKitTags"></a>
+# **getKitTags**
+> getKitTags(kitId)
+
+Get the tags for a kit.
+
+Get all existing kit tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.KitApi()
+
+var kitId = 56; // {Integer} Id of the kit to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getKitTags(kitId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kitId** | **Integer**| Id of the kit to get tags for | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

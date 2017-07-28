@@ -43,6 +43,7 @@
 
 
 
+
   };
 
   /**
@@ -85,6 +86,9 @@
       }
       if (data.hasOwnProperty('packingSlipId')) {
         obj['packingSlipId'] = ApiClient.convertToType(data['packingSlipId'], 'Integer');
+      }
+      if (data.hasOwnProperty('orderInvoiceId')) {
+        obj['orderInvoiceId'] = ApiClient.convertToType(data['orderInvoiceId'], 'Integer');
       }
       if (data.hasOwnProperty('orderConfirmationEmailId')) {
         obj['orderConfirmationEmailId'] = ApiClient.convertToType(data['orderConfirmationEmailId'], 'Integer');
@@ -151,6 +155,11 @@
    * @member {Integer} packingSlipId
    */
   exports.prototype['packingSlipId'] = undefined;
+
+  /**
+   * @member {Integer} orderInvoiceId
+   */
+  exports.prototype['orderInvoiceId'] = undefined;
 
   /**
    * @member {Integer} orderConfirmationEmailId

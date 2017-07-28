@@ -26,16 +26,16 @@
    * @alias module:model/CartonContent
    * @class
    * @param orderNo
-   * @param cartonNoId
+   * @param cartonId
    * @param lineItemId
    * @param quantity
    */
-  var exports = function(orderNo, cartonNoId, lineItemId, quantity) {
+  var exports = function(orderNo, cartonId, lineItemId, quantity) {
 
 
 
     this['orderNo'] = orderNo;
-    this['cartonNoId'] = cartonNoId;
+    this['cartonId'] = cartonId;
     this['lineItemId'] = lineItemId;
 
     this['quantity'] = quantity;
@@ -67,8 +67,8 @@
       if (data.hasOwnProperty('orderNo')) {
         obj['orderNo'] = ApiClient.convertToType(data['orderNo'], 'Number');
       }
-      if (data.hasOwnProperty('cartonNoId')) {
-        obj['cartonNoId'] = ApiClient.convertToType(data['cartonNoId'], 'Integer');
+      if (data.hasOwnProperty('cartonId')) {
+        obj['cartonId'] = ApiClient.convertToType(data['cartonId'], 'Integer');
       }
       if (data.hasOwnProperty('lineItemId')) {
         obj['lineItemId'] = ApiClient.convertToType(data['lineItemId'], 'Integer');
@@ -118,9 +118,9 @@
   exports.prototype['orderNo'] = undefined;
 
   /**
-   * @member {Integer} cartonNoId
+   * @member {Integer} cartonId
    */
-  exports.prototype['cartonNoId'] = undefined;
+  exports.prototype['cartonId'] = undefined;
 
   /**
    * @member {Integer} lineItemId

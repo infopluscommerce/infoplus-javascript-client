@@ -50,6 +50,7 @@
 
     this['online'] = online;
 
+
     this['allowItemMixing'] = allowItemMixing;
 
 
@@ -114,6 +115,9 @@
       }
       if (data.hasOwnProperty('priorityCode')) {
         obj['priorityCode'] = ApiClient.convertToType(data['priorityCode'], 'Integer');
+      }
+      if (data.hasOwnProperty('cost')) {
+        obj['cost'] = ApiClient.convertToType(data['cost'], 'Integer');
       }
       if (data.hasOwnProperty('allowItemMixing')) {
         obj['allowItemMixing'] = ApiClient.convertToType(data['allowItemMixing'], 'Boolean');
@@ -212,6 +216,11 @@
    * @member {Integer} priorityCode
    */
   exports.prototype['priorityCode'] = undefined;
+
+  /**
+   * @member {Integer} cost
+   */
+  exports.prototype['cost'] = undefined;
 
   /**
    * @member {Boolean} allowItemMixing

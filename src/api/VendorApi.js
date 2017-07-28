@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addVendorAudit operation.
+     * @callback module:api/VendorApi~addVendorAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a vendor
+     * Adds an audit to an existing vendor.
+     * @param {Integer} vendorId Id of the vendor to add an audit to
+     * @param {String} vendorAudit The audit to add
+     * @param {module:api/VendorApi~addVendorAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addVendorAudit = function(vendorId, vendorAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorId' is set
+      if (vendorId == undefined || vendorId == null) {
+        throw "Missing the required parameter 'vendorId' when calling addVendorAudit";
+      }
+
+      // verify the required parameter 'vendorAudit' is set
+      if (vendorAudit == undefined || vendorAudit == null) {
+        throw "Missing the required parameter 'vendorAudit' when calling addVendorAudit";
+      }
+
+
+      var pathParams = {
+        'vendorId': vendorId,
+        'vendorAudit': vendorAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendor/{vendorId}/audit/{vendorAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addVendorTag operation.
+     * @callback module:api/VendorApi~addVendorTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a vendor.
+     * Adds a tag to an existing vendor.
+     * @param {Integer} vendorId Id of the vendor to add a tag to
+     * @param {String} vendorTag The tag to add
+     * @param {module:api/VendorApi~addVendorTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addVendorTag = function(vendorId, vendorTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorId' is set
+      if (vendorId == undefined || vendorId == null) {
+        throw "Missing the required parameter 'vendorId' when calling addVendorTag";
+      }
+
+      // verify the required parameter 'vendorTag' is set
+      if (vendorTag == undefined || vendorTag == null) {
+        throw "Missing the required parameter 'vendorTag' when calling addVendorTag";
+      }
+
+
+      var pathParams = {
+        'vendorId': vendorId,
+        'vendorTag': vendorTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendor/{vendorId}/tag/{vendorTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteVendor operation.
      * @callback module:api/VendorApi~deleteVendorCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,104 @@
 
       return this.apiClient.callApi(
         '/beta/vendor/{vendorId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteVendorTag operation.
+     * @callback module:api/VendorApi~deleteVendorTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a vendor.
+     * Deletes an existing vendor tag using the specified data.
+     * @param {Integer} vendorId Id of the vendor to remove tag from
+     * @param {String} vendorTag The tag to delete
+     * @param {module:api/VendorApi~deleteVendorTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteVendorTag = function(vendorId, vendorTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorId' is set
+      if (vendorId == undefined || vendorId == null) {
+        throw "Missing the required parameter 'vendorId' when calling deleteVendorTag";
+      }
+
+      // verify the required parameter 'vendorTag' is set
+      if (vendorTag == undefined || vendorTag == null) {
+        throw "Missing the required parameter 'vendorTag' when calling deleteVendorTag";
+      }
+
+
+      var pathParams = {
+        'vendorId': vendorId,
+        'vendorTag': vendorTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendor/{vendorId}/tag/{vendorTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateVendorById operation.
+     * @callback module:api/VendorApi~getDuplicateVendorByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vendor} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a vendor by id
+     * Returns a duplicated vendor identified by the specified id.
+     * @param {Integer} vendorId Id of the vendor to be duplicated.
+     * @param {module:api/VendorApi~getDuplicateVendorByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/Vendor}
+     */
+    this.getDuplicateVendorById = function(vendorId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorId' is set
+      if (vendorId == undefined || vendorId == null) {
+        throw "Missing the required parameter 'vendorId' when calling getDuplicateVendorById";
+      }
+
+
+      var pathParams = {
+        'vendorId': vendorId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vendor;
+
+      return this.apiClient.callApi(
+        '/beta/vendor/duplicate/{vendorId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +414,51 @@
 
       return this.apiClient.callApi(
         '/beta/vendor/{vendorId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getVendorTags operation.
+     * @callback module:api/VendorApi~getVendorTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a vendor.
+     * Get all existing vendor tags.
+     * @param {Integer} vendorId Id of the vendor to get tags for
+     * @param {module:api/VendorApi~getVendorTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getVendorTags = function(vendorId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vendorId' is set
+      if (vendorId == undefined || vendorId == null) {
+        throw "Missing the required parameter 'vendorId' when calling getVendorTags";
+      }
+
+
+      var pathParams = {
+        'vendorId': vendorId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/vendor/{vendorId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

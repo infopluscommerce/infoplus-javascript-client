@@ -78,6 +78,110 @@
     }
 
     /**
+     * Callback function to receive the result of the addManageScheduledPlansAudit operation.
+     * @callback module:api/ManageScheduledPlansApi~addManageScheduledPlansAuditCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new audit for a manageScheduledPlans
+     * Adds an audit to an existing manageScheduledPlans.
+     * @param {Integer} manageScheduledPlansId Id of the manageScheduledPlans to add an audit to
+     * @param {String} manageScheduledPlansAudit The audit to add
+     * @param {module:api/ManageScheduledPlansApi~addManageScheduledPlansAuditCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addManageScheduledPlansAudit = function(manageScheduledPlansId, manageScheduledPlansAudit, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'manageScheduledPlansId' is set
+      if (manageScheduledPlansId == undefined || manageScheduledPlansId == null) {
+        throw "Missing the required parameter 'manageScheduledPlansId' when calling addManageScheduledPlansAudit";
+      }
+
+      // verify the required parameter 'manageScheduledPlansAudit' is set
+      if (manageScheduledPlansAudit == undefined || manageScheduledPlansAudit == null) {
+        throw "Missing the required parameter 'manageScheduledPlansAudit' when calling addManageScheduledPlansAudit";
+      }
+
+
+      var pathParams = {
+        'manageScheduledPlansId': manageScheduledPlansId,
+        'manageScheduledPlansAudit': manageScheduledPlansAudit
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/manageScheduledPlans/{manageScheduledPlansId}/audit/{manageScheduledPlansAudit}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the addManageScheduledPlansTag operation.
+     * @callback module:api/ManageScheduledPlansApi~addManageScheduledPlansTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Add new tags for a manageScheduledPlans.
+     * Adds a tag to an existing manageScheduledPlans.
+     * @param {Integer} manageScheduledPlansId Id of the manageScheduledPlans to add a tag to
+     * @param {String} manageScheduledPlansTag The tag to add
+     * @param {module:api/ManageScheduledPlansApi~addManageScheduledPlansTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.addManageScheduledPlansTag = function(manageScheduledPlansId, manageScheduledPlansTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'manageScheduledPlansId' is set
+      if (manageScheduledPlansId == undefined || manageScheduledPlansId == null) {
+        throw "Missing the required parameter 'manageScheduledPlansId' when calling addManageScheduledPlansTag";
+      }
+
+      // verify the required parameter 'manageScheduledPlansTag' is set
+      if (manageScheduledPlansTag == undefined || manageScheduledPlansTag == null) {
+        throw "Missing the required parameter 'manageScheduledPlansTag' when calling addManageScheduledPlansTag";
+      }
+
+
+      var pathParams = {
+        'manageScheduledPlansId': manageScheduledPlansId,
+        'manageScheduledPlansTag': manageScheduledPlansTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/manageScheduledPlans/{manageScheduledPlansId}/tag/{manageScheduledPlansTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the deleteManageScheduledPlans operation.
      * @callback module:api/ManageScheduledPlansApi~deleteManageScheduledPlansCallback
      * @param {String} error Error message, if any.
@@ -117,6 +221,104 @@
 
       return this.apiClient.callApi(
         '/beta/manageScheduledPlans/{manageScheduledPlansId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteManageScheduledPlansTag operation.
+     * @callback module:api/ManageScheduledPlansApi~deleteManageScheduledPlansTagCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a tag for a manageScheduledPlans.
+     * Deletes an existing manageScheduledPlans tag using the specified data.
+     * @param {Integer} manageScheduledPlansId Id of the manageScheduledPlans to remove tag from
+     * @param {String} manageScheduledPlansTag The tag to delete
+     * @param {module:api/ManageScheduledPlansApi~deleteManageScheduledPlansTagCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteManageScheduledPlansTag = function(manageScheduledPlansId, manageScheduledPlansTag, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'manageScheduledPlansId' is set
+      if (manageScheduledPlansId == undefined || manageScheduledPlansId == null) {
+        throw "Missing the required parameter 'manageScheduledPlansId' when calling deleteManageScheduledPlansTag";
+      }
+
+      // verify the required parameter 'manageScheduledPlansTag' is set
+      if (manageScheduledPlansTag == undefined || manageScheduledPlansTag == null) {
+        throw "Missing the required parameter 'manageScheduledPlansTag' when calling deleteManageScheduledPlansTag";
+      }
+
+
+      var pathParams = {
+        'manageScheduledPlansId': manageScheduledPlansId,
+        'manageScheduledPlansTag': manageScheduledPlansTag
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/manageScheduledPlans/{manageScheduledPlansId}/tag/{manageScheduledPlansTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDuplicateManageScheduledPlansById operation.
+     * @callback module:api/ManageScheduledPlansApi~getDuplicateManageScheduledPlansByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ManageScheduledPlans} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get a duplicated a manageScheduledPlans by id
+     * Returns a duplicated manageScheduledPlans identified by the specified id.
+     * @param {Integer} manageScheduledPlansId Id of the manageScheduledPlans to be duplicated.
+     * @param {module:api/ManageScheduledPlansApi~getDuplicateManageScheduledPlansByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/ManageScheduledPlans}
+     */
+    this.getDuplicateManageScheduledPlansById = function(manageScheduledPlansId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'manageScheduledPlansId' is set
+      if (manageScheduledPlansId == undefined || manageScheduledPlansId == null) {
+        throw "Missing the required parameter 'manageScheduledPlansId' when calling getDuplicateManageScheduledPlansById";
+      }
+
+
+      var pathParams = {
+        'manageScheduledPlansId': manageScheduledPlansId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ManageScheduledPlans;
+
+      return this.apiClient.callApi(
+        '/beta/manageScheduledPlans/duplicate/{manageScheduledPlansId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -212,6 +414,51 @@
 
       return this.apiClient.callApi(
         '/beta/manageScheduledPlans/{manageScheduledPlansId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getManageScheduledPlansTags operation.
+     * @callback module:api/ManageScheduledPlansApi~getManageScheduledPlansTagsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the tags for a manageScheduledPlans.
+     * Get all existing manageScheduledPlans tags.
+     * @param {Integer} manageScheduledPlansId Id of the manageScheduledPlans to get tags for
+     * @param {module:api/ManageScheduledPlansApi~getManageScheduledPlansTagsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getManageScheduledPlansTags = function(manageScheduledPlansId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'manageScheduledPlansId' is set
+      if (manageScheduledPlansId == undefined || manageScheduledPlansId == null) {
+        throw "Missing the required parameter 'manageScheduledPlansId' when calling getManageScheduledPlansTags";
+      }
+
+
+      var pathParams = {
+        'manageScheduledPlansId': manageScheduledPlansId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/manageScheduledPlans/{manageScheduledPlansId}/tag', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

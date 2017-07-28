@@ -34,7 +34,14 @@
 
 
     this['lobId'] = lobId;
+
     this['bolNo'] = bolNo;
+
+
+
+
+
+
 
 
 
@@ -104,6 +111,9 @@
       if (data.hasOwnProperty('lobId')) {
         obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
       }
+      if (data.hasOwnProperty('orderNo')) {
+        obj['orderNo'] = ApiClient.convertToType(data['orderNo'], 'Number');
+      }
       if (data.hasOwnProperty('bolNo')) {
         obj['bolNo'] = ApiClient.convertToType(data['bolNo'], 'String');
       }
@@ -112,6 +122,9 @@
       }
       if (data.hasOwnProperty('shipFromName')) {
         obj['shipFromName'] = ApiClient.convertToType(data['shipFromName'], 'String');
+      }
+      if (data.hasOwnProperty('shipFromAttention')) {
+        obj['shipFromAttention'] = ApiClient.convertToType(data['shipFromAttention'], 'String');
       }
       if (data.hasOwnProperty('shipFromAddress')) {
         obj['shipFromAddress'] = ApiClient.convertToType(data['shipFromAddress'], 'String');
@@ -125,6 +138,9 @@
       if (data.hasOwnProperty('shipFromZip')) {
         obj['shipFromZip'] = ApiClient.convertToType(data['shipFromZip'], 'String');
       }
+      if (data.hasOwnProperty('shipFromCountry')) {
+        obj['shipFromCountry'] = ApiClient.convertToType(data['shipFromCountry'], 'String');
+      }
       if (data.hasOwnProperty('sid')) {
         obj['sid'] = ApiClient.convertToType(data['sid'], 'String');
       }
@@ -133,6 +149,9 @@
       }
       if (data.hasOwnProperty('shipToName')) {
         obj['shipToName'] = ApiClient.convertToType(data['shipToName'], 'String');
+      }
+      if (data.hasOwnProperty('shipToAttention')) {
+        obj['shipToAttention'] = ApiClient.convertToType(data['shipToAttention'], 'String');
       }
       if (data.hasOwnProperty('shipToAddress')) {
         obj['shipToAddress'] = ApiClient.convertToType(data['shipToAddress'], 'String');
@@ -146,6 +165,9 @@
       if (data.hasOwnProperty('shipToZip')) {
         obj['shipToZip'] = ApiClient.convertToType(data['shipToZip'], 'String');
       }
+      if (data.hasOwnProperty('shipToCountry')) {
+        obj['shipToCountry'] = ApiClient.convertToType(data['shipToCountry'], 'String');
+      }
       if (data.hasOwnProperty('shipToLocationNo')) {
         obj['shipToLocationNo'] = ApiClient.convertToType(data['shipToLocationNo'], 'String');
       }
@@ -158,6 +180,9 @@
       if (data.hasOwnProperty('billToName')) {
         obj['billToName'] = ApiClient.convertToType(data['billToName'], 'String');
       }
+      if (data.hasOwnProperty('billToAttention')) {
+        obj['billToAttention'] = ApiClient.convertToType(data['billToAttention'], 'String');
+      }
       if (data.hasOwnProperty('billToAddress')) {
         obj['billToAddress'] = ApiClient.convertToType(data['billToAddress'], 'String');
       }
@@ -169,6 +194,9 @@
       }
       if (data.hasOwnProperty('billToZip')) {
         obj['billToZip'] = ApiClient.convertToType(data['billToZip'], 'String');
+      }
+      if (data.hasOwnProperty('billToCountry')) {
+        obj['billToCountry'] = ApiClient.convertToType(data['billToCountry'], 'String');
       }
       if (data.hasOwnProperty('isTrailerLoadedByShipper')) {
         obj['isTrailerLoadedByShipper'] = ApiClient.convertToType(data['isTrailerLoadedByShipper'], 'Boolean');
@@ -265,6 +293,11 @@
   exports.prototype['lobId'] = undefined;
 
   /**
+   * @member {Number} orderNo
+   */
+  exports.prototype['orderNo'] = undefined;
+
+  /**
    * @member {String} bolNo
    */
   exports.prototype['bolNo'] = undefined;
@@ -278,6 +311,11 @@
    * @member {String} shipFromName
    */
   exports.prototype['shipFromName'] = undefined;
+
+  /**
+   * @member {String} shipFromAttention
+   */
+  exports.prototype['shipFromAttention'] = undefined;
 
   /**
    * @member {String} shipFromAddress
@@ -300,6 +338,11 @@
   exports.prototype['shipFromZip'] = undefined;
 
   /**
+   * @member {String} shipFromCountry
+   */
+  exports.prototype['shipFromCountry'] = undefined;
+
+  /**
    * @member {String} sid
    */
   exports.prototype['sid'] = undefined;
@@ -314,6 +357,11 @@
    * @member {String} shipToName
    */
   exports.prototype['shipToName'] = undefined;
+
+  /**
+   * @member {String} shipToAttention
+   */
+  exports.prototype['shipToAttention'] = undefined;
 
   /**
    * @member {String} shipToAddress
@@ -334,6 +382,11 @@
    * @member {String} shipToZip
    */
   exports.prototype['shipToZip'] = undefined;
+
+  /**
+   * @member {String} shipToCountry
+   */
+  exports.prototype['shipToCountry'] = undefined;
 
   /**
    * @member {String} shipToLocationNo
@@ -357,6 +410,11 @@
   exports.prototype['billToName'] = undefined;
 
   /**
+   * @member {String} billToAttention
+   */
+  exports.prototype['billToAttention'] = undefined;
+
+  /**
    * @member {String} billToAddress
    */
   exports.prototype['billToAddress'] = undefined;
@@ -375,6 +433,11 @@
    * @member {String} billToZip
    */
   exports.prototype['billToZip'] = undefined;
+
+  /**
+   * @member {String} billToCountry
+   */
+  exports.prototype['billToCountry'] = undefined;
 
   /**
    * @member {Boolean} isTrailerLoadedByShipper

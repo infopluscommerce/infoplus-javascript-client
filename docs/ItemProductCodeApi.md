@@ -4,17 +4,352 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getItemProductCodeBySearchText**](ItemProductCodeApi.md#getItemProductCodeBySearchText) | **GET** /beta/itemProductCode/search | Search itemProductCodes
-[**getTranslateProductCodeById**](ItemProductCodeApi.md#getTranslateProductCodeById) | **GET** /beta/itemProductCode/{itemProductCodeId} | Get an itemProductCode by id
+[**addItemProductCode**](ItemProductCodeApi.md#addItemProductCode) | **POST** /beta/itemProductCode | Create an itemProductCode
+[**addItemProductCodeAudit**](ItemProductCodeApi.md#addItemProductCodeAudit) | **PUT** /beta/itemProductCode/{itemProductCodeId}/audit/{itemProductCodeAudit} | Add new audit for an itemProductCode
+[**addItemProductCodeTag**](ItemProductCodeApi.md#addItemProductCodeTag) | **PUT** /beta/itemProductCode/{itemProductCodeId}/tag/{itemProductCodeTag} | Add new tags for an itemProductCode.
+[**deleteItemProductCode**](ItemProductCodeApi.md#deleteItemProductCode) | **DELETE** /beta/itemProductCode/{itemProductCodeId} | Delete an itemProductCode
+[**deleteItemProductCodeTag**](ItemProductCodeApi.md#deleteItemProductCodeTag) | **DELETE** /beta/itemProductCode/{itemProductCodeId}/tag/{itemProductCodeTag} | Delete a tag for an itemProductCode.
+[**getDuplicateItemProductCodeById**](ItemProductCodeApi.md#getDuplicateItemProductCodeById) | **GET** /beta/itemProductCode/duplicate/{itemProductCodeId} | Get a duplicated an itemProductCode by id
+[**getItemProductCodeByFilter**](ItemProductCodeApi.md#getItemProductCodeByFilter) | **GET** /beta/itemProductCode/search | Search itemProductCodes by filter
+[**getItemProductCodeById**](ItemProductCodeApi.md#getItemProductCodeById) | **GET** /beta/itemProductCode/{itemProductCodeId} | Get an itemProductCode by id
+[**getItemProductCodeTags**](ItemProductCodeApi.md#getItemProductCodeTags) | **GET** /beta/itemProductCode/{itemProductCodeId}/tag | Get the tags for an itemProductCode.
+[**updateItemProductCode**](ItemProductCodeApi.md#updateItemProductCode) | **PUT** /beta/itemProductCode | Update an itemProductCode
 
 
-<a name="getItemProductCodeBySearchText"></a>
-# **getItemProductCodeBySearchText**
-> [ItemProductCode] getItemProductCodeBySearchText(opts)
+<a name="addItemProductCode"></a>
+# **addItemProductCode**
+> ItemProductCode addItemProductCode(body)
 
-Search itemProductCodes
+Create an itemProductCode
 
-Returns the list of itemProductCodes that match the given searchText.
+Inserts a new itemProductCode using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var body = new infoplus.ItemProductCode(); // {ItemProductCode} ItemProductCode to be inserted.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.addItemProductCode(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ItemProductCode**](ItemProductCode.md)| ItemProductCode to be inserted. | 
+
+### Return type
+
+[**ItemProductCode**](ItemProductCode.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addItemProductCodeAudit"></a>
+# **addItemProductCodeAudit**
+> addItemProductCodeAudit(itemProductCodeId, itemProductCodeAudit)
+
+Add new audit for an itemProductCode
+
+Adds an audit to an existing itemProductCode.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to add an audit to
+
+var itemProductCodeAudit = "itemProductCodeAudit_example"; // {String} The audit to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addItemProductCodeAudit(itemProductCodeId, itemProductCodeAudit, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to add an audit to | 
+ **itemProductCodeAudit** | **String**| The audit to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="addItemProductCodeTag"></a>
+# **addItemProductCodeTag**
+> addItemProductCodeTag(itemProductCodeId, itemProductCodeTag)
+
+Add new tags for an itemProductCode.
+
+Adds a tag to an existing itemProductCode.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to add a tag to
+
+var itemProductCodeTag = "itemProductCodeTag_example"; // {String} The tag to add
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.addItemProductCodeTag(itemProductCodeId, itemProductCodeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to add a tag to | 
+ **itemProductCodeTag** | **String**| The tag to add | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteItemProductCode"></a>
+# **deleteItemProductCode**
+> deleteItemProductCode(itemProductCodeId)
+
+Delete an itemProductCode
+
+Deletes the itemProductCode identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to be deleted.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteItemProductCode(itemProductCodeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to be deleted. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="deleteItemProductCodeTag"></a>
+# **deleteItemProductCodeTag**
+> deleteItemProductCodeTag(itemProductCodeId, itemProductCodeTag)
+
+Delete a tag for an itemProductCode.
+
+Deletes an existing itemProductCode tag using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to remove tag from
+
+var itemProductCodeTag = "itemProductCodeTag_example"; // {String} The tag to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.deleteItemProductCodeTag(itemProductCodeId, itemProductCodeTag, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to remove tag from | 
+ **itemProductCodeTag** | **String**| The tag to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDuplicateItemProductCodeById"></a>
+# **getDuplicateItemProductCodeById**
+> ItemProductCode getDuplicateItemProductCodeById(itemProductCodeId)
+
+Get a duplicated an itemProductCode by id
+
+Returns a duplicated itemProductCode identified by the specified id.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to be duplicated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getDuplicateItemProductCodeById(itemProductCodeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to be duplicated. | 
+
+### Return type
+
+[**ItemProductCode**](ItemProductCode.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getItemProductCodeByFilter"></a>
+# **getItemProductCodeByFilter**
+> [ItemProductCode] getItemProductCodeByFilter(opts)
+
+Search itemProductCodes by filter
+
+Returns the list of itemProductCodes that match the given filter.
 
 ### Example
 ```javascript
@@ -30,9 +365,10 @@ api_key.apiKey = "YOUR API KEY"
 var apiInstance = new infoplus.ItemProductCodeApi()
 
 var opts = { 
-  'searchText': "searchText_example", // {String} Search text, used to filter results.
+  'filter': "filter_example", // {String} Query string, used to filter results.
   'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56 // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // {String} Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -42,16 +378,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getItemProductCodeBySearchText(opts, callback);
+api.getItemProductCodeByFilter(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **searchText** | **String**| Search text, used to filter results. | [optional] 
+ **filter** | **String**| Query string, used to filter results. | [optional] 
  **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
  **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
 
@@ -66,9 +403,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getTranslateProductCodeById"></a>
-# **getTranslateProductCodeById**
-> ItemProductCode getTranslateProductCodeById(itemProductCodeId)
+<a name="getItemProductCodeById"></a>
+# **getItemProductCodeById**
+> ItemProductCode getItemProductCodeById(itemProductCodeId)
 
 Get an itemProductCode by id
 
@@ -87,7 +424,7 @@ api_key.apiKey = "YOUR API KEY"
 
 var apiInstance = new infoplus.ItemProductCodeApi()
 
-var itemProductCodeId = "itemProductCodeId_example"; // {String} Id of itemProductCode to be returned.
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to be returned.
 
 
 var callback = function(error, data, response) {
@@ -97,14 +434,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getTranslateProductCodeById(itemProductCodeId, callback);
+api.getItemProductCodeById(itemProductCodeId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemProductCodeId** | **String**| Id of itemProductCode to be returned. | 
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to be returned. | 
 
 ### Return type
 
@@ -117,5 +454,111 @@ Name | Type | Description  | Notes
 ### HTTP reuqest headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getItemProductCodeTags"></a>
+# **getItemProductCodeTags**
+> getItemProductCodeTags(itemProductCodeId)
+
+Get the tags for an itemProductCode.
+
+Get all existing itemProductCode tags.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var itemProductCodeId = 56; // {Integer} Id of the itemProductCode to get tags for
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getItemProductCodeTags(itemProductCodeId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **itemProductCodeId** | **Integer**| Id of the itemProductCode to get tags for | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateItemProductCode"></a>
+# **updateItemProductCode**
+> updateItemProductCode(body)
+
+Update an itemProductCode
+
+Updates an existing itemProductCode using the specified data.
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.ItemProductCodeApi()
+
+var body = new infoplus.ItemProductCode(); // {ItemProductCode} ItemProductCode to be updated.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.updateItemProductCode(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ItemProductCode**](ItemProductCode.md)| ItemProductCode to be updated. | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

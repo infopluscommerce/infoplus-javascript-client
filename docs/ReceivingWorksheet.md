@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **status** | **String** |  | [optional] 
 **serviceLevel** | **String** |  | 
 **receivingProcessId** | **Integer** |  | [optional] 
+**dockDate** | **Date** |  | [optional] 
 **createdBy** | **Integer** |  | [optional] 
 **worksheetName** | **String** |  | 
 **carrier** | **String** |  | [optional] 

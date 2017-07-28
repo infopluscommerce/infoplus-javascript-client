@@ -43,6 +43,7 @@
 
 
 
+
   };
 
   /**
@@ -82,6 +83,9 @@
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('productIdTag')) {
+        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -138,6 +142,11 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+
+  /**
+   * @member {String} productIdTag
+   */
+  exports.prototype['productIdTag'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields
