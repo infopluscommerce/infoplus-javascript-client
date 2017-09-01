@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **orderSmartFilterId** | **Integer** |  | 
 **locationSmartFilterId** | **Integer** |  | [optional] 
 **maximumNumberOfOrders** | **Integer** |  | [optional] 
+**version** | **String** |  | [optional] 
 **createPickWork** | **Boolean** |  | [default to false]
 **pickingRule** | **String** |  | [optional] 
 **layoutRule** | **String** |  | [optional] 

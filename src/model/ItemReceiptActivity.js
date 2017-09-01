@@ -33,7 +33,15 @@
 
 
 
+
+
     this['lobId'] = lobId;
+
+
+
+
+
+
 
 
 
@@ -125,6 +133,12 @@
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
       }
+      if (data.hasOwnProperty('receiptASNCreateDate')) {
+        obj['receiptASNCreateDate'] = ApiClient.convertToType(data['receiptASNCreateDate'], 'Date');
+      }
+      if (data.hasOwnProperty('receiptModifyDate')) {
+        obj['receiptModifyDate'] = ApiClient.convertToType(data['receiptModifyDate'], 'Date');
+      }
       if (data.hasOwnProperty('itemReceiptId')) {
         obj['itemReceiptId'] = ApiClient.convertToType(data['itemReceiptId'], 'Integer');
       }
@@ -152,6 +166,12 @@
       if (data.hasOwnProperty('receiptReceiveDate')) {
         obj['receiptReceiveDate'] = ApiClient.convertToType(data['receiptReceiveDate'], 'Date');
       }
+      if (data.hasOwnProperty('receiptReceiveQuantity')) {
+        obj['receiptReceiveQuantity'] = ApiClient.convertToType(data['receiptReceiveQuantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('receiptNumberOfCases')) {
+        obj['receiptNumberOfCases'] = ApiClient.convertToType(data['receiptNumberOfCases'], 'Integer');
+      }
       if (data.hasOwnProperty('receiptStatus')) {
         obj['receiptStatus'] = ApiClient.convertToType(data['receiptStatus'], 'String');
       }
@@ -170,11 +190,23 @@
       if (data.hasOwnProperty('receiptWrapCodeText')) {
         obj['receiptWrapCodeText'] = ApiClient.convertToType(data['receiptWrapCodeText'], 'String');
       }
+      if (data.hasOwnProperty('receiptWrapUnitWeight')) {
+        obj['receiptWrapUnitWeight'] = ApiClient.convertToType(data['receiptWrapUnitWeight'], 'Number');
+      }
       if (data.hasOwnProperty('receiptCaseWeight')) {
         obj['receiptCaseWeight'] = ApiClient.convertToType(data['receiptCaseWeight'], 'Number');
       }
       if (data.hasOwnProperty('receiptProductIdTag')) {
         obj['receiptProductIdTag'] = ApiClient.convertToType(data['receiptProductIdTag'], 'String');
+      }
+      if (data.hasOwnProperty('receiptEnteredBy')) {
+        obj['receiptEnteredBy'] = ApiClient.convertToType(data['receiptEnteredBy'], 'String');
+      }
+      if (data.hasOwnProperty('receiptReceivedBy')) {
+        obj['receiptReceivedBy'] = ApiClient.convertToType(data['receiptReceivedBy'], 'String');
+      }
+      if (data.hasOwnProperty('receiptType')) {
+        obj['receiptType'] = ApiClient.convertToType(data['receiptType'], 'String');
       }
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Integer');
@@ -359,6 +391,16 @@
   exports.prototype['modifyDate'] = undefined;
 
   /**
+   * @member {Date} receiptASNCreateDate
+   */
+  exports.prototype['receiptASNCreateDate'] = undefined;
+
+  /**
+   * @member {Date} receiptModifyDate
+   */
+  exports.prototype['receiptModifyDate'] = undefined;
+
+  /**
    * @member {Integer} itemReceiptId
    */
   exports.prototype['itemReceiptId'] = undefined;
@@ -404,6 +446,16 @@
   exports.prototype['receiptReceiveDate'] = undefined;
 
   /**
+   * @member {Integer} receiptReceiveQuantity
+   */
+  exports.prototype['receiptReceiveQuantity'] = undefined;
+
+  /**
+   * @member {Integer} receiptNumberOfCases
+   */
+  exports.prototype['receiptNumberOfCases'] = undefined;
+
+  /**
    * @member {String} receiptStatus
    */
   exports.prototype['receiptStatus'] = undefined;
@@ -434,6 +486,11 @@
   exports.prototype['receiptWrapCodeText'] = undefined;
 
   /**
+   * @member {Number} receiptWrapUnitWeight
+   */
+  exports.prototype['receiptWrapUnitWeight'] = undefined;
+
+  /**
    * @member {Number} receiptCaseWeight
    */
   exports.prototype['receiptCaseWeight'] = undefined;
@@ -442,6 +499,21 @@
    * @member {String} receiptProductIdTag
    */
   exports.prototype['receiptProductIdTag'] = undefined;
+
+  /**
+   * @member {String} receiptEnteredBy
+   */
+  exports.prototype['receiptEnteredBy'] = undefined;
+
+  /**
+   * @member {String} receiptReceivedBy
+   */
+  exports.prototype['receiptReceivedBy'] = undefined;
+
+  /**
+   * @member {String} receiptType
+   */
+  exports.prototype['receiptType'] = undefined;
 
   /**
    * @member {Integer} warehouseId

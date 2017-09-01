@@ -29,7 +29,8 @@ Name | Type | Description | Notes
 **criticalAmount** | **Integer** |  | 
 **overallFixedReorderPoint** | **Integer** |  | [optional] 
 **overallLeadTime** | **Integer** |  | [optional] 
-**listPrice** | **Number** |  | [optional] 
+**sellPrice** | **Number** |  | [optional] 
+**pricingPer** | **String** |  | [optional] 
 **lotControlFlag** | **String** |  | [optional] 
 **maxCycle** | **Integer** |  | 
 **maxInterim** | **Integer** |  | 
@@ -57,6 +58,9 @@ Name | Type | Description | Notes
 **extrinsicDecimal1** | **Number** |  | [optional] 
 **extrinsicDecimal2** | **Number** |  | [optional] 
 **casebreakEnabled** | **String** |  | [optional] 
+**vendorId** | **Integer** |  | [optional] 
+**vendorPrice** | **Number** |  | [optional] 
+**vendorPer** | **String** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **forwardLotMixingRule** | **String** |  | 
 **storageLotMixingRule** | **String** |  | 

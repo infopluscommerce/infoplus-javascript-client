@@ -76,6 +76,8 @@ Name | Type | Description | Notes
 **destinationPriorityCode** | **Integer** |  | [optional] 
 **destinationCost** | **Integer** |  | [optional] 
 **destinationAllowItemMixing** | **Boolean** |  | [default to false]
+**workCreateDate** | **Date** |  | [optional] 
+**workModifyDate** | **Date** |  | [optional] 
 **masterRef** | **Integer** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
 **sku** | **String** |  | 
@@ -85,6 +87,10 @@ Name | Type | Description | Notes
 **unitCode** | **String** |  | 
 **wrapCode** | **String** |  | 
 **unitsPerWrap** | **Integer** |  | 
+**quantity** | **Integer** |  | [optional] 
+**numberOfWraps** | **Integer** |  | [optional] 
+**numberOfCases** | **Integer** |  | [optional] 
+**pickTouches** | **Integer** |  | [optional] 
 **classRestriction** | **String** |  | 
 **maxCycle** | **Integer** |  | 
 **maxInterim** | **Integer** |  | 

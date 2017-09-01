@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**addQuickAdjustmentTag**](QuickAdjustmentApi.md#addQuickAdjustmentTag) | **PUT** /beta/quickAdjustment/{quickAdjustmentId}/tag/{quickAdjustmentTag} | Add new tags for a quickAdjustment.
 [**deleteQuickAdjustment**](QuickAdjustmentApi.md#deleteQuickAdjustment) | **DELETE** /beta/quickAdjustment/{quickAdjustmentId} | Delete a quickAdjustment
 [**deleteQuickAdjustmentTag**](QuickAdjustmentApi.md#deleteQuickAdjustmentTag) | **DELETE** /beta/quickAdjustment/{quickAdjustmentId}/tag/{quickAdjustmentTag} | Delete a tag for a quickAdjustment.
+[**executeQuickAdjustment**](QuickAdjustmentApi.md#executeQuickAdjustment) | **POST** /beta/quickAdjustment/executeQuickAdjustment | Run the ExecuteQuickAdjustment process.
 [**getDuplicateQuickAdjustmentById**](QuickAdjustmentApi.md#getDuplicateQuickAdjustmentById) | **GET** /beta/quickAdjustment/duplicate/{quickAdjustmentId} | Get a duplicated a quickAdjustment by id
 [**getQuickAdjustmentByFilter**](QuickAdjustmentApi.md#getQuickAdjustmentByFilter) | **GET** /beta/quickAdjustment/search | Search quickAdjustments by filter
 [**getQuickAdjustmentById**](QuickAdjustmentApi.md#getQuickAdjustmentById) | **GET** /beta/quickAdjustment/{quickAdjustmentId} | Get a quickAdjustment by id
@@ -281,6 +282,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="executeQuickAdjustment"></a>
+# **executeQuickAdjustment**
+> [ProcessOutputAPIModel] executeQuickAdjustment(body)
+
+Run the ExecuteQuickAdjustment process.
+
+
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.QuickAdjustmentApi()
+
+var body = new infoplus.ExecuteQuickAdjustmentInputAPIModel(); // {ExecuteQuickAdjustmentInputAPIModel} Input data for ExecuteQuickAdjustment process.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.executeQuickAdjustment(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ExecuteQuickAdjustmentInputAPIModel**](ExecuteQuickAdjustmentInputAPIModel.md)| Input data for ExecuteQuickAdjustment process. | 
+
+### Return type
+
+[**[ProcessOutputAPIModel]**](ProcessOutputAPIModel.md)
 
 ### Authorization
 

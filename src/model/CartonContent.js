@@ -35,6 +35,7 @@
 
 
     this['orderNo'] = orderNo;
+
     this['cartonId'] = cartonId;
     this['lineItemId'] = lineItemId;
 
@@ -66,6 +67,9 @@
       }
       if (data.hasOwnProperty('orderNo')) {
         obj['orderNo'] = ApiClient.convertToType(data['orderNo'], 'Number');
+      }
+      if (data.hasOwnProperty('cartonNo')) {
+        obj['cartonNo'] = ApiClient.convertToType(data['cartonNo'], 'Integer');
       }
       if (data.hasOwnProperty('cartonId')) {
         obj['cartonId'] = ApiClient.convertToType(data['cartonId'], 'Integer');
@@ -116,6 +120,11 @@
    * @member {Number} orderNo
    */
   exports.prototype['orderNo'] = undefined;
+
+  /**
+   * @member {Integer} cartonNo
+   */
+  exports.prototype['cartonNo'] = undefined;
 
   /**
    * @member {Integer} cartonId

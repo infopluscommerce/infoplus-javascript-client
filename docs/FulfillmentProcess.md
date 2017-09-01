@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **orderSmartFilterId** | **Integer** |  | [optional] 
 **locationSmartFilterId** | **Integer** |  | [optional] 
 **orderLimit** | **Integer** |  | [optional] 
+**version** | **String** |  | [optional] 
 **numberOfOrders** | **Integer** |  | [optional] 
 **numberOfLines** | **Integer** |  | [optional] 
 **numberOfSKUs** | **Integer** |  | [optional] 

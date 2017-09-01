@@ -76,6 +76,7 @@
 
 
 
+
     this['createPackingSlip'] = createPackingSlip;
 
 
@@ -132,6 +133,9 @@
       }
       if (data.hasOwnProperty('orderLimit')) {
         obj['orderLimit'] = ApiClient.convertToType(data['orderLimit'], 'Integer');
+      }
+      if (data.hasOwnProperty('version')) {
+        obj['version'] = ApiClient.convertToType(data['version'], 'String');
       }
       if (data.hasOwnProperty('numberOfOrders')) {
         obj['numberOfOrders'] = ApiClient.convertToType(data['numberOfOrders'], 'Integer');
@@ -308,6 +312,11 @@
    * @member {Integer} orderLimit
    */
   exports.prototype['orderLimit'] = undefined;
+
+  /**
+   * @member {String} version
+   */
+  exports.prototype['version'] = undefined;
 
   /**
    * @member {Integer} numberOfOrders

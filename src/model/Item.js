@@ -79,6 +79,7 @@
 
 
 
+
     this['maxCycle'] = maxCycle;
     this['maxInterim'] = maxInterim;
 
@@ -97,6 +98,9 @@
 
 
     this['wrapCode'] = wrapCode;
+
+
+
 
 
 
@@ -237,8 +241,11 @@
       if (data.hasOwnProperty('overallLeadTime')) {
         obj['overallLeadTime'] = ApiClient.convertToType(data['overallLeadTime'], 'Integer');
       }
-      if (data.hasOwnProperty('listPrice')) {
-        obj['listPrice'] = ApiClient.convertToType(data['listPrice'], 'Number');
+      if (data.hasOwnProperty('sellPrice')) {
+        obj['sellPrice'] = ApiClient.convertToType(data['sellPrice'], 'Number');
+      }
+      if (data.hasOwnProperty('pricingPer')) {
+        obj['pricingPer'] = ApiClient.convertToType(data['pricingPer'], 'String');
       }
       if (data.hasOwnProperty('lotControlFlag')) {
         obj['lotControlFlag'] = ApiClient.convertToType(data['lotControlFlag'], 'String');
@@ -320,6 +327,15 @@
       }
       if (data.hasOwnProperty('casebreakEnabled')) {
         obj['casebreakEnabled'] = ApiClient.convertToType(data['casebreakEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('vendorId')) {
+        obj['vendorId'] = ApiClient.convertToType(data['vendorId'], 'Integer');
+      }
+      if (data.hasOwnProperty('vendorPrice')) {
+        obj['vendorPrice'] = ApiClient.convertToType(data['vendorPrice'], 'Number');
+      }
+      if (data.hasOwnProperty('vendorPer')) {
+        obj['vendorPer'] = ApiClient.convertToType(data['vendorPer'], 'String');
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
@@ -580,9 +596,14 @@
   exports.prototype['overallLeadTime'] = undefined;
 
   /**
-   * @member {Number} listPrice
+   * @member {Number} sellPrice
    */
-  exports.prototype['listPrice'] = undefined;
+  exports.prototype['sellPrice'] = undefined;
+
+  /**
+   * @member {String} pricingPer
+   */
+  exports.prototype['pricingPer'] = undefined;
 
   /**
    * @member {String} lotControlFlag
@@ -718,6 +739,21 @@
    * @member {String} casebreakEnabled
    */
   exports.prototype['casebreakEnabled'] = undefined;
+
+  /**
+   * @member {Integer} vendorId
+   */
+  exports.prototype['vendorId'] = undefined;
+
+  /**
+   * @member {Number} vendorPrice
+   */
+  exports.prototype['vendorPrice'] = undefined;
+
+  /**
+   * @member {String} vendorPer
+   */
+  exports.prototype['vendorPer'] = undefined;
 
   /**
    * @member {Date} modifyDate

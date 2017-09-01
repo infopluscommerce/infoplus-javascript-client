@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **cartonWidth** | **Number** |  | [optional] 
 **cartonHeight** | **Number** |  | [optional] 
 **cost** | **Number** |  | [optional] 
-**sell** | **Number** |  | [optional] 
+**sellPrice** | **Number** |  | [optional] 
 **pricingPer** | **String** |  | [optional] 
 **generatedItemReceiptId** | **Integer** |  | [optional] 
 **generatedASNId** | **Integer** |  | [optional] 

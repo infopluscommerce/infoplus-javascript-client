@@ -49,6 +49,7 @@
 
 
 
+
     this['sku'] = sku;
     this['orderQuantity'] = orderQuantity;
     this['requestedDeliveryDate'] = requestedDeliveryDate;
@@ -143,6 +144,9 @@
       if (data.hasOwnProperty('orderDate')) {
         obj['orderDate'] = ApiClient.convertToType(data['orderDate'], 'Date');
       }
+      if (data.hasOwnProperty('fullDescription')) {
+        obj['fullDescription'] = ApiClient.convertToType(data['fullDescription'], 'String');
+      }
       if (data.hasOwnProperty('factCost')) {
         obj['factCost'] = ApiClient.convertToType(data['factCost'], 'Number');
       }
@@ -170,8 +174,8 @@
       if (data.hasOwnProperty('cost')) {
         obj['cost'] = ApiClient.convertToType(data['cost'], 'Number');
       }
-      if (data.hasOwnProperty('sell')) {
-        obj['sell'] = ApiClient.convertToType(data['sell'], 'Number');
+      if (data.hasOwnProperty('sellPrice')) {
+        obj['sellPrice'] = ApiClient.convertToType(data['sellPrice'], 'Number');
       }
       if (data.hasOwnProperty('pricingPer')) {
         obj['pricingPer'] = ApiClient.convertToType(data['pricingPer'], 'String');
@@ -374,6 +378,11 @@
   exports.prototype['orderDate'] = undefined;
 
   /**
+   * @member {String} fullDescription
+   */
+  exports.prototype['fullDescription'] = undefined;
+
+  /**
    * @member {Number} factCost
    */
   exports.prototype['factCost'] = undefined;
@@ -419,9 +428,9 @@
   exports.prototype['cost'] = undefined;
 
   /**
-   * @member {Number} sell
+   * @member {Number} sellPrice
    */
-  exports.prototype['sell'] = undefined;
+  exports.prototype['sellPrice'] = undefined;
 
   /**
    * @member {String} pricingPer

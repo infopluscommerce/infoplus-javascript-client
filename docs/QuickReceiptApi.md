@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**addQuickReceiptTag**](QuickReceiptApi.md#addQuickReceiptTag) | **PUT** /beta/quickReceipt/{quickReceiptId}/tag/{quickReceiptTag} | Add new tags for a quickReceipt.
 [**deleteQuickReceipt**](QuickReceiptApi.md#deleteQuickReceipt) | **DELETE** /beta/quickReceipt/{quickReceiptId} | Delete a quickReceipt
 [**deleteQuickReceiptTag**](QuickReceiptApi.md#deleteQuickReceiptTag) | **DELETE** /beta/quickReceipt/{quickReceiptId}/tag/{quickReceiptTag} | Delete a tag for a quickReceipt.
+[**executeQuickReceipt**](QuickReceiptApi.md#executeQuickReceipt) | **POST** /beta/quickReceipt/executeQuickReceipt | Run the ExecuteQuickReceipt process.
 [**getDuplicateQuickReceiptById**](QuickReceiptApi.md#getDuplicateQuickReceiptById) | **GET** /beta/quickReceipt/duplicate/{quickReceiptId} | Get a duplicated a quickReceipt by id
 [**getQuickReceiptByFilter**](QuickReceiptApi.md#getQuickReceiptByFilter) | **GET** /beta/quickReceipt/search | Search quickReceipts by filter
 [**getQuickReceiptById**](QuickReceiptApi.md#getQuickReceiptById) | **GET** /beta/quickReceipt/{quickReceiptId} | Get a quickReceipt by id
@@ -281,6 +282,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP reuqest headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="executeQuickReceipt"></a>
+# **executeQuickReceipt**
+> [ProcessOutputAPIModel] executeQuickReceipt(body)
+
+Run the ExecuteQuickReceipt process.
+
+
+
+### Example
+```javascript
+var infoplus = require('infoplus-javascript-client');
+var defaultClient = infoplus.ApiClient.default;
+
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['API-Key'] = "Token"
+
+var apiInstance = new infoplus.QuickReceiptApi()
+
+var body = new infoplus.ExecuteQuickReceiptInputAPIModel(); // {ExecuteQuickReceiptInputAPIModel} Input data for ExecuteQuickReceipt process.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.executeQuickReceipt(body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ExecuteQuickReceiptInputAPIModel**](ExecuteQuickReceiptInputAPIModel.md)| Input data for ExecuteQuickReceipt process. | 
+
+### Return type
+
+[**[ProcessOutputAPIModel]**](ProcessOutputAPIModel.md)
 
 ### Authorization
 

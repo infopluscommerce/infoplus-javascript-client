@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **legacyPoNo** | **String** |  | [optional] 
 **warehouseId** | **Integer** |  | 
 **orderDate** | **Date** |  | [optional] 
+**fullDescription** | **String** |  | [optional] 
 **factCost** | **Number** |  | [optional] 
 **mlCost** | **Number** |  | [optional] 
 **sku** | **String** |  | 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 **wrapCode** | **String** |  | 
 **unitsPerWrap** | **Integer** |  | 
 **cost** | **Number** |  | [optional] 
-**sell** | **Number** |  | [optional] 
+**sellPrice** | **Number** |  | [optional] 
 **pricingPer** | **String** |  | [optional] 
 **maxFreight** | **Number** |  | [optional] 
 **chargeFreight** | **String** |  | 

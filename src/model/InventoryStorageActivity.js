@@ -113,6 +113,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -158,6 +161,15 @@
       }
       if (data.hasOwnProperty('address')) {
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
+      }
+      if (data.hasOwnProperty('numberOfCases')) {
+        obj['numberOfCases'] = ApiClient.convertToType(data['numberOfCases'], 'Integer');
+      }
+      if (data.hasOwnProperty('inventoryValue')) {
+        obj['inventoryValue'] = ApiClient.convertToType(data['inventoryValue'], 'Number');
+      }
+      if (data.hasOwnProperty('inventoryAgeDays')) {
+        obj['inventoryAgeDays'] = ApiClient.convertToType(data['inventoryAgeDays'], 'Integer');
       }
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Integer');
@@ -240,8 +252,8 @@
       if (data.hasOwnProperty('warehouseLocationCost')) {
         obj['warehouseLocationCost'] = ApiClient.convertToType(data['warehouseLocationCost'], 'Integer');
       }
-      if (data.hasOwnProperty('controlNo')) {
-        obj['controlNo'] = ApiClient.convertToType(data['controlNo'], 'String');
+      if (data.hasOwnProperty('sku')) {
+        obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
       }
       if (data.hasOwnProperty('itemVendorSku')) {
         obj['itemVendorSku'] = ApiClient.convertToType(data['itemVendorSku'], 'String');
@@ -440,6 +452,21 @@
   exports.prototype['address'] = undefined;
 
   /**
+   * @member {Integer} numberOfCases
+   */
+  exports.prototype['numberOfCases'] = undefined;
+
+  /**
+   * @member {Number} inventoryValue
+   */
+  exports.prototype['inventoryValue'] = undefined;
+
+  /**
+   * @member {Integer} inventoryAgeDays
+   */
+  exports.prototype['inventoryAgeDays'] = undefined;
+
+  /**
    * @member {Integer} warehouseId
    */
   exports.prototype['warehouseId'] = undefined;
@@ -577,9 +604,9 @@
   exports.prototype['warehouseLocationCost'] = undefined;
 
   /**
-   * @member {String} controlNo
+   * @member {String} sku
    */
-  exports.prototype['controlNo'] = undefined;
+  exports.prototype['sku'] = undefined;
 
   /**
    * @member {String} itemVendorSku

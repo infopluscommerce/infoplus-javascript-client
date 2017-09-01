@@ -61,7 +61,11 @@
 
 
 
+
     this['warehouseId'] = warehouseId;
+
+
+
 
 
 
@@ -230,8 +234,11 @@
       if (data.hasOwnProperty('priceLevel')) {
         obj['priceLevel'] = ApiClient.convertToType(data['priceLevel'], 'String');
       }
-      if (data.hasOwnProperty('entryTime')) {
-        obj['entryTime'] = ApiClient.convertToType(data['entryTime'], 'Date');
+      if (data.hasOwnProperty('orderCreateDate')) {
+        obj['orderCreateDate'] = ApiClient.convertToType(data['orderCreateDate'], 'Date');
+      }
+      if (data.hasOwnProperty('orderModifyDate')) {
+        obj['orderModifyDate'] = ApiClient.convertToType(data['orderModifyDate'], 'Date');
       }
       if (data.hasOwnProperty('shipBy')) {
         obj['shipBy'] = ApiClient.convertToType(data['shipBy'], 'Date');
@@ -458,6 +465,15 @@
       if (data.hasOwnProperty('totalQty')) {
         obj['totalQty'] = ApiClient.convertToType(data['totalQty'], 'Integer');
       }
+      if (data.hasOwnProperty('numberOfWraps')) {
+        obj['numberOfWraps'] = ApiClient.convertToType(data['numberOfWraps'], 'Integer');
+      }
+      if (data.hasOwnProperty('numberOfCases')) {
+        obj['numberOfCases'] = ApiClient.convertToType(data['numberOfCases'], 'Integer');
+      }
+      if (data.hasOwnProperty('numberOfTouches')) {
+        obj['numberOfTouches'] = ApiClient.convertToType(data['numberOfTouches'], 'Integer');
+      }
       if (data.hasOwnProperty('estimatedNumberOfPicks')) {
         obj['estimatedNumberOfPicks'] = ApiClient.convertToType(data['estimatedNumberOfPicks'], 'Integer');
       }
@@ -613,9 +629,14 @@
   exports.prototype['priceLevel'] = undefined;
 
   /**
-   * @member {Date} entryTime
+   * @member {Date} orderCreateDate
    */
-  exports.prototype['entryTime'] = undefined;
+  exports.prototype['orderCreateDate'] = undefined;
+
+  /**
+   * @member {Date} orderModifyDate
+   */
+  exports.prototype['orderModifyDate'] = undefined;
 
   /**
    * @member {Date} shipBy
@@ -991,6 +1012,21 @@
    * @member {Integer} totalQty
    */
   exports.prototype['totalQty'] = undefined;
+
+  /**
+   * @member {Integer} numberOfWraps
+   */
+  exports.prototype['numberOfWraps'] = undefined;
+
+  /**
+   * @member {Integer} numberOfCases
+   */
+  exports.prototype['numberOfCases'] = undefined;
+
+  /**
+   * @member {Integer} numberOfTouches
+   */
+  exports.prototype['numberOfTouches'] = undefined;
 
   /**
    * @member {Integer} estimatedNumberOfPicks

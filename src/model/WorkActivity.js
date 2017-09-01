@@ -164,6 +164,8 @@
     this['destinationAllowItemMixing'] = destinationAllowItemMixing;
 
 
+
+
     this['sku'] = sku;
 
     this['itemDescription'] = itemDescription;
@@ -171,6 +173,10 @@
     this['unitCode'] = unitCode;
     this['wrapCode'] = wrapCode;
     this['unitsPerWrap'] = unitsPerWrap;
+
+
+
+
     this['classRestriction'] = classRestriction;
     this['maxCycle'] = maxCycle;
     this['maxInterim'] = maxInterim;
@@ -468,6 +474,12 @@
       if (data.hasOwnProperty('destinationAllowItemMixing')) {
         obj['destinationAllowItemMixing'] = ApiClient.convertToType(data['destinationAllowItemMixing'], 'Boolean');
       }
+      if (data.hasOwnProperty('workCreateDate')) {
+        obj['workCreateDate'] = ApiClient.convertToType(data['workCreateDate'], 'Date');
+      }
+      if (data.hasOwnProperty('workModifyDate')) {
+        obj['workModifyDate'] = ApiClient.convertToType(data['workModifyDate'], 'Date');
+      }
       if (data.hasOwnProperty('masterRef')) {
         obj['masterRef'] = ApiClient.convertToType(data['masterRef'], 'Integer');
       }
@@ -494,6 +506,18 @@
       }
       if (data.hasOwnProperty('unitsPerWrap')) {
         obj['unitsPerWrap'] = ApiClient.convertToType(data['unitsPerWrap'], 'Integer');
+      }
+      if (data.hasOwnProperty('quantity')) {
+        obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Integer');
+      }
+      if (data.hasOwnProperty('numberOfWraps')) {
+        obj['numberOfWraps'] = ApiClient.convertToType(data['numberOfWraps'], 'Integer');
+      }
+      if (data.hasOwnProperty('numberOfCases')) {
+        obj['numberOfCases'] = ApiClient.convertToType(data['numberOfCases'], 'Integer');
+      }
+      if (data.hasOwnProperty('pickTouches')) {
+        obj['pickTouches'] = ApiClient.convertToType(data['pickTouches'], 'Integer');
       }
       if (data.hasOwnProperty('classRestriction')) {
         obj['classRestriction'] = ApiClient.convertToType(data['classRestriction'], 'String');
@@ -1065,6 +1089,16 @@
   exports.prototype['destinationAllowItemMixing'] = false;
 
   /**
+   * @member {Date} workCreateDate
+   */
+  exports.prototype['workCreateDate'] = undefined;
+
+  /**
+   * @member {Date} workModifyDate
+   */
+  exports.prototype['workModifyDate'] = undefined;
+
+  /**
    * @member {Integer} masterRef
    */
   exports.prototype['masterRef'] = undefined;
@@ -1108,6 +1142,26 @@
    * @member {Integer} unitsPerWrap
    */
   exports.prototype['unitsPerWrap'] = undefined;
+
+  /**
+   * @member {Integer} quantity
+   */
+  exports.prototype['quantity'] = undefined;
+
+  /**
+   * @member {Integer} numberOfWraps
+   */
+  exports.prototype['numberOfWraps'] = undefined;
+
+  /**
+   * @member {Integer} numberOfCases
+   */
+  exports.prototype['numberOfCases'] = undefined;
+
+  /**
+   * @member {Integer} pickTouches
+   */
+  exports.prototype['pickTouches'] = undefined;
 
   /**
    * @member {String} classRestriction

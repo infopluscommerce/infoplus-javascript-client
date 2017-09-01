@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/QuickAdjustment', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/QuickAdjustment', '../model/ApiResponse', '../model/ExecuteQuickAdjustmentInputAPIModel', '../model/ProcessOutputAPIModel'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/QuickAdjustment'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/QuickAdjustment'), require('../model/ApiResponse'), require('../model/ExecuteQuickAdjustmentInputAPIModel'), require('../model/ProcessOutputAPIModel'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.QuickAdjustmentApi = factory(root.infoplus.ApiClient, root.infoplus.QuickAdjustment, root.infoplus.ApiResponse);
+    root.infoplus.QuickAdjustmentApi = factory(root.infoplus.ApiClient, root.infoplus.QuickAdjustment, root.infoplus.ApiResponse, root.infoplus.ExecuteQuickAdjustmentInputAPIModel, root.infoplus.ProcessOutputAPIModel);
   }
-}(this, function(ApiClient, QuickAdjustment, ApiResponse) {
+}(this, function(ApiClient, QuickAdjustment, ApiResponse, ExecuteQuickAdjustmentInputAPIModel, ProcessOutputAPIModel) {
   'use strict';
 
   /**
@@ -273,6 +273,51 @@
 
       return this.apiClient.callApi(
         '/beta/quickAdjustment/{quickAdjustmentId}/tag/{quickAdjustmentTag}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the executeQuickAdjustment operation.
+     * @callback module:api/QuickAdjustmentApi~executeQuickAdjustmentCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProcessOutputAPIModel>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Run the ExecuteQuickAdjustment process.
+     * 
+     * @param {module:model/ExecuteQuickAdjustmentInputAPIModel} body Input data for ExecuteQuickAdjustment process.
+     * @param {module:api/QuickAdjustmentApi~executeQuickAdjustmentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {Array.<module:model/ProcessOutputAPIModel>}
+     */
+    this.executeQuickAdjustment = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling executeQuickAdjustment";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProcessOutputAPIModel];
+
+      return this.apiClient.callApi(
+        '/beta/quickAdjustment/executeQuickAdjustment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

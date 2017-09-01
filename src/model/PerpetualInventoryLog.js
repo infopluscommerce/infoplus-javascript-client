@@ -110,6 +110,7 @@
 
 
 
+
     this['itemForwardLotMixingRule'] = itemForwardLotMixingRule;
     this['itemStorageLotMixingRule'] = itemStorageLotMixingRule;
     this['itemForwardItemMixingRule'] = itemForwardItemMixingRule;
@@ -134,6 +135,9 @@
 
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+      }
+      if (data.hasOwnProperty('itemReceiptLocationId')) {
+        obj['itemReceiptLocationId'] = ApiClient.convertToType(data['itemReceiptLocationId'], 'Integer');
       }
       if (data.hasOwnProperty('itemReceiptId')) {
         obj['itemReceiptId'] = ApiClient.convertToType(data['itemReceiptId'], 'Integer');
@@ -399,6 +403,11 @@
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
+
+  /**
+   * @member {Integer} itemReceiptLocationId
+   */
+  exports.prototype['itemReceiptLocationId'] = undefined;
 
   /**
    * @member {Integer} itemReceiptId

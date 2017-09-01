@@ -70,6 +70,8 @@
 
 
 
+
+
     this['mediaCode'] = mediaCode;
     this['legacyRestrictionType'] = legacyRestrictionType;
 
@@ -80,6 +82,7 @@
 
 
     this['orderDate'] = orderDate;
+
 
 
 
@@ -268,6 +271,12 @@
       if (data.hasOwnProperty('retailFreightAmount')) {
         obj['retailFreightAmount'] = ApiClient.convertToType(data['retailFreightAmount'], 'Number');
       }
+      if (data.hasOwnProperty('cartonCreateDate')) {
+        obj['cartonCreateDate'] = ApiClient.convertToType(data['cartonCreateDate'], 'Date');
+      }
+      if (data.hasOwnProperty('cartonModifyDate')) {
+        obj['cartonModifyDate'] = ApiClient.convertToType(data['cartonModifyDate'], 'Date');
+      }
       if (data.hasOwnProperty('alternateUsage')) {
         obj['alternateUsage'] = ApiClient.convertToType(data['alternateUsage'], 'String');
       }
@@ -333,6 +342,9 @@
       }
       if (data.hasOwnProperty('orderCreateDate')) {
         obj['orderCreateDate'] = ApiClient.convertToType(data['orderCreateDate'], 'Date');
+      }
+      if (data.hasOwnProperty('orderModifyDate')) {
+        obj['orderModifyDate'] = ApiClient.convertToType(data['orderModifyDate'], 'Date');
       }
       if (data.hasOwnProperty('shipBy')) {
         obj['shipBy'] = ApiClient.convertToType(data['shipBy'], 'Date');
@@ -732,6 +744,16 @@
   exports.prototype['retailFreightAmount'] = undefined;
 
   /**
+   * @member {Date} cartonCreateDate
+   */
+  exports.prototype['cartonCreateDate'] = undefined;
+
+  /**
+   * @member {Date} cartonModifyDate
+   */
+  exports.prototype['cartonModifyDate'] = undefined;
+
+  /**
    * @member {String} alternateUsage
    */
   exports.prototype['alternateUsage'] = undefined;
@@ -840,6 +862,11 @@
    * @member {Date} orderCreateDate
    */
   exports.prototype['orderCreateDate'] = undefined;
+
+  /**
+   * @member {Date} orderModifyDate
+   */
+  exports.prototype['orderModifyDate'] = undefined;
 
   /**
    * @member {Date} shipBy

@@ -47,6 +47,7 @@
     this['orderSmartFilterId'] = orderSmartFilterId;
 
 
+
     this['createPickWork'] = createPickWork;
 
 
@@ -114,6 +115,9 @@
       }
       if (data.hasOwnProperty('maximumNumberOfOrders')) {
         obj['maximumNumberOfOrders'] = ApiClient.convertToType(data['maximumNumberOfOrders'], 'Integer');
+      }
+      if (data.hasOwnProperty('version')) {
+        obj['version'] = ApiClient.convertToType(data['version'], 'String');
       }
       if (data.hasOwnProperty('createPickWork')) {
         obj['createPickWork'] = ApiClient.convertToType(data['createPickWork'], 'Boolean');
@@ -244,6 +248,11 @@
    * @member {Integer} maximumNumberOfOrders
    */
   exports.prototype['maximumNumberOfOrders'] = undefined;
+
+  /**
+   * @member {String} version
+   */
+  exports.prototype['version'] = undefined;
 
   /**
    * @member {Boolean} createPickWork
