@@ -26,8 +26,9 @@
    * @alias module:model/Shipment
    * @class
    * @param warehouseId
+   * @param carrierCompany
    */
-  var exports = function(warehouseId) {
+  var exports = function(warehouseId, carrierCompany) {
 
 
 
@@ -60,6 +61,8 @@
 
 
 
+
+    this['carrierCompany'] = carrierCompany;
 
   };
 
@@ -134,6 +137,9 @@
       if (data.hasOwnProperty('thirdPartyParcelAccountNo')) {
         obj['thirdPartyParcelAccountNo'] = ApiClient.convertToType(data['thirdPartyParcelAccountNo'], 'String');
       }
+      if (data.hasOwnProperty('shipmentID')) {
+        obj['shipmentID'] = ApiClient.convertToType(data['shipmentID'], 'String');
+      }
       if (data.hasOwnProperty('manifestId')) {
         obj['manifestId'] = ApiClient.convertToType(data['manifestId'], 'Integer');
       }
@@ -166,6 +172,9 @@
       }
       if (data.hasOwnProperty('shipmentType')) {
         obj['shipmentType'] = ApiClient.convertToType(data['shipmentType'], 'String');
+      }
+      if (data.hasOwnProperty('carrierCompany')) {
+        obj['carrierCompany'] = ApiClient.convertToType(data['carrierCompany'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -277,6 +286,11 @@
   exports.prototype['thirdPartyParcelAccountNo'] = undefined;
 
   /**
+   * @member {String} shipmentID
+   */
+  exports.prototype['shipmentID'] = undefined;
+
+  /**
    * @member {Integer} manifestId
    */
   exports.prototype['manifestId'] = undefined;
@@ -331,6 +345,11 @@
    * @member {String} shipmentType
    */
   exports.prototype['shipmentType'] = undefined;
+
+  /**
+   * @member {String} carrierCompany
+   */
+  exports.prototype['carrierCompany'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

@@ -58,6 +58,7 @@
 
     this['infoplusSKUFieldToMap'] = infoplusSKUFieldToMap;
     this['shoppingCartSKUFieldToMap'] = shoppingCartSKUFieldToMap;
+
     this['name'] = name;
     this['shoppingCartStoreURL'] = shoppingCartStoreURL;
     this['accessCode'] = accessCode;
@@ -66,6 +67,7 @@
     this['password'] = password;
 
     this['orderShipmentLevel'] = orderShipmentLevel;
+
     this['syncOrders'] = syncOrders;
     this['syncInventory'] = syncInventory;
     this['syncTrackingData'] = syncTrackingData;
@@ -124,6 +126,9 @@
       if (data.hasOwnProperty('shoppingCartSKUFieldToMap')) {
         obj['shoppingCartSKUFieldToMap'] = ApiClient.convertToType(data['shoppingCartSKUFieldToMap'], 'String');
       }
+      if (data.hasOwnProperty('scriptId')) {
+        obj['scriptId'] = ApiClient.convertToType(data['scriptId'], 'Integer');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -147,6 +152,9 @@
       }
       if (data.hasOwnProperty('orderShipmentLevel')) {
         obj['orderShipmentLevel'] = ApiClient.convertToType(data['orderShipmentLevel'], 'String');
+      }
+      if (data.hasOwnProperty('createInvoices')) {
+        obj['createInvoices'] = ApiClient.convertToType(data['createInvoices'], 'Boolean');
       }
       if (data.hasOwnProperty('syncOrders')) {
         obj['syncOrders'] = ApiClient.convertToType(data['syncOrders'], 'Boolean');
@@ -241,6 +249,11 @@
   exports.prototype['shoppingCartSKUFieldToMap'] = undefined;
 
   /**
+   * @member {Integer} scriptId
+   */
+  exports.prototype['scriptId'] = undefined;
+
+  /**
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
@@ -279,6 +292,12 @@
    * @member {String} orderShipmentLevel
    */
   exports.prototype['orderShipmentLevel'] = undefined;
+
+  /**
+   * @member {Boolean} createInvoices
+   * @default false
+   */
+  exports.prototype['createInvoices'] = false;
 
   /**
    * @member {Boolean} syncOrders

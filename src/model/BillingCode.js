@@ -27,10 +27,9 @@
    * @class
    * @param quantity
    * @param userId
-   * @param lobId
    * @param billingCodeTypeId
    */
-  var exports = function(quantity, userId, lobId, billingCodeTypeId) {
+  var exports = function(quantity, userId, billingCodeTypeId) {
 
 
 
@@ -38,8 +37,10 @@
     this['quantity'] = quantity;
 
     this['userId'] = userId;
-    this['lobId'] = lobId;
+
     this['billingCodeTypeId'] = billingCodeTypeId;
+
+
 
 
   };
@@ -78,6 +79,12 @@
       }
       if (data.hasOwnProperty('billingCodeTypeId')) {
         obj['billingCodeTypeId'] = ApiClient.convertToType(data['billingCodeTypeId'], 'Integer');
+      }
+      if (data.hasOwnProperty('recordType')) {
+        obj['recordType'] = ApiClient.convertToType(data['recordType'], 'String');
+      }
+      if (data.hasOwnProperty('recordId')) {
+        obj['recordId'] = ApiClient.convertToType(data['recordId'], 'String');
       }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
@@ -129,6 +136,16 @@
    * @member {Integer} billingCodeTypeId
    */
   exports.prototype['billingCodeTypeId'] = undefined;
+
+  /**
+   * @member {String} recordType
+   */
+  exports.prototype['recordType'] = undefined;
+
+  /**
+   * @member {String} recordId
+   */
+  exports.prototype['recordId'] = undefined;
 
   /**
    * @member {String} note

@@ -126,6 +126,9 @@
 
 
 
+
+
+
     this['lineItems'] = lineItems;
 
 
@@ -279,6 +282,9 @@
       if (data.hasOwnProperty('enteredBy')) {
         obj['enteredBy'] = ApiClient.convertToType(data['enteredBy'], 'String');
       }
+      if (data.hasOwnProperty('preAllocationEstimatedWeight')) {
+        obj['preAllocationEstimatedWeight'] = ApiClient.convertToType(data['preAllocationEstimatedWeight'], 'Number');
+      }
       if (data.hasOwnProperty('estimatedWeightLbs')) {
         obj['estimatedWeightLbs'] = ApiClient.convertToType(data['estimatedWeightLbs'], 'Number');
       }
@@ -290,6 +296,9 @@
       }
       if (data.hasOwnProperty('groupOrderId')) {
         obj['groupOrderId'] = ApiClient.convertToType(data['groupOrderId'], 'Number');
+      }
+      if (data.hasOwnProperty('parentKODOrderId')) {
+        obj['parentKODOrderId'] = ApiClient.convertToType(data['parentKODOrderId'], 'Number');
       }
       if (data.hasOwnProperty('holdCode')) {
         obj['holdCode'] = ApiClient.convertToType(data['holdCode'], 'String');
@@ -407,6 +416,9 @@
       }
       if (data.hasOwnProperty('total')) {
         obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+      }
+      if (data.hasOwnProperty('totalDiscount')) {
+        obj['totalDiscount'] = ApiClient.convertToType(data['totalDiscount'], 'Number');
       }
       if (data.hasOwnProperty('totalPaid')) {
         obj['totalPaid'] = ApiClient.convertToType(data['totalPaid'], 'Number');
@@ -666,6 +678,11 @@
   exports.prototype['enteredBy'] = undefined;
 
   /**
+   * @member {Number} preAllocationEstimatedWeight
+   */
+  exports.prototype['preAllocationEstimatedWeight'] = undefined;
+
+  /**
    * @member {Number} estimatedWeightLbs
    */
   exports.prototype['estimatedWeightLbs'] = undefined;
@@ -684,6 +701,11 @@
    * @member {Number} groupOrderId
    */
   exports.prototype['groupOrderId'] = undefined;
+
+  /**
+   * @member {Number} parentKODOrderId
+   */
+  exports.prototype['parentKODOrderId'] = undefined;
 
   /**
    * @member {String} holdCode
@@ -879,6 +901,11 @@
    * @member {Number} total
    */
   exports.prototype['total'] = undefined;
+
+  /**
+   * @member {Number} totalDiscount
+   */
+  exports.prototype['totalDiscount'] = undefined;
 
   /**
    * @member {Number} totalPaid

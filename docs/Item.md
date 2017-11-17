@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **vendorPrice** | **Number** |  | [optional] 
 **vendorPer** | **String** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**behaviorType** | **String** |  | [optional] 
 **forwardLotMixingRule** | **String** |  | 
 **storageLotMixingRule** | **String** |  | 
 **forwardItemMixingRule** | **String** |  | 

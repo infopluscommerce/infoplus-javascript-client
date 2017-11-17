@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Order', '../model/ApiResponse'], factory);
+    define(['../ApiClient', '../model/Order', '../model/ApiResponse', '../model/ApplyOrderWarehouseFulfillmentPlanInput', '../model/ApplyOrderWarehouseFulfillmentPlanOutput', '../model/GetOrderWarehouseFulfillmentDataInput', '../model/GetOrderWarehouseFulfillmentDataOutput'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Order'), require('../model/ApiResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/Order'), require('../model/ApiResponse'), require('../model/ApplyOrderWarehouseFulfillmentPlanInput'), require('../model/ApplyOrderWarehouseFulfillmentPlanOutput'), require('../model/GetOrderWarehouseFulfillmentDataInput'), require('../model/GetOrderWarehouseFulfillmentDataOutput'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.Order, root.infoplus.ApiResponse);
+    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.Order, root.infoplus.ApiResponse, root.infoplus.ApplyOrderWarehouseFulfillmentPlanInput, root.infoplus.ApplyOrderWarehouseFulfillmentPlanOutput, root.infoplus.GetOrderWarehouseFulfillmentDataInput, root.infoplus.GetOrderWarehouseFulfillmentDataOutput);
   }
-}(this, function(ApiClient, Order, ApiResponse) {
+}(this, function(ApiClient, Order, ApiResponse, ApplyOrderWarehouseFulfillmentPlanInput, ApplyOrderWarehouseFulfillmentPlanOutput, GetOrderWarehouseFulfillmentDataInput, GetOrderWarehouseFulfillmentDataOutput) {
   'use strict';
 
   /**
@@ -176,6 +176,51 @@
 
       return this.apiClient.callApi(
         '/beta/order/{orderId}/tag/{orderTag}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the applyOrderWarehouseFulfillmentPlan operation.
+     * @callback module:api/OrderApi~applyOrderWarehouseFulfillmentPlanCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApplyOrderWarehouseFulfillmentPlanOutput} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Run the Apply Order Warehouse Fulfillment Plan method.
+     * 
+     * @param {module:model/ApplyOrderWarehouseFulfillmentPlanInput} body Input data for Apply Order Warehouse Fulfillment Plan process.
+     * @param {module:api/OrderApi~applyOrderWarehouseFulfillmentPlanCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/ApplyOrderWarehouseFulfillmentPlanOutput}
+     */
+    this.applyOrderWarehouseFulfillmentPlan = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling applyOrderWarehouseFulfillmentPlan";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ApplyOrderWarehouseFulfillmentPlanOutput;
+
+      return this.apiClient.callApi(
+        '/beta/order/applyOrderWarehouseFulfillmentPlan', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -459,6 +504,51 @@
 
       return this.apiClient.callApi(
         '/beta/order/{orderId}/tag', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getOrderWarehouseFulfillmentData operation.
+     * @callback module:api/OrderApi~getOrderWarehouseFulfillmentDataCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetOrderWarehouseFulfillmentDataOutput} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Run the Get Order Warehouse Fulfillment Plan method.
+     * 
+     * @param {module:model/GetOrderWarehouseFulfillmentDataInput} body Input data for Get Order Warehouse Fulfillment Plan process.
+     * @param {module:api/OrderApi~getOrderWarehouseFulfillmentDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:model/GetOrderWarehouseFulfillmentDataOutput}
+     */
+    this.getOrderWarehouseFulfillmentData = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body == undefined || body == null) {
+        throw "Missing the required parameter 'body' when calling getOrderWarehouseFulfillmentData";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = GetOrderWarehouseFulfillmentDataOutput;
+
+      return this.apiClient.callApi(
+        '/beta/order/getOrderWarehouseFulfillmentData', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

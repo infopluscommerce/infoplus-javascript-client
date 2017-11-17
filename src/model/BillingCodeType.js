@@ -26,15 +26,16 @@
    * @alias module:model/BillingCodeType
    * @class
    * @param clientId
+   * @param billingCode
    * @param name
    */
-  var exports = function(clientId, name) {
+  var exports = function(clientId, billingCode, name) {
 
 
     this['clientId'] = clientId;
-
-
+    this['billingCode'] = billingCode;
     this['name'] = name;
+
 
 
 
@@ -58,11 +59,8 @@
       if (data.hasOwnProperty('clientId')) {
         obj['clientId'] = ApiClient.convertToType(data['clientId'], 'Integer');
       }
-      if (data.hasOwnProperty('createDate')) {
-        obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
-      }
-      if (data.hasOwnProperty('modifyDate')) {
-        obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      if (data.hasOwnProperty('billingCode')) {
+        obj['billingCode'] = ApiClient.convertToType(data['billingCode'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -70,11 +68,14 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('billingCode')) {
-        obj['billingCode'] = ApiClient.convertToType(data['billingCode'], 'String');
-      }
       if (data.hasOwnProperty('isActive')) {
         obj['isActive'] = ApiClient.convertToType(data['isActive'], 'Boolean');
+      }
+      if (data.hasOwnProperty('createDate')) {
+        obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
+      }
+      if (data.hasOwnProperty('modifyDate')) {
+        obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -95,14 +96,9 @@
   exports.prototype['clientId'] = undefined;
 
   /**
-   * @member {Date} createDate
+   * @member {String} billingCode
    */
-  exports.prototype['createDate'] = undefined;
-
-  /**
-   * @member {Date} modifyDate
-   */
-  exports.prototype['modifyDate'] = undefined;
+  exports.prototype['billingCode'] = undefined;
 
   /**
    * @member {String} name
@@ -115,15 +111,20 @@
   exports.prototype['description'] = undefined;
 
   /**
-   * @member {String} billingCode
-   */
-  exports.prototype['billingCode'] = undefined;
-
-  /**
    * @member {Boolean} isActive
    * @default false
    */
   exports.prototype['isActive'] = false;
+
+  /**
+   * @member {Date} createDate
+   */
+  exports.prototype['createDate'] = undefined;
+
+  /**
+   * @member {Date} modifyDate
+   */
+  exports.prototype['modifyDate'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

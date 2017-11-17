@@ -113,6 +113,8 @@
 
 
 
+
+
   };
 
   /**
@@ -338,6 +340,12 @@
       }
       if (data.hasOwnProperty('asnLine')) {
         obj['asnLine'] = ApiClient.convertToType(data['asnLine'], 'Integer');
+      }
+      if (data.hasOwnProperty('upc')) {
+        obj['upc'] = ApiClient.convertToType(data['upc'], 'String');
+      }
+      if (data.hasOwnProperty('vendorSKU')) {
+        obj['vendorSKU'] = ApiClient.convertToType(data['vendorSKU'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -701,6 +709,16 @@
    * @member {Integer} asnLine
    */
   exports.prototype['asnLine'] = undefined;
+
+  /**
+   * @member {String} upc
+   */
+  exports.prototype['upc'] = undefined;
+
+  /**
+   * @member {String} vendorSKU
+   */
+  exports.prototype['vendorSKU'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

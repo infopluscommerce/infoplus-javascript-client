@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **estimatedZone** | **String** |  | [optional] 
 **parcelAccountNo** | **String** |  | [optional] 
 **thirdPartyParcelAccountNo** | **String** |  | [optional] 
+**shipmentID** | **String** |  | [optional] 
 **manifestId** | **Integer** |  | [optional] 
 **residential** | **Boolean** |  | [optional] [default to false]
 **billingOption** | **String** |  | [optional] 
@@ -34,6 +35,7 @@ Name | Type | Description | Notes
 **retailFreightAmount** | **Number** |  | [optional] 
 **externalShippingSystemId** | **Integer** |  | [optional] 
 **shipmentType** | **String** |  | [optional] 
+**carrierCompany** | **String** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

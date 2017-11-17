@@ -45,6 +45,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -93,6 +96,15 @@
       }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
+      }
+      if (data.hasOwnProperty('recordTypeName')) {
+        obj['recordTypeName'] = ApiClient.convertToType(data['recordTypeName'], 'String');
+      }
+      if (data.hasOwnProperty('recordTypeId')) {
+        obj['recordTypeId'] = ApiClient.convertToType(data['recordTypeId'], 'Integer');
+      }
+      if (data.hasOwnProperty('recordId')) {
+        obj['recordId'] = ApiClient.convertToType(data['recordId'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -161,6 +173,21 @@
    * @member {String} note
    */
   exports.prototype['note'] = undefined;
+
+  /**
+   * @member {String} recordTypeName
+   */
+  exports.prototype['recordTypeName'] = undefined;
+
+  /**
+   * @member {Integer} recordTypeId
+   */
+  exports.prototype['recordTypeId'] = undefined;
+
+  /**
+   * @member {String} recordId
+   */
+  exports.prototype['recordId'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

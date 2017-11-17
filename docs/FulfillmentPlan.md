@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **lastRunTime** | **Date** |  | [optional] 
 **orderSmartFilterId** | **Integer** |  | 
 **locationSmartFilterId** | **Integer** |  | [optional] 
-**maximumNumberOfOrders** | **Integer** |  | [optional] 
+**maxOrders** | **Integer** |  | [optional] 
+**batchSize** | **Integer** |  | [optional] 
 **version** | **String** |  | [optional] 
 **createPickWork** | **Boolean** |  | [default to false]
 **pickingRule** | **String** |  | [optional] 

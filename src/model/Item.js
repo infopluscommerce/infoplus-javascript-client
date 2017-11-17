@@ -110,6 +110,7 @@
 
 
 
+
     this['forwardLotMixingRule'] = forwardLotMixingRule;
     this['storageLotMixingRule'] = storageLotMixingRule;
     this['forwardItemMixingRule'] = forwardItemMixingRule;
@@ -339,6 +340,9 @@
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('behaviorType')) {
+        obj['behaviorType'] = ApiClient.convertToType(data['behaviorType'], 'String');
       }
       if (data.hasOwnProperty('forwardLotMixingRule')) {
         obj['forwardLotMixingRule'] = ApiClient.convertToType(data['forwardLotMixingRule'], 'String');
@@ -759,6 +763,11 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+
+  /**
+   * @member {String} behaviorType
+   */
+  exports.prototype['behaviorType'] = undefined;
 
   /**
    * @member {String} forwardLotMixingRule

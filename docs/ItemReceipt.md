@@ -74,6 +74,8 @@ Name | Type | Description | Notes
 **modifyDate** | **Date** |  | [optional] 
 **impressions** | **Integer** |  | [optional] 
 **asnLine** | **Integer** |  | [optional] 
+**upc** | **String** |  | [optional] 
+**vendorSKU** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

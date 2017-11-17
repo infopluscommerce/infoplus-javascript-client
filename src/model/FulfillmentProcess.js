@@ -77,6 +77,8 @@
 
 
 
+
+
     this['createPackingSlip'] = createPackingSlip;
 
 
@@ -131,11 +133,17 @@
       if (data.hasOwnProperty('locationSmartFilterId')) {
         obj['locationSmartFilterId'] = ApiClient.convertToType(data['locationSmartFilterId'], 'Integer');
       }
-      if (data.hasOwnProperty('orderLimit')) {
-        obj['orderLimit'] = ApiClient.convertToType(data['orderLimit'], 'Integer');
+      if (data.hasOwnProperty('maxOrders')) {
+        obj['maxOrders'] = ApiClient.convertToType(data['maxOrders'], 'Integer');
+      }
+      if (data.hasOwnProperty('batchSize')) {
+        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Integer');
       }
       if (data.hasOwnProperty('version')) {
         obj['version'] = ApiClient.convertToType(data['version'], 'String');
+      }
+      if (data.hasOwnProperty('fulfillmentProcessGroup')) {
+        obj['fulfillmentProcessGroup'] = ApiClient.convertToType(data['fulfillmentProcessGroup'], 'Integer');
       }
       if (data.hasOwnProperty('numberOfOrders')) {
         obj['numberOfOrders'] = ApiClient.convertToType(data['numberOfOrders'], 'Integer');
@@ -309,14 +317,24 @@
   exports.prototype['locationSmartFilterId'] = undefined;
 
   /**
-   * @member {Integer} orderLimit
+   * @member {Integer} maxOrders
    */
-  exports.prototype['orderLimit'] = undefined;
+  exports.prototype['maxOrders'] = undefined;
+
+  /**
+   * @member {Integer} batchSize
+   */
+  exports.prototype['batchSize'] = undefined;
 
   /**
    * @member {String} version
    */
   exports.prototype['version'] = undefined;
+
+  /**
+   * @member {Integer} fulfillmentProcessGroup
+   */
+  exports.prototype['fulfillmentProcessGroup'] = undefined;
 
   /**
    * @member {Integer} numberOfOrders

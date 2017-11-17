@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **billingCodeTypeId** | **Integer** |  | 
 **billingCodeTypeName** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 
+**recordTypeName** | **String** |  | [optional] 
+**recordTypeId** | **Integer** |  | [optional] 
+**recordId** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

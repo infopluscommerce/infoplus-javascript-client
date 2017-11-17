@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **itemFilterId** | **Integer** |  | [optional] 
 **infoplusSKUFieldToMap** | **String** |  | 
 **shoppingCartSKUFieldToMap** | **String** |  | 
+**scriptId** | **Integer** |  | [optional] 
 **name** | **String** |  | 
 **shoppingCartStoreURL** | **String** |  | 
 **accessCode** | **String** |  | 
@@ -23,6 +24,7 @@ Name | Type | Description | Notes
 **password** | **String** |  | 
 **defaultCarrierId** | **Integer** |  | [optional] 
 **orderShipmentLevel** | **String** |  | 
+**createInvoices** | **Boolean** |  | [optional] [default to false]
 **syncOrders** | **Boolean** |  | [default to false]
 **syncInventory** | **Boolean** |  | [default to false]
 **syncTrackingData** | **Boolean** |  | [default to false]

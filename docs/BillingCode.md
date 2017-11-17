@@ -9,8 +9,10 @@ Name | Type | Description | Notes
 **quantity** | **Integer** |  | 
 **_date** | **Date** |  | [optional] 
 **userId** | **Integer** |  | 
-**lobId** | **Integer** |  | 
+**lobId** | **Integer** |  | [optional] 
 **billingCodeTypeId** | **Integer** |  | 
+**recordType** | **String** |  | [optional] 
+**recordId** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 

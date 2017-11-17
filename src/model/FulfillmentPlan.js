@@ -48,6 +48,7 @@
 
 
 
+
     this['createPickWork'] = createPickWork;
 
 
@@ -113,8 +114,11 @@
       if (data.hasOwnProperty('locationSmartFilterId')) {
         obj['locationSmartFilterId'] = ApiClient.convertToType(data['locationSmartFilterId'], 'Integer');
       }
-      if (data.hasOwnProperty('maximumNumberOfOrders')) {
-        obj['maximumNumberOfOrders'] = ApiClient.convertToType(data['maximumNumberOfOrders'], 'Integer');
+      if (data.hasOwnProperty('maxOrders')) {
+        obj['maxOrders'] = ApiClient.convertToType(data['maxOrders'], 'Integer');
+      }
+      if (data.hasOwnProperty('batchSize')) {
+        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Integer');
       }
       if (data.hasOwnProperty('version')) {
         obj['version'] = ApiClient.convertToType(data['version'], 'String');
@@ -245,9 +249,14 @@
   exports.prototype['locationSmartFilterId'] = undefined;
 
   /**
-   * @member {Integer} maximumNumberOfOrders
+   * @member {Integer} maxOrders
    */
-  exports.prototype['maximumNumberOfOrders'] = undefined;
+  exports.prototype['maxOrders'] = undefined;
+
+  /**
+   * @member {Integer} batchSize
+   */
+  exports.prototype['batchSize'] = undefined;
 
   /**
    * @member {String} version

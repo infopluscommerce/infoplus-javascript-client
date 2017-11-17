@@ -14,8 +14,10 @@ Name | Type | Description | Notes
 **status** | **String** |  | 
 **orderSmartFilterId** | **Integer** |  | [optional] 
 **locationSmartFilterId** | **Integer** |  | [optional] 
-**orderLimit** | **Integer** |  | [optional] 
+**maxOrders** | **Integer** |  | [optional] 
+**batchSize** | **Integer** |  | [optional] 
 **version** | **String** |  | [optional] 
+**fulfillmentProcessGroup** | **Integer** |  | [optional] 
 **numberOfOrders** | **Integer** |  | [optional] 
 **numberOfLines** | **Integer** |  | [optional] 
 **numberOfSKUs** | **Integer** |  | [optional] 
