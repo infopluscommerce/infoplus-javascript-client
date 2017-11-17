@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addJobType**](JobTypeApi.md#addJobType) | **POST** /beta/jobType | Create a jobType
-[**addJobTypeAudit**](JobTypeApi.md#addJobTypeAudit) | **PUT** /beta/jobType/{jobTypeId}/audit/{jobTypeAudit} | Add new audit for a jobType
-[**addJobTypeTag**](JobTypeApi.md#addJobTypeTag) | **PUT** /beta/jobType/{jobTypeId}/tag/{jobTypeTag} | Add new tags for a jobType.
-[**deleteJobType**](JobTypeApi.md#deleteJobType) | **DELETE** /beta/jobType/{jobTypeId} | Delete a jobType
-[**deleteJobTypeTag**](JobTypeApi.md#deleteJobTypeTag) | **DELETE** /beta/jobType/{jobTypeId}/tag/{jobTypeTag} | Delete a tag for a jobType.
-[**getDuplicateJobTypeById**](JobTypeApi.md#getDuplicateJobTypeById) | **GET** /beta/jobType/duplicate/{jobTypeId} | Get a duplicated a jobType by id
-[**getJobTypeByFilter**](JobTypeApi.md#getJobTypeByFilter) | **GET** /beta/jobType/search | Search jobTypes by filter
-[**getJobTypeById**](JobTypeApi.md#getJobTypeById) | **GET** /beta/jobType/{jobTypeId} | Get a jobType by id
-[**getJobTypeTags**](JobTypeApi.md#getJobTypeTags) | **GET** /beta/jobType/{jobTypeId}/tag | Get the tags for a jobType.
-[**updateJobType**](JobTypeApi.md#updateJobType) | **PUT** /beta/jobType | Update a jobType
-[**updateJobTypeCustomFields**](JobTypeApi.md#updateJobTypeCustomFields) | **PUT** /beta/jobType/customFields | Update a jobType custom fields
+[**addJobType**](JobTypeApi.md#addJobType) | **POST** /v2.0/jobType | Create a jobType
+[**deleteJobType**](JobTypeApi.md#deleteJobType) | **DELETE** /v2.0/jobType/{jobTypeId} | Delete a jobType
+[**getDuplicateJobTypeById**](JobTypeApi.md#getDuplicateJobTypeById) | **GET** /v2.0/jobType/duplicate/{jobTypeId} | Get a duplicated a jobType by id
+[**getJobTypeByFilter**](JobTypeApi.md#getJobTypeByFilter) | **GET** /v2.0/jobType/search | Search jobTypes by filter
+[**getJobTypeById**](JobTypeApi.md#getJobTypeById) | **GET** /v2.0/jobType/{jobTypeId} | Get a jobType by id
+[**updateJobType**](JobTypeApi.md#updateJobType) | **PUT** /v2.0/jobType | Update a jobType
+[**updateJobTypeCustomFields**](JobTypeApi.md#updateJobTypeCustomFields) | **PUT** /v2.0/jobType/customFields | Update a jobType custom fields
 
 
 <a name="addJobType"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addJobTypeAudit"></a>
-# **addJobTypeAudit**
-> addJobTypeAudit(jobTypeId, jobTypeAudit)
-
-Add new audit for a jobType
-
-Adds an audit to an existing jobType.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTypeApi()
-
-var jobTypeId = 56; // {Integer} Id of the jobType to add an audit to
-
-var jobTypeAudit = "jobTypeAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addJobTypeAudit(jobTypeId, jobTypeAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTypeId** | **Integer**| Id of the jobType to add an audit to | 
- **jobTypeAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addJobTypeTag"></a>
-# **addJobTypeTag**
-> addJobTypeTag(jobTypeId, jobTypeTag)
-
-Add new tags for a jobType.
-
-Adds a tag to an existing jobType.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTypeApi()
-
-var jobTypeId = 56; // {Integer} Id of the jobType to add a tag to
-
-var jobTypeTag = "jobTypeTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addJobTypeTag(jobTypeId, jobTypeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTypeId** | **Integer**| Id of the jobType to add a tag to | 
- **jobTypeTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteJobType"></a>
 # **deleteJobType**
 > deleteJobType(jobTypeId)
@@ -221,62 +105,6 @@ api.deleteJobType(jobTypeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobTypeId** | **Integer**| Id of the jobType to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteJobTypeTag"></a>
-# **deleteJobTypeTag**
-> deleteJobTypeTag(jobTypeId, jobTypeTag)
-
-Delete a tag for a jobType.
-
-Deletes an existing jobType tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTypeApi()
-
-var jobTypeId = 56; // {Integer} Id of the jobType to remove tag from
-
-var jobTypeTag = "jobTypeTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteJobTypeTag(jobTypeId, jobTypeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTypeId** | **Integer**| Id of the jobType to remove tag from | 
- **jobTypeTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JobType**](JobType.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getJobTypeTags"></a>
-# **getJobTypeTags**
-> getJobTypeTags(jobTypeId)
-
-Get the tags for a jobType.
-
-Get all existing jobType tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTypeApi()
-
-var jobTypeId = 56; // {Integer} Id of the jobType to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getJobTypeTags(jobTypeId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTypeId** | **Integer**| Id of the jobType to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

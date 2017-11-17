@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addVendorComplianceSurvey**](VendorComplianceSurveyApi.md#addVendorComplianceSurvey) | **POST** /beta/vendorComplianceSurvey | Create a vendorComplianceSurvey
-[**addVendorComplianceSurveyAudit**](VendorComplianceSurveyApi.md#addVendorComplianceSurveyAudit) | **PUT** /beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/audit/{vendorComplianceSurveyAudit} | Add new audit for a vendorComplianceSurvey
-[**addVendorComplianceSurveyTag**](VendorComplianceSurveyApi.md#addVendorComplianceSurveyTag) | **PUT** /beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag/{vendorComplianceSurveyTag} | Add new tags for a vendorComplianceSurvey.
-[**deleteVendorComplianceSurvey**](VendorComplianceSurveyApi.md#deleteVendorComplianceSurvey) | **DELETE** /beta/vendorComplianceSurvey/{vendorComplianceSurveyId} | Delete a vendorComplianceSurvey
-[**deleteVendorComplianceSurveyTag**](VendorComplianceSurveyApi.md#deleteVendorComplianceSurveyTag) | **DELETE** /beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag/{vendorComplianceSurveyTag} | Delete a tag for a vendorComplianceSurvey.
-[**getDuplicateVendorComplianceSurveyById**](VendorComplianceSurveyApi.md#getDuplicateVendorComplianceSurveyById) | **GET** /beta/vendorComplianceSurvey/duplicate/{vendorComplianceSurveyId} | Get a duplicated a vendorComplianceSurvey by id
-[**getVendorComplianceSurveyByFilter**](VendorComplianceSurveyApi.md#getVendorComplianceSurveyByFilter) | **GET** /beta/vendorComplianceSurvey/search | Search vendorComplianceSurveys by filter
-[**getVendorComplianceSurveyById**](VendorComplianceSurveyApi.md#getVendorComplianceSurveyById) | **GET** /beta/vendorComplianceSurvey/{vendorComplianceSurveyId} | Get a vendorComplianceSurvey by id
-[**getVendorComplianceSurveyTags**](VendorComplianceSurveyApi.md#getVendorComplianceSurveyTags) | **GET** /beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag | Get the tags for a vendorComplianceSurvey.
-[**updateVendorComplianceSurvey**](VendorComplianceSurveyApi.md#updateVendorComplianceSurvey) | **PUT** /beta/vendorComplianceSurvey | Update a vendorComplianceSurvey
-[**updateVendorComplianceSurveyCustomFields**](VendorComplianceSurveyApi.md#updateVendorComplianceSurveyCustomFields) | **PUT** /beta/vendorComplianceSurvey/customFields | Update a vendorComplianceSurvey custom fields
+[**addVendorComplianceSurvey**](VendorComplianceSurveyApi.md#addVendorComplianceSurvey) | **POST** /v2.0/vendorComplianceSurvey | Create a vendorComplianceSurvey
+[**deleteVendorComplianceSurvey**](VendorComplianceSurveyApi.md#deleteVendorComplianceSurvey) | **DELETE** /v2.0/vendorComplianceSurvey/{vendorComplianceSurveyId} | Delete a vendorComplianceSurvey
+[**getDuplicateVendorComplianceSurveyById**](VendorComplianceSurveyApi.md#getDuplicateVendorComplianceSurveyById) | **GET** /v2.0/vendorComplianceSurvey/duplicate/{vendorComplianceSurveyId} | Get a duplicated a vendorComplianceSurvey by id
+[**getVendorComplianceSurveyByFilter**](VendorComplianceSurveyApi.md#getVendorComplianceSurveyByFilter) | **GET** /v2.0/vendorComplianceSurvey/search | Search vendorComplianceSurveys by filter
+[**getVendorComplianceSurveyById**](VendorComplianceSurveyApi.md#getVendorComplianceSurveyById) | **GET** /v2.0/vendorComplianceSurvey/{vendorComplianceSurveyId} | Get a vendorComplianceSurvey by id
+[**updateVendorComplianceSurvey**](VendorComplianceSurveyApi.md#updateVendorComplianceSurvey) | **PUT** /v2.0/vendorComplianceSurvey | Update a vendorComplianceSurvey
+[**updateVendorComplianceSurveyCustomFields**](VendorComplianceSurveyApi.md#updateVendorComplianceSurveyCustomFields) | **PUT** /v2.0/vendorComplianceSurvey/customFields | Update a vendorComplianceSurvey custom fields
 
 
 <a name="addVendorComplianceSurvey"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addVendorComplianceSurveyAudit"></a>
-# **addVendorComplianceSurveyAudit**
-> addVendorComplianceSurveyAudit(vendorComplianceSurveyId, vendorComplianceSurveyAudit)
-
-Add new audit for a vendorComplianceSurvey
-
-Adds an audit to an existing vendorComplianceSurvey.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.VendorComplianceSurveyApi()
-
-var vendorComplianceSurveyId = 56; // {Integer} Id of the vendorComplianceSurvey to add an audit to
-
-var vendorComplianceSurveyAudit = "vendorComplianceSurveyAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addVendorComplianceSurveyAudit(vendorComplianceSurveyId, vendorComplianceSurveyAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vendorComplianceSurveyId** | **Integer**| Id of the vendorComplianceSurvey to add an audit to | 
- **vendorComplianceSurveyAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addVendorComplianceSurveyTag"></a>
-# **addVendorComplianceSurveyTag**
-> addVendorComplianceSurveyTag(vendorComplianceSurveyId, vendorComplianceSurveyTag)
-
-Add new tags for a vendorComplianceSurvey.
-
-Adds a tag to an existing vendorComplianceSurvey.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.VendorComplianceSurveyApi()
-
-var vendorComplianceSurveyId = 56; // {Integer} Id of the vendorComplianceSurvey to add a tag to
-
-var vendorComplianceSurveyTag = "vendorComplianceSurveyTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addVendorComplianceSurveyTag(vendorComplianceSurveyId, vendorComplianceSurveyTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vendorComplianceSurveyId** | **Integer**| Id of the vendorComplianceSurvey to add a tag to | 
- **vendorComplianceSurveyTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteVendorComplianceSurvey"></a>
 # **deleteVendorComplianceSurvey**
 > deleteVendorComplianceSurvey(vendorComplianceSurveyId)
@@ -221,62 +105,6 @@ api.deleteVendorComplianceSurvey(vendorComplianceSurveyId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vendorComplianceSurveyId** | **Integer**| Id of the vendorComplianceSurvey to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteVendorComplianceSurveyTag"></a>
-# **deleteVendorComplianceSurveyTag**
-> deleteVendorComplianceSurveyTag(vendorComplianceSurveyId, vendorComplianceSurveyTag)
-
-Delete a tag for a vendorComplianceSurvey.
-
-Deletes an existing vendorComplianceSurvey tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.VendorComplianceSurveyApi()
-
-var vendorComplianceSurveyId = 56; // {Integer} Id of the vendorComplianceSurvey to remove tag from
-
-var vendorComplianceSurveyTag = "vendorComplianceSurveyTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteVendorComplianceSurveyTag(vendorComplianceSurveyId, vendorComplianceSurveyTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vendorComplianceSurveyId** | **Integer**| Id of the vendorComplianceSurvey to remove tag from | 
- **vendorComplianceSurveyTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VendorComplianceSurvey**](VendorComplianceSurvey.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getVendorComplianceSurveyTags"></a>
-# **getVendorComplianceSurveyTags**
-> getVendorComplianceSurveyTags(vendorComplianceSurveyId)
-
-Get the tags for a vendorComplianceSurvey.
-
-Get all existing vendorComplianceSurvey tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.VendorComplianceSurveyApi()
-
-var vendorComplianceSurveyId = 56; // {Integer} Id of the vendorComplianceSurvey to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getVendorComplianceSurveyTags(vendorComplianceSurveyId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vendorComplianceSurveyId** | **Integer**| Id of the vendorComplianceSurvey to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

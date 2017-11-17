@@ -18,7 +18,7 @@
   /**
    * LowStock service.
    * @module api/LowStockApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addLowStockAudit operation.
-     * @callback module:api/LowStockApi~addLowStockAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a lowStock
-     * Adds an audit to an existing lowStock.
-     * @param {Integer} lowStockId Id of the lowStock to add an audit to
-     * @param {String} lowStockAudit The audit to add
-     * @param {module:api/LowStockApi~addLowStockAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLowStockAudit = function(lowStockId, lowStockAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'lowStockId' is set
-      if (lowStockId == undefined || lowStockId == null) {
-        throw "Missing the required parameter 'lowStockId' when calling addLowStockAudit";
-      }
-
-      // verify the required parameter 'lowStockAudit' is set
-      if (lowStockAudit == undefined || lowStockAudit == null) {
-        throw "Missing the required parameter 'lowStockAudit' when calling addLowStockAudit";
-      }
-
-
-      var pathParams = {
-        'lowStockId': lowStockId,
-        'lowStockAudit': lowStockAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/lowStock/{lowStockId}/audit/{lowStockAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLowStockTag operation.
-     * @callback module:api/LowStockApi~addLowStockTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a lowStock.
-     * Adds a tag to an existing lowStock.
-     * @param {Integer} lowStockId Id of the lowStock to add a tag to
-     * @param {String} lowStockTag The tag to add
-     * @param {module:api/LowStockApi~addLowStockTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLowStockTag = function(lowStockId, lowStockTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'lowStockId' is set
-      if (lowStockId == undefined || lowStockId == null) {
-        throw "Missing the required parameter 'lowStockId' when calling addLowStockTag";
-      }
-
-      // verify the required parameter 'lowStockTag' is set
-      if (lowStockTag == undefined || lowStockTag == null) {
-        throw "Missing the required parameter 'lowStockTag' when calling addLowStockTag";
-      }
-
-
-      var pathParams = {
-        'lowStockId': lowStockId,
-        'lowStockTag': lowStockTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/lowStock/{lowStockId}/tag/{lowStockTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteLowStockTag operation.
-     * @callback module:api/LowStockApi~deleteLowStockTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a lowStock.
-     * Deletes an existing lowStock tag using the specified data.
-     * @param {Integer} lowStockId Id of the lowStock to remove tag from
-     * @param {String} lowStockTag The tag to delete
-     * @param {module:api/LowStockApi~deleteLowStockTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteLowStockTag = function(lowStockId, lowStockTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'lowStockId' is set
-      if (lowStockId == undefined || lowStockId == null) {
-        throw "Missing the required parameter 'lowStockId' when calling deleteLowStockTag";
-      }
-
-      // verify the required parameter 'lowStockTag' is set
-      if (lowStockTag == undefined || lowStockTag == null) {
-        throw "Missing the required parameter 'lowStockTag' when calling deleteLowStockTag";
-      }
-
-
-      var pathParams = {
-        'lowStockId': lowStockId,
-        'lowStockTag': lowStockTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/lowStock/{lowStockId}/tag/{lowStockTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getDuplicateLowStockById operation.
@@ -228,7 +72,7 @@
       var returnType = LowStock;
 
       return this.apiClient.callApi(
-        '/beta/lowStock/duplicate/{lowStockId}', 'GET',
+        '/v2.0/lowStock/duplicate/{lowStockId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,7 +121,7 @@
       var returnType = [LowStock];
 
       return this.apiClient.callApi(
-        '/beta/lowStock/search', 'GET',
+        '/v2.0/lowStock/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,52 +167,7 @@
       var returnType = LowStock;
 
       return this.apiClient.callApi(
-        '/beta/lowStock/{lowStockId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getLowStockTags operation.
-     * @callback module:api/LowStockApi~getLowStockTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a lowStock.
-     * Get all existing lowStock tags.
-     * @param {Integer} lowStockId Id of the lowStock to get tags for
-     * @param {module:api/LowStockApi~getLowStockTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getLowStockTags = function(lowStockId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'lowStockId' is set
-      if (lowStockId == undefined || lowStockId == null) {
-        throw "Missing the required parameter 'lowStockId' when calling getLowStockTags";
-      }
-
-
-      var pathParams = {
-        'lowStockId': lowStockId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/lowStock/{lowStockId}/tag', 'GET',
+        '/v2.0/lowStock/{lowStockId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

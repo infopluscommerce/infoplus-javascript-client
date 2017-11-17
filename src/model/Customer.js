@@ -18,7 +18,7 @@
   /**
    * The Customer model module.
    * @module model/Customer
-   * @version beta
+   * @version v2.0
    */
 
   /**

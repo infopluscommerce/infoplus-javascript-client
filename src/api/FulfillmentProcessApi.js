@@ -18,7 +18,7 @@
   /**
    * FulfillmentProcess service.
    * @module api/FulfillmentProcessApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addFulfillmentProcessAudit operation.
-     * @callback module:api/FulfillmentProcessApi~addFulfillmentProcessAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a fulfillmentProcess
-     * Adds an audit to an existing fulfillmentProcess.
-     * @param {Integer} fulfillmentProcessId Id of the fulfillmentProcess to add an audit to
-     * @param {String} fulfillmentProcessAudit The audit to add
-     * @param {module:api/FulfillmentProcessApi~addFulfillmentProcessAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addFulfillmentProcessAudit = function(fulfillmentProcessId, fulfillmentProcessAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentProcessId' is set
-      if (fulfillmentProcessId == undefined || fulfillmentProcessId == null) {
-        throw "Missing the required parameter 'fulfillmentProcessId' when calling addFulfillmentProcessAudit";
-      }
-
-      // verify the required parameter 'fulfillmentProcessAudit' is set
-      if (fulfillmentProcessAudit == undefined || fulfillmentProcessAudit == null) {
-        throw "Missing the required parameter 'fulfillmentProcessAudit' when calling addFulfillmentProcessAudit";
-      }
-
-
-      var pathParams = {
-        'fulfillmentProcessId': fulfillmentProcessId,
-        'fulfillmentProcessAudit': fulfillmentProcessAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/{fulfillmentProcessId}/audit/{fulfillmentProcessAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addFulfillmentProcessTag operation.
-     * @callback module:api/FulfillmentProcessApi~addFulfillmentProcessTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a fulfillmentProcess.
-     * Adds a tag to an existing fulfillmentProcess.
-     * @param {Integer} fulfillmentProcessId Id of the fulfillmentProcess to add a tag to
-     * @param {String} fulfillmentProcessTag The tag to add
-     * @param {module:api/FulfillmentProcessApi~addFulfillmentProcessTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addFulfillmentProcessTag = function(fulfillmentProcessId, fulfillmentProcessTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentProcessId' is set
-      if (fulfillmentProcessId == undefined || fulfillmentProcessId == null) {
-        throw "Missing the required parameter 'fulfillmentProcessId' when calling addFulfillmentProcessTag";
-      }
-
-      // verify the required parameter 'fulfillmentProcessTag' is set
-      if (fulfillmentProcessTag == undefined || fulfillmentProcessTag == null) {
-        throw "Missing the required parameter 'fulfillmentProcessTag' when calling addFulfillmentProcessTag";
-      }
-
-
-      var pathParams = {
-        'fulfillmentProcessId': fulfillmentProcessId,
-        'fulfillmentProcessTag': fulfillmentProcessTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/{fulfillmentProcessId}/tag/{fulfillmentProcessTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteFulfillmentProcessTag operation.
-     * @callback module:api/FulfillmentProcessApi~deleteFulfillmentProcessTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a fulfillmentProcess.
-     * Deletes an existing fulfillmentProcess tag using the specified data.
-     * @param {Integer} fulfillmentProcessId Id of the fulfillmentProcess to remove tag from
-     * @param {String} fulfillmentProcessTag The tag to delete
-     * @param {module:api/FulfillmentProcessApi~deleteFulfillmentProcessTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteFulfillmentProcessTag = function(fulfillmentProcessId, fulfillmentProcessTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentProcessId' is set
-      if (fulfillmentProcessId == undefined || fulfillmentProcessId == null) {
-        throw "Missing the required parameter 'fulfillmentProcessId' when calling deleteFulfillmentProcessTag";
-      }
-
-      // verify the required parameter 'fulfillmentProcessTag' is set
-      if (fulfillmentProcessTag == undefined || fulfillmentProcessTag == null) {
-        throw "Missing the required parameter 'fulfillmentProcessTag' when calling deleteFulfillmentProcessTag";
-      }
-
-
-      var pathParams = {
-        'fulfillmentProcessId': fulfillmentProcessId,
-        'fulfillmentProcessTag': fulfillmentProcessTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/{fulfillmentProcessId}/tag/{fulfillmentProcessTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getDuplicateFulfillmentProcessById operation.
@@ -228,7 +72,7 @@
       var returnType = FulfillmentProcess;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/duplicate/{fulfillmentProcessId}', 'GET',
+        '/v2.0/fulfillmentProcess/duplicate/{fulfillmentProcessId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,7 +121,7 @@
       var returnType = [FulfillmentProcess];
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/search', 'GET',
+        '/v2.0/fulfillmentProcess/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,52 +167,7 @@
       var returnType = FulfillmentProcess;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/{fulfillmentProcessId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getFulfillmentProcessTags operation.
-     * @callback module:api/FulfillmentProcessApi~getFulfillmentProcessTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a fulfillmentProcess.
-     * Get all existing fulfillmentProcess tags.
-     * @param {Integer} fulfillmentProcessId Id of the fulfillmentProcess to get tags for
-     * @param {module:api/FulfillmentProcessApi~getFulfillmentProcessTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getFulfillmentProcessTags = function(fulfillmentProcessId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentProcessId' is set
-      if (fulfillmentProcessId == undefined || fulfillmentProcessId == null) {
-        throw "Missing the required parameter 'fulfillmentProcessId' when calling getFulfillmentProcessTags";
-      }
-
-
-      var pathParams = {
-        'fulfillmentProcessId': fulfillmentProcessId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/{fulfillmentProcessId}/tag', 'GET',
+        '/v2.0/fulfillmentProcess/{fulfillmentProcessId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -412,7 +211,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentProcess/customFields', 'PUT',
+        '/v2.0/fulfillmentProcess/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

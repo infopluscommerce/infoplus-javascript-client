@@ -18,7 +18,7 @@
   /**
    * The LegacyLowstockContact model module.
    * @module model/LegacyLowstockContact
-   * @version beta
+   * @version v2.0
    */
 
   /**

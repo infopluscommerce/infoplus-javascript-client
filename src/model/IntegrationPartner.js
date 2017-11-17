@@ -18,7 +18,7 @@
   /**
    * The IntegrationPartner model module.
    * @module model/IntegrationPartner
-   * @version beta
+   * @version v2.0
    */
 
   /**

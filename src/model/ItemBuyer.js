@@ -18,7 +18,7 @@
   /**
    * The ItemBuyer model module.
    * @module model/ItemBuyer
-   * @version beta
+   * @version v2.0
    */
 
   /**

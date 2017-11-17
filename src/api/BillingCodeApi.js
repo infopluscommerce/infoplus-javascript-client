@@ -18,7 +18,7 @@
   /**
    * BillingCode service.
    * @module api/BillingCodeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = BillingCode;
 
       return this.apiClient.callApi(
-        '/beta/billingCode', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addBillingCodeAudit operation.
-     * @callback module:api/BillingCodeApi~addBillingCodeAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a billingCode
-     * Adds an audit to an existing billingCode.
-     * @param {Integer} billingCodeId Id of the billingCode to add an audit to
-     * @param {String} billingCodeAudit The audit to add
-     * @param {module:api/BillingCodeApi~addBillingCodeAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addBillingCodeAudit = function(billingCodeId, billingCodeAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billingCodeId' is set
-      if (billingCodeId == undefined || billingCodeId == null) {
-        throw "Missing the required parameter 'billingCodeId' when calling addBillingCodeAudit";
-      }
-
-      // verify the required parameter 'billingCodeAudit' is set
-      if (billingCodeAudit == undefined || billingCodeAudit == null) {
-        throw "Missing the required parameter 'billingCodeAudit' when calling addBillingCodeAudit";
-      }
-
-
-      var pathParams = {
-        'billingCodeId': billingCodeId,
-        'billingCodeAudit': billingCodeAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billingCode/{billingCodeId}/audit/{billingCodeAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addBillingCodeTag operation.
-     * @callback module:api/BillingCodeApi~addBillingCodeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a billingCode.
-     * Adds a tag to an existing billingCode.
-     * @param {Integer} billingCodeId Id of the billingCode to add a tag to
-     * @param {String} billingCodeTag The tag to add
-     * @param {module:api/BillingCodeApi~addBillingCodeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addBillingCodeTag = function(billingCodeId, billingCodeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billingCodeId' is set
-      if (billingCodeId == undefined || billingCodeId == null) {
-        throw "Missing the required parameter 'billingCodeId' when calling addBillingCodeTag";
-      }
-
-      // verify the required parameter 'billingCodeTag' is set
-      if (billingCodeTag == undefined || billingCodeTag == null) {
-        throw "Missing the required parameter 'billingCodeTag' when calling addBillingCodeTag";
-      }
-
-
-      var pathParams = {
-        'billingCodeId': billingCodeId,
-        'billingCodeTag': billingCodeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billingCode/{billingCodeId}/tag/{billingCodeTag}', 'PUT',
+        '/v2.0/billingCode', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/billingCode/{billingCodeId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteBillingCodeTag operation.
-     * @callback module:api/BillingCodeApi~deleteBillingCodeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a billingCode.
-     * Deletes an existing billingCode tag using the specified data.
-     * @param {Integer} billingCodeId Id of the billingCode to remove tag from
-     * @param {String} billingCodeTag The tag to delete
-     * @param {module:api/BillingCodeApi~deleteBillingCodeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteBillingCodeTag = function(billingCodeId, billingCodeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billingCodeId' is set
-      if (billingCodeId == undefined || billingCodeId == null) {
-        throw "Missing the required parameter 'billingCodeId' when calling deleteBillingCodeTag";
-      }
-
-      // verify the required parameter 'billingCodeTag' is set
-      if (billingCodeTag == undefined || billingCodeTag == null) {
-        throw "Missing the required parameter 'billingCodeTag' when calling deleteBillingCodeTag";
-      }
-
-
-      var pathParams = {
-        'billingCodeId': billingCodeId,
-        'billingCodeTag': billingCodeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billingCode/{billingCodeId}/tag/{billingCodeTag}', 'DELETE',
+        '/v2.0/billingCode/{billingCodeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -321,7 +165,7 @@
       var returnType = [BillingCode];
 
       return this.apiClient.callApi(
-        '/beta/billingCode/search', 'GET',
+        '/v2.0/billingCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,52 +211,7 @@
       var returnType = BillingCode;
 
       return this.apiClient.callApi(
-        '/beta/billingCode/{billingCodeId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getBillingCodeTags operation.
-     * @callback module:api/BillingCodeApi~getBillingCodeTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a billingCode.
-     * Get all existing billingCode tags.
-     * @param {Integer} billingCodeId Id of the billingCode to get tags for
-     * @param {module:api/BillingCodeApi~getBillingCodeTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getBillingCodeTags = function(billingCodeId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billingCodeId' is set
-      if (billingCodeId == undefined || billingCodeId == null) {
-        throw "Missing the required parameter 'billingCodeId' when calling getBillingCodeTags";
-      }
-
-
-      var pathParams = {
-        'billingCodeId': billingCodeId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billingCode/{billingCodeId}/tag', 'GET',
+        '/v2.0/billingCode/{billingCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -458,7 +257,7 @@
       var returnType = BillingCode;
 
       return this.apiClient.callApi(
-        '/beta/billingCode/duplicate/{billingCodeId}', 'GET',
+        '/v2.0/billingCode/duplicate/{billingCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/billingCode', 'PUT',
+        '/v2.0/billingCode', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/billingCode/customFields', 'PUT',
+        '/v2.0/billingCode/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

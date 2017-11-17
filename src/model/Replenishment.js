@@ -18,7 +18,7 @@
   /**
    * The Replenishment model module.
    * @module model/Replenishment
-   * @version beta
+   * @version v2.0
    */
 
   /**

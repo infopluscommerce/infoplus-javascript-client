@@ -4,16 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItemCategory**](ItemCategoryApi.md#addItemCategory) | **POST** /beta/itemCategory | Create an itemCategory
-[**addItemCategoryAudit**](ItemCategoryApi.md#addItemCategoryAudit) | **PUT** /beta/itemCategory/{itemCategoryId}/audit/{itemCategoryAudit} | Add new audit for an itemCategory
-[**addItemCategoryTag**](ItemCategoryApi.md#addItemCategoryTag) | **PUT** /beta/itemCategory/{itemCategoryId}/tag/{itemCategoryTag} | Add new tags for an itemCategory.
-[**deleteItemCategory**](ItemCategoryApi.md#deleteItemCategory) | **DELETE** /beta/itemCategory/{itemCategoryId} | Delete an itemCategory
-[**deleteItemCategoryTag**](ItemCategoryApi.md#deleteItemCategoryTag) | **DELETE** /beta/itemCategory/{itemCategoryId}/tag/{itemCategoryTag} | Delete a tag for an itemCategory.
-[**getDuplicateItemCategoryById**](ItemCategoryApi.md#getDuplicateItemCategoryById) | **GET** /beta/itemCategory/duplicate/{itemCategoryId} | Get a duplicated an itemCategory by id
-[**getItemCategoryByFilter**](ItemCategoryApi.md#getItemCategoryByFilter) | **GET** /beta/itemCategory/search | Search itemCategorys by filter
-[**getItemCategoryById**](ItemCategoryApi.md#getItemCategoryById) | **GET** /beta/itemCategory/{itemCategoryId} | Get an itemCategory by id
-[**getItemCategoryTags**](ItemCategoryApi.md#getItemCategoryTags) | **GET** /beta/itemCategory/{itemCategoryId}/tag | Get the tags for an itemCategory.
-[**updateItemCategory**](ItemCategoryApi.md#updateItemCategory) | **PUT** /beta/itemCategory | Update an itemCategory
+[**addItemCategory**](ItemCategoryApi.md#addItemCategory) | **POST** /v2.0/itemCategory | Create an itemCategory
+[**deleteItemCategory**](ItemCategoryApi.md#deleteItemCategory) | **DELETE** /v2.0/itemCategory/{itemCategoryId} | Delete an itemCategory
+[**getDuplicateItemCategoryById**](ItemCategoryApi.md#getDuplicateItemCategoryById) | **GET** /v2.0/itemCategory/duplicate/{itemCategoryId} | Get a duplicated an itemCategory by id
+[**getItemCategoryByFilter**](ItemCategoryApi.md#getItemCategoryByFilter) | **GET** /v2.0/itemCategory/search | Search itemCategorys by filter
+[**getItemCategoryById**](ItemCategoryApi.md#getItemCategoryById) | **GET** /v2.0/itemCategory/{itemCategoryId} | Get an itemCategory by id
+[**updateItemCategory**](ItemCategoryApi.md#updateItemCategory) | **PUT** /v2.0/itemCategory | Update an itemCategory
 
 
 <a name="addItemCategory"></a>
@@ -69,118 +65,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addItemCategoryAudit"></a>
-# **addItemCategoryAudit**
-> addItemCategoryAudit(itemCategoryId, itemCategoryAudit)
-
-Add new audit for an itemCategory
-
-Adds an audit to an existing itemCategory.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemCategoryApi()
-
-var itemCategoryId = 56; // {Integer} Id of the itemCategory to add an audit to
-
-var itemCategoryAudit = "itemCategoryAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemCategoryAudit(itemCategoryId, itemCategoryAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemCategoryId** | **Integer**| Id of the itemCategory to add an audit to | 
- **itemCategoryAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addItemCategoryTag"></a>
-# **addItemCategoryTag**
-> addItemCategoryTag(itemCategoryId, itemCategoryTag)
-
-Add new tags for an itemCategory.
-
-Adds a tag to an existing itemCategory.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemCategoryApi()
-
-var itemCategoryId = 56; // {Integer} Id of the itemCategory to add a tag to
-
-var itemCategoryTag = "itemCategoryTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemCategoryTag(itemCategoryId, itemCategoryTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemCategoryId** | **Integer**| Id of the itemCategory to add a tag to | 
- **itemCategoryTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteItemCategory"></a>
 # **deleteItemCategory**
 > deleteItemCategory(itemCategoryId)
@@ -220,62 +104,6 @@ api.deleteItemCategory(itemCategoryId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemCategoryId** | **Integer**| Id of the itemCategory to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteItemCategoryTag"></a>
-# **deleteItemCategoryTag**
-> deleteItemCategoryTag(itemCategoryId, itemCategoryTag)
-
-Delete a tag for an itemCategory.
-
-Deletes an existing itemCategory tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemCategoryApi()
-
-var itemCategoryId = 56; // {Integer} Id of the itemCategory to remove tag from
-
-var itemCategoryTag = "itemCategoryTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteItemCategoryTag(itemCategoryId, itemCategoryTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemCategoryId** | **Integer**| Id of the itemCategory to remove tag from | 
- **itemCategoryTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -446,59 +274,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ItemCategory**](ItemCategory.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getItemCategoryTags"></a>
-# **getItemCategoryTags**
-> getItemCategoryTags(itemCategoryId)
-
-Get the tags for an itemCategory.
-
-Get all existing itemCategory tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemCategoryApi()
-
-var itemCategoryId = 56; // {Integer} Id of the itemCategory to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getItemCategoryTags(itemCategoryId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemCategoryId** | **Integer**| Id of the itemCategory to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

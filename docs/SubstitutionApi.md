@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addSubstitution**](SubstitutionApi.md#addSubstitution) | **POST** /beta/substitution | Create a substitution
-[**addSubstitutionAudit**](SubstitutionApi.md#addSubstitutionAudit) | **PUT** /beta/substitution/{substitutionId}/audit/{substitutionAudit} | Add new audit for a substitution
-[**addSubstitutionTag**](SubstitutionApi.md#addSubstitutionTag) | **PUT** /beta/substitution/{substitutionId}/tag/{substitutionTag} | Add new tags for a substitution.
-[**deleteSubstitution**](SubstitutionApi.md#deleteSubstitution) | **DELETE** /beta/substitution/{substitutionId} | Delete a substitution
-[**deleteSubstitutionTag**](SubstitutionApi.md#deleteSubstitutionTag) | **DELETE** /beta/substitution/{substitutionId}/tag/{substitutionTag} | Delete a tag for a substitution.
-[**getDuplicateSubstitutionById**](SubstitutionApi.md#getDuplicateSubstitutionById) | **GET** /beta/substitution/duplicate/{substitutionId} | Get a duplicated a substitution by id
-[**getSubstitutionByFilter**](SubstitutionApi.md#getSubstitutionByFilter) | **GET** /beta/substitution/search | Search substitutions by filter
-[**getSubstitutionById**](SubstitutionApi.md#getSubstitutionById) | **GET** /beta/substitution/{substitutionId} | Get a substitution by id
-[**getSubstitutionTags**](SubstitutionApi.md#getSubstitutionTags) | **GET** /beta/substitution/{substitutionId}/tag | Get the tags for a substitution.
-[**updateSubstitution**](SubstitutionApi.md#updateSubstitution) | **PUT** /beta/substitution | Update a substitution
-[**updateSubstitutionCustomFields**](SubstitutionApi.md#updateSubstitutionCustomFields) | **PUT** /beta/substitution/customFields | Update a substitution custom fields
+[**addSubstitution**](SubstitutionApi.md#addSubstitution) | **POST** /v2.0/substitution | Create a substitution
+[**deleteSubstitution**](SubstitutionApi.md#deleteSubstitution) | **DELETE** /v2.0/substitution/{substitutionId} | Delete a substitution
+[**getDuplicateSubstitutionById**](SubstitutionApi.md#getDuplicateSubstitutionById) | **GET** /v2.0/substitution/duplicate/{substitutionId} | Get a duplicated a substitution by id
+[**getSubstitutionByFilter**](SubstitutionApi.md#getSubstitutionByFilter) | **GET** /v2.0/substitution/search | Search substitutions by filter
+[**getSubstitutionById**](SubstitutionApi.md#getSubstitutionById) | **GET** /v2.0/substitution/{substitutionId} | Get a substitution by id
+[**updateSubstitution**](SubstitutionApi.md#updateSubstitution) | **PUT** /v2.0/substitution | Update a substitution
+[**updateSubstitutionCustomFields**](SubstitutionApi.md#updateSubstitutionCustomFields) | **PUT** /v2.0/substitution/customFields | Update a substitution custom fields
 
 
 <a name="addSubstitution"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addSubstitutionAudit"></a>
-# **addSubstitutionAudit**
-> addSubstitutionAudit(substitutionId, substitutionAudit)
-
-Add new audit for a substitution
-
-Adds an audit to an existing substitution.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.SubstitutionApi()
-
-var substitutionId = 56; // {Integer} Id of the substitution to add an audit to
-
-var substitutionAudit = "substitutionAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addSubstitutionAudit(substitutionId, substitutionAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **substitutionId** | **Integer**| Id of the substitution to add an audit to | 
- **substitutionAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addSubstitutionTag"></a>
-# **addSubstitutionTag**
-> addSubstitutionTag(substitutionId, substitutionTag)
-
-Add new tags for a substitution.
-
-Adds a tag to an existing substitution.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.SubstitutionApi()
-
-var substitutionId = 56; // {Integer} Id of the substitution to add a tag to
-
-var substitutionTag = "substitutionTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addSubstitutionTag(substitutionId, substitutionTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **substitutionId** | **Integer**| Id of the substitution to add a tag to | 
- **substitutionTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteSubstitution"></a>
 # **deleteSubstitution**
 > deleteSubstitution(substitutionId)
@@ -221,62 +105,6 @@ api.deleteSubstitution(substitutionId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **substitutionId** | **Integer**| Id of the substitution to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteSubstitutionTag"></a>
-# **deleteSubstitutionTag**
-> deleteSubstitutionTag(substitutionId, substitutionTag)
-
-Delete a tag for a substitution.
-
-Deletes an existing substitution tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.SubstitutionApi()
-
-var substitutionId = 56; // {Integer} Id of the substitution to remove tag from
-
-var substitutionTag = "substitutionTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteSubstitutionTag(substitutionId, substitutionTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **substitutionId** | **Integer**| Id of the substitution to remove tag from | 
- **substitutionTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Substitution**](Substitution.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getSubstitutionTags"></a>
-# **getSubstitutionTags**
-> getSubstitutionTags(substitutionId)
-
-Get the tags for a substitution.
-
-Get all existing substitution tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.SubstitutionApi()
-
-var substitutionId = 56; // {Integer} Id of the substitution to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getSubstitutionTags(substitutionId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **substitutionId** | **Integer**| Id of the substitution to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

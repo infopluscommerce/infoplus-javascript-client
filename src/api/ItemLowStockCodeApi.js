@@ -18,7 +18,7 @@
   /**
    * ItemLowstockCode service.
    * @module api/ItemLowstockCodeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ItemLowstockCode;
 
       return this.apiClient.callApi(
-        '/beta/itemLowstockCode', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemLowstockCodeAudit operation.
-     * @callback module:api/ItemLowstockCodeApi~addItemLowstockCodeAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemLowstockCode
-     * Adds an audit to an existing itemLowstockCode.
-     * @param {Integer} itemLowstockCodeId Id of the itemLowstockCode to add an audit to
-     * @param {String} itemLowstockCodeAudit The audit to add
-     * @param {module:api/ItemLowstockCodeApi~addItemLowstockCodeAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemLowstockCodeAudit = function(itemLowstockCodeId, itemLowstockCodeAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemLowstockCodeId' is set
-      if (itemLowstockCodeId == undefined || itemLowstockCodeId == null) {
-        throw "Missing the required parameter 'itemLowstockCodeId' when calling addItemLowstockCodeAudit";
-      }
-
-      // verify the required parameter 'itemLowstockCodeAudit' is set
-      if (itemLowstockCodeAudit == undefined || itemLowstockCodeAudit == null) {
-        throw "Missing the required parameter 'itemLowstockCodeAudit' when calling addItemLowstockCodeAudit";
-      }
-
-
-      var pathParams = {
-        'itemLowstockCodeId': itemLowstockCodeId,
-        'itemLowstockCodeAudit': itemLowstockCodeAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemLowstockCode/{itemLowstockCodeId}/audit/{itemLowstockCodeAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemLowstockCodeTag operation.
-     * @callback module:api/ItemLowstockCodeApi~addItemLowstockCodeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemLowstockCode.
-     * Adds a tag to an existing itemLowstockCode.
-     * @param {Integer} itemLowstockCodeId Id of the itemLowstockCode to add a tag to
-     * @param {String} itemLowstockCodeTag The tag to add
-     * @param {module:api/ItemLowstockCodeApi~addItemLowstockCodeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemLowstockCodeTag = function(itemLowstockCodeId, itemLowstockCodeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemLowstockCodeId' is set
-      if (itemLowstockCodeId == undefined || itemLowstockCodeId == null) {
-        throw "Missing the required parameter 'itemLowstockCodeId' when calling addItemLowstockCodeTag";
-      }
-
-      // verify the required parameter 'itemLowstockCodeTag' is set
-      if (itemLowstockCodeTag == undefined || itemLowstockCodeTag == null) {
-        throw "Missing the required parameter 'itemLowstockCodeTag' when calling addItemLowstockCodeTag";
-      }
-
-
-      var pathParams = {
-        'itemLowstockCodeId': itemLowstockCodeId,
-        'itemLowstockCodeTag': itemLowstockCodeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemLowstockCode/{itemLowstockCodeId}/tag/{itemLowstockCodeTag}', 'PUT',
+        '/v2.0/itemLowstockCode', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemLowstockCode/{itemLowstockCodeId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemLowstockCodeTag operation.
-     * @callback module:api/ItemLowstockCodeApi~deleteItemLowstockCodeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemLowstockCode.
-     * Deletes an existing itemLowstockCode tag using the specified data.
-     * @param {Integer} itemLowstockCodeId Id of the itemLowstockCode to remove tag from
-     * @param {String} itemLowstockCodeTag The tag to delete
-     * @param {module:api/ItemLowstockCodeApi~deleteItemLowstockCodeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemLowstockCodeTag = function(itemLowstockCodeId, itemLowstockCodeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemLowstockCodeId' is set
-      if (itemLowstockCodeId == undefined || itemLowstockCodeId == null) {
-        throw "Missing the required parameter 'itemLowstockCodeId' when calling deleteItemLowstockCodeTag";
-      }
-
-      // verify the required parameter 'itemLowstockCodeTag' is set
-      if (itemLowstockCodeTag == undefined || itemLowstockCodeTag == null) {
-        throw "Missing the required parameter 'itemLowstockCodeTag' when calling deleteItemLowstockCodeTag";
-      }
-
-
-      var pathParams = {
-        'itemLowstockCodeId': itemLowstockCodeId,
-        'itemLowstockCodeTag': itemLowstockCodeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemLowstockCode/{itemLowstockCodeId}/tag/{itemLowstockCodeTag}', 'DELETE',
+        '/v2.0/itemLowstockCode/{itemLowstockCodeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ItemLowstockCode;
 
       return this.apiClient.callApi(
-        '/beta/itemLowstockCode/duplicate/{itemLowstockCodeId}', 'GET',
+        '/v2.0/itemLowstockCode/duplicate/{itemLowstockCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ItemLowstockCode];
 
       return this.apiClient.callApi(
-        '/beta/itemLowstockCode/search', 'GET',
+        '/v2.0/itemLowstockCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ItemLowstockCode;
 
       return this.apiClient.callApi(
-        '/beta/itemLowstockCode/{itemLowstockCodeId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemLowstockCodeTags operation.
-     * @callback module:api/ItemLowstockCodeApi~getItemLowstockCodeTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemLowstockCode.
-     * Get all existing itemLowstockCode tags.
-     * @param {Integer} itemLowstockCodeId Id of the itemLowstockCode to get tags for
-     * @param {module:api/ItemLowstockCodeApi~getItemLowstockCodeTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemLowstockCodeTags = function(itemLowstockCodeId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemLowstockCodeId' is set
-      if (itemLowstockCodeId == undefined || itemLowstockCodeId == null) {
-        throw "Missing the required parameter 'itemLowstockCodeId' when calling getItemLowstockCodeTags";
-      }
-
-
-      var pathParams = {
-        'itemLowstockCodeId': itemLowstockCodeId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemLowstockCode/{itemLowstockCodeId}/tag', 'GET',
+        '/v2.0/itemLowstockCode/{itemLowstockCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemLowstockCode', 'PUT',
+        '/v2.0/itemLowstockCode', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

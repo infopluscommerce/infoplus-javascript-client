@@ -18,7 +18,7 @@
   /**
    * ScheduledPlanLog service.
    * @module api/ScheduledPlanLogApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addScheduledPlanLogAudit operation.
-     * @callback module:api/ScheduledPlanLogApi~addScheduledPlanLogAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a scheduledPlanLog
-     * Adds an audit to an existing scheduledPlanLog.
-     * @param {Integer} scheduledPlanLogId Id of the scheduledPlanLog to add an audit to
-     * @param {String} scheduledPlanLogAudit The audit to add
-     * @param {module:api/ScheduledPlanLogApi~addScheduledPlanLogAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addScheduledPlanLogAudit = function(scheduledPlanLogId, scheduledPlanLogAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'scheduledPlanLogId' is set
-      if (scheduledPlanLogId == undefined || scheduledPlanLogId == null) {
-        throw "Missing the required parameter 'scheduledPlanLogId' when calling addScheduledPlanLogAudit";
-      }
-
-      // verify the required parameter 'scheduledPlanLogAudit' is set
-      if (scheduledPlanLogAudit == undefined || scheduledPlanLogAudit == null) {
-        throw "Missing the required parameter 'scheduledPlanLogAudit' when calling addScheduledPlanLogAudit";
-      }
-
-
-      var pathParams = {
-        'scheduledPlanLogId': scheduledPlanLogId,
-        'scheduledPlanLogAudit': scheduledPlanLogAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/{scheduledPlanLogId}/audit/{scheduledPlanLogAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addScheduledPlanLogTag operation.
-     * @callback module:api/ScheduledPlanLogApi~addScheduledPlanLogTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a scheduledPlanLog.
-     * Adds a tag to an existing scheduledPlanLog.
-     * @param {Integer} scheduledPlanLogId Id of the scheduledPlanLog to add a tag to
-     * @param {String} scheduledPlanLogTag The tag to add
-     * @param {module:api/ScheduledPlanLogApi~addScheduledPlanLogTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addScheduledPlanLogTag = function(scheduledPlanLogId, scheduledPlanLogTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'scheduledPlanLogId' is set
-      if (scheduledPlanLogId == undefined || scheduledPlanLogId == null) {
-        throw "Missing the required parameter 'scheduledPlanLogId' when calling addScheduledPlanLogTag";
-      }
-
-      // verify the required parameter 'scheduledPlanLogTag' is set
-      if (scheduledPlanLogTag == undefined || scheduledPlanLogTag == null) {
-        throw "Missing the required parameter 'scheduledPlanLogTag' when calling addScheduledPlanLogTag";
-      }
-
-
-      var pathParams = {
-        'scheduledPlanLogId': scheduledPlanLogId,
-        'scheduledPlanLogTag': scheduledPlanLogTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/{scheduledPlanLogId}/tag/{scheduledPlanLogTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteScheduledPlanLogTag operation.
-     * @callback module:api/ScheduledPlanLogApi~deleteScheduledPlanLogTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a scheduledPlanLog.
-     * Deletes an existing scheduledPlanLog tag using the specified data.
-     * @param {Integer} scheduledPlanLogId Id of the scheduledPlanLog to remove tag from
-     * @param {String} scheduledPlanLogTag The tag to delete
-     * @param {module:api/ScheduledPlanLogApi~deleteScheduledPlanLogTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteScheduledPlanLogTag = function(scheduledPlanLogId, scheduledPlanLogTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'scheduledPlanLogId' is set
-      if (scheduledPlanLogId == undefined || scheduledPlanLogId == null) {
-        throw "Missing the required parameter 'scheduledPlanLogId' when calling deleteScheduledPlanLogTag";
-      }
-
-      // verify the required parameter 'scheduledPlanLogTag' is set
-      if (scheduledPlanLogTag == undefined || scheduledPlanLogTag == null) {
-        throw "Missing the required parameter 'scheduledPlanLogTag' when calling deleteScheduledPlanLogTag";
-      }
-
-
-      var pathParams = {
-        'scheduledPlanLogId': scheduledPlanLogId,
-        'scheduledPlanLogTag': scheduledPlanLogTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/{scheduledPlanLogId}/tag/{scheduledPlanLogTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getDuplicateScheduledPlanLogById operation.
@@ -228,7 +72,7 @@
       var returnType = ScheduledPlanLog;
 
       return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/duplicate/{scheduledPlanLogId}', 'GET',
+        '/v2.0/scheduledPlanLog/duplicate/{scheduledPlanLogId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,7 +121,7 @@
       var returnType = [ScheduledPlanLog];
 
       return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/search', 'GET',
+        '/v2.0/scheduledPlanLog/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,52 +167,7 @@
       var returnType = ScheduledPlanLog;
 
       return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/{scheduledPlanLogId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getScheduledPlanLogTags operation.
-     * @callback module:api/ScheduledPlanLogApi~getScheduledPlanLogTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a scheduledPlanLog.
-     * Get all existing scheduledPlanLog tags.
-     * @param {Integer} scheduledPlanLogId Id of the scheduledPlanLog to get tags for
-     * @param {module:api/ScheduledPlanLogApi~getScheduledPlanLogTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getScheduledPlanLogTags = function(scheduledPlanLogId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'scheduledPlanLogId' is set
-      if (scheduledPlanLogId == undefined || scheduledPlanLogId == null) {
-        throw "Missing the required parameter 'scheduledPlanLogId' when calling getScheduledPlanLogTags";
-      }
-
-
-      var pathParams = {
-        'scheduledPlanLogId': scheduledPlanLogId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/scheduledPlanLog/{scheduledPlanLogId}/tag', 'GET',
+        '/v2.0/scheduledPlanLog/{scheduledPlanLogId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

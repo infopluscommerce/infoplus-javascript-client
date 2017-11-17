@@ -18,7 +18,7 @@
   /**
    * The BusinessTransaction model module.
    * @module model/BusinessTransaction
-   * @version beta
+   * @version v2.0
    */
 
   /**

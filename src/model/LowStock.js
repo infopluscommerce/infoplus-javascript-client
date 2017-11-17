@@ -18,7 +18,7 @@
   /**
    * The LowStock model module.
    * @module model/LowStock
-   * @version beta
+   * @version v2.0
    */
 
   /**

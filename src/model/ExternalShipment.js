@@ -18,7 +18,7 @@
   /**
    * The ExternalShipment model module.
    * @module model/ExternalShipment
-   * @version beta
+   * @version v2.0
    */
 
   /**

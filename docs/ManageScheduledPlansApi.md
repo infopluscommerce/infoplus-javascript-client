@@ -4,16 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addManageScheduledPlans**](ManageScheduledPlansApi.md#addManageScheduledPlans) | **POST** /beta/manageScheduledPlans | Create a manageScheduledPlans
-[**addManageScheduledPlansAudit**](ManageScheduledPlansApi.md#addManageScheduledPlansAudit) | **PUT** /beta/manageScheduledPlans/{manageScheduledPlansId}/audit/{manageScheduledPlansAudit} | Add new audit for a manageScheduledPlans
-[**addManageScheduledPlansTag**](ManageScheduledPlansApi.md#addManageScheduledPlansTag) | **PUT** /beta/manageScheduledPlans/{manageScheduledPlansId}/tag/{manageScheduledPlansTag} | Add new tags for a manageScheduledPlans.
-[**deleteManageScheduledPlans**](ManageScheduledPlansApi.md#deleteManageScheduledPlans) | **DELETE** /beta/manageScheduledPlans/{manageScheduledPlansId} | Delete a manageScheduledPlans
-[**deleteManageScheduledPlansTag**](ManageScheduledPlansApi.md#deleteManageScheduledPlansTag) | **DELETE** /beta/manageScheduledPlans/{manageScheduledPlansId}/tag/{manageScheduledPlansTag} | Delete a tag for a manageScheduledPlans.
-[**getDuplicateManageScheduledPlansById**](ManageScheduledPlansApi.md#getDuplicateManageScheduledPlansById) | **GET** /beta/manageScheduledPlans/duplicate/{manageScheduledPlansId} | Get a duplicated a manageScheduledPlans by id
-[**getManageScheduledPlansByFilter**](ManageScheduledPlansApi.md#getManageScheduledPlansByFilter) | **GET** /beta/manageScheduledPlans/search | Search manageScheduledPlanses by filter
-[**getManageScheduledPlansById**](ManageScheduledPlansApi.md#getManageScheduledPlansById) | **GET** /beta/manageScheduledPlans/{manageScheduledPlansId} | Get a manageScheduledPlans by id
-[**getManageScheduledPlansTags**](ManageScheduledPlansApi.md#getManageScheduledPlansTags) | **GET** /beta/manageScheduledPlans/{manageScheduledPlansId}/tag | Get the tags for a manageScheduledPlans.
-[**updateManageScheduledPlans**](ManageScheduledPlansApi.md#updateManageScheduledPlans) | **PUT** /beta/manageScheduledPlans | Update a manageScheduledPlans
+[**addManageScheduledPlans**](ManageScheduledPlansApi.md#addManageScheduledPlans) | **POST** /v2.0/manageScheduledPlans | Create a manageScheduledPlans
+[**deleteManageScheduledPlans**](ManageScheduledPlansApi.md#deleteManageScheduledPlans) | **DELETE** /v2.0/manageScheduledPlans/{manageScheduledPlansId} | Delete a manageScheduledPlans
+[**getDuplicateManageScheduledPlansById**](ManageScheduledPlansApi.md#getDuplicateManageScheduledPlansById) | **GET** /v2.0/manageScheduledPlans/duplicate/{manageScheduledPlansId} | Get a duplicated a manageScheduledPlans by id
+[**getManageScheduledPlansByFilter**](ManageScheduledPlansApi.md#getManageScheduledPlansByFilter) | **GET** /v2.0/manageScheduledPlans/search | Search manageScheduledPlanses by filter
+[**getManageScheduledPlansById**](ManageScheduledPlansApi.md#getManageScheduledPlansById) | **GET** /v2.0/manageScheduledPlans/{manageScheduledPlansId} | Get a manageScheduledPlans by id
+[**updateManageScheduledPlans**](ManageScheduledPlansApi.md#updateManageScheduledPlans) | **PUT** /v2.0/manageScheduledPlans | Update a manageScheduledPlans
 
 
 <a name="addManageScheduledPlans"></a>
@@ -69,118 +65,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addManageScheduledPlansAudit"></a>
-# **addManageScheduledPlansAudit**
-> addManageScheduledPlansAudit(manageScheduledPlansId, manageScheduledPlansAudit)
-
-Add new audit for a manageScheduledPlans
-
-Adds an audit to an existing manageScheduledPlans.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ManageScheduledPlansApi()
-
-var manageScheduledPlansId = 56; // {Integer} Id of the manageScheduledPlans to add an audit to
-
-var manageScheduledPlansAudit = "manageScheduledPlansAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addManageScheduledPlansAudit(manageScheduledPlansId, manageScheduledPlansAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manageScheduledPlansId** | **Integer**| Id of the manageScheduledPlans to add an audit to | 
- **manageScheduledPlansAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addManageScheduledPlansTag"></a>
-# **addManageScheduledPlansTag**
-> addManageScheduledPlansTag(manageScheduledPlansId, manageScheduledPlansTag)
-
-Add new tags for a manageScheduledPlans.
-
-Adds a tag to an existing manageScheduledPlans.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ManageScheduledPlansApi()
-
-var manageScheduledPlansId = 56; // {Integer} Id of the manageScheduledPlans to add a tag to
-
-var manageScheduledPlansTag = "manageScheduledPlansTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addManageScheduledPlansTag(manageScheduledPlansId, manageScheduledPlansTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manageScheduledPlansId** | **Integer**| Id of the manageScheduledPlans to add a tag to | 
- **manageScheduledPlansTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteManageScheduledPlans"></a>
 # **deleteManageScheduledPlans**
 > deleteManageScheduledPlans(manageScheduledPlansId)
@@ -220,62 +104,6 @@ api.deleteManageScheduledPlans(manageScheduledPlansId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **manageScheduledPlansId** | **Integer**| Id of the manageScheduledPlans to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteManageScheduledPlansTag"></a>
-# **deleteManageScheduledPlansTag**
-> deleteManageScheduledPlansTag(manageScheduledPlansId, manageScheduledPlansTag)
-
-Delete a tag for a manageScheduledPlans.
-
-Deletes an existing manageScheduledPlans tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ManageScheduledPlansApi()
-
-var manageScheduledPlansId = 56; // {Integer} Id of the manageScheduledPlans to remove tag from
-
-var manageScheduledPlansTag = "manageScheduledPlansTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteManageScheduledPlansTag(manageScheduledPlansId, manageScheduledPlansTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manageScheduledPlansId** | **Integer**| Id of the manageScheduledPlans to remove tag from | 
- **manageScheduledPlansTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -446,59 +274,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ManageScheduledPlans**](ManageScheduledPlans.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getManageScheduledPlansTags"></a>
-# **getManageScheduledPlansTags**
-> getManageScheduledPlansTags(manageScheduledPlansId)
-
-Get the tags for a manageScheduledPlans.
-
-Get all existing manageScheduledPlans tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ManageScheduledPlansApi()
-
-var manageScheduledPlansId = 56; // {Integer} Id of the manageScheduledPlans to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getManageScheduledPlansTags(manageScheduledPlansId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manageScheduledPlansId** | **Integer**| Id of the manageScheduledPlans to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

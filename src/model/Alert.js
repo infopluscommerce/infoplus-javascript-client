@@ -18,7 +18,7 @@
   /**
    * The Alert model module.
    * @module model/Alert
-   * @version beta
+   * @version v2.0
    */
 
   /**

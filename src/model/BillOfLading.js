@@ -18,7 +18,7 @@
   /**
    * The BillOfLading model module.
    * @module model/BillOfLading
-   * @version beta
+   * @version v2.0
    */
 
   /**

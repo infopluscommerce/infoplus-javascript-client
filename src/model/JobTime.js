@@ -18,7 +18,7 @@
   /**
    * The JobTime model module.
    * @module model/JobTime
-   * @version beta
+   * @version v2.0
    */
 
   /**

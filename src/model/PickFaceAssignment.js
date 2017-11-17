@@ -18,7 +18,7 @@
   /**
    * The PickFaceAssignment model module.
    * @module model/PickFaceAssignment
-   * @version beta
+   * @version v2.0
    */
 
   /**

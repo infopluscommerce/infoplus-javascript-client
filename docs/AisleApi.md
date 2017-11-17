@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addAisle**](AisleApi.md#addAisle) | **POST** /beta/aisle | Create an aisle
-[**addAisleAudit**](AisleApi.md#addAisleAudit) | **PUT** /beta/aisle/{aisleId}/audit/{aisleAudit} | Add new audit for an aisle
-[**addAisleTag**](AisleApi.md#addAisleTag) | **PUT** /beta/aisle/{aisleId}/tag/{aisleTag} | Add new tags for an aisle.
-[**deleteAisle**](AisleApi.md#deleteAisle) | **DELETE** /beta/aisle/{aisleId} | Delete an aisle
-[**deleteAisleTag**](AisleApi.md#deleteAisleTag) | **DELETE** /beta/aisle/{aisleId}/tag/{aisleTag} | Delete a tag for an aisle.
-[**getAisleByFilter**](AisleApi.md#getAisleByFilter) | **GET** /beta/aisle/search | Search aisles by filter
-[**getAisleById**](AisleApi.md#getAisleById) | **GET** /beta/aisle/{aisleId} | Get an aisle by id
-[**getAisleTags**](AisleApi.md#getAisleTags) | **GET** /beta/aisle/{aisleId}/tag | Get the tags for an aisle.
-[**getDuplicateAisleById**](AisleApi.md#getDuplicateAisleById) | **GET** /beta/aisle/duplicate/{aisleId} | Get a duplicated an aisle by id
-[**updateAisle**](AisleApi.md#updateAisle) | **PUT** /beta/aisle | Update an aisle
-[**updateAisleCustomFields**](AisleApi.md#updateAisleCustomFields) | **PUT** /beta/aisle/customFields | Update an aisle custom fields
+[**addAisle**](AisleApi.md#addAisle) | **POST** /v2.0/aisle | Create an aisle
+[**deleteAisle**](AisleApi.md#deleteAisle) | **DELETE** /v2.0/aisle/{aisleId} | Delete an aisle
+[**getAisleByFilter**](AisleApi.md#getAisleByFilter) | **GET** /v2.0/aisle/search | Search aisles by filter
+[**getAisleById**](AisleApi.md#getAisleById) | **GET** /v2.0/aisle/{aisleId} | Get an aisle by id
+[**getDuplicateAisleById**](AisleApi.md#getDuplicateAisleById) | **GET** /v2.0/aisle/duplicate/{aisleId} | Get a duplicated an aisle by id
+[**updateAisle**](AisleApi.md#updateAisle) | **PUT** /v2.0/aisle | Update an aisle
+[**updateAisleCustomFields**](AisleApi.md#updateAisleCustomFields) | **PUT** /v2.0/aisle/customFields | Update an aisle custom fields
 
 
 <a name="addAisle"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addAisleAudit"></a>
-# **addAisleAudit**
-> addAisleAudit(aisleId, aisleAudit)
-
-Add new audit for an aisle
-
-Adds an audit to an existing aisle.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.AisleApi()
-
-var aisleId = 56; // {Integer} Id of the aisle to add an audit to
-
-var aisleAudit = "aisleAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addAisleAudit(aisleId, aisleAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aisleId** | **Integer**| Id of the aisle to add an audit to | 
- **aisleAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addAisleTag"></a>
-# **addAisleTag**
-> addAisleTag(aisleId, aisleTag)
-
-Add new tags for an aisle.
-
-Adds a tag to an existing aisle.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.AisleApi()
-
-var aisleId = 56; // {Integer} Id of the aisle to add a tag to
-
-var aisleTag = "aisleTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addAisleTag(aisleId, aisleTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aisleId** | **Integer**| Id of the aisle to add a tag to | 
- **aisleTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteAisle"></a>
 # **deleteAisle**
 > deleteAisle(aisleId)
@@ -221,62 +105,6 @@ api.deleteAisle(aisleId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aisleId** | **Integer**| Id of the aisle to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteAisleTag"></a>
-# **deleteAisleTag**
-> deleteAisleTag(aisleId, aisleTag)
-
-Delete a tag for an aisle.
-
-Deletes an existing aisle tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.AisleApi()
-
-var aisleId = 56; // {Integer} Id of the aisle to remove tag from
-
-var aisleTag = "aisleTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteAisleTag(aisleId, aisleTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aisleId** | **Integer**| Id of the aisle to remove tag from | 
- **aisleTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -394,59 +222,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Aisle**](Aisle.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getAisleTags"></a>
-# **getAisleTags**
-> getAisleTags(aisleId)
-
-Get the tags for an aisle.
-
-Get all existing aisle tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.AisleApi()
-
-var aisleId = 56; // {Integer} Id of the aisle to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getAisleTags(aisleId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aisleId** | **Integer**| Id of the aisle to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

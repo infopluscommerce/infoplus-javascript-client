@@ -18,7 +18,7 @@
   /**
    * The LocationBillingType model module.
    * @module model/LocationBillingType
-   * @version beta
+   * @version v2.0
    */
 
   /**

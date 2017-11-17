@@ -18,7 +18,7 @@
   /**
    * The User model module.
    * @module model/User
-   * @version beta
+   * @version v2.0
    */
 
   /**

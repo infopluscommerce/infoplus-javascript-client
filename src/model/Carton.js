@@ -18,7 +18,7 @@
   /**
    * The Carton model module.
    * @module model/Carton
-   * @version beta
+   * @version v2.0
    */
 
   /**

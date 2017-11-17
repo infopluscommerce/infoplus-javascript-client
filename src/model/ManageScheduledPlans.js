@@ -18,7 +18,7 @@
   /**
    * The ManageScheduledPlans model module.
    * @module model/ManageScheduledPlans
-   * @version beta
+   * @version v2.0
    */
 
   /**

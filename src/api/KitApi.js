@@ -18,7 +18,7 @@
   /**
    * Kit service.
    * @module api/KitApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Kit;
 
       return this.apiClient.callApi(
-        '/beta/kit', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addKitAudit operation.
-     * @callback module:api/KitApi~addKitAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a kit
-     * Adds an audit to an existing kit.
-     * @param {Integer} kitId Id of the kit to add an audit to
-     * @param {String} kitAudit The audit to add
-     * @param {module:api/KitApi~addKitAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addKitAudit = function(kitId, kitAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'kitId' is set
-      if (kitId == undefined || kitId == null) {
-        throw "Missing the required parameter 'kitId' when calling addKitAudit";
-      }
-
-      // verify the required parameter 'kitAudit' is set
-      if (kitAudit == undefined || kitAudit == null) {
-        throw "Missing the required parameter 'kitAudit' when calling addKitAudit";
-      }
-
-
-      var pathParams = {
-        'kitId': kitId,
-        'kitAudit': kitAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/kit/{kitId}/audit/{kitAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addKitTag operation.
-     * @callback module:api/KitApi~addKitTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a kit.
-     * Adds a tag to an existing kit.
-     * @param {Integer} kitId Id of the kit to add a tag to
-     * @param {String} kitTag The tag to add
-     * @param {module:api/KitApi~addKitTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addKitTag = function(kitId, kitTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'kitId' is set
-      if (kitId == undefined || kitId == null) {
-        throw "Missing the required parameter 'kitId' when calling addKitTag";
-      }
-
-      // verify the required parameter 'kitTag' is set
-      if (kitTag == undefined || kitTag == null) {
-        throw "Missing the required parameter 'kitTag' when calling addKitTag";
-      }
-
-
-      var pathParams = {
-        'kitId': kitId,
-        'kitTag': kitTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/kit/{kitId}/tag/{kitTag}', 'PUT',
+        '/v2.0/kit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/kit/{kitId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteKitTag operation.
-     * @callback module:api/KitApi~deleteKitTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a kit.
-     * Deletes an existing kit tag using the specified data.
-     * @param {Integer} kitId Id of the kit to remove tag from
-     * @param {String} kitTag The tag to delete
-     * @param {module:api/KitApi~deleteKitTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteKitTag = function(kitId, kitTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'kitId' is set
-      if (kitId == undefined || kitId == null) {
-        throw "Missing the required parameter 'kitId' when calling deleteKitTag";
-      }
-
-      // verify the required parameter 'kitTag' is set
-      if (kitTag == undefined || kitTag == null) {
-        throw "Missing the required parameter 'kitTag' when calling deleteKitTag";
-      }
-
-
-      var pathParams = {
-        'kitId': kitId,
-        'kitTag': kitTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/kit/{kitId}/tag/{kitTag}', 'DELETE',
+        '/v2.0/kit/{kitId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = Kit;
 
       return this.apiClient.callApi(
-        '/beta/kit/duplicate/{kitId}', 'GET',
+        '/v2.0/kit/duplicate/{kitId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [Kit];
 
       return this.apiClient.callApi(
-        '/beta/kit/search', 'GET',
+        '/v2.0/kit/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = Kit;
 
       return this.apiClient.callApi(
-        '/beta/kit/{kitId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getKitTags operation.
-     * @callback module:api/KitApi~getKitTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a kit.
-     * Get all existing kit tags.
-     * @param {Integer} kitId Id of the kit to get tags for
-     * @param {module:api/KitApi~getKitTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getKitTags = function(kitId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'kitId' is set
-      if (kitId == undefined || kitId == null) {
-        throw "Missing the required parameter 'kitId' when calling getKitTags";
-      }
-
-
-      var pathParams = {
-        'kitId': kitId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/kit/{kitId}/tag', 'GET',
+        '/v2.0/kit/{kitId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/kit', 'PUT',
+        '/v2.0/kit', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/kit/customFields', 'PUT',
+        '/v2.0/kit/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -18,7 +18,7 @@
   /**
    * The LocationAddressScheme model module.
    * @module model/LocationAddressScheme
-   * @version beta
+   * @version v2.0
    */
 
   /**

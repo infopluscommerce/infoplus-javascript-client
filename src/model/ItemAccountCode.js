@@ -18,7 +18,7 @@
   /**
    * The ItemAccountCode model module.
    * @module model/ItemAccountCode
-   * @version beta
+   * @version v2.0
    */
 
   /**

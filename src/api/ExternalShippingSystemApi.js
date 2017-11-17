@@ -18,7 +18,7 @@
   /**
    * ExternalShippingSystem service.
    * @module api/ExternalShippingSystemApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ExternalShippingSystem;
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addExternalShippingSystemAudit operation.
-     * @callback module:api/ExternalShippingSystemApi~addExternalShippingSystemAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an externalShippingSystem
-     * Adds an audit to an existing externalShippingSystem.
-     * @param {Integer} externalShippingSystemId Id of the externalShippingSystem to add an audit to
-     * @param {String} externalShippingSystemAudit The audit to add
-     * @param {module:api/ExternalShippingSystemApi~addExternalShippingSystemAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addExternalShippingSystemAudit = function(externalShippingSystemId, externalShippingSystemAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'externalShippingSystemId' is set
-      if (externalShippingSystemId == undefined || externalShippingSystemId == null) {
-        throw "Missing the required parameter 'externalShippingSystemId' when calling addExternalShippingSystemAudit";
-      }
-
-      // verify the required parameter 'externalShippingSystemAudit' is set
-      if (externalShippingSystemAudit == undefined || externalShippingSystemAudit == null) {
-        throw "Missing the required parameter 'externalShippingSystemAudit' when calling addExternalShippingSystemAudit";
-      }
-
-
-      var pathParams = {
-        'externalShippingSystemId': externalShippingSystemId,
-        'externalShippingSystemAudit': externalShippingSystemAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/externalShippingSystem/{externalShippingSystemId}/audit/{externalShippingSystemAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addExternalShippingSystemTag operation.
-     * @callback module:api/ExternalShippingSystemApi~addExternalShippingSystemTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an externalShippingSystem.
-     * Adds a tag to an existing externalShippingSystem.
-     * @param {Integer} externalShippingSystemId Id of the externalShippingSystem to add a tag to
-     * @param {String} externalShippingSystemTag The tag to add
-     * @param {module:api/ExternalShippingSystemApi~addExternalShippingSystemTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addExternalShippingSystemTag = function(externalShippingSystemId, externalShippingSystemTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'externalShippingSystemId' is set
-      if (externalShippingSystemId == undefined || externalShippingSystemId == null) {
-        throw "Missing the required parameter 'externalShippingSystemId' when calling addExternalShippingSystemTag";
-      }
-
-      // verify the required parameter 'externalShippingSystemTag' is set
-      if (externalShippingSystemTag == undefined || externalShippingSystemTag == null) {
-        throw "Missing the required parameter 'externalShippingSystemTag' when calling addExternalShippingSystemTag";
-      }
-
-
-      var pathParams = {
-        'externalShippingSystemId': externalShippingSystemId,
-        'externalShippingSystemTag': externalShippingSystemTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/externalShippingSystem/{externalShippingSystemId}/tag/{externalShippingSystemTag}', 'PUT',
+        '/v2.0/externalShippingSystem', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem/{externalShippingSystemId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteExternalShippingSystemTag operation.
-     * @callback module:api/ExternalShippingSystemApi~deleteExternalShippingSystemTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an externalShippingSystem.
-     * Deletes an existing externalShippingSystem tag using the specified data.
-     * @param {Integer} externalShippingSystemId Id of the externalShippingSystem to remove tag from
-     * @param {String} externalShippingSystemTag The tag to delete
-     * @param {module:api/ExternalShippingSystemApi~deleteExternalShippingSystemTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteExternalShippingSystemTag = function(externalShippingSystemId, externalShippingSystemTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'externalShippingSystemId' is set
-      if (externalShippingSystemId == undefined || externalShippingSystemId == null) {
-        throw "Missing the required parameter 'externalShippingSystemId' when calling deleteExternalShippingSystemTag";
-      }
-
-      // verify the required parameter 'externalShippingSystemTag' is set
-      if (externalShippingSystemTag == undefined || externalShippingSystemTag == null) {
-        throw "Missing the required parameter 'externalShippingSystemTag' when calling deleteExternalShippingSystemTag";
-      }
-
-
-      var pathParams = {
-        'externalShippingSystemId': externalShippingSystemId,
-        'externalShippingSystemTag': externalShippingSystemTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/externalShippingSystem/{externalShippingSystemId}/tag/{externalShippingSystemTag}', 'DELETE',
+        '/v2.0/externalShippingSystem/{externalShippingSystemId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ExternalShippingSystem;
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem/duplicate/{externalShippingSystemId}', 'GET',
+        '/v2.0/externalShippingSystem/duplicate/{externalShippingSystemId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ExternalShippingSystem];
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem/search', 'GET',
+        '/v2.0/externalShippingSystem/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ExternalShippingSystem;
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem/{externalShippingSystemId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getExternalShippingSystemTags operation.
-     * @callback module:api/ExternalShippingSystemApi~getExternalShippingSystemTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an externalShippingSystem.
-     * Get all existing externalShippingSystem tags.
-     * @param {Integer} externalShippingSystemId Id of the externalShippingSystem to get tags for
-     * @param {module:api/ExternalShippingSystemApi~getExternalShippingSystemTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getExternalShippingSystemTags = function(externalShippingSystemId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'externalShippingSystemId' is set
-      if (externalShippingSystemId == undefined || externalShippingSystemId == null) {
-        throw "Missing the required parameter 'externalShippingSystemId' when calling getExternalShippingSystemTags";
-      }
-
-
-      var pathParams = {
-        'externalShippingSystemId': externalShippingSystemId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/externalShippingSystem/{externalShippingSystemId}/tag', 'GET',
+        '/v2.0/externalShippingSystem/{externalShippingSystemId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem', 'PUT',
+        '/v2.0/externalShippingSystem', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/externalShippingSystem/customFields', 'PUT',
+        '/v2.0/externalShippingSystem/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -18,7 +18,7 @@
   /**
    * The BillingCodeType model module.
    * @module model/BillingCodeType
-   * @version beta
+   * @version v2.0
    */
 
   /**

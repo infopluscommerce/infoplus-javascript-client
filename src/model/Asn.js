@@ -18,7 +18,7 @@
   /**
    * The Asn model module.
    * @module model/Asn
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -43,7 +43,6 @@
     this['warehouseId'] = warehouseId;
     this['orderDate'] = orderDate;
     this['type'] = type;
-
 
 
 
@@ -228,9 +227,6 @@
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('transferOrderId')) {
-        obj['transferOrderId'] = ApiClient.convertToType(data['transferOrderId'], 'Number');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -464,11 +460,6 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
-
-  /**
-   * @member {Number} transferOrderId
-   */
-  exports.prototype['transferOrderId'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

@@ -18,7 +18,7 @@
   /**
    * The ItemLowstockCode model module.
    * @module model/ItemLowstockCode
-   * @version beta
+   * @version v2.0
    */
 
   /**

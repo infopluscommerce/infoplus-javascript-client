@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | [optional] 
+**lob** | **Integer** |  | [optional] 
 **skuId** | **Integer** |  | [optional] 
 **poNoId** | **Integer** |  | [optional] 
 **adjustmentDate** | **Date** |  | [optional] 

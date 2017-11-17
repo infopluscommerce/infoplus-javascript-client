@@ -18,7 +18,7 @@
   /**
    * The LocationFootprint model module.
    * @module model/LocationFootprint
-   * @version beta
+   * @version v2.0
    */
 
   /**

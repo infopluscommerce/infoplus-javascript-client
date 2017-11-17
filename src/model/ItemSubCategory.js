@@ -18,7 +18,7 @@
   /**
    * The ItemSubCategory model module.
    * @module model/ItemSubCategory
-   * @version beta
+   * @version v2.0
    */
 
   /**

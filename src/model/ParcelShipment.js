@@ -18,7 +18,7 @@
   /**
    * The ParcelShipment model module.
    * @module model/ParcelShipment
-   * @version 1.0
+   * @version v2.0
    */
 
   /**
@@ -36,6 +36,8 @@
 
 
     this['warehouseId'] = warehouseId;
+
+
 
 
 
@@ -157,6 +159,12 @@
       }
       if (data.hasOwnProperty('retailFreightAmount')) {
         obj['retailFreightAmount'] = ApiClient.convertToType(data['retailFreightAmount'], 'Number');
+      }
+      if (data.hasOwnProperty('externalShippingSystemId')) {
+        obj['externalShippingSystemId'] = ApiClient.convertToType(data['externalShippingSystemId'], 'Integer');
+      }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
@@ -309,6 +317,16 @@
    * @member {Number} retailFreightAmount
    */
   exports.prototype['retailFreightAmount'] = undefined;
+
+  /**
+   * @member {Integer} externalShippingSystemId
+   */
+  exports.prototype['externalShippingSystemId'] = undefined;
+
+  /**
+   * @member {Object.<String, Object>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

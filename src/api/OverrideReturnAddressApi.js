@@ -18,7 +18,7 @@
   /**
    * OverrideReturnAddress service.
    * @module api/OverrideReturnAddressApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = OverrideReturnAddress;
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addOverrideReturnAddressAudit operation.
-     * @callback module:api/OverrideReturnAddressApi~addOverrideReturnAddressAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an overrideReturnAddress
-     * Adds an audit to an existing overrideReturnAddress.
-     * @param {Integer} overrideReturnAddressId Id of the overrideReturnAddress to add an audit to
-     * @param {String} overrideReturnAddressAudit The audit to add
-     * @param {module:api/OverrideReturnAddressApi~addOverrideReturnAddressAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addOverrideReturnAddressAudit = function(overrideReturnAddressId, overrideReturnAddressAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'overrideReturnAddressId' is set
-      if (overrideReturnAddressId == undefined || overrideReturnAddressId == null) {
-        throw "Missing the required parameter 'overrideReturnAddressId' when calling addOverrideReturnAddressAudit";
-      }
-
-      // verify the required parameter 'overrideReturnAddressAudit' is set
-      if (overrideReturnAddressAudit == undefined || overrideReturnAddressAudit == null) {
-        throw "Missing the required parameter 'overrideReturnAddressAudit' when calling addOverrideReturnAddressAudit";
-      }
-
-
-      var pathParams = {
-        'overrideReturnAddressId': overrideReturnAddressId,
-        'overrideReturnAddressAudit': overrideReturnAddressAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/{overrideReturnAddressId}/audit/{overrideReturnAddressAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addOverrideReturnAddressTag operation.
-     * @callback module:api/OverrideReturnAddressApi~addOverrideReturnAddressTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an overrideReturnAddress.
-     * Adds a tag to an existing overrideReturnAddress.
-     * @param {Integer} overrideReturnAddressId Id of the overrideReturnAddress to add a tag to
-     * @param {String} overrideReturnAddressTag The tag to add
-     * @param {module:api/OverrideReturnAddressApi~addOverrideReturnAddressTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addOverrideReturnAddressTag = function(overrideReturnAddressId, overrideReturnAddressTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'overrideReturnAddressId' is set
-      if (overrideReturnAddressId == undefined || overrideReturnAddressId == null) {
-        throw "Missing the required parameter 'overrideReturnAddressId' when calling addOverrideReturnAddressTag";
-      }
-
-      // verify the required parameter 'overrideReturnAddressTag' is set
-      if (overrideReturnAddressTag == undefined || overrideReturnAddressTag == null) {
-        throw "Missing the required parameter 'overrideReturnAddressTag' when calling addOverrideReturnAddressTag";
-      }
-
-
-      var pathParams = {
-        'overrideReturnAddressId': overrideReturnAddressId,
-        'overrideReturnAddressTag': overrideReturnAddressTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/{overrideReturnAddressId}/tag/{overrideReturnAddressTag}', 'PUT',
+        '/v2.0/overrideReturnAddress', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/{overrideReturnAddressId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteOverrideReturnAddressTag operation.
-     * @callback module:api/OverrideReturnAddressApi~deleteOverrideReturnAddressTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an overrideReturnAddress.
-     * Deletes an existing overrideReturnAddress tag using the specified data.
-     * @param {Integer} overrideReturnAddressId Id of the overrideReturnAddress to remove tag from
-     * @param {String} overrideReturnAddressTag The tag to delete
-     * @param {module:api/OverrideReturnAddressApi~deleteOverrideReturnAddressTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteOverrideReturnAddressTag = function(overrideReturnAddressId, overrideReturnAddressTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'overrideReturnAddressId' is set
-      if (overrideReturnAddressId == undefined || overrideReturnAddressId == null) {
-        throw "Missing the required parameter 'overrideReturnAddressId' when calling deleteOverrideReturnAddressTag";
-      }
-
-      // verify the required parameter 'overrideReturnAddressTag' is set
-      if (overrideReturnAddressTag == undefined || overrideReturnAddressTag == null) {
-        throw "Missing the required parameter 'overrideReturnAddressTag' when calling deleteOverrideReturnAddressTag";
-      }
-
-
-      var pathParams = {
-        'overrideReturnAddressId': overrideReturnAddressId,
-        'overrideReturnAddressTag': overrideReturnAddressTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/{overrideReturnAddressId}/tag/{overrideReturnAddressTag}', 'DELETE',
+        '/v2.0/overrideReturnAddress/{overrideReturnAddressId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = OverrideReturnAddress;
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/duplicate/{overrideReturnAddressId}', 'GET',
+        '/v2.0/overrideReturnAddress/duplicate/{overrideReturnAddressId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [OverrideReturnAddress];
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/search', 'GET',
+        '/v2.0/overrideReturnAddress/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = OverrideReturnAddress;
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/{overrideReturnAddressId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getOverrideReturnAddressTags operation.
-     * @callback module:api/OverrideReturnAddressApi~getOverrideReturnAddressTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an overrideReturnAddress.
-     * Get all existing overrideReturnAddress tags.
-     * @param {Integer} overrideReturnAddressId Id of the overrideReturnAddress to get tags for
-     * @param {module:api/OverrideReturnAddressApi~getOverrideReturnAddressTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getOverrideReturnAddressTags = function(overrideReturnAddressId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'overrideReturnAddressId' is set
-      if (overrideReturnAddressId == undefined || overrideReturnAddressId == null) {
-        throw "Missing the required parameter 'overrideReturnAddressId' when calling getOverrideReturnAddressTags";
-      }
-
-
-      var pathParams = {
-        'overrideReturnAddressId': overrideReturnAddressId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/{overrideReturnAddressId}/tag', 'GET',
+        '/v2.0/overrideReturnAddress/{overrideReturnAddressId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress', 'PUT',
+        '/v2.0/overrideReturnAddress', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/overrideReturnAddress/customFields', 'PUT',
+        '/v2.0/overrideReturnAddress/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

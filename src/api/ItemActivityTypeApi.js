@@ -18,7 +18,7 @@
   /**
    * ItemActivityType service.
    * @module api/ItemActivityTypeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = ItemActivityType;
 
       return this.apiClient.callApi(
-        '/beta/itemActivityType/{itemActivityTypeId}', 'GET',
+        '/v2.0/itemActivityType/{itemActivityTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [ItemActivityType];
 
       return this.apiClient.callApi(
-        '/beta/itemActivityType/search', 'GET',
+        '/v2.0/itemActivityType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

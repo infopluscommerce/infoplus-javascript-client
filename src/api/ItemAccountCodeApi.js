@@ -18,7 +18,7 @@
   /**
    * ItemAccountCode service.
    * @module api/ItemAccountCodeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ItemAccountCode;
 
       return this.apiClient.callApi(
-        '/beta/itemAccountCode', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemAccountCodeAudit operation.
-     * @callback module:api/ItemAccountCodeApi~addItemAccountCodeAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemAccountCode
-     * Adds an audit to an existing itemAccountCode.
-     * @param {Integer} itemAccountCodeId Id of the itemAccountCode to add an audit to
-     * @param {String} itemAccountCodeAudit The audit to add
-     * @param {module:api/ItemAccountCodeApi~addItemAccountCodeAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemAccountCodeAudit = function(itemAccountCodeId, itemAccountCodeAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemAccountCodeId' is set
-      if (itemAccountCodeId == undefined || itemAccountCodeId == null) {
-        throw "Missing the required parameter 'itemAccountCodeId' when calling addItemAccountCodeAudit";
-      }
-
-      // verify the required parameter 'itemAccountCodeAudit' is set
-      if (itemAccountCodeAudit == undefined || itemAccountCodeAudit == null) {
-        throw "Missing the required parameter 'itemAccountCodeAudit' when calling addItemAccountCodeAudit";
-      }
-
-
-      var pathParams = {
-        'itemAccountCodeId': itemAccountCodeId,
-        'itemAccountCodeAudit': itemAccountCodeAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemAccountCode/{itemAccountCodeId}/audit/{itemAccountCodeAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemAccountCodeTag operation.
-     * @callback module:api/ItemAccountCodeApi~addItemAccountCodeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemAccountCode.
-     * Adds a tag to an existing itemAccountCode.
-     * @param {Integer} itemAccountCodeId Id of the itemAccountCode to add a tag to
-     * @param {String} itemAccountCodeTag The tag to add
-     * @param {module:api/ItemAccountCodeApi~addItemAccountCodeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemAccountCodeTag = function(itemAccountCodeId, itemAccountCodeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemAccountCodeId' is set
-      if (itemAccountCodeId == undefined || itemAccountCodeId == null) {
-        throw "Missing the required parameter 'itemAccountCodeId' when calling addItemAccountCodeTag";
-      }
-
-      // verify the required parameter 'itemAccountCodeTag' is set
-      if (itemAccountCodeTag == undefined || itemAccountCodeTag == null) {
-        throw "Missing the required parameter 'itemAccountCodeTag' when calling addItemAccountCodeTag";
-      }
-
-
-      var pathParams = {
-        'itemAccountCodeId': itemAccountCodeId,
-        'itemAccountCodeTag': itemAccountCodeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemAccountCode/{itemAccountCodeId}/tag/{itemAccountCodeTag}', 'PUT',
+        '/v2.0/itemAccountCode', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemAccountCode/{itemAccountCodeId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemAccountCodeTag operation.
-     * @callback module:api/ItemAccountCodeApi~deleteItemAccountCodeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemAccountCode.
-     * Deletes an existing itemAccountCode tag using the specified data.
-     * @param {Integer} itemAccountCodeId Id of the itemAccountCode to remove tag from
-     * @param {String} itemAccountCodeTag The tag to delete
-     * @param {module:api/ItemAccountCodeApi~deleteItemAccountCodeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemAccountCodeTag = function(itemAccountCodeId, itemAccountCodeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemAccountCodeId' is set
-      if (itemAccountCodeId == undefined || itemAccountCodeId == null) {
-        throw "Missing the required parameter 'itemAccountCodeId' when calling deleteItemAccountCodeTag";
-      }
-
-      // verify the required parameter 'itemAccountCodeTag' is set
-      if (itemAccountCodeTag == undefined || itemAccountCodeTag == null) {
-        throw "Missing the required parameter 'itemAccountCodeTag' when calling deleteItemAccountCodeTag";
-      }
-
-
-      var pathParams = {
-        'itemAccountCodeId': itemAccountCodeId,
-        'itemAccountCodeTag': itemAccountCodeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemAccountCode/{itemAccountCodeId}/tag/{itemAccountCodeTag}', 'DELETE',
+        '/v2.0/itemAccountCode/{itemAccountCodeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ItemAccountCode;
 
       return this.apiClient.callApi(
-        '/beta/itemAccountCode/duplicate/{itemAccountCodeId}', 'GET',
+        '/v2.0/itemAccountCode/duplicate/{itemAccountCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ItemAccountCode];
 
       return this.apiClient.callApi(
-        '/beta/itemAccountCode/search', 'GET',
+        '/v2.0/itemAccountCode/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ItemAccountCode;
 
       return this.apiClient.callApi(
-        '/beta/itemAccountCode/{itemAccountCodeId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemAccountCodeTags operation.
-     * @callback module:api/ItemAccountCodeApi~getItemAccountCodeTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemAccountCode.
-     * Get all existing itemAccountCode tags.
-     * @param {Integer} itemAccountCodeId Id of the itemAccountCode to get tags for
-     * @param {module:api/ItemAccountCodeApi~getItemAccountCodeTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemAccountCodeTags = function(itemAccountCodeId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemAccountCodeId' is set
-      if (itemAccountCodeId == undefined || itemAccountCodeId == null) {
-        throw "Missing the required parameter 'itemAccountCodeId' when calling getItemAccountCodeTags";
-      }
-
-
-      var pathParams = {
-        'itemAccountCodeId': itemAccountCodeId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemAccountCode/{itemAccountCodeId}/tag', 'GET',
+        '/v2.0/itemAccountCode/{itemAccountCodeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemAccountCode', 'PUT',
+        '/v2.0/itemAccountCode', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

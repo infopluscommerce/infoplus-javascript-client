@@ -18,7 +18,7 @@
   /**
    * The ReceivingWorksheetPutAwayPlan model module.
    * @module model/ReceivingWorksheetPutAwayPlan
-   * @version beta
+   * @version v2.0
    */
 
   /**

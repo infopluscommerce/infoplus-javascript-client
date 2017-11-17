@@ -18,7 +18,7 @@
   /**
    * ItemReceipt service.
    * @module api/ItemReceiptApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addItemReceiptAudit operation.
-     * @callback module:api/ItemReceiptApi~addItemReceiptAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemReceipt
-     * Adds an audit to an existing itemReceipt.
-     * @param {Integer} itemReceiptId Id of the itemReceipt to add an audit to
-     * @param {String} itemReceiptAudit The audit to add
-     * @param {module:api/ItemReceiptApi~addItemReceiptAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemReceiptAudit = function(itemReceiptId, itemReceiptAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemReceiptId' is set
-      if (itemReceiptId == undefined || itemReceiptId == null) {
-        throw "Missing the required parameter 'itemReceiptId' when calling addItemReceiptAudit";
-      }
-
-      // verify the required parameter 'itemReceiptAudit' is set
-      if (itemReceiptAudit == undefined || itemReceiptAudit == null) {
-        throw "Missing the required parameter 'itemReceiptAudit' when calling addItemReceiptAudit";
-      }
-
-
-      var pathParams = {
-        'itemReceiptId': itemReceiptId,
-        'itemReceiptAudit': itemReceiptAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemReceipt/{itemReceiptId}/audit/{itemReceiptAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemReceiptTag operation.
-     * @callback module:api/ItemReceiptApi~addItemReceiptTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemReceipt.
-     * Adds a tag to an existing itemReceipt.
-     * @param {Integer} itemReceiptId Id of the itemReceipt to add a tag to
-     * @param {String} itemReceiptTag The tag to add
-     * @param {module:api/ItemReceiptApi~addItemReceiptTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemReceiptTag = function(itemReceiptId, itemReceiptTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemReceiptId' is set
-      if (itemReceiptId == undefined || itemReceiptId == null) {
-        throw "Missing the required parameter 'itemReceiptId' when calling addItemReceiptTag";
-      }
-
-      // verify the required parameter 'itemReceiptTag' is set
-      if (itemReceiptTag == undefined || itemReceiptTag == null) {
-        throw "Missing the required parameter 'itemReceiptTag' when calling addItemReceiptTag";
-      }
-
-
-      var pathParams = {
-        'itemReceiptId': itemReceiptId,
-        'itemReceiptTag': itemReceiptTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemReceipt/{itemReceiptId}/tag/{itemReceiptTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemReceiptTag operation.
-     * @callback module:api/ItemReceiptApi~deleteItemReceiptTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemReceipt.
-     * Deletes an existing itemReceipt tag using the specified data.
-     * @param {Integer} itemReceiptId Id of the itemReceipt to remove tag from
-     * @param {String} itemReceiptTag The tag to delete
-     * @param {module:api/ItemReceiptApi~deleteItemReceiptTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemReceiptTag = function(itemReceiptId, itemReceiptTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemReceiptId' is set
-      if (itemReceiptId == undefined || itemReceiptId == null) {
-        throw "Missing the required parameter 'itemReceiptId' when calling deleteItemReceiptTag";
-      }
-
-      // verify the required parameter 'itemReceiptTag' is set
-      if (itemReceiptTag == undefined || itemReceiptTag == null) {
-        throw "Missing the required parameter 'itemReceiptTag' when calling deleteItemReceiptTag";
-      }
-
-
-      var pathParams = {
-        'itemReceiptId': itemReceiptId,
-        'itemReceiptTag': itemReceiptTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemReceipt/{itemReceiptId}/tag/{itemReceiptTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getDuplicateItemReceiptById operation.
@@ -228,7 +72,7 @@
       var returnType = ItemReceipt;
 
       return this.apiClient.callApi(
-        '/beta/itemReceipt/duplicate/{itemReceiptId}', 'GET',
+        '/v2.0/itemReceipt/duplicate/{itemReceiptId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,7 +121,7 @@
       var returnType = [ItemReceipt];
 
       return this.apiClient.callApi(
-        '/beta/itemReceipt/search', 'GET',
+        '/v2.0/itemReceipt/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,52 +167,7 @@
       var returnType = ItemReceipt;
 
       return this.apiClient.callApi(
-        '/beta/itemReceipt/{itemReceiptId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemReceiptTags operation.
-     * @callback module:api/ItemReceiptApi~getItemReceiptTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemReceipt.
-     * Get all existing itemReceipt tags.
-     * @param {Integer} itemReceiptId Id of the itemReceipt to get tags for
-     * @param {module:api/ItemReceiptApi~getItemReceiptTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemReceiptTags = function(itemReceiptId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemReceiptId' is set
-      if (itemReceiptId == undefined || itemReceiptId == null) {
-        throw "Missing the required parameter 'itemReceiptId' when calling getItemReceiptTags";
-      }
-
-
-      var pathParams = {
-        'itemReceiptId': itemReceiptId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemReceipt/{itemReceiptId}/tag', 'GET',
+        '/v2.0/itemReceipt/{itemReceiptId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -412,7 +211,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemReceipt/customFields', 'PUT',
+        '/v2.0/itemReceipt/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

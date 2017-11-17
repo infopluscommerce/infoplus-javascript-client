@@ -18,7 +18,7 @@
   /**
    * Customer service.
    * @module api/CustomerApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Customer;
 
       return this.apiClient.callApi(
-        '/beta/customer', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addCustomerAudit operation.
-     * @callback module:api/CustomerApi~addCustomerAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a customer
-     * Adds an audit to an existing customer.
-     * @param {Integer} customerId Id of the customer to add an audit to
-     * @param {String} customerAudit The audit to add
-     * @param {module:api/CustomerApi~addCustomerAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addCustomerAudit = function(customerId, customerAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'customerId' is set
-      if (customerId == undefined || customerId == null) {
-        throw "Missing the required parameter 'customerId' when calling addCustomerAudit";
-      }
-
-      // verify the required parameter 'customerAudit' is set
-      if (customerAudit == undefined || customerAudit == null) {
-        throw "Missing the required parameter 'customerAudit' when calling addCustomerAudit";
-      }
-
-
-      var pathParams = {
-        'customerId': customerId,
-        'customerAudit': customerAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/customer/{customerId}/audit/{customerAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addCustomerTag operation.
-     * @callback module:api/CustomerApi~addCustomerTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a customer.
-     * Adds a tag to an existing customer.
-     * @param {Integer} customerId Id of the customer to add a tag to
-     * @param {String} customerTag The tag to add
-     * @param {module:api/CustomerApi~addCustomerTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addCustomerTag = function(customerId, customerTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'customerId' is set
-      if (customerId == undefined || customerId == null) {
-        throw "Missing the required parameter 'customerId' when calling addCustomerTag";
-      }
-
-      // verify the required parameter 'customerTag' is set
-      if (customerTag == undefined || customerTag == null) {
-        throw "Missing the required parameter 'customerTag' when calling addCustomerTag";
-      }
-
-
-      var pathParams = {
-        'customerId': customerId,
-        'customerTag': customerTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/customer/{customerId}/tag/{customerTag}', 'PUT',
+        '/v2.0/customer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/customer/{customerId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteCustomerTag operation.
-     * @callback module:api/CustomerApi~deleteCustomerTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a customer.
-     * Deletes an existing customer tag using the specified data.
-     * @param {Integer} customerId Id of the customer to remove tag from
-     * @param {String} customerTag The tag to delete
-     * @param {module:api/CustomerApi~deleteCustomerTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteCustomerTag = function(customerId, customerTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'customerId' is set
-      if (customerId == undefined || customerId == null) {
-        throw "Missing the required parameter 'customerId' when calling deleteCustomerTag";
-      }
-
-      // verify the required parameter 'customerTag' is set
-      if (customerTag == undefined || customerTag == null) {
-        throw "Missing the required parameter 'customerTag' when calling deleteCustomerTag";
-      }
-
-
-      var pathParams = {
-        'customerId': customerId,
-        'customerTag': customerTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/customer/{customerId}/tag/{customerTag}', 'DELETE',
+        '/v2.0/customer/{customerId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -325,7 +169,7 @@
       var returnType = Customer;
 
       return this.apiClient.callApi(
-        '/beta/customer/getByCustomerNo', 'GET',
+        '/v2.0/customer/getByCustomerNo', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -374,7 +218,7 @@
       var returnType = [Customer];
 
       return this.apiClient.callApi(
-        '/beta/customer/search', 'GET',
+        '/v2.0/customer/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -420,52 +264,7 @@
       var returnType = Customer;
 
       return this.apiClient.callApi(
-        '/beta/customer/{customerId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getCustomerTags operation.
-     * @callback module:api/CustomerApi~getCustomerTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a customer.
-     * Get all existing customer tags.
-     * @param {Integer} customerId Id of the customer to get tags for
-     * @param {module:api/CustomerApi~getCustomerTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getCustomerTags = function(customerId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'customerId' is set
-      if (customerId == undefined || customerId == null) {
-        throw "Missing the required parameter 'customerId' when calling getCustomerTags";
-      }
-
-
-      var pathParams = {
-        'customerId': customerId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/customer/{customerId}/tag', 'GET',
+        '/v2.0/customer/{customerId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -511,7 +310,7 @@
       var returnType = Customer;
 
       return this.apiClient.callApi(
-        '/beta/customer/duplicate/{customerId}', 'GET',
+        '/v2.0/customer/duplicate/{customerId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -555,7 +354,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/customer', 'PUT',
+        '/v2.0/customer', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -599,7 +398,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/customer/customFields', 'PUT',
+        '/v2.0/customer/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

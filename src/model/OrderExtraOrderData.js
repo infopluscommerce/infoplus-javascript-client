@@ -18,7 +18,7 @@
   /**
    * The OrderExtraOrderData model module.
    * @module model/OrderExtraOrderData
-   * @version beta
+   * @version v2.0
    */
 
   /**

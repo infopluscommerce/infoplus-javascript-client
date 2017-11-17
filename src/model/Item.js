@@ -18,7 +18,7 @@
   /**
    * The Item model module.
    * @module model/Item
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -112,20 +112,7 @@
     this['storageItemMixingRule'] = storageItemMixingRule;
     this['allocationRule'] = allocationRule;
 
-
-
     this['hazmat'] = hazmat;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -341,12 +328,6 @@
       if (data.hasOwnProperty('barcodeField')) {
         obj['barcodeField'] = ApiClient.convertToType(data['barcodeField'], 'String');
       }
-      if (data.hasOwnProperty('warehouseDisplayField')) {
-        obj['warehouseDisplayField'] = ApiClient.convertToType(data['warehouseDisplayField'], 'String');
-      }
-      if (data.hasOwnProperty('productIdTagSchemeId')) {
-        obj['productIdTagSchemeId'] = ApiClient.convertToType(data['productIdTagSchemeId'], 'Integer');
-      }
       if (data.hasOwnProperty('hazmat')) {
         obj['hazmat'] = ApiClient.convertToType(data['hazmat'], 'String');
       }
@@ -403,39 +384,6 @@
       }
       if (data.hasOwnProperty('shipSolo')) {
         obj['shipSolo'] = ApiClient.convertToType(data['shipSolo'], 'Boolean');
-      }
-      if (data.hasOwnProperty('availableQuantity')) {
-        obj['availableQuantity'] = ApiClient.convertToType(data['availableQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('damagedQuantity')) {
-        obj['damagedQuantity'] = ApiClient.convertToType(data['damagedQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('inFulfillmentProcessQuantity')) {
-        obj['inFulfillmentProcessQuantity'] = ApiClient.convertToType(data['inFulfillmentProcessQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('onHandQuantity')) {
-        obj['onHandQuantity'] = ApiClient.convertToType(data['onHandQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('openOrderQuantity')) {
-        obj['openOrderQuantity'] = ApiClient.convertToType(data['openOrderQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('openPOQuantity')) {
-        obj['openPOQuantity'] = ApiClient.convertToType(data['openPOQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('orderableQuantity')) {
-        obj['orderableQuantity'] = ApiClient.convertToType(data['orderableQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('unallocatableQuantity')) {
-        obj['unallocatableQuantity'] = ApiClient.convertToType(data['unallocatableQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('unavailableQuantity')) {
-        obj['unavailableQuantity'] = ApiClient.convertToType(data['unavailableQuantity'], 'Integer');
-      }
-      if (data.hasOwnProperty('overallDaysOnHand')) {
-        obj['overallDaysOnHand'] = ApiClient.convertToType(data['overallDaysOnHand'], 'Integer');
-      }
-      if (data.hasOwnProperty('overallStockStatus')) {
-        obj['overallStockStatus'] = ApiClient.convertToType(data['overallStockStatus'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -751,16 +699,6 @@
   exports.prototype['barcodeField'] = undefined;
 
   /**
-   * @member {String} warehouseDisplayField
-   */
-  exports.prototype['warehouseDisplayField'] = undefined;
-
-  /**
-   * @member {Integer} productIdTagSchemeId
-   */
-  exports.prototype['productIdTagSchemeId'] = undefined;
-
-  /**
    * @member {String} hazmat
    */
   exports.prototype['hazmat'] = undefined;
@@ -857,61 +795,6 @@
    * @default false
    */
   exports.prototype['shipSolo'] = false;
-
-  /**
-   * @member {Integer} availableQuantity
-   */
-  exports.prototype['availableQuantity'] = undefined;
-
-  /**
-   * @member {Integer} damagedQuantity
-   */
-  exports.prototype['damagedQuantity'] = undefined;
-
-  /**
-   * @member {Integer} inFulfillmentProcessQuantity
-   */
-  exports.prototype['inFulfillmentProcessQuantity'] = undefined;
-
-  /**
-   * @member {Integer} onHandQuantity
-   */
-  exports.prototype['onHandQuantity'] = undefined;
-
-  /**
-   * @member {Integer} openOrderQuantity
-   */
-  exports.prototype['openOrderQuantity'] = undefined;
-
-  /**
-   * @member {Integer} openPOQuantity
-   */
-  exports.prototype['openPOQuantity'] = undefined;
-
-  /**
-   * @member {Integer} orderableQuantity
-   */
-  exports.prototype['orderableQuantity'] = undefined;
-
-  /**
-   * @member {Integer} unallocatableQuantity
-   */
-  exports.prototype['unallocatableQuantity'] = undefined;
-
-  /**
-   * @member {Integer} unavailableQuantity
-   */
-  exports.prototype['unavailableQuantity'] = undefined;
-
-  /**
-   * @member {Integer} overallDaysOnHand
-   */
-  exports.prototype['overallDaysOnHand'] = undefined;
-
-  /**
-   * @member {String} overallStockStatus
-   */
-  exports.prototype['overallStockStatus'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

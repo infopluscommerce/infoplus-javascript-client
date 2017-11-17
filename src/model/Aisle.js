@@ -18,7 +18,7 @@
   /**
    * The Aisle model module.
    * @module model/Aisle
-   * @version beta
+   * @version v2.0
    */
 
   /**

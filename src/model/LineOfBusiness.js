@@ -18,7 +18,7 @@
   /**
    * The LineOfBusiness model module.
    * @module model/LineOfBusiness
-   * @version beta
+   * @version v2.0
    */
 
   /**

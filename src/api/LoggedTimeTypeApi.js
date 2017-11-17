@@ -18,7 +18,7 @@
   /**
    * LoggedTimeType service.
    * @module api/LoggedTimeTypeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = LoggedTimeType;
 
       return this.apiClient.callApi(
-        '/beta/loggedTimeType/{loggedTimeTypeId}', 'GET',
+        '/v2.0/loggedTimeType/{loggedTimeTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [LoggedTimeType];
 
       return this.apiClient.callApi(
-        '/beta/loggedTimeType/search', 'GET',
+        '/v2.0/loggedTimeType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

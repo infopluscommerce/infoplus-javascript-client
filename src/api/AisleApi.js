@@ -18,7 +18,7 @@
   /**
    * Aisle service.
    * @module api/AisleApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Aisle;
 
       return this.apiClient.callApi(
-        '/beta/aisle', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addAisleAudit operation.
-     * @callback module:api/AisleApi~addAisleAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an aisle
-     * Adds an audit to an existing aisle.
-     * @param {Integer} aisleId Id of the aisle to add an audit to
-     * @param {String} aisleAudit The audit to add
-     * @param {module:api/AisleApi~addAisleAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addAisleAudit = function(aisleId, aisleAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'aisleId' is set
-      if (aisleId == undefined || aisleId == null) {
-        throw "Missing the required parameter 'aisleId' when calling addAisleAudit";
-      }
-
-      // verify the required parameter 'aisleAudit' is set
-      if (aisleAudit == undefined || aisleAudit == null) {
-        throw "Missing the required parameter 'aisleAudit' when calling addAisleAudit";
-      }
-
-
-      var pathParams = {
-        'aisleId': aisleId,
-        'aisleAudit': aisleAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/aisle/{aisleId}/audit/{aisleAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addAisleTag operation.
-     * @callback module:api/AisleApi~addAisleTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an aisle.
-     * Adds a tag to an existing aisle.
-     * @param {Integer} aisleId Id of the aisle to add a tag to
-     * @param {String} aisleTag The tag to add
-     * @param {module:api/AisleApi~addAisleTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addAisleTag = function(aisleId, aisleTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'aisleId' is set
-      if (aisleId == undefined || aisleId == null) {
-        throw "Missing the required parameter 'aisleId' when calling addAisleTag";
-      }
-
-      // verify the required parameter 'aisleTag' is set
-      if (aisleTag == undefined || aisleTag == null) {
-        throw "Missing the required parameter 'aisleTag' when calling addAisleTag";
-      }
-
-
-      var pathParams = {
-        'aisleId': aisleId,
-        'aisleTag': aisleTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/aisle/{aisleId}/tag/{aisleTag}', 'PUT',
+        '/v2.0/aisle', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/aisle/{aisleId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteAisleTag operation.
-     * @callback module:api/AisleApi~deleteAisleTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an aisle.
-     * Deletes an existing aisle tag using the specified data.
-     * @param {Integer} aisleId Id of the aisle to remove tag from
-     * @param {String} aisleTag The tag to delete
-     * @param {module:api/AisleApi~deleteAisleTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteAisleTag = function(aisleId, aisleTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'aisleId' is set
-      if (aisleId == undefined || aisleId == null) {
-        throw "Missing the required parameter 'aisleId' when calling deleteAisleTag";
-      }
-
-      // verify the required parameter 'aisleTag' is set
-      if (aisleTag == undefined || aisleTag == null) {
-        throw "Missing the required parameter 'aisleTag' when calling deleteAisleTag";
-      }
-
-
-      var pathParams = {
-        'aisleId': aisleId,
-        'aisleTag': aisleTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/aisle/{aisleId}/tag/{aisleTag}', 'DELETE',
+        '/v2.0/aisle/{aisleId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -321,7 +165,7 @@
       var returnType = [Aisle];
 
       return this.apiClient.callApi(
-        '/beta/aisle/search', 'GET',
+        '/v2.0/aisle/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,52 +211,7 @@
       var returnType = Aisle;
 
       return this.apiClient.callApi(
-        '/beta/aisle/{aisleId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getAisleTags operation.
-     * @callback module:api/AisleApi~getAisleTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an aisle.
-     * Get all existing aisle tags.
-     * @param {Integer} aisleId Id of the aisle to get tags for
-     * @param {module:api/AisleApi~getAisleTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getAisleTags = function(aisleId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'aisleId' is set
-      if (aisleId == undefined || aisleId == null) {
-        throw "Missing the required parameter 'aisleId' when calling getAisleTags";
-      }
-
-
-      var pathParams = {
-        'aisleId': aisleId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/aisle/{aisleId}/tag', 'GET',
+        '/v2.0/aisle/{aisleId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -458,7 +257,7 @@
       var returnType = Aisle;
 
       return this.apiClient.callApi(
-        '/beta/aisle/duplicate/{aisleId}', 'GET',
+        '/v2.0/aisle/duplicate/{aisleId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/aisle', 'PUT',
+        '/v2.0/aisle', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/aisle/customFields', 'PUT',
+        '/v2.0/aisle/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

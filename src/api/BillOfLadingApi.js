@@ -18,7 +18,7 @@
   /**
    * BillOfLading service.
    * @module api/BillOfLadingApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = BillOfLading;
 
       return this.apiClient.callApi(
-        '/beta/billOfLading', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addBillOfLadingAudit operation.
-     * @callback module:api/BillOfLadingApi~addBillOfLadingAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a billOfLading
-     * Adds an audit to an existing billOfLading.
-     * @param {Integer} billOfLadingId Id of the billOfLading to add an audit to
-     * @param {String} billOfLadingAudit The audit to add
-     * @param {module:api/BillOfLadingApi~addBillOfLadingAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addBillOfLadingAudit = function(billOfLadingId, billOfLadingAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billOfLadingId' is set
-      if (billOfLadingId == undefined || billOfLadingId == null) {
-        throw "Missing the required parameter 'billOfLadingId' when calling addBillOfLadingAudit";
-      }
-
-      // verify the required parameter 'billOfLadingAudit' is set
-      if (billOfLadingAudit == undefined || billOfLadingAudit == null) {
-        throw "Missing the required parameter 'billOfLadingAudit' when calling addBillOfLadingAudit";
-      }
-
-
-      var pathParams = {
-        'billOfLadingId': billOfLadingId,
-        'billOfLadingAudit': billOfLadingAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billOfLading/{billOfLadingId}/audit/{billOfLadingAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addBillOfLadingTag operation.
-     * @callback module:api/BillOfLadingApi~addBillOfLadingTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a billOfLading.
-     * Adds a tag to an existing billOfLading.
-     * @param {Integer} billOfLadingId Id of the billOfLading to add a tag to
-     * @param {String} billOfLadingTag The tag to add
-     * @param {module:api/BillOfLadingApi~addBillOfLadingTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addBillOfLadingTag = function(billOfLadingId, billOfLadingTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billOfLadingId' is set
-      if (billOfLadingId == undefined || billOfLadingId == null) {
-        throw "Missing the required parameter 'billOfLadingId' when calling addBillOfLadingTag";
-      }
-
-      // verify the required parameter 'billOfLadingTag' is set
-      if (billOfLadingTag == undefined || billOfLadingTag == null) {
-        throw "Missing the required parameter 'billOfLadingTag' when calling addBillOfLadingTag";
-      }
-
-
-      var pathParams = {
-        'billOfLadingId': billOfLadingId,
-        'billOfLadingTag': billOfLadingTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billOfLading/{billOfLadingId}/tag/{billOfLadingTag}', 'PUT',
+        '/v2.0/billOfLading', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/billOfLading/{billOfLadingId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteBillOfLadingTag operation.
-     * @callback module:api/BillOfLadingApi~deleteBillOfLadingTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a billOfLading.
-     * Deletes an existing billOfLading tag using the specified data.
-     * @param {Integer} billOfLadingId Id of the billOfLading to remove tag from
-     * @param {String} billOfLadingTag The tag to delete
-     * @param {module:api/BillOfLadingApi~deleteBillOfLadingTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteBillOfLadingTag = function(billOfLadingId, billOfLadingTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billOfLadingId' is set
-      if (billOfLadingId == undefined || billOfLadingId == null) {
-        throw "Missing the required parameter 'billOfLadingId' when calling deleteBillOfLadingTag";
-      }
-
-      // verify the required parameter 'billOfLadingTag' is set
-      if (billOfLadingTag == undefined || billOfLadingTag == null) {
-        throw "Missing the required parameter 'billOfLadingTag' when calling deleteBillOfLadingTag";
-      }
-
-
-      var pathParams = {
-        'billOfLadingId': billOfLadingId,
-        'billOfLadingTag': billOfLadingTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billOfLading/{billOfLadingId}/tag/{billOfLadingTag}', 'DELETE',
+        '/v2.0/billOfLading/{billOfLadingId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -321,7 +165,7 @@
       var returnType = [BillOfLading];
 
       return this.apiClient.callApi(
-        '/beta/billOfLading/search', 'GET',
+        '/v2.0/billOfLading/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,52 +211,7 @@
       var returnType = BillOfLading;
 
       return this.apiClient.callApi(
-        '/beta/billOfLading/{billOfLadingId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getBillOfLadingTags operation.
-     * @callback module:api/BillOfLadingApi~getBillOfLadingTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a billOfLading.
-     * Get all existing billOfLading tags.
-     * @param {Integer} billOfLadingId Id of the billOfLading to get tags for
-     * @param {module:api/BillOfLadingApi~getBillOfLadingTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getBillOfLadingTags = function(billOfLadingId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'billOfLadingId' is set
-      if (billOfLadingId == undefined || billOfLadingId == null) {
-        throw "Missing the required parameter 'billOfLadingId' when calling getBillOfLadingTags";
-      }
-
-
-      var pathParams = {
-        'billOfLadingId': billOfLadingId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/billOfLading/{billOfLadingId}/tag', 'GET',
+        '/v2.0/billOfLading/{billOfLadingId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -458,7 +257,7 @@
       var returnType = BillOfLading;
 
       return this.apiClient.callApi(
-        '/beta/billOfLading/duplicate/{billOfLadingId}', 'GET',
+        '/v2.0/billOfLading/duplicate/{billOfLadingId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/billOfLading', 'PUT',
+        '/v2.0/billOfLading', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/billOfLading/customFields', 'PUT',
+        '/v2.0/billOfLading/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

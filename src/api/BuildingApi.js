@@ -18,7 +18,7 @@
   /**
    * Building service.
    * @module api/BuildingApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Building;
 
       return this.apiClient.callApi(
-        '/beta/building', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addBuildingAudit operation.
-     * @callback module:api/BuildingApi~addBuildingAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a building
-     * Adds an audit to an existing building.
-     * @param {Integer} buildingId Id of the building to add an audit to
-     * @param {String} buildingAudit The audit to add
-     * @param {module:api/BuildingApi~addBuildingAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addBuildingAudit = function(buildingId, buildingAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'buildingId' is set
-      if (buildingId == undefined || buildingId == null) {
-        throw "Missing the required parameter 'buildingId' when calling addBuildingAudit";
-      }
-
-      // verify the required parameter 'buildingAudit' is set
-      if (buildingAudit == undefined || buildingAudit == null) {
-        throw "Missing the required parameter 'buildingAudit' when calling addBuildingAudit";
-      }
-
-
-      var pathParams = {
-        'buildingId': buildingId,
-        'buildingAudit': buildingAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/building/{buildingId}/audit/{buildingAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addBuildingTag operation.
-     * @callback module:api/BuildingApi~addBuildingTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a building.
-     * Adds a tag to an existing building.
-     * @param {Integer} buildingId Id of the building to add a tag to
-     * @param {String} buildingTag The tag to add
-     * @param {module:api/BuildingApi~addBuildingTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addBuildingTag = function(buildingId, buildingTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'buildingId' is set
-      if (buildingId == undefined || buildingId == null) {
-        throw "Missing the required parameter 'buildingId' when calling addBuildingTag";
-      }
-
-      // verify the required parameter 'buildingTag' is set
-      if (buildingTag == undefined || buildingTag == null) {
-        throw "Missing the required parameter 'buildingTag' when calling addBuildingTag";
-      }
-
-
-      var pathParams = {
-        'buildingId': buildingId,
-        'buildingTag': buildingTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/building/{buildingId}/tag/{buildingTag}', 'PUT',
+        '/v2.0/building', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/building/{buildingId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteBuildingTag operation.
-     * @callback module:api/BuildingApi~deleteBuildingTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a building.
-     * Deletes an existing building tag using the specified data.
-     * @param {Integer} buildingId Id of the building to remove tag from
-     * @param {String} buildingTag The tag to delete
-     * @param {module:api/BuildingApi~deleteBuildingTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteBuildingTag = function(buildingId, buildingTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'buildingId' is set
-      if (buildingId == undefined || buildingId == null) {
-        throw "Missing the required parameter 'buildingId' when calling deleteBuildingTag";
-      }
-
-      // verify the required parameter 'buildingTag' is set
-      if (buildingTag == undefined || buildingTag == null) {
-        throw "Missing the required parameter 'buildingTag' when calling deleteBuildingTag";
-      }
-
-
-      var pathParams = {
-        'buildingId': buildingId,
-        'buildingTag': buildingTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/building/{buildingId}/tag/{buildingTag}', 'DELETE',
+        '/v2.0/building/{buildingId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -321,7 +165,7 @@
       var returnType = [Building];
 
       return this.apiClient.callApi(
-        '/beta/building/search', 'GET',
+        '/v2.0/building/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,52 +211,7 @@
       var returnType = Building;
 
       return this.apiClient.callApi(
-        '/beta/building/{buildingId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getBuildingTags operation.
-     * @callback module:api/BuildingApi~getBuildingTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a building.
-     * Get all existing building tags.
-     * @param {Integer} buildingId Id of the building to get tags for
-     * @param {module:api/BuildingApi~getBuildingTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getBuildingTags = function(buildingId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'buildingId' is set
-      if (buildingId == undefined || buildingId == null) {
-        throw "Missing the required parameter 'buildingId' when calling getBuildingTags";
-      }
-
-
-      var pathParams = {
-        'buildingId': buildingId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/building/{buildingId}/tag', 'GET',
+        '/v2.0/building/{buildingId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -458,7 +257,7 @@
       var returnType = Building;
 
       return this.apiClient.callApi(
-        '/beta/building/duplicate/{buildingId}', 'GET',
+        '/v2.0/building/duplicate/{buildingId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/building', 'PUT',
+        '/v2.0/building', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/building/customFields', 'PUT',
+        '/v2.0/building/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

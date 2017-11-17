@@ -18,7 +18,7 @@
   /**
    * ShoppingCartConnection service.
    * @module api/ShoppingCartConnectionApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ShoppingCartConnection;
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addShoppingCartConnectionAudit operation.
-     * @callback module:api/ShoppingCartConnectionApi~addShoppingCartConnectionAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a shoppingCartConnection
-     * Adds an audit to an existing shoppingCartConnection.
-     * @param {Integer} shoppingCartConnectionId Id of the shoppingCartConnection to add an audit to
-     * @param {String} shoppingCartConnectionAudit The audit to add
-     * @param {module:api/ShoppingCartConnectionApi~addShoppingCartConnectionAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addShoppingCartConnectionAudit = function(shoppingCartConnectionId, shoppingCartConnectionAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'shoppingCartConnectionId' is set
-      if (shoppingCartConnectionId == undefined || shoppingCartConnectionId == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionId' when calling addShoppingCartConnectionAudit";
-      }
-
-      // verify the required parameter 'shoppingCartConnectionAudit' is set
-      if (shoppingCartConnectionAudit == undefined || shoppingCartConnectionAudit == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionAudit' when calling addShoppingCartConnectionAudit";
-      }
-
-
-      var pathParams = {
-        'shoppingCartConnectionId': shoppingCartConnectionId,
-        'shoppingCartConnectionAudit': shoppingCartConnectionAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/{shoppingCartConnectionId}/audit/{shoppingCartConnectionAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addShoppingCartConnectionTag operation.
-     * @callback module:api/ShoppingCartConnectionApi~addShoppingCartConnectionTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a shoppingCartConnection.
-     * Adds a tag to an existing shoppingCartConnection.
-     * @param {Integer} shoppingCartConnectionId Id of the shoppingCartConnection to add a tag to
-     * @param {String} shoppingCartConnectionTag The tag to add
-     * @param {module:api/ShoppingCartConnectionApi~addShoppingCartConnectionTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addShoppingCartConnectionTag = function(shoppingCartConnectionId, shoppingCartConnectionTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'shoppingCartConnectionId' is set
-      if (shoppingCartConnectionId == undefined || shoppingCartConnectionId == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionId' when calling addShoppingCartConnectionTag";
-      }
-
-      // verify the required parameter 'shoppingCartConnectionTag' is set
-      if (shoppingCartConnectionTag == undefined || shoppingCartConnectionTag == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionTag' when calling addShoppingCartConnectionTag";
-      }
-
-
-      var pathParams = {
-        'shoppingCartConnectionId': shoppingCartConnectionId,
-        'shoppingCartConnectionTag': shoppingCartConnectionTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/{shoppingCartConnectionId}/tag/{shoppingCartConnectionTag}', 'PUT',
+        '/v2.0/shoppingCartConnection', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/{shoppingCartConnectionId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteShoppingCartConnectionTag operation.
-     * @callback module:api/ShoppingCartConnectionApi~deleteShoppingCartConnectionTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a shoppingCartConnection.
-     * Deletes an existing shoppingCartConnection tag using the specified data.
-     * @param {Integer} shoppingCartConnectionId Id of the shoppingCartConnection to remove tag from
-     * @param {String} shoppingCartConnectionTag The tag to delete
-     * @param {module:api/ShoppingCartConnectionApi~deleteShoppingCartConnectionTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteShoppingCartConnectionTag = function(shoppingCartConnectionId, shoppingCartConnectionTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'shoppingCartConnectionId' is set
-      if (shoppingCartConnectionId == undefined || shoppingCartConnectionId == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionId' when calling deleteShoppingCartConnectionTag";
-      }
-
-      // verify the required parameter 'shoppingCartConnectionTag' is set
-      if (shoppingCartConnectionTag == undefined || shoppingCartConnectionTag == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionTag' when calling deleteShoppingCartConnectionTag";
-      }
-
-
-      var pathParams = {
-        'shoppingCartConnectionId': shoppingCartConnectionId,
-        'shoppingCartConnectionTag': shoppingCartConnectionTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/{shoppingCartConnectionId}/tag/{shoppingCartConnectionTag}', 'DELETE',
+        '/v2.0/shoppingCartConnection/{shoppingCartConnectionId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ShoppingCartConnection;
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/duplicate/{shoppingCartConnectionId}', 'GET',
+        '/v2.0/shoppingCartConnection/duplicate/{shoppingCartConnectionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ShoppingCartConnection];
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/search', 'GET',
+        '/v2.0/shoppingCartConnection/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ShoppingCartConnection;
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/{shoppingCartConnectionId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getShoppingCartConnectionTags operation.
-     * @callback module:api/ShoppingCartConnectionApi~getShoppingCartConnectionTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a shoppingCartConnection.
-     * Get all existing shoppingCartConnection tags.
-     * @param {Integer} shoppingCartConnectionId Id of the shoppingCartConnection to get tags for
-     * @param {module:api/ShoppingCartConnectionApi~getShoppingCartConnectionTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getShoppingCartConnectionTags = function(shoppingCartConnectionId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'shoppingCartConnectionId' is set
-      if (shoppingCartConnectionId == undefined || shoppingCartConnectionId == null) {
-        throw "Missing the required parameter 'shoppingCartConnectionId' when calling getShoppingCartConnectionTags";
-      }
-
-
-      var pathParams = {
-        'shoppingCartConnectionId': shoppingCartConnectionId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/{shoppingCartConnectionId}/tag', 'GET',
+        '/v2.0/shoppingCartConnection/{shoppingCartConnectionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection', 'PUT',
+        '/v2.0/shoppingCartConnection', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/shoppingCartConnection/customFields', 'PUT',
+        '/v2.0/shoppingCartConnection/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

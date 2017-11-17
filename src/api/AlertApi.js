@@ -18,7 +18,7 @@
   /**
    * Alert service.
    * @module api/AlertApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addAlertAudit operation.
-     * @callback module:api/AlertApi~addAlertAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an alert
-     * Adds an audit to an existing alert.
-     * @param {Integer} alertId Id of the alert to add an audit to
-     * @param {String} alertAudit The audit to add
-     * @param {module:api/AlertApi~addAlertAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addAlertAudit = function(alertId, alertAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'alertId' is set
-      if (alertId == undefined || alertId == null) {
-        throw "Missing the required parameter 'alertId' when calling addAlertAudit";
-      }
-
-      // verify the required parameter 'alertAudit' is set
-      if (alertAudit == undefined || alertAudit == null) {
-        throw "Missing the required parameter 'alertAudit' when calling addAlertAudit";
-      }
-
-
-      var pathParams = {
-        'alertId': alertId,
-        'alertAudit': alertAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/alert/{alertId}/audit/{alertAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addAlertTag operation.
-     * @callback module:api/AlertApi~addAlertTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an alert.
-     * Adds a tag to an existing alert.
-     * @param {Integer} alertId Id of the alert to add a tag to
-     * @param {String} alertTag The tag to add
-     * @param {module:api/AlertApi~addAlertTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addAlertTag = function(alertId, alertTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'alertId' is set
-      if (alertId == undefined || alertId == null) {
-        throw "Missing the required parameter 'alertId' when calling addAlertTag";
-      }
-
-      // verify the required parameter 'alertTag' is set
-      if (alertTag == undefined || alertTag == null) {
-        throw "Missing the required parameter 'alertTag' when calling addAlertTag";
-      }
-
-
-      var pathParams = {
-        'alertId': alertId,
-        'alertTag': alertTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/alert/{alertId}/tag/{alertTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteAlertTag operation.
-     * @callback module:api/AlertApi~deleteAlertTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an alert.
-     * Deletes an existing alert tag using the specified data.
-     * @param {Integer} alertId Id of the alert to remove tag from
-     * @param {String} alertTag The tag to delete
-     * @param {module:api/AlertApi~deleteAlertTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteAlertTag = function(alertId, alertTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'alertId' is set
-      if (alertId == undefined || alertId == null) {
-        throw "Missing the required parameter 'alertId' when calling deleteAlertTag";
-      }
-
-      // verify the required parameter 'alertTag' is set
-      if (alertTag == undefined || alertTag == null) {
-        throw "Missing the required parameter 'alertTag' when calling deleteAlertTag";
-      }
-
-
-      var pathParams = {
-        'alertId': alertId,
-        'alertTag': alertTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/alert/{alertId}/tag/{alertTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getAlertByFilter operation.
@@ -231,7 +75,7 @@
       var returnType = [Alert];
 
       return this.apiClient.callApi(
-        '/beta/alert/search', 'GET',
+        '/v2.0/alert/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,52 +121,7 @@
       var returnType = Alert;
 
       return this.apiClient.callApi(
-        '/beta/alert/{alertId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getAlertTags operation.
-     * @callback module:api/AlertApi~getAlertTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an alert.
-     * Get all existing alert tags.
-     * @param {Integer} alertId Id of the alert to get tags for
-     * @param {module:api/AlertApi~getAlertTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getAlertTags = function(alertId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'alertId' is set
-      if (alertId == undefined || alertId == null) {
-        throw "Missing the required parameter 'alertId' when calling getAlertTags";
-      }
-
-
-      var pathParams = {
-        'alertId': alertId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/alert/{alertId}/tag', 'GET',
+        '/v2.0/alert/{alertId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -368,7 +167,7 @@
       var returnType = Alert;
 
       return this.apiClient.callApi(
-        '/beta/alert/duplicate/{alertId}', 'GET',
+        '/v2.0/alert/duplicate/{alertId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -412,7 +211,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/alert/customFields', 'PUT',
+        '/v2.0/alert/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

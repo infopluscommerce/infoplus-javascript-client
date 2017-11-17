@@ -18,7 +18,7 @@
   /**
    * The ReceivingProcess model module.
    * @module model/ReceivingProcess
-   * @version beta
+   * @version v2.0
    */
 
   /**

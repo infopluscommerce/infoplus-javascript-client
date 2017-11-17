@@ -18,7 +18,7 @@
   /**
    * The InventoryAdjustment model module.
    * @module model/InventoryAdjustment
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -58,8 +58,8 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('lobId')) {
-        obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Integer');
+      if (data.hasOwnProperty('lob')) {
+        obj['lob'] = ApiClient.convertToType(data['lob'], 'Integer');
       }
       if (data.hasOwnProperty('skuId')) {
         obj['skuId'] = ApiClient.convertToType(data['skuId'], 'Integer');
@@ -108,9 +108,9 @@
   exports.prototype['id'] = undefined;
 
   /**
-   * @member {Integer} lobId
+   * @member {Integer} lob
    */
-  exports.prototype['lobId'] = undefined;
+  exports.prototype['lob'] = undefined;
 
   /**
    * @member {Integer} skuId

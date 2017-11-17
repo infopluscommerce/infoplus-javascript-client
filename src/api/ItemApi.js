@@ -18,7 +18,7 @@
   /**
    * Item service.
    * @module api/ItemApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Item;
 
       return this.apiClient.callApi(
-        '/beta/item', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemAudit operation.
-     * @callback module:api/ItemApi~addItemAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an item
-     * Adds an audit to an existing item.
-     * @param {Integer} itemId Id of the item to add an audit to
-     * @param {String} itemAudit The audit to add
-     * @param {module:api/ItemApi~addItemAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemAudit = function(itemId, itemAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemId' is set
-      if (itemId == undefined || itemId == null) {
-        throw "Missing the required parameter 'itemId' when calling addItemAudit";
-      }
-
-      // verify the required parameter 'itemAudit' is set
-      if (itemAudit == undefined || itemAudit == null) {
-        throw "Missing the required parameter 'itemAudit' when calling addItemAudit";
-      }
-
-
-      var pathParams = {
-        'itemId': itemId,
-        'itemAudit': itemAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/item/{itemId}/audit/{itemAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemTag operation.
-     * @callback module:api/ItemApi~addItemTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an item.
-     * Adds a tag to an existing item.
-     * @param {Integer} itemId Id of the item to add a tag to
-     * @param {String} itemTag The tag to add
-     * @param {module:api/ItemApi~addItemTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemTag = function(itemId, itemTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemId' is set
-      if (itemId == undefined || itemId == null) {
-        throw "Missing the required parameter 'itemId' when calling addItemTag";
-      }
-
-      // verify the required parameter 'itemTag' is set
-      if (itemTag == undefined || itemTag == null) {
-        throw "Missing the required parameter 'itemTag' when calling addItemTag";
-      }
-
-
-      var pathParams = {
-        'itemId': itemId,
-        'itemTag': itemTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/item/{itemId}/tag/{itemTag}', 'PUT',
+        '/v2.0/item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/item/{itemId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemTag operation.
-     * @callback module:api/ItemApi~deleteItemTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an item.
-     * Deletes an existing item tag using the specified data.
-     * @param {Integer} itemId Id of the item to remove tag from
-     * @param {String} itemTag The tag to delete
-     * @param {module:api/ItemApi~deleteItemTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemTag = function(itemId, itemTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemId' is set
-      if (itemId == undefined || itemId == null) {
-        throw "Missing the required parameter 'itemId' when calling deleteItemTag";
-      }
-
-      // verify the required parameter 'itemTag' is set
-      if (itemTag == undefined || itemTag == null) {
-        throw "Missing the required parameter 'itemTag' when calling deleteItemTag";
-      }
-
-
-      var pathParams = {
-        'itemId': itemId,
-        'itemTag': itemTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/item/{itemId}/tag/{itemTag}', 'DELETE',
+        '/v2.0/item/{itemId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -325,7 +169,7 @@
       var returnType = Item;
 
       return this.apiClient.callApi(
-        '/beta/item/getBySKU', 'GET',
+        '/v2.0/item/getBySKU', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -371,7 +215,7 @@
       var returnType = Item;
 
       return this.apiClient.callApi(
-        '/beta/item/duplicate/{itemId}', 'GET',
+        '/v2.0/item/duplicate/{itemId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -420,7 +264,7 @@
       var returnType = [Item];
 
       return this.apiClient.callApi(
-        '/beta/item/search', 'GET',
+        '/v2.0/item/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -466,52 +310,7 @@
       var returnType = Item;
 
       return this.apiClient.callApi(
-        '/beta/item/{itemId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemTags operation.
-     * @callback module:api/ItemApi~getItemTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an item.
-     * Get all existing item tags.
-     * @param {Integer} itemId Id of the item to get tags for
-     * @param {module:api/ItemApi~getItemTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemTags = function(itemId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemId' is set
-      if (itemId == undefined || itemId == null) {
-        throw "Missing the required parameter 'itemId' when calling getItemTags";
-      }
-
-
-      var pathParams = {
-        'itemId': itemId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/item/{itemId}/tag', 'GET',
+        '/v2.0/item/{itemId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -555,7 +354,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/item', 'PUT',
+        '/v2.0/item', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -599,7 +398,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/item/customFields', 'PUT',
+        '/v2.0/item/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

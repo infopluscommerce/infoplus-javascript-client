@@ -18,7 +18,7 @@
   /**
    * The ParcelAccount model module.
    * @module model/ParcelAccount
-   * @version beta
+   * @version v2.0
    */
 
   /**

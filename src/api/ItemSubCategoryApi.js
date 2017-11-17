@@ -18,7 +18,7 @@
   /**
    * ItemSubCategory service.
    * @module api/ItemSubCategoryApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ItemSubCategory;
 
       return this.apiClient.callApi(
-        '/beta/itemSubCategory', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemSubCategoryAudit operation.
-     * @callback module:api/ItemSubCategoryApi~addItemSubCategoryAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemSubCategory
-     * Adds an audit to an existing itemSubCategory.
-     * @param {Integer} itemSubCategoryId Id of the itemSubCategory to add an audit to
-     * @param {String} itemSubCategoryAudit The audit to add
-     * @param {module:api/ItemSubCategoryApi~addItemSubCategoryAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemSubCategoryAudit = function(itemSubCategoryId, itemSubCategoryAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSubCategoryId' is set
-      if (itemSubCategoryId == undefined || itemSubCategoryId == null) {
-        throw "Missing the required parameter 'itemSubCategoryId' when calling addItemSubCategoryAudit";
-      }
-
-      // verify the required parameter 'itemSubCategoryAudit' is set
-      if (itemSubCategoryAudit == undefined || itemSubCategoryAudit == null) {
-        throw "Missing the required parameter 'itemSubCategoryAudit' when calling addItemSubCategoryAudit";
-      }
-
-
-      var pathParams = {
-        'itemSubCategoryId': itemSubCategoryId,
-        'itemSubCategoryAudit': itemSubCategoryAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSubCategory/{itemSubCategoryId}/audit/{itemSubCategoryAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemSubCategoryTag operation.
-     * @callback module:api/ItemSubCategoryApi~addItemSubCategoryTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemSubCategory.
-     * Adds a tag to an existing itemSubCategory.
-     * @param {Integer} itemSubCategoryId Id of the itemSubCategory to add a tag to
-     * @param {String} itemSubCategoryTag The tag to add
-     * @param {module:api/ItemSubCategoryApi~addItemSubCategoryTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemSubCategoryTag = function(itemSubCategoryId, itemSubCategoryTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSubCategoryId' is set
-      if (itemSubCategoryId == undefined || itemSubCategoryId == null) {
-        throw "Missing the required parameter 'itemSubCategoryId' when calling addItemSubCategoryTag";
-      }
-
-      // verify the required parameter 'itemSubCategoryTag' is set
-      if (itemSubCategoryTag == undefined || itemSubCategoryTag == null) {
-        throw "Missing the required parameter 'itemSubCategoryTag' when calling addItemSubCategoryTag";
-      }
-
-
-      var pathParams = {
-        'itemSubCategoryId': itemSubCategoryId,
-        'itemSubCategoryTag': itemSubCategoryTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSubCategory/{itemSubCategoryId}/tag/{itemSubCategoryTag}', 'PUT',
+        '/v2.0/itemSubCategory', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemSubCategory/{itemSubCategoryId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemSubCategoryTag operation.
-     * @callback module:api/ItemSubCategoryApi~deleteItemSubCategoryTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemSubCategory.
-     * Deletes an existing itemSubCategory tag using the specified data.
-     * @param {Integer} itemSubCategoryId Id of the itemSubCategory to remove tag from
-     * @param {String} itemSubCategoryTag The tag to delete
-     * @param {module:api/ItemSubCategoryApi~deleteItemSubCategoryTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemSubCategoryTag = function(itemSubCategoryId, itemSubCategoryTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSubCategoryId' is set
-      if (itemSubCategoryId == undefined || itemSubCategoryId == null) {
-        throw "Missing the required parameter 'itemSubCategoryId' when calling deleteItemSubCategoryTag";
-      }
-
-      // verify the required parameter 'itemSubCategoryTag' is set
-      if (itemSubCategoryTag == undefined || itemSubCategoryTag == null) {
-        throw "Missing the required parameter 'itemSubCategoryTag' when calling deleteItemSubCategoryTag";
-      }
-
-
-      var pathParams = {
-        'itemSubCategoryId': itemSubCategoryId,
-        'itemSubCategoryTag': itemSubCategoryTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSubCategory/{itemSubCategoryId}/tag/{itemSubCategoryTag}', 'DELETE',
+        '/v2.0/itemSubCategory/{itemSubCategoryId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ItemSubCategory;
 
       return this.apiClient.callApi(
-        '/beta/itemSubCategory/duplicate/{itemSubCategoryId}', 'GET',
+        '/v2.0/itemSubCategory/duplicate/{itemSubCategoryId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ItemSubCategory];
 
       return this.apiClient.callApi(
-        '/beta/itemSubCategory/search', 'GET',
+        '/v2.0/itemSubCategory/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ItemSubCategory;
 
       return this.apiClient.callApi(
-        '/beta/itemSubCategory/{itemSubCategoryId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemSubCategoryTags operation.
-     * @callback module:api/ItemSubCategoryApi~getItemSubCategoryTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemSubCategory.
-     * Get all existing itemSubCategory tags.
-     * @param {Integer} itemSubCategoryId Id of the itemSubCategory to get tags for
-     * @param {module:api/ItemSubCategoryApi~getItemSubCategoryTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemSubCategoryTags = function(itemSubCategoryId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSubCategoryId' is set
-      if (itemSubCategoryId == undefined || itemSubCategoryId == null) {
-        throw "Missing the required parameter 'itemSubCategoryId' when calling getItemSubCategoryTags";
-      }
-
-
-      var pathParams = {
-        'itemSubCategoryId': itemSubCategoryId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSubCategory/{itemSubCategoryId}/tag', 'GET',
+        '/v2.0/itemSubCategory/{itemSubCategoryId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemSubCategory', 'PUT',
+        '/v2.0/itemSubCategory', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

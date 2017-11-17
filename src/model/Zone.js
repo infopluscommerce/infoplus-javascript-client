@@ -18,7 +18,7 @@
   /**
    * The Zone model module.
    * @module model/Zone
-   * @version beta
+   * @version v2.0
    */
 
   /**

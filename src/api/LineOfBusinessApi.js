@@ -18,7 +18,7 @@
   /**
    * LineOfBusiness service.
    * @module api/LineOfBusinessApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = LineOfBusiness;
 
       return this.apiClient.callApi(
-        '/beta/lineOfBusiness/{lineOfBusinessId}', 'GET',
+        '/v2.0/lineOfBusiness/{lineOfBusinessId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [LineOfBusiness];
 
       return this.apiClient.callApi(
-        '/beta/lineOfBusiness/search', 'GET',
+        '/v2.0/lineOfBusiness/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

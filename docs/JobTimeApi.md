@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addJobTime**](JobTimeApi.md#addJobTime) | **POST** /beta/jobTime | Create a jobTime
-[**addJobTimeAudit**](JobTimeApi.md#addJobTimeAudit) | **PUT** /beta/jobTime/{jobTimeId}/audit/{jobTimeAudit} | Add new audit for a jobTime
-[**addJobTimeTag**](JobTimeApi.md#addJobTimeTag) | **PUT** /beta/jobTime/{jobTimeId}/tag/{jobTimeTag} | Add new tags for a jobTime.
-[**deleteJobTime**](JobTimeApi.md#deleteJobTime) | **DELETE** /beta/jobTime/{jobTimeId} | Delete a jobTime
-[**deleteJobTimeTag**](JobTimeApi.md#deleteJobTimeTag) | **DELETE** /beta/jobTime/{jobTimeId}/tag/{jobTimeTag} | Delete a tag for a jobTime.
-[**getDuplicateJobTimeById**](JobTimeApi.md#getDuplicateJobTimeById) | **GET** /beta/jobTime/duplicate/{jobTimeId} | Get a duplicated a jobTime by id
-[**getJobTimeByFilter**](JobTimeApi.md#getJobTimeByFilter) | **GET** /beta/jobTime/search | Search jobTimes by filter
-[**getJobTimeById**](JobTimeApi.md#getJobTimeById) | **GET** /beta/jobTime/{jobTimeId} | Get a jobTime by id
-[**getJobTimeTags**](JobTimeApi.md#getJobTimeTags) | **GET** /beta/jobTime/{jobTimeId}/tag | Get the tags for a jobTime.
-[**updateJobTime**](JobTimeApi.md#updateJobTime) | **PUT** /beta/jobTime | Update a jobTime
-[**updateJobTimeCustomFields**](JobTimeApi.md#updateJobTimeCustomFields) | **PUT** /beta/jobTime/customFields | Update a jobTime custom fields
+[**addJobTime**](JobTimeApi.md#addJobTime) | **POST** /v2.0/jobTime | Create a jobTime
+[**deleteJobTime**](JobTimeApi.md#deleteJobTime) | **DELETE** /v2.0/jobTime/{jobTimeId} | Delete a jobTime
+[**getDuplicateJobTimeById**](JobTimeApi.md#getDuplicateJobTimeById) | **GET** /v2.0/jobTime/duplicate/{jobTimeId} | Get a duplicated a jobTime by id
+[**getJobTimeByFilter**](JobTimeApi.md#getJobTimeByFilter) | **GET** /v2.0/jobTime/search | Search jobTimes by filter
+[**getJobTimeById**](JobTimeApi.md#getJobTimeById) | **GET** /v2.0/jobTime/{jobTimeId} | Get a jobTime by id
+[**updateJobTime**](JobTimeApi.md#updateJobTime) | **PUT** /v2.0/jobTime | Update a jobTime
+[**updateJobTimeCustomFields**](JobTimeApi.md#updateJobTimeCustomFields) | **PUT** /v2.0/jobTime/customFields | Update a jobTime custom fields
 
 
 <a name="addJobTime"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addJobTimeAudit"></a>
-# **addJobTimeAudit**
-> addJobTimeAudit(jobTimeId, jobTimeAudit)
-
-Add new audit for a jobTime
-
-Adds an audit to an existing jobTime.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTimeApi()
-
-var jobTimeId = 56; // {Integer} Id of the jobTime to add an audit to
-
-var jobTimeAudit = "jobTimeAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addJobTimeAudit(jobTimeId, jobTimeAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTimeId** | **Integer**| Id of the jobTime to add an audit to | 
- **jobTimeAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addJobTimeTag"></a>
-# **addJobTimeTag**
-> addJobTimeTag(jobTimeId, jobTimeTag)
-
-Add new tags for a jobTime.
-
-Adds a tag to an existing jobTime.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTimeApi()
-
-var jobTimeId = 56; // {Integer} Id of the jobTime to add a tag to
-
-var jobTimeTag = "jobTimeTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addJobTimeTag(jobTimeId, jobTimeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTimeId** | **Integer**| Id of the jobTime to add a tag to | 
- **jobTimeTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteJobTime"></a>
 # **deleteJobTime**
 > deleteJobTime(jobTimeId)
@@ -221,62 +105,6 @@ api.deleteJobTime(jobTimeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobTimeId** | **Integer**| Id of the jobTime to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteJobTimeTag"></a>
-# **deleteJobTimeTag**
-> deleteJobTimeTag(jobTimeId, jobTimeTag)
-
-Delete a tag for a jobTime.
-
-Deletes an existing jobTime tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTimeApi()
-
-var jobTimeId = 56; // {Integer} Id of the jobTime to remove tag from
-
-var jobTimeTag = "jobTimeTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteJobTimeTag(jobTimeId, jobTimeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTimeId** | **Integer**| Id of the jobTime to remove tag from | 
- **jobTimeTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JobTime**](JobTime.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getJobTimeTags"></a>
-# **getJobTimeTags**
-> getJobTimeTags(jobTimeId)
-
-Get the tags for a jobTime.
-
-Get all existing jobTime tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.JobTimeApi()
-
-var jobTimeId = 56; // {Integer} Id of the jobTime to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getJobTimeTags(jobTimeId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **jobTimeId** | **Integer**| Id of the jobTime to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

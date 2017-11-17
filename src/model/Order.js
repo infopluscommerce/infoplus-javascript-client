@@ -18,7 +18,7 @@
   /**
    * The Order model module.
    * @module model/Order
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -50,10 +50,6 @@
 
     this['mediaCode'] = mediaCode;
     this['legacyRestrictionType'] = legacyRestrictionType;
-
-
-
-
 
 
 
@@ -254,9 +250,6 @@
       if (data.hasOwnProperty('parcelAccountId')) {
         obj['parcelAccountId'] = ApiClient.convertToType(data['parcelAccountId'], 'Integer');
       }
-      if (data.hasOwnProperty('thirdPartyParcelAccountId')) {
-        obj['thirdPartyParcelAccountId'] = ApiClient.convertToType(data['thirdPartyParcelAccountId'], 'Integer');
-      }
       if (data.hasOwnProperty('costCenter')) {
         obj['costCenter'] = ApiClient.convertToType(data['costCenter'], 'String');
       }
@@ -299,9 +292,6 @@
       if (data.hasOwnProperty('numberOfLineItems')) {
         obj['numberOfLineItems'] = ApiClient.convertToType(data['numberOfLineItems'], 'Integer');
       }
-      if (data.hasOwnProperty('estimatedNumberOfPicks')) {
-        obj['estimatedNumberOfPicks'] = ApiClient.convertToType(data['estimatedNumberOfPicks'], 'Integer');
-      }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
       }
@@ -326,9 +316,6 @@
       if (data.hasOwnProperty('packingSlipTemplateId')) {
         obj['packingSlipTemplateId'] = ApiClient.convertToType(data['packingSlipTemplateId'], 'Integer');
       }
-      if (data.hasOwnProperty('orderInvoiceTemplateId')) {
-        obj['orderInvoiceTemplateId'] = ApiClient.convertToType(data['orderInvoiceTemplateId'], 'Integer');
-      }
       if (data.hasOwnProperty('orderConfirmationEmailTemplateId')) {
         obj['orderConfirmationEmailTemplateId'] = ApiClient.convertToType(data['orderConfirmationEmailTemplateId'], 'Integer');
       }
@@ -337,9 +324,6 @@
       }
       if (data.hasOwnProperty('priceLevel')) {
         obj['priceLevel'] = ApiClient.convertToType(data['priceLevel'], 'String');
-      }
-      if (data.hasOwnProperty('priceMode')) {
-        obj['priceMode'] = ApiClient.convertToType(data['priceMode'], 'String');
       }
       if (data.hasOwnProperty('priorityCode')) {
         obj['priorityCode'] = ApiClient.convertToType(data['priorityCode'], 'Integer');
@@ -622,11 +606,6 @@
   exports.prototype['parcelAccountId'] = undefined;
 
   /**
-   * @member {Integer} thirdPartyParcelAccountId
-   */
-  exports.prototype['thirdPartyParcelAccountId'] = undefined;
-
-  /**
    * @member {String} costCenter
    */
   exports.prototype['costCenter'] = undefined;
@@ -697,11 +676,6 @@
   exports.prototype['numberOfLineItems'] = undefined;
 
   /**
-   * @member {Integer} estimatedNumberOfPicks
-   */
-  exports.prototype['estimatedNumberOfPicks'] = undefined;
-
-  /**
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
@@ -742,11 +716,6 @@
   exports.prototype['packingSlipTemplateId'] = undefined;
 
   /**
-   * @member {Integer} orderInvoiceTemplateId
-   */
-  exports.prototype['orderInvoiceTemplateId'] = undefined;
-
-  /**
    * @member {Integer} orderConfirmationEmailTemplateId
    */
   exports.prototype['orderConfirmationEmailTemplateId'] = undefined;
@@ -760,11 +729,6 @@
    * @member {String} priceLevel
    */
   exports.prototype['priceLevel'] = undefined;
-
-  /**
-   * @member {String} priceMode
-   */
-  exports.prototype['priceMode'] = undefined;
 
   /**
    * @member {Integer} priorityCode

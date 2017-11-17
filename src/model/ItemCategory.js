@@ -18,7 +18,7 @@
   /**
    * The ItemCategory model module.
    * @module model/ItemCategory
-   * @version beta
+   * @version v2.0
    */
 
   /**

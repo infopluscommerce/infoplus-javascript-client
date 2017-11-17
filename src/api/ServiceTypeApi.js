@@ -18,7 +18,7 @@
   /**
    * ServiceType service.
    * @module api/ServiceTypeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -72,7 +72,7 @@
       var returnType = ServiceType;
 
       return this.apiClient.callApi(
-        '/beta/serviceType/{serviceTypeId}', 'GET',
+        '/v2.0/serviceType/{serviceTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -119,7 +119,7 @@
       var returnType = [ServiceType];
 
       return this.apiClient.callApi(
-        '/beta/serviceType/search', 'GET',
+        '/v2.0/serviceType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -18,7 +18,7 @@
   /**
    * The BillOfLadingCarrierInfoLine model module.
    * @module model/BillOfLadingCarrierInfoLine
-   * @version beta
+   * @version v2.0
    */
 
   /**

@@ -18,7 +18,7 @@
   /**
    * The ItemProductCode model module.
    * @module model/ItemProductCode
-   * @version beta
+   * @version v2.0
    */
 
   /**

@@ -18,7 +18,7 @@
   /**
    * PickFaceAssignment service.
    * @module api/PickFaceAssignmentApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = PickFaceAssignment;
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addPickFaceAssignmentAudit operation.
-     * @callback module:api/PickFaceAssignmentApi~addPickFaceAssignmentAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a pickFaceAssignment
-     * Adds an audit to an existing pickFaceAssignment.
-     * @param {Integer} pickFaceAssignmentId Id of the pickFaceAssignment to add an audit to
-     * @param {String} pickFaceAssignmentAudit The audit to add
-     * @param {module:api/PickFaceAssignmentApi~addPickFaceAssignmentAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addPickFaceAssignmentAudit = function(pickFaceAssignmentId, pickFaceAssignmentAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'pickFaceAssignmentId' is set
-      if (pickFaceAssignmentId == undefined || pickFaceAssignmentId == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentId' when calling addPickFaceAssignmentAudit";
-      }
-
-      // verify the required parameter 'pickFaceAssignmentAudit' is set
-      if (pickFaceAssignmentAudit == undefined || pickFaceAssignmentAudit == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentAudit' when calling addPickFaceAssignmentAudit";
-      }
-
-
-      var pathParams = {
-        'pickFaceAssignmentId': pickFaceAssignmentId,
-        'pickFaceAssignmentAudit': pickFaceAssignmentAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/{pickFaceAssignmentId}/audit/{pickFaceAssignmentAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addPickFaceAssignmentTag operation.
-     * @callback module:api/PickFaceAssignmentApi~addPickFaceAssignmentTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a pickFaceAssignment.
-     * Adds a tag to an existing pickFaceAssignment.
-     * @param {Integer} pickFaceAssignmentId Id of the pickFaceAssignment to add a tag to
-     * @param {String} pickFaceAssignmentTag The tag to add
-     * @param {module:api/PickFaceAssignmentApi~addPickFaceAssignmentTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addPickFaceAssignmentTag = function(pickFaceAssignmentId, pickFaceAssignmentTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'pickFaceAssignmentId' is set
-      if (pickFaceAssignmentId == undefined || pickFaceAssignmentId == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentId' when calling addPickFaceAssignmentTag";
-      }
-
-      // verify the required parameter 'pickFaceAssignmentTag' is set
-      if (pickFaceAssignmentTag == undefined || pickFaceAssignmentTag == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentTag' when calling addPickFaceAssignmentTag";
-      }
-
-
-      var pathParams = {
-        'pickFaceAssignmentId': pickFaceAssignmentId,
-        'pickFaceAssignmentTag': pickFaceAssignmentTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/{pickFaceAssignmentId}/tag/{pickFaceAssignmentTag}', 'PUT',
+        '/v2.0/pickFaceAssignment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/{pickFaceAssignmentId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deletePickFaceAssignmentTag operation.
-     * @callback module:api/PickFaceAssignmentApi~deletePickFaceAssignmentTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a pickFaceAssignment.
-     * Deletes an existing pickFaceAssignment tag using the specified data.
-     * @param {Integer} pickFaceAssignmentId Id of the pickFaceAssignment to remove tag from
-     * @param {String} pickFaceAssignmentTag The tag to delete
-     * @param {module:api/PickFaceAssignmentApi~deletePickFaceAssignmentTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deletePickFaceAssignmentTag = function(pickFaceAssignmentId, pickFaceAssignmentTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'pickFaceAssignmentId' is set
-      if (pickFaceAssignmentId == undefined || pickFaceAssignmentId == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentId' when calling deletePickFaceAssignmentTag";
-      }
-
-      // verify the required parameter 'pickFaceAssignmentTag' is set
-      if (pickFaceAssignmentTag == undefined || pickFaceAssignmentTag == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentTag' when calling deletePickFaceAssignmentTag";
-      }
-
-
-      var pathParams = {
-        'pickFaceAssignmentId': pickFaceAssignmentId,
-        'pickFaceAssignmentTag': pickFaceAssignmentTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/{pickFaceAssignmentId}/tag/{pickFaceAssignmentTag}', 'DELETE',
+        '/v2.0/pickFaceAssignment/{pickFaceAssignmentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = PickFaceAssignment;
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/duplicate/{pickFaceAssignmentId}', 'GET',
+        '/v2.0/pickFaceAssignment/duplicate/{pickFaceAssignmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [PickFaceAssignment];
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/search', 'GET',
+        '/v2.0/pickFaceAssignment/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = PickFaceAssignment;
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/{pickFaceAssignmentId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getPickFaceAssignmentTags operation.
-     * @callback module:api/PickFaceAssignmentApi~getPickFaceAssignmentTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a pickFaceAssignment.
-     * Get all existing pickFaceAssignment tags.
-     * @param {Integer} pickFaceAssignmentId Id of the pickFaceAssignment to get tags for
-     * @param {module:api/PickFaceAssignmentApi~getPickFaceAssignmentTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getPickFaceAssignmentTags = function(pickFaceAssignmentId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'pickFaceAssignmentId' is set
-      if (pickFaceAssignmentId == undefined || pickFaceAssignmentId == null) {
-        throw "Missing the required parameter 'pickFaceAssignmentId' when calling getPickFaceAssignmentTags";
-      }
-
-
-      var pathParams = {
-        'pickFaceAssignmentId': pickFaceAssignmentId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/{pickFaceAssignmentId}/tag', 'GET',
+        '/v2.0/pickFaceAssignment/{pickFaceAssignmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment', 'PUT',
+        '/v2.0/pickFaceAssignment', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/pickFaceAssignment/customFields', 'PUT',
+        '/v2.0/pickFaceAssignment/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

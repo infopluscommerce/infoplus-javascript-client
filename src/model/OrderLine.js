@@ -18,7 +18,7 @@
   /**
    * The OrderLine model module.
    * @module model/OrderLine
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -40,8 +40,6 @@
     this['orderNo'] = orderNo;
     this['lobId'] = lobId;
     this['sku'] = sku;
-
-
 
 
 
@@ -133,17 +131,11 @@
       if (data.hasOwnProperty('unitSell')) {
         obj['unitSell'] = ApiClient.convertToType(data['unitSell'], 'Number');
       }
-      if (data.hasOwnProperty('unitDiscount')) {
-        obj['unitDiscount'] = ApiClient.convertToType(data['unitDiscount'], 'Number');
-      }
       if (data.hasOwnProperty('extendedCost')) {
         obj['extendedCost'] = ApiClient.convertToType(data['extendedCost'], 'Number');
       }
       if (data.hasOwnProperty('extendedSell')) {
         obj['extendedSell'] = ApiClient.convertToType(data['extendedSell'], 'Number');
-      }
-      if (data.hasOwnProperty('extendedDiscount')) {
-        obj['extendedDiscount'] = ApiClient.convertToType(data['extendedDiscount'], 'Number');
       }
       if (data.hasOwnProperty('ncExtendedSell')) {
         obj['ncExtendedSell'] = ApiClient.convertToType(data['ncExtendedSell'], 'Number');
@@ -272,11 +264,6 @@
   exports.prototype['unitSell'] = undefined;
 
   /**
-   * @member {Number} unitDiscount
-   */
-  exports.prototype['unitDiscount'] = undefined;
-
-  /**
    * @member {Number} extendedCost
    */
   exports.prototype['extendedCost'] = undefined;
@@ -285,11 +272,6 @@
    * @member {Number} extendedSell
    */
   exports.prototype['extendedSell'] = undefined;
-
-  /**
-   * @member {Number} extendedDiscount
-   */
-  exports.prototype['extendedDiscount'] = undefined;
 
   /**
    * @member {Number} ncExtendedSell

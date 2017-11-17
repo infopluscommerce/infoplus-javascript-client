@@ -18,7 +18,7 @@
   /**
    * FulfillmentPlan service.
    * @module api/FulfillmentPlanApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = FulfillmentPlan;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addFulfillmentPlanAudit operation.
-     * @callback module:api/FulfillmentPlanApi~addFulfillmentPlanAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a fulfillmentPlan
-     * Adds an audit to an existing fulfillmentPlan.
-     * @param {Integer} fulfillmentPlanId Id of the fulfillmentPlan to add an audit to
-     * @param {String} fulfillmentPlanAudit The audit to add
-     * @param {module:api/FulfillmentPlanApi~addFulfillmentPlanAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addFulfillmentPlanAudit = function(fulfillmentPlanId, fulfillmentPlanAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentPlanId' is set
-      if (fulfillmentPlanId == undefined || fulfillmentPlanId == null) {
-        throw "Missing the required parameter 'fulfillmentPlanId' when calling addFulfillmentPlanAudit";
-      }
-
-      // verify the required parameter 'fulfillmentPlanAudit' is set
-      if (fulfillmentPlanAudit == undefined || fulfillmentPlanAudit == null) {
-        throw "Missing the required parameter 'fulfillmentPlanAudit' when calling addFulfillmentPlanAudit";
-      }
-
-
-      var pathParams = {
-        'fulfillmentPlanId': fulfillmentPlanId,
-        'fulfillmentPlanAudit': fulfillmentPlanAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/{fulfillmentPlanId}/audit/{fulfillmentPlanAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addFulfillmentPlanTag operation.
-     * @callback module:api/FulfillmentPlanApi~addFulfillmentPlanTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a fulfillmentPlan.
-     * Adds a tag to an existing fulfillmentPlan.
-     * @param {Integer} fulfillmentPlanId Id of the fulfillmentPlan to add a tag to
-     * @param {String} fulfillmentPlanTag The tag to add
-     * @param {module:api/FulfillmentPlanApi~addFulfillmentPlanTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addFulfillmentPlanTag = function(fulfillmentPlanId, fulfillmentPlanTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentPlanId' is set
-      if (fulfillmentPlanId == undefined || fulfillmentPlanId == null) {
-        throw "Missing the required parameter 'fulfillmentPlanId' when calling addFulfillmentPlanTag";
-      }
-
-      // verify the required parameter 'fulfillmentPlanTag' is set
-      if (fulfillmentPlanTag == undefined || fulfillmentPlanTag == null) {
-        throw "Missing the required parameter 'fulfillmentPlanTag' when calling addFulfillmentPlanTag";
-      }
-
-
-      var pathParams = {
-        'fulfillmentPlanId': fulfillmentPlanId,
-        'fulfillmentPlanTag': fulfillmentPlanTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/{fulfillmentPlanId}/tag/{fulfillmentPlanTag}', 'PUT',
+        '/v2.0/fulfillmentPlan', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/{fulfillmentPlanId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteFulfillmentPlanTag operation.
-     * @callback module:api/FulfillmentPlanApi~deleteFulfillmentPlanTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a fulfillmentPlan.
-     * Deletes an existing fulfillmentPlan tag using the specified data.
-     * @param {Integer} fulfillmentPlanId Id of the fulfillmentPlan to remove tag from
-     * @param {String} fulfillmentPlanTag The tag to delete
-     * @param {module:api/FulfillmentPlanApi~deleteFulfillmentPlanTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteFulfillmentPlanTag = function(fulfillmentPlanId, fulfillmentPlanTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentPlanId' is set
-      if (fulfillmentPlanId == undefined || fulfillmentPlanId == null) {
-        throw "Missing the required parameter 'fulfillmentPlanId' when calling deleteFulfillmentPlanTag";
-      }
-
-      // verify the required parameter 'fulfillmentPlanTag' is set
-      if (fulfillmentPlanTag == undefined || fulfillmentPlanTag == null) {
-        throw "Missing the required parameter 'fulfillmentPlanTag' when calling deleteFulfillmentPlanTag";
-      }
-
-
-      var pathParams = {
-        'fulfillmentPlanId': fulfillmentPlanId,
-        'fulfillmentPlanTag': fulfillmentPlanTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/{fulfillmentPlanId}/tag/{fulfillmentPlanTag}', 'DELETE',
+        '/v2.0/fulfillmentPlan/{fulfillmentPlanId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = FulfillmentPlan;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/duplicate/{fulfillmentPlanId}', 'GET',
+        '/v2.0/fulfillmentPlan/duplicate/{fulfillmentPlanId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [FulfillmentPlan];
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/search', 'GET',
+        '/v2.0/fulfillmentPlan/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = FulfillmentPlan;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/{fulfillmentPlanId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getFulfillmentPlanTags operation.
-     * @callback module:api/FulfillmentPlanApi~getFulfillmentPlanTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a fulfillmentPlan.
-     * Get all existing fulfillmentPlan tags.
-     * @param {Integer} fulfillmentPlanId Id of the fulfillmentPlan to get tags for
-     * @param {module:api/FulfillmentPlanApi~getFulfillmentPlanTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getFulfillmentPlanTags = function(fulfillmentPlanId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'fulfillmentPlanId' is set
-      if (fulfillmentPlanId == undefined || fulfillmentPlanId == null) {
-        throw "Missing the required parameter 'fulfillmentPlanId' when calling getFulfillmentPlanTags";
-      }
-
-
-      var pathParams = {
-        'fulfillmentPlanId': fulfillmentPlanId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/{fulfillmentPlanId}/tag', 'GET',
+        '/v2.0/fulfillmentPlan/{fulfillmentPlanId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan', 'PUT',
+        '/v2.0/fulfillmentPlan', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/fulfillmentPlan/customFields', 'PUT',
+        '/v2.0/fulfillmentPlan/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

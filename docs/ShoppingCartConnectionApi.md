@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addShoppingCartConnection**](ShoppingCartConnectionApi.md#addShoppingCartConnection) | **POST** /beta/shoppingCartConnection | Create a shoppingCartConnection
-[**addShoppingCartConnectionAudit**](ShoppingCartConnectionApi.md#addShoppingCartConnectionAudit) | **PUT** /beta/shoppingCartConnection/{shoppingCartConnectionId}/audit/{shoppingCartConnectionAudit} | Add new audit for a shoppingCartConnection
-[**addShoppingCartConnectionTag**](ShoppingCartConnectionApi.md#addShoppingCartConnectionTag) | **PUT** /beta/shoppingCartConnection/{shoppingCartConnectionId}/tag/{shoppingCartConnectionTag} | Add new tags for a shoppingCartConnection.
-[**deleteShoppingCartConnection**](ShoppingCartConnectionApi.md#deleteShoppingCartConnection) | **DELETE** /beta/shoppingCartConnection/{shoppingCartConnectionId} | Delete a shoppingCartConnection
-[**deleteShoppingCartConnectionTag**](ShoppingCartConnectionApi.md#deleteShoppingCartConnectionTag) | **DELETE** /beta/shoppingCartConnection/{shoppingCartConnectionId}/tag/{shoppingCartConnectionTag} | Delete a tag for a shoppingCartConnection.
-[**getDuplicateShoppingCartConnectionById**](ShoppingCartConnectionApi.md#getDuplicateShoppingCartConnectionById) | **GET** /beta/shoppingCartConnection/duplicate/{shoppingCartConnectionId} | Get a duplicated a shoppingCartConnection by id
-[**getShoppingCartConnectionByFilter**](ShoppingCartConnectionApi.md#getShoppingCartConnectionByFilter) | **GET** /beta/shoppingCartConnection/search | Search shoppingCartConnections by filter
-[**getShoppingCartConnectionById**](ShoppingCartConnectionApi.md#getShoppingCartConnectionById) | **GET** /beta/shoppingCartConnection/{shoppingCartConnectionId} | Get a shoppingCartConnection by id
-[**getShoppingCartConnectionTags**](ShoppingCartConnectionApi.md#getShoppingCartConnectionTags) | **GET** /beta/shoppingCartConnection/{shoppingCartConnectionId}/tag | Get the tags for a shoppingCartConnection.
-[**updateShoppingCartConnection**](ShoppingCartConnectionApi.md#updateShoppingCartConnection) | **PUT** /beta/shoppingCartConnection | Update a shoppingCartConnection
-[**updateShoppingCartConnectionCustomFields**](ShoppingCartConnectionApi.md#updateShoppingCartConnectionCustomFields) | **PUT** /beta/shoppingCartConnection/customFields | Update a shoppingCartConnection custom fields
+[**addShoppingCartConnection**](ShoppingCartConnectionApi.md#addShoppingCartConnection) | **POST** /v2.0/shoppingCartConnection | Create a shoppingCartConnection
+[**deleteShoppingCartConnection**](ShoppingCartConnectionApi.md#deleteShoppingCartConnection) | **DELETE** /v2.0/shoppingCartConnection/{shoppingCartConnectionId} | Delete a shoppingCartConnection
+[**getDuplicateShoppingCartConnectionById**](ShoppingCartConnectionApi.md#getDuplicateShoppingCartConnectionById) | **GET** /v2.0/shoppingCartConnection/duplicate/{shoppingCartConnectionId} | Get a duplicated a shoppingCartConnection by id
+[**getShoppingCartConnectionByFilter**](ShoppingCartConnectionApi.md#getShoppingCartConnectionByFilter) | **GET** /v2.0/shoppingCartConnection/search | Search shoppingCartConnections by filter
+[**getShoppingCartConnectionById**](ShoppingCartConnectionApi.md#getShoppingCartConnectionById) | **GET** /v2.0/shoppingCartConnection/{shoppingCartConnectionId} | Get a shoppingCartConnection by id
+[**updateShoppingCartConnection**](ShoppingCartConnectionApi.md#updateShoppingCartConnection) | **PUT** /v2.0/shoppingCartConnection | Update a shoppingCartConnection
+[**updateShoppingCartConnectionCustomFields**](ShoppingCartConnectionApi.md#updateShoppingCartConnectionCustomFields) | **PUT** /v2.0/shoppingCartConnection/customFields | Update a shoppingCartConnection custom fields
 
 
 <a name="addShoppingCartConnection"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addShoppingCartConnectionAudit"></a>
-# **addShoppingCartConnectionAudit**
-> addShoppingCartConnectionAudit(shoppingCartConnectionId, shoppingCartConnectionAudit)
-
-Add new audit for a shoppingCartConnection
-
-Adds an audit to an existing shoppingCartConnection.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ShoppingCartConnectionApi()
-
-var shoppingCartConnectionId = 56; // {Integer} Id of the shoppingCartConnection to add an audit to
-
-var shoppingCartConnectionAudit = "shoppingCartConnectionAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addShoppingCartConnectionAudit(shoppingCartConnectionId, shoppingCartConnectionAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **shoppingCartConnectionId** | **Integer**| Id of the shoppingCartConnection to add an audit to | 
- **shoppingCartConnectionAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addShoppingCartConnectionTag"></a>
-# **addShoppingCartConnectionTag**
-> addShoppingCartConnectionTag(shoppingCartConnectionId, shoppingCartConnectionTag)
-
-Add new tags for a shoppingCartConnection.
-
-Adds a tag to an existing shoppingCartConnection.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ShoppingCartConnectionApi()
-
-var shoppingCartConnectionId = 56; // {Integer} Id of the shoppingCartConnection to add a tag to
-
-var shoppingCartConnectionTag = "shoppingCartConnectionTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addShoppingCartConnectionTag(shoppingCartConnectionId, shoppingCartConnectionTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **shoppingCartConnectionId** | **Integer**| Id of the shoppingCartConnection to add a tag to | 
- **shoppingCartConnectionTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteShoppingCartConnection"></a>
 # **deleteShoppingCartConnection**
 > deleteShoppingCartConnection(shoppingCartConnectionId)
@@ -221,62 +105,6 @@ api.deleteShoppingCartConnection(shoppingCartConnectionId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shoppingCartConnectionId** | **Integer**| Id of the shoppingCartConnection to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteShoppingCartConnectionTag"></a>
-# **deleteShoppingCartConnectionTag**
-> deleteShoppingCartConnectionTag(shoppingCartConnectionId, shoppingCartConnectionTag)
-
-Delete a tag for a shoppingCartConnection.
-
-Deletes an existing shoppingCartConnection tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ShoppingCartConnectionApi()
-
-var shoppingCartConnectionId = 56; // {Integer} Id of the shoppingCartConnection to remove tag from
-
-var shoppingCartConnectionTag = "shoppingCartConnectionTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteShoppingCartConnectionTag(shoppingCartConnectionId, shoppingCartConnectionTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **shoppingCartConnectionId** | **Integer**| Id of the shoppingCartConnection to remove tag from | 
- **shoppingCartConnectionTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ShoppingCartConnection**](ShoppingCartConnection.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getShoppingCartConnectionTags"></a>
-# **getShoppingCartConnectionTags**
-> getShoppingCartConnectionTags(shoppingCartConnectionId)
-
-Get the tags for a shoppingCartConnection.
-
-Get all existing shoppingCartConnection tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ShoppingCartConnectionApi()
-
-var shoppingCartConnectionId = 56; // {Integer} Id of the shoppingCartConnection to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getShoppingCartConnectionTags(shoppingCartConnectionId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **shoppingCartConnectionId** | **Integer**| Id of the shoppingCartConnection to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

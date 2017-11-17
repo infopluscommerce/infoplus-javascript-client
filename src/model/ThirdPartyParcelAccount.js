@@ -18,7 +18,7 @@
   /**
    * The ThirdPartyParcelAccount model module.
    * @module model/ThirdPartyParcelAccount
-   * @version beta
+   * @version v2.0
    */
 
   /**

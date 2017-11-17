@@ -18,7 +18,7 @@
   /**
    * EmailTemplate service.
    * @module api/EmailTemplateApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = EmailTemplate;
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addEmailTemplateAudit operation.
-     * @callback module:api/EmailTemplateApi~addEmailTemplateAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an emailTemplate
-     * Adds an audit to an existing emailTemplate.
-     * @param {Integer} emailTemplateId Id of the emailTemplate to add an audit to
-     * @param {String} emailTemplateAudit The audit to add
-     * @param {module:api/EmailTemplateApi~addEmailTemplateAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addEmailTemplateAudit = function(emailTemplateId, emailTemplateAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'emailTemplateId' is set
-      if (emailTemplateId == undefined || emailTemplateId == null) {
-        throw "Missing the required parameter 'emailTemplateId' when calling addEmailTemplateAudit";
-      }
-
-      // verify the required parameter 'emailTemplateAudit' is set
-      if (emailTemplateAudit == undefined || emailTemplateAudit == null) {
-        throw "Missing the required parameter 'emailTemplateAudit' when calling addEmailTemplateAudit";
-      }
-
-
-      var pathParams = {
-        'emailTemplateId': emailTemplateId,
-        'emailTemplateAudit': emailTemplateAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/emailTemplate/{emailTemplateId}/audit/{emailTemplateAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addEmailTemplateTag operation.
-     * @callback module:api/EmailTemplateApi~addEmailTemplateTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an emailTemplate.
-     * Adds a tag to an existing emailTemplate.
-     * @param {Integer} emailTemplateId Id of the emailTemplate to add a tag to
-     * @param {String} emailTemplateTag The tag to add
-     * @param {module:api/EmailTemplateApi~addEmailTemplateTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addEmailTemplateTag = function(emailTemplateId, emailTemplateTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'emailTemplateId' is set
-      if (emailTemplateId == undefined || emailTemplateId == null) {
-        throw "Missing the required parameter 'emailTemplateId' when calling addEmailTemplateTag";
-      }
-
-      // verify the required parameter 'emailTemplateTag' is set
-      if (emailTemplateTag == undefined || emailTemplateTag == null) {
-        throw "Missing the required parameter 'emailTemplateTag' when calling addEmailTemplateTag";
-      }
-
-
-      var pathParams = {
-        'emailTemplateId': emailTemplateId,
-        'emailTemplateTag': emailTemplateTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/emailTemplate/{emailTemplateId}/tag/{emailTemplateTag}', 'PUT',
+        '/v2.0/emailTemplate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate/{emailTemplateId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteEmailTemplateTag operation.
-     * @callback module:api/EmailTemplateApi~deleteEmailTemplateTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an emailTemplate.
-     * Deletes an existing emailTemplate tag using the specified data.
-     * @param {Integer} emailTemplateId Id of the emailTemplate to remove tag from
-     * @param {String} emailTemplateTag The tag to delete
-     * @param {module:api/EmailTemplateApi~deleteEmailTemplateTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteEmailTemplateTag = function(emailTemplateId, emailTemplateTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'emailTemplateId' is set
-      if (emailTemplateId == undefined || emailTemplateId == null) {
-        throw "Missing the required parameter 'emailTemplateId' when calling deleteEmailTemplateTag";
-      }
-
-      // verify the required parameter 'emailTemplateTag' is set
-      if (emailTemplateTag == undefined || emailTemplateTag == null) {
-        throw "Missing the required parameter 'emailTemplateTag' when calling deleteEmailTemplateTag";
-      }
-
-
-      var pathParams = {
-        'emailTemplateId': emailTemplateId,
-        'emailTemplateTag': emailTemplateTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/emailTemplate/{emailTemplateId}/tag/{emailTemplateTag}', 'DELETE',
+        '/v2.0/emailTemplate/{emailTemplateId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = EmailTemplate;
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate/duplicate/{emailTemplateId}', 'GET',
+        '/v2.0/emailTemplate/duplicate/{emailTemplateId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [EmailTemplate];
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate/search', 'GET',
+        '/v2.0/emailTemplate/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = EmailTemplate;
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate/{emailTemplateId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getEmailTemplateTags operation.
-     * @callback module:api/EmailTemplateApi~getEmailTemplateTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an emailTemplate.
-     * Get all existing emailTemplate tags.
-     * @param {Integer} emailTemplateId Id of the emailTemplate to get tags for
-     * @param {module:api/EmailTemplateApi~getEmailTemplateTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getEmailTemplateTags = function(emailTemplateId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'emailTemplateId' is set
-      if (emailTemplateId == undefined || emailTemplateId == null) {
-        throw "Missing the required parameter 'emailTemplateId' when calling getEmailTemplateTags";
-      }
-
-
-      var pathParams = {
-        'emailTemplateId': emailTemplateId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/emailTemplate/{emailTemplateId}/tag', 'GET',
+        '/v2.0/emailTemplate/{emailTemplateId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate', 'PUT',
+        '/v2.0/emailTemplate', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/emailTemplate/customFields', 'PUT',
+        '/v2.0/emailTemplate/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

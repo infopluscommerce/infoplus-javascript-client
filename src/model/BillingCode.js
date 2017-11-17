@@ -18,7 +18,7 @@
   /**
    * The BillingCode model module.
    * @module model/BillingCode
-   * @version beta
+   * @version v2.0
    */
 
   /**

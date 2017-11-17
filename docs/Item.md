@@ -64,8 +64,6 @@ Name | Type | Description | Notes
 **storageItemMixingRule** | **String** |  | 
 **allocationRule** | **String** |  | 
 **barcodeField** | **String** |  | [optional] 
-**warehouseDisplayField** | **String** |  | [optional] 
-**productIdTagSchemeId** | **Integer** |  | [optional] 
 **hazmat** | **String** |  | 
 **isAlcohol** | **Boolean** |  | [optional] [default to false]
 **alcoholType** | **String** |  | [optional] 
@@ -85,17 +83,6 @@ Name | Type | Description | Notes
 **height** | **Number** |  | [optional] 
 **topUp** | **Boolean** |  | [optional] [default to false]
 **shipSolo** | **Boolean** |  | [optional] [default to false]
-**availableQuantity** | **Integer** |  | [optional] 
-**damagedQuantity** | **Integer** |  | [optional] 
-**inFulfillmentProcessQuantity** | **Integer** |  | [optional] 
-**onHandQuantity** | **Integer** |  | [optional] 
-**openOrderQuantity** | **Integer** |  | [optional] 
-**openPOQuantity** | **Integer** |  | [optional] 
-**orderableQuantity** | **Integer** |  | [optional] 
-**unallocatableQuantity** | **Integer** |  | [optional] 
-**unavailableQuantity** | **Integer** |  | [optional] 
-**overallDaysOnHand** | **Integer** |  | [optional] 
-**overallStockStatus** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

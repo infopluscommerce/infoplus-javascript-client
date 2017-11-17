@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **totalQuantity** | **Integer** |  | 
 **message** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
-**productIdTag** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 

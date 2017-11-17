@@ -18,7 +18,7 @@
   /**
    * The WorkBatch model module.
    * @module model/WorkBatch
-   * @version beta
+   * @version v2.0
    */
 
   /**

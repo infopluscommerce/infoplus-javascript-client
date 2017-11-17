@@ -18,7 +18,7 @@
   /**
    * The ItemSummaryCode model module.
    * @module model/ItemSummaryCode
-   * @version beta
+   * @version v2.0
    */
 
   /**

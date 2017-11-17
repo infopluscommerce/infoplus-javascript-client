@@ -18,7 +18,7 @@
   /**
    * Location service.
    * @module api/LocationApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Location;
 
       return this.apiClient.callApi(
-        '/beta/location', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLocationAudit operation.
-     * @callback module:api/LocationApi~addLocationAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a location
-     * Adds an audit to an existing location.
-     * @param {Integer} locationId Id of the location to add an audit to
-     * @param {String} locationAudit The audit to add
-     * @param {module:api/LocationApi~addLocationAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLocationAudit = function(locationId, locationAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationId' is set
-      if (locationId == undefined || locationId == null) {
-        throw "Missing the required parameter 'locationId' when calling addLocationAudit";
-      }
-
-      // verify the required parameter 'locationAudit' is set
-      if (locationAudit == undefined || locationAudit == null) {
-        throw "Missing the required parameter 'locationAudit' when calling addLocationAudit";
-      }
-
-
-      var pathParams = {
-        'locationId': locationId,
-        'locationAudit': locationAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/location/{locationId}/audit/{locationAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLocationTag operation.
-     * @callback module:api/LocationApi~addLocationTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a location.
-     * Adds a tag to an existing location.
-     * @param {Integer} locationId Id of the location to add a tag to
-     * @param {String} locationTag The tag to add
-     * @param {module:api/LocationApi~addLocationTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLocationTag = function(locationId, locationTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationId' is set
-      if (locationId == undefined || locationId == null) {
-        throw "Missing the required parameter 'locationId' when calling addLocationTag";
-      }
-
-      // verify the required parameter 'locationTag' is set
-      if (locationTag == undefined || locationTag == null) {
-        throw "Missing the required parameter 'locationTag' when calling addLocationTag";
-      }
-
-
-      var pathParams = {
-        'locationId': locationId,
-        'locationTag': locationTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/location/{locationId}/tag/{locationTag}', 'PUT',
+        '/v2.0/location', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/location/{locationId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteLocationTag operation.
-     * @callback module:api/LocationApi~deleteLocationTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a location.
-     * Deletes an existing location tag using the specified data.
-     * @param {Integer} locationId Id of the location to remove tag from
-     * @param {String} locationTag The tag to delete
-     * @param {module:api/LocationApi~deleteLocationTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteLocationTag = function(locationId, locationTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationId' is set
-      if (locationId == undefined || locationId == null) {
-        throw "Missing the required parameter 'locationId' when calling deleteLocationTag";
-      }
-
-      // verify the required parameter 'locationTag' is set
-      if (locationTag == undefined || locationTag == null) {
-        throw "Missing the required parameter 'locationTag' when calling deleteLocationTag";
-      }
-
-
-      var pathParams = {
-        'locationId': locationId,
-        'locationTag': locationTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/location/{locationId}/tag/{locationTag}', 'DELETE',
+        '/v2.0/location/{locationId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = Location;
 
       return this.apiClient.callApi(
-        '/beta/location/duplicate/{locationId}', 'GET',
+        '/v2.0/location/duplicate/{locationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [Location];
 
       return this.apiClient.callApi(
-        '/beta/location/search', 'GET',
+        '/v2.0/location/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = Location;
 
       return this.apiClient.callApi(
-        '/beta/location/{locationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getLocationTags operation.
-     * @callback module:api/LocationApi~getLocationTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a location.
-     * Get all existing location tags.
-     * @param {Integer} locationId Id of the location to get tags for
-     * @param {module:api/LocationApi~getLocationTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getLocationTags = function(locationId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationId' is set
-      if (locationId == undefined || locationId == null) {
-        throw "Missing the required parameter 'locationId' when calling getLocationTags";
-      }
-
-
-      var pathParams = {
-        'locationId': locationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/location/{locationId}/tag', 'GET',
+        '/v2.0/location/{locationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/location', 'PUT',
+        '/v2.0/location', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/location/customFields', 'PUT',
+        '/v2.0/location/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

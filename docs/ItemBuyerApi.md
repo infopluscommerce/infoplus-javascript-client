@@ -4,16 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItemBuyer**](ItemBuyerApi.md#addItemBuyer) | **POST** /beta/itemBuyer | Create an itemBuyer
-[**addItemBuyerAudit**](ItemBuyerApi.md#addItemBuyerAudit) | **PUT** /beta/itemBuyer/{itemBuyerId}/audit/{itemBuyerAudit} | Add new audit for an itemBuyer
-[**addItemBuyerTag**](ItemBuyerApi.md#addItemBuyerTag) | **PUT** /beta/itemBuyer/{itemBuyerId}/tag/{itemBuyerTag} | Add new tags for an itemBuyer.
-[**deleteItemBuyer**](ItemBuyerApi.md#deleteItemBuyer) | **DELETE** /beta/itemBuyer/{itemBuyerId} | Delete an itemBuyer
-[**deleteItemBuyerTag**](ItemBuyerApi.md#deleteItemBuyerTag) | **DELETE** /beta/itemBuyer/{itemBuyerId}/tag/{itemBuyerTag} | Delete a tag for an itemBuyer.
-[**getDuplicateItemBuyerById**](ItemBuyerApi.md#getDuplicateItemBuyerById) | **GET** /beta/itemBuyer/duplicate/{itemBuyerId} | Get a duplicated an itemBuyer by id
-[**getItemBuyerByFilter**](ItemBuyerApi.md#getItemBuyerByFilter) | **GET** /beta/itemBuyer/search | Search itemBuyers by filter
-[**getItemBuyerById**](ItemBuyerApi.md#getItemBuyerById) | **GET** /beta/itemBuyer/{itemBuyerId} | Get an itemBuyer by id
-[**getItemBuyerTags**](ItemBuyerApi.md#getItemBuyerTags) | **GET** /beta/itemBuyer/{itemBuyerId}/tag | Get the tags for an itemBuyer.
-[**updateItemBuyer**](ItemBuyerApi.md#updateItemBuyer) | **PUT** /beta/itemBuyer | Update an itemBuyer
+[**addItemBuyer**](ItemBuyerApi.md#addItemBuyer) | **POST** /v2.0/itemBuyer | Create an itemBuyer
+[**deleteItemBuyer**](ItemBuyerApi.md#deleteItemBuyer) | **DELETE** /v2.0/itemBuyer/{itemBuyerId} | Delete an itemBuyer
+[**getDuplicateItemBuyerById**](ItemBuyerApi.md#getDuplicateItemBuyerById) | **GET** /v2.0/itemBuyer/duplicate/{itemBuyerId} | Get a duplicated an itemBuyer by id
+[**getItemBuyerByFilter**](ItemBuyerApi.md#getItemBuyerByFilter) | **GET** /v2.0/itemBuyer/search | Search itemBuyers by filter
+[**getItemBuyerById**](ItemBuyerApi.md#getItemBuyerById) | **GET** /v2.0/itemBuyer/{itemBuyerId} | Get an itemBuyer by id
+[**updateItemBuyer**](ItemBuyerApi.md#updateItemBuyer) | **PUT** /v2.0/itemBuyer | Update an itemBuyer
 
 
 <a name="addItemBuyer"></a>
@@ -69,118 +65,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addItemBuyerAudit"></a>
-# **addItemBuyerAudit**
-> addItemBuyerAudit(itemBuyerId, itemBuyerAudit)
-
-Add new audit for an itemBuyer
-
-Adds an audit to an existing itemBuyer.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemBuyerApi()
-
-var itemBuyerId = 56; // {Integer} Id of the itemBuyer to add an audit to
-
-var itemBuyerAudit = "itemBuyerAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemBuyerAudit(itemBuyerId, itemBuyerAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemBuyerId** | **Integer**| Id of the itemBuyer to add an audit to | 
- **itemBuyerAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addItemBuyerTag"></a>
-# **addItemBuyerTag**
-> addItemBuyerTag(itemBuyerId, itemBuyerTag)
-
-Add new tags for an itemBuyer.
-
-Adds a tag to an existing itemBuyer.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemBuyerApi()
-
-var itemBuyerId = 56; // {Integer} Id of the itemBuyer to add a tag to
-
-var itemBuyerTag = "itemBuyerTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemBuyerTag(itemBuyerId, itemBuyerTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemBuyerId** | **Integer**| Id of the itemBuyer to add a tag to | 
- **itemBuyerTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteItemBuyer"></a>
 # **deleteItemBuyer**
 > deleteItemBuyer(itemBuyerId)
@@ -220,62 +104,6 @@ api.deleteItemBuyer(itemBuyerId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemBuyerId** | **Integer**| Id of the itemBuyer to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteItemBuyerTag"></a>
-# **deleteItemBuyerTag**
-> deleteItemBuyerTag(itemBuyerId, itemBuyerTag)
-
-Delete a tag for an itemBuyer.
-
-Deletes an existing itemBuyer tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemBuyerApi()
-
-var itemBuyerId = 56; // {Integer} Id of the itemBuyer to remove tag from
-
-var itemBuyerTag = "itemBuyerTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteItemBuyerTag(itemBuyerId, itemBuyerTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemBuyerId** | **Integer**| Id of the itemBuyer to remove tag from | 
- **itemBuyerTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -446,59 +274,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ItemBuyer**](ItemBuyer.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getItemBuyerTags"></a>
-# **getItemBuyerTags**
-> getItemBuyerTags(itemBuyerId)
-
-Get the tags for an itemBuyer.
-
-Get all existing itemBuyer tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemBuyerApi()
-
-var itemBuyerId = 56; // {Integer} Id of the itemBuyer to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getItemBuyerTags(itemBuyerId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemBuyerId** | **Integer**| Id of the itemBuyer to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

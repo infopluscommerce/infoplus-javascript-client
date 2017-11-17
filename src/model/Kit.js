@@ -18,7 +18,7 @@
   /**
    * The Kit model module.
    * @module model/Kit
-   * @version beta
+   * @version v2.0
    */
 
   /**

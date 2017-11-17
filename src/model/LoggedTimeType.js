@@ -18,7 +18,7 @@
   /**
    * The LoggedTimeType model module.
    * @module model/LoggedTimeType
-   * @version beta
+   * @version v2.0
    */
 
   /**

@@ -4,18 +4,14 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItem**](ItemApi.md#addItem) | **POST** /beta/item | Create an item
-[**addItemAudit**](ItemApi.md#addItemAudit) | **PUT** /beta/item/{itemId}/audit/{itemAudit} | Add new audit for an item
-[**addItemTag**](ItemApi.md#addItemTag) | **PUT** /beta/item/{itemId}/tag/{itemTag} | Add new tags for an item.
-[**deleteItem**](ItemApi.md#deleteItem) | **DELETE** /beta/item/{itemId} | Delete an item
-[**deleteItemTag**](ItemApi.md#deleteItemTag) | **DELETE** /beta/item/{itemId}/tag/{itemTag} | Delete a tag for an item.
-[**getBySKU**](ItemApi.md#getBySKU) | **GET** /beta/item/getBySKU | Get an item by SKU
-[**getDuplicateItemById**](ItemApi.md#getDuplicateItemById) | **GET** /beta/item/duplicate/{itemId} | Get a duplicated an item by id
-[**getItemByFilter**](ItemApi.md#getItemByFilter) | **GET** /beta/item/search | Search items by filter
-[**getItemById**](ItemApi.md#getItemById) | **GET** /beta/item/{itemId} | Get an item by id
-[**getItemTags**](ItemApi.md#getItemTags) | **GET** /beta/item/{itemId}/tag | Get the tags for an item.
-[**updateItem**](ItemApi.md#updateItem) | **PUT** /beta/item | Update an item
-[**updateItemCustomFields**](ItemApi.md#updateItemCustomFields) | **PUT** /beta/item/customFields | Update an item custom fields
+[**addItem**](ItemApi.md#addItem) | **POST** /v2.0/item | Create an item
+[**deleteItem**](ItemApi.md#deleteItem) | **DELETE** /v2.0/item/{itemId} | Delete an item
+[**getBySKU**](ItemApi.md#getBySKU) | **GET** /v2.0/item/getBySKU | Get an item by SKU
+[**getDuplicateItemById**](ItemApi.md#getDuplicateItemById) | **GET** /v2.0/item/duplicate/{itemId} | Get a duplicated an item by id
+[**getItemByFilter**](ItemApi.md#getItemByFilter) | **GET** /v2.0/item/search | Search items by filter
+[**getItemById**](ItemApi.md#getItemById) | **GET** /v2.0/item/{itemId} | Get an item by id
+[**updateItem**](ItemApi.md#updateItem) | **PUT** /v2.0/item | Update an item
+[**updateItemCustomFields**](ItemApi.md#updateItemCustomFields) | **PUT** /v2.0/item/customFields | Update an item custom fields
 
 
 <a name="addItem"></a>
@@ -71,118 +67,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addItemAudit"></a>
-# **addItemAudit**
-> addItemAudit(itemId, itemAudit)
-
-Add new audit for an item
-
-Adds an audit to an existing item.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemApi()
-
-var itemId = 56; // {Integer} Id of the item to add an audit to
-
-var itemAudit = "itemAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemAudit(itemId, itemAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to add an audit to | 
- **itemAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addItemTag"></a>
-# **addItemTag**
-> addItemTag(itemId, itemTag)
-
-Add new tags for an item.
-
-Adds a tag to an existing item.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemApi()
-
-var itemId = 56; // {Integer} Id of the item to add a tag to
-
-var itemTag = "itemTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemTag(itemId, itemTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to add a tag to | 
- **itemTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteItem"></a>
 # **deleteItem**
 > deleteItem(itemId)
@@ -222,62 +106,6 @@ api.deleteItem(itemId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemId** | **Integer**| Id of the item to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteItemTag"></a>
-# **deleteItemTag**
-> deleteItemTag(itemId, itemTag)
-
-Delete a tag for an item.
-
-Deletes an existing item tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemApi()
-
-var itemId = 56; // {Integer} Id of the item to remove tag from
-
-var itemTag = "itemTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteItemTag(itemId, itemTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to remove tag from | 
- **itemTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -504,59 +332,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Item**](Item.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getItemTags"></a>
-# **getItemTags**
-> getItemTags(itemId)
-
-Get the tags for an item.
-
-Get all existing item tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemApi()
-
-var itemId = 56; // {Integer} Id of the item to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getItemTags(itemId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

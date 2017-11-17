@@ -18,7 +18,7 @@
   /**
    * QuickAdjustment service.
    * @module api/QuickAdjustmentApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = QuickAdjustment;
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addQuickAdjustmentAudit operation.
-     * @callback module:api/QuickAdjustmentApi~addQuickAdjustmentAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a quickAdjustment
-     * Adds an audit to an existing quickAdjustment.
-     * @param {Integer} quickAdjustmentId Id of the quickAdjustment to add an audit to
-     * @param {String} quickAdjustmentAudit The audit to add
-     * @param {module:api/QuickAdjustmentApi~addQuickAdjustmentAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addQuickAdjustmentAudit = function(quickAdjustmentId, quickAdjustmentAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'quickAdjustmentId' is set
-      if (quickAdjustmentId == undefined || quickAdjustmentId == null) {
-        throw "Missing the required parameter 'quickAdjustmentId' when calling addQuickAdjustmentAudit";
-      }
-
-      // verify the required parameter 'quickAdjustmentAudit' is set
-      if (quickAdjustmentAudit == undefined || quickAdjustmentAudit == null) {
-        throw "Missing the required parameter 'quickAdjustmentAudit' when calling addQuickAdjustmentAudit";
-      }
-
-
-      var pathParams = {
-        'quickAdjustmentId': quickAdjustmentId,
-        'quickAdjustmentAudit': quickAdjustmentAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/quickAdjustment/{quickAdjustmentId}/audit/{quickAdjustmentAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addQuickAdjustmentTag operation.
-     * @callback module:api/QuickAdjustmentApi~addQuickAdjustmentTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a quickAdjustment.
-     * Adds a tag to an existing quickAdjustment.
-     * @param {Integer} quickAdjustmentId Id of the quickAdjustment to add a tag to
-     * @param {String} quickAdjustmentTag The tag to add
-     * @param {module:api/QuickAdjustmentApi~addQuickAdjustmentTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addQuickAdjustmentTag = function(quickAdjustmentId, quickAdjustmentTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'quickAdjustmentId' is set
-      if (quickAdjustmentId == undefined || quickAdjustmentId == null) {
-        throw "Missing the required parameter 'quickAdjustmentId' when calling addQuickAdjustmentTag";
-      }
-
-      // verify the required parameter 'quickAdjustmentTag' is set
-      if (quickAdjustmentTag == undefined || quickAdjustmentTag == null) {
-        throw "Missing the required parameter 'quickAdjustmentTag' when calling addQuickAdjustmentTag";
-      }
-
-
-      var pathParams = {
-        'quickAdjustmentId': quickAdjustmentId,
-        'quickAdjustmentTag': quickAdjustmentTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/quickAdjustment/{quickAdjustmentId}/tag/{quickAdjustmentTag}', 'PUT',
+        '/v2.0/quickAdjustment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment/{quickAdjustmentId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteQuickAdjustmentTag operation.
-     * @callback module:api/QuickAdjustmentApi~deleteQuickAdjustmentTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a quickAdjustment.
-     * Deletes an existing quickAdjustment tag using the specified data.
-     * @param {Integer} quickAdjustmentId Id of the quickAdjustment to remove tag from
-     * @param {String} quickAdjustmentTag The tag to delete
-     * @param {module:api/QuickAdjustmentApi~deleteQuickAdjustmentTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteQuickAdjustmentTag = function(quickAdjustmentId, quickAdjustmentTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'quickAdjustmentId' is set
-      if (quickAdjustmentId == undefined || quickAdjustmentId == null) {
-        throw "Missing the required parameter 'quickAdjustmentId' when calling deleteQuickAdjustmentTag";
-      }
-
-      // verify the required parameter 'quickAdjustmentTag' is set
-      if (quickAdjustmentTag == undefined || quickAdjustmentTag == null) {
-        throw "Missing the required parameter 'quickAdjustmentTag' when calling deleteQuickAdjustmentTag";
-      }
-
-
-      var pathParams = {
-        'quickAdjustmentId': quickAdjustmentId,
-        'quickAdjustmentTag': quickAdjustmentTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/quickAdjustment/{quickAdjustmentId}/tag/{quickAdjustmentTag}', 'DELETE',
+        '/v2.0/quickAdjustment/{quickAdjustmentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = QuickAdjustment;
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment/duplicate/{quickAdjustmentId}', 'GET',
+        '/v2.0/quickAdjustment/duplicate/{quickAdjustmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [QuickAdjustment];
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment/search', 'GET',
+        '/v2.0/quickAdjustment/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = QuickAdjustment;
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment/{quickAdjustmentId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getQuickAdjustmentTags operation.
-     * @callback module:api/QuickAdjustmentApi~getQuickAdjustmentTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a quickAdjustment.
-     * Get all existing quickAdjustment tags.
-     * @param {Integer} quickAdjustmentId Id of the quickAdjustment to get tags for
-     * @param {module:api/QuickAdjustmentApi~getQuickAdjustmentTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getQuickAdjustmentTags = function(quickAdjustmentId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'quickAdjustmentId' is set
-      if (quickAdjustmentId == undefined || quickAdjustmentId == null) {
-        throw "Missing the required parameter 'quickAdjustmentId' when calling getQuickAdjustmentTags";
-      }
-
-
-      var pathParams = {
-        'quickAdjustmentId': quickAdjustmentId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/quickAdjustment/{quickAdjustmentId}/tag', 'GET',
+        '/v2.0/quickAdjustment/{quickAdjustmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment', 'PUT',
+        '/v2.0/quickAdjustment', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/quickAdjustment/customFields', 'PUT',
+        '/v2.0/quickAdjustment/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -18,7 +18,7 @@
   /**
    * CartonType service.
    * @module api/CartonTypeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = CartonType;
 
       return this.apiClient.callApi(
-        '/beta/cartonType', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addCartonTypeAudit operation.
-     * @callback module:api/CartonTypeApi~addCartonTypeAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a cartonType
-     * Adds an audit to an existing cartonType.
-     * @param {Integer} cartonTypeId Id of the cartonType to add an audit to
-     * @param {String} cartonTypeAudit The audit to add
-     * @param {module:api/CartonTypeApi~addCartonTypeAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addCartonTypeAudit = function(cartonTypeId, cartonTypeAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'cartonTypeId' is set
-      if (cartonTypeId == undefined || cartonTypeId == null) {
-        throw "Missing the required parameter 'cartonTypeId' when calling addCartonTypeAudit";
-      }
-
-      // verify the required parameter 'cartonTypeAudit' is set
-      if (cartonTypeAudit == undefined || cartonTypeAudit == null) {
-        throw "Missing the required parameter 'cartonTypeAudit' when calling addCartonTypeAudit";
-      }
-
-
-      var pathParams = {
-        'cartonTypeId': cartonTypeId,
-        'cartonTypeAudit': cartonTypeAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/cartonType/{cartonTypeId}/audit/{cartonTypeAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addCartonTypeTag operation.
-     * @callback module:api/CartonTypeApi~addCartonTypeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a cartonType.
-     * Adds a tag to an existing cartonType.
-     * @param {Integer} cartonTypeId Id of the cartonType to add a tag to
-     * @param {String} cartonTypeTag The tag to add
-     * @param {module:api/CartonTypeApi~addCartonTypeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addCartonTypeTag = function(cartonTypeId, cartonTypeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'cartonTypeId' is set
-      if (cartonTypeId == undefined || cartonTypeId == null) {
-        throw "Missing the required parameter 'cartonTypeId' when calling addCartonTypeTag";
-      }
-
-      // verify the required parameter 'cartonTypeTag' is set
-      if (cartonTypeTag == undefined || cartonTypeTag == null) {
-        throw "Missing the required parameter 'cartonTypeTag' when calling addCartonTypeTag";
-      }
-
-
-      var pathParams = {
-        'cartonTypeId': cartonTypeId,
-        'cartonTypeTag': cartonTypeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/cartonType/{cartonTypeId}/tag/{cartonTypeTag}', 'PUT',
+        '/v2.0/cartonType', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/cartonType/{cartonTypeId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteCartonTypeTag operation.
-     * @callback module:api/CartonTypeApi~deleteCartonTypeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a cartonType.
-     * Deletes an existing cartonType tag using the specified data.
-     * @param {Integer} cartonTypeId Id of the cartonType to remove tag from
-     * @param {String} cartonTypeTag The tag to delete
-     * @param {module:api/CartonTypeApi~deleteCartonTypeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteCartonTypeTag = function(cartonTypeId, cartonTypeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'cartonTypeId' is set
-      if (cartonTypeId == undefined || cartonTypeId == null) {
-        throw "Missing the required parameter 'cartonTypeId' when calling deleteCartonTypeTag";
-      }
-
-      // verify the required parameter 'cartonTypeTag' is set
-      if (cartonTypeTag == undefined || cartonTypeTag == null) {
-        throw "Missing the required parameter 'cartonTypeTag' when calling deleteCartonTypeTag";
-      }
-
-
-      var pathParams = {
-        'cartonTypeId': cartonTypeId,
-        'cartonTypeTag': cartonTypeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/cartonType/{cartonTypeId}/tag/{cartonTypeTag}', 'DELETE',
+        '/v2.0/cartonType/{cartonTypeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -321,7 +165,7 @@
       var returnType = [CartonType];
 
       return this.apiClient.callApi(
-        '/beta/cartonType/search', 'GET',
+        '/v2.0/cartonType/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,52 +211,7 @@
       var returnType = CartonType;
 
       return this.apiClient.callApi(
-        '/beta/cartonType/{cartonTypeId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getCartonTypeTags operation.
-     * @callback module:api/CartonTypeApi~getCartonTypeTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a cartonType.
-     * Get all existing cartonType tags.
-     * @param {Integer} cartonTypeId Id of the cartonType to get tags for
-     * @param {module:api/CartonTypeApi~getCartonTypeTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getCartonTypeTags = function(cartonTypeId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'cartonTypeId' is set
-      if (cartonTypeId == undefined || cartonTypeId == null) {
-        throw "Missing the required parameter 'cartonTypeId' when calling getCartonTypeTags";
-      }
-
-
-      var pathParams = {
-        'cartonTypeId': cartonTypeId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/cartonType/{cartonTypeId}/tag', 'GET',
+        '/v2.0/cartonType/{cartonTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -458,7 +257,7 @@
       var returnType = CartonType;
 
       return this.apiClient.callApi(
-        '/beta/cartonType/duplicate/{cartonTypeId}', 'GET',
+        '/v2.0/cartonType/duplicate/{cartonTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/cartonType', 'PUT',
+        '/v2.0/cartonType', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/cartonType/customFields', 'PUT',
+        '/v2.0/cartonType/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -18,7 +18,7 @@
   /**
    * The CartonType model module.
    * @module model/CartonType
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -50,7 +50,6 @@
 
     this['lobId'] = lobId;
     this['isActive'] = isActive;
-
 
   };
 
@@ -100,9 +99,6 @@
       }
       if (data.hasOwnProperty('isActive')) {
         obj['isActive'] = ApiClient.convertToType(data['isActive'], 'Boolean');
-      }
-      if (data.hasOwnProperty('predefinedPackageTypeId')) {
-        obj['predefinedPackageTypeId'] = ApiClient.convertToType(data['predefinedPackageTypeId'], 'Integer');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -172,11 +168,6 @@
    * @default false
    */
   exports.prototype['isActive'] = false;
-
-  /**
-   * @member {Integer} predefinedPackageTypeId
-   */
-  exports.prototype['predefinedPackageTypeId'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

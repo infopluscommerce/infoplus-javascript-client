@@ -18,7 +18,7 @@
   /**
    * The OrderSourceReservation model module.
    * @module model/OrderSourceReservation
-   * @version beta
+   * @version v2.0
    */
 
   /**

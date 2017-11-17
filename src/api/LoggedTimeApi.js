@@ -18,7 +18,7 @@
   /**
    * LoggedTime service.
    * @module api/LoggedTimeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addLoggedTimeAudit operation.
-     * @callback module:api/LoggedTimeApi~addLoggedTimeAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a loggedTime
-     * Adds an audit to an existing loggedTime.
-     * @param {Integer} loggedTimeId Id of the loggedTime to add an audit to
-     * @param {String} loggedTimeAudit The audit to add
-     * @param {module:api/LoggedTimeApi~addLoggedTimeAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLoggedTimeAudit = function(loggedTimeId, loggedTimeAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'loggedTimeId' is set
-      if (loggedTimeId == undefined || loggedTimeId == null) {
-        throw "Missing the required parameter 'loggedTimeId' when calling addLoggedTimeAudit";
-      }
-
-      // verify the required parameter 'loggedTimeAudit' is set
-      if (loggedTimeAudit == undefined || loggedTimeAudit == null) {
-        throw "Missing the required parameter 'loggedTimeAudit' when calling addLoggedTimeAudit";
-      }
-
-
-      var pathParams = {
-        'loggedTimeId': loggedTimeId,
-        'loggedTimeAudit': loggedTimeAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/loggedTime/{loggedTimeId}/audit/{loggedTimeAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLoggedTimeTag operation.
-     * @callback module:api/LoggedTimeApi~addLoggedTimeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a loggedTime.
-     * Adds a tag to an existing loggedTime.
-     * @param {Integer} loggedTimeId Id of the loggedTime to add a tag to
-     * @param {String} loggedTimeTag The tag to add
-     * @param {module:api/LoggedTimeApi~addLoggedTimeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLoggedTimeTag = function(loggedTimeId, loggedTimeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'loggedTimeId' is set
-      if (loggedTimeId == undefined || loggedTimeId == null) {
-        throw "Missing the required parameter 'loggedTimeId' when calling addLoggedTimeTag";
-      }
-
-      // verify the required parameter 'loggedTimeTag' is set
-      if (loggedTimeTag == undefined || loggedTimeTag == null) {
-        throw "Missing the required parameter 'loggedTimeTag' when calling addLoggedTimeTag";
-      }
-
-
-      var pathParams = {
-        'loggedTimeId': loggedTimeId,
-        'loggedTimeTag': loggedTimeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/loggedTime/{loggedTimeId}/tag/{loggedTimeTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteLoggedTimeTag operation.
-     * @callback module:api/LoggedTimeApi~deleteLoggedTimeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a loggedTime.
-     * Deletes an existing loggedTime tag using the specified data.
-     * @param {Integer} loggedTimeId Id of the loggedTime to remove tag from
-     * @param {String} loggedTimeTag The tag to delete
-     * @param {module:api/LoggedTimeApi~deleteLoggedTimeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteLoggedTimeTag = function(loggedTimeId, loggedTimeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'loggedTimeId' is set
-      if (loggedTimeId == undefined || loggedTimeId == null) {
-        throw "Missing the required parameter 'loggedTimeId' when calling deleteLoggedTimeTag";
-      }
-
-      // verify the required parameter 'loggedTimeTag' is set
-      if (loggedTimeTag == undefined || loggedTimeTag == null) {
-        throw "Missing the required parameter 'loggedTimeTag' when calling deleteLoggedTimeTag";
-      }
-
-
-      var pathParams = {
-        'loggedTimeId': loggedTimeId,
-        'loggedTimeTag': loggedTimeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/loggedTime/{loggedTimeId}/tag/{loggedTimeTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getDuplicateLoggedTimeById operation.
@@ -228,7 +72,7 @@
       var returnType = LoggedTime;
 
       return this.apiClient.callApi(
-        '/beta/loggedTime/duplicate/{loggedTimeId}', 'GET',
+        '/v2.0/loggedTime/duplicate/{loggedTimeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,7 +121,7 @@
       var returnType = [LoggedTime];
 
       return this.apiClient.callApi(
-        '/beta/loggedTime/search', 'GET',
+        '/v2.0/loggedTime/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,52 +167,7 @@
       var returnType = LoggedTime;
 
       return this.apiClient.callApi(
-        '/beta/loggedTime/{loggedTimeId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getLoggedTimeTags operation.
-     * @callback module:api/LoggedTimeApi~getLoggedTimeTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a loggedTime.
-     * Get all existing loggedTime tags.
-     * @param {Integer} loggedTimeId Id of the loggedTime to get tags for
-     * @param {module:api/LoggedTimeApi~getLoggedTimeTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getLoggedTimeTags = function(loggedTimeId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'loggedTimeId' is set
-      if (loggedTimeId == undefined || loggedTimeId == null) {
-        throw "Missing the required parameter 'loggedTimeId' when calling getLoggedTimeTags";
-      }
-
-
-      var pathParams = {
-        'loggedTimeId': loggedTimeId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/loggedTime/{loggedTimeId}/tag', 'GET',
+        '/v2.0/loggedTime/{loggedTimeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -412,7 +211,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/loggedTime/customFields', 'PUT',
+        '/v2.0/loggedTime/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

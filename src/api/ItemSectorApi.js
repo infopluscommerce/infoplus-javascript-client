@@ -18,7 +18,7 @@
   /**
    * ItemSector service.
    * @module api/ItemSectorApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ItemSector;
 
       return this.apiClient.callApi(
-        '/beta/itemSector', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemSectorAudit operation.
-     * @callback module:api/ItemSectorApi~addItemSectorAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemSector
-     * Adds an audit to an existing itemSector.
-     * @param {Integer} itemSectorId Id of the itemSector to add an audit to
-     * @param {String} itemSectorAudit The audit to add
-     * @param {module:api/ItemSectorApi~addItemSectorAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemSectorAudit = function(itemSectorId, itemSectorAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSectorId' is set
-      if (itemSectorId == undefined || itemSectorId == null) {
-        throw "Missing the required parameter 'itemSectorId' when calling addItemSectorAudit";
-      }
-
-      // verify the required parameter 'itemSectorAudit' is set
-      if (itemSectorAudit == undefined || itemSectorAudit == null) {
-        throw "Missing the required parameter 'itemSectorAudit' when calling addItemSectorAudit";
-      }
-
-
-      var pathParams = {
-        'itemSectorId': itemSectorId,
-        'itemSectorAudit': itemSectorAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSector/{itemSectorId}/audit/{itemSectorAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemSectorTag operation.
-     * @callback module:api/ItemSectorApi~addItemSectorTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemSector.
-     * Adds a tag to an existing itemSector.
-     * @param {Integer} itemSectorId Id of the itemSector to add a tag to
-     * @param {String} itemSectorTag The tag to add
-     * @param {module:api/ItemSectorApi~addItemSectorTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemSectorTag = function(itemSectorId, itemSectorTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSectorId' is set
-      if (itemSectorId == undefined || itemSectorId == null) {
-        throw "Missing the required parameter 'itemSectorId' when calling addItemSectorTag";
-      }
-
-      // verify the required parameter 'itemSectorTag' is set
-      if (itemSectorTag == undefined || itemSectorTag == null) {
-        throw "Missing the required parameter 'itemSectorTag' when calling addItemSectorTag";
-      }
-
-
-      var pathParams = {
-        'itemSectorId': itemSectorId,
-        'itemSectorTag': itemSectorTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSector/{itemSectorId}/tag/{itemSectorTag}', 'PUT',
+        '/v2.0/itemSector', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemSector/{itemSectorId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemSectorTag operation.
-     * @callback module:api/ItemSectorApi~deleteItemSectorTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemSector.
-     * Deletes an existing itemSector tag using the specified data.
-     * @param {Integer} itemSectorId Id of the itemSector to remove tag from
-     * @param {String} itemSectorTag The tag to delete
-     * @param {module:api/ItemSectorApi~deleteItemSectorTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemSectorTag = function(itemSectorId, itemSectorTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSectorId' is set
-      if (itemSectorId == undefined || itemSectorId == null) {
-        throw "Missing the required parameter 'itemSectorId' when calling deleteItemSectorTag";
-      }
-
-      // verify the required parameter 'itemSectorTag' is set
-      if (itemSectorTag == undefined || itemSectorTag == null) {
-        throw "Missing the required parameter 'itemSectorTag' when calling deleteItemSectorTag";
-      }
-
-
-      var pathParams = {
-        'itemSectorId': itemSectorId,
-        'itemSectorTag': itemSectorTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSector/{itemSectorId}/tag/{itemSectorTag}', 'DELETE',
+        '/v2.0/itemSector/{itemSectorId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ItemSector;
 
       return this.apiClient.callApi(
-        '/beta/itemSector/duplicate/{itemSectorId}', 'GET',
+        '/v2.0/itemSector/duplicate/{itemSectorId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ItemSector];
 
       return this.apiClient.callApi(
-        '/beta/itemSector/search', 'GET',
+        '/v2.0/itemSector/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ItemSector;
 
       return this.apiClient.callApi(
-        '/beta/itemSector/{itemSectorId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemSectorTags operation.
-     * @callback module:api/ItemSectorApi~getItemSectorTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemSector.
-     * Get all existing itemSector tags.
-     * @param {Integer} itemSectorId Id of the itemSector to get tags for
-     * @param {module:api/ItemSectorApi~getItemSectorTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemSectorTags = function(itemSectorId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemSectorId' is set
-      if (itemSectorId == undefined || itemSectorId == null) {
-        throw "Missing the required parameter 'itemSectorId' when calling getItemSectorTags";
-      }
-
-
-      var pathParams = {
-        'itemSectorId': itemSectorId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemSector/{itemSectorId}/tag', 'GET',
+        '/v2.0/itemSector/{itemSectorId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemSector', 'PUT',
+        '/v2.0/itemSector', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

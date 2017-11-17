@@ -18,7 +18,7 @@
   /**
    * The ReplenishmentPlan model module.
    * @module model/ReplenishmentPlan
-   * @version beta
+   * @version v2.0
    */
 
   /**

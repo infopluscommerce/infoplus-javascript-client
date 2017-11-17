@@ -4,16 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItemLowstockCode**](ItemLowstockCodeApi.md#addItemLowstockCode) | **POST** /beta/itemLowstockCode | Create an itemLowstockCode
-[**addItemLowstockCodeAudit**](ItemLowstockCodeApi.md#addItemLowstockCodeAudit) | **PUT** /beta/itemLowstockCode/{itemLowstockCodeId}/audit/{itemLowstockCodeAudit} | Add new audit for an itemLowstockCode
-[**addItemLowstockCodeTag**](ItemLowstockCodeApi.md#addItemLowstockCodeTag) | **PUT** /beta/itemLowstockCode/{itemLowstockCodeId}/tag/{itemLowstockCodeTag} | Add new tags for an itemLowstockCode.
-[**deleteItemLowstockCode**](ItemLowstockCodeApi.md#deleteItemLowstockCode) | **DELETE** /beta/itemLowstockCode/{itemLowstockCodeId} | Delete an itemLowstockCode
-[**deleteItemLowstockCodeTag**](ItemLowstockCodeApi.md#deleteItemLowstockCodeTag) | **DELETE** /beta/itemLowstockCode/{itemLowstockCodeId}/tag/{itemLowstockCodeTag} | Delete a tag for an itemLowstockCode.
-[**getDuplicateItemLowstockCodeById**](ItemLowstockCodeApi.md#getDuplicateItemLowstockCodeById) | **GET** /beta/itemLowstockCode/duplicate/{itemLowstockCodeId} | Get a duplicated an itemLowstockCode by id
-[**getItemLowstockCodeByFilter**](ItemLowstockCodeApi.md#getItemLowstockCodeByFilter) | **GET** /beta/itemLowstockCode/search | Search itemLowstockCodes by filter
-[**getItemLowstockCodeById**](ItemLowstockCodeApi.md#getItemLowstockCodeById) | **GET** /beta/itemLowstockCode/{itemLowstockCodeId} | Get an itemLowstockCode by id
-[**getItemLowstockCodeTags**](ItemLowstockCodeApi.md#getItemLowstockCodeTags) | **GET** /beta/itemLowstockCode/{itemLowstockCodeId}/tag | Get the tags for an itemLowstockCode.
-[**updateItemLowstockCode**](ItemLowstockCodeApi.md#updateItemLowstockCode) | **PUT** /beta/itemLowstockCode | Update an itemLowstockCode
+[**addItemLowstockCode**](ItemLowstockCodeApi.md#addItemLowstockCode) | **POST** /v2.0/itemLowstockCode | Create an itemLowstockCode
+[**deleteItemLowstockCode**](ItemLowstockCodeApi.md#deleteItemLowstockCode) | **DELETE** /v2.0/itemLowstockCode/{itemLowstockCodeId} | Delete an itemLowstockCode
+[**getDuplicateItemLowstockCodeById**](ItemLowstockCodeApi.md#getDuplicateItemLowstockCodeById) | **GET** /v2.0/itemLowstockCode/duplicate/{itemLowstockCodeId} | Get a duplicated an itemLowstockCode by id
+[**getItemLowstockCodeByFilter**](ItemLowstockCodeApi.md#getItemLowstockCodeByFilter) | **GET** /v2.0/itemLowstockCode/search | Search itemLowstockCodes by filter
+[**getItemLowstockCodeById**](ItemLowstockCodeApi.md#getItemLowstockCodeById) | **GET** /v2.0/itemLowstockCode/{itemLowstockCodeId} | Get an itemLowstockCode by id
+[**updateItemLowstockCode**](ItemLowstockCodeApi.md#updateItemLowstockCode) | **PUT** /v2.0/itemLowstockCode | Update an itemLowstockCode
 
 
 <a name="addItemLowstockCode"></a>
@@ -69,118 +65,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addItemLowstockCodeAudit"></a>
-# **addItemLowstockCodeAudit**
-> addItemLowstockCodeAudit(itemLowstockCodeId, itemLowstockCodeAudit)
-
-Add new audit for an itemLowstockCode
-
-Adds an audit to an existing itemLowstockCode.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemLowstockCodeApi()
-
-var itemLowstockCodeId = 56; // {Integer} Id of the itemLowstockCode to add an audit to
-
-var itemLowstockCodeAudit = "itemLowstockCodeAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemLowstockCodeAudit(itemLowstockCodeId, itemLowstockCodeAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemLowstockCodeId** | **Integer**| Id of the itemLowstockCode to add an audit to | 
- **itemLowstockCodeAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addItemLowstockCodeTag"></a>
-# **addItemLowstockCodeTag**
-> addItemLowstockCodeTag(itemLowstockCodeId, itemLowstockCodeTag)
-
-Add new tags for an itemLowstockCode.
-
-Adds a tag to an existing itemLowstockCode.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemLowstockCodeApi()
-
-var itemLowstockCodeId = 56; // {Integer} Id of the itemLowstockCode to add a tag to
-
-var itemLowstockCodeTag = "itemLowstockCodeTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemLowstockCodeTag(itemLowstockCodeId, itemLowstockCodeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemLowstockCodeId** | **Integer**| Id of the itemLowstockCode to add a tag to | 
- **itemLowstockCodeTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteItemLowstockCode"></a>
 # **deleteItemLowstockCode**
 > deleteItemLowstockCode(itemLowstockCodeId)
@@ -220,62 +104,6 @@ api.deleteItemLowstockCode(itemLowstockCodeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemLowstockCodeId** | **Integer**| Id of the itemLowstockCode to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteItemLowstockCodeTag"></a>
-# **deleteItemLowstockCodeTag**
-> deleteItemLowstockCodeTag(itemLowstockCodeId, itemLowstockCodeTag)
-
-Delete a tag for an itemLowstockCode.
-
-Deletes an existing itemLowstockCode tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemLowstockCodeApi()
-
-var itemLowstockCodeId = 56; // {Integer} Id of the itemLowstockCode to remove tag from
-
-var itemLowstockCodeTag = "itemLowstockCodeTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteItemLowstockCodeTag(itemLowstockCodeId, itemLowstockCodeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemLowstockCodeId** | **Integer**| Id of the itemLowstockCode to remove tag from | 
- **itemLowstockCodeTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -446,59 +274,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ItemLowstockCode**](ItemLowstockCode.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getItemLowstockCodeTags"></a>
-# **getItemLowstockCodeTags**
-> getItemLowstockCodeTags(itemLowstockCodeId)
-
-Get the tags for an itemLowstockCode.
-
-Get all existing itemLowstockCode tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemLowstockCodeApi()
-
-var itemLowstockCodeId = 56; // {Integer} Id of the itemLowstockCode to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getItemLowstockCodeTags(itemLowstockCodeId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemLowstockCodeId** | **Integer**| Id of the itemLowstockCode to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

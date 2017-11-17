@@ -18,7 +18,7 @@
   /**
    * The OrderSource model module.
    * @module model/OrderSource
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -33,7 +33,6 @@
 
     this['lobId'] = lobId;
     this['name'] = name;
-
 
 
 
@@ -86,9 +85,6 @@
       }
       if (data.hasOwnProperty('packingSlipId')) {
         obj['packingSlipId'] = ApiClient.convertToType(data['packingSlipId'], 'Integer');
-      }
-      if (data.hasOwnProperty('orderInvoiceId')) {
-        obj['orderInvoiceId'] = ApiClient.convertToType(data['orderInvoiceId'], 'Integer');
       }
       if (data.hasOwnProperty('orderConfirmationEmailId')) {
         obj['orderConfirmationEmailId'] = ApiClient.convertToType(data['orderConfirmationEmailId'], 'Integer');
@@ -155,11 +151,6 @@
    * @member {Integer} packingSlipId
    */
   exports.prototype['packingSlipId'] = undefined;
-
-  /**
-   * @member {Integer} orderInvoiceId
-   */
-  exports.prototype['orderInvoiceId'] = undefined;
 
   /**
    * @member {Integer} orderConfirmationEmailId

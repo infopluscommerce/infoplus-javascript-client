@@ -18,7 +18,7 @@
   /**
    * The ItemReceipt model module.
    * @module model/ItemReceipt
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -93,7 +93,6 @@
 
 
     this['vendorId'] = vendorId;
-
 
 
 
@@ -305,9 +304,6 @@
       if (data.hasOwnProperty('prodLot')) {
         obj['prodLot'] = ApiClient.convertToType(data['prodLot'], 'String');
       }
-      if (data.hasOwnProperty('productIdTag')) {
-        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
-      }
       if (data.hasOwnProperty('unitsPerCase')) {
         obj['unitsPerCase'] = ApiClient.convertToType(data['unitsPerCase'], 'Integer');
       }
@@ -323,8 +319,8 @@
       if (data.hasOwnProperty('length')) {
         obj['length'] = ApiClient.convertToType(data['length'], 'Number');
       }
-      if (data.hasOwnProperty('dockDate')) {
-        obj['dockDate'] = ApiClient.convertToType(data['dockDate'], 'Date');
+      if (data.hasOwnProperty('dockTime')) {
+        obj['dockTime'] = ApiClient.convertToType(data['dockTime'], 'Date');
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
@@ -644,11 +640,6 @@
   exports.prototype['prodLot'] = undefined;
 
   /**
-   * @member {String} productIdTag
-   */
-  exports.prototype['productIdTag'] = undefined;
-
-  /**
    * @member {Integer} unitsPerCase
    */
   exports.prototype['unitsPerCase'] = undefined;
@@ -674,9 +665,9 @@
   exports.prototype['length'] = undefined;
 
   /**
-   * @member {Date} dockDate
+   * @member {Date} dockTime
    */
-  exports.prototype['dockDate'] = undefined;
+  exports.prototype['dockTime'] = undefined;
 
   /**
    * @member {Date} modifyDate

@@ -4,16 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItemSummaryCode**](ItemSummaryCodeApi.md#addItemSummaryCode) | **POST** /beta/itemSummaryCode | Create an itemSummaryCode
-[**addItemSummaryCodeAudit**](ItemSummaryCodeApi.md#addItemSummaryCodeAudit) | **PUT** /beta/itemSummaryCode/{itemSummaryCodeId}/audit/{itemSummaryCodeAudit} | Add new audit for an itemSummaryCode
-[**addItemSummaryCodeTag**](ItemSummaryCodeApi.md#addItemSummaryCodeTag) | **PUT** /beta/itemSummaryCode/{itemSummaryCodeId}/tag/{itemSummaryCodeTag} | Add new tags for an itemSummaryCode.
-[**deleteItemSummaryCode**](ItemSummaryCodeApi.md#deleteItemSummaryCode) | **DELETE** /beta/itemSummaryCode/{itemSummaryCodeId} | Delete an itemSummaryCode
-[**deleteItemSummaryCodeTag**](ItemSummaryCodeApi.md#deleteItemSummaryCodeTag) | **DELETE** /beta/itemSummaryCode/{itemSummaryCodeId}/tag/{itemSummaryCodeTag} | Delete a tag for an itemSummaryCode.
-[**getDuplicateItemSummaryCodeById**](ItemSummaryCodeApi.md#getDuplicateItemSummaryCodeById) | **GET** /beta/itemSummaryCode/duplicate/{itemSummaryCodeId} | Get a duplicated an itemSummaryCode by id
-[**getItemSummaryCodeByFilter**](ItemSummaryCodeApi.md#getItemSummaryCodeByFilter) | **GET** /beta/itemSummaryCode/search | Search itemSummaryCodes by filter
-[**getItemSummaryCodeById**](ItemSummaryCodeApi.md#getItemSummaryCodeById) | **GET** /beta/itemSummaryCode/{itemSummaryCodeId} | Get an itemSummaryCode by id
-[**getItemSummaryCodeTags**](ItemSummaryCodeApi.md#getItemSummaryCodeTags) | **GET** /beta/itemSummaryCode/{itemSummaryCodeId}/tag | Get the tags for an itemSummaryCode.
-[**updateItemSummaryCode**](ItemSummaryCodeApi.md#updateItemSummaryCode) | **PUT** /beta/itemSummaryCode | Update an itemSummaryCode
+[**addItemSummaryCode**](ItemSummaryCodeApi.md#addItemSummaryCode) | **POST** /v2.0/itemSummaryCode | Create an itemSummaryCode
+[**deleteItemSummaryCode**](ItemSummaryCodeApi.md#deleteItemSummaryCode) | **DELETE** /v2.0/itemSummaryCode/{itemSummaryCodeId} | Delete an itemSummaryCode
+[**getDuplicateItemSummaryCodeById**](ItemSummaryCodeApi.md#getDuplicateItemSummaryCodeById) | **GET** /v2.0/itemSummaryCode/duplicate/{itemSummaryCodeId} | Get a duplicated an itemSummaryCode by id
+[**getItemSummaryCodeByFilter**](ItemSummaryCodeApi.md#getItemSummaryCodeByFilter) | **GET** /v2.0/itemSummaryCode/search | Search itemSummaryCodes by filter
+[**getItemSummaryCodeById**](ItemSummaryCodeApi.md#getItemSummaryCodeById) | **GET** /v2.0/itemSummaryCode/{itemSummaryCodeId} | Get an itemSummaryCode by id
+[**updateItemSummaryCode**](ItemSummaryCodeApi.md#updateItemSummaryCode) | **PUT** /v2.0/itemSummaryCode | Update an itemSummaryCode
 
 
 <a name="addItemSummaryCode"></a>
@@ -69,118 +65,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addItemSummaryCodeAudit"></a>
-# **addItemSummaryCodeAudit**
-> addItemSummaryCodeAudit(itemSummaryCodeId, itemSummaryCodeAudit)
-
-Add new audit for an itemSummaryCode
-
-Adds an audit to an existing itemSummaryCode.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemSummaryCodeApi()
-
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to add an audit to
-
-var itemSummaryCodeAudit = "itemSummaryCodeAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemSummaryCodeAudit(itemSummaryCodeId, itemSummaryCodeAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to add an audit to | 
- **itemSummaryCodeAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addItemSummaryCodeTag"></a>
-# **addItemSummaryCodeTag**
-> addItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag)
-
-Add new tags for an itemSummaryCode.
-
-Adds a tag to an existing itemSummaryCode.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemSummaryCodeApi()
-
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to add a tag to
-
-var itemSummaryCodeTag = "itemSummaryCodeTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to add a tag to | 
- **itemSummaryCodeTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteItemSummaryCode"></a>
 # **deleteItemSummaryCode**
 > deleteItemSummaryCode(itemSummaryCodeId)
@@ -220,62 +104,6 @@ api.deleteItemSummaryCode(itemSummaryCodeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteItemSummaryCodeTag"></a>
-# **deleteItemSummaryCodeTag**
-> deleteItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag)
-
-Delete a tag for an itemSummaryCode.
-
-Deletes an existing itemSummaryCode tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemSummaryCodeApi()
-
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to remove tag from
-
-var itemSummaryCodeTag = "itemSummaryCodeTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to remove tag from | 
- **itemSummaryCodeTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -446,59 +274,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ItemSummaryCode**](ItemSummaryCode.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getItemSummaryCodeTags"></a>
-# **getItemSummaryCodeTags**
-> getItemSummaryCodeTags(itemSummaryCodeId)
-
-Get the tags for an itemSummaryCode.
-
-Get all existing itemSummaryCode tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.ItemSummaryCodeApi()
-
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getItemSummaryCodeTags(itemSummaryCodeId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

@@ -18,7 +18,7 @@
   /**
    * The InventoryDetail model module.
    * @module model/InventoryDetail
-   * @version beta
+   * @version v2.0
    */
 
   /**

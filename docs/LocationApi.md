@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addLocation**](LocationApi.md#addLocation) | **POST** /beta/location | Create a location
-[**addLocationAudit**](LocationApi.md#addLocationAudit) | **PUT** /beta/location/{locationId}/audit/{locationAudit} | Add new audit for a location
-[**addLocationTag**](LocationApi.md#addLocationTag) | **PUT** /beta/location/{locationId}/tag/{locationTag} | Add new tags for a location.
-[**deleteLocation**](LocationApi.md#deleteLocation) | **DELETE** /beta/location/{locationId} | Delete a location
-[**deleteLocationTag**](LocationApi.md#deleteLocationTag) | **DELETE** /beta/location/{locationId}/tag/{locationTag} | Delete a tag for a location.
-[**getDuplicateLocationById**](LocationApi.md#getDuplicateLocationById) | **GET** /beta/location/duplicate/{locationId} | Get a duplicated a location by id
-[**getLocationByFilter**](LocationApi.md#getLocationByFilter) | **GET** /beta/location/search | Search locations by filter
-[**getLocationById**](LocationApi.md#getLocationById) | **GET** /beta/location/{locationId} | Get a location by id
-[**getLocationTags**](LocationApi.md#getLocationTags) | **GET** /beta/location/{locationId}/tag | Get the tags for a location.
-[**updateLocation**](LocationApi.md#updateLocation) | **PUT** /beta/location | Update a location
-[**updateLocationCustomFields**](LocationApi.md#updateLocationCustomFields) | **PUT** /beta/location/customFields | Update a location custom fields
+[**addLocation**](LocationApi.md#addLocation) | **POST** /v2.0/location | Create a location
+[**deleteLocation**](LocationApi.md#deleteLocation) | **DELETE** /v2.0/location/{locationId} | Delete a location
+[**getDuplicateLocationById**](LocationApi.md#getDuplicateLocationById) | **GET** /v2.0/location/duplicate/{locationId} | Get a duplicated a location by id
+[**getLocationByFilter**](LocationApi.md#getLocationByFilter) | **GET** /v2.0/location/search | Search locations by filter
+[**getLocationById**](LocationApi.md#getLocationById) | **GET** /v2.0/location/{locationId} | Get a location by id
+[**updateLocation**](LocationApi.md#updateLocation) | **PUT** /v2.0/location | Update a location
+[**updateLocationCustomFields**](LocationApi.md#updateLocationCustomFields) | **PUT** /v2.0/location/customFields | Update a location custom fields
 
 
 <a name="addLocation"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addLocationAudit"></a>
-# **addLocationAudit**
-> addLocationAudit(locationId, locationAudit)
-
-Add new audit for a location
-
-Adds an audit to an existing location.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LocationApi()
-
-var locationId = 56; // {Integer} Id of the location to add an audit to
-
-var locationAudit = "locationAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addLocationAudit(locationId, locationAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **Integer**| Id of the location to add an audit to | 
- **locationAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addLocationTag"></a>
-# **addLocationTag**
-> addLocationTag(locationId, locationTag)
-
-Add new tags for a location.
-
-Adds a tag to an existing location.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LocationApi()
-
-var locationId = 56; // {Integer} Id of the location to add a tag to
-
-var locationTag = "locationTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addLocationTag(locationId, locationTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **Integer**| Id of the location to add a tag to | 
- **locationTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteLocation"></a>
 # **deleteLocation**
 > deleteLocation(locationId)
@@ -221,62 +105,6 @@ api.deleteLocation(locationId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **Integer**| Id of the location to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteLocationTag"></a>
-# **deleteLocationTag**
-> deleteLocationTag(locationId, locationTag)
-
-Delete a tag for a location.
-
-Deletes an existing location tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LocationApi()
-
-var locationId = 56; // {Integer} Id of the location to remove tag from
-
-var locationTag = "locationTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteLocationTag(locationId, locationTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **Integer**| Id of the location to remove tag from | 
- **locationTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Location**](Location.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getLocationTags"></a>
-# **getLocationTags**
-> getLocationTags(locationId)
-
-Get the tags for a location.
-
-Get all existing location tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LocationApi()
-
-var locationId = 56; // {Integer} Id of the location to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getLocationTags(locationId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **Integer**| Id of the location to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

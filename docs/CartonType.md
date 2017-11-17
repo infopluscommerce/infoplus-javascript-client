@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **weightLbs** | **Number** |  | [optional] 
 **lobId** | **Integer** |  | 
 **isActive** | **Boolean** |  | [default to false]
-**predefinedPackageTypeId** | **Integer** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

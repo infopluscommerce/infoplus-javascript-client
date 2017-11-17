@@ -18,7 +18,7 @@
   /**
    * The FulfillmentProcess model module.
    * @module model/FulfillmentProcess
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -29,11 +29,8 @@
    * @param fulfillmentPlanId
    * @param pickScanSchemeId
    * @param status
-   * @param createPackingSlip
-   * @param createOrderInvoice
-   * @param sendToExternalShippingSystem
    */
-  var exports = function(warehouseId, fulfillmentPlanId, pickScanSchemeId, status, createPackingSlip, createOrderInvoice, sendToExternalShippingSystem) {
+  var exports = function(warehouseId, fulfillmentPlanId, pickScanSchemeId, status) {
 
 
 
@@ -76,12 +73,8 @@
 
 
 
-    this['createPackingSlip'] = createPackingSlip;
 
 
-    this['createOrderInvoice'] = createOrderInvoice;
-
-    this['sendToExternalShippingSystem'] = sendToExternalShippingSystem;
 
 
   };
@@ -221,25 +214,13 @@
         obj['cartonizeOrders'] = ApiClient.convertToType(data['cartonizeOrders'], 'Boolean');
       }
       if (data.hasOwnProperty('createPackingSlip')) {
-        obj['createPackingSlip'] = ApiClient.convertToType(data['createPackingSlip'], 'String');
+        obj['createPackingSlip'] = ApiClient.convertToType(data['createPackingSlip'], 'Boolean');
       }
       if (data.hasOwnProperty('overridePackingSlipTemplateId')) {
         obj['overridePackingSlipTemplateId'] = ApiClient.convertToType(data['overridePackingSlipTemplateId'], 'Integer');
       }
       if (data.hasOwnProperty('createOrderAssemblyGuide')) {
         obj['createOrderAssemblyGuide'] = ApiClient.convertToType(data['createOrderAssemblyGuide'], 'Boolean');
-      }
-      if (data.hasOwnProperty('createOrderInvoice')) {
-        obj['createOrderInvoice'] = ApiClient.convertToType(data['createOrderInvoice'], 'String');
-      }
-      if (data.hasOwnProperty('overrideOrderInvoiceTemplateId')) {
-        obj['overrideOrderInvoiceTemplateId'] = ApiClient.convertToType(data['overrideOrderInvoiceTemplateId'], 'Integer');
-      }
-      if (data.hasOwnProperty('sendToExternalShippingSystem')) {
-        obj['sendToExternalShippingSystem'] = ApiClient.convertToType(data['sendToExternalShippingSystem'], 'Boolean');
-      }
-      if (data.hasOwnProperty('externalShippingSystemId')) {
-        obj['externalShippingSystemId'] = ApiClient.convertToType(data['externalShippingSystemId'], 'Integer');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -461,9 +442,10 @@
   exports.prototype['cartonizeOrders'] = false;
 
   /**
-   * @member {String} createPackingSlip
+   * @member {Boolean} createPackingSlip
+   * @default false
    */
-  exports.prototype['createPackingSlip'] = undefined;
+  exports.prototype['createPackingSlip'] = false;
 
   /**
    * @member {Integer} overridePackingSlipTemplateId
@@ -475,27 +457,6 @@
    * @default false
    */
   exports.prototype['createOrderAssemblyGuide'] = false;
-
-  /**
-   * @member {String} createOrderInvoice
-   */
-  exports.prototype['createOrderInvoice'] = undefined;
-
-  /**
-   * @member {Integer} overrideOrderInvoiceTemplateId
-   */
-  exports.prototype['overrideOrderInvoiceTemplateId'] = undefined;
-
-  /**
-   * @member {Boolean} sendToExternalShippingSystem
-   * @default false
-   */
-  exports.prototype['sendToExternalShippingSystem'] = false;
-
-  /**
-   * @member {Integer} externalShippingSystemId
-   */
-  exports.prototype['externalShippingSystemId'] = undefined;
 
   /**
    * @member {Object.<String, Object>} customFields

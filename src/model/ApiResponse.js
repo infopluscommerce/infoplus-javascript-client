@@ -18,7 +18,7 @@
   /**
    * The ApiResponse model module.
    * @module model/ApiResponse
-   * @version beta
+   * @version v2.0
    */
 
   /**

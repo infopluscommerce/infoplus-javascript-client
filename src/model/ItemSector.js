@@ -18,7 +18,7 @@
   /**
    * The ItemSector model module.
    * @module model/ItemSector
-   * @version beta
+   * @version v2.0
    */
 
   /**

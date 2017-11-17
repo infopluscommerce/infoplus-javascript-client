@@ -18,7 +18,7 @@
   /**
    * ReplenishmentProcess service.
    * @module api/ReplenishmentProcessApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -31,162 +31,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the addReplenishmentProcessAudit operation.
-     * @callback module:api/ReplenishmentProcessApi~addReplenishmentProcessAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a replenishmentProcess
-     * Adds an audit to an existing replenishmentProcess.
-     * @param {Integer} replenishmentProcessId Id of the replenishmentProcess to add an audit to
-     * @param {String} replenishmentProcessAudit The audit to add
-     * @param {module:api/ReplenishmentProcessApi~addReplenishmentProcessAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addReplenishmentProcessAudit = function(replenishmentProcessId, replenishmentProcessAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'replenishmentProcessId' is set
-      if (replenishmentProcessId == undefined || replenishmentProcessId == null) {
-        throw "Missing the required parameter 'replenishmentProcessId' when calling addReplenishmentProcessAudit";
-      }
-
-      // verify the required parameter 'replenishmentProcessAudit' is set
-      if (replenishmentProcessAudit == undefined || replenishmentProcessAudit == null) {
-        throw "Missing the required parameter 'replenishmentProcessAudit' when calling addReplenishmentProcessAudit";
-      }
-
-
-      var pathParams = {
-        'replenishmentProcessId': replenishmentProcessId,
-        'replenishmentProcessAudit': replenishmentProcessAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/replenishmentProcess/{replenishmentProcessId}/audit/{replenishmentProcessAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addReplenishmentProcessTag operation.
-     * @callback module:api/ReplenishmentProcessApi~addReplenishmentProcessTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a replenishmentProcess.
-     * Adds a tag to an existing replenishmentProcess.
-     * @param {Integer} replenishmentProcessId Id of the replenishmentProcess to add a tag to
-     * @param {String} replenishmentProcessTag The tag to add
-     * @param {module:api/ReplenishmentProcessApi~addReplenishmentProcessTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addReplenishmentProcessTag = function(replenishmentProcessId, replenishmentProcessTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'replenishmentProcessId' is set
-      if (replenishmentProcessId == undefined || replenishmentProcessId == null) {
-        throw "Missing the required parameter 'replenishmentProcessId' when calling addReplenishmentProcessTag";
-      }
-
-      // verify the required parameter 'replenishmentProcessTag' is set
-      if (replenishmentProcessTag == undefined || replenishmentProcessTag == null) {
-        throw "Missing the required parameter 'replenishmentProcessTag' when calling addReplenishmentProcessTag";
-      }
-
-
-      var pathParams = {
-        'replenishmentProcessId': replenishmentProcessId,
-        'replenishmentProcessTag': replenishmentProcessTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/replenishmentProcess/{replenishmentProcessId}/tag/{replenishmentProcessTag}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteReplenishmentProcessTag operation.
-     * @callback module:api/ReplenishmentProcessApi~deleteReplenishmentProcessTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a replenishmentProcess.
-     * Deletes an existing replenishmentProcess tag using the specified data.
-     * @param {Integer} replenishmentProcessId Id of the replenishmentProcess to remove tag from
-     * @param {String} replenishmentProcessTag The tag to delete
-     * @param {module:api/ReplenishmentProcessApi~deleteReplenishmentProcessTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteReplenishmentProcessTag = function(replenishmentProcessId, replenishmentProcessTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'replenishmentProcessId' is set
-      if (replenishmentProcessId == undefined || replenishmentProcessId == null) {
-        throw "Missing the required parameter 'replenishmentProcessId' when calling deleteReplenishmentProcessTag";
-      }
-
-      // verify the required parameter 'replenishmentProcessTag' is set
-      if (replenishmentProcessTag == undefined || replenishmentProcessTag == null) {
-        throw "Missing the required parameter 'replenishmentProcessTag' when calling deleteReplenishmentProcessTag";
-      }
-
-
-      var pathParams = {
-        'replenishmentProcessId': replenishmentProcessId,
-        'replenishmentProcessTag': replenishmentProcessTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/replenishmentProcess/{replenishmentProcessId}/tag/{replenishmentProcessTag}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the getDuplicateReplenishmentProcessById operation.
@@ -228,7 +72,7 @@
       var returnType = ReplenishmentProcess;
 
       return this.apiClient.callApi(
-        '/beta/replenishmentProcess/duplicate/{replenishmentProcessId}', 'GET',
+        '/v2.0/replenishmentProcess/duplicate/{replenishmentProcessId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -277,7 +121,7 @@
       var returnType = [ReplenishmentProcess];
 
       return this.apiClient.callApi(
-        '/beta/replenishmentProcess/search', 'GET',
+        '/v2.0/replenishmentProcess/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,52 +167,7 @@
       var returnType = ReplenishmentProcess;
 
       return this.apiClient.callApi(
-        '/beta/replenishmentProcess/{replenishmentProcessId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getReplenishmentProcessTags operation.
-     * @callback module:api/ReplenishmentProcessApi~getReplenishmentProcessTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a replenishmentProcess.
-     * Get all existing replenishmentProcess tags.
-     * @param {Integer} replenishmentProcessId Id of the replenishmentProcess to get tags for
-     * @param {module:api/ReplenishmentProcessApi~getReplenishmentProcessTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getReplenishmentProcessTags = function(replenishmentProcessId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'replenishmentProcessId' is set
-      if (replenishmentProcessId == undefined || replenishmentProcessId == null) {
-        throw "Missing the required parameter 'replenishmentProcessId' when calling getReplenishmentProcessTags";
-      }
-
-
-      var pathParams = {
-        'replenishmentProcessId': replenishmentProcessId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/replenishmentProcess/{replenishmentProcessId}/tag', 'GET',
+        '/v2.0/replenishmentProcess/{replenishmentProcessId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -412,7 +211,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/replenishmentProcess/customFields', 'PUT',
+        '/v2.0/replenishmentProcess/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

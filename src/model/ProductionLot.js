@@ -18,22 +18,20 @@
   /**
    * The ProductionLot model module.
    * @module model/ProductionLot
-   * @version beta
+   * @version v2.0
    */
 
   /**
    * Constructs a new <code>ProductionLot</code>.
    * @alias module:model/ProductionLot
    * @class
-   * @param productionLot
-   * @param quantity
    */
-  var exports = function(productionLot, quantity) {
+  var exports = function() {
 
 
 
-    this['productionLot'] = productionLot;
-    this['quantity'] = quantity;
+
+
 
 
   };

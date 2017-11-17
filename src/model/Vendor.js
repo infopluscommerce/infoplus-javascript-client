@@ -18,7 +18,7 @@
   /**
    * The Vendor model module.
    * @module model/Vendor
-   * @version beta
+   * @version v2.0
    */
 
   /**

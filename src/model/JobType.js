@@ -18,7 +18,7 @@
   /**
    * The JobType model module.
    * @module model/JobType
-   * @version beta
+   * @version v2.0
    */
 
   /**

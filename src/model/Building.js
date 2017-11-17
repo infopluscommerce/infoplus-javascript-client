@@ -18,7 +18,7 @@
   /**
    * The Building model module.
    * @module model/Building
-   * @version beta
+   * @version v2.0
    */
 
   /**

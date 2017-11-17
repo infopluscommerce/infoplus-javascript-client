@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addQuickReceipt**](QuickReceiptApi.md#addQuickReceipt) | **POST** /beta/quickReceipt | Create a quickReceipt
-[**addQuickReceiptAudit**](QuickReceiptApi.md#addQuickReceiptAudit) | **PUT** /beta/quickReceipt/{quickReceiptId}/audit/{quickReceiptAudit} | Add new audit for a quickReceipt
-[**addQuickReceiptTag**](QuickReceiptApi.md#addQuickReceiptTag) | **PUT** /beta/quickReceipt/{quickReceiptId}/tag/{quickReceiptTag} | Add new tags for a quickReceipt.
-[**deleteQuickReceipt**](QuickReceiptApi.md#deleteQuickReceipt) | **DELETE** /beta/quickReceipt/{quickReceiptId} | Delete a quickReceipt
-[**deleteQuickReceiptTag**](QuickReceiptApi.md#deleteQuickReceiptTag) | **DELETE** /beta/quickReceipt/{quickReceiptId}/tag/{quickReceiptTag} | Delete a tag for a quickReceipt.
-[**getDuplicateQuickReceiptById**](QuickReceiptApi.md#getDuplicateQuickReceiptById) | **GET** /beta/quickReceipt/duplicate/{quickReceiptId} | Get a duplicated a quickReceipt by id
-[**getQuickReceiptByFilter**](QuickReceiptApi.md#getQuickReceiptByFilter) | **GET** /beta/quickReceipt/search | Search quickReceipts by filter
-[**getQuickReceiptById**](QuickReceiptApi.md#getQuickReceiptById) | **GET** /beta/quickReceipt/{quickReceiptId} | Get a quickReceipt by id
-[**getQuickReceiptTags**](QuickReceiptApi.md#getQuickReceiptTags) | **GET** /beta/quickReceipt/{quickReceiptId}/tag | Get the tags for a quickReceipt.
-[**updateQuickReceipt**](QuickReceiptApi.md#updateQuickReceipt) | **PUT** /beta/quickReceipt | Update a quickReceipt
-[**updateQuickReceiptCustomFields**](QuickReceiptApi.md#updateQuickReceiptCustomFields) | **PUT** /beta/quickReceipt/customFields | Update a quickReceipt custom fields
+[**addQuickReceipt**](QuickReceiptApi.md#addQuickReceipt) | **POST** /v2.0/quickReceipt | Create a quickReceipt
+[**deleteQuickReceipt**](QuickReceiptApi.md#deleteQuickReceipt) | **DELETE** /v2.0/quickReceipt/{quickReceiptId} | Delete a quickReceipt
+[**getDuplicateQuickReceiptById**](QuickReceiptApi.md#getDuplicateQuickReceiptById) | **GET** /v2.0/quickReceipt/duplicate/{quickReceiptId} | Get a duplicated a quickReceipt by id
+[**getQuickReceiptByFilter**](QuickReceiptApi.md#getQuickReceiptByFilter) | **GET** /v2.0/quickReceipt/search | Search quickReceipts by filter
+[**getQuickReceiptById**](QuickReceiptApi.md#getQuickReceiptById) | **GET** /v2.0/quickReceipt/{quickReceiptId} | Get a quickReceipt by id
+[**updateQuickReceipt**](QuickReceiptApi.md#updateQuickReceipt) | **PUT** /v2.0/quickReceipt | Update a quickReceipt
+[**updateQuickReceiptCustomFields**](QuickReceiptApi.md#updateQuickReceiptCustomFields) | **PUT** /v2.0/quickReceipt/customFields | Update a quickReceipt custom fields
 
 
 <a name="addQuickReceipt"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addQuickReceiptAudit"></a>
-# **addQuickReceiptAudit**
-> addQuickReceiptAudit(quickReceiptId, quickReceiptAudit)
-
-Add new audit for a quickReceipt
-
-Adds an audit to an existing quickReceipt.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.QuickReceiptApi()
-
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to add an audit to
-
-var quickReceiptAudit = "quickReceiptAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addQuickReceiptAudit(quickReceiptId, quickReceiptAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to add an audit to | 
- **quickReceiptAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addQuickReceiptTag"></a>
-# **addQuickReceiptTag**
-> addQuickReceiptTag(quickReceiptId, quickReceiptTag)
-
-Add new tags for a quickReceipt.
-
-Adds a tag to an existing quickReceipt.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.QuickReceiptApi()
-
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to add a tag to
-
-var quickReceiptTag = "quickReceiptTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addQuickReceiptTag(quickReceiptId, quickReceiptTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to add a tag to | 
- **quickReceiptTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteQuickReceipt"></a>
 # **deleteQuickReceipt**
 > deleteQuickReceipt(quickReceiptId)
@@ -221,62 +105,6 @@ api.deleteQuickReceipt(quickReceiptId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **quickReceiptId** | **Integer**| Id of the quickReceipt to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteQuickReceiptTag"></a>
-# **deleteQuickReceiptTag**
-> deleteQuickReceiptTag(quickReceiptId, quickReceiptTag)
-
-Delete a tag for a quickReceipt.
-
-Deletes an existing quickReceipt tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.QuickReceiptApi()
-
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to remove tag from
-
-var quickReceiptTag = "quickReceiptTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteQuickReceiptTag(quickReceiptId, quickReceiptTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to remove tag from | 
- **quickReceiptTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -447,59 +275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**QuickReceipt**](QuickReceipt.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getQuickReceiptTags"></a>
-# **getQuickReceiptTags**
-> getQuickReceiptTags(quickReceiptId)
-
-Get the tags for a quickReceipt.
-
-Get all existing quickReceipt tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.QuickReceiptApi()
-
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getQuickReceiptTags(quickReceiptId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

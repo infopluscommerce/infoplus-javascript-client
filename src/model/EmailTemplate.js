@@ -18,7 +18,7 @@
   /**
    * The EmailTemplate model module.
    * @module model/EmailTemplate
-   * @version beta
+   * @version v2.0
    */
 
   /**

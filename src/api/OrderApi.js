@@ -18,7 +18,7 @@
   /**
    * Order service.
    * @module api/OrderApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = Order;
 
       return this.apiClient.callApi(
-        '/beta/order', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addOrderAudit operation.
-     * @callback module:api/OrderApi~addOrderAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an order
-     * Adds an audit to an existing order.
-     * @param {Number} orderId Id of the order to add an audit to
-     * @param {String} orderAudit The audit to add
-     * @param {module:api/OrderApi~addOrderAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addOrderAudit = function(orderId, orderAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'orderId' is set
-      if (orderId == undefined || orderId == null) {
-        throw "Missing the required parameter 'orderId' when calling addOrderAudit";
-      }
-
-      // verify the required parameter 'orderAudit' is set
-      if (orderAudit == undefined || orderAudit == null) {
-        throw "Missing the required parameter 'orderAudit' when calling addOrderAudit";
-      }
-
-
-      var pathParams = {
-        'orderId': orderId,
-        'orderAudit': orderAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/order/{orderId}/audit/{orderAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addOrderTag operation.
-     * @callback module:api/OrderApi~addOrderTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an order.
-     * Adds a tag to an existing order.
-     * @param {Number} orderId Id of the order to add a tag to
-     * @param {String} orderTag The tag to add
-     * @param {module:api/OrderApi~addOrderTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addOrderTag = function(orderId, orderTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'orderId' is set
-      if (orderId == undefined || orderId == null) {
-        throw "Missing the required parameter 'orderId' when calling addOrderTag";
-      }
-
-      // verify the required parameter 'orderTag' is set
-      if (orderTag == undefined || orderTag == null) {
-        throw "Missing the required parameter 'orderTag' when calling addOrderTag";
-      }
-
-
-      var pathParams = {
-        'orderId': orderId,
-        'orderTag': orderTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/order/{orderId}/tag/{orderTag}', 'PUT',
+        '/v2.0/order', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/order/{orderId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteOrderTag operation.
-     * @callback module:api/OrderApi~deleteOrderTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an order.
-     * Deletes an existing order tag using the specified data.
-     * @param {Number} orderId Id of the order to remove tag from
-     * @param {String} orderTag The tag to delete
-     * @param {module:api/OrderApi~deleteOrderTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteOrderTag = function(orderId, orderTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'orderId' is set
-      if (orderId == undefined || orderId == null) {
-        throw "Missing the required parameter 'orderId' when calling deleteOrderTag";
-      }
-
-      // verify the required parameter 'orderTag' is set
-      if (orderTag == undefined || orderTag == null) {
-        throw "Missing the required parameter 'orderTag' when calling deleteOrderTag";
-      }
-
-
-      var pathParams = {
-        'orderId': orderId,
-        'orderTag': orderTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/order/{orderId}/tag/{orderTag}', 'DELETE',
+        '/v2.0/order/{orderId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = Order;
 
       return this.apiClient.callApi(
-        '/beta/order/duplicate/{orderId}', 'GET',
+        '/v2.0/order/duplicate/{orderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [Order];
 
       return this.apiClient.callApi(
-        '/beta/order/search', 'GET',
+        '/v2.0/order/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = Order;
 
       return this.apiClient.callApi(
-        '/beta/order/{orderId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getOrderTags operation.
-     * @callback module:api/OrderApi~getOrderTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an order.
-     * Get all existing order tags.
-     * @param {Number} orderId Id of the order to get tags for
-     * @param {module:api/OrderApi~getOrderTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getOrderTags = function(orderId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'orderId' is set
-      if (orderId == undefined || orderId == null) {
-        throw "Missing the required parameter 'orderId' when calling getOrderTags";
-      }
-
-
-      var pathParams = {
-        'orderId': orderId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/order/{orderId}/tag', 'GET',
+        '/v2.0/order/{orderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/order', 'PUT',
+        '/v2.0/order', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/order/customFields', 'PUT',
+        '/v2.0/order/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

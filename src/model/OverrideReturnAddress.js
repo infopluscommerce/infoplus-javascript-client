@@ -18,7 +18,7 @@
   /**
    * The OverrideReturnAddress model module.
    * @module model/OverrideReturnAddress
-   * @version beta
+   * @version v2.0
    */
 
   /**

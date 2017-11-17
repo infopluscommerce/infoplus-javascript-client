@@ -18,7 +18,7 @@
   /**
    * The ReceivingWorksheetLineItem model module.
    * @module model/ReceivingWorksheetLineItem
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -37,7 +37,6 @@
 
 
 
-
     this['receivingQty'] = receivingQty;
     this['unitCode'] = unitCode;
     this['wrapCode'] = wrapCode;
@@ -45,7 +44,6 @@
 
 
     this['weightPerWrap'] = weightPerWrap;
-
 
 
 
@@ -71,9 +69,6 @@
 
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
-      }
-      if (data.hasOwnProperty('sku2')) {
-        obj['sku2'] = ApiClient.convertToType(data['sku2'], 'String');
       }
       if (data.hasOwnProperty('fullDescription')) {
         obj['fullDescription'] = ApiClient.convertToType(data['fullDescription'], 'String');
@@ -114,9 +109,6 @@
       if (data.hasOwnProperty('productionLot')) {
         obj['productionLot'] = ApiClient.convertToType(data['productionLot'], 'String');
       }
-      if (data.hasOwnProperty('productIdTag')) {
-        obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
-      }
       if (data.hasOwnProperty('revisionDate')) {
         obj['revisionDate'] = ApiClient.convertToType(data['revisionDate'], 'String');
       }
@@ -150,11 +142,6 @@
    * @member {String} sku
    */
   exports.prototype['sku'] = undefined;
-
-  /**
-   * @member {String} sku2
-   */
-  exports.prototype['sku2'] = undefined;
 
   /**
    * @member {String} fullDescription
@@ -220,11 +207,6 @@
    * @member {String} productionLot
    */
   exports.prototype['productionLot'] = undefined;
-
-  /**
-   * @member {String} productIdTag
-   */
-  exports.prototype['productIdTag'] = undefined;
 
   /**
    * @member {String} revisionDate

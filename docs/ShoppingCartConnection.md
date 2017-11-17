@@ -21,14 +21,10 @@ Name | Type | Description | Notes
 **accessToken** | **String** |  | 
 **username** | **String** |  | 
 **password** | **String** |  | 
-**defaultCarrierId** | **Integer** |  | [optional] 
-**orderShipmentLevel** | **String** |  | 
 **syncOrders** | **Boolean** |  | [default to false]
 **syncInventory** | **Boolean** |  | [default to false]
 **syncTrackingData** | **Boolean** |  | [default to false]
-**fulfillAllItems** | **Boolean** |  | [default to false]
 **syncInventoryLevelsLastRunTime** | **Date** |  | [optional] 
-**syncOrdersLastRunTime** | **Date** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

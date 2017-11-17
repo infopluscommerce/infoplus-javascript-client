@@ -32,5 +32,7 @@ Name | Type | Description | Notes
 **chargedFreightAmount** | **Number** |  | [optional] 
 **publishedFreightAmount** | **Number** |  | [optional] 
 **retailFreightAmount** | **Number** |  | [optional] 
+**externalShippingSystemId** | **Integer** |  | [optional] 
+**customFields** | **{String: Object}** |  | [optional] 
 
 

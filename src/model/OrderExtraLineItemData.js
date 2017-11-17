@@ -18,7 +18,7 @@
   /**
    * The OrderExtraLineItemData model module.
    * @module model/OrderExtraLineItemData
-   * @version beta
+   * @version v2.0
    */
 
   /**

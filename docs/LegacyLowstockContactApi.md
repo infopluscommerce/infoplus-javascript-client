@@ -4,16 +4,12 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addLegacyLowstockContact**](LegacyLowstockContactApi.md#addLegacyLowstockContact) | **POST** /beta/legacyLowstockContact | Create a legacyLowstockContact
-[**addLegacyLowstockContactAudit**](LegacyLowstockContactApi.md#addLegacyLowstockContactAudit) | **PUT** /beta/legacyLowstockContact/{legacyLowstockContactId}/audit/{legacyLowstockContactAudit} | Add new audit for a legacyLowstockContact
-[**addLegacyLowstockContactTag**](LegacyLowstockContactApi.md#addLegacyLowstockContactTag) | **PUT** /beta/legacyLowstockContact/{legacyLowstockContactId}/tag/{legacyLowstockContactTag} | Add new tags for a legacyLowstockContact.
-[**deleteLegacyLowstockContact**](LegacyLowstockContactApi.md#deleteLegacyLowstockContact) | **DELETE** /beta/legacyLowstockContact/{legacyLowstockContactId} | Delete a legacyLowstockContact
-[**deleteLegacyLowstockContactTag**](LegacyLowstockContactApi.md#deleteLegacyLowstockContactTag) | **DELETE** /beta/legacyLowstockContact/{legacyLowstockContactId}/tag/{legacyLowstockContactTag} | Delete a tag for a legacyLowstockContact.
-[**getDuplicateLegacyLowstockContactById**](LegacyLowstockContactApi.md#getDuplicateLegacyLowstockContactById) | **GET** /beta/legacyLowstockContact/duplicate/{legacyLowstockContactId} | Get a duplicated a legacyLowstockContact by id
-[**getLegacyLowstockContactByFilter**](LegacyLowstockContactApi.md#getLegacyLowstockContactByFilter) | **GET** /beta/legacyLowstockContact/search | Search legacyLowstockContacts by filter
-[**getLegacyLowstockContactById**](LegacyLowstockContactApi.md#getLegacyLowstockContactById) | **GET** /beta/legacyLowstockContact/{legacyLowstockContactId} | Get a legacyLowstockContact by id
-[**getLegacyLowstockContactTags**](LegacyLowstockContactApi.md#getLegacyLowstockContactTags) | **GET** /beta/legacyLowstockContact/{legacyLowstockContactId}/tag | Get the tags for a legacyLowstockContact.
-[**updateLegacyLowstockContact**](LegacyLowstockContactApi.md#updateLegacyLowstockContact) | **PUT** /beta/legacyLowstockContact | Update a legacyLowstockContact
+[**addLegacyLowstockContact**](LegacyLowstockContactApi.md#addLegacyLowstockContact) | **POST** /v2.0/legacyLowstockContact | Create a legacyLowstockContact
+[**deleteLegacyLowstockContact**](LegacyLowstockContactApi.md#deleteLegacyLowstockContact) | **DELETE** /v2.0/legacyLowstockContact/{legacyLowstockContactId} | Delete a legacyLowstockContact
+[**getDuplicateLegacyLowstockContactById**](LegacyLowstockContactApi.md#getDuplicateLegacyLowstockContactById) | **GET** /v2.0/legacyLowstockContact/duplicate/{legacyLowstockContactId} | Get a duplicated a legacyLowstockContact by id
+[**getLegacyLowstockContactByFilter**](LegacyLowstockContactApi.md#getLegacyLowstockContactByFilter) | **GET** /v2.0/legacyLowstockContact/search | Search legacyLowstockContacts by filter
+[**getLegacyLowstockContactById**](LegacyLowstockContactApi.md#getLegacyLowstockContactById) | **GET** /v2.0/legacyLowstockContact/{legacyLowstockContactId} | Get a legacyLowstockContact by id
+[**updateLegacyLowstockContact**](LegacyLowstockContactApi.md#updateLegacyLowstockContact) | **PUT** /v2.0/legacyLowstockContact | Update a legacyLowstockContact
 
 
 <a name="addLegacyLowstockContact"></a>
@@ -69,118 +65,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addLegacyLowstockContactAudit"></a>
-# **addLegacyLowstockContactAudit**
-> addLegacyLowstockContactAudit(legacyLowstockContactId, legacyLowstockContactAudit)
-
-Add new audit for a legacyLowstockContact
-
-Adds an audit to an existing legacyLowstockContact.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LegacyLowstockContactApi()
-
-var legacyLowstockContactId = 56; // {Integer} Id of the legacyLowstockContact to add an audit to
-
-var legacyLowstockContactAudit = "legacyLowstockContactAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addLegacyLowstockContactAudit(legacyLowstockContactId, legacyLowstockContactAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **legacyLowstockContactId** | **Integer**| Id of the legacyLowstockContact to add an audit to | 
- **legacyLowstockContactAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addLegacyLowstockContactTag"></a>
-# **addLegacyLowstockContactTag**
-> addLegacyLowstockContactTag(legacyLowstockContactId, legacyLowstockContactTag)
-
-Add new tags for a legacyLowstockContact.
-
-Adds a tag to an existing legacyLowstockContact.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LegacyLowstockContactApi()
-
-var legacyLowstockContactId = 56; // {Integer} Id of the legacyLowstockContact to add a tag to
-
-var legacyLowstockContactTag = "legacyLowstockContactTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addLegacyLowstockContactTag(legacyLowstockContactId, legacyLowstockContactTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **legacyLowstockContactId** | **Integer**| Id of the legacyLowstockContact to add a tag to | 
- **legacyLowstockContactTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteLegacyLowstockContact"></a>
 # **deleteLegacyLowstockContact**
 > deleteLegacyLowstockContact(legacyLowstockContactId)
@@ -220,62 +104,6 @@ api.deleteLegacyLowstockContact(legacyLowstockContactId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **legacyLowstockContactId** | **Integer**| Id of the legacyLowstockContact to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteLegacyLowstockContactTag"></a>
-# **deleteLegacyLowstockContactTag**
-> deleteLegacyLowstockContactTag(legacyLowstockContactId, legacyLowstockContactTag)
-
-Delete a tag for a legacyLowstockContact.
-
-Deletes an existing legacyLowstockContact tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LegacyLowstockContactApi()
-
-var legacyLowstockContactId = 56; // {Integer} Id of the legacyLowstockContact to remove tag from
-
-var legacyLowstockContactTag = "legacyLowstockContactTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteLegacyLowstockContactTag(legacyLowstockContactId, legacyLowstockContactTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **legacyLowstockContactId** | **Integer**| Id of the legacyLowstockContact to remove tag from | 
- **legacyLowstockContactTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -446,59 +274,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LegacyLowstockContact**](LegacyLowstockContact.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getLegacyLowstockContactTags"></a>
-# **getLegacyLowstockContactTags**
-> getLegacyLowstockContactTags(legacyLowstockContactId)
-
-Get the tags for a legacyLowstockContact.
-
-Get all existing legacyLowstockContact tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.LegacyLowstockContactApi()
-
-var legacyLowstockContactId = 56; // {Integer} Id of the legacyLowstockContact to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getLegacyLowstockContactTags(legacyLowstockContactId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **legacyLowstockContactId** | **Integer**| Id of the legacyLowstockContact to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

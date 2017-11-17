@@ -18,7 +18,7 @@
   /**
    * The Substitution model module.
    * @module model/Substitution
-   * @version beta
+   * @version v2.0
    */
 
   /**

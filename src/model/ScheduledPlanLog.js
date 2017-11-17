@@ -18,7 +18,7 @@
   /**
    * The ScheduledPlanLog model module.
    * @module model/ScheduledPlanLog
-   * @version beta
+   * @version v2.0
    */
 
   /**

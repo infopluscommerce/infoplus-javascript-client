@@ -18,7 +18,7 @@
   /**
    * The Warehouse model module.
    * @module model/Warehouse
-   * @version beta
+   * @version v2.0
    */
 
   /**

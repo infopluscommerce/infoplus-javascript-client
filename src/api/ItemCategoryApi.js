@@ -18,7 +18,7 @@
   /**
    * ItemCategory service.
    * @module api/ItemCategoryApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ItemCategory;
 
       return this.apiClient.callApi(
-        '/beta/itemCategory', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemCategoryAudit operation.
-     * @callback module:api/ItemCategoryApi~addItemCategoryAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemCategory
-     * Adds an audit to an existing itemCategory.
-     * @param {Integer} itemCategoryId Id of the itemCategory to add an audit to
-     * @param {String} itemCategoryAudit The audit to add
-     * @param {module:api/ItemCategoryApi~addItemCategoryAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemCategoryAudit = function(itemCategoryId, itemCategoryAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemCategoryId' is set
-      if (itemCategoryId == undefined || itemCategoryId == null) {
-        throw "Missing the required parameter 'itemCategoryId' when calling addItemCategoryAudit";
-      }
-
-      // verify the required parameter 'itemCategoryAudit' is set
-      if (itemCategoryAudit == undefined || itemCategoryAudit == null) {
-        throw "Missing the required parameter 'itemCategoryAudit' when calling addItemCategoryAudit";
-      }
-
-
-      var pathParams = {
-        'itemCategoryId': itemCategoryId,
-        'itemCategoryAudit': itemCategoryAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemCategory/{itemCategoryId}/audit/{itemCategoryAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemCategoryTag operation.
-     * @callback module:api/ItemCategoryApi~addItemCategoryTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemCategory.
-     * Adds a tag to an existing itemCategory.
-     * @param {Integer} itemCategoryId Id of the itemCategory to add a tag to
-     * @param {String} itemCategoryTag The tag to add
-     * @param {module:api/ItemCategoryApi~addItemCategoryTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemCategoryTag = function(itemCategoryId, itemCategoryTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemCategoryId' is set
-      if (itemCategoryId == undefined || itemCategoryId == null) {
-        throw "Missing the required parameter 'itemCategoryId' when calling addItemCategoryTag";
-      }
-
-      // verify the required parameter 'itemCategoryTag' is set
-      if (itemCategoryTag == undefined || itemCategoryTag == null) {
-        throw "Missing the required parameter 'itemCategoryTag' when calling addItemCategoryTag";
-      }
-
-
-      var pathParams = {
-        'itemCategoryId': itemCategoryId,
-        'itemCategoryTag': itemCategoryTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemCategory/{itemCategoryId}/tag/{itemCategoryTag}', 'PUT',
+        '/v2.0/itemCategory', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemCategory/{itemCategoryId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemCategoryTag operation.
-     * @callback module:api/ItemCategoryApi~deleteItemCategoryTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemCategory.
-     * Deletes an existing itemCategory tag using the specified data.
-     * @param {Integer} itemCategoryId Id of the itemCategory to remove tag from
-     * @param {String} itemCategoryTag The tag to delete
-     * @param {module:api/ItemCategoryApi~deleteItemCategoryTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemCategoryTag = function(itemCategoryId, itemCategoryTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemCategoryId' is set
-      if (itemCategoryId == undefined || itemCategoryId == null) {
-        throw "Missing the required parameter 'itemCategoryId' when calling deleteItemCategoryTag";
-      }
-
-      // verify the required parameter 'itemCategoryTag' is set
-      if (itemCategoryTag == undefined || itemCategoryTag == null) {
-        throw "Missing the required parameter 'itemCategoryTag' when calling deleteItemCategoryTag";
-      }
-
-
-      var pathParams = {
-        'itemCategoryId': itemCategoryId,
-        'itemCategoryTag': itemCategoryTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemCategory/{itemCategoryId}/tag/{itemCategoryTag}', 'DELETE',
+        '/v2.0/itemCategory/{itemCategoryId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ItemCategory;
 
       return this.apiClient.callApi(
-        '/beta/itemCategory/duplicate/{itemCategoryId}', 'GET',
+        '/v2.0/itemCategory/duplicate/{itemCategoryId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ItemCategory];
 
       return this.apiClient.callApi(
-        '/beta/itemCategory/search', 'GET',
+        '/v2.0/itemCategory/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ItemCategory;
 
       return this.apiClient.callApi(
-        '/beta/itemCategory/{itemCategoryId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemCategoryTags operation.
-     * @callback module:api/ItemCategoryApi~getItemCategoryTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemCategory.
-     * Get all existing itemCategory tags.
-     * @param {Integer} itemCategoryId Id of the itemCategory to get tags for
-     * @param {module:api/ItemCategoryApi~getItemCategoryTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemCategoryTags = function(itemCategoryId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemCategoryId' is set
-      if (itemCategoryId == undefined || itemCategoryId == null) {
-        throw "Missing the required parameter 'itemCategoryId' when calling getItemCategoryTags";
-      }
-
-
-      var pathParams = {
-        'itemCategoryId': itemCategoryId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemCategory/{itemCategoryId}/tag', 'GET',
+        '/v2.0/itemCategory/{itemCategoryId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemCategory', 'PUT',
+        '/v2.0/itemCategory', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

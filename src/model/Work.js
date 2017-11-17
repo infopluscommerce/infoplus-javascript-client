@@ -18,7 +18,7 @@
   /**
    * The Work model module.
    * @module model/Work
-   * @version beta
+   * @version v2.0
    */
 
   /**

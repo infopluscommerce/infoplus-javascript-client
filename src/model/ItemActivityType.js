@@ -18,7 +18,7 @@
   /**
    * The ItemActivityType model module.
    * @module model/ItemActivityType
-   * @version beta
+   * @version v2.0
    */
 
   /**

@@ -4,17 +4,13 @@ All URIs are relative to *https://kingsrook.localhost-testsubdomain1.infopluswms
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCartonContent**](CartonContentApi.md#addCartonContent) | **POST** /beta/cartonContent | Create a cartonContent
-[**addCartonContentAudit**](CartonContentApi.md#addCartonContentAudit) | **PUT** /beta/cartonContent/{cartonContentId}/audit/{cartonContentAudit} | Add new audit for a cartonContent
-[**addCartonContentTag**](CartonContentApi.md#addCartonContentTag) | **PUT** /beta/cartonContent/{cartonContentId}/tag/{cartonContentTag} | Add new tags for a cartonContent.
-[**deleteCartonContent**](CartonContentApi.md#deleteCartonContent) | **DELETE** /beta/cartonContent/{cartonContentId} | Delete a cartonContent
-[**deleteCartonContentTag**](CartonContentApi.md#deleteCartonContentTag) | **DELETE** /beta/cartonContent/{cartonContentId}/tag/{cartonContentTag} | Delete a tag for a cartonContent.
-[**getCartonContentByFilter**](CartonContentApi.md#getCartonContentByFilter) | **GET** /beta/cartonContent/search | Search cartonContents by filter
-[**getCartonContentById**](CartonContentApi.md#getCartonContentById) | **GET** /beta/cartonContent/{cartonContentId} | Get a cartonContent by id
-[**getCartonContentTags**](CartonContentApi.md#getCartonContentTags) | **GET** /beta/cartonContent/{cartonContentId}/tag | Get the tags for a cartonContent.
-[**getDuplicateCartonContentById**](CartonContentApi.md#getDuplicateCartonContentById) | **GET** /beta/cartonContent/duplicate/{cartonContentId} | Get a duplicated a cartonContent by id
-[**updateCartonContent**](CartonContentApi.md#updateCartonContent) | **PUT** /beta/cartonContent | Update a cartonContent
-[**updateCartonContentCustomFields**](CartonContentApi.md#updateCartonContentCustomFields) | **PUT** /beta/cartonContent/customFields | Update a cartonContent custom fields
+[**addCartonContent**](CartonContentApi.md#addCartonContent) | **POST** /v2.0/cartonContent | Create a cartonContent
+[**deleteCartonContent**](CartonContentApi.md#deleteCartonContent) | **DELETE** /v2.0/cartonContent/{cartonContentId} | Delete a cartonContent
+[**getCartonContentByFilter**](CartonContentApi.md#getCartonContentByFilter) | **GET** /v2.0/cartonContent/search | Search cartonContents by filter
+[**getCartonContentById**](CartonContentApi.md#getCartonContentById) | **GET** /v2.0/cartonContent/{cartonContentId} | Get a cartonContent by id
+[**getDuplicateCartonContentById**](CartonContentApi.md#getDuplicateCartonContentById) | **GET** /v2.0/cartonContent/duplicate/{cartonContentId} | Get a duplicated a cartonContent by id
+[**updateCartonContent**](CartonContentApi.md#updateCartonContent) | **PUT** /v2.0/cartonContent | Update a cartonContent
+[**updateCartonContentCustomFields**](CartonContentApi.md#updateCartonContentCustomFields) | **PUT** /v2.0/cartonContent/customFields | Update a cartonContent custom fields
 
 
 <a name="addCartonContent"></a>
@@ -70,118 +66,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="addCartonContentAudit"></a>
-# **addCartonContentAudit**
-> addCartonContentAudit(cartonContentId, cartonContentAudit)
-
-Add new audit for a cartonContent
-
-Adds an audit to an existing cartonContent.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.CartonContentApi()
-
-var cartonContentId = 56; // {Integer} Id of the cartonContent to add an audit to
-
-var cartonContentAudit = "cartonContentAudit_example"; // {String} The audit to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addCartonContentAudit(cartonContentId, cartonContentAudit, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartonContentId** | **Integer**| Id of the cartonContent to add an audit to | 
- **cartonContentAudit** | **String**| The audit to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="addCartonContentTag"></a>
-# **addCartonContentTag**
-> addCartonContentTag(cartonContentId, cartonContentTag)
-
-Add new tags for a cartonContent.
-
-Adds a tag to an existing cartonContent.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.CartonContentApi()
-
-var cartonContentId = 56; // {Integer} Id of the cartonContent to add a tag to
-
-var cartonContentTag = "cartonContentTag_example"; // {String} The tag to add
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addCartonContentTag(cartonContentId, cartonContentTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartonContentId** | **Integer**| Id of the cartonContent to add a tag to | 
- **cartonContentTag** | **String**| The tag to add | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="deleteCartonContent"></a>
 # **deleteCartonContent**
 > deleteCartonContent(cartonContentId)
@@ -221,62 +105,6 @@ api.deleteCartonContent(cartonContentId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartonContentId** | **Integer**| Id of the cartonContent to be deleted. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteCartonContentTag"></a>
-# **deleteCartonContentTag**
-> deleteCartonContentTag(cartonContentId, cartonContentTag)
-
-Delete a tag for a cartonContent.
-
-Deletes an existing cartonContent tag using the specified data.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.CartonContentApi()
-
-var cartonContentId = 56; // {Integer} Id of the cartonContent to remove tag from
-
-var cartonContentTag = "cartonContentTag_example"; // {String} The tag to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.deleteCartonContentTag(cartonContentId, cartonContentTag, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartonContentId** | **Integer**| Id of the cartonContent to remove tag from | 
- **cartonContentTag** | **String**| The tag to delete | 
 
 ### Return type
 
@@ -394,59 +222,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CartonContent**](CartonContent.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP reuqest headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getCartonContentTags"></a>
-# **getCartonContentTags**
-> getCartonContentTags(cartonContentId)
-
-Get the tags for a cartonContent.
-
-Get all existing cartonContent tags.
-
-### Example
-```javascript
-var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
-
-// Configure API key authorization: api_key
-var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
-
-var apiInstance = new infoplus.CartonContentApi()
-
-var cartonContentId = 56; // {Integer} Id of the cartonContent to get tags for
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getCartonContentTags(cartonContentId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartonContentId** | **Integer**| Id of the cartonContent to get tags for | 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

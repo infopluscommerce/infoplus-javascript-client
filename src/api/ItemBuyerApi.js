@@ -18,7 +18,7 @@
   /**
    * ItemBuyer service.
    * @module api/ItemBuyerApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = ItemBuyer;
 
       return this.apiClient.callApi(
-        '/beta/itemBuyer', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemBuyerAudit operation.
-     * @callback module:api/ItemBuyerApi~addItemBuyerAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for an itemBuyer
-     * Adds an audit to an existing itemBuyer.
-     * @param {Integer} itemBuyerId Id of the itemBuyer to add an audit to
-     * @param {String} itemBuyerAudit The audit to add
-     * @param {module:api/ItemBuyerApi~addItemBuyerAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemBuyerAudit = function(itemBuyerId, itemBuyerAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemBuyerId' is set
-      if (itemBuyerId == undefined || itemBuyerId == null) {
-        throw "Missing the required parameter 'itemBuyerId' when calling addItemBuyerAudit";
-      }
-
-      // verify the required parameter 'itemBuyerAudit' is set
-      if (itemBuyerAudit == undefined || itemBuyerAudit == null) {
-        throw "Missing the required parameter 'itemBuyerAudit' when calling addItemBuyerAudit";
-      }
-
-
-      var pathParams = {
-        'itemBuyerId': itemBuyerId,
-        'itemBuyerAudit': itemBuyerAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemBuyer/{itemBuyerId}/audit/{itemBuyerAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addItemBuyerTag operation.
-     * @callback module:api/ItemBuyerApi~addItemBuyerTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for an itemBuyer.
-     * Adds a tag to an existing itemBuyer.
-     * @param {Integer} itemBuyerId Id of the itemBuyer to add a tag to
-     * @param {String} itemBuyerTag The tag to add
-     * @param {module:api/ItemBuyerApi~addItemBuyerTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addItemBuyerTag = function(itemBuyerId, itemBuyerTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemBuyerId' is set
-      if (itemBuyerId == undefined || itemBuyerId == null) {
-        throw "Missing the required parameter 'itemBuyerId' when calling addItemBuyerTag";
-      }
-
-      // verify the required parameter 'itemBuyerTag' is set
-      if (itemBuyerTag == undefined || itemBuyerTag == null) {
-        throw "Missing the required parameter 'itemBuyerTag' when calling addItemBuyerTag";
-      }
-
-
-      var pathParams = {
-        'itemBuyerId': itemBuyerId,
-        'itemBuyerTag': itemBuyerTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemBuyer/{itemBuyerId}/tag/{itemBuyerTag}', 'PUT',
+        '/v2.0/itemBuyer', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemBuyer/{itemBuyerId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteItemBuyerTag operation.
-     * @callback module:api/ItemBuyerApi~deleteItemBuyerTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for an itemBuyer.
-     * Deletes an existing itemBuyer tag using the specified data.
-     * @param {Integer} itemBuyerId Id of the itemBuyer to remove tag from
-     * @param {String} itemBuyerTag The tag to delete
-     * @param {module:api/ItemBuyerApi~deleteItemBuyerTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteItemBuyerTag = function(itemBuyerId, itemBuyerTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemBuyerId' is set
-      if (itemBuyerId == undefined || itemBuyerId == null) {
-        throw "Missing the required parameter 'itemBuyerId' when calling deleteItemBuyerTag";
-      }
-
-      // verify the required parameter 'itemBuyerTag' is set
-      if (itemBuyerTag == undefined || itemBuyerTag == null) {
-        throw "Missing the required parameter 'itemBuyerTag' when calling deleteItemBuyerTag";
-      }
-
-
-      var pathParams = {
-        'itemBuyerId': itemBuyerId,
-        'itemBuyerTag': itemBuyerTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemBuyer/{itemBuyerId}/tag/{itemBuyerTag}', 'DELETE',
+        '/v2.0/itemBuyer/{itemBuyerId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = ItemBuyer;
 
       return this.apiClient.callApi(
-        '/beta/itemBuyer/duplicate/{itemBuyerId}', 'GET',
+        '/v2.0/itemBuyer/duplicate/{itemBuyerId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [ItemBuyer];
 
       return this.apiClient.callApi(
-        '/beta/itemBuyer/search', 'GET',
+        '/v2.0/itemBuyer/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = ItemBuyer;
 
       return this.apiClient.callApi(
-        '/beta/itemBuyer/{itemBuyerId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getItemBuyerTags operation.
-     * @callback module:api/ItemBuyerApi~getItemBuyerTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for an itemBuyer.
-     * Get all existing itemBuyer tags.
-     * @param {Integer} itemBuyerId Id of the itemBuyer to get tags for
-     * @param {module:api/ItemBuyerApi~getItemBuyerTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getItemBuyerTags = function(itemBuyerId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'itemBuyerId' is set
-      if (itemBuyerId == undefined || itemBuyerId == null) {
-        throw "Missing the required parameter 'itemBuyerId' when calling getItemBuyerTags";
-      }
-
-
-      var pathParams = {
-        'itemBuyerId': itemBuyerId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/itemBuyer/{itemBuyerId}/tag', 'GET',
+        '/v2.0/itemBuyer/{itemBuyerId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/itemBuyer', 'PUT',
+        '/v2.0/itemBuyer', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -18,7 +18,7 @@
   /**
    * The CarrierService model module.
    * @module model/CarrierService
-   * @version beta
+   * @version v2.0
    */
 
   /**

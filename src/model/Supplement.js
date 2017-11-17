@@ -18,7 +18,7 @@
   /**
    * The Supplement model module.
    * @module model/Supplement
-   * @version beta
+   * @version v2.0
    */
 
   /**

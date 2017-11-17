@@ -18,7 +18,7 @@
   /**
    * LocationFootprint service.
    * @module api/LocationFootprintApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = LocationFootprint;
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLocationFootprintAudit operation.
-     * @callback module:api/LocationFootprintApi~addLocationFootprintAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a locationFootprint
-     * Adds an audit to an existing locationFootprint.
-     * @param {Integer} locationFootprintId Id of the locationFootprint to add an audit to
-     * @param {String} locationFootprintAudit The audit to add
-     * @param {module:api/LocationFootprintApi~addLocationFootprintAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLocationFootprintAudit = function(locationFootprintId, locationFootprintAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationFootprintId' is set
-      if (locationFootprintId == undefined || locationFootprintId == null) {
-        throw "Missing the required parameter 'locationFootprintId' when calling addLocationFootprintAudit";
-      }
-
-      // verify the required parameter 'locationFootprintAudit' is set
-      if (locationFootprintAudit == undefined || locationFootprintAudit == null) {
-        throw "Missing the required parameter 'locationFootprintAudit' when calling addLocationFootprintAudit";
-      }
-
-
-      var pathParams = {
-        'locationFootprintId': locationFootprintId,
-        'locationFootprintAudit': locationFootprintAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/locationFootprint/{locationFootprintId}/audit/{locationFootprintAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLocationFootprintTag operation.
-     * @callback module:api/LocationFootprintApi~addLocationFootprintTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a locationFootprint.
-     * Adds a tag to an existing locationFootprint.
-     * @param {Integer} locationFootprintId Id of the locationFootprint to add a tag to
-     * @param {String} locationFootprintTag The tag to add
-     * @param {module:api/LocationFootprintApi~addLocationFootprintTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLocationFootprintTag = function(locationFootprintId, locationFootprintTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationFootprintId' is set
-      if (locationFootprintId == undefined || locationFootprintId == null) {
-        throw "Missing the required parameter 'locationFootprintId' when calling addLocationFootprintTag";
-      }
-
-      // verify the required parameter 'locationFootprintTag' is set
-      if (locationFootprintTag == undefined || locationFootprintTag == null) {
-        throw "Missing the required parameter 'locationFootprintTag' when calling addLocationFootprintTag";
-      }
-
-
-      var pathParams = {
-        'locationFootprintId': locationFootprintId,
-        'locationFootprintTag': locationFootprintTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/locationFootprint/{locationFootprintId}/tag/{locationFootprintTag}', 'PUT',
+        '/v2.0/locationFootprint', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint/{locationFootprintId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteLocationFootprintTag operation.
-     * @callback module:api/LocationFootprintApi~deleteLocationFootprintTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a locationFootprint.
-     * Deletes an existing locationFootprint tag using the specified data.
-     * @param {Integer} locationFootprintId Id of the locationFootprint to remove tag from
-     * @param {String} locationFootprintTag The tag to delete
-     * @param {module:api/LocationFootprintApi~deleteLocationFootprintTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteLocationFootprintTag = function(locationFootprintId, locationFootprintTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationFootprintId' is set
-      if (locationFootprintId == undefined || locationFootprintId == null) {
-        throw "Missing the required parameter 'locationFootprintId' when calling deleteLocationFootprintTag";
-      }
-
-      // verify the required parameter 'locationFootprintTag' is set
-      if (locationFootprintTag == undefined || locationFootprintTag == null) {
-        throw "Missing the required parameter 'locationFootprintTag' when calling deleteLocationFootprintTag";
-      }
-
-
-      var pathParams = {
-        'locationFootprintId': locationFootprintId,
-        'locationFootprintTag': locationFootprintTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/locationFootprint/{locationFootprintId}/tag/{locationFootprintTag}', 'DELETE',
+        '/v2.0/locationFootprint/{locationFootprintId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = LocationFootprint;
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint/duplicate/{locationFootprintId}', 'GET',
+        '/v2.0/locationFootprint/duplicate/{locationFootprintId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [LocationFootprint];
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint/search', 'GET',
+        '/v2.0/locationFootprint/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = LocationFootprint;
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint/{locationFootprintId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getLocationFootprintTags operation.
-     * @callback module:api/LocationFootprintApi~getLocationFootprintTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a locationFootprint.
-     * Get all existing locationFootprint tags.
-     * @param {Integer} locationFootprintId Id of the locationFootprint to get tags for
-     * @param {module:api/LocationFootprintApi~getLocationFootprintTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getLocationFootprintTags = function(locationFootprintId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'locationFootprintId' is set
-      if (locationFootprintId == undefined || locationFootprintId == null) {
-        throw "Missing the required parameter 'locationFootprintId' when calling getLocationFootprintTags";
-      }
-
-
-      var pathParams = {
-        'locationFootprintId': locationFootprintId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/locationFootprint/{locationFootprintId}/tag', 'GET',
+        '/v2.0/locationFootprint/{locationFootprintId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint', 'PUT',
+        '/v2.0/locationFootprint', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/locationFootprint/customFields', 'PUT',
+        '/v2.0/locationFootprint/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

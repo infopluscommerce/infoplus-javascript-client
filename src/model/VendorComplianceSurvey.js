@@ -18,7 +18,7 @@
   /**
    * The VendorComplianceSurvey model module.
    * @module model/VendorComplianceSurvey
-   * @version beta
+   * @version v2.0
    */
 
   /**

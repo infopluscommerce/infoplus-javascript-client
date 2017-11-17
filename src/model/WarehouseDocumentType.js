@@ -18,7 +18,7 @@
   /**
    * The WarehouseDocumentType model module.
    * @module model/WarehouseDocumentType
-   * @version beta
+   * @version v2.0
    */
 
   /**

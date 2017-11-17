@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
 **warehouseId** | **Integer** |  | 
-**lastRunTime** | **Date** |  | [optional] 
 **orderSmartFilterId** | **Integer** |  | 
 **locationSmartFilterId** | **Integer** |  | [optional] 
 **maximumNumberOfOrders** | **Integer** |  | [optional] 
@@ -30,13 +29,9 @@ Name | Type | Description | Notes
 **cartonizeOrders** | **Boolean** |  | [default to false]
 **autoShipCasebreakCartons** | **Boolean** |  | [optional] [default to false]
 **preGenerateParcelLabels** | **Boolean** |  | [optional] [default to false]
-**createPackingSlip** | **String** |  | 
 **overridePackingSlipTemplateId** | **Integer** |  | [optional] 
+**createPackingSlip** | **Boolean** |  | [default to false]
 **createOrderAssemblyGuide** | **Boolean** |  | [optional] [default to false]
-**createOrderInvoice** | **String** |  | 
-**overrideOrderInvoiceTemplateId** | **Integer** |  | [optional] 
-**sendToExternalShippingSystem** | **Boolean** |  | [default to false]
-**externalShippingSystemId** | **Integer** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

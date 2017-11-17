@@ -18,7 +18,7 @@
   /**
    * JobTime service.
    * @module api/JobTimeApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = JobTime;
 
       return this.apiClient.callApi(
-        '/beta/jobTime', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addJobTimeAudit operation.
-     * @callback module:api/JobTimeApi~addJobTimeAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a jobTime
-     * Adds an audit to an existing jobTime.
-     * @param {Integer} jobTimeId Id of the jobTime to add an audit to
-     * @param {String} jobTimeAudit The audit to add
-     * @param {module:api/JobTimeApi~addJobTimeAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addJobTimeAudit = function(jobTimeId, jobTimeAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'jobTimeId' is set
-      if (jobTimeId == undefined || jobTimeId == null) {
-        throw "Missing the required parameter 'jobTimeId' when calling addJobTimeAudit";
-      }
-
-      // verify the required parameter 'jobTimeAudit' is set
-      if (jobTimeAudit == undefined || jobTimeAudit == null) {
-        throw "Missing the required parameter 'jobTimeAudit' when calling addJobTimeAudit";
-      }
-
-
-      var pathParams = {
-        'jobTimeId': jobTimeId,
-        'jobTimeAudit': jobTimeAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/jobTime/{jobTimeId}/audit/{jobTimeAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addJobTimeTag operation.
-     * @callback module:api/JobTimeApi~addJobTimeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a jobTime.
-     * Adds a tag to an existing jobTime.
-     * @param {Integer} jobTimeId Id of the jobTime to add a tag to
-     * @param {String} jobTimeTag The tag to add
-     * @param {module:api/JobTimeApi~addJobTimeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addJobTimeTag = function(jobTimeId, jobTimeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'jobTimeId' is set
-      if (jobTimeId == undefined || jobTimeId == null) {
-        throw "Missing the required parameter 'jobTimeId' when calling addJobTimeTag";
-      }
-
-      // verify the required parameter 'jobTimeTag' is set
-      if (jobTimeTag == undefined || jobTimeTag == null) {
-        throw "Missing the required parameter 'jobTimeTag' when calling addJobTimeTag";
-      }
-
-
-      var pathParams = {
-        'jobTimeId': jobTimeId,
-        'jobTimeTag': jobTimeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/jobTime/{jobTimeId}/tag/{jobTimeTag}', 'PUT',
+        '/v2.0/jobTime', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/jobTime/{jobTimeId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteJobTimeTag operation.
-     * @callback module:api/JobTimeApi~deleteJobTimeTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a jobTime.
-     * Deletes an existing jobTime tag using the specified data.
-     * @param {Integer} jobTimeId Id of the jobTime to remove tag from
-     * @param {String} jobTimeTag The tag to delete
-     * @param {module:api/JobTimeApi~deleteJobTimeTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteJobTimeTag = function(jobTimeId, jobTimeTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'jobTimeId' is set
-      if (jobTimeId == undefined || jobTimeId == null) {
-        throw "Missing the required parameter 'jobTimeId' when calling deleteJobTimeTag";
-      }
-
-      // verify the required parameter 'jobTimeTag' is set
-      if (jobTimeTag == undefined || jobTimeTag == null) {
-        throw "Missing the required parameter 'jobTimeTag' when calling deleteJobTimeTag";
-      }
-
-
-      var pathParams = {
-        'jobTimeId': jobTimeId,
-        'jobTimeTag': jobTimeTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/jobTime/{jobTimeId}/tag/{jobTimeTag}', 'DELETE',
+        '/v2.0/jobTime/{jobTimeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = JobTime;
 
       return this.apiClient.callApi(
-        '/beta/jobTime/duplicate/{jobTimeId}', 'GET',
+        '/v2.0/jobTime/duplicate/{jobTimeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [JobTime];
 
       return this.apiClient.callApi(
-        '/beta/jobTime/search', 'GET',
+        '/v2.0/jobTime/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = JobTime;
 
       return this.apiClient.callApi(
-        '/beta/jobTime/{jobTimeId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getJobTimeTags operation.
-     * @callback module:api/JobTimeApi~getJobTimeTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a jobTime.
-     * Get all existing jobTime tags.
-     * @param {Integer} jobTimeId Id of the jobTime to get tags for
-     * @param {module:api/JobTimeApi~getJobTimeTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getJobTimeTags = function(jobTimeId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'jobTimeId' is set
-      if (jobTimeId == undefined || jobTimeId == null) {
-        throw "Missing the required parameter 'jobTimeId' when calling getJobTimeTags";
-      }
-
-
-      var pathParams = {
-        'jobTimeId': jobTimeId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/jobTime/{jobTimeId}/tag', 'GET',
+        '/v2.0/jobTime/{jobTimeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/jobTime', 'PUT',
+        '/v2.0/jobTime', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -546,7 +345,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/jobTime/customFields', 'PUT',
+        '/v2.0/jobTime/customFields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

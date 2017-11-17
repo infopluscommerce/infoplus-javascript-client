@@ -18,7 +18,7 @@
   /**
    * LegacyLowstockContact service.
    * @module api/LegacyLowstockContactApi
-   * @version beta
+   * @version v2.0
    */
 
   /**
@@ -71,111 +71,7 @@
       var returnType = LegacyLowstockContact;
 
       return this.apiClient.callApi(
-        '/beta/legacyLowstockContact', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLegacyLowstockContactAudit operation.
-     * @callback module:api/LegacyLowstockContactApi~addLegacyLowstockContactAuditCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new audit for a legacyLowstockContact
-     * Adds an audit to an existing legacyLowstockContact.
-     * @param {Integer} legacyLowstockContactId Id of the legacyLowstockContact to add an audit to
-     * @param {String} legacyLowstockContactAudit The audit to add
-     * @param {module:api/LegacyLowstockContactApi~addLegacyLowstockContactAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLegacyLowstockContactAudit = function(legacyLowstockContactId, legacyLowstockContactAudit, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'legacyLowstockContactId' is set
-      if (legacyLowstockContactId == undefined || legacyLowstockContactId == null) {
-        throw "Missing the required parameter 'legacyLowstockContactId' when calling addLegacyLowstockContactAudit";
-      }
-
-      // verify the required parameter 'legacyLowstockContactAudit' is set
-      if (legacyLowstockContactAudit == undefined || legacyLowstockContactAudit == null) {
-        throw "Missing the required parameter 'legacyLowstockContactAudit' when calling addLegacyLowstockContactAudit";
-      }
-
-
-      var pathParams = {
-        'legacyLowstockContactId': legacyLowstockContactId,
-        'legacyLowstockContactAudit': legacyLowstockContactAudit
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/{legacyLowstockContactId}/audit/{legacyLowstockContactAudit}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the addLegacyLowstockContactTag operation.
-     * @callback module:api/LegacyLowstockContactApi~addLegacyLowstockContactTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Add new tags for a legacyLowstockContact.
-     * Adds a tag to an existing legacyLowstockContact.
-     * @param {Integer} legacyLowstockContactId Id of the legacyLowstockContact to add a tag to
-     * @param {String} legacyLowstockContactTag The tag to add
-     * @param {module:api/LegacyLowstockContactApi~addLegacyLowstockContactTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.addLegacyLowstockContactTag = function(legacyLowstockContactId, legacyLowstockContactTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'legacyLowstockContactId' is set
-      if (legacyLowstockContactId == undefined || legacyLowstockContactId == null) {
-        throw "Missing the required parameter 'legacyLowstockContactId' when calling addLegacyLowstockContactTag";
-      }
-
-      // verify the required parameter 'legacyLowstockContactTag' is set
-      if (legacyLowstockContactTag == undefined || legacyLowstockContactTag == null) {
-        throw "Missing the required parameter 'legacyLowstockContactTag' when calling addLegacyLowstockContactTag";
-      }
-
-
-      var pathParams = {
-        'legacyLowstockContactId': legacyLowstockContactId,
-        'legacyLowstockContactTag': legacyLowstockContactTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/{legacyLowstockContactId}/tag/{legacyLowstockContactTag}', 'PUT',
+        '/v2.0/legacyLowstockContact', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -220,59 +116,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/{legacyLowstockContactId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deleteLegacyLowstockContactTag operation.
-     * @callback module:api/LegacyLowstockContactApi~deleteLegacyLowstockContactTagCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a tag for a legacyLowstockContact.
-     * Deletes an existing legacyLowstockContact tag using the specified data.
-     * @param {Integer} legacyLowstockContactId Id of the legacyLowstockContact to remove tag from
-     * @param {String} legacyLowstockContactTag The tag to delete
-     * @param {module:api/LegacyLowstockContactApi~deleteLegacyLowstockContactTagCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.deleteLegacyLowstockContactTag = function(legacyLowstockContactId, legacyLowstockContactTag, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'legacyLowstockContactId' is set
-      if (legacyLowstockContactId == undefined || legacyLowstockContactId == null) {
-        throw "Missing the required parameter 'legacyLowstockContactId' when calling deleteLegacyLowstockContactTag";
-      }
-
-      // verify the required parameter 'legacyLowstockContactTag' is set
-      if (legacyLowstockContactTag == undefined || legacyLowstockContactTag == null) {
-        throw "Missing the required parameter 'legacyLowstockContactTag' when calling deleteLegacyLowstockContactTag";
-      }
-
-
-      var pathParams = {
-        'legacyLowstockContactId': legacyLowstockContactId,
-        'legacyLowstockContactTag': legacyLowstockContactTag
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/{legacyLowstockContactId}/tag/{legacyLowstockContactTag}', 'DELETE',
+        '/v2.0/legacyLowstockContact/{legacyLowstockContactId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -318,7 +162,7 @@
       var returnType = LegacyLowstockContact;
 
       return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/duplicate/{legacyLowstockContactId}', 'GET',
+        '/v2.0/legacyLowstockContact/duplicate/{legacyLowstockContactId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -367,7 +211,7 @@
       var returnType = [LegacyLowstockContact];
 
       return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/search', 'GET',
+        '/v2.0/legacyLowstockContact/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -413,52 +257,7 @@
       var returnType = LegacyLowstockContact;
 
       return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/{legacyLowstockContactId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getLegacyLowstockContactTags operation.
-     * @callback module:api/LegacyLowstockContactApi~getLegacyLowstockContactTagsCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the tags for a legacyLowstockContact.
-     * Get all existing legacyLowstockContact tags.
-     * @param {Integer} legacyLowstockContactId Id of the legacyLowstockContact to get tags for
-     * @param {module:api/LegacyLowstockContactApi~getLegacyLowstockContactTagsCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getLegacyLowstockContactTags = function(legacyLowstockContactId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'legacyLowstockContactId' is set
-      if (legacyLowstockContactId == undefined || legacyLowstockContactId == null) {
-        throw "Missing the required parameter 'legacyLowstockContactId' when calling getLegacyLowstockContactTags";
-      }
-
-
-      var pathParams = {
-        'legacyLowstockContactId': legacyLowstockContactId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/beta/legacyLowstockContact/{legacyLowstockContactId}/tag', 'GET',
+        '/v2.0/legacyLowstockContact/{legacyLowstockContactId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -502,7 +301,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/beta/legacyLowstockContact', 'PUT',
+        '/v2.0/legacyLowstockContact', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
