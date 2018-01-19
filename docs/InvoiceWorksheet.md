@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **name** | **String** |  | 
@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **terms** | **String** |  | [optional] 
 **specialInstructions** | **String** |  | [optional] 
 **total** | **Number** |  | [optional] 
-**lobId** | **Integer** |  | 
-**customerInvoiceTemplateId** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | 
+**customerInvoiceTemplateId** | **Number** |  | [optional] 
 **startDate** | **Date** |  | [optional] 
 **endDate** | **Date** |  | [optional] 
 **issueDate** | **Date** |  | [optional] 

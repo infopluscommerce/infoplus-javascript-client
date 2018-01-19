@@ -28,17 +28,17 @@ Inserts a new receivingWorksheet using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var body = new infoplus.ReceivingWorksheet(); // {ReceivingWorksheet} ReceivingWorksheet to be inserted.
+var body = new infoplus.ReceivingWorksheet(); // ReceivingWorksheet | ReceivingWorksheet to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -48,7 +48,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addReceivingWorksheet(body, callback);
+apiInstance.addReceivingWorksheet(body, callback);
 ```
 
 ### Parameters
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -81,19 +81,19 @@ Adds an audit to an existing receivingWorksheet.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to add an audit to
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to add an audit to
 
-var receivingWorksheetAudit = "receivingWorksheetAudit_example"; // {String} The audit to add
+var receivingWorksheetAudit = "receivingWorksheetAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -103,14 +103,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addReceivingWorksheetAudit(receivingWorksheetId, receivingWorksheetAudit, callback);
+apiInstance.addReceivingWorksheetAudit(receivingWorksheetId, receivingWorksheetAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to add an audit to | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to add an audit to | 
  **receivingWorksheetAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -121,7 +121,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -137,19 +137,19 @@ Adds a tag to an existing receivingWorksheet.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to add a tag to
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to add a tag to
 
-var receivingWorksheetTag = "receivingWorksheetTag_example"; // {String} The tag to add
+var receivingWorksheetTag = "receivingWorksheetTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -159,14 +159,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addReceivingWorksheetTag(receivingWorksheetId, receivingWorksheetTag, callback);
+apiInstance.addReceivingWorksheetTag(receivingWorksheetId, receivingWorksheetTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to add a tag to | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to add a tag to | 
  **receivingWorksheetTag** | **String**| The tag to add | 
 
 ### Return type
@@ -177,7 +177,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -193,17 +193,17 @@ Deletes the receivingWorksheet identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to be deleted.
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -213,14 +213,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteReceivingWorksheet(receivingWorksheetId, callback);
+apiInstance.deleteReceivingWorksheet(receivingWorksheetId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to be deleted. | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to be deleted. | 
 
 ### Return type
 
@@ -230,7 +230,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -246,19 +246,19 @@ Deletes an existing receivingWorksheet tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to remove tag from
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to remove tag from
 
-var receivingWorksheetTag = "receivingWorksheetTag_example"; // {String} The tag to delete
+var receivingWorksheetTag = "receivingWorksheetTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -268,14 +268,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteReceivingWorksheetTag(receivingWorksheetId, receivingWorksheetTag, callback);
+apiInstance.deleteReceivingWorksheetTag(receivingWorksheetId, receivingWorksheetTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to remove tag from | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to remove tag from | 
  **receivingWorksheetTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -286,7 +286,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -302,17 +302,17 @@ Returns a duplicated receivingWorksheet identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to be duplicated.
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -322,14 +322,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateReceivingWorksheetById(receivingWorksheetId, callback);
+apiInstance.getDuplicateReceivingWorksheetById(receivingWorksheetId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to be duplicated. | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to be duplicated. | 
 
 ### Return type
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -355,21 +355,21 @@ Returns the list of receivingWorksheets that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -379,7 +379,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getReceivingWorksheetByFilter(opts, callback);
+apiInstance.getReceivingWorksheetByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -387,8 +387,8 @@ api.getReceivingWorksheetByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -415,17 +415,17 @@ Returns the receivingWorksheet identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to be returned.
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to be returned.
 
 
 var callback = function(error, data, response) {
@@ -435,14 +435,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getReceivingWorksheetById(receivingWorksheetId, callback);
+apiInstance.getReceivingWorksheetById(receivingWorksheetId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to be returned. | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to be returned. | 
 
 ### Return type
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -468,17 +468,17 @@ Get all existing receivingWorksheet tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var receivingWorksheetId = 56; // {Integer} Id of the receivingWorksheet to get tags for
+var receivingWorksheetId = 56; // Number | Id of the receivingWorksheet to get tags for
 
 
 var callback = function(error, data, response) {
@@ -488,14 +488,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getReceivingWorksheetTags(receivingWorksheetId, callback);
+apiInstance.getReceivingWorksheetTags(receivingWorksheetId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingWorksheetId** | **Integer**| Id of the receivingWorksheet to get tags for | 
+ **receivingWorksheetId** | **Number**| Id of the receivingWorksheet to get tags for | 
 
 ### Return type
 
@@ -505,7 +505,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -521,17 +521,17 @@ Updates an existing receivingWorksheet using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var body = new infoplus.ReceivingWorksheet(); // {ReceivingWorksheet} ReceivingWorksheet to be updated.
+var body = new infoplus.ReceivingWorksheet(); // ReceivingWorksheet | ReceivingWorksheet to be updated.
 
 
 var callback = function(error, data, response) {
@@ -541,7 +541,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateReceivingWorksheet(body, callback);
+apiInstance.updateReceivingWorksheet(body, callback);
 ```
 
 ### Parameters
@@ -558,7 +558,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -574,17 +574,17 @@ Updates an existing receivingWorksheet custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingWorksheetApi()
+var apiInstance = new infoplus.ReceivingWorksheetApi();
 
-var body = new infoplus.ReceivingWorksheet(); // {ReceivingWorksheet} ReceivingWorksheet to be updated.
+var body = new infoplus.ReceivingWorksheet(); // ReceivingWorksheet | ReceivingWorksheet to be updated.
 
 
 var callback = function(error, data, response) {
@@ -594,7 +594,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateReceivingWorksheetCustomFields(body, callback);
+apiInstance.updateReceivingWorksheetCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -611,7 +611,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

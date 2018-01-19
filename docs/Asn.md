@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | 
+**lobId** | **Number** |  | 
 **poNo** | **String** |  | 
-**vendorId** | **Integer** |  | 
-**warehouseId** | **Integer** |  | 
+**vendorId** | **Number** |  | 
+**warehouseId** | **Number** |  | 
 **orderDate** | **Date** |  | 
 **type** | **String** |  | 
 **billingName** | **String** |  | [optional] 
@@ -36,12 +36,12 @@ Name | Type | Description | Notes
 **corporateState** | **String** |  | [optional] 
 **corporateZipCode** | **String** |  | [optional] 
 **accountCode** | **String** |  | [optional] 
-**buyer** | **Integer** |  | [optional] 
-**carrier** | **Integer** |  | [optional] 
+**buyer** | **Number** |  | [optional] 
+**carrier** | **Number** |  | [optional] 
 **confTo** | **String** |  | [optional] 
 **fob** | **String** |  | [optional] 
 **printed** | **String** |  | [optional] 
-**projectNo** | **Integer** |  | [optional] 
+**projectNo** | **Number** |  | [optional] 
 **remarks** | **String** |  | [optional] 
 **requestBy** | **String** |  | [optional] 
 **terms** | **String** |  | [optional] 

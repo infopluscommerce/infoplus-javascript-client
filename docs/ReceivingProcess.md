@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**warehouseId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**warehouseId** | **Number** |  | 
 **status** | **String** |  | 
-**workBatchId** | **Integer** |  | [optional] 
-**receivingWorksheetId** | **Integer** |  | [optional] 
+**workBatchId** | **Number** |  | [optional] 
+**receivingWorksheetId** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

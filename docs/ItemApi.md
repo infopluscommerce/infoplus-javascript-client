@@ -29,17 +29,17 @@ Inserts a new item using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var body = new infoplus.Item(); // {Item} Item to be inserted.
+var body = new infoplus.Item(); // Item | Item to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -49,7 +49,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addItem(body, callback);
+apiInstance.addItem(body, callback);
 ```
 
 ### Parameters
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -82,19 +82,19 @@ Adds an audit to an existing item.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to add an audit to
+var itemId = 56; // Number | Id of the item to add an audit to
 
-var itemAudit = "itemAudit_example"; // {String} The audit to add
+var itemAudit = "itemAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -104,14 +104,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addItemAudit(itemId, itemAudit, callback);
+apiInstance.addItemAudit(itemId, itemAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to add an audit to | 
+ **itemId** | **Number**| Id of the item to add an audit to | 
  **itemAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -122,7 +122,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -138,19 +138,19 @@ Adds a tag to an existing item.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to add a tag to
+var itemId = 56; // Number | Id of the item to add a tag to
 
-var itemTag = "itemTag_example"; // {String} The tag to add
+var itemTag = "itemTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -160,14 +160,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addItemTag(itemId, itemTag, callback);
+apiInstance.addItemTag(itemId, itemTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to add a tag to | 
+ **itemId** | **Number**| Id of the item to add a tag to | 
  **itemTag** | **String**| The tag to add | 
 
 ### Return type
@@ -178,7 +178,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -194,17 +194,17 @@ Deletes the item identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to be deleted.
+var itemId = 56; // Number | Id of the item to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -214,14 +214,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteItem(itemId, callback);
+apiInstance.deleteItem(itemId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to be deleted. | 
+ **itemId** | **Number**| Id of the item to be deleted. | 
 
 ### Return type
 
@@ -231,7 +231,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -247,19 +247,19 @@ Deletes an existing item tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to remove tag from
+var itemId = 56; // Number | Id of the item to remove tag from
 
-var itemTag = "itemTag_example"; // {String} The tag to delete
+var itemTag = "itemTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -269,14 +269,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteItemTag(itemId, itemTag, callback);
+apiInstance.deleteItemTag(itemId, itemTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to remove tag from | 
+ **itemId** | **Number**| Id of the item to remove tag from | 
  **itemTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -287,7 +287,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -303,19 +303,19 @@ Returns the item identified by the specified parameters.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var lobId = 56; // {Integer} lobId of the item to be returned.
+var lobId = 56; // Number | lobId of the item to be returned.
 
-var sku = "sku_example"; // {String} sku of the item to be returned.
+var sku = "sku_example"; // String | sku of the item to be returned.
 
 
 var callback = function(error, data, response) {
@@ -325,14 +325,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getBySKU(lobId, sku, callback);
+apiInstance.getBySKU(lobId, sku, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lobId** | **Integer**| lobId of the item to be returned. | 
+ **lobId** | **Number**| lobId of the item to be returned. | 
  **sku** | **String**| sku of the item to be returned. | 
 
 ### Return type
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -359,17 +359,17 @@ Returns a duplicated item identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to be duplicated.
+var itemId = 56; // Number | Id of the item to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -379,14 +379,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateItemById(itemId, callback);
+apiInstance.getDuplicateItemById(itemId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to be duplicated. | 
+ **itemId** | **Number**| Id of the item to be duplicated. | 
 
 ### Return type
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -412,21 +412,21 @@ Returns the list of items that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -436,7 +436,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getItemByFilter(opts, callback);
+apiInstance.getItemByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -444,8 +444,8 @@ api.getItemByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -472,17 +472,17 @@ Returns the item identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to be returned.
+var itemId = 56; // Number | Id of the item to be returned.
 
 
 var callback = function(error, data, response) {
@@ -492,14 +492,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getItemById(itemId, callback);
+apiInstance.getItemById(itemId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to be returned. | 
+ **itemId** | **Number**| Id of the item to be returned. | 
 
 ### Return type
 
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -525,17 +525,17 @@ Get all existing item tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var itemId = 56; // {Integer} Id of the item to get tags for
+var itemId = 56; // Number | Id of the item to get tags for
 
 
 var callback = function(error, data, response) {
@@ -545,14 +545,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getItemTags(itemId, callback);
+apiInstance.getItemTags(itemId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemId** | **Integer**| Id of the item to get tags for | 
+ **itemId** | **Number**| Id of the item to get tags for | 
 
 ### Return type
 
@@ -562,7 +562,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -578,17 +578,17 @@ Updates an existing item using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var body = new infoplus.Item(); // {Item} Item to be updated.
+var body = new infoplus.Item(); // Item | Item to be updated.
 
 
 var callback = function(error, data, response) {
@@ -598,7 +598,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateItem(body, callback);
+apiInstance.updateItem(body, callback);
 ```
 
 ### Parameters
@@ -615,7 +615,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -631,17 +631,17 @@ Updates an existing item custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemApi()
+var apiInstance = new infoplus.ItemApi();
 
-var body = new infoplus.Item(); // {Item} Item to be updated.
+var body = new infoplus.Item(); // Item | Item to be updated.
 
 
 var callback = function(error, data, response) {
@@ -651,7 +651,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateItemCustomFields(body, callback);
+apiInstance.updateItemCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -668,7 +668,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

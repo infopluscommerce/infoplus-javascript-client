@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**scheduledPlanId** | **Integer** |  | [optional] 
+**scheduledPlanId** | **Number** |  | [optional] 
 **startTime** | **Date** |  | [optional] 
 **endTime** | **Date** |  | [optional] 
 **status** | **String** |  | 

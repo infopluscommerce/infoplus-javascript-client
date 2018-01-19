@@ -27,17 +27,17 @@ Inserts a new orderLineActivity using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var body = new infoplus.OrderLineActivity(); // {OrderLineActivity} OrderLineActivity to be inserted.
+var body = new infoplus.OrderLineActivity(); // OrderLineActivity | OrderLineActivity to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -47,7 +47,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addOrderLineActivity(body, callback);
+apiInstance.addOrderLineActivity(body, callback);
 ```
 
 ### Parameters
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -80,19 +80,19 @@ Adds an audit to an existing orderLineActivity.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to add an audit to
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to add an audit to
 
-var orderLineActivityAudit = "orderLineActivityAudit_example"; // {String} The audit to add
+var orderLineActivityAudit = "orderLineActivityAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -102,14 +102,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addOrderLineActivityAudit(orderLineActivityId, orderLineActivityAudit, callback);
+apiInstance.addOrderLineActivityAudit(orderLineActivityId, orderLineActivityAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to add an audit to | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to add an audit to | 
  **orderLineActivityAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -120,7 +120,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -136,19 +136,19 @@ Adds a tag to an existing orderLineActivity.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to add a tag to
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to add a tag to
 
-var orderLineActivityTag = "orderLineActivityTag_example"; // {String} The tag to add
+var orderLineActivityTag = "orderLineActivityTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -158,14 +158,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addOrderLineActivityTag(orderLineActivityId, orderLineActivityTag, callback);
+apiInstance.addOrderLineActivityTag(orderLineActivityId, orderLineActivityTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to add a tag to | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to add a tag to | 
  **orderLineActivityTag** | **String**| The tag to add | 
 
 ### Return type
@@ -176,7 +176,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -192,17 +192,17 @@ Deletes the orderLineActivity identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to be deleted.
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -212,14 +212,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteOrderLineActivity(orderLineActivityId, callback);
+apiInstance.deleteOrderLineActivity(orderLineActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to be deleted. | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to be deleted. | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -245,19 +245,19 @@ Deletes an existing orderLineActivity tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to remove tag from
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to remove tag from
 
-var orderLineActivityTag = "orderLineActivityTag_example"; // {String} The tag to delete
+var orderLineActivityTag = "orderLineActivityTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -267,14 +267,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteOrderLineActivityTag(orderLineActivityId, orderLineActivityTag, callback);
+apiInstance.deleteOrderLineActivityTag(orderLineActivityId, orderLineActivityTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to remove tag from | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to remove tag from | 
  **orderLineActivityTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -285,7 +285,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -301,17 +301,17 @@ Returns a duplicated orderLineActivity identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to be duplicated.
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -321,14 +321,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateOrderLineActivityById(orderLineActivityId, callback);
+apiInstance.getDuplicateOrderLineActivityById(orderLineActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to be duplicated. | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to be duplicated. | 
 
 ### Return type
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -354,21 +354,21 @@ Returns the list of orderLineActivitys that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -378,7 +378,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getOrderLineActivityByFilter(opts, callback);
+apiInstance.getOrderLineActivityByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -386,8 +386,8 @@ api.getOrderLineActivityByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -414,17 +414,17 @@ Returns the orderLineActivity identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to be returned.
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to be returned.
 
 
 var callback = function(error, data, response) {
@@ -434,14 +434,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getOrderLineActivityById(orderLineActivityId, callback);
+apiInstance.getOrderLineActivityById(orderLineActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to be returned. | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to be returned. | 
 
 ### Return type
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -467,17 +467,17 @@ Get all existing orderLineActivity tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var orderLineActivityId = 56; // {Integer} Id of the orderLineActivity to get tags for
+var orderLineActivityId = 56; // Number | Id of the orderLineActivity to get tags for
 
 
 var callback = function(error, data, response) {
@@ -487,14 +487,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getOrderLineActivityTags(orderLineActivityId, callback);
+apiInstance.getOrderLineActivityTags(orderLineActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderLineActivityId** | **Integer**| Id of the orderLineActivity to get tags for | 
+ **orderLineActivityId** | **Number**| Id of the orderLineActivity to get tags for | 
 
 ### Return type
 
@@ -504,7 +504,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -520,17 +520,17 @@ Updates an existing orderLineActivity using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLineActivityApi()
+var apiInstance = new infoplus.OrderLineActivityApi();
 
-var body = new infoplus.OrderLineActivity(); // {OrderLineActivity} OrderLineActivity to be updated.
+var body = new infoplus.OrderLineActivity(); // OrderLineActivity | OrderLineActivity to be updated.
 
 
 var callback = function(error, data, response) {
@@ -540,7 +540,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateOrderLineActivity(body, callback);
+apiInstance.updateOrderLineActivity(body, callback);
 ```
 
 ### Parameters
@@ -557,7 +557,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

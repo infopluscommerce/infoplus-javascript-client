@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lobId** | **Integer** |  | 
-**id** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | 
+**id** | **Number** |  | [optional] 
 **kitSKU** | **String** |  | 
 **packagingType** | **String** |  | [optional] 
 **other** | **String** |  | [optional] 
-**numberOfComponents** | **Integer** |  | [optional] 
+**numberOfComponents** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **line1** | **String** |  | [optional] 
@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 **line6** | **String** |  | [optional] 
 **line7** | **String** |  | [optional] 
 **line8** | **String** |  | [optional] 
-**touches** | **Integer** |  | 
-**minInvQty** | **Integer** |  | [optional] 
-**midInvQty** | **Integer** |  | [optional] 
-**maxInvQty** | **Integer** |  | [optional] 
+**touches** | **Number** |  | 
+**minInvQty** | **Number** |  | [optional] 
+**midInvQty** | **Number** |  | [optional] 
+**maxInvQty** | **Number** |  | [optional] 
 **isKOD** | **String** |  | 
 **kodType** | **String** |  | 
 **kitComponentList** | [**[KitComponent]**](KitComponent.md) |  | 

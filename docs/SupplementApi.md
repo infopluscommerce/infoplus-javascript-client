@@ -28,17 +28,17 @@ Inserts a new supplement using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var body = new infoplus.Supplement(); // {Supplement} Supplement to be inserted.
+var body = new infoplus.Supplement(); // Supplement | Supplement to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -48,7 +48,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addSupplement(body, callback);
+apiInstance.addSupplement(body, callback);
 ```
 
 ### Parameters
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -81,19 +81,19 @@ Adds an audit to an existing supplement.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to add an audit to
+var supplementId = 56; // Number | Id of the supplement to add an audit to
 
-var supplementAudit = "supplementAudit_example"; // {String} The audit to add
+var supplementAudit = "supplementAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -103,14 +103,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addSupplementAudit(supplementId, supplementAudit, callback);
+apiInstance.addSupplementAudit(supplementId, supplementAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to add an audit to | 
+ **supplementId** | **Number**| Id of the supplement to add an audit to | 
  **supplementAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -121,7 +121,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -137,19 +137,19 @@ Adds a tag to an existing supplement.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to add a tag to
+var supplementId = 56; // Number | Id of the supplement to add a tag to
 
-var supplementTag = "supplementTag_example"; // {String} The tag to add
+var supplementTag = "supplementTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -159,14 +159,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addSupplementTag(supplementId, supplementTag, callback);
+apiInstance.addSupplementTag(supplementId, supplementTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to add a tag to | 
+ **supplementId** | **Number**| Id of the supplement to add a tag to | 
  **supplementTag** | **String**| The tag to add | 
 
 ### Return type
@@ -177,7 +177,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -193,17 +193,17 @@ Deletes the supplement identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to be deleted.
+var supplementId = 56; // Number | Id of the supplement to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -213,14 +213,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteSupplement(supplementId, callback);
+apiInstance.deleteSupplement(supplementId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to be deleted. | 
+ **supplementId** | **Number**| Id of the supplement to be deleted. | 
 
 ### Return type
 
@@ -230,7 +230,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -246,19 +246,19 @@ Deletes an existing supplement tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to remove tag from
+var supplementId = 56; // Number | Id of the supplement to remove tag from
 
-var supplementTag = "supplementTag_example"; // {String} The tag to delete
+var supplementTag = "supplementTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -268,14 +268,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteSupplementTag(supplementId, supplementTag, callback);
+apiInstance.deleteSupplementTag(supplementId, supplementTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to remove tag from | 
+ **supplementId** | **Number**| Id of the supplement to remove tag from | 
  **supplementTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -286,7 +286,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -302,17 +302,17 @@ Returns a duplicated supplement identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to be duplicated.
+var supplementId = 56; // Number | Id of the supplement to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -322,14 +322,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateSupplementById(supplementId, callback);
+apiInstance.getDuplicateSupplementById(supplementId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to be duplicated. | 
+ **supplementId** | **Number**| Id of the supplement to be duplicated. | 
 
 ### Return type
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -355,21 +355,21 @@ Returns the list of supplements that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -379,7 +379,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getSupplementByFilter(opts, callback);
+apiInstance.getSupplementByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -387,8 +387,8 @@ api.getSupplementByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -415,17 +415,17 @@ Returns the supplement identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to be returned.
+var supplementId = 56; // Number | Id of the supplement to be returned.
 
 
 var callback = function(error, data, response) {
@@ -435,14 +435,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getSupplementById(supplementId, callback);
+apiInstance.getSupplementById(supplementId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to be returned. | 
+ **supplementId** | **Number**| Id of the supplement to be returned. | 
 
 ### Return type
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -468,17 +468,17 @@ Get all existing supplement tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var supplementId = 56; // {Integer} Id of the supplement to get tags for
+var supplementId = 56; // Number | Id of the supplement to get tags for
 
 
 var callback = function(error, data, response) {
@@ -488,14 +488,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getSupplementTags(supplementId, callback);
+apiInstance.getSupplementTags(supplementId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **supplementId** | **Integer**| Id of the supplement to get tags for | 
+ **supplementId** | **Number**| Id of the supplement to get tags for | 
 
 ### Return type
 
@@ -505,7 +505,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -521,17 +521,17 @@ Updates an existing supplement using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var body = new infoplus.Supplement(); // {Supplement} Supplement to be updated.
+var body = new infoplus.Supplement(); // Supplement | Supplement to be updated.
 
 
 var callback = function(error, data, response) {
@@ -541,7 +541,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateSupplement(body, callback);
+apiInstance.updateSupplement(body, callback);
 ```
 
 ### Parameters
@@ -558,7 +558,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -574,17 +574,17 @@ Updates an existing supplement custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.SupplementApi()
+var apiInstance = new infoplus.SupplementApi();
 
-var body = new infoplus.Supplement(); // {Supplement} Supplement to be updated.
+var body = new infoplus.Supplement(); // Supplement | Supplement to be updated.
 
 
 var callback = function(error, data, response) {
@@ -594,7 +594,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateSupplementCustomFields(body, callback);
+apiInstance.updateSupplementCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -611,7 +611,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

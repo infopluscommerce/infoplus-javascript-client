@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
-**scheduledplantypeid** | **Integer** |  | [optional] 
-**planid** | **Integer** |  | [optional] 
+**scheduledplantypeid** | **Number** |  | [optional] 
+**planid** | **Number** |  | [optional] 
 **active** | **Boolean** |  | [optional] [default to false]
-**user** | **Integer** |  | [optional] 
+**user** | **Number** |  | [optional] 
 **deleted** | **Boolean** |  | [optional] [default to false]
-**warehouseId** | **Integer** |  | 
+**warehouseId** | **Number** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

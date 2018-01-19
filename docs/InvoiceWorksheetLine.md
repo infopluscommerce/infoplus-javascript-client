@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | 
-**seqNo** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | 
+**seqNo** | **Number** |  | [optional] 
 **description** | **String** |  | [optional] 
 **accountCode** | **String** |  | [optional] 
 **department** | **String** |  | [optional] 
@@ -15,10 +15,10 @@ Name | Type | Description | Notes
 **quantity** | **Number** |  | [optional] 
 **chargeRate** | **Number** |  | [optional] 
 **extendedCharge** | **Number** |  | [optional] 
-**backupFile** | **Integer** |  | [optional] 
+**backupFile** | **Number** |  | [optional] 
 **backupFileUrl** | **String** |  | [optional] 
-**invoiceWorksheetId** | **Integer** |  | [optional] 
-**invoiceTemplateLineId** | **Integer** |  | [optional] 
+**invoiceWorksheetId** | **Number** |  | [optional] 
+**invoiceTemplateLineId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | 
-**warehouseId** | **Integer** |  | 
-**orderSourceId** | **Integer** |  | 
+**lobId** | **Number** |  | 
+**warehouseId** | **Number** |  | 
+**orderSourceId** | **Number** |  | 
 **name** | **String** |  | 
 **attention** | **String** |  | [optional] 
 **street** | **String** |  | 

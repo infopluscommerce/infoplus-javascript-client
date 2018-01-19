@@ -3,21 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**sourceWarehouseId** | **Integer** |  | 
-**sourceBuildingId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**sourceWarehouseId** | **Number** |  | 
+**sourceBuildingId** | **Number** |  | 
 **sourceLocation** | **String** |  | 
-**destinationWarehouseId** | **Integer** |  | 
-**destinationBuildingId** | **Integer** |  | 
+**destinationWarehouseId** | **Number** |  | 
+**destinationBuildingId** | **Number** |  | 
 **destinationLocation** | **String** |  | 
 **type** | **String** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**priorityCode** | **Integer** |  | 
+**priorityCode** | **Number** |  | 
 **status** | **String** |  | 
-**userId** | **Integer** |  | 
-**lobId** | **Integer** |  | [optional] 
-**workBatchId** | **Integer** |  | [optional] 
+**userId** | **Number** |  | 
+**lobId** | **Number** |  | [optional] 
+**workBatchId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

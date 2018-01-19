@@ -25,19 +25,19 @@ Adds an audit to an existing workBatch.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var workBatchId = 56; // {Integer} Id of the workBatch to add an audit to
+var workBatchId = 56; // Number | Id of the workBatch to add an audit to
 
-var workBatchAudit = "workBatchAudit_example"; // {String} The audit to add
+var workBatchAudit = "workBatchAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -47,14 +47,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addWorkBatchAudit(workBatchId, workBatchAudit, callback);
+apiInstance.addWorkBatchAudit(workBatchId, workBatchAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workBatchId** | **Integer**| Id of the workBatch to add an audit to | 
+ **workBatchId** | **Number**| Id of the workBatch to add an audit to | 
  **workBatchAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -65,7 +65,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -81,19 +81,19 @@ Adds a tag to an existing workBatch.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var workBatchId = 56; // {Integer} Id of the workBatch to add a tag to
+var workBatchId = 56; // Number | Id of the workBatch to add a tag to
 
-var workBatchTag = "workBatchTag_example"; // {String} The tag to add
+var workBatchTag = "workBatchTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -103,14 +103,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addWorkBatchTag(workBatchId, workBatchTag, callback);
+apiInstance.addWorkBatchTag(workBatchId, workBatchTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workBatchId** | **Integer**| Id of the workBatch to add a tag to | 
+ **workBatchId** | **Number**| Id of the workBatch to add a tag to | 
  **workBatchTag** | **String**| The tag to add | 
 
 ### Return type
@@ -121,7 +121,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -137,19 +137,19 @@ Deletes an existing workBatch tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var workBatchId = 56; // {Integer} Id of the workBatch to remove tag from
+var workBatchId = 56; // Number | Id of the workBatch to remove tag from
 
-var workBatchTag = "workBatchTag_example"; // {String} The tag to delete
+var workBatchTag = "workBatchTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -159,14 +159,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteWorkBatchTag(workBatchId, workBatchTag, callback);
+apiInstance.deleteWorkBatchTag(workBatchId, workBatchTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workBatchId** | **Integer**| Id of the workBatch to remove tag from | 
+ **workBatchId** | **Number**| Id of the workBatch to remove tag from | 
  **workBatchTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -177,7 +177,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -193,17 +193,17 @@ Returns a duplicated workBatch identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var workBatchId = 56; // {Integer} Id of the workBatch to be duplicated.
+var workBatchId = 56; // Number | Id of the workBatch to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -213,14 +213,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateWorkBatchById(workBatchId, callback);
+apiInstance.getDuplicateWorkBatchById(workBatchId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workBatchId** | **Integer**| Id of the workBatch to be duplicated. | 
+ **workBatchId** | **Number**| Id of the workBatch to be duplicated. | 
 
 ### Return type
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -246,21 +246,21 @@ Returns the list of workBatchs that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -270,7 +270,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getWorkBatchByFilter(opts, callback);
+apiInstance.getWorkBatchByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -278,8 +278,8 @@ api.getWorkBatchByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -306,17 +306,17 @@ Returns the workBatch identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var workBatchId = 56; // {Integer} Id of the workBatch to be returned.
+var workBatchId = 56; // Number | Id of the workBatch to be returned.
 
 
 var callback = function(error, data, response) {
@@ -326,14 +326,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getWorkBatchById(workBatchId, callback);
+apiInstance.getWorkBatchById(workBatchId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workBatchId** | **Integer**| Id of the workBatch to be returned. | 
+ **workBatchId** | **Number**| Id of the workBatch to be returned. | 
 
 ### Return type
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -359,17 +359,17 @@ Get all existing workBatch tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var workBatchId = 56; // {Integer} Id of the workBatch to get tags for
+var workBatchId = 56; // Number | Id of the workBatch to get tags for
 
 
 var callback = function(error, data, response) {
@@ -379,14 +379,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getWorkBatchTags(workBatchId, callback);
+apiInstance.getWorkBatchTags(workBatchId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workBatchId** | **Integer**| Id of the workBatch to get tags for | 
+ **workBatchId** | **Number**| Id of the workBatch to get tags for | 
 
 ### Return type
 
@@ -396,7 +396,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -412,17 +412,17 @@ Updates an existing workBatch custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.WorkBatchApi()
+var apiInstance = new infoplus.WorkBatchApi();
 
-var body = new infoplus.WorkBatch(); // {WorkBatch} WorkBatch to be updated.
+var body = new infoplus.WorkBatch(); // WorkBatch | WorkBatch to be updated.
 
 
 var callback = function(error, data, response) {
@@ -432,7 +432,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateWorkBatchCustomFields(body, callback);
+apiInstance.updateWorkBatchCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -449,7 +449,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

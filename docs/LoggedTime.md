@@ -3,19 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **start** | **Date** |  | [optional] 
 **end** | **Date** |  | [optional] 
-**duration** | **Integer** |  | 
+**duration** | **Number** |  | 
 **description** | **String** |  | [optional] 
-**client** | **Integer** |  | 
-**userId** | **Integer** |  | 
-**lobId** | **Integer** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**loggedTimeTypeId** | **Integer** |  | 
-**appId** | **Integer** |  | 
+**client** | **Number** |  | 
+**userId** | **Number** |  | 
+**lobId** | **Number** |  | [optional] 
+**warehouseId** | **Number** |  | 
+**loggedTimeTypeId** | **Number** |  | 
+**appId** | **Number** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

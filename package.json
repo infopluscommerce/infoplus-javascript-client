@@ -1,13 +1,17 @@
 {
   "name": "infoplus-javascript-client",
   "version": "beta",
-  "description": "Infoplus API.",
+  "description": "Infoplus_API_",
+  "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },
+  "browser": {
+    "fs": false
+  },
   "dependencies": {
-    "superagent": "1.7.1"
+    "superagent": "3.5.2"
   },
   "devDependencies": {
     "mocha": "~2.3.4",

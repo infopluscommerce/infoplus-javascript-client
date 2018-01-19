@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**lobId** | **Number** |  | 
 **customerNo** | **String** |  | 
 **name** | **String** |  | 
 **attention** | **String** |  | [optional] 
@@ -19,11 +19,11 @@ Name | Type | Description | Notes
 **fax** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **bossBranch** | **String** |  | [optional] 
-**packageCarrierId** | **Integer** |  | 
-**truckCarrierId** | **Integer** |  | 
-**weightBreak** | **Integer** |  | 
+**packageCarrierId** | **Number** |  | 
+**truckCarrierId** | **Number** |  | 
+**weightBreak** | **Number** |  | 
 **sector** | **String** |  | [optional] 
-**division** | **Integer** |  | [optional] 
+**division** | **Number** |  | [optional] 
 **costCenter** | **String** |  | [optional] 
 **county** | **String** |  | [optional] 
 **area** | **String** |  | [optional] 
@@ -33,11 +33,11 @@ Name | Type | Description | Notes
 **priceLevel** | **String** |  | [optional] 
 **openDate** | **Date** |  | [optional] 
 **closeDate** | **Date** |  | [optional] 
-**restrictionPercent** | **Integer** |  | [optional] 
+**restrictionPercent** | **Number** |  | [optional] 
 **externalId** | **String** |  | [optional] 
 **cycleDate** | **Date** |  | [optional] 
 **manager** | **String** |  | [optional] 
-**alternateInventory** | **Integer** |  | [optional] 
+**alternateInventory** | **Number** |  | [optional] 
 **pin** | **String** |  | [optional] 
 **faxGone** | **String** |  | [optional] 
 **residential** | **String** |  | 
@@ -45,12 +45,12 @@ Name | Type | Description | Notes
 **extrinsicText1** | **String** |  | [optional] 
 **extrinsicText2** | **String** |  | [optional] 
 **extrinsicText3** | **String** |  | [optional] 
-**extrinsicNumber1** | **Integer** |  | [optional] 
-**extrinsicNumber2** | **Integer** |  | [optional] 
+**extrinsicNumber1** | **Number** |  | [optional] 
+**extrinsicNumber2** | **Number** |  | [optional] 
 **extrinsicDecimal1** | **Number** |  | [optional] 
 **extrinsicDecimal2** | **Number** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**omsCustomerId** | **Integer** |  | [optional] 
+**omsCustomerId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

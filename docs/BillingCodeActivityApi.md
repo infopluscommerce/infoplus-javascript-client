@@ -27,17 +27,17 @@ Inserts a new billingCodeActivity using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var body = new infoplus.BillingCodeActivity(); // {BillingCodeActivity} BillingCodeActivity to be inserted.
+var body = new infoplus.BillingCodeActivity(); // BillingCodeActivity | BillingCodeActivity to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -47,7 +47,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addBillingCodeActivity(body, callback);
+apiInstance.addBillingCodeActivity(body, callback);
 ```
 
 ### Parameters
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -80,19 +80,19 @@ Adds an audit to an existing billingCodeActivity.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to add an audit to
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to add an audit to
 
-var billingCodeActivityAudit = "billingCodeActivityAudit_example"; // {String} The audit to add
+var billingCodeActivityAudit = "billingCodeActivityAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -102,14 +102,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addBillingCodeActivityAudit(billingCodeActivityId, billingCodeActivityAudit, callback);
+apiInstance.addBillingCodeActivityAudit(billingCodeActivityId, billingCodeActivityAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to add an audit to | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to add an audit to | 
  **billingCodeActivityAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -120,7 +120,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -136,19 +136,19 @@ Adds a tag to an existing billingCodeActivity.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to add a tag to
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to add a tag to
 
-var billingCodeActivityTag = "billingCodeActivityTag_example"; // {String} The tag to add
+var billingCodeActivityTag = "billingCodeActivityTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -158,14 +158,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addBillingCodeActivityTag(billingCodeActivityId, billingCodeActivityTag, callback);
+apiInstance.addBillingCodeActivityTag(billingCodeActivityId, billingCodeActivityTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to add a tag to | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to add a tag to | 
  **billingCodeActivityTag** | **String**| The tag to add | 
 
 ### Return type
@@ -176,7 +176,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -192,17 +192,17 @@ Deletes the billingCodeActivity identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to be deleted.
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -212,14 +212,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteBillingCodeActivity(billingCodeActivityId, callback);
+apiInstance.deleteBillingCodeActivity(billingCodeActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to be deleted. | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to be deleted. | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -245,19 +245,19 @@ Deletes an existing billingCodeActivity tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to remove tag from
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to remove tag from
 
-var billingCodeActivityTag = "billingCodeActivityTag_example"; // {String} The tag to delete
+var billingCodeActivityTag = "billingCodeActivityTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -267,14 +267,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteBillingCodeActivityTag(billingCodeActivityId, billingCodeActivityTag, callback);
+apiInstance.deleteBillingCodeActivityTag(billingCodeActivityId, billingCodeActivityTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to remove tag from | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to remove tag from | 
  **billingCodeActivityTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -285,7 +285,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -301,21 +301,21 @@ Returns the list of billingCodeActivitys that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -325,7 +325,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getBillingCodeActivityByFilter(opts, callback);
+apiInstance.getBillingCodeActivityByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -333,8 +333,8 @@ api.getBillingCodeActivityByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -361,17 +361,17 @@ Returns the billingCodeActivity identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to be returned.
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to be returned.
 
 
 var callback = function(error, data, response) {
@@ -381,14 +381,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getBillingCodeActivityById(billingCodeActivityId, callback);
+apiInstance.getBillingCodeActivityById(billingCodeActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to be returned. | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to be returned. | 
 
 ### Return type
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -414,17 +414,17 @@ Get all existing billingCodeActivity tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to get tags for
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to get tags for
 
 
 var callback = function(error, data, response) {
@@ -434,14 +434,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getBillingCodeActivityTags(billingCodeActivityId, callback);
+apiInstance.getBillingCodeActivityTags(billingCodeActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to get tags for | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to get tags for | 
 
 ### Return type
 
@@ -451,7 +451,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -467,17 +467,17 @@ Returns a duplicated billingCodeActivity identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var billingCodeActivityId = 56; // {Integer} Id of the billingCodeActivity to be duplicated.
+var billingCodeActivityId = 56; // Number | Id of the billingCodeActivity to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -487,14 +487,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateBillingCodeActivityById(billingCodeActivityId, callback);
+apiInstance.getDuplicateBillingCodeActivityById(billingCodeActivityId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingCodeActivityId** | **Integer**| Id of the billingCodeActivity to be duplicated. | 
+ **billingCodeActivityId** | **Number**| Id of the billingCodeActivity to be duplicated. | 
 
 ### Return type
 
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -520,17 +520,17 @@ Updates an existing billingCodeActivity using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.BillingCodeActivityApi()
+var apiInstance = new infoplus.BillingCodeActivityApi();
 
-var body = new infoplus.BillingCodeActivity(); // {BillingCodeActivity} BillingCodeActivity to be updated.
+var body = new infoplus.BillingCodeActivity(); // BillingCodeActivity | BillingCodeActivity to be updated.
 
 
 var callback = function(error, data, response) {
@@ -540,7 +540,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateBillingCodeActivity(body, callback);
+apiInstance.updateBillingCodeActivity(body, callback);
 ```
 
 ### Parameters
@@ -557,7 +557,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

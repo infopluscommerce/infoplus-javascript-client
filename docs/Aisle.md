@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**warehouseId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**warehouseId** | **Number** |  | 
 **address** | **String** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 

@@ -3,23 +3,23 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**buildingId** | **Integer** |  | [optional] 
-**zoneId** | **Integer** |  | [optional] 
-**aisleId** | **Integer** |  | [optional] 
-**billingTypeId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**warehouseId** | **Number** |  | 
+**buildingId** | **Number** |  | [optional] 
+**zoneId** | **Number** |  | [optional] 
+**aisleId** | **Number** |  | [optional] 
+**billingTypeId** | **Number** |  | 
 **behaviorType** | **String** |  | 
-**footprintId** | **Integer** |  | 
-**addressSchemeId** | **Integer** |  | [optional] 
-**origin** | **Integer** |  | [optional] 
+**footprintId** | **Number** |  | 
+**addressSchemeId** | **Number** |  | [optional] 
+**origin** | **Number** |  | [optional] 
 **address** | **String** |  | [optional] 
-**level** | **Integer** |  | [optional] 
-**bay** | **Integer** |  | [optional] 
-**_number** | **Integer** |  | [optional] 
+**level** | **Number** |  | [optional] 
+**bay** | **Number** |  | [optional] 
+**_number** | **Number** |  | [optional] 
 **online** | **Boolean** |  | [default to false]
-**priorityCode** | **Integer** |  | [optional] 
-**cost** | **Integer** |  | [optional] 
+**priorityCode** | **Number** |  | [optional] 
+**cost** | **Number** |  | [optional] 
 **allowItemMixing** | **Boolean** |  | [default to false]
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 

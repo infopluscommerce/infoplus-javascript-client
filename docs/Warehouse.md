@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**client** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**client** | **Number** |  | 
 **name** | **String** |  | 
 **address** | **String** |  | [optional] 
 **company** | **String** |  | 

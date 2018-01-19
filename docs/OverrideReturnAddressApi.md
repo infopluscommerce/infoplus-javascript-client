@@ -28,17 +28,17 @@ Inserts a new overrideReturnAddress using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var body = new infoplus.OverrideReturnAddress(); // {OverrideReturnAddress} OverrideReturnAddress to be inserted.
+var body = new infoplus.OverrideReturnAddress(); // OverrideReturnAddress | OverrideReturnAddress to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -48,7 +48,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addOverrideReturnAddress(body, callback);
+apiInstance.addOverrideReturnAddress(body, callback);
 ```
 
 ### Parameters
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -81,19 +81,19 @@ Adds an audit to an existing overrideReturnAddress.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to add an audit to
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to add an audit to
 
-var overrideReturnAddressAudit = "overrideReturnAddressAudit_example"; // {String} The audit to add
+var overrideReturnAddressAudit = "overrideReturnAddressAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -103,14 +103,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addOverrideReturnAddressAudit(overrideReturnAddressId, overrideReturnAddressAudit, callback);
+apiInstance.addOverrideReturnAddressAudit(overrideReturnAddressId, overrideReturnAddressAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to add an audit to | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to add an audit to | 
  **overrideReturnAddressAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -121,7 +121,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -137,19 +137,19 @@ Adds a tag to an existing overrideReturnAddress.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to add a tag to
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to add a tag to
 
-var overrideReturnAddressTag = "overrideReturnAddressTag_example"; // {String} The tag to add
+var overrideReturnAddressTag = "overrideReturnAddressTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -159,14 +159,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addOverrideReturnAddressTag(overrideReturnAddressId, overrideReturnAddressTag, callback);
+apiInstance.addOverrideReturnAddressTag(overrideReturnAddressId, overrideReturnAddressTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to add a tag to | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to add a tag to | 
  **overrideReturnAddressTag** | **String**| The tag to add | 
 
 ### Return type
@@ -177,7 +177,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -193,17 +193,17 @@ Deletes the overrideReturnAddress identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to be deleted.
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -213,14 +213,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteOverrideReturnAddress(overrideReturnAddressId, callback);
+apiInstance.deleteOverrideReturnAddress(overrideReturnAddressId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to be deleted. | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to be deleted. | 
 
 ### Return type
 
@@ -230,7 +230,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -246,19 +246,19 @@ Deletes an existing overrideReturnAddress tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to remove tag from
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to remove tag from
 
-var overrideReturnAddressTag = "overrideReturnAddressTag_example"; // {String} The tag to delete
+var overrideReturnAddressTag = "overrideReturnAddressTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -268,14 +268,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteOverrideReturnAddressTag(overrideReturnAddressId, overrideReturnAddressTag, callback);
+apiInstance.deleteOverrideReturnAddressTag(overrideReturnAddressId, overrideReturnAddressTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to remove tag from | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to remove tag from | 
  **overrideReturnAddressTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -286,7 +286,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -302,17 +302,17 @@ Returns a duplicated overrideReturnAddress identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to be duplicated.
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -322,14 +322,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateOverrideReturnAddressById(overrideReturnAddressId, callback);
+apiInstance.getDuplicateOverrideReturnAddressById(overrideReturnAddressId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to be duplicated. | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to be duplicated. | 
 
 ### Return type
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -355,21 +355,21 @@ Returns the list of overrideReturnAddresses that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -379,7 +379,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getOverrideReturnAddressByFilter(opts, callback);
+apiInstance.getOverrideReturnAddressByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -387,8 +387,8 @@ api.getOverrideReturnAddressByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -415,17 +415,17 @@ Returns the overrideReturnAddress identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to be returned.
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to be returned.
 
 
 var callback = function(error, data, response) {
@@ -435,14 +435,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getOverrideReturnAddressById(overrideReturnAddressId, callback);
+apiInstance.getOverrideReturnAddressById(overrideReturnAddressId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to be returned. | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to be returned. | 
 
 ### Return type
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -468,17 +468,17 @@ Get all existing overrideReturnAddress tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var overrideReturnAddressId = 56; // {Integer} Id of the overrideReturnAddress to get tags for
+var overrideReturnAddressId = 56; // Number | Id of the overrideReturnAddress to get tags for
 
 
 var callback = function(error, data, response) {
@@ -488,14 +488,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getOverrideReturnAddressTags(overrideReturnAddressId, callback);
+apiInstance.getOverrideReturnAddressTags(overrideReturnAddressId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overrideReturnAddressId** | **Integer**| Id of the overrideReturnAddress to get tags for | 
+ **overrideReturnAddressId** | **Number**| Id of the overrideReturnAddress to get tags for | 
 
 ### Return type
 
@@ -505,7 +505,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -521,17 +521,17 @@ Updates an existing overrideReturnAddress using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var body = new infoplus.OverrideReturnAddress(); // {OverrideReturnAddress} OverrideReturnAddress to be updated.
+var body = new infoplus.OverrideReturnAddress(); // OverrideReturnAddress | OverrideReturnAddress to be updated.
 
 
 var callback = function(error, data, response) {
@@ -541,7 +541,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateOverrideReturnAddress(body, callback);
+apiInstance.updateOverrideReturnAddress(body, callback);
 ```
 
 ### Parameters
@@ -558,7 +558,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -574,17 +574,17 @@ Updates an existing overrideReturnAddress custom fields using the specified data
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OverrideReturnAddressApi()
+var apiInstance = new infoplus.OverrideReturnAddressApi();
 
-var body = new infoplus.OverrideReturnAddress(); // {OverrideReturnAddress} OverrideReturnAddress to be updated.
+var body = new infoplus.OverrideReturnAddress(); // OverrideReturnAddress | OverrideReturnAddress to be updated.
 
 
 var callback = function(error, data, response) {
@@ -594,7 +594,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateOverrideReturnAddressCustomFields(body, callback);
+apiInstance.updateOverrideReturnAddressCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -611,7 +611,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

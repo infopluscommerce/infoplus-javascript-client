@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
+**id** | **Number** |  | 
 **label** | **String** |  | 
 **fullEntityClassName** | **String** |  | [optional] 
 

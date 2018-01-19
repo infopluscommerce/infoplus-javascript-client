@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**secondDuration** | **Integer** |  | 
+**secondDuration** | **Number** |  | 
 **_date** | **Date** |  | [optional] 
-**userId** | **Integer** |  | 
-**lobId** | **Integer** |  | 
-**jobTypeId** | **Integer** |  | 
+**userId** | **Number** |  | 
+**lobId** | **Number** |  | 
+**jobTypeId** | **Number** |  | 
 **note** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 

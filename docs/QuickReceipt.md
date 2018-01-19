@@ -3,23 +3,23 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**createdBy** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**createdBy** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**lobId** | **Integer** |  | 
-**locationId** | **Integer** |  | 
-**quantity** | **Integer** |  | 
-**vendorId** | **Integer** |  | [optional] 
+**warehouseId** | **Number** |  | 
+**lobId** | **Number** |  | 
+**locationId** | **Number** |  | 
+**quantity** | **Number** |  | 
+**vendorId** | **Number** |  | [optional] 
 **carrier** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **unitCode** | **String** |  | 
 **wrapCode** | **String** |  | 
 **weightPerWrap** | **Number** |  | 
-**unitsPerWrap** | **Integer** |  | 
-**unitsPerCase** | **Integer** |  | [optional] 
-**casesPerPallet** | **Integer** |  | [optional] 
+**unitsPerWrap** | **Number** |  | 
+**unitsPerCase** | **Number** |  | [optional] 
+**casesPerPallet** | **Number** |  | [optional] 
 **caseWeight** | **Number** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
 **revisionDate** | **String** |  | [optional] 
@@ -30,8 +30,8 @@ Name | Type | Description | Notes
 **cost** | **Number** |  | [optional] 
 **sellPrice** | **Number** |  | [optional] 
 **pricingPer** | **String** |  | [optional] 
-**generatedItemReceiptId** | **Integer** |  | [optional] 
-**generatedASNId** | **Integer** |  | [optional] 
+**generatedItemReceiptId** | **Number** |  | [optional] 
+**generatedASNId** | **Number** |  | [optional] 
 **dockDate** | **Date** |  | [optional] 
 **productIdTag** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

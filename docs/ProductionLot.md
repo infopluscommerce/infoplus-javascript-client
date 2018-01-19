@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**lobId** | **Number** |  | [optional] 
 **productionLot** | **String** |  | 
-**quantity** | **Integer** |  | 
+**quantity** | **Number** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 

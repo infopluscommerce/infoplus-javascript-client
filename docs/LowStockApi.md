@@ -24,19 +24,19 @@ Adds an audit to an existing lowStock.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
-var lowStockId = 56; // {Integer} Id of the lowStock to add an audit to
+var lowStockId = 56; // Number | Id of the lowStock to add an audit to
 
-var lowStockAudit = "lowStockAudit_example"; // {String} The audit to add
+var lowStockAudit = "lowStockAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -46,14 +46,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addLowStockAudit(lowStockId, lowStockAudit, callback);
+apiInstance.addLowStockAudit(lowStockId, lowStockAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lowStockId** | **Integer**| Id of the lowStock to add an audit to | 
+ **lowStockId** | **Number**| Id of the lowStock to add an audit to | 
  **lowStockAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -64,7 +64,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -80,19 +80,19 @@ Adds a tag to an existing lowStock.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
-var lowStockId = 56; // {Integer} Id of the lowStock to add a tag to
+var lowStockId = 56; // Number | Id of the lowStock to add a tag to
 
-var lowStockTag = "lowStockTag_example"; // {String} The tag to add
+var lowStockTag = "lowStockTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -102,14 +102,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addLowStockTag(lowStockId, lowStockTag, callback);
+apiInstance.addLowStockTag(lowStockId, lowStockTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lowStockId** | **Integer**| Id of the lowStock to add a tag to | 
+ **lowStockId** | **Number**| Id of the lowStock to add a tag to | 
  **lowStockTag** | **String**| The tag to add | 
 
 ### Return type
@@ -120,7 +120,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -136,19 +136,19 @@ Deletes an existing lowStock tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
-var lowStockId = 56; // {Integer} Id of the lowStock to remove tag from
+var lowStockId = 56; // Number | Id of the lowStock to remove tag from
 
-var lowStockTag = "lowStockTag_example"; // {String} The tag to delete
+var lowStockTag = "lowStockTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -158,14 +158,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteLowStockTag(lowStockId, lowStockTag, callback);
+apiInstance.deleteLowStockTag(lowStockId, lowStockTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lowStockId** | **Integer**| Id of the lowStock to remove tag from | 
+ **lowStockId** | **Number**| Id of the lowStock to remove tag from | 
  **lowStockTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -176,7 +176,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -192,17 +192,17 @@ Returns a duplicated lowStock identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
-var lowStockId = 56; // {Integer} Id of the lowStock to be duplicated.
+var lowStockId = 56; // Number | Id of the lowStock to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -212,14 +212,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateLowStockById(lowStockId, callback);
+apiInstance.getDuplicateLowStockById(lowStockId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lowStockId** | **Integer**| Id of the lowStock to be duplicated. | 
+ **lowStockId** | **Number**| Id of the lowStock to be duplicated. | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -245,21 +245,21 @@ Returns the list of lowStocks that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -269,7 +269,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getLowStockByFilter(opts, callback);
+apiInstance.getLowStockByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -277,8 +277,8 @@ api.getLowStockByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -305,17 +305,17 @@ Returns the lowStock identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
-var lowStockId = 56; // {Integer} Id of the lowStock to be returned.
+var lowStockId = 56; // Number | Id of the lowStock to be returned.
 
 
 var callback = function(error, data, response) {
@@ -325,14 +325,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getLowStockById(lowStockId, callback);
+apiInstance.getLowStockById(lowStockId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lowStockId** | **Integer**| Id of the lowStock to be returned. | 
+ **lowStockId** | **Number**| Id of the lowStock to be returned. | 
 
 ### Return type
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -358,17 +358,17 @@ Get all existing lowStock tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.LowStockApi()
+var apiInstance = new infoplus.LowStockApi();
 
-var lowStockId = 56; // {Integer} Id of the lowStock to get tags for
+var lowStockId = 56; // Number | Id of the lowStock to get tags for
 
 
 var callback = function(error, data, response) {
@@ -378,14 +378,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getLowStockTags(lowStockId, callback);
+apiInstance.getLowStockTags(lowStockId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lowStockId** | **Integer**| Id of the lowStock to get tags for | 
+ **lowStockId** | **Number**| Id of the lowStock to get tags for | 
 
 ### Return type
 
@@ -395,7 +395,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json

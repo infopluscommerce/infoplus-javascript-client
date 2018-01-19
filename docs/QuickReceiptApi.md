@@ -29,17 +29,17 @@ Inserts a new quickReceipt using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var body = new infoplus.QuickReceipt(); // {QuickReceipt} QuickReceipt to be inserted.
+var body = new infoplus.QuickReceipt(); // QuickReceipt | QuickReceipt to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -49,7 +49,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addQuickReceipt(body, callback);
+apiInstance.addQuickReceipt(body, callback);
 ```
 
 ### Parameters
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -82,19 +82,19 @@ Adds an audit to an existing quickReceipt.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to add an audit to
+var quickReceiptId = 56; // Number | Id of the quickReceipt to add an audit to
 
-var quickReceiptAudit = "quickReceiptAudit_example"; // {String} The audit to add
+var quickReceiptAudit = "quickReceiptAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -104,14 +104,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addQuickReceiptAudit(quickReceiptId, quickReceiptAudit, callback);
+apiInstance.addQuickReceiptAudit(quickReceiptId, quickReceiptAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to add an audit to | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to add an audit to | 
  **quickReceiptAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -122,7 +122,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -138,19 +138,19 @@ Adds a tag to an existing quickReceipt.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to add a tag to
+var quickReceiptId = 56; // Number | Id of the quickReceipt to add a tag to
 
-var quickReceiptTag = "quickReceiptTag_example"; // {String} The tag to add
+var quickReceiptTag = "quickReceiptTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -160,14 +160,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addQuickReceiptTag(quickReceiptId, quickReceiptTag, callback);
+apiInstance.addQuickReceiptTag(quickReceiptId, quickReceiptTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to add a tag to | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to add a tag to | 
  **quickReceiptTag** | **String**| The tag to add | 
 
 ### Return type
@@ -178,7 +178,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -194,17 +194,17 @@ Deletes the quickReceipt identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to be deleted.
+var quickReceiptId = 56; // Number | Id of the quickReceipt to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -214,14 +214,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteQuickReceipt(quickReceiptId, callback);
+apiInstance.deleteQuickReceipt(quickReceiptId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to be deleted. | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to be deleted. | 
 
 ### Return type
 
@@ -231,7 +231,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -247,19 +247,19 @@ Deletes an existing quickReceipt tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to remove tag from
+var quickReceiptId = 56; // Number | Id of the quickReceipt to remove tag from
 
-var quickReceiptTag = "quickReceiptTag_example"; // {String} The tag to delete
+var quickReceiptTag = "quickReceiptTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -269,14 +269,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteQuickReceiptTag(quickReceiptId, quickReceiptTag, callback);
+apiInstance.deleteQuickReceiptTag(quickReceiptId, quickReceiptTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to remove tag from | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to remove tag from | 
  **quickReceiptTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -287,7 +287,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -303,17 +303,17 @@ Run the ExecuteQuickReceipt process.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var body = new infoplus.ExecuteQuickReceiptInputAPIModel(); // {ExecuteQuickReceiptInputAPIModel} Input data for ExecuteQuickReceipt process.
+var body = new infoplus.ExecuteQuickReceiptInputAPIModel(); // ExecuteQuickReceiptInputAPIModel | Input data for ExecuteQuickReceipt process.
 
 
 var callback = function(error, data, response) {
@@ -323,7 +323,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.executeQuickReceipt(body, callback);
+apiInstance.executeQuickReceipt(body, callback);
 ```
 
 ### Parameters
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -356,17 +356,17 @@ Returns a duplicated quickReceipt identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to be duplicated.
+var quickReceiptId = 56; // Number | Id of the quickReceipt to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -376,14 +376,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateQuickReceiptById(quickReceiptId, callback);
+apiInstance.getDuplicateQuickReceiptById(quickReceiptId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to be duplicated. | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to be duplicated. | 
 
 ### Return type
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -409,21 +409,21 @@ Returns the list of quickReceipts that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -433,7 +433,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getQuickReceiptByFilter(opts, callback);
+apiInstance.getQuickReceiptByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -441,8 +441,8 @@ api.getQuickReceiptByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -469,17 +469,17 @@ Returns the quickReceipt identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to be returned.
+var quickReceiptId = 56; // Number | Id of the quickReceipt to be returned.
 
 
 var callback = function(error, data, response) {
@@ -489,14 +489,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getQuickReceiptById(quickReceiptId, callback);
+apiInstance.getQuickReceiptById(quickReceiptId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to be returned. | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to be returned. | 
 
 ### Return type
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -522,17 +522,17 @@ Get all existing quickReceipt tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var quickReceiptId = 56; // {Integer} Id of the quickReceipt to get tags for
+var quickReceiptId = 56; // Number | Id of the quickReceipt to get tags for
 
 
 var callback = function(error, data, response) {
@@ -542,14 +542,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getQuickReceiptTags(quickReceiptId, callback);
+apiInstance.getQuickReceiptTags(quickReceiptId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quickReceiptId** | **Integer**| Id of the quickReceipt to get tags for | 
+ **quickReceiptId** | **Number**| Id of the quickReceipt to get tags for | 
 
 ### Return type
 
@@ -559,7 +559,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -575,17 +575,17 @@ Updates an existing quickReceipt using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var body = new infoplus.QuickReceipt(); // {QuickReceipt} QuickReceipt to be updated.
+var body = new infoplus.QuickReceipt(); // QuickReceipt | QuickReceipt to be updated.
 
 
 var callback = function(error, data, response) {
@@ -595,7 +595,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateQuickReceipt(body, callback);
+apiInstance.updateQuickReceipt(body, callback);
 ```
 
 ### Parameters
@@ -612,7 +612,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -628,17 +628,17 @@ Updates an existing quickReceipt custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.QuickReceiptApi()
+var apiInstance = new infoplus.QuickReceiptApi();
 
-var body = new infoplus.QuickReceipt(); // {QuickReceipt} QuickReceipt to be updated.
+var body = new infoplus.QuickReceipt(); // QuickReceipt | QuickReceipt to be updated.
 
 
 var callback = function(error, data, response) {
@@ -648,7 +648,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateQuickReceiptCustomFields(body, callback);
+apiInstance.updateQuickReceiptCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -665,7 +665,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

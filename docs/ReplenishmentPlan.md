@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**pickFaceAssignmentSmartFilterId** | **Integer** |  | 
+**warehouseId** | **Number** |  | 
+**pickFaceAssignmentSmartFilterId** | **Number** |  | 
 **name** | **String** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 

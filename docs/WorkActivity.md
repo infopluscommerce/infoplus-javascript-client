@@ -3,130 +3,130 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**importedRecordId** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**importedRecordId** | **Number** |  | [optional] 
+**lobId** | **Number** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**userId** | **Integer** |  | 
+**userId** | **Number** |  | 
 **email** | **String** |  | 
 **type** | **String** |  | 
 **typeName** | **String** |  | 
 **status** | **String** |  | 
 **statusName** | **String** |  | 
-**workBatchId** | **Integer** |  | [optional] 
-**workParentId** | **Integer** |  | [optional] 
-**priorityCode** | **Integer** |  | 
-**foreignId** | **Integer** |  | [optional] 
-**sourceWarehouseId** | **Integer** |  | 
+**workBatchId** | **Number** |  | [optional] 
+**workParentId** | **Number** |  | [optional] 
+**priorityCode** | **Number** |  | 
+**foreignId** | **Number** |  | [optional] 
+**sourceWarehouseId** | **Number** |  | 
 **sourceWarehouseName** | **String** |  | 
 **sourceLocation** | **String** |  | 
-**sourceBuildingId** | **Integer** |  | 
+**sourceBuildingId** | **Number** |  | 
 **sourceBuildingName** | **String** |  | 
-**sourceZoneId** | **Integer** |  | [optional] 
+**sourceZoneId** | **Number** |  | [optional] 
 **sourceZoneName** | **String** |  | 
-**sourceAisleId** | **Integer** |  | [optional] 
+**sourceAisleId** | **Number** |  | [optional] 
 **sourceAisleAddress** | **String** |  | 
-**sourceOrigin** | **Integer** |  | [optional] 
+**sourceOrigin** | **Number** |  | [optional] 
 **sourceOriginName** | **String** |  | 
-**sourceBillingTypeId** | **Integer** |  | 
+**sourceBillingTypeId** | **Number** |  | 
 **sourceBillingTypeName** | **String** |  | 
 **sourceBehaviorType** | **String** |  | 
 **sourceBehaviorTypeName** | **String** |  | 
-**sourceFootprintId** | **Integer** |  | 
+**sourceFootprintId** | **Number** |  | 
 **sourceFootprintName** | **String** |  | 
-**sourceFootprintHeight** | **Integer** |  | [optional] 
-**sourceFootprintWidth** | **Integer** |  | [optional] 
-**sourceFootprintDepth** | **Integer** |  | [optional] 
-**sourceAddressSchemeId** | **Integer** |  | [optional] 
+**sourceFootprintHeight** | **Number** |  | [optional] 
+**sourceFootprintWidth** | **Number** |  | [optional] 
+**sourceFootprintDepth** | **Number** |  | [optional] 
+**sourceAddressSchemeId** | **Number** |  | [optional] 
 **sourceAddressSchemeName** | **String** |  | 
-**sourceLevel** | **Integer** |  | [optional] 
-**sourceBay** | **Integer** |  | [optional] 
-**sourceNumber** | **Integer** |  | [optional] 
+**sourceLevel** | **Number** |  | [optional] 
+**sourceBay** | **Number** |  | [optional] 
+**sourceNumber** | **Number** |  | [optional] 
 **sourceOnline** | **Boolean** |  | [default to false]
-**sourcePriorityCode** | **Integer** |  | [optional] 
-**sourceCost** | **Integer** |  | [optional] 
+**sourcePriorityCode** | **Number** |  | [optional] 
+**sourceCost** | **Number** |  | [optional] 
 **sourceAllowItemMixing** | **Boolean** |  | [default to false]
-**destinationWarehouseId** | **Integer** |  | 
+**destinationWarehouseId** | **Number** |  | 
 **destinationWarehouseName** | **String** |  | 
 **destinationLocation** | **String** |  | 
-**destinationBuildingId** | **Integer** |  | 
+**destinationBuildingId** | **Number** |  | 
 **destinationBuildingName** | **String** |  | 
-**destinationZoneId** | **Integer** |  | [optional] 
+**destinationZoneId** | **Number** |  | [optional] 
 **destinationZoneName** | **String** |  | 
-**destinationAisleId** | **Integer** |  | [optional] 
+**destinationAisleId** | **Number** |  | [optional] 
 **destinationAisleAddress** | **String** |  | 
-**destinationOrigin** | **Integer** |  | [optional] 
+**destinationOrigin** | **Number** |  | [optional] 
 **destinationOriginName** | **String** |  | 
-**destinationBillingTypeId** | **Integer** |  | 
+**destinationBillingTypeId** | **Number** |  | 
 **destinationBillingTypeName** | **String** |  | 
 **destinationBehaviorType** | **String** |  | 
 **destinationBehaviorTypeName** | **String** |  | 
-**destinationFootprintId** | **Integer** |  | 
+**destinationFootprintId** | **Number** |  | 
 **destinationFootprintName** | **String** |  | 
-**destinationFootprintHeight** | **Integer** |  | [optional] 
-**destinationFootprintWidth** | **Integer** |  | [optional] 
-**destinationFootprintDepth** | **Integer** |  | [optional] 
-**destinationAddressSchemeId** | **Integer** |  | [optional] 
+**destinationFootprintHeight** | **Number** |  | [optional] 
+**destinationFootprintWidth** | **Number** |  | [optional] 
+**destinationFootprintDepth** | **Number** |  | [optional] 
+**destinationAddressSchemeId** | **Number** |  | [optional] 
 **destinationAddressSchemeName** | **String** |  | 
-**destinationLevel** | **Integer** |  | [optional] 
-**destinationBay** | **Integer** |  | [optional] 
-**destinationNumber** | **Integer** |  | [optional] 
+**destinationLevel** | **Number** |  | [optional] 
+**destinationBay** | **Number** |  | [optional] 
+**destinationNumber** | **Number** |  | [optional] 
 **destinationOnline** | **Boolean** |  | [default to false]
-**destinationPriorityCode** | **Integer** |  | [optional] 
-**destinationCost** | **Integer** |  | [optional] 
+**destinationPriorityCode** | **Number** |  | [optional] 
+**destinationCost** | **Number** |  | [optional] 
 **destinationAllowItemMixing** | **Boolean** |  | [default to false]
 **workCreateDate** | **Date** |  | [optional] 
 **workModifyDate** | **Date** |  | [optional] 
-**masterRef** | **Integer** |  | [optional] 
+**masterRef** | **Number** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
 **sku** | **String** |  | 
-**numericSortOrder** | **Integer** |  | [optional] 
+**numericSortOrder** | **Number** |  | [optional] 
 **itemDescription** | **String** |  | 
 **additionalDescription** | **String** |  | [optional] 
 **unitCode** | **String** |  | 
 **wrapCode** | **String** |  | 
-**unitsPerWrap** | **Integer** |  | 
-**quantity** | **Integer** |  | [optional] 
-**numberOfWraps** | **Integer** |  | [optional] 
-**numberOfCases** | **Integer** |  | [optional] 
-**pickTouches** | **Integer** |  | [optional] 
+**unitsPerWrap** | **Number** |  | 
+**quantity** | **Number** |  | [optional] 
+**numberOfWraps** | **Number** |  | [optional] 
+**numberOfCases** | **Number** |  | [optional] 
+**pickTouches** | **Number** |  | [optional] 
 **classRestriction** | **String** |  | 
-**maxCycle** | **Integer** |  | 
-**maxInterim** | **Integer** |  | 
+**maxCycle** | **Number** |  | 
+**maxInterim** | **Number** |  | 
 **seasonalItem** | **String** |  | 
 **secure** | **String** |  | 
-**productType** | **Integer** |  | [optional] 
+**productType** | **Number** |  | [optional] 
 **itemStatus** | **String** |  | 
-**overallLeadTime** | **Integer** |  | [optional] 
-**overallFixedReorderPoint** | **Integer** |  | [optional] 
+**overallLeadTime** | **Number** |  | [optional] 
+**overallFixedReorderPoint** | **Number** |  | [optional] 
 **qualityControlIndicator** | **String** |  | 
 **lotControlFlag** | **String** |  | [optional] 
 **productCodeFlag** | **String** |  | 
 **chargeCode** | **String** |  | 
 **podRevDate** | **String** |  | [optional] 
-**podOrderSuffix** | **Integer** |  | [optional] 
+**podOrderSuffix** | **Number** |  | [optional] 
 **serialCode** | **String** |  | 
 **assetCode** | **String** |  | [optional] 
 **backorder** | **String** |  | 
 **absoluteMax** | **String** |  | [optional] 
-**accountCodeId** | **Integer** |  | [optional] 
-**summaryCodeId** | **Integer** |  | [optional] 
-**lowStockContactId** | **Integer** |  | [optional] 
-**legacyLowLevelContactId** | **Integer** |  | [optional] 
-**lowStockCodeId** | **Integer** |  | [optional] 
-**majorGroupId** | **Integer** |  | 
-**subGroupId** | **Integer** |  | 
-**productCodeId** | **Integer** |  | [optional] 
-**buyerId** | **Integer** |  | [optional] 
+**accountCodeId** | **Number** |  | [optional] 
+**summaryCodeId** | **Number** |  | [optional] 
+**lowStockContactId** | **Number** |  | [optional] 
+**legacyLowLevelContactId** | **Number** |  | [optional] 
+**lowStockCodeId** | **Number** |  | [optional] 
+**majorGroupId** | **Number** |  | 
+**subGroupId** | **Number** |  | 
+**productCodeId** | **Number** |  | [optional] 
+**buyerId** | **Number** |  | [optional] 
 **vendorSKU** | **String** |  | [optional] 
 **upc** | **String** |  | [optional] 
 **packingSlipDescription** | **String** |  | [optional] 
 **commodityCode** | **String** |  | [optional] 
-**compCode** | **Integer** |  | [optional] 
-**criticalAmount** | **Integer** |  | 
+**compCode** | **Number** |  | [optional] 
+**criticalAmount** | **Number** |  | 
 **listPrice** | **Number** |  | [optional] 
-**outsideVendor** | **Integer** |  | [optional] 
+**outsideVendor** | **Number** |  | [optional] 
 **pickNo** | **String** |  | [optional] 
 **requiresProductionLot** | **String** |  | [optional] 
 **sector** | **String** |  | [optional] 
@@ -134,19 +134,19 @@ Name | Type | Description | Notes
 **extrinsicText1** | **String** |  | [optional] 
 **extrinsicText2** | **String** |  | [optional] 
 **extrinsicText3** | **String** |  | [optional] 
-**extrinsicNumber1** | **Integer** |  | [optional] 
-**extrinsicNumber2** | **Integer** |  | [optional] 
+**extrinsicNumber1** | **Number** |  | [optional] 
+**extrinsicNumber2** | **Number** |  | [optional] 
 **extrinsicDecimal1** | **Number** |  | [optional] 
 **extrinsicDecimal2** | **Number** |  | [optional] 
 **casebreakEnabled** | **String** |  | [optional] 
-**alcoholTypeId** | **Integer** |  | [optional] 
+**alcoholTypeId** | **Number** |  | [optional] 
 **alcoholTypeName** | **String** |  | [optional] 
 **alcoholContent** | **Number** |  | [optional] 
-**alcoholContainerId** | **Integer** |  | [optional] 
+**alcoholContainerId** | **Number** |  | [optional] 
 **alcoholContainerName** | **String** |  | [optional] 
-**alcoholContainerVolume** | **Integer** |  | [optional] 
+**alcoholContainerVolume** | **Number** |  | [optional] 
 **alcoholVintageYear** | **String** |  | [optional] 
-**alcoholCountryId** | **Integer** |  | [optional] 
+**alcoholCountryId** | **Number** |  | [optional] 
 **alcoholCountryName** | **String** |  | [optional] 
 **alcoholState** | **String** |  | [optional] 
 **alcoholRegion** | **String** |  | [optional] 

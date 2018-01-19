@@ -3,26 +3,26 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**clientId** | **Integer** |  | [optional] 
+**clientId** | **Number** |  | [optional] 
 **nonce** | **String** |  | [optional] 
-**lobId** | **Integer** |  | 
-**orderSourceId** | **Integer** |  | 
-**integrationPartnerId** | **Integer** |  | 
+**lobId** | **Number** |  | 
+**orderSourceId** | **Number** |  | 
+**integrationPartnerId** | **Number** |  | 
 **connectionType** | **String** |  | 
-**itemFilterId** | **Integer** |  | [optional] 
+**itemFilterId** | **Number** |  | [optional] 
 **infoplusSKUFieldToMap** | **String** |  | 
 **shoppingCartSKUFieldToMap** | **String** |  | 
-**scriptId** | **Integer** |  | [optional] 
+**scriptId** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **shoppingCartStoreURL** | **String** |  | 
 **accessCode** | **String** |  | 
 **accessToken** | **String** |  | 
 **username** | **String** |  | 
 **password** | **String** |  | 
-**defaultCarrierId** | **Integer** |  | [optional] 
+**defaultCarrierId** | **Number** |  | [optional] 
 **orderShipmentLevel** | **String** |  | 
 **createInvoices** | **Boolean** |  | [optional] [default to false]
 **syncOrders** | **Boolean** |  | [default to false]

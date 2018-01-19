@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | 
+**lobId** | **Number** |  | 
 **orderNo** | **Number** |  | [optional] 
 **bolNo** | **String** |  | 
 **bolDate** | **Date** |  | [optional] 
@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **collect** | **Boolean** |  | [optional] [default to false]
 **thirdParty** | **Boolean** |  | [optional] [default to false]
 **isThisAMasterBOL** | **Boolean** |  | [optional] [default to false]
-**masterBOLId** | **Integer** |  | [optional] 
+**masterBOLId** | **Number** |  | [optional] 
 **isFreightCountedByShipper** | **Boolean** |  | [optional] [default to false]
 **byDriverPallets** | **Boolean** |  | [optional] [default to false]
 **byDriverPieces** | **Boolean** |  | [optional] [default to false]

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**lobId** | **Number** |  | 
 **carrier** | **String** |  | 
 **accountNo** | **String** |  | 
 **accountName** | **String** |  | 

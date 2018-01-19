@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**replenishmentPlanId** | **Integer** |  | 
+**warehouseId** | **Number** |  | 
+**replenishmentPlanId** | **Number** |  | 
 **status** | **String** |  | 
-**estimatedWork** | **Integer** |  | [optional] 
-**workBatchId** | **Integer** |  | [optional] 
+**estimatedWork** | **Number** |  | [optional] 
+**workBatchId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

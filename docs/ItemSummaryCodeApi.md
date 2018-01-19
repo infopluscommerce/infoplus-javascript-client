@@ -27,17 +27,17 @@ Inserts a new itemSummaryCode using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var body = new infoplus.ItemSummaryCode(); // {ItemSummaryCode} ItemSummaryCode to be inserted.
+var body = new infoplus.ItemSummaryCode(); // ItemSummaryCode | ItemSummaryCode to be inserted.
 
 
 var callback = function(error, data, response) {
@@ -47,7 +47,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.addItemSummaryCode(body, callback);
+apiInstance.addItemSummaryCode(body, callback);
 ```
 
 ### Parameters
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -80,19 +80,19 @@ Adds an audit to an existing itemSummaryCode.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to add an audit to
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to add an audit to
 
-var itemSummaryCodeAudit = "itemSummaryCodeAudit_example"; // {String} The audit to add
+var itemSummaryCodeAudit = "itemSummaryCodeAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -102,14 +102,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addItemSummaryCodeAudit(itemSummaryCodeId, itemSummaryCodeAudit, callback);
+apiInstance.addItemSummaryCodeAudit(itemSummaryCodeId, itemSummaryCodeAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to add an audit to | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to add an audit to | 
  **itemSummaryCodeAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -120,7 +120,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -136,19 +136,19 @@ Adds a tag to an existing itemSummaryCode.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to add a tag to
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to add a tag to
 
-var itemSummaryCodeTag = "itemSummaryCodeTag_example"; // {String} The tag to add
+var itemSummaryCodeTag = "itemSummaryCodeTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -158,14 +158,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag, callback);
+apiInstance.addItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to add a tag to | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to add a tag to | 
  **itemSummaryCodeTag** | **String**| The tag to add | 
 
 ### Return type
@@ -176,7 +176,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -192,17 +192,17 @@ Deletes the itemSummaryCode identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to be deleted.
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -212,14 +212,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteItemSummaryCode(itemSummaryCodeId, callback);
+apiInstance.deleteItemSummaryCode(itemSummaryCodeId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to be deleted. | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to be deleted. | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -245,19 +245,19 @@ Deletes an existing itemSummaryCode tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to remove tag from
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to remove tag from
 
-var itemSummaryCodeTag = "itemSummaryCodeTag_example"; // {String} The tag to delete
+var itemSummaryCodeTag = "itemSummaryCodeTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -267,14 +267,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag, callback);
+apiInstance.deleteItemSummaryCodeTag(itemSummaryCodeId, itemSummaryCodeTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to remove tag from | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to remove tag from | 
  **itemSummaryCodeTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -285,7 +285,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -301,17 +301,17 @@ Returns a duplicated itemSummaryCode identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to be duplicated.
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -321,14 +321,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateItemSummaryCodeById(itemSummaryCodeId, callback);
+apiInstance.getDuplicateItemSummaryCodeById(itemSummaryCodeId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to be duplicated. | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to be duplicated. | 
 
 ### Return type
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -354,21 +354,21 @@ Returns the list of itemSummaryCodes that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -378,7 +378,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getItemSummaryCodeByFilter(opts, callback);
+apiInstance.getItemSummaryCodeByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -386,8 +386,8 @@ api.getItemSummaryCodeByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -414,17 +414,17 @@ Returns the itemSummaryCode identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to be returned.
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to be returned.
 
 
 var callback = function(error, data, response) {
@@ -434,14 +434,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getItemSummaryCodeById(itemSummaryCodeId, callback);
+apiInstance.getItemSummaryCodeById(itemSummaryCodeId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to be returned. | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to be returned. | 
 
 ### Return type
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -467,17 +467,17 @@ Get all existing itemSummaryCode tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var itemSummaryCodeId = 56; // {Integer} Id of the itemSummaryCode to get tags for
+var itemSummaryCodeId = 56; // Number | Id of the itemSummaryCode to get tags for
 
 
 var callback = function(error, data, response) {
@@ -487,14 +487,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getItemSummaryCodeTags(itemSummaryCodeId, callback);
+apiInstance.getItemSummaryCodeTags(itemSummaryCodeId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemSummaryCodeId** | **Integer**| Id of the itemSummaryCode to get tags for | 
+ **itemSummaryCodeId** | **Number**| Id of the itemSummaryCode to get tags for | 
 
 ### Return type
 
@@ -504,7 +504,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -520,17 +520,17 @@ Updates an existing itemSummaryCode using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ItemSummaryCodeApi()
+var apiInstance = new infoplus.ItemSummaryCodeApi();
 
-var body = new infoplus.ItemSummaryCode(); // {ItemSummaryCode} ItemSummaryCode to be updated.
+var body = new infoplus.ItemSummaryCode(); // ItemSummaryCode | ItemSummaryCode to be updated.
 
 
 var callback = function(error, data, response) {
@@ -540,7 +540,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateItemSummaryCode(body, callback);
+apiInstance.updateItemSummaryCode(body, callback);
 ```
 
 ### Parameters
@@ -557,7 +557,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

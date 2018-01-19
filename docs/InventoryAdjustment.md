@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**lobId** | **Number** |  | [optional] 
 **sku** | **String** |  | [optional] 
-**poNoId** | **Integer** |  | [optional] 
+**poNoId** | **Number** |  | [optional] 
 **adjustmentDate** | **Date** |  | [optional] 
 **adjustmentTime** | **String** |  | [optional] 
 **location** | **String** |  | [optional] 
-**qty** | **Integer** |  | [optional] 
+**qty** | **Number** |  | [optional] 
 **note** | **String** |  | [optional] 
 **authorizedBy** | **String** |  | [optional] 
 **printed** | **String** |  | [optional] 

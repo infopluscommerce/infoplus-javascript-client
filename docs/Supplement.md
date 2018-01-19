@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lobId** | **Integer** |  | 
-**id** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**originalSKUId** | **Integer** |  | 
-**supplementSKUId** | **Integer** |  | 
+**originalSKUId** | **Number** |  | 
+**supplementSKUId** | **Number** |  | 
 **type** | **String** |  | 
 **supplementQuantity** | **Number** |  | 
 **customFields** | **{String: Object}** |  | [optional] 

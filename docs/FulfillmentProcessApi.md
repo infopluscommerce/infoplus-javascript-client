@@ -25,19 +25,19 @@ Adds an audit to an existing fulfillmentProcess.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var fulfillmentProcessId = 56; // {Integer} Id of the fulfillmentProcess to add an audit to
+var fulfillmentProcessId = 56; // Number | Id of the fulfillmentProcess to add an audit to
 
-var fulfillmentProcessAudit = "fulfillmentProcessAudit_example"; // {String} The audit to add
+var fulfillmentProcessAudit = "fulfillmentProcessAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -47,14 +47,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addFulfillmentProcessAudit(fulfillmentProcessId, fulfillmentProcessAudit, callback);
+apiInstance.addFulfillmentProcessAudit(fulfillmentProcessId, fulfillmentProcessAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fulfillmentProcessId** | **Integer**| Id of the fulfillmentProcess to add an audit to | 
+ **fulfillmentProcessId** | **Number**| Id of the fulfillmentProcess to add an audit to | 
  **fulfillmentProcessAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -65,7 +65,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -81,19 +81,19 @@ Adds a tag to an existing fulfillmentProcess.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var fulfillmentProcessId = 56; // {Integer} Id of the fulfillmentProcess to add a tag to
+var fulfillmentProcessId = 56; // Number | Id of the fulfillmentProcess to add a tag to
 
-var fulfillmentProcessTag = "fulfillmentProcessTag_example"; // {String} The tag to add
+var fulfillmentProcessTag = "fulfillmentProcessTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -103,14 +103,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addFulfillmentProcessTag(fulfillmentProcessId, fulfillmentProcessTag, callback);
+apiInstance.addFulfillmentProcessTag(fulfillmentProcessId, fulfillmentProcessTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fulfillmentProcessId** | **Integer**| Id of the fulfillmentProcess to add a tag to | 
+ **fulfillmentProcessId** | **Number**| Id of the fulfillmentProcess to add a tag to | 
  **fulfillmentProcessTag** | **String**| The tag to add | 
 
 ### Return type
@@ -121,7 +121,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -137,19 +137,19 @@ Deletes an existing fulfillmentProcess tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var fulfillmentProcessId = 56; // {Integer} Id of the fulfillmentProcess to remove tag from
+var fulfillmentProcessId = 56; // Number | Id of the fulfillmentProcess to remove tag from
 
-var fulfillmentProcessTag = "fulfillmentProcessTag_example"; // {String} The tag to delete
+var fulfillmentProcessTag = "fulfillmentProcessTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -159,14 +159,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteFulfillmentProcessTag(fulfillmentProcessId, fulfillmentProcessTag, callback);
+apiInstance.deleteFulfillmentProcessTag(fulfillmentProcessId, fulfillmentProcessTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fulfillmentProcessId** | **Integer**| Id of the fulfillmentProcess to remove tag from | 
+ **fulfillmentProcessId** | **Number**| Id of the fulfillmentProcess to remove tag from | 
  **fulfillmentProcessTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -177,7 +177,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -193,17 +193,17 @@ Returns a duplicated fulfillmentProcess identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var fulfillmentProcessId = 56; // {Integer} Id of the fulfillmentProcess to be duplicated.
+var fulfillmentProcessId = 56; // Number | Id of the fulfillmentProcess to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -213,14 +213,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateFulfillmentProcessById(fulfillmentProcessId, callback);
+apiInstance.getDuplicateFulfillmentProcessById(fulfillmentProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fulfillmentProcessId** | **Integer**| Id of the fulfillmentProcess to be duplicated. | 
+ **fulfillmentProcessId** | **Number**| Id of the fulfillmentProcess to be duplicated. | 
 
 ### Return type
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -246,21 +246,21 @@ Returns the list of fulfillmentProcesses that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -270,7 +270,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getFulfillmentProcessByFilter(opts, callback);
+apiInstance.getFulfillmentProcessByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -278,8 +278,8 @@ api.getFulfillmentProcessByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -306,17 +306,17 @@ Returns the fulfillmentProcess identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var fulfillmentProcessId = 56; // {Integer} Id of the fulfillmentProcess to be returned.
+var fulfillmentProcessId = 56; // Number | Id of the fulfillmentProcess to be returned.
 
 
 var callback = function(error, data, response) {
@@ -326,14 +326,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getFulfillmentProcessById(fulfillmentProcessId, callback);
+apiInstance.getFulfillmentProcessById(fulfillmentProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fulfillmentProcessId** | **Integer**| Id of the fulfillmentProcess to be returned. | 
+ **fulfillmentProcessId** | **Number**| Id of the fulfillmentProcess to be returned. | 
 
 ### Return type
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -359,17 +359,17 @@ Get all existing fulfillmentProcess tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var fulfillmentProcessId = 56; // {Integer} Id of the fulfillmentProcess to get tags for
+var fulfillmentProcessId = 56; // Number | Id of the fulfillmentProcess to get tags for
 
 
 var callback = function(error, data, response) {
@@ -379,14 +379,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getFulfillmentProcessTags(fulfillmentProcessId, callback);
+apiInstance.getFulfillmentProcessTags(fulfillmentProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fulfillmentProcessId** | **Integer**| Id of the fulfillmentProcess to get tags for | 
+ **fulfillmentProcessId** | **Number**| Id of the fulfillmentProcess to get tags for | 
 
 ### Return type
 
@@ -396,7 +396,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -412,17 +412,17 @@ Updates an existing fulfillmentProcess custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.FulfillmentProcessApi()
+var apiInstance = new infoplus.FulfillmentProcessApi();
 
-var body = new infoplus.FulfillmentProcess(); // {FulfillmentProcess} FulfillmentProcess to be updated.
+var body = new infoplus.FulfillmentProcess(); // FulfillmentProcess | FulfillmentProcess to be updated.
 
 
 var callback = function(error, data, response) {
@@ -432,7 +432,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateFulfillmentProcessCustomFields(body, callback);
+apiInstance.updateFulfillmentProcessCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -449,7 +449,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

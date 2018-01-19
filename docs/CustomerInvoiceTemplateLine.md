@@ -3,21 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | 
+**lobId** | **Number** |  | 
 **description** | **String** |  | [optional] 
-**seqNo** | **Integer** |  | [optional] 
+**seqNo** | **Number** |  | [optional] 
 **accountCode** | **String** |  | [optional] 
 **active** | **Boolean** |  | [default to false]
 **includeIfZero** | **Boolean** |  | [default to false]
 **department** | **String** |  | [optional] 
 **itemCode** | **String** |  | [optional] 
-**invoiceTemplateId** | **Integer** |  | [optional] 
-**billingRuleId** | **Integer** |  | 
+**invoiceTemplateId** | **Number** |  | [optional] 
+**billingRuleId** | **Number** |  | 
 **priceLevelMode** | **String** |  | 
-**scriptId** | **Integer** |  | [optional] 
+**scriptId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

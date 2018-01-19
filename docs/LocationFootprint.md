@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**clientId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**clientId** | **Number** |  | 
 **name** | **String** |  | 
-**width** | **Integer** |  | [optional] 
-**depth** | **Integer** |  | [optional] 
-**height** | **Integer** |  | [optional] 
+**width** | **Number** |  | [optional] 
+**depth** | **Number** |  | [optional] 
+**height** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

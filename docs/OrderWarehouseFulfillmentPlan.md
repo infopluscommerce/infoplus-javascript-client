@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**score** | **Integer** |  | [optional] 
+**score** | **Number** |  | [optional] 
 **planDetailList** | [**[OrderWarehouseFulfillmentPlanDetail]**](OrderWarehouseFulfillmentPlanDetail.md) |  | 
 
 

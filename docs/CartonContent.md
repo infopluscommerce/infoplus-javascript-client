@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **groupOrderId** | **Number** |  | [optional] 
 **orderNo** | **Number** |  | 
-**cartonNo** | **Integer** |  | [optional] 
-**cartonId** | **Integer** |  | 
-**lineItemId** | **Integer** |  | 
+**cartonNo** | **Number** |  | [optional] 
+**cartonId** | **Number** |  | 
+**lineItemId** | **Number** |  | 
 **location** | **String** |  | [optional] 
-**quantity** | **Integer** |  | 
-**quantityScanned** | **Integer** |  | [optional] 
+**quantity** | **Number** |  | 
+**quantityScanned** | **Number** |  | [optional] 
 **completed** | **Date** |  | [optional] 
 **toteId** | **String** |  | [optional] 
 **pickerId** | **String** |  | [optional] 

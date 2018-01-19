@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**invoiceNoId** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**invoiceNoId** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | [optional] 
 **orderId** | **Number** |  | [optional] 
-**shipmentId** | **Integer** |  | [optional] 
+**shipmentId** | **Number** |  | [optional] 
 **trackingNo** | **String** |  | [optional] 
 **shipDate** | **Date** |  | [optional] 
 **zone** | **String** |  | [optional] 

@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**warehouseLocationId** | **Integer** |  | 
-**quantity** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**warehouseLocationId** | **Number** |  | 
+**quantity** | **Number** |  | [optional] 
 **distributionDate** | **Date** |  | [optional] 
-**unitsPerCase** | **Integer** |  | [optional] 
-**unitsPerWrap** | **Integer** |  | [optional] 
+**unitsPerCase** | **Number** |  | [optional] 
+**unitsPerWrap** | **Number** |  | [optional] 
 **revisionDate** | **String** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
 **oldestReceiptDate** | **Date** |  | [optional] 
-**lobId** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | [optional] 
 **poNo** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 

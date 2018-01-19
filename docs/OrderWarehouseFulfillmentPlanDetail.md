@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**warehouseId** | **Integer** |  | [optional] 
-**carrierCode** | **Integer** |  | [optional] 
+**warehouseId** | **Number** |  | [optional] 
+**carrierCode** | **Number** |  | [optional] 
 **lineItemList** | **[String]** |  | [optional] 
 
 

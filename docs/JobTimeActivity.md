@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**importedId** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**importedId** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **_date** | **Date** |  | [optional] 
-**secondDuration** | **Integer** |  | 
-**userId** | **Integer** |  | 
+**secondDuration** | **Number** |  | 
+**userId** | **Number** |  | 
 **email** | **String** |  | [optional] 
-**lobId** | **Integer** |  | 
-**jobTypeId** | **Integer** |  | 
+**lobId** | **Number** |  | 
+**jobTypeId** | **Number** |  | 
 **jobTypeName** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

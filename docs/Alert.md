@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
 **level** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 

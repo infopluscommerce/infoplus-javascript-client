@@ -3,20 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **shipDate** | **Date** |  | [optional] 
 **deliveredDate** | **Date** |  | [optional] 
 **trackingNo** | **String** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**lobId** | **Integer** |  | [optional] 
+**warehouseId** | **Number** |  | 
+**lobId** | **Number** |  | [optional] 
 **orderNo** | **Number** |  | [optional] 
-**cartonNo** | **Integer** |  | [optional] 
-**numberOfCartons** | **Integer** |  | [optional] 
+**cartonNo** | **Number** |  | [optional] 
+**numberOfCartons** | **Number** |  | [optional] 
 **status** | **String** |  | [optional] 
 **shipped** | **Boolean** |  | [optional] [default to false]
-**carrierServiceId** | **Integer** |  | [optional] 
+**carrierServiceId** | **Number** |  | [optional] 
 **dim1In** | **Number** |  | [optional] 
 **dim2In** | **Number** |  | [optional] 
 **dim3In** | **Number** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **parcelAccountNo** | **String** |  | [optional] 
 **thirdPartyParcelAccountNo** | **String** |  | [optional] 
 **shipmentID** | **String** |  | [optional] 
-**manifestId** | **Integer** |  | [optional] 
+**manifestId** | **Number** |  | [optional] 
 **residential** | **Boolean** |  | [optional] [default to false]
 **billingOption** | **String** |  | [optional] 
 **weightLbs** | **Number** |  | [optional] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **chargedFreightAmount** | **Number** |  | [optional] 
 **publishedFreightAmount** | **Number** |  | [optional] 
 **retailFreightAmount** | **Number** |  | [optional] 
-**externalShippingSystemId** | **Integer** |  | [optional] 
+**externalShippingSystemId** | **Number** |  | [optional] 
 **shipmentType** | **String** |  | [optional] 
 **carrierCompany** | **String** |  | 
 **customFields** | **{String: Object}** |  | [optional] 

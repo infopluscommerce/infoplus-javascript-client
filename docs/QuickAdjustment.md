@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**locationId** | **Integer** |  | 
+**warehouseId** | **Number** |  | 
+**locationId** | **Number** |  | 
 **adjustmentCode** | **String** |  | 
-**totalQuantity** | **Integer** |  | 
+**totalQuantity** | **Number** |  | 
 **message** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **productIdTag** | **String** |  | [optional] 

@@ -3,20 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**importedId** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
+**importedId** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **_date** | **Date** |  | [optional] 
-**quantity** | **Integer** |  | 
-**lobId** | **Integer** |  | 
-**userId** | **Integer** |  | 
+**quantity** | **Number** |  | 
+**lobId** | **Number** |  | 
+**userId** | **Number** |  | 
 **email** | **String** |  | [optional] 
-**billingCodeTypeId** | **Integer** |  | 
+**billingCodeTypeId** | **Number** |  | 
 **billingCodeTypeName** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 
 **recordTypeName** | **String** |  | [optional] 
-**recordTypeId** | **Integer** |  | [optional] 
+**recordTypeId** | **Number** |  | [optional] 
 **recordId** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 

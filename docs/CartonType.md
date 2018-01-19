@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **abbreviation** | **String** |  | 
 **name** | **String** |  | 
 **lengthIn** | **Number** |  | 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **innerWidthIn** | **Number** |  | 
 **innerHeightIn** | **Number** |  | 
 **weightLbs** | **Number** |  | [optional] 
-**lobId** | **Integer** |  | 
+**lobId** | **Number** |  | 
 **isActive** | **Boolean** |  | [default to false]
-**predefinedPackageTypeId** | **Integer** |  | [optional] 
+**predefinedPackageTypeId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

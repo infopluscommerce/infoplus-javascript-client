@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **documentType** | **String** |  | 
-**clientId** | **Integer** |  | [optional] 
+**clientId** | **Number** |  | [optional] 
 **name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **createDate** | **Date** |  | [optional] 

@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 **sku** | **String** |  | [optional] 
 **sku2** | **String** |  | [optional] 
 **fullDescription** | **String** |  | [optional] 
-**orderedQty** | **Integer** |  | [optional] 
-**prevReceivedQty** | **Integer** |  | [optional] 
-**unreceivedQty** | **Integer** |  | [optional] 
-**receivingQty** | **Integer** |  | 
+**orderedQty** | **Number** |  | [optional] 
+**prevReceivedQty** | **Number** |  | [optional] 
+**unreceivedQty** | **Number** |  | [optional] 
+**receivingQty** | **Number** |  | 
 **unitCode** | **String** |  | 
 **wrapCode** | **String** |  | 
-**unitsPerWrap** | **Integer** |  | [optional] 
-**unitsPerCase** | **Integer** |  | [optional] 
-**casesPerPallet** | **Integer** |  | [optional] 
+**unitsPerWrap** | **Number** |  | [optional] 
+**unitsPerCase** | **Number** |  | [optional] 
+**casesPerPallet** | **Number** |  | [optional] 
 **weightPerWrap** | **Number** |  | 
 **weightPerCase** | **Number** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **cartonWidth** | **Number** |  | [optional] 
 **cartonHeight** | **Number** |  | [optional] 
 **putAwayPlans** | [**[ReceivingWorksheetPutAwayPlan]**](ReceivingWorksheetPutAwayPlan.md) |  | [optional] 
-**quantity** | **Integer** |  | [optional] 
+**quantity** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

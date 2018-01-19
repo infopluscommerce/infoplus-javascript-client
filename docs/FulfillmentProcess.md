@@ -3,37 +3,37 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**processNo** | **Integer** |  | [optional] 
-**workBatchId** | **Integer** |  | [optional] 
-**warehouseId** | **Integer** |  | 
-**fulfillmentPlanId** | **Integer** |  | 
-**pickScanSchemeId** | **Integer** |  | 
+**processNo** | **Number** |  | [optional] 
+**workBatchId** | **Number** |  | [optional] 
+**warehouseId** | **Number** |  | 
+**fulfillmentPlanId** | **Number** |  | 
+**pickScanSchemeId** | **Number** |  | 
 **status** | **String** |  | 
-**orderSmartFilterId** | **Integer** |  | [optional] 
-**locationSmartFilterId** | **Integer** |  | [optional] 
-**maxOrders** | **Integer** |  | [optional] 
-**batchSize** | **Integer** |  | [optional] 
+**orderSmartFilterId** | **Number** |  | [optional] 
+**locationSmartFilterId** | **Number** |  | [optional] 
+**maxOrders** | **Number** |  | [optional] 
+**batchSize** | **Number** |  | [optional] 
 **version** | **String** |  | [optional] 
-**fulfillmentProcessGroup** | **Integer** |  | [optional] 
-**numberOfOrders** | **Integer** |  | [optional] 
-**numberOfLines** | **Integer** |  | [optional] 
-**numberOfSKUs** | **Integer** |  | [optional] 
-**completedPicks** | **Integer** |  | [optional] 
-**totalPicks** | **Integer** |  | [optional] 
-**shippedCasebreaks** | **Integer** |  | [optional] 
-**totalCasebreaksToShip** | **Integer** |  | [optional] 
-**shippedOrders** | **Integer** |  | [optional] 
-**totalOrdersToShip** | **Integer** |  | [optional] 
-**completedToDo** | **Integer** |  | [optional] 
-**totalToDo** | **Integer** |  | [optional] 
+**fulfillmentProcessGroup** | **Number** |  | [optional] 
+**numberOfOrders** | **Number** |  | [optional] 
+**numberOfLines** | **Number** |  | [optional] 
+**numberOfSKUs** | **Number** |  | [optional] 
+**completedPicks** | **Number** |  | [optional] 
+**totalPicks** | **Number** |  | [optional] 
+**shippedCasebreaks** | **Number** |  | [optional] 
+**totalCasebreaksToShip** | **Number** |  | [optional] 
+**shippedOrders** | **Number** |  | [optional] 
+**totalOrdersToShip** | **Number** |  | [optional] 
+**completedToDo** | **Number** |  | [optional] 
+**totalToDo** | **Number** |  | [optional] 
 **createPickWork** | **Boolean** |  | [optional] [default to false]
 **pickingRule** | **String** |  | [optional] 
 **layoutRule** | **String** |  | [optional] 
 **pickSortRule** | **String** |  | [optional] 
-**firstPickPosition** | **Integer** |  | [optional] 
+**firstPickPosition** | **Number** |  | [optional] 
 **pickListFormat** | **String** |  | [optional] 
 **pickListLayout** | **String** |  | [optional] 
 **pickListGroup** | **String** |  | [optional] 
@@ -48,12 +48,12 @@ Name | Type | Description | Notes
 **autoShipCasebreakCartons** | **Boolean** |  | [optional] [default to false]
 **cartonizeOrders** | **Boolean** |  | [optional] [default to false]
 **createPackingSlip** | **String** |  | 
-**overridePackingSlipTemplateId** | **Integer** |  | [optional] 
+**overridePackingSlipTemplateId** | **Number** |  | [optional] 
 **createOrderAssemblyGuide** | **Boolean** |  | [optional] [default to false]
 **createOrderInvoice** | **String** |  | 
-**overrideOrderInvoiceTemplateId** | **Integer** |  | [optional] 
+**overrideOrderInvoiceTemplateId** | **Number** |  | [optional] 
 **sendToExternalShippingSystem** | **Boolean** |  | [default to false]
-**externalShippingSystemId** | **Integer** |  | [optional] 
+**externalShippingSystemId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

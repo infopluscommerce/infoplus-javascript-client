@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**idList** | **[Integer]** |  | [optional] 
+**idList** | **[Number]** |  | [optional] 
 
 

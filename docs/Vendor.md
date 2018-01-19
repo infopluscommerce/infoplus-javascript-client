@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**vendorNo** | **Integer** |  | 
-**lobId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**vendorNo** | **Number** |  | 
+**lobId** | **Number** |  | 
 **name** | **String** |  | 
 **street** | **String** |  | 
 **street2** | **String** |  | [optional] 
@@ -19,20 +19,20 @@ Name | Type | Description | Notes
 **externalId** | **String** |  | [optional] 
 **terms** | **String** |  | [optional] 
 **fob** | **String** |  | [optional] 
-**shipVia** | **Integer** |  | [optional] 
-**requestDays** | **Integer** |  | [optional] 
-**actualDays** | **Integer** |  | [optional] 
+**shipVia** | **Number** |  | [optional] 
+**requestDays** | **Number** |  | [optional] 
+**actualDays** | **Number** |  | [optional] 
 **salesTaxCode** | **String** |  | [optional] 
-**product1** | **Integer** |  | [optional] 
-**product2** | **Integer** |  | [optional] 
-**product3** | **Integer** |  | [optional] 
-**product4** | **Integer** |  | [optional] 
-**product5** | **Integer** |  | [optional] 
-**product6** | **Integer** |  | [optional] 
-**product7** | **Integer** |  | [optional] 
-**product8** | **Integer** |  | [optional] 
-**product9** | **Integer** |  | [optional] 
-**podDays** | **Integer** |  | [optional] 
+**product1** | **Number** |  | [optional] 
+**product2** | **Number** |  | [optional] 
+**product3** | **Number** |  | [optional] 
+**product4** | **Number** |  | [optional] 
+**product5** | **Number** |  | [optional] 
+**product6** | **Number** |  | [optional] 
+**product7** | **Number** |  | [optional] 
+**product8** | **Number** |  | [optional] 
+**product9** | **Number** |  | [optional] 
+**podDays** | **Number** |  | [optional] 
 **chargeOut** | **String** |  | [optional] 
 **arEmail** | **String** |  | [optional] 
 **orderEmail** | **String** |  | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **sendQuantityType** | **String** |  | [optional] 
 **minority** | **String** |  | [optional] 
 **sendOutside** | **String** |  | [optional] 
-**podOrderSuffix** | **Integer** |  | [optional] 
+**podOrderSuffix** | **Number** |  | [optional] 
 **podEmail** | **String** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 

@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**orderSourceId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**orderSourceId** | **Number** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**reservedQuantity** | **Integer** |  | 
+**reservedQuantity** | **Number** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 

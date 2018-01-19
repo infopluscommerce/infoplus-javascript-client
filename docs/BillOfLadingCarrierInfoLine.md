@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seqNo** | **Integer** |  | [optional] 
-**huQuantity** | **Integer** |  | [optional] 
+**seqNo** | **Number** |  | [optional] 
+**huQuantity** | **Number** |  | [optional] 
 **huType** | **String** |  | [optional] 
-**packageQuantity** | **Integer** |  | [optional] 
+**packageQuantity** | **Number** |  | [optional] 
 **packageType** | **String** |  | [optional] 
-**weight** | **Integer** |  | [optional] 
+**weight** | **Number** |  | [optional] 
 **isHazardousMaterial** | **Boolean** |  | [optional] [default to false]
 **commodityDescription** | **String** |  | 
 **nfmcNo** | **String** |  | [optional] 

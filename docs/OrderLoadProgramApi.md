@@ -19,20 +19,20 @@ Returns the list of orderLoadPrograms that match the given searchText.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLoadProgramApi()
+var apiInstance = new infoplus.OrderLoadProgramApi();
 
 var opts = { 
-  'searchText': "searchText_example", // {String} Search text, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56 // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'searchText': "searchText_example", // String | Search text, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56 // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
 };
 
 var callback = function(error, data, response) {
@@ -42,7 +42,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getOrderLoadProgramBySearchText(opts, callback);
+apiInstance.getOrderLoadProgramBySearchText(opts, callback);
 ```
 
 ### Parameters
@@ -50,8 +50,8 @@ api.getOrderLoadProgramBySearchText(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchText** | **String**| Search text, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
 
 ### Return type
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -77,17 +77,17 @@ Returns the orderLoadProgram identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.OrderLoadProgramApi()
+var apiInstance = new infoplus.OrderLoadProgramApi();
 
-var orderLoadProgramId = "orderLoadProgramId_example"; // {String} Id of orderLoadProgram to be returned.
+var orderLoadProgramId = "orderLoadProgramId_example"; // String | Id of orderLoadProgram to be returned.
 
 
 var callback = function(error, data, response) {
@@ -97,7 +97,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getReqLoadProgramById(orderLoadProgramId, callback);
+apiInstance.getReqLoadProgramById(orderLoadProgramId, callback);
 ```
 
 ### Parameters
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json

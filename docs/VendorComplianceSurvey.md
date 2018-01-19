@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**worksheetId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**worksheetId** | **Number** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **surveyQuestions** | **String** |  | [optional] 

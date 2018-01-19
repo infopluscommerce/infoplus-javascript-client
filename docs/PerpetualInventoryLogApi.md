@@ -24,19 +24,19 @@ Adds an audit to an existing perpetualInventoryLog.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
-var perpetualInventoryLogId = 56; // {Integer} Id of the perpetualInventoryLog to add an audit to
+var perpetualInventoryLogId = 56; // Number | Id of the perpetualInventoryLog to add an audit to
 
-var perpetualInventoryLogAudit = "perpetualInventoryLogAudit_example"; // {String} The audit to add
+var perpetualInventoryLogAudit = "perpetualInventoryLogAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -46,14 +46,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addPerpetualInventoryLogAudit(perpetualInventoryLogId, perpetualInventoryLogAudit, callback);
+apiInstance.addPerpetualInventoryLogAudit(perpetualInventoryLogId, perpetualInventoryLogAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **perpetualInventoryLogId** | **Integer**| Id of the perpetualInventoryLog to add an audit to | 
+ **perpetualInventoryLogId** | **Number**| Id of the perpetualInventoryLog to add an audit to | 
  **perpetualInventoryLogAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -64,7 +64,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -80,19 +80,19 @@ Adds a tag to an existing perpetualInventoryLog.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
-var perpetualInventoryLogId = 56; // {Integer} Id of the perpetualInventoryLog to add a tag to
+var perpetualInventoryLogId = 56; // Number | Id of the perpetualInventoryLog to add a tag to
 
-var perpetualInventoryLogTag = "perpetualInventoryLogTag_example"; // {String} The tag to add
+var perpetualInventoryLogTag = "perpetualInventoryLogTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -102,14 +102,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addPerpetualInventoryLogTag(perpetualInventoryLogId, perpetualInventoryLogTag, callback);
+apiInstance.addPerpetualInventoryLogTag(perpetualInventoryLogId, perpetualInventoryLogTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **perpetualInventoryLogId** | **Integer**| Id of the perpetualInventoryLog to add a tag to | 
+ **perpetualInventoryLogId** | **Number**| Id of the perpetualInventoryLog to add a tag to | 
  **perpetualInventoryLogTag** | **String**| The tag to add | 
 
 ### Return type
@@ -120,7 +120,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -136,19 +136,19 @@ Deletes an existing perpetualInventoryLog tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
-var perpetualInventoryLogId = 56; // {Integer} Id of the perpetualInventoryLog to remove tag from
+var perpetualInventoryLogId = 56; // Number | Id of the perpetualInventoryLog to remove tag from
 
-var perpetualInventoryLogTag = "perpetualInventoryLogTag_example"; // {String} The tag to delete
+var perpetualInventoryLogTag = "perpetualInventoryLogTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -158,14 +158,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deletePerpetualInventoryLogTag(perpetualInventoryLogId, perpetualInventoryLogTag, callback);
+apiInstance.deletePerpetualInventoryLogTag(perpetualInventoryLogId, perpetualInventoryLogTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **perpetualInventoryLogId** | **Integer**| Id of the perpetualInventoryLog to remove tag from | 
+ **perpetualInventoryLogId** | **Number**| Id of the perpetualInventoryLog to remove tag from | 
  **perpetualInventoryLogTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -176,7 +176,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -192,17 +192,17 @@ Returns a duplicated perpetualInventoryLog identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
-var perpetualInventoryLogId = 56; // {Integer} Id of the perpetualInventoryLog to be duplicated.
+var perpetualInventoryLogId = 56; // Number | Id of the perpetualInventoryLog to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -212,14 +212,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicatePerpetualInventoryLogById(perpetualInventoryLogId, callback);
+apiInstance.getDuplicatePerpetualInventoryLogById(perpetualInventoryLogId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **perpetualInventoryLogId** | **Integer**| Id of the perpetualInventoryLog to be duplicated. | 
+ **perpetualInventoryLogId** | **Number**| Id of the perpetualInventoryLog to be duplicated. | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -245,21 +245,21 @@ Returns the list of perpetualInventoryLogs that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -269,7 +269,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getPerpetualInventoryLogByFilter(opts, callback);
+apiInstance.getPerpetualInventoryLogByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -277,8 +277,8 @@ api.getPerpetualInventoryLogByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -305,17 +305,17 @@ Returns the perpetualInventoryLog identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
-var perpetualInventoryLogId = 56; // {Integer} Id of the perpetualInventoryLog to be returned.
+var perpetualInventoryLogId = 56; // Number | Id of the perpetualInventoryLog to be returned.
 
 
 var callback = function(error, data, response) {
@@ -325,14 +325,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getPerpetualInventoryLogById(perpetualInventoryLogId, callback);
+apiInstance.getPerpetualInventoryLogById(perpetualInventoryLogId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **perpetualInventoryLogId** | **Integer**| Id of the perpetualInventoryLog to be returned. | 
+ **perpetualInventoryLogId** | **Number**| Id of the perpetualInventoryLog to be returned. | 
 
 ### Return type
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -358,17 +358,17 @@ Get all existing perpetualInventoryLog tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.PerpetualInventoryLogApi()
+var apiInstance = new infoplus.PerpetualInventoryLogApi();
 
-var perpetualInventoryLogId = 56; // {Integer} Id of the perpetualInventoryLog to get tags for
+var perpetualInventoryLogId = 56; // Number | Id of the perpetualInventoryLog to get tags for
 
 
 var callback = function(error, data, response) {
@@ -378,14 +378,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getPerpetualInventoryLogTags(perpetualInventoryLogId, callback);
+apiInstance.getPerpetualInventoryLogTags(perpetualInventoryLogId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **perpetualInventoryLogId** | **Integer**| Id of the perpetualInventoryLog to get tags for | 
+ **perpetualInventoryLogId** | **Number**| Id of the perpetualInventoryLog to get tags for | 
 
 ### Return type
 
@@ -395,7 +395,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json

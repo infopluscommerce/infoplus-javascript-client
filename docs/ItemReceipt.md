@@ -3,21 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**poNoId** | **Integer** |  | [optional] 
-**lobId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**poNoId** | **Number** |  | [optional] 
+**lobId** | **Number** |  | 
 **legacyPoNo** | **String** |  | [optional] 
-**warehouseId** | **Integer** |  | 
+**warehouseId** | **Number** |  | 
 **orderDate** | **Date** |  | [optional] 
 **fullDescription** | **String** |  | [optional] 
 **factCost** | **Number** |  | [optional] 
 **mlCost** | **Number** |  | [optional] 
 **sku** | **String** |  | 
-**orderQuantity** | **Integer** |  | 
+**orderQuantity** | **Number** |  | 
 **requestedDeliveryDate** | **Date** |  | 
 **unitCode** | **String** |  | 
 **wrapCode** | **String** |  | 
-**unitsPerWrap** | **Integer** |  | 
+**unitsPerWrap** | **Number** |  | 
 **cost** | **Number** |  | [optional] 
 **sellPrice** | **Number** |  | [optional] 
 **pricingPer** | **String** |  | [optional] 
@@ -30,50 +30,50 @@ Name | Type | Description | Notes
 **revDate** | **String** |  | [optional] 
 **artBack** | **String** |  | [optional] 
 **origin** | **String** |  | [optional] 
-**sample** | **Integer** |  | [optional] 
+**sample** | **Number** |  | [optional] 
 **sampleTo** | **String** |  | [optional] 
-**maxOvers** | **Integer** |  | 
-**maxUnders** | **Integer** |  | 
-**receivedSfp** | **Integer** |  | [optional] 
+**maxOvers** | **Number** |  | 
+**maxUnders** | **Number** |  | 
+**receivedSfp** | **Number** |  | [optional] 
 **budgetCode** | **String** |  | [optional] 
 **accountingCode** | **String** |  | [optional] 
 **taxExempt** | **String** |  | [optional] 
 **capitalize** | **String** |  | [optional] 
 **accrual** | **String** |  | [optional] 
-**oddQuantity** | **Integer** |  | [optional] 
+**oddQuantity** | **Number** |  | [optional] 
 **freightCost** | **Number** |  | [optional] 
 **receivedDate** | **Date** |  | [optional] 
-**receivedQuantity** | **Integer** |  | [optional] 
-**fromProd** | **Integer** |  | [optional] 
+**receivedQuantity** | **Number** |  | [optional] 
+**fromProd** | **Number** |  | [optional] 
 **sfpComplete** | **String** |  | [optional] 
-**endQuantity** | **Integer** |  | [optional] 
+**endQuantity** | **Number** |  | [optional] 
 **endVal** | **Number** |  | [optional] 
 **endFact** | **Number** |  | [optional] 
-**interimQuantity** | **Integer** |  | [optional] 
+**interimQuantity** | **Number** |  | [optional] 
 **interimVal** | **Number** |  | [optional] 
 **interimFact** | **Number** |  | [optional] 
 **lastAct** | **Date** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
 **norcs** | **String** |  | [optional] 
-**vendorId** | **Integer** |  | 
-**bsVendor** | **Integer** |  | [optional] 
-**mlVendor** | **Integer** |  | [optional] 
-**receiptNo** | **Integer** |  | [optional] 
+**vendorId** | **Number** |  | 
+**bsVendor** | **Number** |  | [optional] 
+**mlVendor** | **Number** |  | [optional] 
+**receiptNo** | **Number** |  | [optional] 
 **paidFull** | **String** |  | [optional] 
 **enteredBy** | **String** |  | [optional] 
 **receivedBy** | **String** |  | [optional] 
-**lineNo** | **Integer** |  | [optional] 
+**lineNo** | **Number** |  | [optional] 
 **prodLot** | **String** |  | [optional] 
 **productIdTag** | **String** |  | [optional] 
-**unitsPerCase** | **Integer** |  | [optional] 
+**unitsPerCase** | **Number** |  | [optional] 
 **caseWeight** | **Number** |  | [optional] 
 **height** | **Number** |  | [optional] 
 **width** | **Number** |  | [optional] 
 **length** | **Number** |  | [optional] 
 **dockDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**impressions** | **Integer** |  | [optional] 
-**asnLine** | **Integer** |  | [optional] 
+**impressions** | **Number** |  | [optional] 
+**asnLine** | **Number** |  | [optional] 
 **upc** | **String** |  | [optional] 
 **vendorSKU** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

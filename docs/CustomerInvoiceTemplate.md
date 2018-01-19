@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **name** | **String** |  | 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **notes** | **String** |  | [optional] 
 **terms** | **String** |  | [optional] 
 **specialInstructions** | **String** |  | [optional] 
-**lobId** | **Integer** |  | 
+**lobId** | **Number** |  | 
 **billingPeriod** | **String** |  | 
 **remitToAttention** | **String** |  | [optional] 
 **remitToCompany** | **String** |  | [optional] 

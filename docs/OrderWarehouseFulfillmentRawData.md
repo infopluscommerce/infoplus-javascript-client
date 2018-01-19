@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**warehouseId** | **Integer** |  | [optional] 
+**warehouseId** | **Number** |  | [optional] 
 **canFulfill** | **Boolean** |  | [optional] [default to false]
 **skuMap** | [**{String: OrderWarehouseFulfillmentRawSkuData}**](OrderWarehouseFulfillmentRawSkuData.md) |  | [optional] 
 

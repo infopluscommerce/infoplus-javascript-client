@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **serverName** | **String** |  | [optional] 
 **queueName** | **String** |  | [optional] 
-**lobId** | **Integer** |  | [optional] 
+**lobId** | **Number** |  | [optional] 
 **messageBody** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

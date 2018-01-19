@@ -26,19 +26,19 @@ Adds an audit to an existing receivingProcess.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to add an audit to
+var receivingProcessId = 56; // Number | Id of the receivingProcess to add an audit to
 
-var receivingProcessAudit = "receivingProcessAudit_example"; // {String} The audit to add
+var receivingProcessAudit = "receivingProcessAudit_example"; // String | The audit to add
 
 
 var callback = function(error, data, response) {
@@ -48,14 +48,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addReceivingProcessAudit(receivingProcessId, receivingProcessAudit, callback);
+apiInstance.addReceivingProcessAudit(receivingProcessId, receivingProcessAudit, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to add an audit to | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to add an audit to | 
  **receivingProcessAudit** | **String**| The audit to add | 
 
 ### Return type
@@ -66,7 +66,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -82,19 +82,19 @@ Adds a tag to an existing receivingProcess.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to add a tag to
+var receivingProcessId = 56; // Number | Id of the receivingProcess to add a tag to
 
-var receivingProcessTag = "receivingProcessTag_example"; // {String} The tag to add
+var receivingProcessTag = "receivingProcessTag_example"; // String | The tag to add
 
 
 var callback = function(error, data, response) {
@@ -104,14 +104,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.addReceivingProcessTag(receivingProcessId, receivingProcessTag, callback);
+apiInstance.addReceivingProcessTag(receivingProcessId, receivingProcessTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to add a tag to | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to add a tag to | 
  **receivingProcessTag** | **String**| The tag to add | 
 
 ### Return type
@@ -122,7 +122,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
@@ -138,17 +138,17 @@ Deletes the receivingProcess identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to be deleted.
+var receivingProcessId = 56; // Number | Id of the receivingProcess to be deleted.
 
 
 var callback = function(error, data, response) {
@@ -158,14 +158,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteReceivingProcess(receivingProcessId, callback);
+apiInstance.deleteReceivingProcess(receivingProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to be deleted. | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to be deleted. | 
 
 ### Return type
 
@@ -175,7 +175,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -191,19 +191,19 @@ Deletes an existing receivingProcess tag using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to remove tag from
+var receivingProcessId = 56; // Number | Id of the receivingProcess to remove tag from
 
-var receivingProcessTag = "receivingProcessTag_example"; // {String} The tag to delete
+var receivingProcessTag = "receivingProcessTag_example"; // String | The tag to delete
 
 
 var callback = function(error, data, response) {
@@ -213,14 +213,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deleteReceivingProcessTag(receivingProcessId, receivingProcessTag, callback);
+apiInstance.deleteReceivingProcessTag(receivingProcessId, receivingProcessTag, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to remove tag from | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to remove tag from | 
  **receivingProcessTag** | **String**| The tag to delete | 
 
 ### Return type
@@ -231,7 +231,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -247,17 +247,17 @@ Returns a duplicated receivingProcess identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to be duplicated.
+var receivingProcessId = 56; // Number | Id of the receivingProcess to be duplicated.
 
 
 var callback = function(error, data, response) {
@@ -267,14 +267,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getDuplicateReceivingProcessById(receivingProcessId, callback);
+apiInstance.getDuplicateReceivingProcessById(receivingProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to be duplicated. | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to be duplicated. | 
 
 ### Return type
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -300,21 +300,21 @@ Returns the list of receivingProcesses that match the given filter.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
 var opts = { 
-  'filter': "filter_example", // {String} Query string, used to filter results.
-  'page': 56, // {Integer} Result page number.  Defaults to 1.
-  'limit': 56, // {Integer} Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-  'sort': "sort_example" // {String} Sort results by specified field.
+  'filter': "filter_example", // String | Query string, used to filter results.
+  'page': 56, // Number | Result page number.  Defaults to 1.
+  'limit': 56, // Number | Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+  'sort': "sort_example" // String | Sort results by specified field.
 };
 
 var callback = function(error, data, response) {
@@ -324,7 +324,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getReceivingProcessByFilter(opts, callback);
+apiInstance.getReceivingProcessByFilter(opts, callback);
 ```
 
 ### Parameters
@@ -332,8 +332,8 @@ api.getReceivingProcessByFilter(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **String**| Query string, used to filter results. | [optional] 
- **page** | **Integer**| Result page number.  Defaults to 1. | [optional] 
- **limit** | **Integer**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
+ **page** | **Number**| Result page number.  Defaults to 1. | [optional] 
+ **limit** | **Number**| Maximum results per page.  Defaults to 20.  Max allowed value is 250. | [optional] 
  **sort** | **String**| Sort results by specified field. | [optional] 
 
 ### Return type
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -360,17 +360,17 @@ Returns the receivingProcess identified by the specified id.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to be returned.
+var receivingProcessId = 56; // Number | Id of the receivingProcess to be returned.
 
 
 var callback = function(error, data, response) {
@@ -380,14 +380,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getReceivingProcessById(receivingProcessId, callback);
+apiInstance.getReceivingProcessById(receivingProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to be returned. | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to be returned. | 
 
 ### Return type
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -413,17 +413,17 @@ Get all existing receivingProcess tags.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var receivingProcessId = 56; // {Integer} Id of the receivingProcess to get tags for
+var receivingProcessId = 56; // Number | Id of the receivingProcess to get tags for
 
 
 var callback = function(error, data, response) {
@@ -433,14 +433,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getReceivingProcessTags(receivingProcessId, callback);
+apiInstance.getReceivingProcessTags(receivingProcessId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **receivingProcessId** | **Integer**| Id of the receivingProcess to get tags for | 
+ **receivingProcessId** | **Number**| Id of the receivingProcess to get tags for | 
 
 ### Return type
 
@@ -450,7 +450,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -466,17 +466,17 @@ Updates an existing receivingProcess custom fields using the specified data.
 ### Example
 ```javascript
 var infoplus = require('infoplus-javascript-client');
-var defaultClient = infoplus.ApiClient.default;
+var defaultClient = infoplus.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = "YOUR API KEY"
+api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix['API-Key'] = "Token"
+//api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new infoplus.ReceivingProcessApi()
+var apiInstance = new infoplus.ReceivingProcessApi();
 
-var body = new infoplus.ReceivingProcess(); // {ReceivingProcess} ReceivingProcess to be updated.
+var body = new infoplus.ReceivingProcess(); // ReceivingProcess | ReceivingProcess to be updated.
 
 
 var callback = function(error, data, response) {
@@ -486,7 +486,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.updateReceivingProcessCustomFields(body, callback);
+apiInstance.updateReceivingProcessCustomFields(body, callback);
 ```
 
 ### Parameters
@@ -503,7 +503,7 @@ null (empty response body)
 
 [api_key](../README.md#api_key)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

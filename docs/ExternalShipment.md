@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **orderId** | **Number** |  | 
-**carrierId** | **Integer** |  | 
-**parcelAccountId** | **Integer** |  | 
-**thirdPartyParcelAccountId** | **Integer** |  | [optional] 
+**carrierId** | **Number** |  | 
+**parcelAccountId** | **Number** |  | 
+**thirdPartyParcelAccountId** | **Number** |  | [optional] 
 **freight** | **Number** |  | [optional] 
 **trackingNo** | **String** |  | 
 **dim1In** | **Number** |  | [optional] 

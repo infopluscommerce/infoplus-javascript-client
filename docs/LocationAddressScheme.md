@@ -3,22 +3,22 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**clientId** | **Integer** |  | 
+**id** | **Number** |  | [optional] 
+**clientId** | **Number** |  | 
 **name** | **String** |  | 
 **formatString** | **String** |  | 
 **locationNamingScheme** | **String** |  | 
 **locationNumberZeroPadded** | **Boolean** |  | [default to false]
-**locationNumberMinimumNumberOfDigits** | **Integer** |  | [optional] 
+**locationNumberMinimumNumberOfDigits** | **Number** |  | [optional] 
 **levelNamingScheme** | **String** |  | 
 **levelNumberZeroPadded** | **Boolean** |  | [default to false]
-**levelNumberMinimumNumberOfDigits** | **Integer** |  | [optional] 
+**levelNumberMinimumNumberOfDigits** | **Number** |  | [optional] 
 **aisleNamingScheme** | **String** |  | 
 **aisleNumberZeroPadded** | **Boolean** |  | [default to false]
-**aisleNumberMinimumNumberOfDigits** | **Integer** |  | [optional] 
+**aisleNumberMinimumNumberOfDigits** | **Number** |  | [optional] 
 **bayNamingScheme** | **String** |  | [optional] 
 **bayNumberZeroPadded** | **Boolean** |  | [optional] [default to false]
-**bayNumberMinimumNumberOfDigits** | **Integer** |  | [optional] 
+**bayNumberMinimumNumberOfDigits** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 

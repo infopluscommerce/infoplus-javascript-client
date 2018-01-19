@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**quantity** | **Integer** |  | [optional] 
+**quantity** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

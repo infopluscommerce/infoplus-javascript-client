@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **orderNo** | **Number** |  | 
-**lobId** | **Integer** |  | 
+**lobId** | **Number** |  | 
 **sku** | **String** |  | 
-**poNoId** | **Integer** |  | [optional] 
-**orderedQty** | **Integer** |  | [optional] 
-**allowedQty** | **Integer** |  | [optional] 
-**shippedQty** | **Integer** |  | [optional] 
-**backorderQty** | **Integer** |  | [optional] 
+**poNoId** | **Number** |  | [optional] 
+**orderedQty** | **Number** |  | [optional] 
+**allowedQty** | **Number** |  | [optional] 
+**shippedQty** | **Number** |  | [optional] 
+**backorderQty** | **Number** |  | [optional] 
 **revDate** | **String** |  | [optional] 
 **chargeCode** | **String** |  | [optional] 
 **distributionCode** | **String** |  | [optional] 
@@ -30,12 +30,12 @@ Name | Type | Description | Notes
 **weightPerWrap** | **Number** |  | [optional] 
 **sector** | **String** |  | [optional] 
 **orderAssemblyInstructions** | **String** |  | [optional] 
-**itemAccountCodeId** | **Integer** |  | 
-**itemLegacyLowStockContactId** | **Integer** |  | 
-**itemMajorGroupId** | **Integer** |  | 
-**itemSubGroupId** | **Integer** |  | 
-**itemProductCodeId** | **Integer** |  | [optional] 
-**itemSummaryCodeId** | **Integer** |  | 
+**itemAccountCodeId** | **Number** |  | 
+**itemLegacyLowStockContactId** | **Number** |  | 
+**itemMajorGroupId** | **Number** |  | 
+**itemSubGroupId** | **Number** |  | 
+**itemProductCodeId** | **Number** |  | [optional] 
+**itemSummaryCodeId** | **Number** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

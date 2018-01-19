@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**quantity** | **Integer** |  | 
+**quantity** | **Number** |  | 
 **_date** | **Date** |  | [optional] 
-**userId** | **Integer** |  | 
-**lobId** | **Integer** |  | [optional] 
-**billingCodeTypeId** | **Integer** |  | 
+**userId** | **Number** |  | 
+**lobId** | **Number** |  | [optional] 
+**billingCodeTypeId** | **Number** |  | 
 **recordType** | **String** |  | [optional] 
 **recordId** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 

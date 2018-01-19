@@ -3,17 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**id** | **Number** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
 **name** | **String** |  | 
 **description** | **String** |  | [optional] 
-**warehouseId** | **Integer** |  | 
+**warehouseId** | **Number** |  | 
 **lastRunTime** | **Date** |  | [optional] 
-**orderSmartFilterId** | **Integer** |  | 
-**locationSmartFilterId** | **Integer** |  | [optional] 
-**maxOrders** | **Integer** |  | [optional] 
-**batchSize** | **Integer** |  | [optional] 
+**orderSmartFilterId** | **Number** |  | 
+**locationSmartFilterId** | **Number** |  | [optional] 
+**maxOrders** | **Number** |  | [optional] 
+**batchSize** | **Number** |  | [optional] 
 **version** | **String** |  | [optional] 
 **createPickWork** | **Boolean** |  | [default to false]
 **pickingRule** | **String** |  | [optional] 
@@ -28,17 +28,17 @@ Name | Type | Description | Notes
 **pickSummaryFormat** | **String** |  | [optional] 
 **pickSummaryLayout** | **String** |  | [optional] 
 **pickSummarySort** | **String** |  | [optional] 
-**pickScanSchemeId** | **Integer** |  | 
+**pickScanSchemeId** | **Number** |  | 
 **cartonizeOrders** | **Boolean** |  | [default to false]
 **autoShipCasebreakCartons** | **Boolean** |  | [optional] [default to false]
 **preGenerateParcelLabels** | **Boolean** |  | [optional] [default to false]
 **createPackingSlip** | **String** |  | 
-**overridePackingSlipTemplateId** | **Integer** |  | [optional] 
+**overridePackingSlipTemplateId** | **Number** |  | [optional] 
 **createOrderAssemblyGuide** | **Boolean** |  | [optional] [default to false]
 **createOrderInvoice** | **String** |  | 
-**overrideOrderInvoiceTemplateId** | **Integer** |  | [optional] 
+**overrideOrderInvoiceTemplateId** | **Number** |  | [optional] 
 **sendToExternalShippingSystem** | **Boolean** |  | [default to false]
-**externalShippingSystemId** | **Integer** |  | [optional] 
+**externalShippingSystemId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 
