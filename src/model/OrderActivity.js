@@ -166,6 +166,7 @@
 
 
 
+
   };
 
   /**
@@ -454,6 +455,9 @@
       }
       if (data.hasOwnProperty('parcelAccountId')) {
         obj['parcelAccountId'] = ApiClient.convertToType(data['parcelAccountId'], 'Number');
+      }
+      if (data.hasOwnProperty('thirdPartyParcelAccountId')) {
+        obj['thirdPartyParcelAccountId'] = ApiClient.convertToType(data['thirdPartyParcelAccountId'], 'Number');
       }
       if (data.hasOwnProperty('packingSlipTemplateId')) {
         obj['packingSlipTemplateId'] = ApiClient.convertToType(data['packingSlipTemplateId'], 'Number');
@@ -890,6 +894,10 @@
    * @member {Number} parcelAccountId
    */
   exports.prototype['parcelAccountId'] = undefined;
+  /**
+   * @member {Number} thirdPartyParcelAccountId
+   */
+  exports.prototype['thirdPartyParcelAccountId'] = undefined;
   /**
    * @member {Number} packingSlipTemplateId
    */

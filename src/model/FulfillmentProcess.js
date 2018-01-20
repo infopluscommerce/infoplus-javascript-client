@@ -99,6 +99,8 @@
 
 
 
+
+
     _this['createPackingSlip'] = createPackingSlip;
 
 
@@ -164,6 +166,9 @@
       }
       if (data.hasOwnProperty('fulfillmentProcessGroup')) {
         obj['fulfillmentProcessGroup'] = ApiClient.convertToType(data['fulfillmentProcessGroup'], 'Number');
+      }
+      if (data.hasOwnProperty('isMassDistribution')) {
+        obj['isMassDistribution'] = ApiClient.convertToType(data['isMassDistribution'], 'Boolean');
       }
       if (data.hasOwnProperty('numberOfOrders')) {
         obj['numberOfOrders'] = ApiClient.convertToType(data['numberOfOrders'], 'Number');
@@ -248,6 +253,9 @@
       }
       if (data.hasOwnProperty('autoShipCasebreakCartons')) {
         obj['autoShipCasebreakCartons'] = ApiClient.convertToType(data['autoShipCasebreakCartons'], 'Boolean');
+      }
+      if (data.hasOwnProperty('autoShipOrders')) {
+        obj['autoShipOrders'] = ApiClient.convertToType(data['autoShipOrders'], 'Boolean');
       }
       if (data.hasOwnProperty('cartonizeOrders')) {
         obj['cartonizeOrders'] = ApiClient.convertToType(data['cartonizeOrders'], 'Boolean');
@@ -340,6 +348,11 @@
    * @member {Number} fulfillmentProcessGroup
    */
   exports.prototype['fulfillmentProcessGroup'] = undefined;
+  /**
+   * @member {Boolean} isMassDistribution
+   * @default false
+   */
+  exports.prototype['isMassDistribution'] = false;
   /**
    * @member {Number} numberOfOrders
    */
@@ -457,6 +470,11 @@
    * @default false
    */
   exports.prototype['autoShipCasebreakCartons'] = false;
+  /**
+   * @member {Boolean} autoShipOrders
+   * @default false
+   */
+  exports.prototype['autoShipOrders'] = false;
   /**
    * @member {Boolean} cartonizeOrders
    * @default false

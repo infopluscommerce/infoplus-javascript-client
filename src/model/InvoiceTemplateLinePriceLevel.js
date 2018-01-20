@@ -26,7 +26,7 @@
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ProcessOutputAPIModel = factory(root.infoplus.ApiClient);
+    root.infoplus.InvoiceTemplateLinePriceLevel = factory(root.infoplus.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,14 +35,14 @@
 
 
   /**
-   * The ProcessOutputAPIModel model module.
-   * @module model/ProcessOutputAPIModel
+   * The InvoiceTemplateLinePriceLevel model module.
+   * @module model/InvoiceTemplateLinePriceLevel
    * @version beta
    */
 
   /**
-   * Constructs a new <code>ProcessOutputAPIModel</code>.
-   * @alias module:model/ProcessOutputAPIModel
+   * Constructs a new <code>InvoiceTemplateLinePriceLevel</code>.
+   * @alias module:model/InvoiceTemplateLinePriceLevel
    * @class
    */
   var exports = function() {
@@ -55,48 +55,48 @@
   };
 
   /**
-   * Constructs a <code>ProcessOutputAPIModel</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InvoiceTemplateLinePriceLevel</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ProcessOutputAPIModel} obj Optional instance to populate.
-   * @return {module:model/ProcessOutputAPIModel} The populated <code>ProcessOutputAPIModel</code> instance.
+   * @param {module:model/InvoiceTemplateLinePriceLevel} obj Optional instance to populate.
+   * @return {module:model/InvoiceTemplateLinePriceLevel} The populated <code>InvoiceTemplateLinePriceLevel</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], Object);
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('quantity')) {
+        obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
       }
-      if (data.hasOwnProperty('entity')) {
-        obj['entity'] = ApiClient.convertToType(data['entity'], Object);
+      if (data.hasOwnProperty('rate')) {
+        obj['rate'] = ApiClient.convertToType(data['rate'], 'Number');
       }
-      if (data.hasOwnProperty('messageList')) {
-        obj['messageList'] = ApiClient.convertToType(data['messageList'], ['String']);
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
       }
     }
     return obj;
   }
 
   /**
-   * @member {Object} id
+   * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {String} status
+   * @member {Number} quantity
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['quantity'] = undefined;
   /**
-   * @member {Object} entity
+   * @member {Number} rate
    */
-  exports.prototype['entity'] = undefined;
+  exports.prototype['rate'] = undefined;
   /**
-   * @member {Array.<String>} messageList
+   * @member {Object.<String, Object>} customFields
    */
-  exports.prototype['messageList'] = undefined;
+  exports.prototype['customFields'] = undefined;
 
 
 

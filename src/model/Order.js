@@ -149,6 +149,9 @@
 
 
 
+
+
+
     _this['lineItems'] = lineItems;
 
 
@@ -451,6 +454,15 @@
       }
       if (data.hasOwnProperty('orderAssemblyInstructions')) {
         obj['orderAssemblyInstructions'] = ApiClient.convertToType(data['orderAssemblyInstructions'], 'String');
+      }
+      if (data.hasOwnProperty('parcelLabelRef1')) {
+        obj['parcelLabelRef1'] = ApiClient.convertToType(data['parcelLabelRef1'], 'String');
+      }
+      if (data.hasOwnProperty('parcelLabelRef2')) {
+        obj['parcelLabelRef2'] = ApiClient.convertToType(data['parcelLabelRef2'], 'String');
+      }
+      if (data.hasOwnProperty('parcelLabelRef3')) {
+        obj['parcelLabelRef3'] = ApiClient.convertToType(data['parcelLabelRef3'], 'String');
       }
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [OrderLine]);
@@ -851,6 +863,18 @@
    * @member {String} orderAssemblyInstructions
    */
   exports.prototype['orderAssemblyInstructions'] = undefined;
+  /**
+   * @member {String} parcelLabelRef1
+   */
+  exports.prototype['parcelLabelRef1'] = undefined;
+  /**
+   * @member {String} parcelLabelRef2
+   */
+  exports.prototype['parcelLabelRef2'] = undefined;
+  /**
+   * @member {String} parcelLabelRef3
+   */
+  exports.prototype['parcelLabelRef3'] = undefined;
   /**
    * @member {Array.<module:model/OrderLine>} lineItems
    */

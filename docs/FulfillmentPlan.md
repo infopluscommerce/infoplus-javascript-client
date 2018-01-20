@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **maxOrders** | **Number** |  | [optional] 
 **batchSize** | **Number** |  | [optional] 
 **version** | **String** |  | [optional] 
+**isMassDistribution** | **Boolean** |  | [optional] [default to false]
 **createPickWork** | **Boolean** |  | [default to false]
 **pickingRule** | **String** |  | [optional] 
 **layoutRule** | **String** |  | [optional] 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **pickScanSchemeId** | **Number** |  | 
 **cartonizeOrders** | **Boolean** |  | [default to false]
 **autoShipCasebreakCartons** | **Boolean** |  | [optional] [default to false]
+**autoShipOrders** | **Boolean** |  | [optional] [default to false]
 **preGenerateParcelLabels** | **Boolean** |  | [optional] [default to false]
 **createPackingSlip** | **String** |  | 
 **overridePackingSlipTemplateId** | **Number** |  | [optional] 

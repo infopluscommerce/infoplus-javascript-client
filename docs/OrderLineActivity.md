@@ -153,6 +153,7 @@ Name | Type | Description | Notes
 **shippingCharge** | **Number** |  | [optional] 
 **totalDiscount** | **Number** |  | [optional] 
 **parcelAccountId** | **Number** |  | [optional] 
+**thirdPartyParcelAccountId** | **Number** |  | [optional] 
 **packingSlipTemplateId** | **Number** |  | [optional] 
 **giftMessage** | **String** |  | [optional] 
 **branchSector** | **String** |  | [optional] 

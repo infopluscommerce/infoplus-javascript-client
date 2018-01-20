@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **Number** |  | [optional] 
 **name** | **String** |  | 
 **systemType** | **String** |  | 
+**scriptId** | **Number** |  | [optional] 
 **apiKey** | **String** |  | 
 **apiSecret** | **String** |  | 
 **createDate** | **Date** |  | [optional] 

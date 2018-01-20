@@ -69,6 +69,7 @@
 
 
 
+
     _this['createPickWork'] = createPickWork;
 
 
@@ -84,6 +85,7 @@
 
     _this['pickScanSchemeId'] = pickScanSchemeId;
     _this['cartonizeOrders'] = cartonizeOrders;
+
 
 
     _this['createPackingSlip'] = createPackingSlip;
@@ -143,6 +145,9 @@
       if (data.hasOwnProperty('version')) {
         obj['version'] = ApiClient.convertToType(data['version'], 'String');
       }
+      if (data.hasOwnProperty('isMassDistribution')) {
+        obj['isMassDistribution'] = ApiClient.convertToType(data['isMassDistribution'], 'Boolean');
+      }
       if (data.hasOwnProperty('createPickWork')) {
         obj['createPickWork'] = ApiClient.convertToType(data['createPickWork'], 'Boolean');
       }
@@ -190,6 +195,9 @@
       }
       if (data.hasOwnProperty('autoShipCasebreakCartons')) {
         obj['autoShipCasebreakCartons'] = ApiClient.convertToType(data['autoShipCasebreakCartons'], 'Boolean');
+      }
+      if (data.hasOwnProperty('autoShipOrders')) {
+        obj['autoShipOrders'] = ApiClient.convertToType(data['autoShipOrders'], 'Boolean');
       }
       if (data.hasOwnProperty('preGenerateParcelLabels')) {
         obj['preGenerateParcelLabels'] = ApiClient.convertToType(data['preGenerateParcelLabels'], 'Boolean');
@@ -271,6 +279,11 @@
    */
   exports.prototype['version'] = undefined;
   /**
+   * @member {Boolean} isMassDistribution
+   * @default false
+   */
+  exports.prototype['isMassDistribution'] = false;
+  /**
    * @member {Boolean} createPickWork
    * @default false
    */
@@ -339,6 +352,11 @@
    * @default false
    */
   exports.prototype['autoShipCasebreakCartons'] = false;
+  /**
+   * @member {Boolean} autoShipOrders
+   * @default false
+   */
+  exports.prototype['autoShipOrders'] = false;
   /**
    * @member {Boolean} preGenerateParcelLabels
    * @default false

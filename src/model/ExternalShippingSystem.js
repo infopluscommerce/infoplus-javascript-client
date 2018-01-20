@@ -55,6 +55,7 @@
 
     _this['name'] = name;
     _this['systemType'] = systemType;
+
     _this['apiKey'] = apiKey;
     _this['apiSecret'] = apiSecret;
 
@@ -81,6 +82,9 @@
       }
       if (data.hasOwnProperty('systemType')) {
         obj['systemType'] = ApiClient.convertToType(data['systemType'], 'String');
+      }
+      if (data.hasOwnProperty('scriptId')) {
+        obj['scriptId'] = ApiClient.convertToType(data['scriptId'], 'Number');
       }
       if (data.hasOwnProperty('apiKey')) {
         obj['apiKey'] = ApiClient.convertToType(data['apiKey'], 'String');
@@ -113,6 +117,10 @@
    * @member {String} systemType
    */
   exports.prototype['systemType'] = undefined;
+  /**
+   * @member {Number} scriptId
+   */
+  exports.prototype['scriptId'] = undefined;
   /**
    * @member {String} apiKey
    */

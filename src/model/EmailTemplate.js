@@ -45,21 +45,29 @@
    * @alias module:model/EmailTemplate
    * @class
    * @param lobId {Number} 
+   * @param subject {String} 
    * @param name {String} 
    * @param fromName {String} 
    * @param fromAddress {String} 
    * @param emailTemplateType {String} 
    */
-  var exports = function(lobId, name, fromName, fromAddress, emailTemplateType) {
+  var exports = function(lobId, subject, name, fromName, fromAddress, emailTemplateType) {
     var _this = this;
 
 
     _this['lobId'] = lobId;
-
+    _this['subject'] = subject;
     _this['name'] = name;
     _this['fromName'] = fromName;
     _this['fromAddress'] = fromAddress;
+
+
+
+
     _this['emailTemplateType'] = emailTemplateType;
+
+
+
 
 
 
@@ -82,8 +90,8 @@
       if (data.hasOwnProperty('lobId')) {
         obj['lobId'] = ApiClient.convertToType(data['lobId'], 'Number');
       }
-      if (data.hasOwnProperty('subjectText')) {
-        obj['subjectText'] = ApiClient.convertToType(data['subjectText'], 'String');
+      if (data.hasOwnProperty('subject')) {
+        obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -94,8 +102,29 @@
       if (data.hasOwnProperty('fromAddress')) {
         obj['fromAddress'] = ApiClient.convertToType(data['fromAddress'], 'String');
       }
+      if (data.hasOwnProperty('toName')) {
+        obj['toName'] = ApiClient.convertToType(data['toName'], 'String');
+      }
+      if (data.hasOwnProperty('toAddress')) {
+        obj['toAddress'] = ApiClient.convertToType(data['toAddress'], 'String');
+      }
+      if (data.hasOwnProperty('ccAddress')) {
+        obj['ccAddress'] = ApiClient.convertToType(data['ccAddress'], 'String');
+      }
+      if (data.hasOwnProperty('bccAddress')) {
+        obj['bccAddress'] = ApiClient.convertToType(data['bccAddress'], 'String');
+      }
       if (data.hasOwnProperty('emailTemplateType')) {
         obj['emailTemplateType'] = ApiClient.convertToType(data['emailTemplateType'], 'String');
+      }
+      if (data.hasOwnProperty('recordType')) {
+        obj['recordType'] = ApiClient.convertToType(data['recordType'], 'String');
+      }
+      if (data.hasOwnProperty('apiVersion')) {
+        obj['apiVersion'] = ApiClient.convertToType(data['apiVersion'], 'String');
+      }
+      if (data.hasOwnProperty('scriptId')) {
+        obj['scriptId'] = ApiClient.convertToType(data['scriptId'], 'Number');
       }
       if (data.hasOwnProperty('createDate')) {
         obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
@@ -119,9 +148,9 @@
    */
   exports.prototype['lobId'] = undefined;
   /**
-   * @member {String} subjectText
+   * @member {String} subject
    */
-  exports.prototype['subjectText'] = undefined;
+  exports.prototype['subject'] = undefined;
   /**
    * @member {String} name
    */
@@ -135,9 +164,37 @@
    */
   exports.prototype['fromAddress'] = undefined;
   /**
+   * @member {String} toName
+   */
+  exports.prototype['toName'] = undefined;
+  /**
+   * @member {String} toAddress
+   */
+  exports.prototype['toAddress'] = undefined;
+  /**
+   * @member {String} ccAddress
+   */
+  exports.prototype['ccAddress'] = undefined;
+  /**
+   * @member {String} bccAddress
+   */
+  exports.prototype['bccAddress'] = undefined;
+  /**
    * @member {String} emailTemplateType
    */
   exports.prototype['emailTemplateType'] = undefined;
+  /**
+   * @member {String} recordType
+   */
+  exports.prototype['recordType'] = undefined;
+  /**
+   * @member {String} apiVersion
+   */
+  exports.prototype['apiVersion'] = undefined;
+  /**
+   * @member {Number} scriptId
+   */
+  exports.prototype['scriptId'] = undefined;
   /**
    * @member {Date} createDate
    */

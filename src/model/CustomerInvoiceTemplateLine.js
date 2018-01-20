@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/InvoiceTemplateLinePriceLevel'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./InvoiceTemplateLinePriceLevel'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.CustomerInvoiceTemplateLine = factory(root.infoplus.ApiClient);
+    root.infoplus.CustomerInvoiceTemplateLine = factory(root.infoplus.ApiClient, root.infoplus.InvoiceTemplateLinePriceLevel);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, InvoiceTemplateLinePriceLevel) {
   'use strict';
 
 
@@ -67,6 +67,7 @@
 
     _this['billingRuleId'] = billingRuleId;
     _this['priceLevelMode'] = priceLevelMode;
+
 
 
   };
@@ -126,6 +127,9 @@
       }
       if (data.hasOwnProperty('scriptId')) {
         obj['scriptId'] = ApiClient.convertToType(data['scriptId'], 'Number');
+      }
+      if (data.hasOwnProperty('priceLevelList')) {
+        obj['priceLevelList'] = ApiClient.convertToType(data['priceLevelList'], [InvoiceTemplateLinePriceLevel]);
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -196,6 +200,10 @@
    * @member {Number} scriptId
    */
   exports.prototype['scriptId'] = undefined;
+  /**
+   * @member {Array.<module:model/InvoiceTemplateLinePriceLevel>} priceLevelList
+   */
+  exports.prototype['priceLevelList'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */

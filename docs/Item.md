@@ -62,6 +62,8 @@ Name | Type | Description | Notes
 **vendorPrice** | **Number** |  | [optional] 
 **vendorPer** | **String** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
+**primaryImage** | **String** |  | [optional] 
+**pickImage** | **String** |  | [optional] 
 **behaviorType** | **String** |  | [optional] 
 **forwardLotMixingRule** | **String** |  | 
 **storageLotMixingRule** | **String** |  | 

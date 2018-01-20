@@ -131,6 +131,8 @@
 
 
 
+
+
     _this['forwardLotMixingRule'] = forwardLotMixingRule;
     _this['storageLotMixingRule'] = storageLotMixingRule;
     _this['forwardItemMixingRule'] = forwardItemMixingRule;
@@ -360,6 +362,12 @@
       }
       if (data.hasOwnProperty('modifyDate')) {
         obj['modifyDate'] = ApiClient.convertToType(data['modifyDate'], 'Date');
+      }
+      if (data.hasOwnProperty('primaryImage')) {
+        obj['primaryImage'] = ApiClient.convertToType(data['primaryImage'], 'String');
+      }
+      if (data.hasOwnProperty('pickImage')) {
+        obj['pickImage'] = ApiClient.convertToType(data['pickImage'], 'String');
       }
       if (data.hasOwnProperty('behaviorType')) {
         obj['behaviorType'] = ApiClient.convertToType(data['behaviorType'], 'String');
@@ -724,6 +732,14 @@
    * @member {Date} modifyDate
    */
   exports.prototype['modifyDate'] = undefined;
+  /**
+   * @member {String} primaryImage
+   */
+  exports.prototype['primaryImage'] = undefined;
+  /**
+   * @member {String} pickImage
+   */
+  exports.prototype['pickImage'] = undefined;
   /**
    * @member {String} behaviorType
    */

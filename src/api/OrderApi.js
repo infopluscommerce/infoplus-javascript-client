@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResponse', 'model/ApplyOrderWarehouseFulfillmentPlanInput', 'model/ApplyOrderWarehouseFulfillmentPlanOutput', 'model/GetOrderWarehouseFulfillmentDataInput', 'model/GetOrderWarehouseFulfillmentDataOutput', 'model/Order'], factory);
+    define(['ApiClient', 'model/ApiResponse', 'model/ApplyOrderWarehouseFulfillmentPlanInput', 'model/ApplyOrderWarehouseFulfillmentPlanOutput', 'model/GetOrderWarehouseFulfillmentDataInput', 'model/GetOrderWarehouseFulfillmentDataOutput', 'model/Order', 'model/ProcessOutputAPIModel', 'model/RunFulfillmentPlanInputAPIModel'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ApplyOrderWarehouseFulfillmentPlanInput'), require('../model/ApplyOrderWarehouseFulfillmentPlanOutput'), require('../model/GetOrderWarehouseFulfillmentDataInput'), require('../model/GetOrderWarehouseFulfillmentDataOutput'), require('../model/Order'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ApplyOrderWarehouseFulfillmentPlanInput'), require('../model/ApplyOrderWarehouseFulfillmentPlanOutput'), require('../model/GetOrderWarehouseFulfillmentDataInput'), require('../model/GetOrderWarehouseFulfillmentDataOutput'), require('../model/Order'), require('../model/ProcessOutputAPIModel'), require('../model/RunFulfillmentPlanInputAPIModel'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ApplyOrderWarehouseFulfillmentPlanInput, root.infoplus.ApplyOrderWarehouseFulfillmentPlanOutput, root.infoplus.GetOrderWarehouseFulfillmentDataInput, root.infoplus.GetOrderWarehouseFulfillmentDataOutput, root.infoplus.Order);
+    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ApplyOrderWarehouseFulfillmentPlanInput, root.infoplus.ApplyOrderWarehouseFulfillmentPlanOutput, root.infoplus.GetOrderWarehouseFulfillmentDataInput, root.infoplus.GetOrderWarehouseFulfillmentDataOutput, root.infoplus.Order, root.infoplus.ProcessOutputAPIModel, root.infoplus.RunFulfillmentPlanInputAPIModel);
   }
-}(this, function(ApiClient, ApiResponse, ApplyOrderWarehouseFulfillmentPlanInput, ApplyOrderWarehouseFulfillmentPlanOutput, GetOrderWarehouseFulfillmentDataInput, GetOrderWarehouseFulfillmentDataOutput, Order) {
+}(this, function(ApiClient, ApiResponse, ApplyOrderWarehouseFulfillmentPlanInput, ApplyOrderWarehouseFulfillmentPlanOutput, GetOrderWarehouseFulfillmentDataInput, GetOrderWarehouseFulfillmentDataOutput, Order, ProcessOutputAPIModel, RunFulfillmentPlanInputAPIModel) {
   'use strict';
 
   /**
@@ -587,6 +587,53 @@
 
       return this.apiClient.callApi(
         '/beta/order/getOrderWarehouseFulfillmentData', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the runFulfillmentPlan operation.
+     * @callback module:api/OrderApi~runFulfillmentPlanCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProcessOutputAPIModel>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Run the RunFulfillmentPlan process.
+     * 
+     * @param {module:model/RunFulfillmentPlanInputAPIModel} body Input data for RunFulfillmentPlan process.
+     * @param {module:api/OrderApi~runFulfillmentPlanCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProcessOutputAPIModel>}
+     */
+    this.runFulfillmentPlan = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling runFulfillmentPlan");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProcessOutputAPIModel];
+
+      return this.apiClient.callApi(
+        '/beta/order/runFulfillmentPlan', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
