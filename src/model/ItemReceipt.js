@@ -90,6 +90,7 @@
 
 
 
+
     _this['maxOvers'] = maxOvers;
     _this['maxUnders'] = maxUnders;
 
@@ -114,6 +115,8 @@
 
 
     _this['vendorId'] = vendorId;
+
+
 
 
 
@@ -222,6 +225,9 @@
       }
       if (data.hasOwnProperty('revDate')) {
         obj['revDate'] = ApiClient.convertToType(data['revDate'], 'String');
+      }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
       }
       if (data.hasOwnProperty('artBack')) {
         obj['artBack'] = ApiClient.convertToType(data['artBack'], 'String');
@@ -334,8 +340,14 @@
       if (data.hasOwnProperty('productIdTag')) {
         obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
       }
+      if (data.hasOwnProperty('unitsPerInnerPack')) {
+        obj['unitsPerInnerPack'] = ApiClient.convertToType(data['unitsPerInnerPack'], 'Number');
+      }
       if (data.hasOwnProperty('unitsPerCase')) {
         obj['unitsPerCase'] = ApiClient.convertToType(data['unitsPerCase'], 'Number');
+      }
+      if (data.hasOwnProperty('unitsPerPallet')) {
+        obj['unitsPerPallet'] = ApiClient.convertToType(data['unitsPerPallet'], 'Number');
       }
       if (data.hasOwnProperty('caseWeight')) {
         obj['caseWeight'] = ApiClient.convertToType(data['caseWeight'], 'Number');
@@ -474,6 +486,10 @@
    * @member {String} revDate
    */
   exports.prototype['revDate'] = undefined;
+  /**
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
   /**
    * @member {String} artBack
    */
@@ -623,9 +639,17 @@
    */
   exports.prototype['productIdTag'] = undefined;
   /**
+   * @member {Number} unitsPerInnerPack
+   */
+  exports.prototype['unitsPerInnerPack'] = undefined;
+  /**
    * @member {Number} unitsPerCase
    */
   exports.prototype['unitsPerCase'] = undefined;
+  /**
+   * @member {Number} unitsPerPallet
+   */
+  exports.prototype['unitsPerPallet'] = undefined;
   /**
    * @member {Number} caseWeight
    */

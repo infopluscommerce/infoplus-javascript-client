@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**invno** | **String** |  | [optional] 
 **sku** | **String** |  | 
 **quantity** | **Number** |  | 
 **instructions** | **String** |  | [optional] 

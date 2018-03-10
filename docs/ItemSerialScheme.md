@@ -1,16 +1,15 @@
-# infoplus.JobType
+# infoplus.ItemSerialScheme
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
-**clientId** | **Number** |  | 
 **createDate** | **Date** |  | [optional] 
 **modifyDate** | **Date** |  | [optional] 
-**name** | **String** |  | 
-**description** | **String** |  | [optional] 
-**jobCode** | **String** |  | 
-**isActive** | **Boolean** |  | [optional] [default to false]
+**name** | **String** |  | [optional] 
+**receivingBehavior** | **String** |  | 
+**shippingBehavior** | **String** |  | 
+**requireUnique** | **String** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

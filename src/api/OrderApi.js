@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResponse', 'model/ApplyOrderWarehouseFulfillmentPlanInput', 'model/ApplyOrderWarehouseFulfillmentPlanOutput', 'model/GetOrderWarehouseFulfillmentDataInput', 'model/GetOrderWarehouseFulfillmentDataOutput', 'model/Order', 'model/ProcessOutputAPIModel', 'model/RunFulfillmentPlanInputAPIModel'], factory);
+    define(['ApiClient', 'model/ApiResponse', 'model/ApplyOrderWarehouseFulfillmentPlanInput', 'model/ApplyOrderWarehouseFulfillmentPlanOutput', 'model/EditLineItemFulfillmentStrategyInputAPIModel', 'model/GetOrderWarehouseFulfillmentDataInput', 'model/GetOrderWarehouseFulfillmentDataOutput', 'model/Order', 'model/ProcessOutputAPIModel', 'model/ReqManualSubstitutionInputAPIModel', 'model/RunFulfillmentPlanInputAPIModel'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ApplyOrderWarehouseFulfillmentPlanInput'), require('../model/ApplyOrderWarehouseFulfillmentPlanOutput'), require('../model/GetOrderWarehouseFulfillmentDataInput'), require('../model/GetOrderWarehouseFulfillmentDataOutput'), require('../model/Order'), require('../model/ProcessOutputAPIModel'), require('../model/RunFulfillmentPlanInputAPIModel'));
+    module.exports = factory(require('../ApiClient'), require('../model/ApiResponse'), require('../model/ApplyOrderWarehouseFulfillmentPlanInput'), require('../model/ApplyOrderWarehouseFulfillmentPlanOutput'), require('../model/EditLineItemFulfillmentStrategyInputAPIModel'), require('../model/GetOrderWarehouseFulfillmentDataInput'), require('../model/GetOrderWarehouseFulfillmentDataOutput'), require('../model/Order'), require('../model/ProcessOutputAPIModel'), require('../model/ReqManualSubstitutionInputAPIModel'), require('../model/RunFulfillmentPlanInputAPIModel'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ApplyOrderWarehouseFulfillmentPlanInput, root.infoplus.ApplyOrderWarehouseFulfillmentPlanOutput, root.infoplus.GetOrderWarehouseFulfillmentDataInput, root.infoplus.GetOrderWarehouseFulfillmentDataOutput, root.infoplus.Order, root.infoplus.ProcessOutputAPIModel, root.infoplus.RunFulfillmentPlanInputAPIModel);
+    root.infoplus.OrderApi = factory(root.infoplus.ApiClient, root.infoplus.ApiResponse, root.infoplus.ApplyOrderWarehouseFulfillmentPlanInput, root.infoplus.ApplyOrderWarehouseFulfillmentPlanOutput, root.infoplus.EditLineItemFulfillmentStrategyInputAPIModel, root.infoplus.GetOrderWarehouseFulfillmentDataInput, root.infoplus.GetOrderWarehouseFulfillmentDataOutput, root.infoplus.Order, root.infoplus.ProcessOutputAPIModel, root.infoplus.ReqManualSubstitutionInputAPIModel, root.infoplus.RunFulfillmentPlanInputAPIModel);
   }
-}(this, function(ApiClient, ApiResponse, ApplyOrderWarehouseFulfillmentPlanInput, ApplyOrderWarehouseFulfillmentPlanOutput, GetOrderWarehouseFulfillmentDataInput, GetOrderWarehouseFulfillmentDataOutput, Order, ProcessOutputAPIModel, RunFulfillmentPlanInputAPIModel) {
+}(this, function(ApiClient, ApiResponse, ApplyOrderWarehouseFulfillmentPlanInput, ApplyOrderWarehouseFulfillmentPlanOutput, EditLineItemFulfillmentStrategyInputAPIModel, GetOrderWarehouseFulfillmentDataInput, GetOrderWarehouseFulfillmentDataOutput, Order, ProcessOutputAPIModel, ReqManualSubstitutionInputAPIModel, RunFulfillmentPlanInputAPIModel) {
   'use strict';
 
   /**
@@ -346,6 +346,100 @@
 
       return this.apiClient.callApi(
         '/beta/order/{orderId}/tag/{orderTag}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the editFulfillmentChannel operation.
+     * @callback module:api/OrderApi~editFulfillmentChannelCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProcessOutputAPIModel>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Run the EditLineItemFulfillmentStrategy process.
+     * 
+     * @param {module:model/EditLineItemFulfillmentStrategyInputAPIModel} body Input data for EditLineItemFulfillmentStrategy process.
+     * @param {module:api/OrderApi~editFulfillmentChannelCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProcessOutputAPIModel>}
+     */
+    this.editFulfillmentChannel = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling editFulfillmentChannel");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProcessOutputAPIModel];
+
+      return this.apiClient.callApi(
+        '/beta/order/editFulfillmentChannel', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the editLineItems operation.
+     * @callback module:api/OrderApi~editLineItemsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProcessOutputAPIModel>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Run the ReqManualSubstitution process.
+     * 
+     * @param {module:model/ReqManualSubstitutionInputAPIModel} body Input data for ReqManualSubstitution process.
+     * @param {module:api/OrderApi~editLineItemsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProcessOutputAPIModel>}
+     */
+    this.editLineItems = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling editLineItems");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProcessOutputAPIModel];
+
+      return this.apiClient.callApi(
+        '/beta/order/editLineItems', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

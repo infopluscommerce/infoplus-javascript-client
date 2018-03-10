@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **customerOrderNo** | **String** |  | [optional] 
 **lobId** | **Number** |  | 
 **warehouseId** | **Number** |  | 
-**orderDate** | **Date** |  | 
+**orderDate** | **Date** |  | [optional] 
 **customerNo** | **String** |  | [optional] 
 **useOrderNoRoot** | **Number** |  | [optional] 
 **firstShipDate** | **Date** |  | [optional] 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **carrierId** | **Number** |  | [optional] 
 **serviceTypeId** | **String** |  | [optional] 
 **shipVia** | **String** |  | [optional] 
-**mediaCode** | **String** |  | 
-**legacyRestrictionType** | **String** |  | 
+**mediaCode** | **String** |  | [optional] 
+**legacyRestrictionType** | **String** |  | [optional] 
 **alcoholOrderType** | **String** |  | [optional] 
 **alternateUsage** | **String** |  | [optional] 
 **authorizationAmount** | **Number** |  | [optional] 

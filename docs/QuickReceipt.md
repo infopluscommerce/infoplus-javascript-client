@@ -14,12 +14,13 @@ Name | Type | Description | Notes
 **vendorId** | **Number** |  | [optional] 
 **carrier** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
-**unitCode** | **String** |  | 
-**wrapCode** | **String** |  | 
+**unitCode** | **String** |  | [optional] 
+**wrapCode** | **String** |  | [optional] 
 **weightPerWrap** | **Number** |  | 
-**unitsPerWrap** | **Number** |  | 
+**unitsPerWrap** | **Number** |  | [optional] 
+**quantityPerInnerPack** | **Number** |  | [optional] 
 **unitsPerCase** | **Number** |  | [optional] 
-**casesPerPallet** | **Number** |  | [optional] 
+**quantityPerPallet** | **Number** |  | [optional] 
 **caseWeight** | **Number** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
 **revisionDate** | **String** |  | [optional] 
@@ -34,6 +35,7 @@ Name | Type | Description | Notes
 **generatedASNId** | **Number** |  | [optional] 
 **dockDate** | **Date** |  | [optional] 
 **productIdTag** | **String** |  | [optional] 
+**expirationDate** | **Date** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 **sku** | **String** |  | [optional] 
 

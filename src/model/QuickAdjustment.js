@@ -47,9 +47,8 @@
    * @param warehouseId {Number} 
    * @param locationId {Number} 
    * @param adjustmentCode {String} 
-   * @param totalQuantity {Number} 
    */
-  var exports = function(warehouseId, locationId, adjustmentCode, totalQuantity) {
+  var exports = function(warehouseId, locationId, adjustmentCode) {
     var _this = this;
 
 
@@ -58,7 +57,8 @@
     _this['warehouseId'] = warehouseId;
     _this['locationId'] = locationId;
     _this['adjustmentCode'] = adjustmentCode;
-    _this['totalQuantity'] = totalQuantity;
+
+
 
 
 
@@ -97,6 +97,9 @@
       }
       if (data.hasOwnProperty('totalQuantity')) {
         obj['totalQuantity'] = ApiClient.convertToType(data['totalQuantity'], 'Number');
+      }
+      if (data.hasOwnProperty('changeQuantity')) {
+        obj['changeQuantity'] = ApiClient.convertToType(data['changeQuantity'], 'Number');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -145,6 +148,10 @@
    * @member {Number} totalQuantity
    */
   exports.prototype['totalQuantity'] = undefined;
+  /**
+   * @member {Number} changeQuantity
+   */
+  exports.prototype['changeQuantity'] = undefined;
   /**
    * @member {String} message
    */

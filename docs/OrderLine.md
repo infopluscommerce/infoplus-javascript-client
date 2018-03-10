@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **ncExtendedSell** | **Number** |  | [optional] 
 **itemWeight** | **Number** |  | [optional] 
 **productionLot** | **String** |  | [optional] 
+**expirationDate** | **Date** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
 **sector** | **String** |  | [optional] 
 **orderAssemblyInstructions** | **String** |  | [optional] 
@@ -36,6 +37,7 @@ Name | Type | Description | Notes
 **itemSubGroupId** | **Number** |  | 
 **itemProductCodeId** | **Number** |  | [optional] 
 **itemSummaryCodeId** | **Number** |  | 
+**fulfillmentChannel** | **String** |  | 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

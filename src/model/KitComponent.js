@@ -51,6 +51,7 @@
   var exports = function(sku, quantity, critical) {
     var _this = this;
 
+
     _this['sku'] = sku;
     _this['quantity'] = quantity;
 
@@ -70,6 +71,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('invno')) {
+        obj['invno'] = ApiClient.convertToType(data['invno'], 'String');
+      }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
       }
@@ -92,6 +96,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} invno
+   */
+  exports.prototype['invno'] = undefined;
   /**
    * @member {String} sku
    */

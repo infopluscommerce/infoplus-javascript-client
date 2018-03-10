@@ -57,10 +57,7 @@
    * @param status {String} 
    * @param seasonalItem {String} 
    * @param secure {String} 
-   * @param serialCode {String} 
    * @param unitCode {String} 
-   * @param unitsPerWrap {Number} 
-   * @param wrapCode {String} 
    * @param forwardLotMixingRule {String} 
    * @param storageLotMixingRule {String} 
    * @param forwardItemMixingRule {String} 
@@ -68,7 +65,7 @@
    * @param allocationRule {String} 
    * @param hazmat {String} 
    */
-  var exports = function(majorGroupId, subGroupId, lobId, sku, itemDescription, backorder, chargeCode, criticalAmount, maxCycle, maxInterim, status, seasonalItem, secure, serialCode, unitCode, unitsPerWrap, wrapCode, forwardLotMixingRule, storageLotMixingRule, forwardItemMixingRule, storageItemMixingRule, allocationRule, hazmat) {
+  var exports = function(majorGroupId, subGroupId, lobId, sku, itemDescription, backorder, chargeCode, criticalAmount, maxCycle, maxInterim, status, seasonalItem, secure, unitCode, forwardLotMixingRule, storageLotMixingRule, forwardItemMixingRule, storageItemMixingRule, allocationRule, hazmat) {
     var _this = this;
 
 
@@ -112,12 +109,15 @@
 
 
     _this['secure'] = secure;
-    _this['serialCode'] = serialCode;
+
     _this['unitCode'] = unitCode;
-    _this['unitsPerWrap'] = unitsPerWrap;
 
 
-    _this['wrapCode'] = wrapCode;
+
+
+
+
+
 
 
 
@@ -138,6 +138,7 @@
     _this['forwardItemMixingRule'] = forwardItemMixingRule;
     _this['storageItemMixingRule'] = storageItemMixingRule;
     _this['allocationRule'] = allocationRule;
+
 
 
 
@@ -282,8 +283,8 @@
       if (data.hasOwnProperty('numericSortOrder')) {
         obj['numericSortOrder'] = ApiClient.convertToType(data['numericSortOrder'], 'Number');
       }
-      if (data.hasOwnProperty('outsideVendor')) {
-        obj['outsideVendor'] = ApiClient.convertToType(data['outsideVendor'], 'Number');
+      if (data.hasOwnProperty('outsideVendorId')) {
+        obj['outsideVendorId'] = ApiClient.convertToType(data['outsideVendorId'], 'Number');
       }
       if (data.hasOwnProperty('pickNo')) {
         obj['pickNo'] = ApiClient.convertToType(data['pickNo'], 'String');
@@ -320,6 +321,15 @@
       }
       if (data.hasOwnProperty('weightPerWrap')) {
         obj['weightPerWrap'] = ApiClient.convertToType(data['weightPerWrap'], 'Number');
+      }
+      if (data.hasOwnProperty('quantityPerInnerPack')) {
+        obj['quantityPerInnerPack'] = ApiClient.convertToType(data['quantityPerInnerPack'], 'Number');
+      }
+      if (data.hasOwnProperty('quantityPerCase')) {
+        obj['quantityPerCase'] = ApiClient.convertToType(data['quantityPerCase'], 'Number');
+      }
+      if (data.hasOwnProperty('quantityPerPallet')) {
+        obj['quantityPerPallet'] = ApiClient.convertToType(data['quantityPerPallet'], 'Number');
       }
       if (data.hasOwnProperty('voidDate')) {
         obj['voidDate'] = ApiClient.convertToType(data['voidDate'], 'Date');
@@ -395,6 +405,9 @@
       }
       if (data.hasOwnProperty('productIdTagSchemeId')) {
         obj['productIdTagSchemeId'] = ApiClient.convertToType(data['productIdTagSchemeId'], 'Number');
+      }
+      if (data.hasOwnProperty('itemSerialSchemeId')) {
+        obj['itemSerialSchemeId'] = ApiClient.convertToType(data['itemSerialSchemeId'], 'Number');
       }
       if (data.hasOwnProperty('hazmat')) {
         obj['hazmat'] = ApiClient.convertToType(data['hazmat'], 'String');
@@ -625,9 +638,9 @@
    */
   exports.prototype['numericSortOrder'] = undefined;
   /**
-   * @member {Number} outsideVendor
+   * @member {Number} outsideVendorId
    */
-  exports.prototype['outsideVendor'] = undefined;
+  exports.prototype['outsideVendorId'] = undefined;
   /**
    * @member {String} pickNo
    */
@@ -676,6 +689,18 @@
    * @member {Number} weightPerWrap
    */
   exports.prototype['weightPerWrap'] = undefined;
+  /**
+   * @member {Number} quantityPerInnerPack
+   */
+  exports.prototype['quantityPerInnerPack'] = undefined;
+  /**
+   * @member {Number} quantityPerCase
+   */
+  exports.prototype['quantityPerCase'] = undefined;
+  /**
+   * @member {Number} quantityPerPallet
+   */
+  exports.prototype['quantityPerPallet'] = undefined;
   /**
    * @member {Date} voidDate
    */
@@ -776,6 +801,10 @@
    * @member {Number} productIdTagSchemeId
    */
   exports.prototype['productIdTagSchemeId'] = undefined;
+  /**
+   * @member {Number} itemSerialSchemeId
+   */
+  exports.prototype['itemSerialSchemeId'] = undefined;
   /**
    * @member {String} hazmat
    */

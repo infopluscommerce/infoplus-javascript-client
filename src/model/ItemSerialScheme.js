@@ -26,7 +26,7 @@
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.JobType = factory(root.infoplus.ApiClient);
+    root.infoplus.ItemSerialScheme = factory(root.infoplus.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,39 +35,38 @@
 
 
   /**
-   * The JobType model module.
-   * @module model/JobType
+   * The ItemSerialScheme model module.
+   * @module model/ItemSerialScheme
    * @version beta
    */
 
   /**
-   * Constructs a new <code>JobType</code>.
-   * @alias module:model/JobType
+   * Constructs a new <code>ItemSerialScheme</code>.
+   * @alias module:model/ItemSerialScheme
    * @class
-   * @param clientId {Number} 
-   * @param name {String} 
-   * @param jobCode {String} 
+   * @param receivingBehavior {String} 
+   * @param shippingBehavior {String} 
+   * @param requireUnique {String} 
    */
-  var exports = function(clientId, name, jobCode) {
+  var exports = function(receivingBehavior, shippingBehavior, requireUnique) {
     var _this = this;
 
 
-    _this['clientId'] = clientId;
 
 
-    _this['name'] = name;
 
-    _this['jobCode'] = jobCode;
-
+    _this['receivingBehavior'] = receivingBehavior;
+    _this['shippingBehavior'] = shippingBehavior;
+    _this['requireUnique'] = requireUnique;
 
   };
 
   /**
-   * Constructs a <code>JobType</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ItemSerialScheme</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/JobType} obj Optional instance to populate.
-   * @return {module:model/JobType} The populated <code>JobType</code> instance.
+   * @param {module:model/ItemSerialScheme} obj Optional instance to populate.
+   * @return {module:model/ItemSerialScheme} The populated <code>ItemSerialScheme</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -75,9 +74,6 @@
 
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-      }
-      if (data.hasOwnProperty('clientId')) {
-        obj['clientId'] = ApiClient.convertToType(data['clientId'], 'Number');
       }
       if (data.hasOwnProperty('createDate')) {
         obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
@@ -88,14 +84,14 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('receivingBehavior')) {
+        obj['receivingBehavior'] = ApiClient.convertToType(data['receivingBehavior'], 'String');
       }
-      if (data.hasOwnProperty('jobCode')) {
-        obj['jobCode'] = ApiClient.convertToType(data['jobCode'], 'String');
+      if (data.hasOwnProperty('shippingBehavior')) {
+        obj['shippingBehavior'] = ApiClient.convertToType(data['shippingBehavior'], 'String');
       }
-      if (data.hasOwnProperty('isActive')) {
-        obj['isActive'] = ApiClient.convertToType(data['isActive'], 'Boolean');
+      if (data.hasOwnProperty('requireUnique')) {
+        obj['requireUnique'] = ApiClient.convertToType(data['requireUnique'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -109,10 +105,6 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {Number} clientId
-   */
-  exports.prototype['clientId'] = undefined;
-  /**
    * @member {Date} createDate
    */
   exports.prototype['createDate'] = undefined;
@@ -125,18 +117,17 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {String} description
+   * @member {String} receivingBehavior
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype['receivingBehavior'] = undefined;
   /**
-   * @member {String} jobCode
+   * @member {String} shippingBehavior
    */
-  exports.prototype['jobCode'] = undefined;
+  exports.prototype['shippingBehavior'] = undefined;
   /**
-   * @member {Boolean} isActive
-   * @default false
+   * @member {String} requireUnique
    */
-  exports.prototype['isActive'] = false;
+  exports.prototype['requireUnique'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */

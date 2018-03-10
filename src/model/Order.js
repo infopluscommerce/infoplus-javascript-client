@@ -46,19 +46,15 @@
    * @class
    * @param lobId {Number} 
    * @param warehouseId {Number} 
-   * @param orderDate {Date} 
-   * @param mediaCode {String} 
-   * @param legacyRestrictionType {String} 
    * @param lineItems {Array.<module:model/OrderLine>} 
    */
-  var exports = function(lobId, warehouseId, orderDate, mediaCode, legacyRestrictionType, lineItems) {
+  var exports = function(lobId, warehouseId, lineItems) {
     var _this = this;
 
 
 
     _this['lobId'] = lobId;
     _this['warehouseId'] = warehouseId;
-    _this['orderDate'] = orderDate;
 
 
 
@@ -68,8 +64,9 @@
 
 
 
-    _this['mediaCode'] = mediaCode;
-    _this['legacyRestrictionType'] = legacyRestrictionType;
+
+
+
 
 
 

@@ -45,11 +45,9 @@
    * @alias module:model/ReceivingWorksheetLineItem
    * @class
    * @param receivingQty {Number} 
-   * @param unitCode {String} 
-   * @param wrapCode {String} 
    * @param weightPerWrap {Number} 
    */
-  var exports = function(receivingQty, unitCode, wrapCode, weightPerWrap) {
+  var exports = function(receivingQty, weightPerWrap) {
     var _this = this;
 
 
@@ -59,12 +57,14 @@
 
 
     _this['receivingQty'] = receivingQty;
-    _this['unitCode'] = unitCode;
-    _this['wrapCode'] = wrapCode;
+
+
+
 
 
 
     _this['weightPerWrap'] = weightPerWrap;
+
 
 
 
@@ -122,8 +122,11 @@
       if (data.hasOwnProperty('unitsPerCase')) {
         obj['unitsPerCase'] = ApiClient.convertToType(data['unitsPerCase'], 'Number');
       }
-      if (data.hasOwnProperty('casesPerPallet')) {
-        obj['casesPerPallet'] = ApiClient.convertToType(data['casesPerPallet'], 'Number');
+      if (data.hasOwnProperty('quantityPerInnerPack')) {
+        obj['quantityPerInnerPack'] = ApiClient.convertToType(data['quantityPerInnerPack'], 'Number');
+      }
+      if (data.hasOwnProperty('quantityPerPallet')) {
+        obj['quantityPerPallet'] = ApiClient.convertToType(data['quantityPerPallet'], 'Number');
       }
       if (data.hasOwnProperty('weightPerWrap')) {
         obj['weightPerWrap'] = ApiClient.convertToType(data['weightPerWrap'], 'Number');
@@ -139,6 +142,9 @@
       }
       if (data.hasOwnProperty('revisionDate')) {
         obj['revisionDate'] = ApiClient.convertToType(data['revisionDate'], 'String');
+      }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
       }
       if (data.hasOwnProperty('origin')) {
         obj['origin'] = ApiClient.convertToType(data['origin'], 'String');
@@ -210,9 +216,13 @@
    */
   exports.prototype['unitsPerCase'] = undefined;
   /**
-   * @member {Number} casesPerPallet
+   * @member {Number} quantityPerInnerPack
    */
-  exports.prototype['casesPerPallet'] = undefined;
+  exports.prototype['quantityPerInnerPack'] = undefined;
+  /**
+   * @member {Number} quantityPerPallet
+   */
+  exports.prototype['quantityPerPallet'] = undefined;
   /**
    * @member {Number} weightPerWrap
    */
@@ -233,6 +243,10 @@
    * @member {String} revisionDate
    */
   exports.prototype['revisionDate'] = undefined;
+  /**
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
   /**
    * @member {String} origin
    */

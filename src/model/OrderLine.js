@@ -52,8 +52,9 @@
    * @param itemMajorGroupId {Number} 
    * @param itemSubGroupId {Number} 
    * @param itemSummaryCodeId {Number} 
+   * @param fulfillmentChannel {String} 
    */
-  var exports = function(orderNo, lobId, sku, itemAccountCodeId, itemLegacyLowStockContactId, itemMajorGroupId, itemSubGroupId, itemSummaryCodeId) {
+  var exports = function(orderNo, lobId, sku, itemAccountCodeId, itemLegacyLowStockContactId, itemMajorGroupId, itemSubGroupId, itemSummaryCodeId, fulfillmentChannel) {
     var _this = this;
 
 
@@ -83,12 +84,14 @@
 
 
 
+
     _this['itemAccountCodeId'] = itemAccountCodeId;
     _this['itemLegacyLowStockContactId'] = itemLegacyLowStockContactId;
     _this['itemMajorGroupId'] = itemMajorGroupId;
     _this['itemSubGroupId'] = itemSubGroupId;
 
     _this['itemSummaryCodeId'] = itemSummaryCodeId;
+    _this['fulfillmentChannel'] = fulfillmentChannel;
 
   };
 
@@ -175,6 +178,9 @@
       if (data.hasOwnProperty('productionLot')) {
         obj['productionLot'] = ApiClient.convertToType(data['productionLot'], 'String');
       }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
+      }
       if (data.hasOwnProperty('weightPerWrap')) {
         obj['weightPerWrap'] = ApiClient.convertToType(data['weightPerWrap'], 'Number');
       }
@@ -201,6 +207,9 @@
       }
       if (data.hasOwnProperty('itemSummaryCodeId')) {
         obj['itemSummaryCodeId'] = ApiClient.convertToType(data['itemSummaryCodeId'], 'Number');
+      }
+      if (data.hasOwnProperty('fulfillmentChannel')) {
+        obj['fulfillmentChannel'] = ApiClient.convertToType(data['fulfillmentChannel'], 'String');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -306,6 +315,10 @@
    */
   exports.prototype['productionLot'] = undefined;
   /**
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
+  /**
    * @member {Number} weightPerWrap
    */
   exports.prototype['weightPerWrap'] = undefined;
@@ -341,6 +354,10 @@
    * @member {Number} itemSummaryCodeId
    */
   exports.prototype['itemSummaryCodeId'] = undefined;
+  /**
+   * @member {String} fulfillmentChannel
+   */
+  exports.prototype['fulfillmentChannel'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */

@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **maxCycle** | **Number** |  | 
 **maxInterim** | **Number** |  | 
 **numericSortOrder** | **Number** |  | [optional] 
-**outsideVendor** | **Number** |  | [optional] 
+**outsideVendorId** | **Number** |  | [optional] 
 **pickNo** | **String** |  | [optional] 
 **podOrderSuffix** | **Number** |  | [optional] 
 **podRevDate** | **String** |  | [optional] 
@@ -44,12 +44,15 @@ Name | Type | Description | Notes
 **requiresProductionLot** | **String** |  | [optional] 
 **sector** | **String** |  | [optional] 
 **secure** | **String** |  | 
-**serialCode** | **String** |  | 
+**serialCode** | **String** |  | [optional] 
 **unitCode** | **String** |  | 
-**unitsPerWrap** | **Number** |  | 
+**unitsPerWrap** | **Number** |  | [optional] 
 **weightPerWrap** | **Number** |  | [optional] 
+**quantityPerInnerPack** | **Number** |  | [optional] 
+**quantityPerCase** | **Number** |  | [optional] 
+**quantityPerPallet** | **Number** |  | [optional] 
 **voidDate** | **Date** |  | [optional] 
-**wrapCode** | **String** |  | 
+**wrapCode** | **String** |  | [optional] 
 **extrinsicText1** | **String** |  | [optional] 
 **extrinsicText2** | **String** |  | [optional] 
 **extrinsicText3** | **String** |  | [optional] 
@@ -73,6 +76,7 @@ Name | Type | Description | Notes
 **barcodeField** | **String** |  | [optional] 
 **warehouseDisplayField** | **String** |  | [optional] 
 **productIdTagSchemeId** | **Number** |  | [optional] 
+**itemSerialSchemeId** | **Number** |  | [optional] 
 **hazmat** | **String** |  | 
 **isAlcohol** | **Boolean** |  | [optional] [default to false]
 **alcoholType** | **String** |  | [optional] 

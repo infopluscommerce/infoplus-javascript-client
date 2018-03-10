@@ -48,12 +48,9 @@
    * @param lobId {Number} 
    * @param locationId {Number} 
    * @param quantity {Number} 
-   * @param unitCode {String} 
-   * @param wrapCode {String} 
    * @param weightPerWrap {Number} 
-   * @param unitsPerWrap {Number} 
    */
-  var exports = function(warehouseId, lobId, locationId, quantity, unitCode, wrapCode, weightPerWrap, unitsPerWrap) {
+  var exports = function(warehouseId, lobId, locationId, quantity, weightPerWrap) {
     var _this = this;
 
 
@@ -67,10 +64,12 @@
 
 
 
-    _this['unitCode'] = unitCode;
-    _this['wrapCode'] = wrapCode;
+
+
     _this['weightPerWrap'] = weightPerWrap;
-    _this['unitsPerWrap'] = unitsPerWrap;
+
+
+
 
 
 
@@ -147,11 +146,14 @@
       if (data.hasOwnProperty('unitsPerWrap')) {
         obj['unitsPerWrap'] = ApiClient.convertToType(data['unitsPerWrap'], 'Number');
       }
+      if (data.hasOwnProperty('quantityPerInnerPack')) {
+        obj['quantityPerInnerPack'] = ApiClient.convertToType(data['quantityPerInnerPack'], 'Number');
+      }
       if (data.hasOwnProperty('unitsPerCase')) {
         obj['unitsPerCase'] = ApiClient.convertToType(data['unitsPerCase'], 'Number');
       }
-      if (data.hasOwnProperty('casesPerPallet')) {
-        obj['casesPerPallet'] = ApiClient.convertToType(data['casesPerPallet'], 'Number');
+      if (data.hasOwnProperty('quantityPerPallet')) {
+        obj['quantityPerPallet'] = ApiClient.convertToType(data['quantityPerPallet'], 'Number');
       }
       if (data.hasOwnProperty('caseWeight')) {
         obj['caseWeight'] = ApiClient.convertToType(data['caseWeight'], 'Number');
@@ -194,6 +196,9 @@
       }
       if (data.hasOwnProperty('productIdTag')) {
         obj['productIdTag'] = ApiClient.convertToType(data['productIdTag'], 'String');
+      }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -266,13 +271,17 @@
    */
   exports.prototype['unitsPerWrap'] = undefined;
   /**
+   * @member {Number} quantityPerInnerPack
+   */
+  exports.prototype['quantityPerInnerPack'] = undefined;
+  /**
    * @member {Number} unitsPerCase
    */
   exports.prototype['unitsPerCase'] = undefined;
   /**
-   * @member {Number} casesPerPallet
+   * @member {Number} quantityPerPallet
    */
-  exports.prototype['casesPerPallet'] = undefined;
+  exports.prototype['quantityPerPallet'] = undefined;
   /**
    * @member {Number} caseWeight
    */
@@ -329,6 +338,10 @@
    * @member {String} productIdTag
    */
   exports.prototype['productIdTag'] = undefined;
+  /**
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */
