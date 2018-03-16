@@ -62,6 +62,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -87,8 +92,23 @@
       if (data.hasOwnProperty('distributionDate')) {
         obj['distributionDate'] = ApiClient.convertToType(data['distributionDate'], 'Date');
       }
-      if (data.hasOwnProperty('unitsPerCase')) {
-        obj['unitsPerCase'] = ApiClient.convertToType(data['unitsPerCase'], 'Number');
+      if (data.hasOwnProperty('quantityPerInnerPack')) {
+        obj['quantityPerInnerPack'] = ApiClient.convertToType(data['quantityPerInnerPack'], 'Number');
+      }
+      if (data.hasOwnProperty('quantityPerCase')) {
+        obj['quantityPerCase'] = ApiClient.convertToType(data['quantityPerCase'], 'Number');
+      }
+      if (data.hasOwnProperty('quantityPerPallet')) {
+        obj['quantityPerPallet'] = ApiClient.convertToType(data['quantityPerPallet'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedInnerPacks')) {
+        obj['estimatedInnerPacks'] = ApiClient.convertToType(data['estimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedCases')) {
+        obj['estimatedCases'] = ApiClient.convertToType(data['estimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedPallets')) {
+        obj['estimatedPallets'] = ApiClient.convertToType(data['estimatedPallets'], 'Number');
       }
       if (data.hasOwnProperty('unitsPerWrap')) {
         obj['unitsPerWrap'] = ApiClient.convertToType(data['unitsPerWrap'], 'Number');
@@ -135,9 +155,29 @@
    */
   exports.prototype['distributionDate'] = undefined;
   /**
-   * @member {Number} unitsPerCase
+   * @member {Number} quantityPerInnerPack
    */
-  exports.prototype['unitsPerCase'] = undefined;
+  exports.prototype['quantityPerInnerPack'] = undefined;
+  /**
+   * @member {Number} quantityPerCase
+   */
+  exports.prototype['quantityPerCase'] = undefined;
+  /**
+   * @member {Number} quantityPerPallet
+   */
+  exports.prototype['quantityPerPallet'] = undefined;
+  /**
+   * @member {Number} estimatedInnerPacks
+   */
+  exports.prototype['estimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} estimatedCases
+   */
+  exports.prototype['estimatedCases'] = undefined;
+  /**
+   * @member {Number} estimatedPallets
+   */
+  exports.prototype['estimatedPallets'] = undefined;
   /**
    * @member {Number} unitsPerWrap
    */

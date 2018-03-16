@@ -133,6 +133,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -170,8 +174,14 @@
       if (data.hasOwnProperty('address')) {
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
-      if (data.hasOwnProperty('numberOfCases')) {
-        obj['numberOfCases'] = ApiClient.convertToType(data['numberOfCases'], 'Number');
+      if (data.hasOwnProperty('estimatedInnerPacks')) {
+        obj['estimatedInnerPacks'] = ApiClient.convertToType(data['estimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedCases')) {
+        obj['estimatedCases'] = ApiClient.convertToType(data['estimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedPallets')) {
+        obj['estimatedPallets'] = ApiClient.convertToType(data['estimatedPallets'], 'Number');
       }
       if (data.hasOwnProperty('inventoryValue')) {
         obj['inventoryValue'] = ApiClient.convertToType(data['inventoryValue'], 'Number');
@@ -311,8 +321,14 @@
       if (data.hasOwnProperty('receiptUnitsPerWrap')) {
         obj['receiptUnitsPerWrap'] = ApiClient.convertToType(data['receiptUnitsPerWrap'], 'Number');
       }
-      if (data.hasOwnProperty('receiptUnitsPerCase')) {
-        obj['receiptUnitsPerCase'] = ApiClient.convertToType(data['receiptUnitsPerCase'], 'Number');
+      if (data.hasOwnProperty('receiptQuantityPerInnerPack')) {
+        obj['receiptQuantityPerInnerPack'] = ApiClient.convertToType(data['receiptQuantityPerInnerPack'], 'Number');
+      }
+      if (data.hasOwnProperty('receiptQuantityPerCase')) {
+        obj['receiptQuantityPerCase'] = ApiClient.convertToType(data['receiptQuantityPerCase'], 'Number');
+      }
+      if (data.hasOwnProperty('receiptQuantityPerPallet')) {
+        obj['receiptQuantityPerPallet'] = ApiClient.convertToType(data['receiptQuantityPerPallet'], 'Number');
       }
       if (data.hasOwnProperty('receiptRevisionDate')) {
         obj['receiptRevisionDate'] = ApiClient.convertToType(data['receiptRevisionDate'], 'String');
@@ -436,9 +452,17 @@
    */
   exports.prototype['address'] = undefined;
   /**
-   * @member {Number} numberOfCases
+   * @member {Number} estimatedInnerPacks
    */
-  exports.prototype['numberOfCases'] = undefined;
+  exports.prototype['estimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} estimatedCases
+   */
+  exports.prototype['estimatedCases'] = undefined;
+  /**
+   * @member {Number} estimatedPallets
+   */
+  exports.prototype['estimatedPallets'] = undefined;
   /**
    * @member {Number} inventoryValue
    */
@@ -626,9 +650,17 @@
    */
   exports.prototype['receiptUnitsPerWrap'] = undefined;
   /**
-   * @member {Number} receiptUnitsPerCase
+   * @member {Number} receiptQuantityPerInnerPack
    */
-  exports.prototype['receiptUnitsPerCase'] = undefined;
+  exports.prototype['receiptQuantityPerInnerPack'] = undefined;
+  /**
+   * @member {Number} receiptQuantityPerCase
+   */
+  exports.prototype['receiptQuantityPerCase'] = undefined;
+  /**
+   * @member {Number} receiptQuantityPerPallet
+   */
+  exports.prototype['receiptQuantityPerPallet'] = undefined;
   /**
    * @member {String} receiptRevisionDate
    */

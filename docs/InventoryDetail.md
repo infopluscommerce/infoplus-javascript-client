@@ -7,7 +7,12 @@ Name | Type | Description | Notes
 **warehouseLocationId** | **Number** |  | 
 **quantity** | **Number** |  | [optional] 
 **distributionDate** | **Date** |  | [optional] 
-**unitsPerCase** | **Number** |  | [optional] 
+**quantityPerInnerPack** | **Number** |  | [optional] 
+**quantityPerCase** | **Number** |  | [optional] 
+**quantityPerPallet** | **Number** |  | [optional] 
+**estimatedInnerPacks** | **Number** |  | [optional] 
+**estimatedCases** | **Number** |  | [optional] 
+**estimatedPallets** | **Number** |  | [optional] 
 **unitsPerWrap** | **Number** |  | [optional] 
 **revisionDate** | **String** |  | [optional] 
 **productionLot** | **String** |  | [optional] 

@@ -174,6 +174,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -501,6 +519,60 @@
       }
       if (data.hasOwnProperty('overallStockStatus')) {
         obj['overallStockStatus'] = ApiClient.convertToType(data['overallStockStatus'], 'String');
+      }
+      if (data.hasOwnProperty('estimatedPallets')) {
+        obj['estimatedPallets'] = ApiClient.convertToType(data['estimatedPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedCases')) {
+        obj['estimatedCases'] = ApiClient.convertToType(data['estimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('estimatedInnerPacks')) {
+        obj['estimatedInnerPacks'] = ApiClient.convertToType(data['estimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('w1EstimatedPallets')) {
+        obj['w1EstimatedPallets'] = ApiClient.convertToType(data['w1EstimatedPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('w1EstimatedCases')) {
+        obj['w1EstimatedCases'] = ApiClient.convertToType(data['w1EstimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('w1EstimatedInnerPacks')) {
+        obj['w1EstimatedInnerPacks'] = ApiClient.convertToType(data['w1EstimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('w2EstimatedPallets')) {
+        obj['w2EstimatedPallets'] = ApiClient.convertToType(data['w2EstimatedPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('w2EstimatedCases')) {
+        obj['w2EstimatedCases'] = ApiClient.convertToType(data['w2EstimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('w2EstimatedInnerPacks')) {
+        obj['w2EstimatedInnerPacks'] = ApiClient.convertToType(data['w2EstimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('w3EstimatedPallets')) {
+        obj['w3EstimatedPallets'] = ApiClient.convertToType(data['w3EstimatedPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('w3EstimatedCases')) {
+        obj['w3EstimatedCases'] = ApiClient.convertToType(data['w3EstimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('w3EstimatedInnerPacks')) {
+        obj['w3EstimatedInnerPacks'] = ApiClient.convertToType(data['w3EstimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('w4EstimatedPallets')) {
+        obj['w4EstimatedPallets'] = ApiClient.convertToType(data['w4EstimatedPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('w4EstimatedCases')) {
+        obj['w4EstimatedCases'] = ApiClient.convertToType(data['w4EstimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('w4EstimatedInnerPacks')) {
+        obj['w4EstimatedInnerPacks'] = ApiClient.convertToType(data['w4EstimatedInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('w5EstimatedPallets')) {
+        obj['w5EstimatedPallets'] = ApiClient.convertToType(data['w5EstimatedPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('w5EstimatedCases')) {
+        obj['w5EstimatedCases'] = ApiClient.convertToType(data['w5EstimatedCases'], 'Number');
+      }
+      if (data.hasOwnProperty('w5EstimatedInnerPacks')) {
+        obj['w5EstimatedInnerPacks'] = ApiClient.convertToType(data['w5EstimatedInnerPacks'], 'Number');
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -932,6 +1004,78 @@
    * @member {String} overallStockStatus
    */
   exports.prototype['overallStockStatus'] = undefined;
+  /**
+   * @member {Number} estimatedPallets
+   */
+  exports.prototype['estimatedPallets'] = undefined;
+  /**
+   * @member {Number} estimatedCases
+   */
+  exports.prototype['estimatedCases'] = undefined;
+  /**
+   * @member {Number} estimatedInnerPacks
+   */
+  exports.prototype['estimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} w1EstimatedPallets
+   */
+  exports.prototype['w1EstimatedPallets'] = undefined;
+  /**
+   * @member {Number} w1EstimatedCases
+   */
+  exports.prototype['w1EstimatedCases'] = undefined;
+  /**
+   * @member {Number} w1EstimatedInnerPacks
+   */
+  exports.prototype['w1EstimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} w2EstimatedPallets
+   */
+  exports.prototype['w2EstimatedPallets'] = undefined;
+  /**
+   * @member {Number} w2EstimatedCases
+   */
+  exports.prototype['w2EstimatedCases'] = undefined;
+  /**
+   * @member {Number} w2EstimatedInnerPacks
+   */
+  exports.prototype['w2EstimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} w3EstimatedPallets
+   */
+  exports.prototype['w3EstimatedPallets'] = undefined;
+  /**
+   * @member {Number} w3EstimatedCases
+   */
+  exports.prototype['w3EstimatedCases'] = undefined;
+  /**
+   * @member {Number} w3EstimatedInnerPacks
+   */
+  exports.prototype['w3EstimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} w4EstimatedPallets
+   */
+  exports.prototype['w4EstimatedPallets'] = undefined;
+  /**
+   * @member {Number} w4EstimatedCases
+   */
+  exports.prototype['w4EstimatedCases'] = undefined;
+  /**
+   * @member {Number} w4EstimatedInnerPacks
+   */
+  exports.prototype['w4EstimatedInnerPacks'] = undefined;
+  /**
+   * @member {Number} w5EstimatedPallets
+   */
+  exports.prototype['w5EstimatedPallets'] = undefined;
+  /**
+   * @member {Number} w5EstimatedCases
+   */
+  exports.prototype['w5EstimatedCases'] = undefined;
+  /**
+   * @member {Number} w5EstimatedInnerPacks
+   */
+  exports.prototype['w5EstimatedInnerPacks'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */
