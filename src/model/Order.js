@@ -149,6 +149,7 @@
 
 
 
+
     _this['lineItems'] = lineItems;
 
 
@@ -187,6 +188,9 @@
       }
       if (data.hasOwnProperty('useOrderNoRoot')) {
         obj['useOrderNoRoot'] = ApiClient.convertToType(data['useOrderNoRoot'], 'Number');
+      }
+      if (data.hasOwnProperty('shippingMethod')) {
+        obj['shippingMethod'] = ApiClient.convertToType(data['shippingMethod'], 'String');
       }
       if (data.hasOwnProperty('firstShipDate')) {
         obj['firstShipDate'] = ApiClient.convertToType(data['firstShipDate'], 'Date');
@@ -508,6 +512,10 @@
    * @member {Number} useOrderNoRoot
    */
   exports.prototype['useOrderNoRoot'] = undefined;
+  /**
+   * @member {String} shippingMethod
+   */
+  exports.prototype['shippingMethod'] = undefined;
   /**
    * @member {Date} firstShipDate
    */

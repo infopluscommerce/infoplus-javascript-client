@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -97,6 +98,9 @@
       }
       if (data.hasOwnProperty('requireCartonizedASN')) {
         obj['requireCartonizedASN'] = ApiClient.convertToType(data['requireCartonizedASN'], 'Boolean');
+      }
+      if (data.hasOwnProperty('usesReservations')) {
+        obj['usesReservations'] = ApiClient.convertToType(data['usesReservations'], 'Boolean');
       }
       if (data.hasOwnProperty('requireGS1128Label')) {
         obj['requireGS1128Label'] = ApiClient.convertToType(data['requireGS1128Label'], 'Boolean');
@@ -152,6 +156,11 @@
    * @default false
    */
   exports.prototype['requireCartonizedASN'] = false;
+  /**
+   * @member {Boolean} usesReservations
+   * @default false
+   */
+  exports.prototype['usesReservations'] = false;
   /**
    * @member {Boolean} requireGS1128Label
    * @default false

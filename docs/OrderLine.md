@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **itemProductCodeId** | **Number** |  | [optional] 
 **itemSummaryCodeId** | **Number** |  | 
 **fulfillmentChannel** | **String** |  | 
+**dynamicKitComponentList** | [**[DynamicKitComponentLine]**](DynamicKitComponentLine.md) |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

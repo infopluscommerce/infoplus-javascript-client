@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/DynamicKitComponentLine'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./DynamicKitComponentLine'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.OrderLine = factory(root.infoplus.ApiClient);
+    root.infoplus.OrderLine = factory(root.infoplus.ApiClient, root.infoplus.DynamicKitComponentLine);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, DynamicKitComponentLine) {
   'use strict';
 
 
@@ -92,6 +92,7 @@
 
     _this['itemSummaryCodeId'] = itemSummaryCodeId;
     _this['fulfillmentChannel'] = fulfillmentChannel;
+
 
   };
 
@@ -210,6 +211,9 @@
       }
       if (data.hasOwnProperty('fulfillmentChannel')) {
         obj['fulfillmentChannel'] = ApiClient.convertToType(data['fulfillmentChannel'], 'String');
+      }
+      if (data.hasOwnProperty('dynamicKitComponentList')) {
+        obj['dynamicKitComponentList'] = ApiClient.convertToType(data['dynamicKitComponentList'], [DynamicKitComponentLine]);
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -358,6 +362,10 @@
    * @member {String} fulfillmentChannel
    */
   exports.prototype['fulfillmentChannel'] = undefined;
+  /**
+   * @member {Array.<module:model/DynamicKitComponentLine>} dynamicKitComponentList
+   */
+  exports.prototype['dynamicKitComponentList'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */

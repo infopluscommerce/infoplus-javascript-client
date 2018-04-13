@@ -222,6 +222,23 @@ Class | Method | HTTP request | Description
 *infoplus.CarrierApi* | [**getCarrierBySearchText**](docs/CarrierApi.md#getCarrierBySearchText) | **GET** /beta/carrier/search | Search carriers
 *infoplus.CarrierServiceApi* | [**getCarrierServiceById**](docs/CarrierServiceApi.md#getCarrierServiceById) | **GET** /beta/carrierService/{carrierServiceId} | Get a carrierService by id
 *infoplus.CarrierServiceApi* | [**getCarrierServiceBySearchText**](docs/CarrierServiceApi.md#getCarrierServiceBySearchText) | **GET** /beta/carrierService/search | Search carrierServices
+*infoplus.CartApi* | [**addCart**](docs/CartApi.md#addCart) | **POST** /beta/cart | Create a cart
+*infoplus.CartApi* | [**addCartAudit**](docs/CartApi.md#addCartAudit) | **PUT** /beta/cart/{cartId}/audit/{cartAudit} | Add new audit for a cart
+*infoplus.CartApi* | [**addCartTag**](docs/CartApi.md#addCartTag) | **PUT** /beta/cart/{cartId}/tag/{cartTag} | Add new tags for a cart.
+*infoplus.CartApi* | [**deleteCart**](docs/CartApi.md#deleteCart) | **DELETE** /beta/cart/{cartId} | Delete a cart
+*infoplus.CartApi* | [**deleteCartTag**](docs/CartApi.md#deleteCartTag) | **DELETE** /beta/cart/{cartId}/tag/{cartTag} | Delete a tag for a cart.
+*infoplus.CartApi* | [**getCartByFilter**](docs/CartApi.md#getCartByFilter) | **GET** /beta/cart/search | Search carts by filter
+*infoplus.CartApi* | [**getCartById**](docs/CartApi.md#getCartById) | **GET** /beta/cart/{cartId} | Get a cart by id
+*infoplus.CartApi* | [**getCartTags**](docs/CartApi.md#getCartTags) | **GET** /beta/cart/{cartId}/tag | Get the tags for a cart.
+*infoplus.CartApi* | [**getDuplicateCartById**](docs/CartApi.md#getDuplicateCartById) | **GET** /beta/cart/duplicate/{cartId} | Get a duplicated a cart by id
+*infoplus.CartApi* | [**updateCart**](docs/CartApi.md#updateCart) | **PUT** /beta/cart | Update a cart
+*infoplus.CartLocationApi* | [**addCartLocationAudit**](docs/CartLocationApi.md#addCartLocationAudit) | **PUT** /beta/cartLocation/{cartLocationId}/audit/{cartLocationAudit} | Add new audit for a cartLocation
+*infoplus.CartLocationApi* | [**addCartLocationTag**](docs/CartLocationApi.md#addCartLocationTag) | **PUT** /beta/cartLocation/{cartLocationId}/tag/{cartLocationTag} | Add new tags for a cartLocation.
+*infoplus.CartLocationApi* | [**deleteCartLocationTag**](docs/CartLocationApi.md#deleteCartLocationTag) | **DELETE** /beta/cartLocation/{cartLocationId}/tag/{cartLocationTag} | Delete a tag for a cartLocation.
+*infoplus.CartLocationApi* | [**getCartLocationByFilter**](docs/CartLocationApi.md#getCartLocationByFilter) | **GET** /beta/cartLocation/search | Search cartLocations by filter
+*infoplus.CartLocationApi* | [**getCartLocationById**](docs/CartLocationApi.md#getCartLocationById) | **GET** /beta/cartLocation/{cartLocationId} | Get a cartLocation by id
+*infoplus.CartLocationApi* | [**getCartLocationTags**](docs/CartLocationApi.md#getCartLocationTags) | **GET** /beta/cartLocation/{cartLocationId}/tag | Get the tags for a cartLocation.
+*infoplus.CartLocationApi* | [**getDuplicateCartLocationById**](docs/CartLocationApi.md#getDuplicateCartLocationById) | **GET** /beta/cartLocation/duplicate/{cartLocationId} | Get a duplicated a cartLocation by id
 *infoplus.CartonApi* | [**addCarton**](docs/CartonApi.md#addCarton) | **POST** /beta/carton | Create a carton
 *infoplus.CartonApi* | [**addCartonAudit**](docs/CartonApi.md#addCartonAudit) | **PUT** /beta/carton/{cartonId}/audit/{cartonAudit} | Add new audit for a carton
 *infoplus.CartonApi* | [**addCartonTag**](docs/CartonApi.md#addCartonTag) | **PUT** /beta/carton/{cartonId}/tag/{cartonTag} | Add new tags for a carton.
@@ -1053,6 +1070,8 @@ Class | Method | HTTP request | Description
  - [infoplus.BusinessTransaction](docs/BusinessTransaction.md)
  - [infoplus.Carrier](docs/Carrier.md)
  - [infoplus.CarrierService](docs/CarrierService.md)
+ - [infoplus.Cart](docs/Cart.md)
+ - [infoplus.CartLocation](docs/CartLocation.md)
  - [infoplus.Carton](docs/Carton.md)
  - [infoplus.CartonActivity](docs/CartonActivity.md)
  - [infoplus.CartonContent](docs/CartonContent.md)
@@ -1060,6 +1079,7 @@ Class | Method | HTTP request | Description
  - [infoplus.Customer](docs/Customer.md)
  - [infoplus.CustomerInvoiceTemplate](docs/CustomerInvoiceTemplate.md)
  - [infoplus.CustomerInvoiceTemplateLine](docs/CustomerInvoiceTemplateLine.md)
+ - [infoplus.DynamicKitComponentLine](docs/DynamicKitComponentLine.md)
  - [infoplus.EDIDocumentType](docs/EDIDocumentType.md)
  - [infoplus.EditLineItemFulfillmentStrategyInputAPIModel](docs/EditLineItemFulfillmentStrategyInputAPIModel.md)
  - [infoplus.EmailTemplate](docs/EmailTemplate.md)
