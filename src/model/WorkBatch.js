@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       }
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Number');
+      }
+      if (data.hasOwnProperty('batchPriorityCode')) {
+        obj['batchPriorityCode'] = ApiClient.convertToType(data['batchPriorityCode'], 'Number');
       }
       if (data.hasOwnProperty('createDate')) {
         obj['createDate'] = ApiClient.convertToType(data['createDate'], 'Date');
@@ -94,6 +98,10 @@
    * @member {Number} warehouseId
    */
   exports.prototype['warehouseId'] = undefined;
+  /**
+   * @member {Number} batchPriorityCode
+   */
+  exports.prototype['batchPriorityCode'] = undefined;
   /**
    * @member {Date} createDate
    */

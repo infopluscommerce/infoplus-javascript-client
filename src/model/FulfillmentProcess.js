@@ -101,6 +101,8 @@
 
 
 
+
+
     _this['createPackingSlip'] = createPackingSlip;
 
 
@@ -158,8 +160,11 @@
       if (data.hasOwnProperty('maxOrders')) {
         obj['maxOrders'] = ApiClient.convertToType(data['maxOrders'], 'Number');
       }
-      if (data.hasOwnProperty('batchSize')) {
-        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+      if (data.hasOwnProperty('batchMaxSize')) {
+        obj['batchMaxSize'] = ApiClient.convertToType(data['batchMaxSize'], 'Number');
+      }
+      if (data.hasOwnProperty('batchMinSize')) {
+        obj['batchMinSize'] = ApiClient.convertToType(data['batchMinSize'], 'Number');
       }
       if (data.hasOwnProperty('version')) {
         obj['version'] = ApiClient.convertToType(data['version'], 'String');
@@ -169,6 +174,9 @@
       }
       if (data.hasOwnProperty('isMassDistribution')) {
         obj['isMassDistribution'] = ApiClient.convertToType(data['isMassDistribution'], 'Boolean');
+      }
+      if (data.hasOwnProperty('priorityCode')) {
+        obj['priorityCode'] = ApiClient.convertToType(data['priorityCode'], 'Number');
       }
       if (data.hasOwnProperty('numberOfOrders')) {
         obj['numberOfOrders'] = ApiClient.convertToType(data['numberOfOrders'], 'Number');
@@ -337,9 +345,13 @@
    */
   exports.prototype['maxOrders'] = undefined;
   /**
-   * @member {Number} batchSize
+   * @member {Number} batchMaxSize
    */
-  exports.prototype['batchSize'] = undefined;
+  exports.prototype['batchMaxSize'] = undefined;
+  /**
+   * @member {Number} batchMinSize
+   */
+  exports.prototype['batchMinSize'] = undefined;
   /**
    * @member {String} version
    */
@@ -353,6 +365,10 @@
    * @default false
    */
   exports.prototype['isMassDistribution'] = false;
+  /**
+   * @member {Number} priorityCode
+   */
+  exports.prototype['priorityCode'] = undefined;
   /**
    * @member {Number} numberOfOrders
    */

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **extendedCharge** | **Number** |  | [optional] 
 **backupFile** | **Number** |  | [optional] 
 **backupFileUrl** | **String** |  | [optional] 
-**invoiceWorksheetId** | **Number** |  | [optional] 
+**invoiceWorksheetId** | **Number** |  | 
 **invoiceTemplateLineId** | **Number** |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 

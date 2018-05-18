@@ -45,8 +45,9 @@
    * @alias module:model/InvoiceWorksheetLine
    * @class
    * @param lobId {Number} 
+   * @param invoiceWorksheetId {Number} 
    */
-  var exports = function(lobId) {
+  var exports = function(lobId, invoiceWorksheetId) {
     var _this = this;
 
 
@@ -63,7 +64,7 @@
 
 
 
-
+    _this['invoiceWorksheetId'] = invoiceWorksheetId;
 
 
   };

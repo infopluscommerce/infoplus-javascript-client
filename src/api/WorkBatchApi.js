@@ -405,6 +405,52 @@
     }
 
     /**
+     * Callback function to receive the result of the updateWorkBatch operation.
+     * @callback module:api/WorkBatchApi~updateWorkBatchCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a workBatch
+     * Updates an existing workBatch using the specified data.
+     * @param {module:model/WorkBatch} body WorkBatch to be updated.
+     * @param {module:api/WorkBatchApi~updateWorkBatchCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.updateWorkBatch = function(body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateWorkBatch");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api_key'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/beta/workBatch', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the updateWorkBatchCustomFields operation.
      * @callback module:api/WorkBatchApi~updateWorkBatchCustomFieldsCallback
      * @param {String} error Error message, if any.

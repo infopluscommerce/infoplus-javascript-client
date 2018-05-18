@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **syncOrdersLastRunTime** | **Date** |  | [optional] 
 **inventoryLevelWarehouseControls** | **String** |  | 
 **warehouseList** | [**[Warehouse]**](Warehouse.md) |  | [optional] 
+**inventoryLevelStoreControls** | **String** |  | 
+**storeList** | [**[Store]**](Store.md) |  | [optional] 
 **customFields** | **{String: Object}** |  | [optional] 
 
 

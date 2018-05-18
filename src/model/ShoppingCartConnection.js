@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Warehouse'], factory);
+    define(['ApiClient', 'model/Store', 'model/Warehouse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Warehouse'));
+    module.exports = factory(require('../ApiClient'), require('./Store'), require('./Warehouse'));
   } else {
     // Browser globals (root is window)
     if (!root.infoplus) {
       root.infoplus = {};
     }
-    root.infoplus.ShoppingCartConnection = factory(root.infoplus.ApiClient, root.infoplus.Warehouse);
+    root.infoplus.ShoppingCartConnection = factory(root.infoplus.ApiClient, root.infoplus.Store, root.infoplus.Warehouse);
   }
-}(this, function(ApiClient, Warehouse) {
+}(this, function(ApiClient, Store, Warehouse) {
   'use strict';
 
 
@@ -62,8 +62,9 @@
    * @param syncTrackingData {Boolean} 
    * @param fulfillAllItems {Boolean} 
    * @param inventoryLevelWarehouseControls {String} 
+   * @param inventoryLevelStoreControls {String} 
    */
-  var exports = function(lobId, orderSourceId, integrationPartnerId, connectionType, infoplusSKUFieldToMap, shoppingCartSKUFieldToMap, name, shoppingCartStoreURL, accessCode, accessToken, username, password, orderShipmentLevel, syncOrders, syncInventory, syncTrackingData, fulfillAllItems, inventoryLevelWarehouseControls) {
+  var exports = function(lobId, orderSourceId, integrationPartnerId, connectionType, infoplusSKUFieldToMap, shoppingCartSKUFieldToMap, name, shoppingCartStoreURL, accessCode, accessToken, username, password, orderShipmentLevel, syncOrders, syncInventory, syncTrackingData, fulfillAllItems, inventoryLevelWarehouseControls, inventoryLevelStoreControls) {
     var _this = this;
 
 
@@ -95,6 +96,8 @@
 
 
     _this['inventoryLevelWarehouseControls'] = inventoryLevelWarehouseControls;
+
+    _this['inventoryLevelStoreControls'] = inventoryLevelStoreControls;
 
 
   };
@@ -199,6 +202,12 @@
       }
       if (data.hasOwnProperty('warehouseList')) {
         obj['warehouseList'] = ApiClient.convertToType(data['warehouseList'], [Warehouse]);
+      }
+      if (data.hasOwnProperty('inventoryLevelStoreControls')) {
+        obj['inventoryLevelStoreControls'] = ApiClient.convertToType(data['inventoryLevelStoreControls'], 'String');
+      }
+      if (data.hasOwnProperty('storeList')) {
+        obj['storeList'] = ApiClient.convertToType(data['storeList'], [Store]);
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': Object});
@@ -332,6 +341,14 @@
    * @member {Array.<module:model/Warehouse>} warehouseList
    */
   exports.prototype['warehouseList'] = undefined;
+  /**
+   * @member {String} inventoryLevelStoreControls
+   */
+  exports.prototype['inventoryLevelStoreControls'] = undefined;
+  /**
+   * @member {Array.<module:model/Store>} storeList
+   */
+  exports.prototype['storeList'] = undefined;
   /**
    * @member {Object.<String, Object>} customFields
    */

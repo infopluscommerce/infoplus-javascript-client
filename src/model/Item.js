@@ -192,6 +192,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -513,6 +540,87 @@
       }
       if (data.hasOwnProperty('unavailableQuantity')) {
         obj['unavailableQuantity'] = ApiClient.convertToType(data['unavailableQuantity'], 'Number');
+      }
+      if (data.hasOwnProperty('availableQuantityInnerPacks')) {
+        obj['availableQuantityInnerPacks'] = ApiClient.convertToType(data['availableQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('damagedQuantityInnerPacks')) {
+        obj['damagedQuantityInnerPacks'] = ApiClient.convertToType(data['damagedQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('inFulfillmentProcessQuantityInnerPacks')) {
+        obj['inFulfillmentProcessQuantityInnerPacks'] = ApiClient.convertToType(data['inFulfillmentProcessQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('onHandQuantityInnerPacks')) {
+        obj['onHandQuantityInnerPacks'] = ApiClient.convertToType(data['onHandQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('openOrderQuantityInnerPacks')) {
+        obj['openOrderQuantityInnerPacks'] = ApiClient.convertToType(data['openOrderQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('openPOQuantityInnerPacks')) {
+        obj['openPOQuantityInnerPacks'] = ApiClient.convertToType(data['openPOQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('orderableQuantityInnerPacks')) {
+        obj['orderableQuantityInnerPacks'] = ApiClient.convertToType(data['orderableQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('unallocatableQuantityInnerPacks')) {
+        obj['unallocatableQuantityInnerPacks'] = ApiClient.convertToType(data['unallocatableQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('unavailableQuantityInnerPacks')) {
+        obj['unavailableQuantityInnerPacks'] = ApiClient.convertToType(data['unavailableQuantityInnerPacks'], 'Number');
+      }
+      if (data.hasOwnProperty('availableQuantityCases')) {
+        obj['availableQuantityCases'] = ApiClient.convertToType(data['availableQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('damagedQuantityCases')) {
+        obj['damagedQuantityCases'] = ApiClient.convertToType(data['damagedQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('inFulfillmentProcessQuantityCases')) {
+        obj['inFulfillmentProcessQuantityCases'] = ApiClient.convertToType(data['inFulfillmentProcessQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('onHandQuantityCases')) {
+        obj['onHandQuantityCases'] = ApiClient.convertToType(data['onHandQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('openOrderQuantityCases')) {
+        obj['openOrderQuantityCases'] = ApiClient.convertToType(data['openOrderQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('openPOQuantityCases')) {
+        obj['openPOQuantityCases'] = ApiClient.convertToType(data['openPOQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('orderableQuantityCases')) {
+        obj['orderableQuantityCases'] = ApiClient.convertToType(data['orderableQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('unallocatableQuantityCases')) {
+        obj['unallocatableQuantityCases'] = ApiClient.convertToType(data['unallocatableQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('unavailableQuantityCases')) {
+        obj['unavailableQuantityCases'] = ApiClient.convertToType(data['unavailableQuantityCases'], 'Number');
+      }
+      if (data.hasOwnProperty('availableQuantityPallets')) {
+        obj['availableQuantityPallets'] = ApiClient.convertToType(data['availableQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('damagedQuantityPallets')) {
+        obj['damagedQuantityPallets'] = ApiClient.convertToType(data['damagedQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('inFulfillmentProcessQuantityPallets')) {
+        obj['inFulfillmentProcessQuantityPallets'] = ApiClient.convertToType(data['inFulfillmentProcessQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('onHandQuantityPallets')) {
+        obj['onHandQuantityPallets'] = ApiClient.convertToType(data['onHandQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('openOrderQuantityPallets')) {
+        obj['openOrderQuantityPallets'] = ApiClient.convertToType(data['openOrderQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('openPOQuantityPallets')) {
+        obj['openPOQuantityPallets'] = ApiClient.convertToType(data['openPOQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('orderableQuantityPallets')) {
+        obj['orderableQuantityPallets'] = ApiClient.convertToType(data['orderableQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('unallocatableQuantityPallets')) {
+        obj['unallocatableQuantityPallets'] = ApiClient.convertToType(data['unallocatableQuantityPallets'], 'Number');
+      }
+      if (data.hasOwnProperty('unavailableQuantityPallets')) {
+        obj['unavailableQuantityPallets'] = ApiClient.convertToType(data['unavailableQuantityPallets'], 'Number');
       }
       if (data.hasOwnProperty('overallDaysOnHand')) {
         obj['overallDaysOnHand'] = ApiClient.convertToType(data['overallDaysOnHand'], 'Number');
@@ -996,6 +1104,114 @@
    * @member {Number} unavailableQuantity
    */
   exports.prototype['unavailableQuantity'] = undefined;
+  /**
+   * @member {Number} availableQuantityInnerPacks
+   */
+  exports.prototype['availableQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} damagedQuantityInnerPacks
+   */
+  exports.prototype['damagedQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} inFulfillmentProcessQuantityInnerPacks
+   */
+  exports.prototype['inFulfillmentProcessQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} onHandQuantityInnerPacks
+   */
+  exports.prototype['onHandQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} openOrderQuantityInnerPacks
+   */
+  exports.prototype['openOrderQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} openPOQuantityInnerPacks
+   */
+  exports.prototype['openPOQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} orderableQuantityInnerPacks
+   */
+  exports.prototype['orderableQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} unallocatableQuantityInnerPacks
+   */
+  exports.prototype['unallocatableQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} unavailableQuantityInnerPacks
+   */
+  exports.prototype['unavailableQuantityInnerPacks'] = undefined;
+  /**
+   * @member {Number} availableQuantityCases
+   */
+  exports.prototype['availableQuantityCases'] = undefined;
+  /**
+   * @member {Number} damagedQuantityCases
+   */
+  exports.prototype['damagedQuantityCases'] = undefined;
+  /**
+   * @member {Number} inFulfillmentProcessQuantityCases
+   */
+  exports.prototype['inFulfillmentProcessQuantityCases'] = undefined;
+  /**
+   * @member {Number} onHandQuantityCases
+   */
+  exports.prototype['onHandQuantityCases'] = undefined;
+  /**
+   * @member {Number} openOrderQuantityCases
+   */
+  exports.prototype['openOrderQuantityCases'] = undefined;
+  /**
+   * @member {Number} openPOQuantityCases
+   */
+  exports.prototype['openPOQuantityCases'] = undefined;
+  /**
+   * @member {Number} orderableQuantityCases
+   */
+  exports.prototype['orderableQuantityCases'] = undefined;
+  /**
+   * @member {Number} unallocatableQuantityCases
+   */
+  exports.prototype['unallocatableQuantityCases'] = undefined;
+  /**
+   * @member {Number} unavailableQuantityCases
+   */
+  exports.prototype['unavailableQuantityCases'] = undefined;
+  /**
+   * @member {Number} availableQuantityPallets
+   */
+  exports.prototype['availableQuantityPallets'] = undefined;
+  /**
+   * @member {Number} damagedQuantityPallets
+   */
+  exports.prototype['damagedQuantityPallets'] = undefined;
+  /**
+   * @member {Number} inFulfillmentProcessQuantityPallets
+   */
+  exports.prototype['inFulfillmentProcessQuantityPallets'] = undefined;
+  /**
+   * @member {Number} onHandQuantityPallets
+   */
+  exports.prototype['onHandQuantityPallets'] = undefined;
+  /**
+   * @member {Number} openOrderQuantityPallets
+   */
+  exports.prototype['openOrderQuantityPallets'] = undefined;
+  /**
+   * @member {Number} openPOQuantityPallets
+   */
+  exports.prototype['openPOQuantityPallets'] = undefined;
+  /**
+   * @member {Number} orderableQuantityPallets
+   */
+  exports.prototype['orderableQuantityPallets'] = undefined;
+  /**
+   * @member {Number} unallocatableQuantityPallets
+   */
+  exports.prototype['unallocatableQuantityPallets'] = undefined;
+  /**
+   * @member {Number} unavailableQuantityPallets
+   */
+  exports.prototype['unavailableQuantityPallets'] = undefined;
   /**
    * @member {Number} overallDaysOnHand
    */

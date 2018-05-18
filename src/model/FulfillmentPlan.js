@@ -64,7 +64,9 @@
 
     _this['warehouseId'] = warehouseId;
 
+
     _this['orderSmartFilterId'] = orderSmartFilterId;
+
 
 
 
@@ -127,6 +129,9 @@
       if (data.hasOwnProperty('warehouseId')) {
         obj['warehouseId'] = ApiClient.convertToType(data['warehouseId'], 'Number');
       }
+      if (data.hasOwnProperty('priorityCode')) {
+        obj['priorityCode'] = ApiClient.convertToType(data['priorityCode'], 'Number');
+      }
       if (data.hasOwnProperty('lastRunTime')) {
         obj['lastRunTime'] = ApiClient.convertToType(data['lastRunTime'], 'Date');
       }
@@ -139,8 +144,11 @@
       if (data.hasOwnProperty('maxOrders')) {
         obj['maxOrders'] = ApiClient.convertToType(data['maxOrders'], 'Number');
       }
-      if (data.hasOwnProperty('batchSize')) {
-        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'Number');
+      if (data.hasOwnProperty('batchSizeMax')) {
+        obj['batchSizeMax'] = ApiClient.convertToType(data['batchSizeMax'], 'Number');
+      }
+      if (data.hasOwnProperty('batchSizeMin')) {
+        obj['batchSizeMin'] = ApiClient.convertToType(data['batchSizeMin'], 'Number');
       }
       if (data.hasOwnProperty('version')) {
         obj['version'] = ApiClient.convertToType(data['version'], 'String');
@@ -255,6 +263,10 @@
    */
   exports.prototype['warehouseId'] = undefined;
   /**
+   * @member {Number} priorityCode
+   */
+  exports.prototype['priorityCode'] = undefined;
+  /**
    * @member {Date} lastRunTime
    */
   exports.prototype['lastRunTime'] = undefined;
@@ -271,9 +283,13 @@
    */
   exports.prototype['maxOrders'] = undefined;
   /**
-   * @member {Number} batchSize
+   * @member {Number} batchSizeMax
    */
-  exports.prototype['batchSize'] = undefined;
+  exports.prototype['batchSizeMax'] = undefined;
+  /**
+   * @member {Number} batchSizeMin
+   */
+  exports.prototype['batchSizeMin'] = undefined;
   /**
    * @member {String} version
    */
